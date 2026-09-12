@@ -27,7 +27,7 @@ The official Add-in guide includes `getCDXBase64Encoded`; native serialization i
 
 Five tool names: `chemdraw_status`, `chemdraw_help`, `chemdraw_run`, `chemdraw_job`, `chemdraw_artifact`.
 
-Three immutable recipe IDs: `structure_sheet.v1`, `reaction_scheme.v1`, `electron_flow_step.v1`. The run schema and examples are under contracts/ and examples/. All P0 jobs require native CDX plus PNG; additional native CDXML readback and quality/provenance files are mandatory. Unsupported capabilities block, never substitute a renderer.
+Three immutable recipe IDs: `structure_sheet.v1`, `reaction_scheme.v1`, `electron_flow_step.v1`. The run schema, all five MCP input schemas, job-data schema and examples are under contracts/ and examples/. RISK_REGISTER.md records unresolved stop conditions and initial resource policies. All P0 jobs require native CDX plus PNG; additional native CDXML readback and quality/provenance files are mandatory. Unsupported capabilities block, never substitute a renderer.
 
 Keep broker/add-in/manifest/contract/recipe/style versions separate. Persist idempotency and write intent before native dispatch. Terminal `outcome_unknown` requires reconciliation without replay. Job success, native editability, visual acceptance and host receipt are different statuses.
 
@@ -38,3 +38,7 @@ Send commit/branch, exact app/API/build versions, methods exercised, actual capa
 If blocked, identify the specific failing operation/licence/binding/quality test and official alternatives tried. Preserve diagnostics. Stop breadth and report the bounded Mnova 1D NMR alternative for a coordination decision; do not relabel its result as ChemDraw output.
 
 The later default acceptance model is GPT-5.6 Terra + max in actual user hosts. Development using Astra does not establish that benchmark. Reuse existing encrypted connections; do not request new credentials without evidence. The known OpenAI frontend project-sync bug stays out of scope.
+
+## Architecture review corrections before runtime implementation
+
+The final architecture supplement adds per-session revision reservation and commit compare-and-swap, simultaneous SN2 graph validation with reactant-side anchors, and fixed physical canvas sizing without stretching molecular style. `needs_input`/`blocked` stop quiescently and require a corrected new request; `outcome_unknown` fences further writes until reconciled. Keep idempotency tombstones in P0 rather than implementing undefined expiry. These refine the existing contract; tool names and recipe IDs are unchanged.

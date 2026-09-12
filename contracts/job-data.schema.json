@@ -1,0 +1,544 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "job_id": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 128
+    },
+    "session_id": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 128
+    },
+    "state": {
+      "enum": [
+        "queued",
+        "preflight",
+        "running",
+        "verifying",
+        "succeeded",
+        "needs_input",
+        "blocked",
+        "failed",
+        "cancelled",
+        "outcome_unknown"
+      ]
+    },
+    "stage": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 128
+    },
+    "event_cursor": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 1024
+    },
+    "revision": {
+      "oneOf": [
+        {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 256
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "cancellation_requested": {
+      "type": "boolean"
+    },
+    "identity": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "product_id": {
+          "const": "chembridge.chemdraw-companion"
+        },
+        "broker_version": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 128
+        },
+        "addin_version": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 128
+        },
+        "tool_manifest_sha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "contract_version": {
+          "const": "1.0"
+        },
+        "recipe": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 128
+        },
+        "style_profile": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 128
+        },
+        "application_build": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 128
+        },
+        "api_version": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 128
+        },
+        "style_sha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        }
+      },
+      "required": [
+        "product_id",
+        "broker_version",
+        "addin_version",
+        "tool_manifest_sha256",
+        "contract_version",
+        "recipe",
+        "style_profile",
+        "application_build",
+        "api_version",
+        "style_sha256"
+      ]
+    },
+    "artifacts": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 128
+      }
+    },
+    "gates": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "native_execution": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "status": {
+              "enum": [
+                "pass",
+                "fail",
+                "pending",
+                "unverified",
+                "not_applicable"
+              ]
+            },
+            "evidence_ids": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 128
+              }
+            },
+            "reason": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 2048
+            }
+          },
+          "required": [
+            "status",
+            "evidence_ids",
+            "reason"
+          ]
+        },
+        "chemical_semantics": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "status": {
+              "enum": [
+                "pass",
+                "fail",
+                "pending",
+                "unverified",
+                "not_applicable"
+              ]
+            },
+            "evidence_ids": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 128
+              }
+            },
+            "reason": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 2048
+            }
+          },
+          "required": [
+            "status",
+            "evidence_ids",
+            "reason"
+          ]
+        },
+        "layout_geometry": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "status": {
+              "enum": [
+                "pass",
+                "fail",
+                "pending",
+                "unverified",
+                "not_applicable"
+              ]
+            },
+            "evidence_ids": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 128
+              }
+            },
+            "reason": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 2048
+            }
+          },
+          "required": [
+            "status",
+            "evidence_ids",
+            "reason"
+          ]
+        },
+        "native_editability": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "status": {
+              "enum": [
+                "pass",
+                "fail",
+                "pending",
+                "unverified",
+                "not_applicable"
+              ]
+            },
+            "evidence_ids": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 128
+              }
+            },
+            "reason": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 2048
+            }
+          },
+          "required": [
+            "status",
+            "evidence_ids",
+            "reason"
+          ]
+        },
+        "visual_review": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "status": {
+              "enum": [
+                "pass",
+                "fail",
+                "pending",
+                "unverified",
+                "not_applicable"
+              ]
+            },
+            "evidence_ids": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 128
+              }
+            },
+            "reason": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 2048
+            }
+          },
+          "required": [
+            "status",
+            "evidence_ids",
+            "reason"
+          ]
+        },
+        "owner_acceptance": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "status": {
+              "enum": [
+                "pass",
+                "fail",
+                "pending",
+                "unverified",
+                "not_applicable"
+              ]
+            },
+            "evidence_ids": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 128
+              }
+            },
+            "reason": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 2048
+            }
+          },
+          "required": [
+            "status",
+            "evidence_ids",
+            "reason"
+          ]
+        },
+        "host_receipt": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "status": {
+              "enum": [
+                "pass",
+                "fail",
+                "pending",
+                "unverified",
+                "not_applicable"
+              ]
+            },
+            "evidence_ids": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 128
+              }
+            },
+            "reason": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 2048
+            }
+          },
+          "required": [
+            "status",
+            "evidence_ids",
+            "reason"
+          ]
+        }
+      },
+      "required": [
+        "native_execution",
+        "chemical_semantics",
+        "layout_geometry",
+        "native_editability",
+        "visual_review",
+        "owner_acceptance",
+        "host_receipt"
+      ]
+    },
+    "error": {
+      "oneOf": [
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "code": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 128
+            },
+            "message": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 2048
+            },
+            "stage": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 128
+            },
+            "retryable": {
+              "type": "boolean"
+            },
+            "mutation_outcome": {
+              "enum": [
+                "none",
+                "known",
+                "unknown"
+              ]
+            },
+            "evidence_ids": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 128
+              }
+            },
+            "next_action": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 2048
+            },
+            "job_id": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 128
+            }
+          },
+          "required": [
+            "code",
+            "message",
+            "stage",
+            "retryable",
+            "mutation_outcome",
+            "evidence_ids",
+            "next_action"
+          ]
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "next_action": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 2048
+    }
+  },
+  "required": [
+    "job_id",
+    "session_id",
+    "state",
+    "stage",
+    "event_cursor",
+    "revision",
+    "cancellation_requested",
+    "artifacts",
+    "gates",
+    "error"
+  ],
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:chembridge:chemdraw:job-data:1.0",
+  "title": "Data payload of a successful chemdraw_job inspection",
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "state": {
+            "const": "succeeded"
+          }
+        }
+      },
+      "then": {
+        "required": [
+          "identity"
+        ],
+        "properties": {
+          "revision": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 256
+          },
+          "artifacts": {
+            "minItems": 1
+          },
+          "error": {
+            "type": "null"
+          },
+          "gates": {
+            "properties": {
+              "native_execution": {
+                "properties": {
+                  "status": {
+                    "const": "pass"
+                  }
+                }
+              },
+              "chemical_semantics": {
+                "properties": {
+                  "status": {
+                    "const": "pass"
+                  }
+                }
+              },
+              "layout_geometry": {
+                "properties": {
+                  "status": {
+                    "const": "pass"
+                  }
+                }
+              },
+              "native_editability": {
+                "properties": {
+                  "status": {
+                    "const": "pass"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "state": {
+            "const": "outcome_unknown"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "error": {
+            "type": "object",
+            "properties": {
+              "code": {
+                "const": "NATIVE_OUTCOME_UNKNOWN"
+              },
+              "retryable": {
+                "const": false
+              },
+              "mutation_outcome": {
+                "const": "unknown"
+              }
+            }
+          }
+        }
+      }
+    }
+  ]
+}

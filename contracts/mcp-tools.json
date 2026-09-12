@@ -1,0 +1,632 @@
+{
+  "contract_version": "1.0",
+  "status": "design-unimplemented",
+  "tools": [
+    {
+      "name": "chemdraw_status",
+      "description": "Read runtime identity, session state and capability evidence; no scientific execution.",
+      "inputSchema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "session_id": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 128
+          },
+          "detail": {
+            "enum": [
+              "compact",
+              "capabilities"
+            ],
+            "default": "compact"
+          }
+        },
+        "required": []
+      }
+    },
+    {
+      "name": "chemdraw_help",
+      "description": "Read one bounded recipe, error, style, capability or recovery guide on demand.",
+      "inputSchema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "topic": {
+            "enum": [
+              "recipe",
+              "error",
+              "style",
+              "capability",
+              "recovery"
+            ]
+          },
+          "item_id": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 128
+          },
+          "cursor": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 1024
+          }
+        },
+        "required": [
+          "topic"
+        ]
+      }
+    },
+    {
+      "name": "chemdraw_run",
+      "description": "Submit a bounded native-required recipe with durable idempotency and revision control.",
+      "inputSchema": {
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "$id": "urn:chembridge:chemdraw:run-request:1.0",
+        "title": "ChemDraw Companion run request 1.0",
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "contract_version",
+          "idempotency_key",
+          "recipe",
+          "target",
+          "inputs",
+          "output",
+          "style"
+        ],
+        "properties": {
+          "contract_version": {
+            "const": "1.0"
+          },
+          "idempotency_key": {
+            "type": "string",
+            "minLength": 8,
+            "maxLength": 128
+          },
+          "recipe": {
+            "enum": [
+              "structure_sheet.v1",
+              "reaction_scheme.v1",
+              "electron_flow_step.v1"
+            ]
+          },
+          "target": {
+            "oneOf": [
+              {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "mode"
+                ],
+                "properties": {
+                  "mode": {
+                    "const": "new"
+                  }
+                }
+              },
+              {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "mode",
+                  "session_id",
+                  "expected_revision"
+                ],
+                "properties": {
+                  "mode": {
+                    "const": "continue"
+                  },
+                  "session_id": {
+                    "$ref": "#/$defs/id"
+                  },
+                  "expected_revision": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 256
+                  }
+                }
+              }
+            ]
+          },
+          "inputs": {
+            "type": "object"
+          },
+          "output": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "native_required",
+              "editable_format",
+              "figure_format"
+            ],
+            "properties": {
+              "native_required": {
+                "const": true
+              },
+              "editable_format": {
+                "const": "cdx"
+              },
+              "figure_format": {
+                "const": "png"
+              },
+              "destination_id": {
+                "$ref": "#/$defs/id"
+              }
+            }
+          },
+          "style": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "profile_id",
+              "final_width_mm"
+            ],
+            "properties": {
+              "profile_id": {
+                "const": "chembridge-review-v1"
+              },
+              "final_width_mm": {
+                "enum": [
+                  85,
+                  170
+                ]
+              }
+            }
+          }
+        },
+        "allOf": [
+          {
+            "if": {
+              "properties": {
+                "recipe": {
+                  "const": "structure_sheet.v1"
+                }
+              }
+            },
+            "then": {
+              "properties": {
+                "inputs": {
+                  "$ref": "#/$defs/structureInput"
+                }
+              }
+            }
+          },
+          {
+            "if": {
+              "properties": {
+                "recipe": {
+                  "const": "reaction_scheme.v1"
+                }
+              }
+            },
+            "then": {
+              "properties": {
+                "inputs": {
+                  "$ref": "#/$defs/reactionInput"
+                }
+              }
+            }
+          },
+          {
+            "if": {
+              "properties": {
+                "recipe": {
+                  "const": "electron_flow_step.v1"
+                }
+              }
+            },
+            "then": {
+              "properties": {
+                "inputs": {
+                  "$ref": "#/$defs/mechanismInput"
+                }
+              }
+            }
+          }
+        ],
+        "$defs": {
+          "id": {
+            "type": "string",
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,127}$"
+          },
+          "atomMap": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "component": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "id",
+              "smiles",
+              "label"
+            ],
+            "properties": {
+              "id": {
+                "$ref": "#/$defs/id"
+              },
+              "smiles": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 4096
+              },
+              "label": {
+                "type": "string",
+                "maxLength": 160
+              }
+            }
+          },
+          "participants": {
+            "type": "array",
+            "minItems": 1,
+            "maxItems": 3,
+            "items": {
+              "$ref": "#/$defs/component"
+            }
+          },
+          "conditions": {
+            "type": "array",
+            "maxItems": 4,
+            "items": {
+              "type": "string",
+              "maxLength": 160
+            }
+          },
+          "structureInput": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "structures"
+            ],
+            "properties": {
+              "structures": {
+                "type": "array",
+                "minItems": 1,
+                "maxItems": 6,
+                "items": {
+                  "$ref": "#/$defs/component"
+                }
+              }
+            }
+          },
+          "reactionInput": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "reactants",
+              "products",
+              "conditions",
+              "balance_mode"
+            ],
+            "properties": {
+              "reactants": {
+                "$ref": "#/$defs/participants"
+              },
+              "products": {
+                "$ref": "#/$defs/participants"
+              },
+              "conditions": {
+                "$ref": "#/$defs/conditions"
+              },
+              "balance_mode": {
+                "enum": [
+                  "complete",
+                  "declared_partial"
+                ]
+              },
+              "omitted_species_note": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 1000
+              }
+            },
+            "allOf": [
+              {
+                "if": {
+                  "properties": {
+                    "balance_mode": {
+                      "const": "declared_partial"
+                    }
+                  }
+                },
+                "then": {
+                  "required": [
+                    "omitted_species_note"
+                  ]
+                }
+              }
+            ]
+          },
+          "atomPort": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "type",
+              "component_id",
+              "atom_map"
+            ],
+            "properties": {
+              "type": {
+                "const": "atom"
+              },
+              "component_id": {
+                "$ref": "#/$defs/id"
+              },
+              "atom_map": {
+                "$ref": "#/$defs/atomMap"
+              }
+            }
+          },
+          "lonePairPort": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "type",
+              "component_id",
+              "atom_map",
+              "pair_index"
+            ],
+            "properties": {
+              "type": {
+                "const": "lone_pair"
+              },
+              "component_id": {
+                "$ref": "#/$defs/id"
+              },
+              "atom_map": {
+                "$ref": "#/$defs/atomMap"
+              },
+              "pair_index": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 3
+              }
+            }
+          },
+          "bondPort": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "type",
+              "component_id",
+              "atom_maps"
+            ],
+            "properties": {
+              "type": {
+                "const": "bond"
+              },
+              "component_id": {
+                "$ref": "#/$defs/id"
+              },
+              "atom_maps": {
+                "$ref": "#/$defs/atomPair"
+              }
+            }
+          },
+          "atomPair": {
+            "type": "array",
+            "minItems": 2,
+            "maxItems": 2,
+            "uniqueItems": true,
+            "items": {
+              "$ref": "#/$defs/atomMap"
+            }
+          },
+          "flow": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "id",
+              "electron_count",
+              "source",
+              "target"
+            ],
+            "properties": {
+              "id": {
+                "$ref": "#/$defs/id"
+              },
+              "electron_count": {
+                "const": 2
+              },
+              "source": {
+                "oneOf": [
+                  {
+                    "$ref": "#/$defs/lonePairPort"
+                  },
+                  {
+                    "$ref": "#/$defs/bondPort"
+                  }
+                ]
+              },
+              "target": {
+                "oneOf": [
+                  {
+                    "$ref": "#/$defs/atomPort"
+                  },
+                  {
+                    "$ref": "#/$defs/bondPort"
+                  }
+                ]
+              }
+            }
+          },
+          "bondChange": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "atom_maps",
+              "from_order",
+              "to_order"
+            ],
+            "properties": {
+              "atom_maps": {
+                "$ref": "#/$defs/atomPair"
+              },
+              "from_order": {
+                "enum": [
+                  0,
+                  1,
+                  1.5,
+                  2,
+                  3
+                ]
+              },
+              "to_order": {
+                "enum": [
+                  0,
+                  1,
+                  1.5,
+                  2,
+                  3
+                ]
+              }
+            }
+          },
+          "chargeChange": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "atom_map",
+              "from",
+              "to"
+            ],
+            "properties": {
+              "atom_map": {
+                "$ref": "#/$defs/atomMap"
+              },
+              "from": {
+                "type": "integer",
+                "minimum": -4,
+                "maximum": 4
+              },
+              "to": {
+                "type": "integer",
+                "minimum": -4,
+                "maximum": 4
+              }
+            }
+          },
+          "mechanismInput": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "reactants",
+              "products",
+              "conditions",
+              "reaction_smiles",
+              "electron_flows",
+              "bond_changes",
+              "charge_changes"
+            ],
+            "properties": {
+              "reactants": {
+                "$ref": "#/$defs/participants"
+              },
+              "products": {
+                "$ref": "#/$defs/participants"
+              },
+              "conditions": {
+                "$ref": "#/$defs/conditions"
+              },
+              "reaction_smiles": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 16384
+              },
+              "electron_flows": {
+                "type": "array",
+                "minItems": 1,
+                "maxItems": 3,
+                "items": {
+                  "$ref": "#/$defs/flow"
+                }
+              },
+              "bond_changes": {
+                "type": "array",
+                "maxItems": 8,
+                "items": {
+                  "$ref": "#/$defs/bondChange"
+                }
+              },
+              "charge_changes": {
+                "type": "array",
+                "maxItems": 8,
+                "items": {
+                  "$ref": "#/$defs/chargeChange"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "chemdraw_job",
+      "description": "Inspect, request cooperative cancellation, or reconcile an existing job without replaying an uncertain native write.",
+      "inputSchema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "job_id": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 128
+          },
+          "action": {
+            "enum": [
+              "inspect",
+              "cancel",
+              "reconcile"
+            ]
+          },
+          "after_event": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 1024
+          },
+          "wait_ms": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 20000,
+            "default": 0
+          }
+        },
+        "required": [
+          "job_id",
+          "action"
+        ]
+      }
+    },
+    {
+      "name": "chemdraw_artifact",
+      "description": "Describe a registered artifact or deliver it through an authorized destination; no arbitrary path access.",
+      "inputSchema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "artifact_id": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 128
+          },
+          "action": {
+            "enum": [
+              "describe",
+              "deliver"
+            ]
+          },
+          "destination_id": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 128
+          }
+        },
+        "required": [
+          "artifact_id",
+          "action"
+        ]
+      }
+    }
+  ]
+}

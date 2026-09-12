@@ -1,24 +1,43 @@
 {
   "date": "2026-09-12",
-  "scope": "Architecture schema validation only; no runtime or native tests",
+  "scope": "Architecture contracts only; no runtime, native, visual or host execution",
   "validator": "jsonschema 4.26.0 / Draft 2020-12",
-  "schema_valid": true,
-  "positive_examples": [
+  "valid_schemas": 6,
+  "embedded_run_schema_matches": true,
+  "positive_run_examples": [
     "electron-flow-step.json",
     "reaction-scheme.json",
     "structure-sheet.json"
   ],
-  "negative_cases_rejected": [
+  "other_positive_tool_inputs": 4,
+  "positive_job_payloads": 3,
+  "negative_inputs_rejected": [
     "native_fallback_denied",
     "revision_required",
     "unknown_root_field_denied",
     "radical_scope_denied",
     "omission_note_required",
     "self_bond_denied",
-    "unknown_recipe_denied"
+    "unknown_recipe_denied",
+    "long_poll_bounded",
+    "arbitrary_artifact_path_denied",
+    "unknown_help_topic_denied",
+    "status_mutation_field_denied"
+  ],
+  "negative_job_payloads_rejected": [
+    "success_requires_artifacts",
+    "success_requires_native_pass",
+    "success_requires_style_hash",
+    "unknown_write_no_blind_retry"
   ],
   "local_document_links": "pass",
   "shared_rules_sha256": "ae939b8ec060e0145b9f5ab05d2e5566073728a9002c37509c604a39dbc245e5",
   "native_execution": "unverified",
-  "owner_acceptance": "pending"
+  "owner_acceptance": "pending",
+  "contract_file_sha256": {
+    "job-data.schema.json": "e596549dc1113bffc8bb182f51e3d538264c9e9361570f3b9846cde8e780ad8f",
+    "mcp-tools.json": "47dda13689fc8979aaa388826b4b81a05e232e795cc708cdf5f67eb71d8501fa",
+    "run-request.schema.json": "735d29573ac51f0c93fd6a99f48854c8e5cc7308a9c61e6e9eb457332a3307a5"
+  },
+  "line_endings": "Authored files LF; shared principles preserve exact source bytes"
 }

@@ -27,7 +27,7 @@ Common response envelope:
 }
 ```
 
-`ok` means the requested tool action was accepted/completed, not that native quality or delivery passed. `run` returns `job_id`, `session_id`, `state=queued`, `revision=null` and a recommended poll interval. A succeeded job returns committed `revision`, artifact IDs and independent gate states. Error results set `ok=false`, `data=null` and a structured error. Do not put secrets, full native files or full stack traces in normal tool output.
+`ok` means the requested tool action was accepted/completed, not that native quality or delivery passed. A first accepted `run` returns `job_id`, `session_id`, `state=queued`, `revision=null` and a recommended poll interval. Idempotent replay instead returns that same job's CURRENT state and committed revision if one exists; it must not reset a completed job to queued. A succeeded job returns committed `revision`, artifact IDs and independent gate states. Error results set `ok=false`, `data=null` and a structured error. Do not put secrets, full native files or full stack traces in normal tool output.
 
 ## Run request
 
@@ -39,7 +39,7 @@ See [run-request.schema.json](../contracts/run-request.schema.json) and the thre
 - `target`: `{mode:"new"}` or `{mode:"continue",session_id,expected_revision}`. P0 does not mutate arbitrary open documents. General file editing is deferred.
 - `inputs`: a typed recipe-specific object as below.
 - `output`: `native_required:true`, `editable_format:"cdx"`, `figure_format:"png"`, optional authorized `destination_id`. CDXML is an additional readback/interchange artifact. Other formats require a later additive capability-qualified contract.
-- `style`: `{profile_id:"chembridge-review-v1",final_width_mm:85|170}`. Values are proposal defaults, not accepted course/publisher styles.
+- `style`: `{profile_id:"chembridge-review-v1",final_width_mm:85|170}`. The width denotes a fixed physical canvas, not an ink-bounding-box stretch. Keep the declared physical font and bond sizes. Values are proposal defaults, not accepted course/publisher styles.
 
 The same complete scene input is used for continuation, with stable component and atom-map IDs. P0 deterministically rebuilds an isolated new revision document from the previous verified scene and the requested changes. This avoids treating vendor `add*` methods as replacement. Preserve old revisions and compare the intended diff. A future patch operation must separately specify deletion, unknown-object retention and ID mapping.
 
@@ -59,7 +59,7 @@ Initial limits: at most 6 structures per sheet; ordinary reaction up to 3 reacta
 
 Same participants, plus `reaction_smiles` (fully mapped), `electron_flows[]`, `bond_changes[]`, `charge_changes[]`. Components and reaction SMILES must denote the same mapped graphs. Every relevant heavy atom has one unique positive map ID, conserved across the step; transferred hydrogens must be explicit mapped atoms. Do not imply blanket support for proton transfers, radicals, organometallics or arbitrary mechanisms from this schema.
 
-Each flow is `{id,electron_count:2,source,target}`. Source type is `lone_pair` (component+atom map+pair index) or `bond` (component+two atom maps); target is `atom` or `bond` with matching references. Atom pair ports are validated for valence/charge and later placed in native geometry. Flow order follows the elementary step, not arbitrary rendering order. A bond change declares mapped atoms, `from_order` and `to_order` (0 means absent); charge changes declare atom map, `from` and `to`. These declarations must equal the graph difference; they are not instructions to forge a passing readback.
+Each flow is `{id,electron_count:2,source,target}`. Source type is `lone_pair` (component+atom map+pair index) or `bond` (component+two atom maps); target is `atom` or `bond` with matching references. Atom pair ports are validated for valence/charge and later placed in native geometry. All flows in this elementary step are simultaneous and are validated against the same pre-step graph. Their array order is only a stable display order; never apply them sequentially as chemical intermediates. For P0 every source and target component reference must point to a reactant-side component and its mapped atoms, even when the same map occurs in a product. Product participants specify the post-step graph. In particular, the two SN2 arrows must not generate a five-coordinate carbon intermediate. A bond change declares mapped atoms, `from_order` and `to_order` (0 means absent); charge changes declare atom map, `from` and `to`. These declarations must equal the graph difference; they are not instructions to forge a passing readback.
 
 P0 implements only the explicitly specified SN2 teaching fixture and tightly matching validated variants after qualification. The example is hydroxide plus bromomethane to methanol plus bromide, with two curved arrows: O lone pair to methyl C; C-Br bond to Br. Unsupported mechanism semantics fail even if the JSON passes. A schema being more expressive than the first fixture is not feature coverage.
 
@@ -105,3 +105,42 @@ An error contains `code`, `message`, `stage`, `retryable`, `mutation_outcome=non
 ## Compatibility rules
 
 Adding optional response metadata is minor-compatible. Removing/renaming tools, altering defaults/units, changing required input fields, idempotency/revision meaning or producer claims is breaking. Never mutate a released recipe/style's semantics in place. Pin schema + example hashes in implementation receipts; changes need architecture review and negative-test updates. A model/host adapter may simplify prompts but cannot alter chemistry, gate requirements or native provenance.
+
+## Machine-readable discovery supplement
+
+`contracts/mcp-tools.json` contains the exact five input schemas for MCP discovery; the embedded run schema must stay byte-equivalent as parsed JSON to `run-request.schema.json`. `contracts/job-data.schema.json` defines the `data` payload returned by a successful job inspection. A successful inspection can report a failed job; tool `ok` and job `state` remain distinct.
+
+For help, `topic` is recipe/error/style/capability/recovery; optional `item_id` requests one item, and an omitted item returns a short paginated index for that topic. Cursors are opaque, principal-scoped and bounded. `status` defaults to compact and `job.wait_ms` to zero. The native worker may remain uninitialized when status is read.
+
+Artifact delivery with no destination ID uses the originating host artifact channel only if it is available and already authorized. Otherwise return `DESTINATION_DENIED` with a corrective action. A run's optional destination ID stores the requested delivery preference; it does not prove a transfer. The host calls `chemdraw_artifact(action=deliver)` after artifact availability, and records actual receipt separately. Retried delivery to the same destination is idempotent by artifact SHA-256 and delivery attempt ID; a different destination requires its own authorization.
+
+Transport requests have an effective authenticated principal even when that field is absent from model-visible schemas. Never accept a principal supplied by the model as authority. `job-data.identity` is required once a job succeeds; before that it may be absent when application probing has not completed. All seven gates are always present, initially unverified/pending, so omitted evidence cannot look like a pass.
+
+## Session commit and correction rules
+
+Before native work, atomically reserve the session's parent revision for one job/worker generation. Commit requires compare-and-swap on that parent revision and reservation token. Only a verified successful output advances the session revision; a failed or stale output remains a diagnostic artifact. This session reservation is additional to the application write lane and does not solve native document identity by itself.
+
+`needs_input` and `blocked` are quiescent stopped jobs with no automatic resume. The host obtains the missing input or resolves the blocker, then submits the corrected complete request under a new idempotency key, preserving the last committed revision for continuations. The old job remains auditable. `outcome_unknown` is an unresolved, fenced state, not proof of quiescence: no new session write may begin until reconciliation establishes native completion/quiescence. Reconciliation reads existing state and may finalize a proven completed operation; it does not replay the original native write. If proven not started, mark the old attempt stopped and allow a deliberate new submission. A timed-out `needs_input` wait is not user approval.
+
+Keep the P0 compact idempotency ledger and tombstones; do not automatically forget old keys. When its configured safe capacity is reached, reject new work with `RESOURCE_LIMIT` rather than permitting a stale key to become a new mutation. A future expiration protocol must define wire-level age/replay protection before any retention change.
+
+## State transitions and output style identity
+
+| Current state | Event | Next state / authority |
+| --- | --- | --- |
+| queued | Worker owns session reservation and starts preflight | preflight |
+| preflight | Valid request, capability and document binding | running |
+| preflight | Missing chemical input or observed missing capability | needs_input or blocked; quiescent, release reservation |
+| running | Native commands have known completion | verifying |
+| verifying | Required automated gates pass and revision CAS succeeds | succeeded; publish immutable revision/artifacts |
+| running/verifying | Known failure with native quiescence established | failed; retain diagnostic artifacts, no revision advance |
+| active state | Cancel requested | Set cancellation_requested; cancelled only at verified safe/quiescent boundary |
+| active state | Native reply lost, crash or write timeout with uncertain disposition | outcome_unknown; preserve journal and fence reservation |
+| outcome_unknown | Reconcile proves write completed and worker quiescent | verifying without replaying native mutation; original job identity retained |
+| outcome_unknown | Reconcile proves write never started and worker quiescent | failed with corrective action; release reservation, new deliberate request may proceed |
+| outcome_unknown | Still indeterminate or in flight | outcome_unknown; no new write or automatic key change |
+| needs_input/blocked/failed/cancelled/succeeded | Same idempotency key replay | Same job and current state/revision; no mutation or reset |
+
+A recipe can collect diagnostic artifacts after failing, but those cannot become the committed scene revision. Owner review and host receipt can be appended as separate evidence after `succeeded`; neither rewrites a failed native result.
+
+Before the first native dispatch, resolve every style value (font family/size, bond length/stroke, charges, arrowhead/curve settings, spacing, canvas units and render scale) into an immutable effective-style document and SHA-256. Include `style_sha256` in the job identity and artifact manifest; owner approval references this exact style plus artifact hashes. Once dispatched, changing those values requires a new style version and contract-reviewed profile ID, never silent mutation of `chembridge-review-v1`. The proposal defaults in QUALITY_GATES.md must be validated for native application before any passing fixture claim.
