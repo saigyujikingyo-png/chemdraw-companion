@@ -5,6 +5,7 @@ param(
 # Developer-only feasibility probe. No MCP service, installer or entitlement claim.
 $ErrorActionPreference = 'Stop'
 Set-StrictMode -Version Latest
+. (Join-Path $PSScriptRoot 'native-common.ps1')
 $runPath = Join-Path ([IO.Path]::GetFullPath($EvidenceRoot)) ([DateTime]::UtcNow.ToString('yyyyMMdd-HHmmss') + '-' + [Guid]::NewGuid().ToString('N').Substring(0,8))
 if ($runPath -match '(?i)(^|[\\/])OneDrive([^\\/]*)([\\/]|$)') { throw 'Live native probes must remain outside cloud sync.' }
 $ancestor = [IO.DirectoryInfo]::new($runPath)
@@ -26,24 +27,24 @@ function Get-Snapshot($Document) {
     return [ordered]@{ atoms=$atoms; atom_count=$Document.Atoms.Count; bond_count=$Document.Bonds.Count; caption_count=$Document.Captions.Count; warnings=$Document.NumChemicalWarnings; formula=$Document.Objects.Formula }
 }
 function Save-Native($Document, [string]$Name, [string]$Mime, [int]$Resolution=600) {
-    [object]$file=Join-Path $runPath $Name; [object]$format=$Mime
-    [object]$dpi=$Resolution; [object]$width=[Type]::Missing; [object]$height=[Type]::Missing
-    if (Test-Path -LiteralPath $file) { throw "Refusing to overwrite probe artifact $Name" }
+    [string]$requestedPath=Join-Path $runPath $Name
+    if (Test-Path -LiteralPath $requestedPath) { throw "Refusing to overwrite probe artifact $Name" }
     Write-Event 'save_intent' @{ file=$Name; mime=$Mime; requested_resolution=$Resolution }
-    $Document.SaveAs([ref]$file,[ref]$format,[ref]$dpi,[ref]$width,[ref]$height)
-    if (!(Test-Path -LiteralPath $file)) { throw "SaveAs returned without producing requested artifact $Name" }
-    $info=Get-Item -LiteralPath $file
+    $receipt=[NativeChemDraw]::Save($Document,$requestedPath,$Mime,$Resolution)
+    Write-Event 'save_return' $receipt
+    if (!(Test-Path -LiteralPath $requestedPath)) { throw "SaveAs returned without producing requested artifact $Name" }
+    $info=Get-Item -LiteralPath $requestedPath
     if ($info.Length -eq 0) { throw "Empty native artifact $Name" }
-    Write-Event 'save_complete' @{ file=$Name; bytes=$info.Length; sha256=(Get-FileHash -LiteralPath $file -Algorithm SHA256).Hash }
+    Write-Event 'save_complete' @{ file=$Name; bytes=$info.Length; sha256=(Get-FileHash -LiteralPath $requestedPath -Algorithm SHA256).Hash }
 }
 function Close-Owned($Document) {
-    [object]$save=$false; [object]$file=[Type]::Missing
-    $Document.Close([ref]$save,[ref]$file)
+    [NativeChemDraw]::Close($Document)
 }
 $application=$null; $ownedDocuments=[Collections.Generic.List[object]]::new()
 $mutationStarted=$false
-$result=[ordered]@{ probe_version='0.1.0'; status='running'; license_entitlement='unverified'; paired_addin='not_verified'; production_route='blocked_pending_entitlement_and_contract_review'; gates=@{S1='not_run';R1='not_run';M1='not_run';visual_review='unverified';owner_acceptance='pending';host_receipt='unverified'} }
+$result=[ordered]@{ probe_version='0.2.0'; status='running'; license_entitlement='unverified'; paired_addin='not_verified'; production_route='developer_probe_only'; gates=@{S1='not_run';R1='not_run';M1='not_run';M2='not_run';visual_review='unverified';owner_acceptance='pending';host_receipt='unverified'} }
 try {
+    [void](Initialize-NativeInterop)
     $clsid=(Get-Item -LiteralPath 'Registry::HKEY_CLASSES_ROOT\ChemDraw_x64.Application\CLSID').GetValue('')
     $server=(Get-Item -LiteralPath ('Registry::HKEY_CLASSES_ROOT\CLSID\'+$clsid+'\LocalServer32')).GetValue('')
     $executable=($server -replace '(?i)\s+/Automation\s*$','').Trim('"')
@@ -55,6 +56,8 @@ try {
     if ($application.Documents.Count -ne 0) { throw 'DOCUMENT_BINDING_UNSAFE: COM activation exposed pre-existing documents.' }
     $newProcesses=@(Get-Process -Name ChemDraw -ErrorAction SilentlyContinue | Where-Object { $_.Id -notin $beforeProcessIds -and $_.Path -eq $executable })
     if ($newProcesses.Count -ne 1) { throw 'DOCUMENT_BINDING_UNSAFE: cannot identify one fresh native process.' }
+    $windowProcess=[NativeChemDraw]::ApplicationProcess($application)
+    if($windowProcess -ne $newProcesses[0].Id){throw 'DOCUMENT_BINDING_UNSAFE: native application HWND does not identify the fresh process.'}
     $result.application=$application.name
     $result.isolation='new_vendor_process_with_zero_preexisting_documents_and_retained_com_references'
     Write-Event 'application_isolated' @{ name=$application.name; fresh_process_count=$newProcesses.Count; document_count=$application.Documents.Count; existing_processes_untouched=$beforeProcessIds.Count }
@@ -65,12 +68,14 @@ try {
     $docB=$application.Documents.Add(); $ownedDocuments.Add($docB)
     if ($docA.Atoms.Count -ne 0 -or $docB.Atoms.Count -ne 0) { throw 'Expected two blank disposable documents.' }
     Write-Event 'N1_identical_blank' @{ A=(Get-Snapshot $docA); B=(Get-Snapshot $docB) }
-    $docB.Activate()
+    if(![NativeChemDraw]::ActivateAndVerify($application,$docB)){throw 'ActiveDocument identity readback does not match B.'}
+    Write-Event 'N1_active_B_identity_verified' @{same_com_iunknown=$true;application_process_verified=$true}
     Write-Event 'N1_write_A_intent_while_B_active' @{}
     $atomA=$docA.MakeAtom(); $atomA.ElementNumber=8
     if ($docA.Atoms.Count -ne 1 -or $docB.Atoms.Count -ne 0) { throw 'DOCUMENT_BINDING_UNSAFE: A write did not remain on A.' }
     Write-Event 'N1_write_A_complete' @{ A=(Get-Snapshot $docA); B=(Get-Snapshot $docB) }
-    $docA.Activate()
+    if(![NativeChemDraw]::ActivateAndVerify($application,$docA)){throw 'ActiveDocument identity readback does not match A.'}
+    Write-Event 'N1_active_A_identity_verified' @{same_com_iunknown=$true}
     Write-Event 'N1_write_B_intent_while_A_active' @{}
     $atomB=$docB.MakeAtom(); $atomB.ElementNumber=7
     if ($docA.Atoms.Count -ne 1 -or $docB.Atoms.Count -ne 1 -or $docA.Atoms.Item(1).ElementNumber -ne 8 -or $docB.Atoms.Item(1).ElementNumber -ne 7) { throw 'DOCUMENT_BINDING_UNSAFE: reverse write changed the wrong document.' }
@@ -80,7 +85,7 @@ try {
     Save-Native $docB 'N1-B.cdxml' 'text/xml'
     Close-Owned $docA; Close-Owned $docB
 
-    # Stop here. S1/R1/M1 need lawful entitlement and a reliable save route first.
+    # This N1 probe is bounded. Separate fixture probes cover S1/R1/M1/M2.
     $result.gates.S1='not_run'
     $result.gates.visual_review='unverified'
     $result.gates.owner_acceptance='pending'
@@ -90,6 +95,7 @@ try {
     $result.status='probe_failed'
     $disposition=if($mutationStarted){'unknown'}else{'none'}
     $result.error=[ordered]@{message=$_.Exception.Message;type=$_.Exception.GetType().FullName;hresult=('0x{0:X8}' -f $_.Exception.HResult);retryable=$false;mutation_outcome=$disposition;next_action='Inspect the existing journal and owned documents; do not replay writes.'}
+    $result.error.exception_detail=Get-NativeException $_
     Write-Event 'probe_error' $result.error
 } finally {
     $result.completed_utc=[DateTime]::UtcNow.ToString('o')

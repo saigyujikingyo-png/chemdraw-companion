@@ -1,0 +1,110 @@
+[
+  {
+    "file": "native-600.png",
+    "dimensions": [
+      2044,
+      603
+    ],
+    "metadata_dpi": [
+      143.99259999999998,
+      143.99259999999998
+    ],
+    "longest_dark_run_pixels": 1200,
+    "reference_length_pt": 144,
+    "dpi_from_ink_extent_before_cap_correction": 600.0,
+    "expected_600dpi_centerline_pixels": 1200,
+    "native_stroke_pt": 0.6,
+    "raw_scanlines": [
+      [
+        366,
+        1200
+      ],
+      [
+        367,
+        1200
+      ],
+      [
+        368,
+        1200
+      ],
+      [
+        369,
+        1200
+      ],
+      [
+        474,
+        120
+      ],
+      [
+        475,
+        120
+      ],
+      [
+        476,
+        120
+      ],
+      [
+        477,
+        120
+      ],
+      [
+        478,
+        120
+      ]
+    ]
+  },
+  {
+    "file": "native-72.png",
+    "dimensions": [
+      2044,
+      603
+    ],
+    "metadata_dpi": [
+      143.99259999999998,
+      143.99259999999998
+    ],
+    "longest_dark_run_pixels": 1200,
+    "reference_length_pt": 144,
+    "dpi_from_ink_extent_before_cap_correction": 600.0,
+    "expected_600dpi_centerline_pixels": 1200,
+    "native_stroke_pt": 0.6,
+    "raw_scanlines": [
+      [
+        366,
+        1200
+      ],
+      [
+        367,
+        1200
+      ],
+      [
+        368,
+        1200
+      ],
+      [
+        369,
+        1200
+      ],
+      [
+        474,
+        120
+      ],
+      [
+        475,
+        120
+      ],
+      [
+        476,
+        120
+      ],
+      [
+        477,
+        120
+      ],
+      [
+        478,
+        120
+      ]
+    ]
+  }
+]

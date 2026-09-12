@@ -1,0 +1,229 @@
+{
+  "recorded_utc": "2026-09-12T21:51:04.828188+00:00",
+  "scope": "A tested subset on one Windows x64 installation, not edition-wide certification. Rows may remain partial/failed.",
+  "exact_entitlement": "unverified",
+  "native_binaries_redistributed": false,
+  "rows": [
+    {
+      "capability_id": "A01",
+      "status": "verified_disposable_subset",
+      "application_build": "26.0.0.6141",
+      "edition": "Prime",
+      "interop_version": "22.0.0.0",
+      "backend": "official installed COM interop plus native CDXML import where stated",
+      "operation": "Documents.Add, MainWindow HWND/PID, Activate, ActiveDocument IUnknown, retained Document refs",
+      "evidence_archive_entry": "native-probes/20260912-205152-41151b98",
+      "limitations": [
+        "No arbitrary user-document binding or production lease implementation."
+      ]
+    },
+    {
+      "capability_id": "A02",
+      "status": "verified_typed_save_subset",
+      "application_build": "26.0.0.6141",
+      "edition": "Prime",
+      "interop_version": "22.0.0.0",
+      "backend": "official installed COM interop plus native CDXML import where stated",
+      "operation": "IChemDrawDocument.SaveAs(ref object path/format/resolution/width/height); immutable path and bytes check",
+      "evidence_archive_entry": "saveas-matrix/20260912-203751-f61d4ff6",
+      "limitations": [
+        "PowerShell late-bound and invalid-MIME calls can silently omit files. No guarantee from return alone."
+      ]
+    },
+    {
+      "capability_id": "A03",
+      "status": "verified_disk_subset",
+      "application_build": "26.0.0.6141",
+      "edition": "Prime",
+      "interop_version": "22.0.0.0",
+      "backend": "official installed COM interop plus native CDXML import where stated",
+      "operation": "Close(false), Documents.Open CDX, inventory, copy edit/save/reopen",
+      "evidence_archive_entry": "generic-composer-20260912/native-edit",
+      "limitations": [
+        "Disposable test files only; chemistry and figure quality evaluated separately."
+      ]
+    },
+    {
+      "capability_id": "A04",
+      "status": "verified_disk_subset",
+      "application_build": "26.0.0.6141",
+      "edition": "Prime",
+      "interop_version": "22.0.0.0",
+      "backend": "official installed COM interop plus native CDXML import where stated",
+      "operation": "Independent CDXML disk open, inventory, copy edit/save/reopen",
+      "evidence_archive_entry": "generic-composer-20260912/native-edit",
+      "limitations": [
+        "Native arrow IDs change on serialization; follow explicit saved-source aliases."
+      ]
+    },
+    {
+      "capability_id": "A05",
+      "status": "observed_export_subset",
+      "application_build": "26.0.0.6141",
+      "edition": "Prime",
+      "interop_version": "22.0.0.0",
+      "backend": "official installed COM interop plus native CDXML import where stated",
+      "operation": "Native full-document PNG/JPEG SaveAs; inventory plus ink-scale control",
+      "evidence_archive_entry": "pixel-scale/native",
+      "limitations": [
+        "Observed 600-DPI ink but approximately 144-DPI metadata. Wrong-selection/full-mask/host coverage not fully qualified."
+      ]
+    },
+    {
+      "capability_id": "B01",
+      "status": "partial",
+      "application_build": "26.0.0.6141",
+      "edition": "Prime",
+      "interop_version": "22.0.0.0",
+      "backend": "official installed COM interop plus native CDXML import where stated",
+      "operation": "MakeAtom; ElementNumber, Charge, NumImplicitHydrogens, Position; native readback",
+      "evidence_archive_entry": "object-capabilities/20260912-204507-295422c5",
+      "limitations": [
+        "Isotope/stereo CRUD and atom removal not qualified; S1 wedge preservation is narrower."
+      ]
+    },
+    {
+      "capability_id": "B02",
+      "status": "partial",
+      "application_build": "26.0.0.6141",
+      "edition": "Prime",
+      "interop_version": "22.0.0.0",
+      "backend": "official installed COM interop plus native CDXML import where stated",
+      "operation": "MakeBond; Atom1/Atom2, BondOrder read; BondOrder edit and both-format reopen",
+      "evidence_archive_entry": "object-capabilities/20260912-204507-295422c5",
+      "limitations": [
+        "Endpoint mutation, deletion and complete wedge/hash editing remain unverified."
+      ]
+    },
+    {
+      "capability_id": "B03",
+      "status": "verified_curve_subset",
+      "application_build": "26.0.0.6141",
+      "edition": "Prime",
+      "interop_version": "22.0.0.0",
+      "backend": "official installed COM interop plus native CDXML import where stated",
+      "operation": "MakeSpline; NumPoints=6; one-based GetPoint/SetPoint; full head; save/reopen",
+      "evidence_archive_entry": "generic-composer-20260912/native-edit",
+      "limitations": [
+        "Four-point representation failed; six-point representation is the qualified subset."
+      ]
+    },
+    {
+      "capability_id": "B04",
+      "status": "partial_companion_owned",
+      "application_build": "26.0.0.6141",
+      "edition": "Prime",
+      "interop_version": "22.0.0.0",
+      "backend": "official installed COM interop plus native CDXML import where stated",
+      "operation": "IR LP/bond/atom ports; fragment Move; affine endpoint displacement reroutes cubic controls",
+      "evidence_archive_entry": "generic-composer-20260912/native-edit",
+      "limitations": [
+        "Companion owns relationships. This is not vendor-maintained anchoring or complete rerouting collision acceptance."
+      ]
+    },
+    {
+      "capability_id": "B05",
+      "status": "verified_symbol_subset",
+      "application_build": "26.0.0.6141",
+      "edition": "Prime",
+      "interop_version": "22.0.0.0",
+      "backend": "official installed COM interop plus native CDXML import where stated",
+      "operation": "MakeSymbol; native LonePair symbols; Start/End; count/movement/deletion; both disk formats",
+      "evidence_archive_entry": "generic-composer-20260912/native-edit",
+      "limitations": [
+        "Occurrence/atom association belongs to companion mappings; full chemistry/quality remains separate."
+      ]
+    },
+    {
+      "capability_id": "B06",
+      "status": "partial_with_failure",
+      "application_build": "26.0.0.6141",
+      "edition": "Prime",
+      "interop_version": "22.0.0.0",
+      "backend": "official installed COM interop plus native CDXML import where stated",
+      "operation": "Charge positive/negative read/write and copied diagnostic charge edit/reopen",
+      "evidence_archive_entry": "s1-r1-m1-20260912/native-repair-2",
+      "limitations": [
+        "M1 still imports neutral product oxygen as +1. Preserving native chemical text fixes some import losses, not all."
+      ]
+    },
+    {
+      "capability_id": "B07",
+      "status": "partial",
+      "application_build": "26.0.0.6141",
+      "edition": "Prime",
+      "interop_version": "22.0.0.0",
+      "backend": "official installed COM interop plus native CDXML import where stated",
+      "operation": "Group.Objects.Move/Rotate/Scale; fragment translation; retained anti relation after rigid composition",
+      "evidence_archive_entry": "object-capabilities/20260912-204507-295422c5",
+      "limitations": [
+        "Microfixture rotation and multi-object move are observed; no arbitrary stereo/label/anchor transform guarantee."
+      ]
+    },
+    {
+      "capability_id": "B08",
+      "status": "partial_guarded",
+      "application_build": "26.0.0.6141",
+      "edition": "Prime",
+      "interop_version": "22.0.0.0",
+      "backend": "official installed COM interop plus native CDXML import where stated",
+      "operation": "Objects.Clean(true); native graph, charge, carbon valence and declared double-bond stereo guards",
+      "evidence_archive_entry": "generic-composer-20260912/native-fragments-stereo-repair",
+      "limitations": [
+        "Initial generic seed lost anti relation and was rejected. Cleanup is not complete mechanism composition."
+      ]
+    },
+    {
+      "capability_id": "B09",
+      "status": "partial_with_failure",
+      "application_build": "26.0.0.6141",
+      "edition": "Prime",
+      "interop_version": "22.0.0.0",
+      "backend": "official installed COM interop plus native CDXML import where stated",
+      "operation": "Explicit AtomNumber occurrence mapping; retained native IDs; SupersededBy chain for arrows",
+      "evidence_archive_entry": "generic-composer-20260912/native-repair-1",
+      "limitations": [
+        "No arbitrary duplicate remap; production persistence mapping incomplete; shuffled-array Composer behavior fails."
+      ]
+    },
+    {
+      "capability_id": "B10",
+      "status": "verified_edit_subset",
+      "application_build": "26.0.0.6141",
+      "edition": "Prime",
+      "interop_version": "22.0.0.0",
+      "backend": "official installed COM interop plus native CDXML import where stated",
+      "operation": "Independent CDX/CDXML fragment, spline, symbol, caption and diagnostic charge edits; reopen comparison",
+      "evidence_archive_entry": "generic-composer-20260912/native-edit",
+      "limitations": [
+        "Automated edits on diagnostic copies only; accepted human correction time unmeasured."
+      ]
+    },
+    {
+      "capability_id": "B11",
+      "status": "partial",
+      "application_build": "26.0.0.6141",
+      "edition": "Prime",
+      "interop_version": "22.0.0.0",
+      "backend": "official installed COM interop plus native CDXML import where stated",
+      "operation": "MakeArrow/MakeCaption; native step-arrow import, plus signs and captions; caption text edit/reopen",
+      "evidence_archive_entry": "s1-r1-m1-20260912/native-repair-2",
+      "limitations": [
+        "Caption edit is observed; R1 condition-specific edit and association acceptance remain unverified."
+      ]
+    },
+    {
+      "capability_id": "C01",
+      "status": "failed_required_gates",
+      "application_build": "26.0.0.6141",
+      "edition": "Prime",
+      "interop_version": "22.0.0.0",
+      "backend": "official installed COM interop plus native CDXML import where stated",
+      "operation": "Generic IR -> measured native fragments -> reaction-independent Composer -> native adapter -> readback",
+      "evidence_archive_entry": "generic-composer-20260912",
+      "limitations": [
+        "M1 prerequisite failed; identity-invariance and glyph clearance fail; masks/manual reference/time/owner/holdout unpassed."
+      ]
+    }
+  ]
+}

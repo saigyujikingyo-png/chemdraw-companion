@@ -1,0 +1,38 @@
+[
+  {
+    "path": "probes/native-common.ps1",
+    "errors": []
+  },
+  {
+    "path": "probes/native-edit-proof.ps1",
+    "errors": []
+  },
+  {
+    "path": "probes/native-fragments.ps1",
+    "errors": []
+  },
+  {
+    "path": "probes/native-ir-fragments.ps1",
+    "errors": []
+  },
+  {
+    "path": "probes/native-p0.ps1",
+    "errors": []
+  },
+  {
+    "path": "probes/native-pages.ps1",
+    "errors": []
+  },
+  {
+    "path": "probes/native-scale.ps1",
+    "errors": []
+  },
+  {
+    "path": "probes/object-capabilities.ps1",
+    "errors": []
+  },
+  {
+    "path": "probes/saveas-controlled.ps1",
+    "errors": []
+  }
+]

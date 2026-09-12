@@ -1,0 +1,22 @@
+test_carbon_lone_pair_outside_scope_rejected (test_general_ir.GeneralIrChecks.test_carbon_lone_pair_outside_scope_rejected) ... ok
+test_cdxml_bond_enum_serialization (test_general_ir.GeneralIrChecks.test_cdxml_bond_enum_serialization) ... ok
+test_cycle_and_disconnected_states_rejected (test_general_ir.GeneralIrChecks.test_cycle_and_disconnected_states_rejected) ... ok
+test_graph_order_not_lexical_or_storage (test_general_ir.GeneralIrChecks.test_graph_order_not_lexical_or_storage) ... ok
+test_independent_chemistry_and_different_flow_count (test_general_ir.GeneralIrChecks.test_independent_chemistry_and_different_flow_count) ... ok
+test_nonexistent_lone_pair_rejected (test_general_ir.GeneralIrChecks.test_nonexistent_lone_pair_rejected) ... ok
+test_reversed_donor_rejected (test_general_ir.GeneralIrChecks.test_reversed_donor_rejected) ... ok
+test_runtime_has_no_oracle_imports (test_general_ir.GeneralIrChecks.test_runtime_has_no_oracle_imports) ... ok
+test_schema_rejects_oracle_or_layout_coordinates (test_general_ir.GeneralIrChecks.test_schema_rejects_oracle_or_layout_coordinates) ... ok
+test_simultaneous_flow_order_is_irrelevant (test_general_ir.GeneralIrChecks.test_simultaneous_flow_order_is_irrelevant) ... ok
+test_arrows_require_separate_comparator (test_smoke_verifier.SmokeEvidenceChecks.test_arrows_require_separate_comparator) ... ok
+test_charge_loss_is_not_equivalent (test_smoke_verifier.SmokeEvidenceChecks.test_charge_loss_is_not_equivalent) ... ok
+test_dangling_bond_is_rejected (test_smoke_verifier.SmokeEvidenceChecks.test_dangling_bond_is_rejected) ... ok
+test_dropped_caption_is_not_equivalent (test_smoke_verifier.SmokeEvidenceChecks.test_dropped_caption_is_not_equivalent) ... ok
+test_duplicate_ids_are_rejected (test_smoke_verifier.SmokeEvidenceChecks.test_duplicate_ids_are_rejected) ... ok
+test_ids_may_be_renumbered_without_changing_appearance (test_smoke_verifier.SmokeEvidenceChecks.test_ids_may_be_renumbered_without_changing_appearance) ... ok
+test_wedge_direction_is_not_ignored (test_smoke_verifier.SmokeEvidenceChecks.test_wedge_direction_is_not_ignored) ... ok
+
+----------------------------------------------------------------------
+Ran 17 tests in 0.128s
+
+OK

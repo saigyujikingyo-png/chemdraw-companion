@@ -1,0 +1,24 @@
+{
+  "results": [
+    {
+      "source_format": "cdx",
+      "native_edit_save_reopen": "pass",
+      "issues": [],
+      "motion_atom_count": 126,
+      "retained_curves": 15,
+      "retained_lone_pairs": 42,
+      "diagnostic_chemistry_accepted": false
+    },
+    {
+      "source_format": "cdxml",
+      "native_edit_save_reopen": "pass",
+      "issues": [],
+      "motion_atom_count": 126,
+      "retained_curves": 15,
+      "retained_lone_pairs": 42,
+      "diagnostic_chemistry_accepted": false
+    }
+  ],
+  "manual_active_correction_seconds": null,
+  "scope": "Automated native object controls on copies. Does not establish corrected figure quality."
+}

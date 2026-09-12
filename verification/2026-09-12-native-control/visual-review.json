@@ -1,0 +1,29 @@
+{
+  "review_utc": "2026-09-12T21:53:21.553779+00:00",
+  "reviewer": "implementation assistant",
+  "owner_acceptance": "pending",
+  "physical_print_acceptance": "unverified",
+  "reviews": [
+    {
+      "sample": "S1",
+      "artifact": "samples/S1/S1.jpg",
+      "observation": "Zwitterion charge labels and stereo wedge are visible. Owner and absolute-CIP checks remain pending."
+    },
+    {
+      "sample": "R1",
+      "artifact": "samples/R1/R1.jpg",
+      "observation": "Separator plus touches product OH label and creates ambiguous charge-like appearance. Native graph reports neutral product O. Layout fails."
+    },
+    {
+      "sample": "M1",
+      "artifact": "samples/M1/M1.jpg",
+      "observation": "Product OH+ is visible and native O charge is +1. This disagrees with the input and fails chemistry. Crowded separator/label placement also requires correction."
+    },
+    {
+      "sample": "M2",
+      "artifact": "samples/M2/M2.jpg",
+      "observation": "Generic snake is visible with multi-bonds restored. Local electron-flow congestion and one measured glyph-bbox clearance failure remain. Full mask collision and owner review are unpassed."
+    }
+  ],
+  "image_processing": "Native JPEG previews and untouched 600-ink-DPI PNG files. No upsampling, pixel edits or model-generated replacement graphics."
+}
