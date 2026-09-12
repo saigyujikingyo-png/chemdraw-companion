@@ -1,0 +1,18 @@
+{
+  "scope": "ethanol_only_not_S1_or_full_quality_gate",
+  "checks": {
+    "ethanol_elements_and_charge": true,
+    "ethanol_connectivity": true,
+    "reopened_atoms_bonds_text_equal": true,
+    "native_cleanup_changed_coordinates": true
+  },
+  "automated_smoke_pass": true,
+  "png_dimensions": [
+    335,
+    131
+  ],
+  "cdx_sha256": "845aa45a92742733949378037ad16089eec4e19a077842c3fcfaf72021b21f8b",
+  "license": "unverified",
+  "owner_acceptance": "pending",
+  "product_gate": "blocked"
+}

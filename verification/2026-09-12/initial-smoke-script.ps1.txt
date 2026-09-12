@@ -1,0 +1,49 @@
+$ErrorActionPreference = 'Stop'
+$runDirectory = Join-Path $PSScriptRoot ('native-probe-' + [DateTime]::UtcNow.ToString('yyyyMMdd-HHmmss'))
+[void](New-Item -ItemType Directory -Path $runDirectory)
+$journal = Join-Path $runDirectory 'events.jsonl'
+function Record([string]$stage, $details) {
+    [ordered]@{utc=[DateTime]::UtcNow.ToString('o');stage=$stage;details=$details} |
+        ConvertTo-Json -Depth 8 -Compress | Add-Content -LiteralPath $journal -Encoding utf8
+    Write-Output $stage
+}
+function Save-Native($document, [string]$path, [string]$mime) {
+    [object]$filename=$path; [object]$format=$mime
+    [object]$resolution=300; [object]$width=[Type]::Missing; [object]$height=[Type]::Missing
+    Record 'save_start' @{path=$path;mime=$mime}
+    $document.SaveAs([ref]$filename,[ref]$format,[ref]$resolution,[ref]$width,[ref]$height)
+    if (!(Test-Path -LiteralPath $path)) {throw "Native SaveAs did not create $path"}
+    Record 'save_complete' @{path=$path;bytes=(Get-Item -LiteralPath $path).Length;sha256=(Get-FileHash -LiteralPath $path -Algorithm SHA256).Hash}
+}
+$application=$null; $document=$null
+try {
+    $application=New-Object -ComObject 'ChemDraw_x64.Application'
+    Record 'application' @{name=$application.name;path=$application.FullName;documentsBefore=$application.Documents.Count}
+    $inputPath=Join-Path $runDirectory 'ethanol.smiles'
+    [IO.File]::WriteAllText($inputPath,'CCO',[Text.Encoding]::ASCII)
+    [object]$password=[Type]::Missing; [object]$format='chemical/x-smiles'
+    Record 'open_start' @{path=$inputPath;mime=$format}
+    $document=$application.Documents.Open($inputPath,[ref]$password,[ref]$format)
+    Record 'open_complete' @{name=$document.name;atoms=$document.Atoms.Count;bonds=$document.Bonds.Count;formula=$document.Objects.Formula;warnings=$document.NumChemicalWarnings}
+    Save-Native $document (Join-Path $runDirectory 'before-clean.cdxml') 'text/xml'
+    Record 'clean_start' @{deNovo=$true;api='Objects.Clean'}
+    $document.Objects.Clean($true)
+    Record 'clean_complete' @{atoms=$document.Atoms.Count;bonds=$document.Bonds.Count;formula=$document.Objects.Formula;warnings=$document.NumChemicalWarnings}
+    Save-Native $document (Join-Path $runDirectory 'ethanol.cdxml') 'text/xml'
+    Save-Native $document (Join-Path $runDirectory 'ethanol.png') 'image/png'
+    Save-Native $document (Join-Path $runDirectory 'ethanol.cdx') 'chemical/x-cdx'
+    [object]$saveChanges=$false; [object]$unused=[Type]::Missing
+    $document.Close([ref]$saveChanges,[ref]$unused)
+    Record 'close_complete' @{path=(Join-Path $runDirectory 'ethanol.cdx')}
+    [object]$format='chemical/x-cdx'
+    $document=$application.Documents.Open((Join-Path $runDirectory 'ethanol.cdx'),[ref]$password,[ref]$format)
+    Record 'reopen_complete' @{name=$document.name;atoms=$document.Atoms.Count;bonds=$document.Bonds.Count;formula=$document.Objects.Formula;warnings=$document.NumChemicalWarnings;saved=$document.Saved}
+    Save-Native $document (Join-Path $runDirectory 'reopened.cdxml') 'text/xml'
+    Record 'complete' @{scope='isolated ethanol transport and cleanup smoke test';license='unverified';representativeQualityGate='not_run'}
+} catch {
+    Record 'error' @{type=$_.Exception.GetType().FullName;message=$_.Exception.Message;hresult=('0x{0:X8}' -f $_.Exception.HResult)}
+} finally {
+    if ($null -ne $document -and [Runtime.InteropServices.Marshal]::IsComObject($document)) {[void][Runtime.InteropServices.Marshal]::ReleaseComObject($document)}
+    if ($null -ne $application -and [Runtime.InteropServices.Marshal]::IsComObject($application)) {[void][Runtime.InteropServices.Marshal]::ReleaseComObject($application)}
+    Write-Output $runDirectory
+}

@@ -1,0 +1,53 @@
+{
+  "architecture_commit": "394edf8b7b99b80827c79650c0a113808eb22ea1",
+  "shared_rules_version": "2026-09-12.4",
+  "implementation_branch": "codex/native-p0",
+  "configured_development_model": "gpt-6-astra",
+  "configured_reasoning_effort": "max",
+  "benchmark_model": "not_run",
+  "actual_token_usage_and_cost": "unavailable",
+  "device_category": "ASUSTeK COMPUTER INC. TX Gaming FA608FP_FA608FP",
+  "native_application": "ChemDraw Prime 26.0.0.6141 x64",
+  "native_api": "registered ChemDraw_x64.Application and installed signed Interop.ChemDraw.dll",
+  "javascript_api_handshake": "not_performed",
+  "license_status": "unverified; Prime observed; no Add-ins menu in current accessibility tree",
+  "official_api_doc_version": "1.6",
+  "official_api_doc_commit": "119dcb011d6c57edf773b1733539709ef6ba99b2",
+  "official_api_doc_sha256": "0401e87a3c41dd7e14e547d5ac88c423da4b22081b8c4d6693465535f0317454",
+  "chemdraw_exe_sha256": "f5383228898b6e6be08abded9f6db0909d0841a2f6a5bbef50ba00f44af8a084",
+  "chemdraw_exe_authenticode": "Valid",
+  "interop_file_version": "22.0.0.0",
+  "interop_authenticode": "Valid",
+  "native_p0_probe_sha256": "16137435253b10dbf3c3003ad4afadfa4145a215d1f8f3eb5ca9cf305e85730b",
+  "contract_files": {
+    "job-data.schema.json": "e596549dc1113bffc8bb182f51e3d538264c9e9361570f3b9846cde8e780ad8f",
+    "mcp-tools.json": "47dda13689fc8979aaa388826b4b81a05e232e795cc708cdf5f67eb71d8501fa",
+    "run-request.schema.json": "ee7cef5cc4c1fb8d2880aa06c5bac7947e016e50edd46be5284f26b42b1b04cc"
+  },
+  "local_tests": {
+    "evidence_checker": {
+      "passed": 7,
+      "failed": 0
+    },
+    "powershell_parse": "pass",
+    "N1_latest_process_exit": 1
+  },
+  "timing": {
+    "initial_smoke_shell_wall_seconds": 3.329,
+    "latest_N1_shell_wall_seconds": 1.208,
+    "scope": "single probe commands; not complete user workflow or model benchmark"
+  },
+  "mnova_detected": {
+    "version": "17.0.1-41952",
+    "authenticode": "Valid",
+    "python_runtime_files": "3.11",
+    "native_execution": "not_run",
+    "module_entitlement": "unverified"
+  },
+  "shared_rules_byte_check": {
+    "checkout_equals_architecture_git_blob": true,
+    "origin_reference_equal_after_newline_normalization": true,
+    "checkout_sha256": "ae939b8ec060e0145b9f5ab05d2e5566073728a9002c37509c604a39dbc245e5",
+    "note": "Architecture checkout uses preserved CRLF bytes; pinned Origin Git blob uses LF. No shared-rule file was modified by implementation."
+  }
+}

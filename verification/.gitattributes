@@ -1,0 +1,2 @@
+# Preserve native exports and checksum-bearing evidence byte for byte.
+* -text whitespace=cr-at-eol
