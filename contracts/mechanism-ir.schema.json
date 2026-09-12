@@ -1,0 +1,461 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://chembridge.invalid/contracts/mechanism-ir.schema.json",
+  "title": "Reaction-neutral mechanism IR syntax, draft 0.1",
+  "description": "No fixture identity, answer key, fixed state counts or layout coordinates. Semantic support requires independent verification. Array bounds are resource limits, not state-count algorithms.",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "ir_version": {
+      "const": "mechanism-ir/0.1"
+    },
+    "atom_catalog": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "map": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "element": {
+            "type": "string",
+            "pattern": "^[A-Z][a-z]?$",
+            "description": "Syntax only; semantic validation must check the element and actual backend support."
+          },
+          "implicit_h": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 4
+          }
+        },
+        "required": [
+          "map",
+          "element",
+          "implicit_h"
+        ]
+      },
+      "minItems": 1,
+      "maxItems": 200
+    },
+    "states": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 128
+          },
+          "label": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 2048
+          },
+          "formal_charges": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "atom": {
+                  "type": "integer",
+                  "minimum": 1
+                },
+                "value": {
+                  "type": "integer",
+                  "minimum": -3,
+                  "maximum": 3
+                }
+              },
+              "required": [
+                "atom",
+                "value"
+              ]
+            },
+            "minItems": 0,
+            "maxItems": 30
+          },
+          "lone_pairs": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "atom": {
+                  "type": "integer",
+                  "minimum": 1
+                },
+                "count": {
+                  "type": "integer",
+                  "minimum": 0,
+                  "maximum": 4
+                }
+              },
+              "required": [
+                "atom",
+                "count"
+              ]
+            },
+            "minItems": 0,
+            "maxItems": 30
+          },
+          "bonds": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "atoms": {
+                  "type": "array",
+                  "items": {
+                    "type": "integer",
+                    "minimum": 1
+                  },
+                  "minItems": 2,
+                  "maxItems": 2,
+                  "uniqueItems": true
+                },
+                "order": {
+                  "enum": [
+                    1,
+                    1.5,
+                    2,
+                    3
+                  ]
+                }
+              },
+              "required": [
+                "atoms",
+                "order"
+              ]
+            },
+            "minItems": 1,
+            "maxItems": 200
+          }
+        },
+        "required": [
+          "id",
+          "label",
+          "formal_charges",
+          "lone_pairs",
+          "bonds"
+        ]
+      },
+      "minItems": 2,
+      "maxItems": 64
+    },
+    "transitions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 128
+          },
+          "from": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 128
+          },
+          "to": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 128
+          },
+          "label": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 2048
+          },
+          "kind": {
+            "enum": [
+              "elementary_step",
+              "elementary_teaching_step"
+            ]
+          },
+          "electron_flows": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "id": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 128
+                },
+                "electron_count": {
+                  "const": 2
+                },
+                "source": {
+                  "oneOf": [
+                    {
+                      "type": "object",
+                      "additionalProperties": false,
+                      "properties": {
+                        "type": {
+                          "const": "lone_pair"
+                        },
+                        "atom": {
+                          "type": "integer",
+                          "minimum": 1
+                        },
+                        "pair_index": {
+                          "type": "integer",
+                          "minimum": 0,
+                          "maximum": 3
+                        }
+                      },
+                      "required": [
+                        "type",
+                        "atom",
+                        "pair_index"
+                      ]
+                    },
+                    {
+                      "type": "object",
+                      "additionalProperties": false,
+                      "properties": {
+                        "type": {
+                          "const": "bond"
+                        },
+                        "atoms": {
+                          "type": "array",
+                          "items": {
+                            "type": "integer",
+                            "minimum": 1
+                          },
+                          "minItems": 2,
+                          "maxItems": 2,
+                          "uniqueItems": true
+                        },
+                        "electrons": {
+                          "enum": [
+                            "sigma",
+                            "pi"
+                          ]
+                        }
+                      },
+                      "required": [
+                        "type",
+                        "atoms",
+                        "electrons"
+                      ]
+                    }
+                  ]
+                },
+                "target": {
+                  "oneOf": [
+                    {
+                      "type": "object",
+                      "additionalProperties": false,
+                      "properties": {
+                        "type": {
+                          "const": "atom"
+                        },
+                        "atom": {
+                          "type": "integer",
+                          "minimum": 1
+                        }
+                      },
+                      "required": [
+                        "type",
+                        "atom"
+                      ]
+                    },
+                    {
+                      "type": "object",
+                      "additionalProperties": false,
+                      "properties": {
+                        "type": {
+                          "const": "bond"
+                        },
+                        "atoms": {
+                          "type": "array",
+                          "items": {
+                            "type": "integer",
+                            "minimum": 1
+                          },
+                          "minItems": 2,
+                          "maxItems": 2,
+                          "uniqueItems": true
+                        }
+                      },
+                      "required": [
+                        "type",
+                        "atoms"
+                      ]
+                    }
+                  ]
+                }
+              },
+              "required": [
+                "id",
+                "electron_count",
+                "source",
+                "target"
+              ]
+            },
+            "minItems": 1,
+            "maxItems": 32
+          },
+          "bond_changes": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "atoms": {
+                  "type": "array",
+                  "items": {
+                    "type": "integer",
+                    "minimum": 1
+                  },
+                  "minItems": 2,
+                  "maxItems": 2,
+                  "uniqueItems": true
+                },
+                "from_order": {
+                  "enum": [
+                    0,
+                    1,
+                    1.5,
+                    2,
+                    3
+                  ]
+                },
+                "to_order": {
+                  "enum": [
+                    0,
+                    1,
+                    1.5,
+                    2,
+                    3
+                  ]
+                }
+              },
+              "required": [
+                "atoms",
+                "from_order",
+                "to_order"
+              ]
+            },
+            "minItems": 1,
+            "maxItems": 20
+          },
+          "charge_changes": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "atom": {
+                  "type": "integer",
+                  "minimum": 1
+                },
+                "from": {
+                  "type": "integer"
+                },
+                "to": {
+                  "type": "integer"
+                }
+              },
+              "required": [
+                "atom",
+                "from",
+                "to"
+              ]
+            },
+            "minItems": 0,
+            "maxItems": 10
+          }
+        },
+        "required": [
+          "id",
+          "from",
+          "to",
+          "label",
+          "kind",
+          "electron_flows",
+          "bond_changes",
+          "charge_changes"
+        ]
+      },
+      "minItems": 1,
+      "maxItems": 128
+    },
+    "stereo_constraints": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "type": {
+            "enum": [
+              "anti_across_double_bond",
+              "syn_across_double_bond"
+            ]
+          },
+          "states": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 128
+            },
+            "minItems": 1,
+            "maxItems": 64
+          },
+          "central_bond": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "minimum": 1
+            },
+            "minItems": 2,
+            "maxItems": 2,
+            "uniqueItems": true
+          },
+          "substituent_atoms": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "minimum": 1
+            },
+            "minItems": 2,
+            "maxItems": 2,
+            "uniqueItems": true
+          }
+        },
+        "required": [
+          "type",
+          "states",
+          "central_bond",
+          "substituent_atoms"
+        ]
+      },
+      "minItems": 0,
+      "maxItems": 10
+    },
+    "entry_state": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 128
+    }
+  },
+  "required": [
+    "ir_version",
+    "atom_catalog",
+    "states",
+    "transitions",
+    "stereo_constraints",
+    "entry_state"
+  ]
+}

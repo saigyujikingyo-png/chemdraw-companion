@@ -1,0 +1,47 @@
+{
+  "revision": "2026-09-12.3",
+  "scope": "Syntax and input/oracle separation only; no generic semantic implementation, Composer execution, metamorphic runtime behavior, native base-M2 or holdout validation.",
+  "new_schemas_valid": 2,
+  "positive_schema_cases": [
+    "reference_projected_to_generic_request",
+    "empty_charge_diff_syntax_only_not_a_valid_mutation_of_reference_chemistry",
+    "opaque_ids_relabelled_atom_maps_reassigned_storage_arrays_shuffled",
+    "three_state_two_transition_five_flow_prefix_syntax",
+    "generic_columns_and_initial_direction"
+  ],
+  "negative_oracle_leak_cases_rejected": [
+    "root_expected_oracle",
+    "mechanism_expected_oracle",
+    "fixture_dispatch_key",
+    "explicit_row_assignment",
+    "absolute_page_coordinates",
+    "golden_geometry_reference",
+    "screenshot_patch_list",
+    "beckmann_template",
+    "wrong_generic_ir_version",
+    "legacy_oracle_as_mechanism"
+  ],
+  "reference_semantic_check": "pass for the unchanged known reference only",
+  "historical_files_byte_preserved": [
+    "contracts/mechanism-test-case.schema.json",
+    "contracts/validate_mechanism_fixture.py",
+    "examples/m2-beckmann-snake.json",
+    "docs/M2_CONTRACT_VALIDATION.json",
+    "docs/CONTRACT_VALIDATION.json",
+    "contracts/run-request.schema.json",
+    "contracts/mcp-tools.json",
+    "contracts/job-data.schema.json",
+    "DEVELOPMENT_PRINCIPLES.md"
+  ],
+  "local_links_checked": 37,
+  "generic_runtime_semantics": "unimplemented in this architecture revision",
+  "composer_metamorphic_behavior": "unrun",
+  "base_m2_native": "unrun by this architecture task",
+  "holdout": "not_selected; wait for native base pass and freeze",
+  "file_sha256": {
+    "contracts/mechanism-ir.schema.json": "619e46a20c20e9e5906b2298041379a8a832e310632a8a6bdc05d9174e7b2d2c",
+    "contracts/composer-request.schema.json": "b6fb032a2983269d776c28d06620dfbe01946ca22e5e698274391445814309d9",
+    "examples/m2-composer-request.json": "dd42b718af7aa7bb9a282e0a3c6ad7c8e4b5ac47a0fa2460542ad305f84b168d",
+    "docs/M2_GENERALIZATION_GATE.md": "c7897f5223296e92433d530e256746cd041e0c4a2de8cd4a768b3dc8df167ddd"
+  }
+}

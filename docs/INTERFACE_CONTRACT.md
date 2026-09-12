@@ -104,7 +104,7 @@ An error contains `code`, `message`, `stage`, `retryable`, `mutation_outcome=non
 
 ## M2 internal feasibility contract
 
-The mandatory [M2 test](M2_BECKMANN_SNAKE.md) uses [mechanism-test-case.schema.json](../contracts/mechanism-test-case.schema.json) directly through independent IR/Composer and a qualified adapter before MCP/installer packaging. Public single-step recipe limits remain unchanged. Its developer receipt adds P0-A/B/C, both-format reopen/edit and first-output/manual-correction evidence; public tools do not yet support general multi-step mechanisms.
+The mandatory [M2 test](M2_BECKMANN_SNAKE.md) uses [composer-request.schema.json](../contracts/composer-request.schema.json) at the general IR/Composer boundary and a qualified adapter before packaging. mechanism-test-case.schema.json remains a test-side reference oracle only. The [generalization gate](M2_GENERALIZATION_GATE.md) requires an implementation freeze and untuned holdout after base M2. Public single-step recipe limits remain unchanged. Its developer receipt adds P0-A/B/C, both-format reopen/edit and first-output/manual-correction evidence; public tools do not yet support general multi-step mechanisms.
 
 ## Compatibility rules
 

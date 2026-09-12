@@ -1,4 +1,4 @@
-# Native architecture, revision 2026-09-12.2
+# Native architecture, revision 2026-09-12.3
 
 Status: design contract; the capability matrix separates narrow historical observations from unverified requirements. Shared rules: 2026-09-12.4. Contract major: 1. P0 is a bounded feasibility stage, not a full drawing product.
 
@@ -33,6 +33,8 @@ The cloud adapter is an authenticated transport to the same personal execution b
 P0-A proves transport, P0-B editable object control, and P0-C mechanism composition. P0-C is the largest architecture uncertainty. Execute SaveAs repair -> capability matrix -> S1 -> R1 -> M1 -> M2 before installer/MCP/multi-agent packaging. A pass cannot substitute for B/C. See [matrix](CHEMDRAW_26_CAPABILITY_MATRIX.md), [IR/Composer](MECHANISM_IR_COMPOSER.md) and [M2](M2_BECKMANN_SNAKE.md).
 
 The diagram's recipe/scene compiler comprises independent semantic IR and Composer. The direct developer harness enters there without host/MCP infrastructure. Native molecular layout is an input to composition.
+
+The [generalization gate](M2_GENERALIZATION_GATE.md) forbids reaction-specific layout templates, sample page coordinates, ID-based dispatch and screenshot patches. Production composition uses the general IR/request contracts, not the reference M2 oracle. Base M2 pass is followed by implementation freeze and an untuned asymmetric-oxime holdout before packaging.
 
 ## Thin native adapter
 

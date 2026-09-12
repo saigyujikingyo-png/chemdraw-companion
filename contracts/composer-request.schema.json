@@ -1,0 +1,98 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://chembridge.invalid/contracts/composer-request.schema.json",
+  "title": "General Composer request, draft 0.1",
+  "description": "Implementation boundary only; not an implemented renderer. Reject benchmark answers and explicit per-state placement. Native measured fragment geometry is supplied by the qualified geometry service, not a fixture lookup.",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "contract_version": {
+      "const": "composer-request/0.1"
+    },
+    "mechanism": {
+      "$ref": "https://chembridge.invalid/contracts/mechanism-ir.schema.json"
+    },
+    "layout_policy": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "flow": {
+          "const": "serpentine"
+        },
+        "first_row_direction": {
+          "enum": [
+            "left_to_right",
+            "right_to_left"
+          ]
+        },
+        "max_columns": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 12
+        },
+        "minimum_row_turns": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 16
+        },
+        "canvas_width_mm": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "canvas_height_mm": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "outer_margin_mm": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "row_gap_bond_lengths": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "font_family": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 128
+        },
+        "font_pt": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "bond_length_pt": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "stroke_pt": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "minimum_native_dpi": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        }
+      },
+      "required": [
+        "flow",
+        "first_row_direction",
+        "max_columns",
+        "minimum_row_turns",
+        "canvas_width_mm",
+        "canvas_height_mm",
+        "outer_margin_mm",
+        "row_gap_bond_lengths",
+        "font_family",
+        "font_pt",
+        "bond_length_pt",
+        "stroke_pt",
+        "minimum_native_dpi"
+      ]
+    }
+  },
+  "required": [
+    "contract_version",
+    "mechanism",
+    "layout_policy"
+  ]
+}
