@@ -1,37 +1,37 @@
-# P0 risk register and stop decisions
+# P0 risk register: transport, object control and composition
 
-Design review, 2026-09-12. Likelihood is not estimated from unrun experiments. Every item below is open until linked native evidence closes it. The implementation owner records observations; the architecture owner reviews contract/scope changes. Owner visual acceptance remains the user's decision.
+Architecture revision 2026-09-12.2 supersedes the original risk ordering, not historical evidence. **The largest architectural uncertainty is P0-C: whether correct chemical meaning can consistently become a good editable mechanism figure.** SaveAs/COM reliability is a necessary P0-A engineering prerequisite.
 
-| ID | Failure mode / consequence | Bounded mitigation and proof | Stop condition |
+Execution order: **repair SaveAs -> ChemDraw 26 capability matrix -> S1 -> R1 -> M1 -> M2 Beckmann Snake**. Severity and execution dependency are different. Run M2 through a direct developer harness before installer, MCP, cloud or multi-agent packaging.
+
+| Priority / ID | Risk | Discriminating evidence | Failure decision |
 | --- | --- | --- | --- |
-| R01 | Edition supports installed ChemDraw but not the add-in/SDK | Probe running edition/entitlement and minimal official add-in; record sanitized native error and exact build | No confirmed lawful native route; do not request new keys by default or redistribute vendor modules |
-| R02 | Active-document race writes into another file | Qualify retained handle or isolated native lifecycle with identical A/B, focus switch and user interference; plugin-wide mutex alone is insufficient | Cannot guarantee correct target; refuse writes and mark unattended editing unsupported |
-| R03 | Append API mistaken for replace; duplicate objects on retry | Isolated document per revision; write-ahead intent, same-key replay and lost-reply reconciliation tests | Unknown insertion outcome; no blind repeat or Undo |
-| R04 | Native serializer/render used to mask legacy layout defects | Native structure geometry stage plus explicit new page/curve layout provenance; review fresh 85 mm output | Three fixture figures still fail after bounded repair; stop renderer breadth |
-| R05 | Molecular identity matches but arrows/conditions disappear or flatten | Drawable-object inventory and editable curve/text changes after native disk reopen | Any required object lost or uneditable, irrespective of valid SMILES/PNG |
-| R06 | Preview image too small, cropped or from wrong selection/revision | Native pixel measurements, physical-size check, source scope and guarded pre/post export fingerprints; deliberate wrong-selection test | Incomplete or low-detail image; native vector route must be separately qualified |
-| R07 | CDX bytes decode but reopen unsupported/corrupt | Open saved disk copy through a verified native lifecycle, inspect objects and save an edited copy | Disk artifact cannot be independently reopened and edited |
-| R08 | Scene/library/native disagree on stereo, H, mapping or electron flow | Two-stage semantic comparison and explicit graph differences; fail ambiguous/unsupported chemistry | No deterministic agreement; ask only the missing chemical decision |
-| R09 | Restart, cancellation or timeout produces a false success or destroys user work | Durable journal, worker-generation fencing, safe cancellation, immutable checkpoints, copy-only recovery | Cannot reconcile native outcome; quarantine and report `outcome_unknown` |
-| R10 | Local add-in transport blocked or unauthenticated | Probe webview-supported transport, loopback/Origin/Host checks, pairing and per-request authorization | No supported authenticated transport; do not disable browser/vendor security |
-| R11 | Stale broker/add-in/host tool map changes behavior | Version/manifest handshake, exact recipe/style identity and fresh-host check after supported updates | Identity mismatch; no scientific call before reconciliation |
-| R12 | Deployment or update loses credentials, locks files or breaks rollback | Separate versions, drain jobs, preserve credential handles/config, reversible migration and rollback self-test | Old runtime cannot recover; do not replace active installation |
-| R13 | Local artifact falsely advertised as delivered | Separate available/transferred/receipt-verified states; receiver bytes/open evidence; count manual steps | Delivery route blocked; native gate unaffected but receipt remains incomplete |
-| R14 | University/host/model support inferred from a single machine | Device/version/license/host matrix with actual Terra max run and dated task-specific sources | Only a preset or another product's acceptance exists; leave unverified |
-| R15 | Broad dependency/platform work consumes quota before feasibility | One worker, five tools, three fixtures; measured schemas/calls/time/resources; no extra paid reasoner | Native gate unresolved; pause expansion, not scientific checks |
+| P0-C / C01 | Correct chemistry cannot become readable multi-step geometry | M2 seven-state snake, editable electron curves, two row turns, consistent scale, first output and correction time | Diagnose IR vs Composer vs adapter using M2 controls; stop peripheral expansion |
+| P0-C / C02 | No independent state identity, anti relation or simultaneous electron flow representation | Versioned Chemical Mechanism IR, atom provenance, state-scoped ports and graph differences | Fix IR/validator; do not encode chemistry as vendor coordinates/calls |
+| P0-C / C03 | Native render conceals poor geometry or extensive manual repairs | Separate untouched first output, bounded automatic repairs and human-corrected copy at final size | Human repair cannot retrospectively pass automated quality |
+| P0-B / B01 | Atoms/bonds/charges/lone pairs flatten, disappear or cannot be controlled | Create/read/change/remove microfixtures and independent native CDX/CDXML reopen/edit | Qualify another adapter operation; images/method names are insufficient |
+| P0-B / B02 | Curves are editable but chemical anchors are lost | Control-point edit plus donor/acceptor mapping through fragment motion and reopen | Separate geometry control from semantic anchors; Composer may explicitly maintain anchors |
+| P0-B / B03 | Transform/cleanup detaches curves or changes stereo/anti relationships | Rigid transforms, cleanup/readback, mapping and rerouting; no silent reflection | Repair adapter mapping or Composer invalidation; reject semantic changes |
+| P0-B / B04 | Reopened object IDs change or duplicated fragments are misidentified | IR occurrence -> native ID remapping; duplicate-fragment ambiguity refusal | Block unsafe object edits; hashes cannot replace identity |
+| P0-A / A01 | SaveAs returns without a correct file; reopen/export unreliable | Immutable requested path, returned args, actual native errors, file bytes/readback, controlled comparisons | Fix transport first; dependent B/C tests remain blocked/unrun |
+| P0-A / A02 | Wrong document/process receives mutation | Qualified binding and actual active-document readback during identical A/B/focus tests | Refuse unsafe writes; new PID alone is not isolation |
+| P0-A / A03 | Required edition/entitlement/backend unavailable | Exact build/edition and operation-level matrix for permitted COM/Add-in/CDXML routes | Mark only the evidenced route unavailable |
+| P0-A / A04 | Replay/stale revision/crash corrupts state | Durable intent, same-key reconciliation, disposable revision, reservation and CAS commit | Fence unknown outcomes; no blind retry, Undo or process kill |
+| P0-A / A05 | Export has wrong scope, native scale or revision | Full inventory, physical ink scale, guarded fingerprints and wrong-selection tests | Fail export separately from file availability |
+| Later / L01 | Peripheral work conceals unresolved drawing core | Four fixture bundles and separate A/B/C results before installer/host expansion | Pause breadth; keep core diagnosis active |
+| Later / L02 | Installation/update loses credentials or rollback | Separate versions, drain jobs, preserve encrypted config and test recovery | Block deployment separately |
+| Later / L03 | Local files/presets advertised as delivery/model acceptance | Receiver bytes/open receipts, actual host workflows and Terra max measurements | Keep host/delivery acceptance unverified |
 
-## Evidence disposition
+## Failure disposition
 
-A blocker report names the failed operation, source, current device/app/edition, actual error, attempted supported alternatives, artifact hashes, safe recovery and next decision. Separate `documented`, `observed`, `failed`, `unverified` and `unsupported`; do not use a single red/green product flag. A task-specific requirement can only be waived by the user, and the waiver must appear in the applicable acceptance record rather than a rewritten historical pass.
+A pass never implies B or C. A transport blocker makes dependent tests blocked/unrun, not a negative Composer result. Distinguish documented, detected, narrow_observed, native_verified, failed, unsupported and unverified, with exact operation/build/backend evidence.
 
-Native diagnostics can proceed under supervision without certifying unattended support. If R01/R02/R04/R07 remains open at the bounded feasibility endpoint, return the blocker report and the Mnova alternative described in QUALITY_GATES.md. Do not start an unrelated product or contact vendors/university staff without task authorization.
+M2 failure classes: transport, native_object_control, adapter_translation_or_roundtrip, ir_or_semantics, composer_geometry, mixed, undetermined. Correct supplied chemistry with failed geometry must not be blamed on a model without a reproducer. Do not switch products or add peripheral systems as a substitute for diagnosis. Mnova is only a separately authorized future product decision.
 
-## Resource and retention policy to implement
+Reports include failed operation, build/edition, source, sanitized native error, controlled alternatives, hashes, unchanged first output, recovery and next decision. Owner silence is pending.
 
-- Native write concurrency: one per application instance, with a global broker lane until stronger isolation is proven. Initial queue cap: 8 active/queued jobs per execution device. Return `RESOURCE_LIMIT` above this cap. Status/help do not consume a native job slot.
-- Initial automatic deadline: 180 seconds per recipe excluding `needs_input` time; each native command also has a recorded finite timeout. A reached deadline with an in-flight call is an unknown/cancellation-requested outcome until verified, not a licence to kill the application.
-- Idle document lease: 30 minutes, refreshed by successful authorized interaction. Lease expiry releases ownership but does not close an unsaved user document or delete artifacts. Continuation after expiry can reopen the last verified artifact into a new isolated binding only after explicit state checks; otherwise return `REVISION_CONFLICT` with recovery guidance.
-- Live job storage is outside cloud sync. Default scratch cap: 1 GiB and 7 days for verified inactive diagnostic scratch only. Never evict active/unknown-outcome jobs, the current runtime, a rollback version, user-selected deliverables or the only verified artifact copy. If retention cannot safely release enough space, fail `RESOURCE_LIMIT` with cleanup guidance.
-- P0 retains a compact durable idempotency ledger and tombstones without automatic expiry. Never forget a known key and rerun its mutation after scratch eviction. Initial ledger cap: 16 MiB; when full, stop new submissions with `RESOURCE_LIMIT` and require an explicit retention/contract decision. No issued-at/expiry field is assumed by the current wire schema. Future expiry requires defined replay protection and separately validated migration before old records can be removed.
+## Resource and retention policy
 
-These are initial bounded implementation policies, not measured performance or guarantees of automatic disk reclamation. Report actual resource use and revise by versioned policy only when evidence justifies it.
+Retain one native write lane, queue cap 8, 30-minute idle lease and durable revision/idempotency fences. The initial 180-second deadline remains for S1/R1/M1 recipes. M2 is a separate developer experiment: declare a finite total deadline and per-call deadlines before execution and record actual timing; do not silently extend the public recipe contract. Keep the two-repair cap for a fixed-input composition job.
+
+Scratch stays outside sync: 1 GiB/7 days for verified inactive diagnostics only. Never evict active/unknown jobs, current runtime, rollback version, selected deliverables or the sole verified artifact. P0 idempotency tombstones have no automatic expiry; at 16 MiB reject new jobs with RESOURCE_LIMIT pending an explicit retention decision. These are policies, not performance or automatic-cleanup claims.

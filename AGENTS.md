@@ -8,7 +8,7 @@ Keep active Git checkouts, runtimes, locks, databases, jobs and build output out
 
 The architecture owner changes docs/ and contracts/ on codex/native-architecture-v1. The implementation owner uses a separate codex/native-p0 branch for runtime code and native evidence. Coordinate changes to contracts before merging. Do not write the other owner's branch or reset, clean or stash unrelated state.
 
-Do not claim a capability from a method name, process exit, installed version or unit test. Native execution, chemical correctness, visual quality, editability, host delivery and installation each require their own evidence. Do not broaden drawing features before the three-case native gate and owner quality review pass.
+Do not claim a capability from a method name, process exit, installed version or unit test. Native execution, chemical correctness, visual quality, editability, host delivery and installation each require their own evidence. P0-A transport, P0-B object control and P0-C composition are separate gates. Fix SaveAs, complete the ChemDraw 26 matrix, then S1 -> R1 -> M1 -> M2 Beckmann Snake before installer/MCP/multi-agent packaging. Prioritize independent IR/Composer and diagnose layout failures instead of expanding peripheral work.
 
 The OpenAI frontend project-synchronisation bug is an external known issue. The user explicitly stopped investigation. Do not repair caches, registrations or the application for that issue.
 

@@ -1,26 +1,26 @@
-# Native architecture, draft 0.1.0
+# Native architecture, revision 2026-09-12.2
 
-Status: implementable design; every native capability below is unverified on an execution device. Shared rules: 2026-09-12.4. Contract major: 1. P0 is a bounded feasibility stage, not a full drawing product.
+Status: design contract; the capability matrix separates narrow historical observations from unverified requirements. Shared rules: 2026-09-12.4. Contract major: 1. P0 is a bounded feasibility stage, not a full drawing product.
 
 ## Decisions and boundary
 
-1. Use a separate `chemdraw-companion` repository, product identity and runtime namespace. Do not add chemistry business logic to Origin. Start with documentation/contracts plus the smallest three-case worker. Extract shared infrastructure only after measured duplication; carry provenance and licences for any reused code.
-2. Prefer the official ChemDraw Add-in API for native insertion, readback and available exports. Pair it with one local broker and a supervised desktop worker for only the missing, verified native operations. No guessed COM ProgID, undocumented method or presumed ChemScript entitlement.
+1. Use a separate `chemdraw-companion` repository, product identity and runtime namespace. Do not add chemistry business logic to Origin. Start with documentation/contracts plus a small direct four-fixture harness. Extract shared infrastructure only after measured duplication; carry provenance and licences for any reused code.
+2. Treat COM, Add-in and CDXML as operation-specific adapters to independent Chemical Mechanism IR and Mechanism Composer. Select verified capabilities from the ChemDraw 26 matrix; Add-in availability is not a prerequisite for testing a permitted COM route. No guessed ProgID, undocumented-call assumption or presumed ChemScript entitlement.
 3. Generate initial molecular geometry with a verified native structure input/cleanup route. `addSMILES`/`addInChI` are first candidates. A signed, licensed ChemScript interface or supported desktop command is a secondary probe, not an installed capability by assumption. Whole-page arrangement and electron-flow anchors remain our deterministic, separately checked responsibility.
 4. Never repair a rejected layout merely by swapping its renderer. Importing coordinate-bearing CDXML preserves that design. Native-generated fragments may be measured and arranged as a new scene, then imported; record this as native fragment generation plus companion page layout, not vendor-designed page layout.
 5. No open-source primary-rendering fallback when `native_required=true` (always true for P0). An unavailable native route returns a blocked result. Independent libraries may check graphs, stereochemistry and atom mappings; they cannot certify electron-flow meaning or visual quality alone.
 
 ```mermaid
 flowchart LR
-  H[General agent host] --> M[Five MCP tools]
+  H[General agent host] --> M[Five MCP tools: later packaging]
   M --> B[Local broker: identity, jobs, artifacts]
-  B --> R[Recipe and scene compiler]
-  R --> V[Semantic checks]
-  V --> W[Serialized native worker]
-  W <--> A[Official ChemDraw add-in]
-  W <--> D[Supervised desktop adapter]
+  T[Direct P0 fixture harness] --> I[Chemical Mechanism IR]
+  B --> I
+  I --> V[Independent semantic validation]
+  V --> G[Mechanism Composer]
+  G --> W[Serialized native adapter]
+  W <--> A[Qualified COM / Add-in / CDXML routes]
   A <--> C[Licensed ChemDraw]
-  D <--> C
   C --> Q[Readback, reopen and figure checks]
   Q --> F[Immutable artifacts and provenance]
   F --> H
@@ -28,18 +28,23 @@ flowchart LR
 
 The cloud adapter is an authenticated transport to the same personal execution broker; it is not another renderer. Reuse a verified existing account connection when authorized, but give this product its own scopes, IDs, queues and artifact namespace. Local operation must work without cloud service or university storage. No second paid model is embedded in the execution layer.
 
+## P0 layers and core asset
+
+P0-A proves transport, P0-B editable object control, and P0-C mechanism composition. P0-C is the largest architecture uncertainty. Execute SaveAs repair -> capability matrix -> S1 -> R1 -> M1 -> M2 before installer/MCP/multi-agent packaging. A pass cannot substitute for B/C. See [matrix](CHEMDRAW_26_CAPABILITY_MATRIX.md), [IR/Composer](MECHANISM_IR_COMPOSER.md) and [M2](M2_BECKMANN_SNAKE.md).
+
+The diagram's recipe/scene compiler comprises independent semantic IR and Composer. The direct developer harness enters there without host/MCP infrastructure. Native molecular layout is an input to composition.
+
 ## Thin native adapter
 
 Implement an internal capability-based interface, separate from public MCP. Operations: `probe`, `bindDisposableDocument`, `snapshot`, `insertStructure`, `applyScene`, `serializeEditable`, `exportFigure`, `openCopy`, `inspectReadback`, `release`. These are OUR interface names, not claims that the vendor API has these methods. Each method declares its actual backend and required capabilities.
 
 P0 probe order:
 
-- Record OS, application build and edition, installation scope, running process, add-in support and lawful entitlement from the actual device. Store licence status/category, never licence values. The reported design input of ChemDraw 26.0.0 is historical detection on one device.
-- Install/load a minimal add-in through the supported manager. Verify runtime/add-in handshake and a disposable document readback.
-- Insert one known structure through `addSMILES` and compare returned native geometry and chemical graph. Verify style behavior. Probe clean-up separately only if actually exposed.
-- Probe CDXML and CDX serialization plus PNG output. Selection SVG must have an explicit, verified scope; it does not imply whole-document SVG. PDF/other formats require separate native-route evidence.
-- Decode native CDX bytes to a new local artifact where supported; record `native_serialization`, distinct from a desktop Save operation. Reopen that disk file in ChemDraw and compare its chemical and drawable objects. Writing vendor bytes is not a reopen test.
-- Verify the controlled native route can create/identify/reopen a disposable document. Stop at `DOCUMENT_BINDING_UNSAFE` if the workflow cannot protect other documents.
+- Repair SaveAs with immutable requested paths, captured by-ref returns and controlled comparisons. Keep original success/failure evidence and distinguish vendor errors from wrapper assertions.
+- Qualify document binding before mutation; fill the ChemDraw 26 operation matrix. Unsafe native operations stay blocked while independent read-only IR/Composer work continues.
+- Probe atom/bond/curve/anchor/lone-pair/charge/transform/cleanup/identity independently. CDXML import is a candidate, not automatic proof.
+- Run S1 -> R1 -> M1 -> M2 through the direct harness. M2 requires independent CDX and CDXML disk reopen/edit plus full-scene export at verified native ink resolution.
+- Diagnose M2 with native-reference/frozen-geometry controls before broadening installers/transports/hosts.
 
 No native call runs solely because a named function exists. The capability result records `documented`, `detected`, `native_verified`, `failed`, `unsupported` or `unverified`, the test ID, backend, scope, application version and timestamp. Host verification is a separate field. Do not collapse this evidence into one boolean.
 
@@ -63,7 +68,7 @@ Recipes take chemical intent, not unrestricted JavaScript, shell snippets or arb
 
 Native engine establishes molecular geometry when supported. The companion arranges component boxes, conditions, reaction arrows and electron-flow curves using deterministic constraints. Preserve bonds/stereocentres within native fragments; translation and rotation are allowed only if wedges and labels remain meaningful. Never reflect a stereochemical fragment without semantic revalidation. Any CDXML construction or transformation records its producer independently of the final native image.
 
-Apply a named versioned style profile with explicit units and final physical size. Start with `chembridge-review-v1`: a provisional house profile, not university, ACS or other publication certification. P0 uses a fixed physical canvas width of 85 mm; test a 170 mm canvas where relevant. The width is not an instruction to stretch the ink bounding box. Keep the effective font sizes and bond lengths in physical units; center/arrange content within the canvas without fit-to-width scaling. Numeric style values must be recorded in the result rather than inherited silently from a user's last document. Resolve the entire effective style from the proposed profile and native template before first dispatch, freeze its SHA-256, and record it with every output. Native defaults cannot silently fill missing values in an accepted run. Owner review remains pending until performed and references that frozen style; later style changes require a new profile version.
+Apply a named versioned style profile with explicit units and final physical size. Start with `chembridge-review-v1`: a provisional house profile, not university, ACS or other publication certification. S1/R1/M1 use a fixed 85 mm canvas; M2 uses 170 mm x 230 mm with three snake rows. M2 is an internal test profile, not a change to existing recipe defaults. The width is not an instruction to stretch the ink bounding box. Keep the effective font sizes and bond lengths in physical units; center/arrange content within the canvas without fit-to-width scaling. Numeric style values must be recorded in the result rather than inherited silently from a user's last document. Resolve the entire effective style from the proposed profile and native template before first dispatch, freeze its SHA-256, and record it with every output. Native defaults cannot silently fill missing values in an accepted run. Owner review remains pending until performed and references that frozen style; later style changes require a new profile version.
 
 Lay out fragment rows and labels first, reserve condition and charge/lone-pair regions, then route curved arrows with explicit source/target ports. Run deterministic collision/geometry checks and render through ChemDraw. At most two bounded layout repairs in a job; otherwise return a reviewable failed-quality artifact. A passing native export never clears failed chemical or visual checks.
 
@@ -77,7 +82,7 @@ Idempotency is principal/device scoped. Same key + same canonical request return
 
 Cancellation is cooperative at declared safe boundaries. After a native call has begun, show `cancellation_requested`; terminal `cancelled` requires verified quiescence. Do not kill a user's ChemDraw process or roll back over manual changes. If the worker crashes, quarantine the disposable job and mark its document lease invalid. Recovery creates a new disposable copy from the last verified checkpoint; it does not overwrite a published artifact.
 
-Initial budgets are configurable engineering limits, not performance claims: 2-second submission acknowledgement, 20-second maximum long poll, 180-second recipe execution deadline, bounded native call timeouts and 2 layout corrections. Record actual timings. Use one native lane; cap queue length and reject excess work with retry guidance. Keep compact status responses below a 4 KiB target and expensive schemas/images on demand.
+Initial budgets are configurable engineering limits, not performance claims: 2-second submission acknowledgement, 20-second maximum long poll, 180-second S1/R1/M1 recipe execution deadline (M2 declares its own finite developer-test deadline), bounded native call timeouts and 2 layout corrections. Record actual timings. Use one native lane; cap queue length and reject excess work with retry guidance. Keep compact status responses below a 4 KiB target and expensive schemas/images on demand.
 
 ## Security and artifact delivery
 

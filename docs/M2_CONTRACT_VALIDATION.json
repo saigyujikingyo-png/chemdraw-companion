@@ -1,0 +1,87 @@
+{
+  "revision": "2026-09-12.2",
+  "scope": "Architecture contract and bounded M2 semantic checks only. No ChemDraw execution, coordinates, rendered anti geometry, native editability, owner approval, host, installer or performance acceptance.",
+  "validator": "jsonschema 4.26.0 / Draft 2020-12 plus bounded M2 graph/electron-accounting validator",
+  "m2_schema": "pass",
+  "m2_states": 7,
+  "m2_transitions": 6,
+  "m2_electron_arrows": 15,
+  "mapped_atoms_per_state": 18,
+  "system_formula": "C8H14NO3",
+  "system_formal_charge": 1,
+  "electron_flow_reordering": "pass; same simultaneous source-state accounting",
+  "negative_cases": {
+    "wrong_migration": {
+      "rejected": true,
+      "reason": "invalid migration bond"
+    },
+    "ambiguous_migration": {
+      "rejected": true,
+      "reason": "ambiguous bond migration: identify new target bond"
+    },
+    "water_attacks_nitrogen": {
+      "rejected": true,
+      "reason": "electron flow does not explain bond changes"
+    },
+    "missing_transferred_hydrogen": {
+      "rejected": true,
+      "reason": "M2 atom catalog mismatch"
+    },
+    "wrong_charge": {
+      "rejected": true,
+      "reason": "s2: charge/LP"
+    },
+    "nonexistent_nitrilium_lone_pair": {
+      "rejected": true,
+      "reason": "unavailable donor pair"
+    },
+    "sigma_used_as_pi": {
+      "rejected": true,
+      "reason": "invalid bond donor"
+    },
+    "missing_anti_constraint": {
+      "rejected": true,
+      "reason": "[] should be non-empty"
+    },
+    "false_declared_bond_change": {
+      "rejected": true,
+      "reason": "declared graph diff mismatch"
+    },
+    "wrong_step_continuity": {
+      "rejected": true,
+      "reason": "transition continuity"
+    },
+    "wrong_snake_order": {
+      "rejected": true,
+      "reason": "wrong snake topology"
+    },
+    "missing_electron_arrow": {
+      "rejected": true,
+      "reason": "flow count"
+    },
+    "duplicate_atom_identity": {
+      "rejected": true,
+      "reason": "duplicate atom map"
+    },
+    "reused_lone_pair": {
+      "rejected": true,
+      "reason": "reused donor pair"
+    }
+  },
+  "existing_public_contract_files_unchanged": true,
+  "five_tool_input_schemas_valid": true,
+  "existing_three_run_examples_valid": true,
+  "shared_principles_bytes_unchanged": true,
+  "local_links_checked": 26,
+  "p0_a": "blocked in last implementation evidence; not retested here",
+  "p0_b": "unverified",
+  "p0_c": "unrun",
+  "native_m2": "unrun",
+  "owner_acceptance": "pending",
+  "file_sha256": {
+    "contracts/mechanism-test-case.schema.json": "ba0b7818cfa090f584ca86b1e6c1fbc9c2ba78ef3f6a503fba550dab6d466647",
+    "contracts/validate_mechanism_fixture.py": "81ea507aa9f0f6523b252a7ca49eaa62dcd7c6a068dd707c25f1c88a137df50d",
+    "examples/m2-beckmann-snake.json": "95f49fa286a49bfa964aaf8fd547a900d3d9241de1a86a98b9ebeceed6656bfa",
+    "docs/M2_BECKMANN_SNAKE.md": "ad90f679ed486c82e00c388b8654450ea9f2a80092ea12a9890d946afe92608e"
+  }
+}

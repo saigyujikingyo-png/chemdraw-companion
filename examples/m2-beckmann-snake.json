@@ -1,0 +1,1656 @@
+{
+  "ir_version": "mechanism-ir-test/0.1",
+  "fixture_id": "M2-beckmann-snake.v1",
+  "title": "Beckmann Snake: phenyl-anti oxime, acid-water teaching model",
+  "assumptions": [
+    "Synthetic teaching pathway, not seven experimentally established intermediates.",
+    "Phenyl atom 10 is anti to oxime oxygen 3 across C1=N2 in s0 and s1; no E/Z isomerization or side reactions are modelled.",
+    "Hydronium and water are explicit; an unchanged spectator counterion is omitted; displayed system charge remains +1.",
+    "Mapped water O21 is chosen to track this path only; no experimental isotope-source or proton-exchange claim.",
+    "All arrows in each transition are simultaneous against its source state; resonance contributors are not separate time steps.",
+    "Only carbon-bound non-transferred H may remain implicit; all transferred H are explicit mapped atoms."
+  ],
+  "atom_catalog": [
+    {
+      "map": 1,
+      "element": "C",
+      "implicit_h": 0
+    },
+    {
+      "map": 2,
+      "element": "N",
+      "implicit_h": 0
+    },
+    {
+      "map": 3,
+      "element": "O",
+      "implicit_h": 0
+    },
+    {
+      "map": 4,
+      "element": "C",
+      "implicit_h": 3
+    },
+    {
+      "map": 10,
+      "element": "C",
+      "implicit_h": 0
+    },
+    {
+      "map": 11,
+      "element": "C",
+      "implicit_h": 1
+    },
+    {
+      "map": 12,
+      "element": "C",
+      "implicit_h": 1
+    },
+    {
+      "map": 13,
+      "element": "C",
+      "implicit_h": 1
+    },
+    {
+      "map": 14,
+      "element": "C",
+      "implicit_h": 1
+    },
+    {
+      "map": 15,
+      "element": "C",
+      "implicit_h": 1
+    },
+    {
+      "map": 20,
+      "element": "O",
+      "implicit_h": 0
+    },
+    {
+      "map": 21,
+      "element": "O",
+      "implicit_h": 0
+    },
+    {
+      "map": 30,
+      "element": "H",
+      "implicit_h": 0
+    },
+    {
+      "map": 31,
+      "element": "H",
+      "implicit_h": 0
+    },
+    {
+      "map": 32,
+      "element": "H",
+      "implicit_h": 0
+    },
+    {
+      "map": 33,
+      "element": "H",
+      "implicit_h": 0
+    },
+    {
+      "map": 34,
+      "element": "H",
+      "implicit_h": 0
+    },
+    {
+      "map": 35,
+      "element": "H",
+      "implicit_h": 0
+    }
+  ],
+  "states": [
+    {
+      "id": "s0",
+      "label": "Phenyl-anti acetophenone oxime",
+      "formal_charges": [
+        {
+          "atom": 20,
+          "value": 1
+        }
+      ],
+      "lone_pairs": [
+        {
+          "atom": 2,
+          "count": 1
+        },
+        {
+          "atom": 3,
+          "count": 2
+        },
+        {
+          "atom": 20,
+          "count": 1
+        },
+        {
+          "atom": 21,
+          "count": 2
+        }
+      ],
+      "bonds": [
+        {
+          "atoms": [
+            1,
+            2
+          ],
+          "order": 2
+        },
+        {
+          "atoms": [
+            1,
+            4
+          ],
+          "order": 1
+        },
+        {
+          "atoms": [
+            1,
+            10
+          ],
+          "order": 1
+        },
+        {
+          "atoms": [
+            2,
+            3
+          ],
+          "order": 1
+        },
+        {
+          "atoms": [
+            3,
+            30
+          ],
+          "order": 1
+        },
+        {
+          "atoms": [
+            10,
+            11
+          ],
+          "order": 1.5
+        },
+        {
+          "atoms": [
+            10,
+            15
+          ],
+          "order": 1.5
+        },
+        {
+          "atoms": [
+            11,
+            12
+          ],
+          "order": 1.5
+        },
+        {
+          "atoms": [
+            12,
+            13
+          ],
+          "order": 1.5
+        },
+        {
+          "atoms": [
+            13,
+            14
+          ],
+          "order": 1.5
+        },
+        {
+          "atoms": [
+            14,
+            15
+          ],
+          "order": 1.5
+        },
+        {
+          "atoms": [
+            20,
+            31
+          ],
+          "order": 1
+        },
+        {
+          "atoms": [
+            20,
+            32
+          ],
+          "order": 1
+        },
+        {
+          "atoms": [
+            20,
+            33
+          ],
+          "order": 1
+        },
+        {
+          "atoms": [
+            21,
+            34
+          ],
+          "order": 1
+        },
+        {
+          "atoms": [
+            21,
+            35
+          ],
+          "order": 1
+        }
+      ]
+    },
+    {
+      "id": "s1",
+      "label": "O-protonated oxime",
+      "formal_charges": [
+        {
+          "atom": 3,
+          "value": 1
+        }
+      ],
+      "lone_pairs": [
+        {
+          "atom": 2,
+          "count": 1
+        },
+        {
+          "atom": 3,
+          "count": 1
+        },
+        {
+          "atom": 20,
+          "count": 2
+        },
+        {
+          "atom": 21,
+          "count": 2
+        }
+      ],
+      "bonds": [
+        {
+          "atoms": [
+            1,
+            2
+          ],
+          "order": 2
+        },
+        {
+          "atoms": [
+            1,
+            4
+          ],
+          "order": 1
+        },
+        {
+          "atoms": [
+            1,
+            10
+          ],
+          "order": 1
+        },
+        {
+          "atoms": [
+            2,
+            3
+          ],
+          "order": 1
+        },
+        {
+          "atoms": [
+            3,
+            30
+          ],
+          "order": 1
+        },
+        {
+          "atoms": [
+            3,
+            31
+          ],
+          "order": 1
+        },
+        {
+          "atoms": [
+            10,
+            11
+          ],
+          "order": 1.5
+        },
+        {
+          "atoms": [
+            10,
+            15
+          ],
+          "order": 1.5
+        },
+        {
+          "atoms": [
+            11,
+            12
+          ],
+          "order": 1.5
+        },
+        {
+          "atoms": [
+            12,
+            13
+          ],
+          "order": 1.5
+        },
+        {
+          "atoms": [
+            13,
+            14
+          ],
+          "order": 1.5
+        },
+        {
+          "atoms": [
+            14,
+            15
+          ],
+          "order": 1.5
+        },
+        {
+          "atoms": [
+            20,
+            32
+          ],
+          "order": 1
+        },
+        {
+          "atoms": [
+            20,
+            33
+          ],
+          "order": 1
+        },
+        {
+          "atoms": [
+            21,
+            34
+          ],
+          "order": 1
+        },
+        {
+          "atoms": [
+            21,
+            35
+          ],
+          "order": 1
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "label": "Nitrilium after anti-phenyl migration",
+      "formal_charges": [
+        {
+          "atom": 2,
+          "value": 1
+        }
+      ],
+      "lone_pairs": [
+        {
+          "atom": 2,
+          "count": 0
+        },
+        {
+          "atom": 3,
+          "count": 2
+        },
+        {
+          "atom": 20,
+          "count": 2
+        },
+        {
+          "atom": 21,
+          "count": 2
+        }
+      ],
+      "bonds": [
+        {
+          "atoms": [
+            1,
+            2
+          ],
+          "order": 3
+        },
+        {
+          "atoms": [
+            1,
+            4
+          ],
+          "order": 1
+        },
+        {
+          "atoms": [
+            2,
+            10
+          ],
+          "order": 1
+        },
+        {
+          "atoms": [
+            3,
+            30
+          ],
+          "order": 1
+        },
+        {
+          "atoms": [
+            3,
+            31
+          ],
+          "order": 1
+        },
+        {
+          "atoms": [
+            10,
+            11
+          ],
+          "order": 1.5
+        },
+        {
+          "atoms": [
+            10,
+            15
+          ],
+          "order": 1.5
+        },
+        {
+          "atoms": [
+            11,
+            12
+          ],
+          "order": 1.5
+        },
+        {
+          "atoms": [
+            12,
+            13
+          ],
+          "order": 1.5
+        },
+        {
+          "atoms": [
+            13,
+            14
+          ],
+          "order": 1.5
+        },
+        {
+          "atoms": [
+            14,
+            15
+          ],
+          "order": 1.5
+        },
+        {
+          "atoms": [
+            20,
+            32
+          ],
+          "order": 1
+        },
+        {
+          "atoms": [
+            20,
+            33
+          ],
+          "order": 1
+        },
+        {
+          "atoms": [
+            21,
+            34
+          ],
+          "order": 1
+        },
+        {
+          "atoms": [
+            21,
+            35
+          ],
+          "order": 1
+        }
+      ]
+    },
+    {
+      "id": "s3",
+      "label": "Water-added imidate oxonium",
+      "formal_charges": [
+        {
+          "atom": 21,
+          "value": 1
+        }
+      ],
+      "lone_pairs": [
+        {
+          "atom": 2,
+          "count": 1
+        },
+        {
+          "atom": 3,
+          "count": 2
+        },
+        {
+          "atom": 20,
+          "count": 2
+        },
+        {
+          "atom": 21,
+          "count": 1
+        }
+      ],
+      "bonds": [
+        {
+          "atoms": [
+            1,
+            2
+          ],
+          "order": 2
+        },
+        {
+          "atoms": [
+            1,
+            4
+          ],
+          "order": 1
+        },
+        {
+          "atoms": [
+            1,
+            21
+          ],
+          "order": 1
+        },
+        {
+          "atoms": [
+            2,
+            10
+          ],
+          "order": 1
+        },
+        {
+          "atoms": [
+            3,
+            30
+          ],
+          "order": 1
+        },
+        {
+          "atoms": [
+            3,
+            31
+          ],
+          "order": 1
+        },
+        {
+          "atoms": [
+            10,
+            11
+          ],
+          "order": 1.5
+        },
+        {
+          "atoms": [
+            10,
+            15
+          ],
+          "order": 1.5
+        },
+        {
+          "atoms": [
+            11,
+            12
+          ],
+          "order": 1.5
+        },
+        {
+          "atoms": [
+            12,
+            13
+          ],
+          "order": 1.5
+        },
+        {
+          "atoms": [
+            13,
+            14
+          ],
+          "order": 1.5
+        },
+        {
+          "atoms": [
+            14,
+            15
+          ],
+          "order": 1.5
+        },
+        {
+          "atoms": [
+            20,
+            32
+          ],
+          "order": 1
+        },
+        {
+          "atoms": [
+            20,
+            33
+          ],
+          "order": 1
+        },
+        {
+          "atoms": [
+            21,
+            34
+          ],
+          "order": 1
+        },
+        {
+          "atoms": [
+            21,
+            35
+          ],
+          "order": 1
+        }
+      ]
+    },
+    {
+      "id": "s4",
+      "label": "Imidic acid",
+      "formal_charges": [
+        {
+          "atom": 20,
+          "value": 1
+        }
+      ],
+      "lone_pairs": [
+        {
+          "atom": 2,
+          "count": 1
+        },
+        {
+          "atom": 3,
+          "count": 2
+        },
+        {
+          "atom": 20,
+          "count": 1
+        },
+        {
+          "atom": 21,
+          "count": 2
+        }
+      ],
+      "bonds": [
+        {
+          "atoms": [
+            1,
+            2
+          ],
+          "order": 2
+        },
+        {
+          "atoms": [
+            1,
+            4
+          ],
+          "order": 1
+        },
+        {
+          "atoms": [
+            1,
+            21
+          ],
+          "order": 1
+        },
+        {
+          "atoms": [
+            2,
+            10
+          ],
+          "order": 1
+        },
+        {
+          "atoms": [
+            3,
+            30
+          ],
+          "order": 1
+        },
+        {
+          "atoms": [
+            3,
+            31
+          ],
+          "order": 1
+        },
+        {
+          "atoms": [
+            10,
+            11
+          ],
+          "order": 1.5
+        },
+        {
+          "atoms": [
+            10,
+            15
+          ],
+          "order": 1.5
+        },
+        {
+          "atoms": [
+            11,
+            12
+          ],
+          "order": 1.5
+        },
+        {
+          "atoms": [
+            12,
+            13
+          ],
+          "order": 1.5
+        },
+        {
+          "atoms": [
+            13,
+            14
+          ],
+          "order": 1.5
+        },
+        {
+          "atoms": [
+            14,
+            15
+          ],
+          "order": 1.5
+        },
+        {
+          "atoms": [
+            20,
+            32
+          ],
+          "order": 1
+        },
+        {
+          "atoms": [
+            20,
+            33
+          ],
+          "order": 1
+        },
+        {
+          "atoms": [
+            20,
+            35
+          ],
+          "order": 1
+        },
+        {
+          "atoms": [
+            21,
+            34
+          ],
+          "order": 1
+        }
+      ]
+    },
+    {
+      "id": "s5",
+      "label": "N-protonated imidic acid",
+      "formal_charges": [
+        {
+          "atom": 2,
+          "value": 1
+        }
+      ],
+      "lone_pairs": [
+        {
+          "atom": 2,
+          "count": 0
+        },
+        {
+          "atom": 3,
+          "count": 2
+        },
+        {
+          "atom": 20,
+          "count": 2
+        },
+        {
+          "atom": 21,
+          "count": 2
+        }
+      ],
+      "bonds": [
+        {
+          "atoms": [
+            1,
+            2
+          ],
+          "order": 2
+        },
+        {
+          "atoms": [
+            1,
+            4
+          ],
+          "order": 1
+        },
+        {
+          "atoms": [
+            1,
+            21
+          ],
+          "order": 1
+        },
+        {
+          "atoms": [
+            2,
+            10
+          ],
+          "order": 1
+        },
+        {
+          "atoms": [
+            2,
+            35
+          ],
+          "order": 1
+        },
+        {
+          "atoms": [
+            3,
+            30
+          ],
+          "order": 1
+        },
+        {
+          "atoms": [
+            3,
+            31
+          ],
+          "order": 1
+        },
+        {
+          "atoms": [
+            10,
+            11
+          ],
+          "order": 1.5
+        },
+        {
+          "atoms": [
+            10,
+            15
+          ],
+          "order": 1.5
+        },
+        {
+          "atoms": [
+            11,
+            12
+          ],
+          "order": 1.5
+        },
+        {
+          "atoms": [
+            12,
+            13
+          ],
+          "order": 1.5
+        },
+        {
+          "atoms": [
+            13,
+            14
+          ],
+          "order": 1.5
+        },
+        {
+          "atoms": [
+            14,
+            15
+          ],
+          "order": 1.5
+        },
+        {
+          "atoms": [
+            20,
+            32
+          ],
+          "order": 1
+        },
+        {
+          "atoms": [
+            20,
+            33
+          ],
+          "order": 1
+        },
+        {
+          "atoms": [
+            21,
+            34
+          ],
+          "order": 1
+        }
+      ]
+    },
+    {
+      "id": "s6",
+      "label": "Acetanilide and regenerated hydronium",
+      "formal_charges": [
+        {
+          "atom": 20,
+          "value": 1
+        }
+      ],
+      "lone_pairs": [
+        {
+          "atom": 2,
+          "count": 1
+        },
+        {
+          "atom": 3,
+          "count": 2
+        },
+        {
+          "atom": 20,
+          "count": 1
+        },
+        {
+          "atom": 21,
+          "count": 2
+        }
+      ],
+      "bonds": [
+        {
+          "atoms": [
+            1,
+            2
+          ],
+          "order": 1
+        },
+        {
+          "atoms": [
+            1,
+            4
+          ],
+          "order": 1
+        },
+        {
+          "atoms": [
+            1,
+            21
+          ],
+          "order": 2
+        },
+        {
+          "atoms": [
+            2,
+            10
+          ],
+          "order": 1
+        },
+        {
+          "atoms": [
+            2,
+            35
+          ],
+          "order": 1
+        },
+        {
+          "atoms": [
+            3,
+            30
+          ],
+          "order": 1
+        },
+        {
+          "atoms": [
+            3,
+            31
+          ],
+          "order": 1
+        },
+        {
+          "atoms": [
+            10,
+            11
+          ],
+          "order": 1.5
+        },
+        {
+          "atoms": [
+            10,
+            15
+          ],
+          "order": 1.5
+        },
+        {
+          "atoms": [
+            11,
+            12
+          ],
+          "order": 1.5
+        },
+        {
+          "atoms": [
+            12,
+            13
+          ],
+          "order": 1.5
+        },
+        {
+          "atoms": [
+            13,
+            14
+          ],
+          "order": 1.5
+        },
+        {
+          "atoms": [
+            14,
+            15
+          ],
+          "order": 1.5
+        },
+        {
+          "atoms": [
+            20,
+            32
+          ],
+          "order": 1
+        },
+        {
+          "atoms": [
+            20,
+            33
+          ],
+          "order": 1
+        },
+        {
+          "atoms": [
+            20,
+            34
+          ],
+          "order": 1
+        }
+      ]
+    }
+  ],
+  "transitions": [
+    {
+      "id": "t1",
+      "from": "s0",
+      "to": "s1",
+      "label": "O protonation",
+      "kind": "elementary_teaching_step",
+      "electron_flows": [
+        {
+          "id": "t1_f1",
+          "electron_count": 2,
+          "source": {
+            "type": "lone_pair",
+            "atom": 3,
+            "pair_index": 0
+          },
+          "target": {
+            "type": "atom",
+            "atom": 31
+          }
+        },
+        {
+          "id": "t1_f2",
+          "electron_count": 2,
+          "source": {
+            "type": "bond",
+            "atoms": [
+              20,
+              31
+            ],
+            "electrons": "sigma"
+          },
+          "target": {
+            "type": "atom",
+            "atom": 20
+          }
+        }
+      ],
+      "bond_changes": [
+        {
+          "atoms": [
+            3,
+            31
+          ],
+          "from_order": 0,
+          "to_order": 1
+        },
+        {
+          "atoms": [
+            20,
+            31
+          ],
+          "from_order": 1,
+          "to_order": 0
+        }
+      ],
+      "charge_changes": [
+        {
+          "atom": 3,
+          "from": 0,
+          "to": 1
+        },
+        {
+          "atom": 20,
+          "from": 1,
+          "to": 0
+        }
+      ]
+    },
+    {
+      "id": "t2",
+      "from": "s1",
+      "to": "s2",
+      "label": "Coupled anti migration and water loss",
+      "kind": "elementary_teaching_step",
+      "electron_flows": [
+        {
+          "id": "t2_f1",
+          "electron_count": 2,
+          "source": {
+            "type": "bond",
+            "atoms": [
+              1,
+              10
+            ],
+            "electrons": "sigma"
+          },
+          "target": {
+            "type": "bond",
+            "atoms": [
+              2,
+              10
+            ]
+          }
+        },
+        {
+          "id": "t2_f2",
+          "electron_count": 2,
+          "source": {
+            "type": "bond",
+            "atoms": [
+              2,
+              3
+            ],
+            "electrons": "sigma"
+          },
+          "target": {
+            "type": "atom",
+            "atom": 3
+          }
+        },
+        {
+          "id": "t2_f3",
+          "electron_count": 2,
+          "source": {
+            "type": "lone_pair",
+            "atom": 2,
+            "pair_index": 0
+          },
+          "target": {
+            "type": "bond",
+            "atoms": [
+              1,
+              2
+            ]
+          }
+        }
+      ],
+      "bond_changes": [
+        {
+          "atoms": [
+            1,
+            2
+          ],
+          "from_order": 2,
+          "to_order": 3
+        },
+        {
+          "atoms": [
+            1,
+            10
+          ],
+          "from_order": 1,
+          "to_order": 0
+        },
+        {
+          "atoms": [
+            2,
+            3
+          ],
+          "from_order": 1,
+          "to_order": 0
+        },
+        {
+          "atoms": [
+            2,
+            10
+          ],
+          "from_order": 0,
+          "to_order": 1
+        }
+      ],
+      "charge_changes": [
+        {
+          "atom": 2,
+          "from": 0,
+          "to": 1
+        },
+        {
+          "atom": 3,
+          "from": 1,
+          "to": 0
+        }
+      ]
+    },
+    {
+      "id": "t3",
+      "from": "s2",
+      "to": "s3",
+      "label": "Water addition to nitrilium carbon",
+      "kind": "elementary_teaching_step",
+      "electron_flows": [
+        {
+          "id": "t3_f1",
+          "electron_count": 2,
+          "source": {
+            "type": "lone_pair",
+            "atom": 21,
+            "pair_index": 0
+          },
+          "target": {
+            "type": "atom",
+            "atom": 1
+          }
+        },
+        {
+          "id": "t3_f2",
+          "electron_count": 2,
+          "source": {
+            "type": "bond",
+            "atoms": [
+              1,
+              2
+            ],
+            "electrons": "pi"
+          },
+          "target": {
+            "type": "atom",
+            "atom": 2
+          }
+        }
+      ],
+      "bond_changes": [
+        {
+          "atoms": [
+            1,
+            2
+          ],
+          "from_order": 3,
+          "to_order": 2
+        },
+        {
+          "atoms": [
+            1,
+            21
+          ],
+          "from_order": 0,
+          "to_order": 1
+        }
+      ],
+      "charge_changes": [
+        {
+          "atom": 2,
+          "from": 1,
+          "to": 0
+        },
+        {
+          "atom": 21,
+          "from": 0,
+          "to": 1
+        }
+      ]
+    },
+    {
+      "id": "t4",
+      "from": "s3",
+      "to": "s4",
+      "label": "Water-assisted deprotonation",
+      "kind": "elementary_teaching_step",
+      "electron_flows": [
+        {
+          "id": "t4_f1",
+          "electron_count": 2,
+          "source": {
+            "type": "lone_pair",
+            "atom": 20,
+            "pair_index": 0
+          },
+          "target": {
+            "type": "atom",
+            "atom": 35
+          }
+        },
+        {
+          "id": "t4_f2",
+          "electron_count": 2,
+          "source": {
+            "type": "bond",
+            "atoms": [
+              21,
+              35
+            ],
+            "electrons": "sigma"
+          },
+          "target": {
+            "type": "atom",
+            "atom": 21
+          }
+        }
+      ],
+      "bond_changes": [
+        {
+          "atoms": [
+            20,
+            35
+          ],
+          "from_order": 0,
+          "to_order": 1
+        },
+        {
+          "atoms": [
+            21,
+            35
+          ],
+          "from_order": 1,
+          "to_order": 0
+        }
+      ],
+      "charge_changes": [
+        {
+          "atom": 20,
+          "from": 0,
+          "to": 1
+        },
+        {
+          "atom": 21,
+          "from": 1,
+          "to": 0
+        }
+      ]
+    },
+    {
+      "id": "t5",
+      "from": "s4",
+      "to": "s5",
+      "label": "N protonation",
+      "kind": "elementary_teaching_step",
+      "electron_flows": [
+        {
+          "id": "t5_f1",
+          "electron_count": 2,
+          "source": {
+            "type": "lone_pair",
+            "atom": 2,
+            "pair_index": 0
+          },
+          "target": {
+            "type": "atom",
+            "atom": 35
+          }
+        },
+        {
+          "id": "t5_f2",
+          "electron_count": 2,
+          "source": {
+            "type": "bond",
+            "atoms": [
+              20,
+              35
+            ],
+            "electrons": "sigma"
+          },
+          "target": {
+            "type": "atom",
+            "atom": 20
+          }
+        }
+      ],
+      "bond_changes": [
+        {
+          "atoms": [
+            2,
+            35
+          ],
+          "from_order": 0,
+          "to_order": 1
+        },
+        {
+          "atoms": [
+            20,
+            35
+          ],
+          "from_order": 1,
+          "to_order": 0
+        }
+      ],
+      "charge_changes": [
+        {
+          "atom": 2,
+          "from": 0,
+          "to": 1
+        },
+        {
+          "atom": 20,
+          "from": 1,
+          "to": 0
+        }
+      ]
+    },
+    {
+      "id": "t6",
+      "from": "s5",
+      "to": "s6",
+      "label": "Water-assisted tautomerization",
+      "kind": "elementary_teaching_step",
+      "electron_flows": [
+        {
+          "id": "t6_f1",
+          "electron_count": 2,
+          "source": {
+            "type": "lone_pair",
+            "atom": 20,
+            "pair_index": 0
+          },
+          "target": {
+            "type": "atom",
+            "atom": 34
+          }
+        },
+        {
+          "id": "t6_f2",
+          "electron_count": 2,
+          "source": {
+            "type": "bond",
+            "atoms": [
+              21,
+              34
+            ],
+            "electrons": "sigma"
+          },
+          "target": {
+            "type": "atom",
+            "atom": 21
+          }
+        },
+        {
+          "id": "t6_f3",
+          "electron_count": 2,
+          "source": {
+            "type": "lone_pair",
+            "atom": 21,
+            "pair_index": 0
+          },
+          "target": {
+            "type": "bond",
+            "atoms": [
+              1,
+              21
+            ]
+          }
+        },
+        {
+          "id": "t6_f4",
+          "electron_count": 2,
+          "source": {
+            "type": "bond",
+            "atoms": [
+              1,
+              2
+            ],
+            "electrons": "pi"
+          },
+          "target": {
+            "type": "atom",
+            "atom": 2
+          }
+        }
+      ],
+      "bond_changes": [
+        {
+          "atoms": [
+            1,
+            2
+          ],
+          "from_order": 2,
+          "to_order": 1
+        },
+        {
+          "atoms": [
+            1,
+            21
+          ],
+          "from_order": 1,
+          "to_order": 2
+        },
+        {
+          "atoms": [
+            20,
+            34
+          ],
+          "from_order": 0,
+          "to_order": 1
+        },
+        {
+          "atoms": [
+            21,
+            34
+          ],
+          "from_order": 1,
+          "to_order": 0
+        }
+      ],
+      "charge_changes": [
+        {
+          "atom": 2,
+          "from": 1,
+          "to": 0
+        },
+        {
+          "atom": 20,
+          "from": 0,
+          "to": 1
+        }
+      ]
+    }
+  ],
+  "stereo_constraints": [
+    {
+      "type": "anti_across_double_bond",
+      "states": [
+        "s0",
+        "s1"
+      ],
+      "central_bond": [
+        1,
+        2
+      ],
+      "substituent_atoms": [
+        10,
+        3
+      ]
+    }
+  ],
+  "layout_request": {
+    "profile_id": "m2-snake-review-v1",
+    "width_mm": 170,
+    "height_mm": 230,
+    "font_pt": 8,
+    "bond_length_pt": 14.4,
+    "stroke_pt": 0.6,
+    "minimum_native_dpi": 600,
+    "rows_left_to_right": [
+      [
+        "s0",
+        "s1",
+        "s2"
+      ],
+      [
+        "s5",
+        "s4",
+        "s3"
+      ],
+      [
+        "s6"
+      ]
+    ],
+    "traversal": [
+      "s0",
+      "s1",
+      "s2",
+      "s3",
+      "s4",
+      "s5",
+      "s6"
+    ]
+  },
+  "expected": {
+    "product_name": "acetanilide",
+    "migrating_atom": 10,
+    "retained_methyl_atom": 4,
+    "carbonyl_oxygen": 21,
+    "leaving_oxygen": 3,
+    "amide_hydrogen": 35,
+    "total_system_charge": 1,
+    "state_count": 7,
+    "transition_count": 6,
+    "electron_arrow_count": 15,
+    "native_formats": [
+      "cdx",
+      "cdxml"
+    ]
+  }
+}
