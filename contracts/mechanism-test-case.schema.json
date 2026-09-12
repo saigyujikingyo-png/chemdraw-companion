@@ -1,0 +1,591 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://chembridge.invalid/contracts/mechanism-test-case.schema.json",
+  "title": "Internal mechanism test IR, draft 0.1",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "ir_version": {
+      "const": "mechanism-ir-test/0.1"
+    },
+    "fixture_id": {
+      "const": "M2-beckmann-snake.v1"
+    },
+    "title": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 2048
+    },
+    "assumptions": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 2048
+      },
+      "minItems": 1,
+      "maxItems": 20
+    },
+    "atom_catalog": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "map": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "element": {
+            "enum": [
+              "C",
+              "N",
+              "O",
+              "H"
+            ]
+          },
+          "implicit_h": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 4
+          }
+        },
+        "required": [
+          "map",
+          "element",
+          "implicit_h"
+        ]
+      },
+      "minItems": 1,
+      "maxItems": 200
+    },
+    "states": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^s[0-9]+$"
+          },
+          "label": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 2048
+          },
+          "formal_charges": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "atom": {
+                  "type": "integer",
+                  "minimum": 1
+                },
+                "value": {
+                  "type": "integer",
+                  "minimum": -3,
+                  "maximum": 3
+                }
+              },
+              "required": [
+                "atom",
+                "value"
+              ]
+            },
+            "minItems": 0,
+            "maxItems": 30
+          },
+          "lone_pairs": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "atom": {
+                  "type": "integer",
+                  "minimum": 1
+                },
+                "count": {
+                  "type": "integer",
+                  "minimum": 0,
+                  "maximum": 4
+                }
+              },
+              "required": [
+                "atom",
+                "count"
+              ]
+            },
+            "minItems": 0,
+            "maxItems": 30
+          },
+          "bonds": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "atoms": {
+                  "type": "array",
+                  "items": {
+                    "type": "integer",
+                    "minimum": 1
+                  },
+                  "minItems": 2,
+                  "maxItems": 2,
+                  "uniqueItems": true
+                },
+                "order": {
+                  "enum": [
+                    1,
+                    1.5,
+                    2,
+                    3
+                  ]
+                }
+              },
+              "required": [
+                "atoms",
+                "order"
+              ]
+            },
+            "minItems": 1,
+            "maxItems": 200
+          }
+        },
+        "required": [
+          "id",
+          "label",
+          "formal_charges",
+          "lone_pairs",
+          "bonds"
+        ]
+      },
+      "minItems": 2,
+      "maxItems": 12
+    },
+    "transitions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^t[0-9]+$"
+          },
+          "from": {
+            "type": "string",
+            "pattern": "^s[0-9]+$"
+          },
+          "to": {
+            "type": "string",
+            "pattern": "^s[0-9]+$"
+          },
+          "label": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 2048
+          },
+          "kind": {
+            "const": "elementary_teaching_step"
+          },
+          "electron_flows": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "id": {
+                  "type": "string",
+                  "pattern": "^t[0-9]+_f[0-9]+$"
+                },
+                "electron_count": {
+                  "const": 2
+                },
+                "source": {
+                  "oneOf": [
+                    {
+                      "type": "object",
+                      "additionalProperties": false,
+                      "properties": {
+                        "type": {
+                          "const": "lone_pair"
+                        },
+                        "atom": {
+                          "type": "integer",
+                          "minimum": 1
+                        },
+                        "pair_index": {
+                          "type": "integer",
+                          "minimum": 0,
+                          "maximum": 3
+                        }
+                      },
+                      "required": [
+                        "type",
+                        "atom",
+                        "pair_index"
+                      ]
+                    },
+                    {
+                      "type": "object",
+                      "additionalProperties": false,
+                      "properties": {
+                        "type": {
+                          "const": "bond"
+                        },
+                        "atoms": {
+                          "type": "array",
+                          "items": {
+                            "type": "integer",
+                            "minimum": 1
+                          },
+                          "minItems": 2,
+                          "maxItems": 2,
+                          "uniqueItems": true
+                        },
+                        "electrons": {
+                          "enum": [
+                            "sigma",
+                            "pi"
+                          ]
+                        }
+                      },
+                      "required": [
+                        "type",
+                        "atoms",
+                        "electrons"
+                      ]
+                    }
+                  ]
+                },
+                "target": {
+                  "oneOf": [
+                    {
+                      "type": "object",
+                      "additionalProperties": false,
+                      "properties": {
+                        "type": {
+                          "const": "atom"
+                        },
+                        "atom": {
+                          "type": "integer",
+                          "minimum": 1
+                        }
+                      },
+                      "required": [
+                        "type",
+                        "atom"
+                      ]
+                    },
+                    {
+                      "type": "object",
+                      "additionalProperties": false,
+                      "properties": {
+                        "type": {
+                          "const": "bond"
+                        },
+                        "atoms": {
+                          "type": "array",
+                          "items": {
+                            "type": "integer",
+                            "minimum": 1
+                          },
+                          "minItems": 2,
+                          "maxItems": 2,
+                          "uniqueItems": true
+                        }
+                      },
+                      "required": [
+                        "type",
+                        "atoms"
+                      ]
+                    }
+                  ]
+                }
+              },
+              "required": [
+                "id",
+                "electron_count",
+                "source",
+                "target"
+              ]
+            },
+            "minItems": 1,
+            "maxItems": 8
+          },
+          "bond_changes": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "atoms": {
+                  "type": "array",
+                  "items": {
+                    "type": "integer",
+                    "minimum": 1
+                  },
+                  "minItems": 2,
+                  "maxItems": 2,
+                  "uniqueItems": true
+                },
+                "from_order": {
+                  "enum": [
+                    0,
+                    1,
+                    1.5,
+                    2,
+                    3
+                  ]
+                },
+                "to_order": {
+                  "enum": [
+                    0,
+                    1,
+                    1.5,
+                    2,
+                    3
+                  ]
+                }
+              },
+              "required": [
+                "atoms",
+                "from_order",
+                "to_order"
+              ]
+            },
+            "minItems": 1,
+            "maxItems": 20
+          },
+          "charge_changes": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "atom": {
+                  "type": "integer",
+                  "minimum": 1
+                },
+                "from": {
+                  "type": "integer"
+                },
+                "to": {
+                  "type": "integer"
+                }
+              },
+              "required": [
+                "atom",
+                "from",
+                "to"
+              ]
+            },
+            "minItems": 1,
+            "maxItems": 10
+          }
+        },
+        "required": [
+          "id",
+          "from",
+          "to",
+          "label",
+          "kind",
+          "electron_flows",
+          "bond_changes",
+          "charge_changes"
+        ]
+      },
+      "minItems": 1,
+      "maxItems": 11
+    },
+    "stereo_constraints": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "type": {
+            "const": "anti_across_double_bond"
+          },
+          "states": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "pattern": "^s[0-9]+$"
+            },
+            "minItems": 1,
+            "maxItems": 12
+          },
+          "central_bond": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "minimum": 1
+            },
+            "minItems": 2,
+            "maxItems": 2,
+            "uniqueItems": true
+          },
+          "substituent_atoms": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "minimum": 1
+            },
+            "minItems": 2,
+            "maxItems": 2,
+            "uniqueItems": true
+          }
+        },
+        "required": [
+          "type",
+          "states",
+          "central_bond",
+          "substituent_atoms"
+        ]
+      },
+      "minItems": 1,
+      "maxItems": 10
+    },
+    "layout_request": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "profile_id": {
+          "const": "m2-snake-review-v1"
+        },
+        "width_mm": {
+          "const": 170
+        },
+        "height_mm": {
+          "const": 230
+        },
+        "font_pt": {
+          "const": 8
+        },
+        "bond_length_pt": {
+          "const": 14.4
+        },
+        "stroke_pt": {
+          "const": 0.6
+        },
+        "minimum_native_dpi": {
+          "const": 600
+        },
+        "rows_left_to_right": {
+          "type": "array",
+          "items": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "pattern": "^s[0-9]+$"
+            },
+            "minItems": 1,
+            "maxItems": 3
+          },
+          "minItems": 3,
+          "maxItems": 3
+        },
+        "traversal": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^s[0-9]+$"
+          },
+          "minItems": 7,
+          "maxItems": 7
+        }
+      },
+      "required": [
+        "profile_id",
+        "width_mm",
+        "height_mm",
+        "font_pt",
+        "bond_length_pt",
+        "stroke_pt",
+        "minimum_native_dpi",
+        "rows_left_to_right",
+        "traversal"
+      ]
+    },
+    "expected": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "product_name": {
+          "const": "acetanilide"
+        },
+        "migrating_atom": {
+          "const": 10
+        },
+        "retained_methyl_atom": {
+          "const": 4
+        },
+        "carbonyl_oxygen": {
+          "const": 21
+        },
+        "leaving_oxygen": {
+          "const": 3
+        },
+        "amide_hydrogen": {
+          "const": 35
+        },
+        "total_system_charge": {
+          "const": 1
+        },
+        "state_count": {
+          "const": 7
+        },
+        "transition_count": {
+          "const": 6
+        },
+        "electron_arrow_count": {
+          "const": 15
+        },
+        "native_formats": {
+          "type": "array",
+          "prefixItems": [
+            {
+              "const": "cdx"
+            },
+            {
+              "const": "cdxml"
+            }
+          ],
+          "minItems": 2,
+          "maxItems": 2
+        }
+      },
+      "required": [
+        "product_name",
+        "migrating_atom",
+        "retained_methyl_atom",
+        "carbonyl_oxygen",
+        "leaving_oxygen",
+        "amide_hydrogen",
+        "total_system_charge",
+        "state_count",
+        "transition_count",
+        "electron_arrow_count",
+        "native_formats"
+      ]
+    }
+  },
+  "required": [
+    "ir_version",
+    "fixture_id",
+    "title",
+    "assumptions",
+    "atom_catalog",
+    "states",
+    "transitions",
+    "stereo_constraints",
+    "layout_request",
+    "expected"
+  ]
+}

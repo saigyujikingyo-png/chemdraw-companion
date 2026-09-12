@@ -75,7 +75,7 @@ Every manifest includes `manifest_version`, product/contract/recipe/style/build 
 
 For EACH artifact, record `stages[]` with operation, producer/backend/version, input hashes, output hash and evidence IDs. Examples of distinct stages: `native_structure_generation`, `companion_scene_layout`, `native_cdxml_import`, `native_cdx_serialization`, `native_png_render`, `native_disk_reopen`, `independent_graph_validation`, `host_delivery`. Use `not_performed` for stages that did not run. Never describe every stage simply as native because the last image came from ChemDraw.
 
-Gate fields: `native_execution`, `chemical_semantics`, `layout_geometry`, `native_editability`, `visual_review`, `owner_acceptance`, `host_receipt`. Each has `status=pass|fail|pending|unverified|not_applicable`, evidence IDs and reason. `owner_acceptance` records the actual reviewer decision/reference, never inferred from silence. Job success does not automatically set owner or host gates to pass. Full P0 gate requires all three fixtures' required native/quality/reopen evidence plus explicit owner acceptance.
+Gate fields: `native_execution`, `chemical_semantics`, `layout_geometry`, `native_editability`, `visual_review`, `owner_acceptance`, `host_receipt`. Each has `status=pass|fail|pending|unverified|not_applicable`, evidence IDs and reason. `owner_acceptance` records the actual reviewer decision/reference, never inferred from silence. Job success does not automatically set owner or host gates to pass. Full P0 requires separate P0-A/B/C evidence and all four fixtures S1/R1/M1/M2 plus owner acceptance. M2 uses an internal mechanism-test contract, not a fourth public recipe; existing job-data wire gates remain unchanged.
 
 Editable package minimum: native CDX saved bytes, native CDXML readback, native PNG with resolution and physical-size metadata, source scene, effective style, verification report and provenance manifest. If native CDX is not produced and reopened, return a blocked/failed gate; do not label an independently written CDXML as equivalent completion. CDXML-only experimentation is allowed but remains a diagnostic artifact.
 
@@ -101,6 +101,10 @@ An error contains `code`, `message`, `stage`, `retryable`, `mutation_outcome=non
 | `EXPORT_REVISION_MISMATCH` | Discard/quarantine inconsistent export; no artifact association to stale revision. |
 | `DELIVERY_BLOCKED` / `DESTINATION_DENIED` | Keep native result; state failed route and authorized alternatives without claiming receipt. |
 | `RESOURCE_LIMIT` / `JOB_TIMEOUT` | Bounded failure/cancellation; report actual deadline and mutation disposition. |
+
+## M2 internal feasibility contract
+
+The mandatory [M2 test](M2_BECKMANN_SNAKE.md) uses [mechanism-test-case.schema.json](../contracts/mechanism-test-case.schema.json) directly through independent IR/Composer and a qualified adapter before MCP/installer packaging. Public single-step recipe limits remain unchanged. Its developer receipt adds P0-A/B/C, both-format reopen/edit and first-output/manual-correction evidence; public tools do not yet support general multi-step mechanisms.
 
 ## Compatibility rules
 
