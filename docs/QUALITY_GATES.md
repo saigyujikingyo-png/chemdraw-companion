@@ -6,6 +6,10 @@ Status: acceptance design only. No fixture has been run or approved by this arch
 
 P0-A transport, P0-B native object control and P0-C mechanism composition are independent. P0-C is the principal architecture risk. Execute SaveAs repair -> [ChemDraw 26 capability matrix](CHEMDRAW_26_CAPABILITY_MATRIX.md) -> S1 -> R1 -> M1 -> [M2 Beckmann Snake](M2_BECKMANN_SNAKE.md). Run direct fixtures before installer/MCP/multi-agent packaging. A blocked prerequisite leaves dependent tests blocked/unrun.
 
+## Generalization gate
+
+[M2_GENERALIZATION_GATE.md](M2_GENERALIZATION_GATE.md) additionally requires reaction-neutral IR/Composer, no sample template/coordinates/state-ID dispatch/screenshot patching, metamorphic checks and at least one untuned asymmetric-oxime holdout after base M2 pass and implementation freeze. Fixed 7/6/15 counts belong to the reference oracle only. Base success without holdout leaves P0-C generalization pending and packaging gated.
+
 ## Decision rule
 
 Advance beyond P0 only after all four representative fixtures pass native execution, chemical correctness, layout checks, disk reopen/editability and explicit owner visual review. One fixture cannot compensate for another failing. CI, process exit, method presence, valid PNG or a library-generated CDXML is insufficient. Host/model, delivery and packaging have later separate gates; none inherits Origin acceptance.

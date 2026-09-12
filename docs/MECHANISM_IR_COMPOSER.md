@@ -1,6 +1,6 @@
 # Chemical Mechanism IR and Mechanism Composer
 
-Architecture revision 2026-09-12.2. These are long-term assets; COM, Add-in and CDXML are replaceable adapters. The first required output remains licensed native ChemDraw CDX/CDXML and native rendering. Backend independence does not permit a silent renderer substitution or claim a second implemented backend.
+Architecture revision 2026-09-12.3. These are long-term assets; COM, Add-in and CDXML are replaceable adapters. The first required output remains licensed native ChemDraw CDX/CDXML and native rendering. Backend independence does not permit a silent renderer substitution or claim a second implemented backend.
 
 ## Responsibilities
 
@@ -22,10 +22,12 @@ Geometry uses physical units, object-local ports and chemical occurrence referen
 
 ## Proof before packaging
 
-The [internal schema](../contracts/mechanism-test-case.schema.json) and [M2 fixture](../examples/m2-beckmann-snake.json) test this boundary without MCP. Version mechanism-ir-test/0.1 is an internal draft, not a supported public recipe. Keep five tools and existing three recipe IDs unchanged. M2 remains mandatory for P0.
+The [general IR schema](../contracts/mechanism-ir.schema.json) and [Composer request](../contracts/composer-request.schema.json) define the generation boundary. The old mechanism-ir-test/0.1 schema and M2 fixture are reference-only oracles, not runtime types. Keep five tools and existing three recipe IDs unchanged. M2 and its [generalization gate](M2_GENERALIZATION_GATE.md) are mandatory for P0.
 
 A developer harness freezes input/style, obtains native fragments, invokes Composer and native adapter, then produces native/reopen evidence. It does not require installer, MCP, host adaptation or a model call. Missing Composer code is an implementation gap, not an interface limitation.
 
 Use a reviewed manual native reference and frozen-geometry replay to isolate object control from composition. Future backends consume the same IR/scene boundary; a mock serializer only tests contracts, not equivalent native/scientific behavior.
 
-The bounded contract checker is [validate_mechanism_fixture.py](../contracts/validate_mechanism_fixture.py). It checks graph/flow accounting and logical snake order, not native geometry. See [current validation evidence](M2_CONTRACT_VALIDATION.json); the earlier CONTRACT_VALIDATION.json remains unchanged historical evidence for the public schemas.
+Do not import the reference schema, expected counts/maps/rows, reference validator or golden geometry into generation. Composer must be reaction-neutral, use opaque IDs only for identity, and accept variable supported step/flow counts. Anti selection belongs to semantic reasoning over connectivity/stereo; rendering a supplied correct IR does not prove selection.
+
+The bounded reference-only contract checker is [validate_mechanism_fixture.py](../contracts/validate_mechanism_fixture.py). It checks graph/flow accounting and logical snake order, not native geometry. See [historical reference validation](M2_CONTRACT_VALIDATION.json) and [general request syntax validation](M2_GENERALIZATION_CONTRACT_VALIDATION.json). Neither establishes a generic semantic engine, actual Composer behavior or holdout success; CONTRACT_VALIDATION.json retains its original public-schema scope.

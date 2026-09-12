@@ -2,7 +2,11 @@
 
 Status: frozen synthetic test design, not an executed native result. Internal IR version mechanism-ir-test/0.1; fixture M2-beckmann-snake.v1. Run after SaveAs repair, capability matrix, S1, R1 and M1. Do not wait for installer/MCP/multi-agent packaging. Missing native capabilities block dependent operations; IR/Composer implementation and diagnosis can proceed independently.
 
-## Fixed chemistry
+## Generalization requirement
+
+The [anti-hardcoding and holdout gate](M2_GENERALIZATION_GATE.md) is normative. M2 must use general IR -> general Composer. No Beckmann template, sample coordinates, state-ID branching or per-screenshot patches. Seven states/six steps/fifteen arrows are reference expectations only. Base M2 is followed by implementation freeze and at least one untuned unsymmetrical-oxime holdout before packaging.
+
+## Reference chemistry
 
 Use acetophenone oxime with phenyl anti to the hydroxyl leaving group across C=N. Phenyl migrates; methyl remains on the original oxime carbon; product is acetanilide. Exclude E/Z isomerization and side reactions in this teaching fixture. Anti migration is source-supported; the seven-state acid/water representation is an explicit teaching expansion, not an experimental intermediate sequence or a concentrated-sulfuric-acid mechanism claim. See [sources](SOURCES.md).
 
@@ -24,6 +28,8 @@ In the fixed mapping, O21 becomes carbonyl oxygen, O3 remains in leaving water, 
 
 ## Composition contract
 
+The diagram below is the reference traversal, not a row table for the generation input. Derive ordering from transition edges and layout from generic packing rules. The historical fixture's rows_left_to_right and expected fields stay in the test oracle. Use [m2-composer-request.json](../examples/m2-composer-request.json) at the general Composer boundary. Its dimensions/margins/font are provisional shared parameters; verify the resolved native font/style and freeze them without case-specific overrides.
+
 Freeze the valid IR and effective style before native dispatch. Use a 170 mm x 230 mm canvas, 8 pt text, 14.4 pt nominal bonds, 0.6 pt strokes and at least 600 effective native DPI. Record the resolved font/template, margins and all effective values plus SHA-256. This is a provisional house test profile, not a publisher/university standard.
 
 ~~~text
@@ -34,7 +40,7 @@ s5 <- s4 <- s3
 s6
 ~~~
 
-There are two outer row turns and six step connectors. Curly arrows belong to the source panel; step connectors are distinct objects. Expand the phenyl ring, show the participating acid/water species, charges and all declared N/O lone pairs. Keep complete species inventory in the native figure and separate panels clearly. Do not swap phenyl/methyl, mirror a fragment, skip a state, crop auxiliaries, shrink fonts/bonds or flatten curves to make the snake fit.
+The illustrated base reference has two outer row turns and six step connectors. The generation policy requests at least two outer row turns; actual row breaks follow general packing and measured geometry, not the reference row table. Six connectors follow this reference transition graph rather than a Composer constant. Curly arrows belong to the source panel; step connectors are distinct objects. Expand the phenyl ring, show the participating acid/water species, charges and all declared N/O lone pairs. Keep complete species inventory in the native figure and separate panels clearly. Do not swap phenyl/methyl, mirror a fragment, skip a state, crop auxiliaries, shrink fonts/bonds or flatten curves to make the snake fit.
 
 Retain geometry criteria in QUALITY_GATES.md: zero unintended collisions/clipping; unrelated ink clearance at least 0.12 bond lengths, curve clearance 0.18 and port deviation at most 0.20. Check the anti relationship semantically and through opposite-side substituent geometry in s0/s1; not an assumed E/Z label. A target double-bond descriptor, where exposed, must agree. No claim of full 3D transition-state geometry is required.
 
@@ -62,7 +68,7 @@ Prepare a manually authored native reference of the SAME IR/style/size, with sou
 | Only an unattractive generated image exists, without controls | Undetermined; acquire the missing discriminating control |
 | Several controls fail independently | Mixed; list each cause and evidence |
 
-Golden replay must use the same adapter/app build/style as automatic composition and bypass only Composer. Preserve both geometric and native-reference hashes. A valid IR and missing Composer are an implementation gap; more installer/MCP/host engineering cannot remedy it.
+Golden replay is diagnostic only and can never count as a generated M2 pass. It must use the same adapter/app build/style as automatic composition and bypass only Composer. Preserve both geometric and native-reference hashes. A valid IR and missing Composer are an implementation gap; more installer/MCP/host engineering cannot remedy it.
 
 ## Human correction and acceptance
 
@@ -70,4 +76,4 @@ Record per run: first-output hash/time, automated checks, automatic repair count
 
 First-attempt automated quality passes only if the untouched output meets every required check and concrete visual acceptance without human correction. A human-corrected file can separately pass usability/quality; it cannot backfill first-attempt automation. Report both first attempt and after bounded automatic repair. Manual-time targets are not yet empirically established; do not invent a speedup or silently waive the zero-manual-correction automation criterion.
 
-M2 remains blocked/unrun until native execution occurs. Contract/semantic checks alone do not pass P0-B/C. A final P0-C decision requires actual geometry, native preservation, stability runs and owner visual review.
+M2 remains blocked/unrun until native execution occurs. Contract/semantic checks alone do not pass P0-B/C. A final P0-C decision requires actual geometry, native preservation, stability runs, the generalization gate including an untuned holdout, and owner visual review.

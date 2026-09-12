@@ -10,6 +10,8 @@ The architecture owner changes docs/ and contracts/ on codex/native-architecture
 
 Do not claim a capability from a method name, process exit, installed version or unit test. Native execution, chemical correctness, visual quality, editability, host delivery and installation each require their own evidence. P0-A transport, P0-B object control and P0-C composition are separate gates. Fix SaveAs, complete the ChemDraw 26 matrix, then S1 -> R1 -> M1 -> M2 Beckmann Snake before installer/MCP/multi-agent packaging. Prioritize independent IR/Composer and diagnose layout failures instead of expanding peripheral work.
 
+M2 must pass docs/M2_GENERALIZATION_GATE.md: no Beckmann-specific templates, sample coordinates, ID-based layouts or screenshot patches. General IR/Composer generation must be separate from reference oracles. After base M2 passes, freeze implementation/rules before selecting an untuned asymmetric-oxime holdout. Fixed 7/6/15 counts are sample expectations only.
+
 The OpenAI frontend project-synchronisation bug is an external known issue. The user explicitly stopped investigation. Do not repair caches, registrations or the application for that issue.
 
 Public content is English and sanitized. No accounts, licence material, tokens, tunnel configuration, private coursework or experimental inputs. Do not redistribute vendor binaries. Defaults remain one product entry, credential reuse, non-developer installation, thin host adapters, Terra max benchmarks and bounded resource use.

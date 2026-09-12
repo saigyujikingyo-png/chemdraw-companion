@@ -1,14 +1,15 @@
 # P0 risk register: transport, object control and composition
 
-Architecture revision 2026-09-12.2 supersedes the original risk ordering, not historical evidence. **The largest architectural uncertainty is P0-C: whether correct chemical meaning can consistently become a good editable mechanism figure.** SaveAs/COM reliability is a necessary P0-A engineering prerequisite.
+Architecture revision 2026-09-12.3 supersedes the original risk ordering, not historical evidence. **The largest architectural uncertainty is P0-C: whether correct chemical meaning can consistently become a good editable mechanism figure.** SaveAs/COM reliability is a necessary P0-A engineering prerequisite.
 
-Execution order: **repair SaveAs -> ChemDraw 26 capability matrix -> S1 -> R1 -> M1 -> M2 Beckmann Snake**. Severity and execution dependency are different. Run M2 through a direct developer harness before installer, MCP, cloud or multi-agent packaging.
+Execution order: **repair SaveAs -> ChemDraw 26 capability matrix -> S1 -> R1 -> M1 -> M2 Beckmann Snake**. Severity and execution dependency are different. Run M2 through a direct developer harness, then freeze and run the untuned holdout in M2_GENERALIZATION_GATE.md, before installer, MCP, cloud or multi-agent packaging.
 
 | Priority / ID | Risk | Discriminating evidence | Failure decision |
 | --- | --- | --- | --- |
 | P0-C / C01 | Correct chemistry cannot become readable multi-step geometry | M2 seven-state snake, editable electron curves, two row turns, consistent scale, first output and correction time | Diagnose IR vs Composer vs adapter using M2 controls; stop peripheral expansion |
 | P0-C / C02 | No independent state identity, anti relation or simultaneous electron flow representation | Versioned Chemical Mechanism IR, atom provenance, state-scoped ports and graph differences | Fix IR/validator; do not encode chemistry as vendor coordinates/calls |
 | P0-C / C03 | Native render conceals poor geometry or extensive manual repairs | Separate untouched first output, bounded automatic repairs and human-corrected copy at final size | Human repair cannot retrospectively pass automated quality |
+| P0-C / C04 | Memorized M2/template/coordinate patches mimic a general Composer | Separate oracle/runtime; generic input boundary, ID relabeling/variable-length tests, frozen untuned chemical holdout | Reject benchmark claim; preserve first failure and consume disclosed holdout before retuning |
 | P0-B / B01 | Atoms/bonds/charges/lone pairs flatten, disappear or cannot be controlled | Create/read/change/remove microfixtures and independent native CDX/CDXML reopen/edit | Qualify another adapter operation; images/method names are insufficient |
 | P0-B / B02 | Curves are editable but chemical anchors are lost | Control-point edit plus donor/acceptor mapping through fragment motion and reopen | Separate geometry control from semantic anchors; Composer may explicitly maintain anchors |
 | P0-B / B03 | Transform/cleanup detaches curves or changes stereo/anti relationships | Rigid transforms, cleanup/readback, mapping and rerouting; no silent reflection | Repair adapter mapping or Composer invalidation; reject semantic changes |
