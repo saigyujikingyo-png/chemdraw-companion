@@ -1,0 +1,54 @@
+{
+  "positive_native_receipt": {
+    "receipt_sha256": "e104dae347b1a8a10152fe35fcdcf49f65a238d55e37ee6052e46e0d352ff9fa",
+    "source": "ChemDraw native Clean(true), bound to completed local execution receipt",
+    "environment": {
+      "application_build": "26.0.0.6141",
+      "interop_version": "22.0.0.0",
+      "executable_sha256": "f5383228898b6e6be08abded9f6db0909d0841a2f6a5bbef50ba00f44af8a084",
+      "interop_sha256": "ecaed777a648df79927c79c3d7a33e1a813c6b027c4111396b7139fdda81959a",
+      "executor_sha256": "6c798634a06853987c976f358fa5def35847c6f003b84d8d009435956b5e35bf",
+      "bridge_sha256": "52eb2fe1e66d9b13aba84dfba010959ddcb8fcf6109b919a498324400681b73c",
+      "owned_pid": 28020,
+      "hwnd_bound_pid": 28020
+    }
+  },
+  "controls": [
+    {
+      "case": "raw_seed",
+      "verdict": "rejected",
+      "error": "Missing completed native geometry execution receipt"
+    },
+    {
+      "case": "changed_output_bytes",
+      "verdict": "rejected",
+      "error": "Native output hash mismatch"
+    },
+    {
+      "case": "wrong_input_hash",
+      "verdict": "rejected",
+      "error": "Native input hash mismatch"
+    },
+    {
+      "case": "wrong_build_hash",
+      "verdict": "rejected",
+      "error": "Native binary hashes outside qualified build"
+    },
+    {
+      "case": "wrong_style",
+      "verdict": "rejected",
+      "error": "IR/style provenance mismatch"
+    },
+    {
+      "case": "wrong_text_run_with_matching_hash",
+      "verdict": "rejected",
+      "error": "Native text run style mismatch"
+    },
+    {
+      "case": "wrong_state_manifest",
+      "verdict": "rejected",
+      "error": "Caller manifest differs from executed seed manifest"
+    }
+  ],
+  "scope": "Local receipt trust and hash binding; not adversarial executor attestation."
+}

@@ -5,9 +5,9 @@ No fixture oracle, state-name branch, molecule template or page cache exists.
 """
 from __future__ import annotations
 import copy,itertools,math,textwrap
-from runtime.chemical_ir import connected_components,linear_order,canonical_hash
+from runtime.chemical_ir import connected_components,linear_order,canonical_hash,chemical_colors
 
-RULE_VERSION='generic-composer/0.1'
+RULE_VERSION='generic-composer/0.2'
 RULES={'panel_gap_bonds':1.7,'component_gap_bonds':.8,'electron_radius_bonds':.55,'curve_clearance_bonds':.18,'label_clearance_bonds':.12,'maximum_aux_permutation':5,'curve_bends_bonds':[.55,.9,1.4,1.95,2.5]}
 
 def add(p,q):return (p[0]+q[0],p[1]+q[1])
@@ -21,7 +21,7 @@ def curve_point(p,t):
 def point_box_distance(p,b):return math.hypot(max(b[0]-p[0],0,p[0]-b[2]),max(b[1]-p[1],0,p[1]-b[3]))
 
 def rotate_component(component,angle):
-    c=copy.deepcopy(component);points=[a['position'] for a in c['atoms']];center=(sum(p[0] for p in points)/len(points),sum(p[1] for p in points)/len(points));co,si=math.cos(angle),math.sin(angle)
+    c=copy.deepcopy(component);points=[a['position'] for a in c['atoms']];center=(math.fsum(p[0] for p in points)/len(points),math.fsum(p[1] for p in points)/len(points));co,si=math.cos(angle),math.sin(angle)
     for a in c['atoms']:
         dx,dy=vec(center,a['position']);a['position']=(center[0]+co*dx-si*dy,center[1]+si*dx+co*dy)
     return c
@@ -39,22 +39,44 @@ def place_component(component,x,y,padding):
     for a in result['atoms']:a['position']=add(a['position'],(dx,dy))
     return result
 
-def prepare_components(state,measured,catalog,previous):
+def geometry_key(components):
+    return tuple(sorted((a['chemical_role'],round(a['position'][0],7),round(a['position'][1],7)) for c in components for a in c['atoms']))
+
+
+def canonical_pose(component):
+    """Choose a rigid pose from labelled intrinsic geometry, without IDs.
+
+    Every nonzero atom-pair axis is considered. A true geometric symmetry can
+    exchange chemically equivalent atoms; it cannot choose a named atom/page.
+    """
+    points=[a['position'] for a in component['atoms']]
+    angles={round(-math.atan2(q[1]-p[1],q[0]-p[0]),12) for p in points for q in points if math.dist(p,q)>1e-8}
+    if not angles:return component
+    candidates=[]
+    for angle in sorted(angles):
+        c=rotate_component(component,angle)
+        center=tuple(math.fsum(a['position'][k] for a in c['atoms'])/len(c['atoms']) for k in (0,1))
+        key=tuple(sorted((a['chemical_role'],round(a['position'][0]-center[0],6),round(a['position'][1]-center[1],6)) for a in c['atoms']))
+        candidates.append((key,c))
+    return min(candidates,key=lambda v:v[0])[1]
+
+
+def prepare_components(state,measured,catalog,previous,roles):
     groups=connected_components(state,catalog);components=[]
     for group in groups:
-        atoms=[{'map':i,**copy.deepcopy(measured['atoms'][i])} for i in group]
+        atoms=[{'map':i,'chemical_role':roles[i],**copy.deepcopy(measured['atoms'][i])} for i in group]
+        atoms.sort(key=lambda a:(a['chemical_role'],*a['position']))
         bonds=[copy.deepcopy(b) for b in measured['bonds'] if b['atoms'][0] in group]
-        components.append({'atoms':atoms,'bonds':bonds,'source_sha256':measured['source_sha256']})
+        components.append(canonical_pose({'atoms':atoms,'bonds':bonds,'source_sha256':measured['source_sha256']}))
     # Size and chemical properties choose a main component, never a named atom.
-    signature=lambda c:(-sum(a['element']!='H' for a in c['atoms']),-len(c['atoms']),canonical_hash(sorted((a['element'],a['charge'],a['implicit_h']) for a in c['atoms'])))
+    signature=lambda c:(-sum(a['element']!='H' for a in c['atoms']),-len(c['atoms']),tuple(sorted(a['chemical_role'] for a in c['atoms'])))
     components.sort(key=signature)
     if previous:
         main=components[0];current={a['map']:a['position'] for a in main['atoms'] if a['element']!='H'};shared=set(current)&set(previous)
         if len(shared)>=2:
-            pc=tuple(sum(current[i][k] for i in shared)/len(shared) for k in (0,1));qc=tuple(sum(previous[i][k] for i in shared)/len(shared) for k in (0,1))
-            dot=cross=0
-            for i in shared:
-                p=vec(pc,current[i]);q=vec(qc,previous[i]);dot+=p[0]*q[0]+p[1]*q[1];cross+=p[0]*q[1]-p[1]*q[0]
+            pc=tuple(math.fsum(current[i][k] for i in shared)/len(shared) for k in (0,1));qc=tuple(math.fsum(previous[i][k] for i in shared)/len(shared) for k in (0,1))
+            vectors=[(vec(pc,current[i]),vec(qc,previous[i])) for i in shared]
+            dot=math.fsum(p[0]*q[0]+p[1]*q[1] for p,q in vectors);cross=math.fsum(p[0]*q[1]-p[1]*q[0] for p,q in vectors)
             components[0]=rotate_component(main,math.atan2(cross,dot))
     return components
 
@@ -87,10 +109,10 @@ def pack_panel(components,flows,width,B,label_height,step_height):
                 for item in row:
                     for atom in item['atoms']:atom['position']=add(atom['position'],(shift,0))
                 positioned+=row;positions={a['map']:a['position'] for c in positioned for a in c['atoms']}
-                distance=sum(math.dist(flow_endpoint(f['source'],positions),flow_endpoint(f['target'],positions)) for f in flows)
+                distance=math.fsum(math.dist(flow_endpoint(f['source'],positions),flow_endpoint(f['target'],positions)) for f in flows)
                 height=y+row_height+gap/2+step_height;choices.append((height*10+distance,positioned,height))
     if not choices:raise ValueError('Auxiliary inventory cannot fit at fixed style')
-    _,positioned,height=min(choices,key=lambda t:t[0]);return positioned,height
+    _,positioned,height=min(choices,key=lambda t:(round(t[0],7),geometry_key(t[1])));return positioned,height
 
 def lone_pair_ports(state,components,B):
     atoms={a['map']:a for c in components for a in c['atoms']};positions={i:a['position'] for i,a in atoms.items()};result=[]
@@ -98,7 +120,7 @@ def lone_pair_ports(state,components,B):
         i=entry['atom'];p=positions[i];occupied=[math.atan2(positions[j][1]-p[1],positions[j][0]-p[0]) for b in state['bonds'] if i in b['atoms'] for j in b['atoms'] if j!=i];chosen=[]
         for slot in range(entry['count']):
             def score(a):return min(abs(math.atan2(math.sin(a-b),math.cos(a-b))) for b in occupied+chosen) if occupied+chosen else math.pi
-            angle=max((math.radians(d) for d in range(0,360,15)),key=lambda a:(score(a),-a));chosen.append(angle)
+            angle=max((math.radians(d) for d in range(0,360,15)),key=lambda a:(round(score(a),10),-a));chosen.append(angle)
             radius=B*RULES['electron_radius_bonds'];label=atoms[i]['label']
             if label:
                 box=label['bbox_offset'];radius=max(radius,min(math.hypot(box[x],box[y]) for x in (0,2) for y in (1,3))+B*.12)
@@ -110,14 +132,17 @@ def route_flows(state,flows,components,pairs,B):
     boxes={i:[a['position'][0]+a['label']['bbox_offset'][0],a['position'][1]+a['label']['bbox_offset'][1],a['position'][0]+a['label']['bbox_offset'][2],a['position'][1]+a['label']['bbox_offset'][3]] for i,a in atoms.items() if a['label']}
     # Routing priority derives from port geometry. Flow IDs and input order have
     # no layout meaning; indistinguishable routes may remain equivalent ties.
-    ordered=sorted(flows,key=lambda f:(-math.dist(flow_endpoint(f['source'],positions),flow_endpoint(f['target'],positions)),f['source']['type'],f['target']['type']))
+    def port_key(port):
+        members=[port['atom']] if 'atom' in port else port['atoms']
+        return (port['type'],port.get('electrons',''),port.get('pair_index',-1),tuple(sorted((atoms[i]['chemical_role'],*map(lambda x:round(x,7),positions[i])) for i in members)))
+    ordered=sorted(flows,key=lambda f:(-round(math.dist(flow_endpoint(f['source'],positions),flow_endpoint(f['target'],positions)),7),port_key(f['source']),port_key(f['target'])))
     for f in ordered:
         source,target=f['source'],f['target'];start=ports[(source['atom'],source['pair_index'])] if source['type']=='lone_pair' else flow_endpoint(source,positions)
         if target['type']=='atom':
             i=target['atom'];center=positions[i];box=boxes.get(i);radius=B/6 if box is None else max(box[2]-box[0],box[3]-box[1])/2+B*.14
             ends=[add(center,(radius*math.cos(math.radians(d)),radius*math.sin(math.radians(d)))) for d in range(0,360,30)]
         else:
-            a,b=(positions[i] for i in target['atoms']);direction=unit(vec(a,b));normal=(-direction[1],direction[0]);ends=[add(middle(a,b),mul(normal,B*.15*s)) for s in (-1,1)]
+            a,b=sorted(positions[i] for i in target['atoms']);direction=unit(vec(a,b));normal=(-direction[1],direction[0]);ends=[add(middle(a,b),mul(normal,B*.15*s)) for s in (-1,1)]
         candidates=[]
         for end in ends:
             delta=vec(start,end);direction=unit(delta);normal=(-direction[1],direction[0])
@@ -128,7 +153,7 @@ def route_flows(state,flows,components,pairs,B):
                     for box in boxes.values():d=point_box_distance(point,box);minimum=min(minimum,d);penalty+=max(0,threshold-d)**2
                     for old in prior:penalty+=max(0,threshold-min(math.dist(point,p) for p in old))**2*.4
                 candidates.append((penalty+B*bend*.03,points,samples,minimum))
-        score,points,samples,minimum=min(candidates,key=lambda c:c[0]);prior.append(samples)
+        score,points,samples,minimum=min(candidates,key=lambda c:(round(c[0],7),tuple(round(v,7) for p in c[1] for v in p)));prior.append(samples)
         result.append({'id':f['id'],'electron_count':f['electron_count'],'source':{'state':state['id'],**source},'target':{'state':state['id'],**target},'bezier':points,'diagnostics':{'native_label_bbox_clearance_pt':minimum,'required_clearance_pt':threshold,'route_score':score}})
     return result
 
@@ -136,9 +161,9 @@ def compose(mechanism,style,geometry):
     states,transitions=linear_order(mechanism);catalog={a['map']:a for a in mechanism['atom_catalog']};outgoing={t['from']:t for t in transitions}
     B=style['bond_length_pt'];font=style['font_pt'];width=style['canvas_width_mm']*72/25.4;height=style['canvas_height_mm']*72/25.4;margin=style['outer_margin_mm']*72/25.4
     header=font*2.8;footer=font*1.5;column_gap=B*RULES['panel_gap_bonds'];row_gap=B*style['row_gap_bond_lengths'];available_width=width-2*margin;available_height=height-2*margin-header-footer
-    prepared={};previous=None
+    prepared={};previous=None;roles=chemical_colors(mechanism)
     for state in states:
-        cs=prepare_components(state,geometry[state['id']],catalog,previous);prepared[state['id']]=cs;previous={a['map']:a['position'] for a in cs[0]['atoms'] if a['element']!='H'}
+        cs=prepare_components(state,geometry[state['id']],catalog,previous,roles);prepared[state['id']]=cs;previous={a['map']:a['position'] for a in cs[0]['atoms'] if a['element']!='H'}
     plan=None;rejections=[]
     for columns in range(min(style['max_columns'],len(states)),0,-1):
         rows=math.ceil(len(states)/columns)
@@ -159,7 +184,7 @@ def compose(mechanism,style,geometry):
             plan=(columns,panel_width,packed,row_heights);break
         except ValueError as exc:rejections.append({'columns':columns,'reason':str(exc)})
     if plan is None:raise ValueError('No layout at the frozen font/bond scale: '+str(rejections))
-    columns,panel_width,packed,row_heights=plan;scene={'scene_version':'mechanism-scene/0.1','rule_version':RULE_VERSION,'rules':RULES,'style':style,'mechanism_sha256':canonical_hash(mechanism),'width_pt':width,'height_pt':height,'states':[],'flows':[],'connectors':[],'texts':[],'layout_diagnostics':{'columns':columns,'row_heights_pt':row_heights,'rejected_plans':rejections},'source_geometry':'qualified native measurements; no whole-scene geometry cache'}
+    columns,panel_width,packed,row_heights=plan;scene={'scene_version':'mechanism-scene/0.1','rule_version':RULE_VERSION,'rules':RULES,'style':style,'mechanism_sha256':canonical_hash(mechanism),'width_pt':width,'height_pt':height,'states':[],'flows':[],'connectors':[],'texts':[],'layout_diagnostics':{'columns':columns,'row_heights_pt':row_heights,'rejected_plans':rejections},'source_geometry':'provided intrinsic geometry; native qualification is established by the adapter execution receipt, not asserted by Composer'}
     scene['texts'].append({'text':'Reaction mechanism','position':[margin,margin+font],'font_pt':font})
     origins={};sizes={};row_y=margin+header
     for row,start in enumerate(range(0,len(packed),columns)):

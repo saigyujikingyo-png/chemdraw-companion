@@ -13,7 +13,7 @@ if __name__=='__main__':
         (a.out/'semantic-receipt.json').write_text(json.dumps({'request_sha256':canonical_hash(payload),'validation':validate_semantics(mechanism),'automatic_anti_selection':'unverified; input supplies complete semantic IR'},indent=2),encoding='utf-8')
     else:
         from runtime.mechanism_composer import compose
-        manifest=json.loads((a.seed/'geometry-manifest.json').read_text(encoding='utf-8'));geometry=read_geometry(mechanism,manifest,a.native)
+        manifest=json.loads((a.seed/'geometry-manifest.json').read_text(encoding='utf-8'));geometry=read_geometry(mechanism,manifest,a.native,input_folder=a.seed,style=style)
         scene=compose(mechanism,style,geometry);materialize(scene,a.out)
         (a.out/'native-geometry.json').write_text(json.dumps(geometry,indent=2),encoding='utf-8')
     print(json.dumps({'mode':a.mode,'output':str(a.out),'semantic_validation':'pass','native_quality':'not_implied'}))

@@ -3,36 +3,9 @@ from __future__ import annotations
 import copy,json,math,hashlib
 from pathlib import Path
 import xml.etree.ElementTree as ET
-from runtime.chemical_ir import connected_components,linear_order,edge,canonical_hash
+from runtime.chemical_ir import connected_components,linear_order,edge,canonical_hash,chemical_colors
 
 ELEMENTS={'H':1,'C':6,'N':7,'O':8}
-
-def chemical_colors(mechanism):
-    states,transitions=linear_order(mechanism);catalog={a['map']:a for a in mechanism['atom_catalog']}
-    initial={}
-    for i,a in catalog.items():
-        state_roles=[];flow_roles=[]
-        for s in states:
-            q={x['atom']:x['value'] for x in s['formal_charges']};lp={x['atom']:x['count'] for x in s['lone_pairs']}
-            state_roles.append((q.get(i,0),lp.get(i,0),sorted(b['order'] for b in s['bonds'] if i in b['atoms'])))
-        for t in transitions:
-            roles=[]
-            for f in t['electron_flows']:
-                for side in ('source','target'):
-                    p=f[side]
-                    if p.get('atom')==i or i in p.get('atoms',[]):roles.append((side,p['type'],p.get('electrons',''),p.get('pair_index',-1)))
-            flow_roles.append(sorted(roles))
-        initial[i]=(a['element'],a['implicit_h'],state_roles,flow_roles)
-    colors={i:canonical_hash(v) for i,v in initial.items()}
-    for _ in range(min(len(catalog),8)):
-        new={}
-        for i in catalog:
-            neighborhoods=[]
-            for s in states:
-                neighborhoods.append(sorted((b['order'],colors[next(j for j in b['atoms'] if j!=i)]) for b in s['bonds'] if i in b['atoms']))
-            new[i]=canonical_hash((initial[i],neighborhoods))
-        colors=new
-    return colors
 
 def kekule_orders(state,catalog):
     """Solve valence demands for supported all-carbon aromatic subgraphs."""
@@ -93,18 +66,24 @@ def seed_documents(mechanism,style,folder):
             for bond in state['bonds']:
                 a,b=bond['atoms']
                 if a in group:
-                    uid+=1;ET.SubElement(fragment,'b',{'id':str(uid),'B':ids[a],'E':ids[b],'Order':str(orders[edge((a,b))])})
+                    uid+=1;ET.SubElement(fragment,'b',{'id':str(uid),'B':ids[a],'E':ids[b],'Order':format(orders[edge((a,b))],'g')})
         name=f'state-{index:03d}.cdxml';ET.indent(root);ET.ElementTree(root).write(folder/name,encoding='utf-8',xml_declaration=True);manifest.append({'state':state['id'],'file':name})
     (folder/'geometry-manifest.json').write_text(json.dumps(manifest,indent=2),encoding='utf-8')
+    provenance={'version':'native-seed/0.1','mechanism_sha256':canonical_hash(mechanism),'style_sha256':canonical_hash(style),'inputs':[{'file':e['file'],'sha256':hashlib.sha256((folder/e['file']).read_bytes()).hexdigest()} for e in manifest]}
+    (folder/'seed-provenance.json').write_text(json.dumps(provenance,indent=2),encoding='utf-8')
     return manifest
 
-def read_geometry(mechanism,manifest,folder):
+def read_geometry(mechanism,manifest,folder,*,input_folder=None,style=None):
+    from runtime.native_provenance import verify_geometry_receipt
+    if input_folder is None or style is None:raise ValueError('Verified native geometry requires seed path, style and execution receipt')
+    provenance=verify_geometry_receipt(mechanism,style,manifest,input_folder,folder)
     catalog={a['map']:a for a in mechanism['atom_catalog']};states={s['id']:s for s in mechanism['states']};result={}
     for entry in manifest:
         path=folder/entry['file'];root=ET.parse(path).getroot();state=states[entry['state']];q={x['atom']:x['value'] for x in state['formal_charges']};nodes={int(n.get('AtomNumber','-1')):n for n in root.iter('n')}
         if set(nodes)!=set(catalog) or len(list(root.iter('n')))!=len(catalog):raise ValueError('Native atom mapping changed')
         ids={n.get('id'):i for i,n in nodes.items()};bonds=[];atoms={}
         for i,n in nodes.items():
+            if n.get('Isotope') not in (None,'0') or n.get('Radical') not in (None,'None'):raise ValueError('Unexpected native isotope or radical')
             if int(n.get('Element',6))!=ELEMENTS[catalog[i]['element']] or int(n.get('Charge',0))!=q.get(i,0):raise ValueError('Native atom semantics changed')
             p=tuple(map(float,n.get('p').split()));label=None;t=n.find('t')
             if t is not None:
@@ -117,10 +96,14 @@ def read_geometry(mechanism,manifest,folder):
         expected={edge(b['atoms']):b['order'] for b in state['bonds']}
         if set(actual)!=set(expected) or any(actual[e]!=o and not(o==1.5 and actual[e] in (1,2)) for e,o in expected.items()):raise ValueError('Native bond graph changed')
         for i in catalog:
-            if catalog[i]['element']=='C' and sum(o for e,o in actual.items() if i in e)+catalog[i]['implicit_h']!=4:raise ValueError('Native carbon valence changed')
+            node=nodes[i];element=int(node.get('Element','6'));charge=int(node.get('Charge','0'));bond_valence=sum(o for e,o in actual.items() if i in e)
+            valence={1:1,6:4,7:3+charge,8:2+charge}[element]
+            hydrogens=int(node.get('NumHydrogens')) if node.get('NumHydrogens') is not None else valence-bond_valence
+            if hydrogens<0 or hydrogens!=int(hydrogens) or bond_valence+hydrogens!=valence or hydrogens!=catalog[i]['implicit_h']:raise ValueError('Native hydrogen count or valence changed')
+            atoms[i]['implicit_h']=int(hydrogens)
         for relation in mechanism['stereo_constraints']:
             if state['id'] in relation['states'] and not stereo_satisfied(relation,{i:a['position'] for i,a in atoms.items()}):raise ValueError('Native seed/cleanup did not preserve specified stereo relation')
-        result[state['id']]={'atoms':atoms,'bonds':bonds,'source_sha256':hashlib.sha256(path.read_bytes()).hexdigest(),'source':'ChemDraw native Clean(true) readback'}
+        result[state['id']]={'atoms':atoms,'bonds':bonds,'source_sha256':hashlib.sha256(path.read_bytes()).hexdigest(),'source':provenance['source'],'native_execution':provenance}
     return result
 
 def stereo_satisfied(relation,positions):

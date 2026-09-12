@@ -1,0 +1,77 @@
+{
+  "selection": "Latest complete S1/R1/M1 native batch; no failed file replaced by a later incomplete batch. M2 remains the historical 2cc6597 sample and is not rescored.",
+  "samples": [
+    {
+      "file": "samples/S1/S1.cdx",
+      "native_source": "native-core-r2/small-repair-1-native/S1.cdx",
+      "sha256": "d47b4bcb301247fac098bb809d5b3c478faa0a78dcad18e7f443ce18514b2092",
+      "status": "automatic_checks_pass_owner_pending"
+    },
+    {
+      "file": "samples/S1/S1.cdxml",
+      "native_source": "native-core-r2/small-repair-1-native/S1.cdxml",
+      "sha256": "814899fb68b433c0298b4f4d44944177fdbdca404d00361953791ed941d5e394",
+      "status": "automatic_checks_pass_owner_pending"
+    },
+    {
+      "file": "samples/S1/S1.png",
+      "native_source": "native-core-r2/small-repair-1-native/S1.png",
+      "sha256": "90273897fdde668f741d6becc22e916144c2c90f0a0ef2d66f347d89ca883792",
+      "status": "automatic_checks_pass_owner_pending"
+    },
+    {
+      "file": "samples/S1/S1.jpg",
+      "native_source": "native-core-r2/small-repair-1-native/S1.jpg",
+      "sha256": "9d39195be6c6159104ce05c26e0e4f491e1b33dabf16f0583f2b7eeaba677174",
+      "status": "automatic_checks_pass_owner_pending"
+    },
+    {
+      "file": "samples/R1/R1.cdx",
+      "native_source": "native-core-r2/small-repair-1-native/R1.cdx",
+      "sha256": "083fe48516f58e27a4114f54fec0ffbc43e30816ef2e28806281ca04ec4baf74",
+      "status": "automatic_checks_pass_owner_pending"
+    },
+    {
+      "file": "samples/R1/R1.cdxml",
+      "native_source": "native-core-r2/small-repair-1-native/R1.cdxml",
+      "sha256": "8726b1554b0f2a2cd619a748a77904821c5bdcb063b37df195d8c1865646fb77",
+      "status": "automatic_checks_pass_owner_pending"
+    },
+    {
+      "file": "samples/R1/R1.png",
+      "native_source": "native-core-r2/small-repair-1-native/R1.png",
+      "sha256": "30a8f3365475718d76c1b5541ab7e6feca585b30bc10980feef8819ffc07f2f2",
+      "status": "automatic_checks_pass_owner_pending"
+    },
+    {
+      "file": "samples/R1/R1.jpg",
+      "native_source": "native-core-r2/small-repair-1-native/R1.jpg",
+      "sha256": "9a633aa3786659db02504c103071bd0fa19f31d55d280ce22e5dcac01ae83330",
+      "status": "automatic_checks_pass_owner_pending"
+    },
+    {
+      "file": "samples/M1/M1.cdx",
+      "native_source": "native-core-r2/small-repair-1-native/M1.cdx",
+      "sha256": "c07c63e9e8360e4e7133bb368e96318e89e16058a5690e326d2d348e2097c1d3",
+      "status": "chemistry_edit_pass_quality_failed"
+    },
+    {
+      "file": "samples/M1/M1.cdxml",
+      "native_source": "native-core-r2/small-repair-1-native/M1.cdxml",
+      "sha256": "292b361cf452eeacba7c3e3d891c587c9f799c3b8831a4e248279c23df071b30",
+      "status": "chemistry_edit_pass_quality_failed"
+    },
+    {
+      "file": "samples/M1/M1.png",
+      "native_source": "native-core-r2/small-repair-1-native/M1.png",
+      "sha256": "2bbb64b741ec85cedb01ac86e71f3577217929bfecfe8276dd8c01321961b184",
+      "status": "chemistry_edit_pass_quality_failed"
+    },
+    {
+      "file": "samples/M1/M1.jpg",
+      "native_source": "native-core-r2/small-repair-1-native/M1.jpg",
+      "sha256": "15105e72d657fb4983bbeb060263db279037d1f161c1bc7c15f334c2b518616e",
+      "status": "chemistry_edit_pass_quality_failed"
+    }
+  ]
+}

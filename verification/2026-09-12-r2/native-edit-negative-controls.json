@@ -1,0 +1,205 @@
+{
+  "version": "native-edit-negative-controls/0.1",
+  "source_native_journal_sha256": "92cb67b9c92bd49e7dc81e3bce9d3993b5217c7fa0f4db2dea97f07ad9202072",
+  "native_positive_control": {
+    "results": [
+      {
+        "source_format": "cdx",
+        "native_edit_save_reopen": "pass",
+        "issues": [],
+        "diagnostic_chemistry_accepted": false
+      },
+      {
+        "source_format": "cdxml",
+        "native_edit_save_reopen": "pass",
+        "issues": [],
+        "diagnostic_chemistry_accepted": false
+      }
+    ],
+    "manual_active_correction_seconds": null,
+    "scope": "Exact declared nonzero edits and all captured non-target chemical/drawable fields. Separate figure quality and owner acceptance required."
+  },
+  "negative_controls": [
+    {
+      "case": "noop_curves",
+      "status": "rejected_as_required",
+      "journal_sha256": "e0729b7685cd1f1dd01211d3fa1bee78569f4a822ba2b7f162368cb6d00e7ff0",
+      "results": [
+        {
+          "source_format": "cdx",
+          "native_edit_save_reopen": "failed",
+          "issues": [
+            "undeclared_or_missing_edit:curves:331",
+            "undeclared_or_missing_edit:curves:331"
+          ],
+          "diagnostic_chemistry_accepted": false
+        },
+        {
+          "source_format": "cdxml",
+          "native_edit_save_reopen": "failed",
+          "issues": [
+            "undeclared_or_missing_edit:curves:331",
+            "undeclared_or_missing_edit:curves:331"
+          ],
+          "diagnostic_chemistry_accepted": false
+        }
+      ]
+    },
+    {
+      "case": "noop_symbols",
+      "status": "rejected_as_required",
+      "journal_sha256": "f55564567f357c20fc19022f4df842256269847cd9c99bebb9cb5f4fcc0d261a",
+      "results": [
+        {
+          "source_format": "cdx",
+          "native_edit_save_reopen": "failed",
+          "issues": [
+            "undeclared_or_missing_edit:symbols:49",
+            "undeclared_or_missing_edit:symbols:50",
+            "undeclared_or_missing_edit:symbols:51",
+            "undeclared_or_missing_edit:symbols:50",
+            "undeclared_or_missing_edit:symbols:51"
+          ],
+          "diagnostic_chemistry_accepted": false
+        },
+        {
+          "source_format": "cdxml",
+          "native_edit_save_reopen": "failed",
+          "issues": [
+            "undeclared_or_missing_edit:symbols:49",
+            "undeclared_or_missing_edit:symbols:50",
+            "undeclared_or_missing_edit:symbols:51",
+            "undeclared_or_missing_edit:symbols:50",
+            "undeclared_or_missing_edit:symbols:51"
+          ],
+          "diagnostic_chemistry_accepted": false
+        }
+      ]
+    },
+    {
+      "case": "noop_captions",
+      "status": "rejected_as_required",
+      "journal_sha256": "10470c82518cdf10cfe3aa7820c328156cc5cc034b3db5206bd72d51f71d9731",
+      "results": [
+        {
+          "source_format": "cdx",
+          "native_edit_save_reopen": "failed",
+          "issues": [
+            "undeclared_or_missing_edit:captions:313",
+            "incomplete_or_invalid_evidence:Caption precondition or nonzero edit missing"
+          ],
+          "diagnostic_chemistry_accepted": false
+        },
+        {
+          "source_format": "cdxml",
+          "native_edit_save_reopen": "failed",
+          "issues": [
+            "undeclared_or_missing_edit:captions:313",
+            "incomplete_or_invalid_evidence:Caption precondition or nonzero edit missing"
+          ],
+          "diagnostic_chemistry_accepted": false
+        }
+      ]
+    },
+    {
+      "case": "changed_hydrogens",
+      "status": "rejected_as_required",
+      "journal_sha256": "a820734033b54a53e0046398ffb94b24cc41f3dea99af8d9797656435bf0837c",
+      "results": [
+        {
+          "source_format": "cdx",
+          "native_edit_save_reopen": "failed",
+          "issues": [
+            "undeclared_or_missing_edit:atoms:13",
+            "undeclared_or_missing_edit:atoms:13"
+          ],
+          "diagnostic_chemistry_accepted": false
+        },
+        {
+          "source_format": "cdxml",
+          "native_edit_save_reopen": "failed",
+          "issues": [
+            "undeclared_or_missing_edit:atoms:13",
+            "undeclared_or_missing_edit:atoms:13"
+          ],
+          "diagnostic_chemistry_accepted": false
+        }
+      ]
+    },
+    {
+      "case": "changed_bond_stereo",
+      "status": "rejected_as_required",
+      "journal_sha256": "4c260e42b993025f01ef69ceaec576efd69711fdea5ab2864d1bdcc0270a4298",
+      "results": [
+        {
+          "source_format": "cdx",
+          "native_edit_save_reopen": "failed",
+          "issues": [
+            "undeclared_or_missing_edit:bonds:24",
+            "undeclared_or_missing_edit:bonds:24"
+          ],
+          "diagnostic_chemistry_accepted": false
+        },
+        {
+          "source_format": "cdxml",
+          "native_edit_save_reopen": "failed",
+          "issues": [
+            "undeclared_or_missing_edit:bonds:24",
+            "undeclared_or_missing_edit:bonds:24"
+          ],
+          "diagnostic_chemistry_accepted": false
+        }
+      ]
+    },
+    {
+      "case": "missing_head",
+      "status": "rejected_as_required",
+      "journal_sha256": "9f4e1c3e23596ef0d399751fbedadf8b016f5cab8deec8f09b86967e68e722d4",
+      "results": [
+        {
+          "source_format": "cdx",
+          "native_edit_save_reopen": "failed",
+          "issues": [
+            "undeclared_or_missing_edit:curves:331",
+            "undeclared_or_missing_edit:curves:331"
+          ],
+          "diagnostic_chemistry_accepted": false
+        },
+        {
+          "source_format": "cdxml",
+          "native_edit_save_reopen": "failed",
+          "issues": [
+            "undeclared_or_missing_edit:curves:331",
+            "undeclared_or_missing_edit:curves:331"
+          ],
+          "diagnostic_chemistry_accepted": false
+        }
+      ]
+    },
+    {
+      "case": "small_charge_change",
+      "status": "rejected_as_required",
+      "journal_sha256": "f414aaec21afbbd81dba3083dce62ab37cf4913f07013ab3730784a7a6337e5b",
+      "results": [
+        {
+          "source_format": "cdx",
+          "native_edit_save_reopen": "failed",
+          "issues": [
+            "undeclared_or_missing_edit:atoms:13",
+            "incomplete_or_invalid_evidence:Charge edit precondition/nonzero missing"
+          ],
+          "diagnostic_chemistry_accepted": false
+        },
+        {
+          "source_format": "cdxml",
+          "native_edit_save_reopen": "failed",
+          "issues": [
+            "undeclared_or_missing_edit:atoms:13",
+            "incomplete_or_invalid_evidence:Charge edit precondition/nonzero missing"
+          ],
+          "diagnostic_chemistry_accepted": false
+        }
+      ]
+    }
+  ]
+}

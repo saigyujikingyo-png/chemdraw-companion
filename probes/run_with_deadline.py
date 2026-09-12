@@ -1,5 +1,5 @@
 """Bound a disposable probe worker; never terminate the ChemDraw process."""
-import argparse,json,subprocess,time
+import argparse,hashlib,json,subprocess,time
 from datetime import datetime,timezone
 from pathlib import Path
 
@@ -9,6 +9,13 @@ if __name__=='__main__':
     if a.receipt.exists():raise FileExistsError(a.receipt)
     a.receipt.parent.mkdir(parents=True,exist_ok=True)
     record={'started_utc':datetime.now(timezone.utc).isoformat(),'worker_deadline_seconds':a.seconds,'native_call_bound':'Each native call is within the remaining worker deadline; no native process is terminated.','status':'running'}
+    script=None
+    for i,value in enumerate(a.command[:-1]):
+        if value.lower()=='-file':script=Path(a.command[i+1]).resolve();break
+    sources=[Path(__file__).resolve()]
+    if script:
+        sources+=[script]+[script.parent/name for name in ('native-common.ps1','native-snapshot.ps1','NativeChemDraw.cs') if (script.parent/name).is_file()]
+    record['executed_source_hashes']=[{'file':p.name,'sha256':hashlib.sha256(p.read_bytes()).hexdigest()} for p in sources]
     a.receipt.write_text(json.dumps(record,indent=2),encoding='utf-8');start=time.monotonic()
     try:
         result=subprocess.run(a.command,timeout=a.seconds,check=False)

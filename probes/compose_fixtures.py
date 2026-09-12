@@ -10,8 +10,11 @@ import copy
 import hashlib
 import json
 import math
+import sys
 from pathlib import Path
 import xml.etree.ElementTree as ET
+sys.path.insert(0,str(Path(__file__).resolve().parents[1]))
+from runtime.annotation_layout import pack_row,displacement_curves,annotation_gap
 
 STYLE = {"profile_id": "chembridge-review-v1", "font": "Arial", "label_pt": 8,
          "caption_pt": 8, "bond_pt": 14.4, "line_pt": 0.6, "target_dpi": 600}
@@ -96,7 +99,9 @@ class Page:
                     child.set('p',f'{lx+px-old_x:.4f} {ly+py-old_y:.4f}')
                 mapped[inverse[old_id]]={"native_id":n.get("id"),"x":px,"y":py}
         self.page.append(f)
-        self.scene["components"].append({"id":component,"kind":kind,"fragment_id":f.get("id"),"source_sha256":sha(path),"native_atom_bindings":mapped,"rotation_deg":angle})
+        inv={v['native_id']:k for k,v in mapped.items()}
+        stereo=[{'atoms':[inv[b.get('B')],inv[b.get('E')]],'display':b.get('Display')} for b in f.findall('b') if 'Wedge' in b.get('Display','') or 'Hash' in b.get('Display','')]
+        self.scene["components"].append({"id":component,"kind":kind,"fragment_id":f.get("id"),"source_sha256":sha(path),"native_atom_bindings":mapped,"rotation_deg":angle,'directed_stereo_bonds':stereo})
         return mapped
     def arrow(self,x1,y1,x2,y2):
         # Native arrow convention: Head3D is the target, Tail3D is the source.
@@ -114,29 +119,57 @@ class Page:
         self.scene["input_cdxml_sha256"]=sha(p)
         (out/(self.fixture+'.scene.json')).write_text(json.dumps(self.scene,indent=2),encoding='utf-8')
 
-def compose(fragments,out):
+def measured_fragment(path,kind):
+    f=ET.parse(path).getroot().find('page/fragment');binding=graph_binding(f,GRAPHS[kind]);box=tuple(map(float,f.get('BoundingBox').split()));atoms={}
+    for identity,nid in binding.items():
+        n=f.find(f'n[@id="{nid}"]');pos=tuple(map(float,n.get('p').split()));t=n.find('t');label=None
+        if t is not None:
+            bb=tuple(map(float,t.get('BoundingBox').split()));label=(bb[0]-pos[0],bb[1]-pos[1],bb[2]-pos[0],bb[3]-pos[1])
+        atoms[identity]={'position':pos,'label_box':label}
+    return {'box':box,'atoms':atoms}
+
+
+def compose(fragments,out,metrics,arrow_metrics):
+    B=STYLE['bond_pt'];font=STYLE['caption_pt'];margin=B*.8
+    if arrow_metrics['bond_pt']!=B or arrow_metrics['font_pt']!=font or arrow_metrics['head_size']!='650':raise ValueError('Arrow metric style mismatch')
+    head_extension=arrow_metrics['conservative_forward_extension_pt'];gap=annotation_gap(B,head_extension)
+    def text_box(text):
+        m=metrics['metrics'][text]
+        if m['font']!=STYLE['font']:raise ValueError('Measured caption font mismatch')
+        return [v*font/m['size_pt'] for v in m['bbox_offset']]
     p=Page('S1',85,42)
-    p.text('Alanine zwitterion',16,18)
-    p.fragment(fragments/'alanine.cdxml','alanine','alanine_zwitterion',120,62,anchor=2)
-    p.text('Native stereochemistry and formal charges',16,106,7)
+    p.text('Alanine zwitterion',margin,font*2)
+    p.fragment(fragments/'alanine.cdxml','alanine','alanine_zwitterion',p.width/2,p.height/2,anchor=2)
+    p.text('Native stereochemistry and formal charges',margin,p.height-font*1.5,font)
     p.write(out)
     for fixture in ['R1','M1']:
         p=Page(fixture,85,42)
-        p.text('Nucleophilic substitution' if fixture=='R1' else 'SN2 electron flow',12,17)
-        p.fragment(fragments/'hydroxide.cdxml','hydroxide','nucleophile',27,59,anchor=1)
-        p.text('+',49,62)
-        p.fragment(fragments/'bromomethane.cdxml','bromomethane','substrate',75,59,anchor=2)
-        p.arrow(117,59,156,59);p.text('aqueous',118,43,7);p.text('medium',119,51,7)
-        p.fragment(fragments/'methanol.cdxml','methanol','methanol',177,59,anchor=2)
-        p.text('+',202,62)
-        p.fragment(fragments/'bromide.cdxml','bromide','bromide',220,59,anchor=3)
+        p.text('Nucleophilic substitution' if fixture=='R1' else 'SN2 electron flow',margin,font*2)
+        kinds=['hydroxide','bromomethane','methanol','bromide'];measured={k:measured_fragment(fragments/(k+'.cdxml'),k) for k in kinds};plus=text_box('+');plus_width=plus[2]-plus[0]
+        arrow_width=max(3*B,max(text_box(t)[2]-text_box(t)[0] for t in ('aqueous','medium'))+gap)
+        width=lambda k:measured[k]['box'][2]-measured[k]['box'][0]
+        positions=pack_row(p.width,[width(kinds[0]),plus_width,width(kinds[1]),arrow_width,width(kinds[2]),plus_width,width(kinds[3])],margin,gap);center=p.height/2;maps={}
+        for k,component,index,anchor in [('hydroxide','nucleophile',0,1),('bromomethane','substrate',2,2),('methanol','methanol',4,2),('bromide','bromide',6,3)]:
+            m=measured[k];bb=m['box'];ap=m['atoms'][anchor]['position'];x=positions[index]-bb[0]+ap[0];y=center-(bb[1]+bb[3])/2+ap[1]
+            maps[k]=p.fragment(fragments/(k+'.cdxml'),k,component,x,y,anchor=anchor)
+        for index in (1,5):p.text('+',positions[index]-plus[0],center-(plus[1]+plus[3])/2,font)
+        p.arrow(positions[3],center,positions[3]+arrow_width,center)
+        for line,text in enumerate(('aqueous','medium')):
+            bb=text_box(text);p.text(text,positions[3]+(arrow_width-(bb[2]-bb[0]))/2-bb[0],center-font*(2.1-line),font)
+        p.scene['annotation_measurement_sha256']=metrics['source_sha256'];p.scene['row_minimum_gap_pt']=gap;p.scene['native_head_metrics']=arrow_metrics
         if fixture=='M1':
-            p.lone_pair(27,51)
-            p.flow('attack',{'type':'lone_pair','component':'nucleophile','atom_map':1},{'type':'atom','component':'substrate','atom_map':2},(29,50),(39,30),(58,58),(72.8,58.5))
-            p.flow('departure',{'type':'bond','component':'substrate','atom_maps':[2,3]},{'type':'atom','component':'substrate','atom_map':3},(82.2,60.5),(80,80),(91,81),(91,65))
-            p.text('Two simultaneous electron-pair moves',12,99,7)
+            xy=lambda a:(a['x'],a['y']);oxygen=xy(maps['hydroxide'][1]);carbon=xy(maps['bromomethane'][2]);leaving=xy(maps['bromomethane'][3]);ob=measured['hydroxide']['atoms'][1]['label_box'];lp=(oxygen[0],oxygen[1]+ob[1]-B*.25)
+            pair=p.lone_pair(*lp);p.scene['lone_pairs']=[{'native_id':pair.get('id'),'component':'nucleophile','atom_map':1}]
+            obstacles=[]
+            for caption in p.scene['captions']:
+                if caption['text'] not in metrics['metrics']:continue
+                bb=text_box(caption['text']);obstacles.append([caption['x']+bb[0],caption['y']+bb[1],caption['x']+bb[2],caption['y']+bb[3]])
+            attack,departure=displacement_curves(lp,carbon,leaving,measured['bromomethane']['atoms'][3]['label_box'],B,head_extension,obstacles)
+            p.flow('attack',{'type':'lone_pair','component':'nucleophile','atom_map':1},{'type':'atom','component':'substrate','atom_map':2},*attack)
+            p.flow('departure',{'type':'bond','component':'substrate','atom_maps':[2,3]},{'type':'atom','component':'substrate','atom_map':3},*departure)
+            p.text('Two simultaneous electron-pair moves',margin,p.height-font*1.5,font)
         p.write(out)
 
 if __name__=='__main__':
-    parser=argparse.ArgumentParser();parser.add_argument('--fragments',type=Path,required=True);parser.add_argument('--out',type=Path,required=True)
-    args=parser.parse_args();compose(args.fragments,args.out)
+    parser=argparse.ArgumentParser();parser.add_argument('--fragments',type=Path,required=True);parser.add_argument('--out',type=Path,required=True);parser.add_argument('--text-metrics',type=Path,required=True);parser.add_argument('--arrow-metrics',type=Path,required=True)
+    args=parser.parse_args();compose(args.fragments,args.out,json.loads(args.text_metrics.read_text(encoding='utf-8')),json.loads(args.arrow_metrics.read_text(encoding='utf-8')))

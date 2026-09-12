@@ -129,3 +129,47 @@ def validate_semantics(mechanism):
 
 def canonical_hash(value):
     return hashlib.sha256(json.dumps(value,sort_keys=True,separators=(',',':')).encode()).hexdigest()
+
+
+def chemical_colors(mechanism):
+    """ID-independent whole-pathway roles, refined by chemical neighbours.
+
+    Equal colours are unresolved chemical symmetries, not proof that arbitrary
+    atoms are interchangeable. Comparators must still verify a graph/flow
+    automorphism before accepting a permutation inside a tied colour class.
+    """
+    states,transitions=linear_order(mechanism)
+    catalog={a['map']:a for a in mechanism['atom_catalog']};initial={}
+    for i,a in catalog.items():
+        state_roles=[];flow_roles=[];stereo_roles=[]
+        for s in states:
+            q={x['atom']:x['value'] for x in s['formal_charges']};lp={x['atom']:x['count'] for x in s['lone_pairs']}
+            state_roles.append((q.get(i,0),lp.get(i,0),sorted(b['order'] for b in s['bonds'] if i in b['atoms'])))
+            stereo_roles.append(sorted((r['type'],'central' if i in r['central_bond'] else 'substituent') for r in mechanism['stereo_constraints'] if s['id'] in r['states'] and i in r['central_bond']+r['substituent_atoms']))
+        for t in transitions:
+            roles=[]
+            for f in t['electron_flows']:
+                for side in ('source','target'):
+                    p=f[side]
+                    if p.get('atom')==i or i in p.get('atoms',[]):roles.append((side,p['type'],p.get('electrons',''),p.get('pair_index',-1)))
+            flow_roles.append(sorted(roles))
+        initial[i]=(a['element'],a['implicit_h'],state_roles,flow_roles,stereo_roles)
+    colors={i:canonical_hash(v) for i,v in initial.items()}
+    for _ in range(len(catalog)):
+        new={}
+        for i in catalog:
+            neighbourhoods=[sorted((b['order'],colors[next(j for j in b['atoms'] if j!=i)]) for b in s['bonds'] if i in b['atoms']) for s in states]
+            flow_neighbours=[]
+            for t in transitions:
+                roles=[]
+                for f in t['electron_flows']:
+                    atoms=lambda p:[p['atom']] if 'atom' in p else p['atoms']
+                    if i in atoms(f['source'])+atoms(f['target']):
+                        roles.append(tuple((side,tuple(sorted(colors[j] for j in atoms(f[side])))) for side in ('source','target')))
+                flow_neighbours.append(sorted(roles))
+            new[i]=canonical_hash((initial[i],neighbourhoods,flow_neighbours))
+        # Partition stability is enough; digest equality need not converge.
+        stable=all((colors[i]==colors[j])==(new[i]==new[j]) for i in catalog for j in catalog)
+        colors=new
+        if stable:break
+    return colors

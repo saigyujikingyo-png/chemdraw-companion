@@ -1,6 +1,7 @@
 param([Parameter(Mandatory)][string]$InputDirectory,[Parameter(Mandatory)][string]$OutputDirectory)
 $ErrorActionPreference='Stop';Set-StrictMode -Version Latest
 . (Join-Path $PSScriptRoot 'native-common.ps1')
+. (Join-Path $PSScriptRoot 'native-snapshot.ps1')
 $run=[IO.Path]::GetFullPath($OutputDirectory)
 if(Test-Path -LiteralPath $run){throw 'Output directory already exists; first output must be preserved.'}
 [void][IO.Directory]::CreateDirectory($run)
@@ -9,6 +10,8 @@ function Snapshot($doc){return @{atoms=@($doc.Atoms|ForEach-Object{@{id=$_.ID;nu
 function Save-Checked($doc,$name,$mime){$p=Join-Path $run $name;Record 'save_intent' @{name=$name;mime=$mime};$r=[NativeChemDraw]::Save($doc,$p,$mime,600);Record 'save_return' $r;if(!$r.Exists -or $r.Bytes -le 0){throw "Native artifact missing: $name"};Record 'artifact' @{name=$name;bytes=$r.Bytes;sha256=(Get-FileHash -LiteralPath $p).Hash}}
 $app=$null;$owned=[Collections.Generic.List[object]]::new();$failed=$false
 try{
+    $inputStems=@(Get-ChildItem -LiteralPath $InputDirectory -Filter '*.cdxml' -File|Select-Object -ExpandProperty BaseName)
+    if(@($inputStems|Where-Object {$_ -in @('S1','R1','M1')}).Count -gt 0 -and @(@('S1','R1','M1')|Where-Object {$_ -notin $inputStems}).Count -gt 0){throw 'Incomplete S1/R1/M1 input batch; native execution refused.'}
     $exe=Initialize-NativeInterop;$prior=@(Get-Process ChemDraw -ErrorAction SilentlyContinue|Select-Object -ExpandProperty Id)
     $app=New-Object -ComObject ChemDraw_x64.Application
     $new=@(Get-Process ChemDraw -ErrorAction SilentlyContinue|Where-Object {$_.Id -notin $prior -and $_.Path -eq $exe})
@@ -29,16 +32,26 @@ try{
             $mime=if($ext -eq 'cdx'){'chemical/x-cdx'}else{'text/xml'}
             $reopened=[NativeChemDraw]::Open($app,(Join-Path $run ($id+'.'+$ext)),$mime);$owned.Add($reopened)
             Record ('disk_reopen_'+$id+'_'+$ext) (Snapshot $reopened)
+            Record ('disk_smiles_'+$id+'_'+$ext) @{value=[NativeChemDraw]::Data($reopened,'chemical/x-smiles')}
             Save-Checked $reopened ($id+'-'+$ext+'-readback.cdxml') 'text/xml'
-            Record 'edit_intent' @{id=$id;source_format=$ext;edits='atom position; caption; curve control point; symbol position where present'}
+            $before=Get-NativeSceneSnapshot $reopened
+            Record ('before_'+$id+'_'+$ext) $before
+            $caption=@($reopened.Captions|Where-Object {$_.Text -eq 'aqueous'}|Select-Object -First 1)
+            if($caption.Count -eq 0){$caption=@($reopened.Captions.Item(1))}
+            $curveChanges=@();if($reopened.Splines.Count -gt 0){$deltas=@(0.0)*12;$deltas[5]=-1.5;$curveChanges=@(@{id=$reopened.Splines.Item(1).ID;deltas=$deltas})}
+            $symbolChanges=@();if($reopened.Symbols.Count -gt 0){$symbolChanges=@(@{id=$reopened.Symbols.Item(1).ID;deltas=@(.5,0,.5,0)})}
+            $intent=@{version='native-edit-intent/0.2';source_format=$ext;atom_translation=@{ids=@($reopened.Atoms.Item(1).ID);dx=.5;dy=0};symbol_translations=$symbolChanges;curve_changes=$curveChanges;caption_replacements=@(@{id=$caption[0].ID;from=$caption[0].Text;to=($caption[0].Text+' [edit verified]')})}
+            Record ('motion_intent_'+$id+'_'+$ext) $intent
             if($reopened.Atoms.Count -gt 0){$atom=$reopened.Atoms.Item(1);[NativeChemDraw]::Position($atom,$atom.Position.X+0.5,$atom.Position.Y)}
-            if($reopened.Captions.Count -gt 0){$reopened.Captions.Item(1).Text+=' [edit verified]'}
+            $caption[0].Text=$intent.caption_replacements[0].to
             if($reopened.Splines.Count -gt 0){$s=$reopened.Splines.Item(1);$p=$s.GetPoint(3);[NativeChemDraw]::SplinePoint($s,3,$p.X,$p.Y-1.5)}
-            if($reopened.Symbols.Count -gt 0){$s=$reopened.Symbols.Item(1);[NativeChemDraw]::Position($s,$s.Position.X+0.5,$s.Position.Y)}
+            if($reopened.Symbols.Count -gt 0){$s=$reopened.Symbols.Item(1);$v=[NativeChemDraw]::SymbolPoints($s);[NativeChemDraw]::LonePair($s,$v[0]+.5,$v[1],$v[2]+.5,$v[3])}
+            Record ('motion_edited_'+$id+'_'+$ext) (Get-NativeSceneSnapshot $reopened)
             Save-Checked $reopened ($id+'-'+$ext+'-edited.'+$ext) $mime
             [NativeChemDraw]::Close($reopened)
             $check=[NativeChemDraw]::Open($app,(Join-Path $run ($id+'-'+$ext+'-edited.'+$ext)),$mime);$owned.Add($check)
             Record ('edit_reopened_'+$id+'_'+$ext) (Snapshot $check)
+            Record ('motion_reopened_'+$id+'_'+$ext) (Get-NativeSceneSnapshot $check)
             Save-Checked $check ($id+'-'+$ext+'-edited-readback.cdxml') 'text/xml'
             [NativeChemDraw]::Close($check)
         }

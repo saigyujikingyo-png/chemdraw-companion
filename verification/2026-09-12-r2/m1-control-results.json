@@ -1,0 +1,139 @@
+{
+  "source_sha256": "4301406dfe8bbb1fc66f8b70ff6d0cf363059c99dde0fd7b21859ada00810470",
+  "molecular_inputs_identical": true,
+  "controls": [
+    {
+      "case": "a_original",
+      "separators": true,
+      "curves": true,
+      "lone_pairs": true,
+      "input_sha256": "4301406dfe8bbb1fc66f8b70ff6d0cf363059c99dde0fd7b21859ada00810470",
+      "molecular_input_fingerprint": "bb533c9d7742de864101209f50a5fe25dfbcac44ce3a724bb377cecabaa48051",
+      "native_readbacks": [
+        {
+          "readback": "initial",
+          "product_oxygen_charge": 1.0,
+          "warnings": 1
+        },
+        {
+          "readback": "cdx",
+          "product_oxygen_charge": 1.0,
+          "warnings": 1
+        },
+        {
+          "readback": "cdxml",
+          "product_oxygen_charge": 1.0,
+          "warnings": 1
+        }
+      ],
+      "native_cdxml_sha256": "620443f38106f7ff08acd2a3aa586f5ecc49ff4cc5683d76b04cbf087b822253"
+    },
+    {
+      "case": "b_no_separators",
+      "separators": false,
+      "curves": true,
+      "lone_pairs": true,
+      "input_sha256": "1fd78e8ac696870c4fbbbd03c3da5e95d90150d6628cb0d6a649267b72ecba72",
+      "molecular_input_fingerprint": "bb533c9d7742de864101209f50a5fe25dfbcac44ce3a724bb377cecabaa48051",
+      "native_readbacks": [
+        {
+          "readback": "initial",
+          "product_oxygen_charge": 0.0,
+          "warnings": 0
+        },
+        {
+          "readback": "cdx",
+          "product_oxygen_charge": 0.0,
+          "warnings": 0
+        },
+        {
+          "readback": "cdxml",
+          "product_oxygen_charge": 0.0,
+          "warnings": 0
+        }
+      ],
+      "native_cdxml_sha256": "efac52942e53ce788f288af7948ad443fc320c8d1e2639f794145fa6d312b51c"
+    },
+    {
+      "case": "c_no_curves",
+      "separators": true,
+      "curves": false,
+      "lone_pairs": true,
+      "input_sha256": "16b105cf7b5ffe137dc35bf564033eb1436fea857854bcbec390e07f0a7c16c3",
+      "molecular_input_fingerprint": "bb533c9d7742de864101209f50a5fe25dfbcac44ce3a724bb377cecabaa48051",
+      "native_readbacks": [
+        {
+          "readback": "initial",
+          "product_oxygen_charge": 1.0,
+          "warnings": 1
+        },
+        {
+          "readback": "cdx",
+          "product_oxygen_charge": 1.0,
+          "warnings": 1
+        },
+        {
+          "readback": "cdxml",
+          "product_oxygen_charge": 1.0,
+          "warnings": 1
+        }
+      ],
+      "native_cdxml_sha256": "282c1be3e269aa6cafbd18c3c443e7167e22184f5c2674a4f68fa4fa4745b1f7"
+    },
+    {
+      "case": "d_no_separators_or_curves",
+      "separators": false,
+      "curves": false,
+      "lone_pairs": true,
+      "input_sha256": "289201e36ea5c278212e243f1d04e5db3ecd065a932a57d8f8a5b9a7bc52b0b3",
+      "molecular_input_fingerprint": "bb533c9d7742de864101209f50a5fe25dfbcac44ce3a724bb377cecabaa48051",
+      "native_readbacks": [
+        {
+          "readback": "initial",
+          "product_oxygen_charge": 0.0,
+          "warnings": 0
+        },
+        {
+          "readback": "cdx",
+          "product_oxygen_charge": 0.0,
+          "warnings": 0
+        },
+        {
+          "readback": "cdxml",
+          "product_oxygen_charge": 0.0,
+          "warnings": 0
+        }
+      ],
+      "native_cdxml_sha256": "b14d61193bd1a43bdfdc7c3e84667bba3c6e268347a36493aa9d9cb0a71643c9"
+    },
+    {
+      "case": "e_no_curves_or_pairs",
+      "separators": true,
+      "curves": false,
+      "lone_pairs": false,
+      "input_sha256": "501f05f697047a5a3469c7e5c6a87c49ad8ef759113cc5913cabe429b8eff64c",
+      "molecular_input_fingerprint": "bb533c9d7742de864101209f50a5fe25dfbcac44ce3a724bb377cecabaa48051",
+      "native_readbacks": [
+        {
+          "readback": "initial",
+          "product_oxygen_charge": 0.0,
+          "warnings": 0
+        },
+        {
+          "readback": "cdx",
+          "product_oxygen_charge": 0.0,
+          "warnings": 0
+        },
+        {
+          "readback": "cdxml",
+          "product_oxygen_charge": 0.0,
+          "warnings": 0
+        }
+      ],
+      "native_cdxml_sha256": "c9d011f827611d70c471eae5f73fa02645c66b01aa9a247976309d9a2a0dbf33"
+    }
+  ],
+  "inference": "Within this retained input, separator plus captions combined with the lone-pair symbol correlate with the wrong product charge. Removing curves alone does not remove it. This does not establish the vendor internal parser cause or a universal chemistry rule.",
+  "native_control_variants_used": 5,
+  "native_control_variant_budget": 6
+}
