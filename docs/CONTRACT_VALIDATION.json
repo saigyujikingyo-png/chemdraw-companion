@@ -1,0 +1,24 @@
+{
+  "date": "2026-09-12",
+  "scope": "Architecture schema validation only; no runtime or native tests",
+  "validator": "jsonschema 4.26.0 / Draft 2020-12",
+  "schema_valid": true,
+  "positive_examples": [
+    "electron-flow-step.json",
+    "reaction-scheme.json",
+    "structure-sheet.json"
+  ],
+  "negative_cases_rejected": [
+    "native_fallback_denied",
+    "revision_required",
+    "unknown_root_field_denied",
+    "radical_scope_denied",
+    "omission_note_required",
+    "self_bond_denied",
+    "unknown_recipe_denied"
+  ],
+  "local_document_links": "pass",
+  "shared_rules_sha256": "ae939b8ec060e0145b9f5ab05d2e5566073728a9002c37509c604a39dbc245e5",
+  "native_execution": "unverified",
+  "owner_acceptance": "pending"
+}

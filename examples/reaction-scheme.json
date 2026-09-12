@@ -1,0 +1,20 @@
+{
+  "contract_version": "1.0",
+  "idempotency_key": "p0-reaction-001",
+  "recipe": "reaction_scheme.v1",
+  "target": {"mode": "new"},
+  "inputs": {
+    "reactants": [
+      {"id": "nucleophile", "smiles": "[OH-:1]", "label": ""},
+      {"id": "substrate", "smiles": "[CH3:2][Br:3]", "label": ""}
+    ],
+    "products": [
+      {"id": "methanol", "smiles": "[OH:1][CH3:2]", "label": ""},
+      {"id": "bromide", "smiles": "[Br-:3]", "label": ""}
+    ],
+    "conditions": ["aqueous medium"],
+    "balance_mode": "complete"
+  },
+  "output": {"native_required": true, "editable_format": "cdx", "figure_format": "png"},
+  "style": {"profile_id": "chembridge-review-v1", "final_width_mm": 85}
+}

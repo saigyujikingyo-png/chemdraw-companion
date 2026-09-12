@@ -1,0 +1,11 @@
+{
+  "contract_version": "1.0",
+  "idempotency_key": "p0-structure-001",
+  "recipe": "structure_sheet.v1",
+  "target": {"mode": "new"},
+  "inputs": {
+    "structures": [{"id": "alanine_zwitterion", "smiles": "[NH3+:1][C@@H:2]([CH3:3])[C:4](=[O:5])[O-:6]", "label": "Alanine zwitterion"}]
+  },
+  "output": {"native_required": true, "editable_format": "cdx", "figure_format": "png"},
+  "style": {"profile_id": "chembridge-review-v1", "final_width_mm": 85}
+}

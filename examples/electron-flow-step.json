@@ -1,0 +1,26 @@
+{
+  "contract_version": "1.0",
+  "idempotency_key": "p0-mechanism-001",
+  "recipe": "electron_flow_step.v1",
+  "target": {"mode": "new"},
+  "inputs": {
+    "reactants": [
+      {"id": "nucleophile", "smiles": "[OH-:1]", "label": ""},
+      {"id": "substrate", "smiles": "[CH3:2][Br:3]", "label": ""}
+    ],
+    "products": [
+      {"id": "methanol", "smiles": "[OH:1][CH3:2]", "label": ""},
+      {"id": "bromide", "smiles": "[Br-:3]", "label": ""}
+    ],
+    "conditions": ["aqueous medium"],
+    "reaction_smiles": "[OH-:1].[CH3:2][Br:3]>>[OH:1][CH3:2].[Br-:3]",
+    "electron_flows": [
+      {"id": "attack", "electron_count": 2, "source": {"type": "lone_pair", "component_id": "nucleophile", "atom_map": 1, "pair_index": 0}, "target": {"type": "atom", "component_id": "substrate", "atom_map": 2}},
+      {"id": "departure", "electron_count": 2, "source": {"type": "bond", "component_id": "substrate", "atom_maps": [2, 3]}, "target": {"type": "atom", "component_id": "substrate", "atom_map": 3}}
+    ],
+    "bond_changes": [{"atom_maps": [1, 2], "from_order": 0, "to_order": 1}, {"atom_maps": [2, 3], "from_order": 1, "to_order": 0}],
+    "charge_changes": [{"atom_map": 1, "from": -1, "to": 0}, {"atom_map": 3, "from": 0, "to": -1}]
+  },
+  "output": {"native_required": true, "editable_format": "cdx", "figure_format": "png"},
+  "style": {"profile_id": "chembridge-review-v1", "final_width_mm": 85}
+}

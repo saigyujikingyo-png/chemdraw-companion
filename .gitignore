@@ -1,0 +1,16 @@
+.local/
+private/
+artifacts/
+jobs/
+logs/
+.env*
+!.env.example
+*.pem
+*.pfx
+*.key
+*.lic
+node_modules/
+.venv/
+build/
+dist/
+__pycache__/
