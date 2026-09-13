@@ -1,0 +1,96 @@
+{
+  "date": "2026-09-13",
+  "scope": "First corpus architecture and ungraded schema proofs; no dataset acquisition, training, native run, human approval, benchmark acceptance or holdout selection.",
+  "bundle": {
+    "status": "pass",
+    "mechanisms": [
+      {
+        "representable": "pass",
+        "semantic_valid": "bounded_pass",
+        "states": 2,
+        "steps": 1,
+        "flows": 2,
+        "runtime_projection": "unverified",
+        "native_verified": "unverified",
+        "scientific_review": "unreviewed",
+        "sample_id": "proton-transfer"
+      },
+      {
+        "representable": "pass",
+        "semantic_valid": "bounded_pass",
+        "states": 2,
+        "steps": 1,
+        "flows": 2,
+        "runtime_projection": "unverified",
+        "native_verified": "unverified",
+        "scientific_review": "unreviewed",
+        "sample_id": "M1"
+      },
+      {
+        "representable": "pass",
+        "semantic_valid": "bounded_pass",
+        "states": 7,
+        "steps": 6,
+        "flows": 15,
+        "runtime_projection": "unverified",
+        "native_verified": "unverified",
+        "scientific_review": "unreviewed",
+        "sample_id": "M2"
+      }
+    ],
+    "local_assets_hash_checked": 4,
+    "external_asset_bindings_only": 4,
+    "gold_samples": 0,
+    "fresh_native_execution": false
+  },
+  "tests": {
+    "count": 30,
+    "failures": 0,
+    "errors": 0,
+    "successful": true,
+    "python": "3.13.15"
+  },
+  "additional_controls": [
+    {
+      "case": "proton-transfer_opaque_relabel_array_permutation_bond_reversal",
+      "status": "pass"
+    },
+    {
+      "case": "M1_opaque_relabel_array_permutation_bond_reversal",
+      "status": "pass"
+    },
+    {
+      "case": "M2_opaque_relabel_array_permutation_bond_reversal",
+      "status": "pass"
+    },
+    {
+      "case": "nonfinite_number",
+      "status": "rejected"
+    },
+    {
+      "case": "known_exposure_relabelled_unseen",
+      "status": "rejected"
+    }
+  ],
+  "runtime_contract_hashes": {
+    "contracts/mechanism-ir.schema.json": "619e46a20c20e9e5906b2298041379a8a832e310632a8a6bdc05d9174e7b2d2c",
+    "contracts/composer-request.schema.json": "b6fb032a2983269d776c28d06620dfbe01946ca22e5e698274391445814309d9",
+    "contracts/mcp-tools.json": "47dda13689fc8979aaa388826b4b81a05e232e795cc708cdf5f67eb71d8501fa"
+  },
+  "implementation_limits": [
+    "Bounded closed H/C/N/O/Br two-electron bookkeeping, not general chemical plausibility",
+    "Radical/single-electron semantics representable but unsupported by chemical checker and unqualified for runtime",
+    "External native asset bindings reference prior evidence; no remote downloads in validator",
+    "Human review and permission evidence must be checked by actual reviewers; schema does not authenticate identities",
+    "No production projection, corpus importer, visual critic or native correction-diff engine implemented"
+  ],
+  "corpus_targets": {
+    "gold": 40,
+    "checked_total_including_gold": 200,
+    "collected_gold": 0,
+    "schema_probes_excluded_from_targets": 3
+  },
+  "freeze": "not_started",
+  "holdout": "not_selected",
+  "staged_git_asset_bytes": "All four local IR/annotation assets match manifest SHA-256 and byte counts in Git index, independently of Windows checkout line endings."
+}
