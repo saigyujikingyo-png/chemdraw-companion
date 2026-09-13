@@ -1,0 +1,82 @@
+[
+  {
+    "state": "methane",
+    "file": "state-000.cdxml"
+  },
+  {
+    "state": "ethanol",
+    "file": "state-001.cdxml"
+  },
+  {
+    "state": "ethylamine",
+    "file": "state-002.cdxml"
+  },
+  {
+    "state": "label-field-conflict",
+    "file": "state-003.cdxml"
+  },
+  {
+    "state": "acetone",
+    "file": "state-004.cdxml"
+  },
+  {
+    "state": "acetaldehyde",
+    "file": "state-005.cdxml"
+  },
+  {
+    "state": "acetic-acid",
+    "file": "state-006.cdxml"
+  },
+  {
+    "state": "methyl-acetate",
+    "file": "state-007.cdxml"
+  },
+  {
+    "state": "acetamide",
+    "file": "state-008.cdxml"
+  },
+  {
+    "state": "ethene",
+    "file": "state-009.cdxml"
+  },
+  {
+    "state": "acetonitrile",
+    "file": "state-010.cdxml"
+  },
+  {
+    "state": "cyclohexane",
+    "file": "state-011.cdxml"
+  },
+  {
+    "state": "tetrahydrofuran",
+    "file": "state-012.cdxml"
+  },
+  {
+    "state": "cyclopentanone",
+    "file": "state-013.cdxml"
+  },
+  {
+    "state": "carbon-deuterated-methanol",
+    "file": "state-014.cdxml"
+  },
+  {
+    "state": "explicit-h-d-formaldehyde",
+    "file": "state-015.cdxml"
+  },
+  {
+    "state": "benzene-unqualified",
+    "file": "state-016.cdxml"
+  },
+  {
+    "state": "methyl-radical-unqualified",
+    "file": "state-017.cdxml"
+  },
+  {
+    "state": "ammonium",
+    "file": "state-018.cdxml"
+  },
+  {
+    "state": "chloride",
+    "file": "state-019.cdxml"
+  }
+]

@@ -1,0 +1,85 @@
+{
+  "scope": "Preregistered synthetic controls; not a Composer seed receipt.",
+  "inputs": [
+    {
+      "file": "state-000.cdxml",
+      "sha256": "190b76acbb1dbba42d6a96d6364d95cf7e68cb8429ff65b02b8ebea6ebfdd343"
+    },
+    {
+      "file": "state-001.cdxml",
+      "sha256": "a92d9154db1fa3d41e25aa39e2697fb4c847c2f8fe97b4fdc825cd160ca34a1d"
+    },
+    {
+      "file": "state-002.cdxml",
+      "sha256": "5802698680e0a7823594256ca5bfb39d6357eb24bb725442648ed2190f149236"
+    },
+    {
+      "file": "state-003.cdxml",
+      "sha256": "d9599f6821e1a4aed3ff8b5311a700ae01d4f2073bfd687a1130e077dfe2a0ec"
+    },
+    {
+      "file": "state-004.cdxml",
+      "sha256": "29dd22c440998111a31bac93e90e6aceb0242ee6ed4d596c48c04077eb7b9f1d"
+    },
+    {
+      "file": "state-005.cdxml",
+      "sha256": "2318846250754d14712e5990ccbb90426d28e9d1c66c0127ad965c327ed459d9"
+    },
+    {
+      "file": "state-006.cdxml",
+      "sha256": "b6c0f0afcc6fe17cf60b9692820b32aa71311eecf62b0903f7c98ab2f9d319fc"
+    },
+    {
+      "file": "state-007.cdxml",
+      "sha256": "170c2ab0d941098fa01443d3eab8f13af9cc98936e6772b26381409c8f4dc4cc"
+    },
+    {
+      "file": "state-008.cdxml",
+      "sha256": "c707456a4baebfdd3e9f0f5e2cf7fff9925e7227edcca0a4919ab7c25b99e665"
+    },
+    {
+      "file": "state-009.cdxml",
+      "sha256": "48377e892207f08900298cfa19967a46e6398a0b3849ef8bb6d015aa35b2b4f6"
+    },
+    {
+      "file": "state-010.cdxml",
+      "sha256": "530181576a68b49b4d37346088f9bd7dfe5ea032957652665fc2c501ca10f1aa"
+    },
+    {
+      "file": "state-011.cdxml",
+      "sha256": "d66e2bfbcd31e3cd72908ec7e6dc96249da5ead388af6866d64aa680fac55469"
+    },
+    {
+      "file": "state-012.cdxml",
+      "sha256": "32f02e09613cf94cb98cbb45025700ae3c4ac6d69a205887899738a63304b700"
+    },
+    {
+      "file": "state-013.cdxml",
+      "sha256": "bb12ccb3fbc6419934ac540d2f9a94876912e766a04feb25d6d43916fca4d5e0"
+    },
+    {
+      "file": "state-014.cdxml",
+      "sha256": "bec4b592178206d43c3ad0add6ee12f6cf643bd4a1f39aca58a8ffc41aa11b91"
+    },
+    {
+      "file": "state-015.cdxml",
+      "sha256": "f45d295613b5611e6a982571d4c91d96c17ec78bff4dfc90e77bccaca791c50d"
+    },
+    {
+      "file": "state-016.cdxml",
+      "sha256": "955a858beff973725eca42078035d556a233f57f04d1764afb94c897201ad8b3"
+    },
+    {
+      "file": "state-017.cdxml",
+      "sha256": "ed305c4054db85164296ea38f82d47ddcb887d0cce1deeed4b494f6dd3ea17d7"
+    },
+    {
+      "file": "state-018.cdxml",
+      "sha256": "cef0c0a82a654cea2e1feb5e1750225c783f56450f04ad510dfebbadf00f108e"
+    },
+    {
+      "file": "state-019.cdxml",
+      "sha256": "ec66d6743aaf862923c8d3cbd98b91991bbcf37e5f1871219feccb4239c73874"
+    }
+  ]
+}

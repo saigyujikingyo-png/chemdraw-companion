@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='utf-8'?>
+<CDXML CreationProgram="ChemDraw Companion experimental adapter" LabelFont="3" CaptionFont="3" LabelSize="8" CaptionSize="8" LabelFace="96" CaptionFace="0" BondLength="14.4" BondSpacing="18" LineWidth="0.6" BoldWidth="1.9799999999999998" HashSpacing="2.4998400000000003" MarginWidth="1.5984" ShowAtomNumber="no" ShowTerminalCarbonLabels="yes" color="0" bgcolor="1">
+  <colortable>
+    <color r="1" g="1" b="1" />
+    <color r="0" g="0" b="0" />
+  </colortable>
+  <fonttable>
+    <font id="3" charset="iso-8859-1" name="Arial" />
+  </fonttable>
+  <page id="1" BoundingBox="0 0 453.5433 283.4646" DrawingSpace="poster" WidthPages="1" HeightPages="1">
+    <fragment id="5">
+      <n id="100" NodeType="Element" AtomNumber="101" Element="17" NumHydrogens="0" p="50 60" Charge="-1" />
+    </fragment>
+  </page>
+</CDXML>

@@ -1,0 +1,1440 @@
+{
+  "version": "p0b-native-semantic-control-matrix/0.1",
+  "baseline_runtime": "bc428205a0066d7b544fe634910310d55fb3a893",
+  "architecture_protocol": "c29af27d429a2e8c9fd4c4e94e0eb0def6071837",
+  "controls": [
+    {
+      "control": "methane",
+      "file": "state-000.cdxml",
+      "description": "CH4",
+      "purpose": "observation_candidate",
+      "expected_atoms": [
+        {
+          "atom_map": 101,
+          "role": "c",
+          "element": "C",
+          "non_node_attached_h": 4,
+          "charge": 0,
+          "isotope": 0,
+          "radical_electrons": 0,
+          "explicit_h_neighbor_nodes": [],
+          "expected_native_serialized_label_h": "capture_presence_and_actual_value; not prefilled",
+          "source": "literal prospective control chemistry, not native output or valence inference"
+        }
+      ],
+      "expected_bonds": [],
+      "seed_sha256": "190b76acbb1dbba42d6a96d6364d95cf7e68cb8429ff65b02b8ebea6ebfdd343",
+      "source_conflict": null,
+      "evidence_status": "preregistered_not_native_executed"
+    },
+    {
+      "control": "ethanol",
+      "file": "state-001.cdxml",
+      "description": "CH3-CH2-OH",
+      "purpose": "qualification_candidate",
+      "expected_atoms": [
+        {
+          "atom_map": 101,
+          "role": "c1",
+          "element": "C",
+          "non_node_attached_h": 3,
+          "charge": 0,
+          "isotope": 0,
+          "radical_electrons": 0,
+          "explicit_h_neighbor_nodes": [],
+          "expected_native_serialized_label_h": "capture_presence_and_actual_value; not prefilled",
+          "source": "literal prospective control chemistry, not native output or valence inference"
+        },
+        {
+          "atom_map": 118,
+          "role": "c2",
+          "element": "C",
+          "non_node_attached_h": 2,
+          "charge": 0,
+          "isotope": 0,
+          "radical_electrons": 0,
+          "explicit_h_neighbor_nodes": [],
+          "expected_native_serialized_label_h": "capture_presence_and_actual_value; not prefilled",
+          "source": "literal prospective control chemistry, not native output or valence inference"
+        },
+        {
+          "atom_map": 135,
+          "role": "o",
+          "element": "O",
+          "non_node_attached_h": 1,
+          "charge": 0,
+          "isotope": 0,
+          "radical_electrons": 0,
+          "explicit_h_neighbor_nodes": [],
+          "expected_native_serialized_label_h": "capture_presence_and_actual_value; not prefilled",
+          "source": "literal prospective control chemistry, not native output or valence inference"
+        }
+      ],
+      "expected_bonds": [
+        {
+          "atoms": [
+            101,
+            118
+          ],
+          "order": 1
+        },
+        {
+          "atoms": [
+            118,
+            135
+          ],
+          "order": 1
+        }
+      ],
+      "seed_sha256": "a92d9154db1fa3d41e25aa39e2697fb4c847c2f8fe97b4fdc825cd160ca34a1d",
+      "source_conflict": null,
+      "evidence_status": "preregistered_not_native_executed"
+    },
+    {
+      "control": "ethylamine",
+      "file": "state-002.cdxml",
+      "description": "CH3-CH2-NH2",
+      "purpose": "qualification_candidate",
+      "expected_atoms": [
+        {
+          "atom_map": 101,
+          "role": "c1",
+          "element": "C",
+          "non_node_attached_h": 3,
+          "charge": 0,
+          "isotope": 0,
+          "radical_electrons": 0,
+          "explicit_h_neighbor_nodes": [],
+          "expected_native_serialized_label_h": "capture_presence_and_actual_value; not prefilled",
+          "source": "literal prospective control chemistry, not native output or valence inference"
+        },
+        {
+          "atom_map": 118,
+          "role": "c2",
+          "element": "C",
+          "non_node_attached_h": 2,
+          "charge": 0,
+          "isotope": 0,
+          "radical_electrons": 0,
+          "explicit_h_neighbor_nodes": [],
+          "expected_native_serialized_label_h": "capture_presence_and_actual_value; not prefilled",
+          "source": "literal prospective control chemistry, not native output or valence inference"
+        },
+        {
+          "atom_map": 135,
+          "role": "n",
+          "element": "N",
+          "non_node_attached_h": 2,
+          "charge": 0,
+          "isotope": 0,
+          "radical_electrons": 0,
+          "explicit_h_neighbor_nodes": [],
+          "expected_native_serialized_label_h": "capture_presence_and_actual_value; not prefilled",
+          "source": "literal prospective control chemistry, not native output or valence inference"
+        }
+      ],
+      "expected_bonds": [
+        {
+          "atoms": [
+            101,
+            118
+          ],
+          "order": 1
+        },
+        {
+          "atoms": [
+            118,
+            135
+          ],
+          "order": 1
+        }
+      ],
+      "seed_sha256": "5802698680e0a7823594256ca5bfb39d6357eb24bb725442648ed2190f149236",
+      "source_conflict": null,
+      "evidence_status": "preregistered_not_native_executed"
+    },
+    {
+      "control": "label-field-conflict",
+      "file": "state-003.cdxml",
+      "description": "Text CH4 conflicts with NumHydrogens=3",
+      "purpose": "conflict_negative",
+      "expected_atoms": [
+        {
+          "atom_map": 101,
+          "role": "c",
+          "element": "C",
+          "non_node_attached_h": null,
+          "charge": 0,
+          "isotope": 0,
+          "radical_electrons": 0,
+          "explicit_h_neighbor_nodes": [],
+          "expected_native_serialized_label_h": "capture_presence_and_actual_value; not prefilled",
+          "source": "literal prospective control chemistry, not native output or valence inference"
+        }
+      ],
+      "expected_bonds": [],
+      "seed_sha256": "d9599f6821e1a4aed3ff8b5311a700ae01d4f2073bfd687a1130e077dfe2a0ec",
+      "source_conflict": {
+        "serialized_NumHydrogens": "3",
+        "nested_label_text": "CH4",
+        "resolved_expected_h": null
+      },
+      "evidence_status": "preregistered_not_native_executed"
+    },
+    {
+      "control": "acetone",
+      "file": "state-004.cdxml",
+      "description": "CH3-C(=O)-CH3",
+      "purpose": "qualification_candidate",
+      "expected_atoms": [
+        {
+          "atom_map": 101,
+          "role": "c1",
+          "element": "C",
+          "non_node_attached_h": 3,
+          "charge": 0,
+          "isotope": 0,
+          "radical_electrons": 0,
+          "explicit_h_neighbor_nodes": [],
+          "expected_native_serialized_label_h": "capture_presence_and_actual_value; not prefilled",
+          "source": "literal prospective control chemistry, not native output or valence inference"
+        },
+        {
+          "atom_map": 118,
+          "role": "carbonyl",
+          "element": "C",
+          "non_node_attached_h": 0,
+          "charge": 0,
+          "isotope": 0,
+          "radical_electrons": 0,
+          "explicit_h_neighbor_nodes": [],
+          "expected_native_serialized_label_h": "capture_presence_and_actual_value; not prefilled",
+          "source": "literal prospective control chemistry, not native output or valence inference"
+        },
+        {
+          "atom_map": 135,
+          "role": "o",
+          "element": "O",
+          "non_node_attached_h": 0,
+          "charge": 0,
+          "isotope": 0,
+          "radical_electrons": 0,
+          "explicit_h_neighbor_nodes": [],
+          "expected_native_serialized_label_h": "capture_presence_and_actual_value; not prefilled",
+          "source": "literal prospective control chemistry, not native output or valence inference"
+        },
+        {
+          "atom_map": 152,
+          "role": "c2",
+          "element": "C",
+          "non_node_attached_h": 3,
+          "charge": 0,
+          "isotope": 0,
+          "radical_electrons": 0,
+          "explicit_h_neighbor_nodes": [],
+          "expected_native_serialized_label_h": "capture_presence_and_actual_value; not prefilled",
+          "source": "literal prospective control chemistry, not native output or valence inference"
+        }
+      ],
+      "expected_bonds": [
+        {
+          "atoms": [
+            101,
+            118
+          ],
+          "order": 1
+        },
+        {
+          "atoms": [
+            118,
+            135
+          ],
+          "order": 2
+        },
+        {
+          "atoms": [
+            118,
+            152
+          ],
+          "order": 1
+        }
+      ],
+      "seed_sha256": "29dd22c440998111a31bac93e90e6aceb0242ee6ed4d596c48c04077eb7b9f1d",
+      "source_conflict": null,
+      "evidence_status": "preregistered_not_native_executed"
+    },
+    {
+      "control": "acetaldehyde",
+      "file": "state-005.cdxml",
+      "description": "CH3-CH=O",
+      "purpose": "qualification_candidate",
+      "expected_atoms": [
+        {
+          "atom_map": 101,
+          "role": "methyl",
+          "element": "C",
+          "non_node_attached_h": 3,
+          "charge": 0,
+          "isotope": 0,
+          "radical_electrons": 0,
+          "explicit_h_neighbor_nodes": [],
+          "expected_native_serialized_label_h": "capture_presence_and_actual_value; not prefilled",
+          "source": "literal prospective control chemistry, not native output or valence inference"
+        },
+        {
+          "atom_map": 118,
+          "role": "carbonyl",
+          "element": "C",
+          "non_node_attached_h": 1,
+          "charge": 0,
+          "isotope": 0,
+          "radical_electrons": 0,
+          "explicit_h_neighbor_nodes": [],
+          "expected_native_serialized_label_h": "capture_presence_and_actual_value; not prefilled",
+          "source": "literal prospective control chemistry, not native output or valence inference"
+        },
+        {
+          "atom_map": 135,
+          "role": "o",
+          "element": "O",
+          "non_node_attached_h": 0,
+          "charge": 0,
+          "isotope": 0,
+          "radical_electrons": 0,
+          "explicit_h_neighbor_nodes": [],
+          "expected_native_serialized_label_h": "capture_presence_and_actual_value; not prefilled",
+          "source": "literal prospective control chemistry, not native output or valence inference"
+        }
+      ],
+      "expected_bonds": [
+        {
+          "atoms": [
+            101,
+            118
+          ],
+          "order": 1
+        },
+        {
+          "atoms": [
+            118,
+            135
+          ],
+          "order": 2
+        }
+      ],
+      "seed_sha256": "2318846250754d14712e5990ccbb90426d28e9d1c66c0127ad965c327ed459d9",
+      "source_conflict": null,
+      "evidence_status": "preregistered_not_native_executed"
+    },
+    {
+      "control": "acetic-acid",
+      "file": "state-006.cdxml",
+      "description": "CH3-C(=O)-OH",
+      "purpose": "qualification_candidate",
+      "expected_atoms": [
+        {
+          "atom_map": 101,
+          "role": "methyl",
+          "element": "C",
+          "non_node_attached_h": 3,
+          "charge": 0,
+          "isotope": 0,
+          "radical_electrons": 0,
+          "explicit_h_neighbor_nodes": [],
+          "expected_native_serialized_label_h": "capture_presence_and_actual_value; not prefilled",
+          "source": "literal prospective control chemistry, not native output or valence inference"
+        },
+        {
+          "atom_map": 118,
+          "role": "carbonyl",
+          "element": "C",
+          "non_node_attached_h": 0,
+          "charge": 0,
+          "isotope": 0,
+          "radical_electrons": 0,
+          "explicit_h_neighbor_nodes": [],
+          "expected_native_serialized_label_h": "capture_presence_and_actual_value; not prefilled",
+          "source": "literal prospective control chemistry, not native output or valence inference"
+        },
+        {
+          "atom_map": 135,
+          "role": "oxo",
+          "element": "O",
+          "non_node_attached_h": 0,
+          "charge": 0,
+          "isotope": 0,
+          "radical_electrons": 0,
+          "explicit_h_neighbor_nodes": [],
+          "expected_native_serialized_label_h": "capture_presence_and_actual_value; not prefilled",
+          "source": "literal prospective control chemistry, not native output or valence inference"
+        },
+        {
+          "atom_map": 152,
+          "role": "hydroxy",
+          "element": "O",
+          "non_node_attached_h": 1,
+          "charge": 0,
+          "isotope": 0,
+          "radical_electrons": 0,
+          "explicit_h_neighbor_nodes": [],
+          "expected_native_serialized_label_h": "capture_presence_and_actual_value; not prefilled",
+          "source": "literal prospective control chemistry, not native output or valence inference"
+        }
+      ],
+      "expected_bonds": [
+        {
+          "atoms": [
+            101,
+            118
+          ],
+          "order": 1
+        },
+        {
+          "atoms": [
+            118,
+            135
+          ],
+          "order": 2
+        },
+        {
+          "atoms": [
+            118,
+            152
+          ],
+          "order": 1
+        }
+      ],
+      "seed_sha256": "b6c0f0afcc6fe17cf60b9692820b32aa71311eecf62b0903f7c98ab2f9d319fc",
+      "source_conflict": null,
+      "evidence_status": "preregistered_not_native_executed"
+    },
+    {
+      "control": "methyl-acetate",
+      "file": "state-007.cdxml",
+      "description": "CH3-C(=O)-O-CH3",
+      "purpose": "qualification_candidate",
+      "expected_atoms": [
+        {
+          "atom_map": 101,
+          "role": "c1",
+          "element": "C",
+          "non_node_attached_h": 3,
+          "charge": 0,
+          "isotope": 0,
+          "radical_electrons": 0,
+          "explicit_h_neighbor_nodes": [],
+          "expected_native_serialized_label_h": "capture_presence_and_actual_value; not prefilled",
+          "source": "literal prospective control chemistry, not native output or valence inference"
+        },
+        {
+          "atom_map": 118,
+          "role": "carbonyl",
+          "element": "C",
+          "non_node_attached_h": 0,
+          "charge": 0,
+          "isotope": 0,
+          "radical_electrons": 0,
+          "explicit_h_neighbor_nodes": [],
+          "expected_native_serialized_label_h": "capture_presence_and_actual_value; not prefilled",
+          "source": "literal prospective control chemistry, not native output or valence inference"
+        },
+        {
+          "atom_map": 135,
+          "role": "oxo",
+          "element": "O",
+          "non_node_attached_h": 0,
+          "charge": 0,
+          "isotope": 0,
+          "radical_electrons": 0,
+          "explicit_h_neighbor_nodes": [],
+          "expected_native_serialized_label_h": "capture_presence_and_actual_value; not prefilled",
+          "source": "literal prospective control chemistry, not native output or valence inference"
+        },
+        {
+          "atom_map": 152,
+          "role": "ester_o",
+          "element": "O",
+          "non_node_attached_h": 0,
+          "charge": 0,
+          "isotope": 0,
+          "radical_electrons": 0,
+          "explicit_h_neighbor_nodes": [],
+          "expected_native_serialized_label_h": "capture_presence_and_actual_value; not prefilled",
+          "source": "literal prospective control chemistry, not native output or valence inference"
+        },
+        {
+          "atom_map": 169,
+          "role": "c2",
+          "element": "C",
+          "non_node_attached_h": 3,
+          "charge": 0,
+          "isotope": 0,
+          "radical_electrons": 0,
+          "explicit_h_neighbor_nodes": [],
+          "expected_native_serialized_label_h": "capture_presence_and_actual_value; not prefilled",
+          "source": "literal prospective control chemistry, not native output or valence inference"
+        }
+      ],
+      "expected_bonds": [
+        {
+          "atoms": [
+            101,
+            118
+          ],
+          "order": 1
+        },
+        {
+          "atoms": [
+            118,
+            135
+          ],
+          "order": 2
+        },
+        {
+          "atoms": [
+            118,
+            152
+          ],
+          "order": 1
+        },
+        {
+          "atoms": [
+            152,
+            169
+          ],
+          "order": 1
+        }
+      ],
+      "seed_sha256": "170c2ab0d941098fa01443d3eab8f13af9cc98936e6772b26381409c8f4dc4cc",
+      "source_conflict": null,
+      "evidence_status": "preregistered_not_native_executed"
+    },
+    {
+      "control": "acetamide",
+      "file": "state-008.cdxml",
+      "description": "CH3-C(=O)-NH2",
+      "purpose": "qualification_candidate",
+      "expected_atoms": [
+        {
+          "atom_map": 101,
+          "role": "methyl",
+          "element": "C",
+          "non_node_attached_h": 3,
+          "charge": 0,
+          "isotope": 0,
+          "radical_electrons": 0,
+          "explicit_h_neighbor_nodes": [],
+          "expected_native_serialized_label_h": "capture_presence_and_actual_value; not prefilled",
+          "source": "literal prospective control chemistry, not native output or valence inference"
+        },
+        {
+          "atom_map": 118,
+          "role": "carbonyl",
+          "element": "C",
+          "non_node_attached_h": 0,
+          "charge": 0,
+          "isotope": 0,
+          "radical_electrons": 0,
+          "explicit_h_neighbor_nodes": [],
+          "expected_native_serialized_label_h": "capture_presence_and_actual_value; not prefilled",
+          "source": "literal prospective control chemistry, not native output or valence inference"
+        },
+        {
+          "atom_map": 135,
+          "role": "o",
+          "element": "O",
+          "non_node_attached_h": 0,
+          "charge": 0,
+          "isotope": 0,
+          "radical_electrons": 0,
+          "explicit_h_neighbor_nodes": [],
+          "expected_native_serialized_label_h": "capture_presence_and_actual_value; not prefilled",
+          "source": "literal prospective control chemistry, not native output or valence inference"
+        },
+        {
+          "atom_map": 152,
+          "role": "n",
+          "element": "N",
+          "non_node_attached_h": 2,
+          "charge": 0,
+          "isotope": 0,
+          "radical_electrons": 0,
+          "explicit_h_neighbor_nodes": [],
+          "expected_native_serialized_label_h": "capture_presence_and_actual_value; not prefilled",
+          "source": "literal prospective control chemistry, not native output or valence inference"
+        }
+      ],
+      "expected_bonds": [
+        {
+          "atoms": [
+            101,
+            118
+          ],
+          "order": 1
+        },
+        {
+          "atoms": [
+            118,
+            135
+          ],
+          "order": 2
+        },
+        {
+          "atoms": [
+            118,
+            152
+          ],
+          "order": 1
+        }
+      ],
+      "seed_sha256": "c707456a4baebfdd3e9f0f5e2cf7fff9925e7227edcca0a4919ab7c25b99e665",
+      "source_conflict": null,
+      "evidence_status": "preregistered_not_native_executed"
+    },
+    {
+      "control": "ethene",
+      "file": "state-009.cdxml",
+      "description": "CH2=CH2",
+      "purpose": "qualification_candidate",
+      "expected_atoms": [
+        {
+          "atom_map": 101,
+          "role": "c1",
+          "element": "C",
+          "non_node_attached_h": 2,
+          "charge": 0,
+          "isotope": 0,
+          "radical_electrons": 0,
+          "explicit_h_neighbor_nodes": [],
+          "expected_native_serialized_label_h": "capture_presence_and_actual_value; not prefilled",
+          "source": "literal prospective control chemistry, not native output or valence inference"
+        },
+        {
+          "atom_map": 118,
+          "role": "c2",
+          "element": "C",
+          "non_node_attached_h": 2,
+          "charge": 0,
+          "isotope": 0,
+          "radical_electrons": 0,
+          "explicit_h_neighbor_nodes": [],
+          "expected_native_serialized_label_h": "capture_presence_and_actual_value; not prefilled",
+          "source": "literal prospective control chemistry, not native output or valence inference"
+        }
+      ],
+      "expected_bonds": [
+        {
+          "atoms": [
+            101,
+            118
+          ],
+          "order": 2
+        }
+      ],
+      "seed_sha256": "48377e892207f08900298cfa19967a46e6398a0b3849ef8bb6d015aa35b2b4f6",
+      "source_conflict": null,
+      "evidence_status": "preregistered_not_native_executed"
+    },
+    {
+      "control": "acetonitrile",
+      "file": "state-010.cdxml",
+      "description": "CH3-C#N",
+      "purpose": "qualification_candidate",
+      "expected_atoms": [
+        {
+          "atom_map": 101,
+          "role": "methyl",
+          "element": "C",
+          "non_node_attached_h": 3,
+          "charge": 0,
+          "isotope": 0,
+          "radical_electrons": 0,
+          "explicit_h_neighbor_nodes": [],
+          "expected_native_serialized_label_h": "capture_presence_and_actual_value; not prefilled",
+          "source": "literal prospective control chemistry, not native output or valence inference"
+        },
+        {
+          "atom_map": 118,
+          "role": "nitrile_c",
+          "element": "C",
+          "non_node_attached_h": 0,
+          "charge": 0,
+          "isotope": 0,
+          "radical_electrons": 0,
+          "explicit_h_neighbor_nodes": [],
+          "expected_native_serialized_label_h": "capture_presence_and_actual_value; not prefilled",
+          "source": "literal prospective control chemistry, not native output or valence inference"
+        },
+        {
+          "atom_map": 135,
+          "role": "n",
+          "element": "N",
+          "non_node_attached_h": 0,
+          "charge": 0,
+          "isotope": 0,
+          "radical_electrons": 0,
+          "explicit_h_neighbor_nodes": [],
+          "expected_native_serialized_label_h": "capture_presence_and_actual_value; not prefilled",
+          "source": "literal prospective control chemistry, not native output or valence inference"
+        }
+      ],
+      "expected_bonds": [
+        {
+          "atoms": [
+            101,
+            118
+          ],
+          "order": 1
+        },
+        {
+          "atoms": [
+            118,
+            135
+          ],
+          "order": 3
+        }
+      ],
+      "seed_sha256": "530181576a68b49b4d37346088f9bd7dfe5ea032957652665fc2c501ca10f1aa",
+      "source_conflict": null,
+      "evidence_status": "preregistered_not_native_executed"
+    },
+    {
+      "control": "cyclohexane",
+      "file": "state-011.cdxml",
+      "description": "Six saturated carbon ring atoms",
+      "purpose": "qualification_candidate",
+      "expected_atoms": [
+        {
+          "atom_map": 101,
+          "role": "c1",
+          "element": "C",
+          "non_node_attached_h": 2,
+          "charge": 0,
+          "isotope": 0,
+          "radical_electrons": 0,
+          "explicit_h_neighbor_nodes": [],
+          "expected_native_serialized_label_h": "capture_presence_and_actual_value; not prefilled",
+          "source": "literal prospective control chemistry, not native output or valence inference"
+        },
+        {
+          "atom_map": 118,
+          "role": "c2",
+          "element": "C",
+          "non_node_attached_h": 2,
+          "charge": 0,
+          "isotope": 0,
+          "radical_electrons": 0,
+          "explicit_h_neighbor_nodes": [],
+          "expected_native_serialized_label_h": "capture_presence_and_actual_value; not prefilled",
+          "source": "literal prospective control chemistry, not native output or valence inference"
+        },
+        {
+          "atom_map": 135,
+          "role": "c3",
+          "element": "C",
+          "non_node_attached_h": 2,
+          "charge": 0,
+          "isotope": 0,
+          "radical_electrons": 0,
+          "explicit_h_neighbor_nodes": [],
+          "expected_native_serialized_label_h": "capture_presence_and_actual_value; not prefilled",
+          "source": "literal prospective control chemistry, not native output or valence inference"
+        },
+        {
+          "atom_map": 152,
+          "role": "c4",
+          "element": "C",
+          "non_node_attached_h": 2,
+          "charge": 0,
+          "isotope": 0,
+          "radical_electrons": 0,
+          "explicit_h_neighbor_nodes": [],
+          "expected_native_serialized_label_h": "capture_presence_and_actual_value; not prefilled",
+          "source": "literal prospective control chemistry, not native output or valence inference"
+        },
+        {
+          "atom_map": 169,
+          "role": "c5",
+          "element": "C",
+          "non_node_attached_h": 2,
+          "charge": 0,
+          "isotope": 0,
+          "radical_electrons": 0,
+          "explicit_h_neighbor_nodes": [],
+          "expected_native_serialized_label_h": "capture_presence_and_actual_value; not prefilled",
+          "source": "literal prospective control chemistry, not native output or valence inference"
+        },
+        {
+          "atom_map": 186,
+          "role": "c6",
+          "element": "C",
+          "non_node_attached_h": 2,
+          "charge": 0,
+          "isotope": 0,
+          "radical_electrons": 0,
+          "explicit_h_neighbor_nodes": [],
+          "expected_native_serialized_label_h": "capture_presence_and_actual_value; not prefilled",
+          "source": "literal prospective control chemistry, not native output or valence inference"
+        }
+      ],
+      "expected_bonds": [
+        {
+          "atoms": [
+            101,
+            118
+          ],
+          "order": 1
+        },
+        {
+          "atoms": [
+            118,
+            135
+          ],
+          "order": 1
+        },
+        {
+          "atoms": [
+            135,
+            152
+          ],
+          "order": 1
+        },
+        {
+          "atoms": [
+            152,
+            169
+          ],
+          "order": 1
+        },
+        {
+          "atoms": [
+            169,
+            186
+          ],
+          "order": 1
+        },
+        {
+          "atoms": [
+            186,
+            101
+          ],
+          "order": 1
+        }
+      ],
+      "seed_sha256": "d66e2bfbcd31e3cd72908ec7e6dc96249da5ead388af6866d64aa680fac55469",
+      "source_conflict": null,
+      "evidence_status": "preregistered_not_native_executed"
+    },
+    {
+      "control": "tetrahydrofuran",
+      "file": "state-012.cdxml",
+      "description": "Four CH2 and one O in a saturated five-member ring",
+      "purpose": "qualification_candidate",
+      "expected_atoms": [
+        {
+          "atom_map": 101,
+          "role": "c1",
+          "element": "C",
+          "non_node_attached_h": 2,
+          "charge": 0,
+          "isotope": 0,
+          "radical_electrons": 0,
+          "explicit_h_neighbor_nodes": [],
+          "expected_native_serialized_label_h": "capture_presence_and_actual_value; not prefilled",
+          "source": "literal prospective control chemistry, not native output or valence inference"
+        },
+        {
+          "atom_map": 118,
+          "role": "c2",
+          "element": "C",
+          "non_node_attached_h": 2,
+          "charge": 0,
+          "isotope": 0,
+          "radical_electrons": 0,
+          "explicit_h_neighbor_nodes": [],
+          "expected_native_serialized_label_h": "capture_presence_and_actual_value; not prefilled",
+          "source": "literal prospective control chemistry, not native output or valence inference"
+        },
+        {
+          "atom_map": 135,
+          "role": "c3",
+          "element": "C",
+          "non_node_attached_h": 2,
+          "charge": 0,
+          "isotope": 0,
+          "radical_electrons": 0,
+          "explicit_h_neighbor_nodes": [],
+          "expected_native_serialized_label_h": "capture_presence_and_actual_value; not prefilled",
+          "source": "literal prospective control chemistry, not native output or valence inference"
+        },
+        {
+          "atom_map": 152,
+          "role": "c4",
+          "element": "C",
+          "non_node_attached_h": 2,
+          "charge": 0,
+          "isotope": 0,
+          "radical_electrons": 0,
+          "explicit_h_neighbor_nodes": [],
+          "expected_native_serialized_label_h": "capture_presence_and_actual_value; not prefilled",
+          "source": "literal prospective control chemistry, not native output or valence inference"
+        },
+        {
+          "atom_map": 169,
+          "role": "o",
+          "element": "O",
+          "non_node_attached_h": 0,
+          "charge": 0,
+          "isotope": 0,
+          "radical_electrons": 0,
+          "explicit_h_neighbor_nodes": [],
+          "expected_native_serialized_label_h": "capture_presence_and_actual_value; not prefilled",
+          "source": "literal prospective control chemistry, not native output or valence inference"
+        }
+      ],
+      "expected_bonds": [
+        {
+          "atoms": [
+            101,
+            118
+          ],
+          "order": 1
+        },
+        {
+          "atoms": [
+            118,
+            135
+          ],
+          "order": 1
+        },
+        {
+          "atoms": [
+            135,
+            152
+          ],
+          "order": 1
+        },
+        {
+          "atoms": [
+            152,
+            169
+          ],
+          "order": 1
+        },
+        {
+          "atoms": [
+            169,
+            101
+          ],
+          "order": 1
+        }
+      ],
+      "seed_sha256": "32f02e09613cf94cb98cbb45025700ae3c4ac6d69a205887899738a63304b700",
+      "source_conflict": null,
+      "evidence_status": "preregistered_not_native_executed"
+    },
+    {
+      "control": "cyclopentanone",
+      "file": "state-013.cdxml",
+      "description": "Five-member carbon ring with one exocyclic C=O",
+      "purpose": "qualification_candidate",
+      "expected_atoms": [
+        {
+          "atom_map": 101,
+          "role": "carbonyl",
+          "element": "C",
+          "non_node_attached_h": 0,
+          "charge": 0,
+          "isotope": 0,
+          "radical_electrons": 0,
+          "explicit_h_neighbor_nodes": [],
+          "expected_native_serialized_label_h": "capture_presence_and_actual_value; not prefilled",
+          "source": "literal prospective control chemistry, not native output or valence inference"
+        },
+        {
+          "atom_map": 118,
+          "role": "c1",
+          "element": "C",
+          "non_node_attached_h": 2,
+          "charge": 0,
+          "isotope": 0,
+          "radical_electrons": 0,
+          "explicit_h_neighbor_nodes": [],
+          "expected_native_serialized_label_h": "capture_presence_and_actual_value; not prefilled",
+          "source": "literal prospective control chemistry, not native output or valence inference"
+        },
+        {
+          "atom_map": 135,
+          "role": "c2",
+          "element": "C",
+          "non_node_attached_h": 2,
+          "charge": 0,
+          "isotope": 0,
+          "radical_electrons": 0,
+          "explicit_h_neighbor_nodes": [],
+          "expected_native_serialized_label_h": "capture_presence_and_actual_value; not prefilled",
+          "source": "literal prospective control chemistry, not native output or valence inference"
+        },
+        {
+          "atom_map": 152,
+          "role": "c3",
+          "element": "C",
+          "non_node_attached_h": 2,
+          "charge": 0,
+          "isotope": 0,
+          "radical_electrons": 0,
+          "explicit_h_neighbor_nodes": [],
+          "expected_native_serialized_label_h": "capture_presence_and_actual_value; not prefilled",
+          "source": "literal prospective control chemistry, not native output or valence inference"
+        },
+        {
+          "atom_map": 169,
+          "role": "c4",
+          "element": "C",
+          "non_node_attached_h": 2,
+          "charge": 0,
+          "isotope": 0,
+          "radical_electrons": 0,
+          "explicit_h_neighbor_nodes": [],
+          "expected_native_serialized_label_h": "capture_presence_and_actual_value; not prefilled",
+          "source": "literal prospective control chemistry, not native output or valence inference"
+        },
+        {
+          "atom_map": 186,
+          "role": "o",
+          "element": "O",
+          "non_node_attached_h": 0,
+          "charge": 0,
+          "isotope": 0,
+          "radical_electrons": 0,
+          "explicit_h_neighbor_nodes": [],
+          "expected_native_serialized_label_h": "capture_presence_and_actual_value; not prefilled",
+          "source": "literal prospective control chemistry, not native output or valence inference"
+        }
+      ],
+      "expected_bonds": [
+        {
+          "atoms": [
+            101,
+            118
+          ],
+          "order": 1
+        },
+        {
+          "atoms": [
+            118,
+            135
+          ],
+          "order": 1
+        },
+        {
+          "atoms": [
+            135,
+            152
+          ],
+          "order": 1
+        },
+        {
+          "atoms": [
+            152,
+            169
+          ],
+          "order": 1
+        },
+        {
+          "atoms": [
+            169,
+            101
+          ],
+          "order": 1
+        },
+        {
+          "atoms": [
+            101,
+            186
+          ],
+          "order": 2
+        }
+      ],
+      "seed_sha256": "bb12ccb3fbc6419934ac540d2f9a94876912e766a04feb25d6d43916fca4d5e0",
+      "source_conflict": null,
+      "evidence_status": "preregistered_not_native_executed"
+    },
+    {
+      "control": "carbon-deuterated-methanol",
+      "file": "state-014.cdxml",
+      "description": "CH2D-OH; D is a separate node",
+      "purpose": "qualification_candidate",
+      "expected_atoms": [
+        {
+          "atom_map": 101,
+          "role": "c",
+          "element": "C",
+          "non_node_attached_h": 2,
+          "charge": 0,
+          "isotope": 0,
+          "radical_electrons": 0,
+          "explicit_h_neighbor_nodes": [
+            {
+              "atom_map": 135,
+              "role": "d",
+              "isotope": 2,
+              "bond_order": 1
+            }
+          ],
+          "expected_native_serialized_label_h": "capture_presence_and_actual_value; not prefilled",
+          "source": "literal prospective control chemistry, not native output or valence inference"
+        },
+        {
+          "atom_map": 118,
+          "role": "o",
+          "element": "O",
+          "non_node_attached_h": 1,
+          "charge": 0,
+          "isotope": 0,
+          "radical_electrons": 0,
+          "explicit_h_neighbor_nodes": [],
+          "expected_native_serialized_label_h": "capture_presence_and_actual_value; not prefilled",
+          "source": "literal prospective control chemistry, not native output or valence inference"
+        },
+        {
+          "atom_map": 135,
+          "role": "d",
+          "element": "H",
+          "non_node_attached_h": 0,
+          "charge": 0,
+          "isotope": 2,
+          "radical_electrons": 0,
+          "explicit_h_neighbor_nodes": [],
+          "expected_native_serialized_label_h": "capture_presence_and_actual_value; not prefilled",
+          "source": "literal prospective control chemistry, not native output or valence inference"
+        }
+      ],
+      "expected_bonds": [
+        {
+          "atoms": [
+            101,
+            118
+          ],
+          "order": 1
+        },
+        {
+          "atoms": [
+            101,
+            135
+          ],
+          "order": 1
+        }
+      ],
+      "seed_sha256": "bec4b592178206d43c3ad0add6ee12f6cf643bd4a1f39aca58a8ffc41aa11b91",
+      "source_conflict": null,
+      "evidence_status": "preregistered_not_native_executed"
+    },
+    {
+      "control": "explicit-h-d-formaldehyde",
+      "file": "state-015.cdxml",
+      "description": "H-C(=O)-D; both H and D are separate nodes",
+      "purpose": "qualification_candidate",
+      "expected_atoms": [
+        {
+          "atom_map": 101,
+          "role": "carbonyl",
+          "element": "C",
+          "non_node_attached_h": 0,
+          "charge": 0,
+          "isotope": 0,
+          "radical_electrons": 0,
+          "explicit_h_neighbor_nodes": [
+            {
+              "atom_map": 135,
+              "role": "h",
+              "isotope": 0,
+              "bond_order": 1
+            },
+            {
+              "atom_map": 152,
+              "role": "d",
+              "isotope": 2,
+              "bond_order": 1
+            }
+          ],
+          "expected_native_serialized_label_h": "capture_presence_and_actual_value; not prefilled",
+          "source": "literal prospective control chemistry, not native output or valence inference"
+        },
+        {
+          "atom_map": 118,
+          "role": "o",
+          "element": "O",
+          "non_node_attached_h": 0,
+          "charge": 0,
+          "isotope": 0,
+          "radical_electrons": 0,
+          "explicit_h_neighbor_nodes": [],
+          "expected_native_serialized_label_h": "capture_presence_and_actual_value; not prefilled",
+          "source": "literal prospective control chemistry, not native output or valence inference"
+        },
+        {
+          "atom_map": 135,
+          "role": "h",
+          "element": "H",
+          "non_node_attached_h": 0,
+          "charge": 0,
+          "isotope": 0,
+          "radical_electrons": 0,
+          "explicit_h_neighbor_nodes": [],
+          "expected_native_serialized_label_h": "capture_presence_and_actual_value; not prefilled",
+          "source": "literal prospective control chemistry, not native output or valence inference"
+        },
+        {
+          "atom_map": 152,
+          "role": "d",
+          "element": "H",
+          "non_node_attached_h": 0,
+          "charge": 0,
+          "isotope": 2,
+          "radical_electrons": 0,
+          "explicit_h_neighbor_nodes": [],
+          "expected_native_serialized_label_h": "capture_presence_and_actual_value; not prefilled",
+          "source": "literal prospective control chemistry, not native output or valence inference"
+        }
+      ],
+      "expected_bonds": [
+        {
+          "atoms": [
+            101,
+            118
+          ],
+          "order": 2
+        },
+        {
+          "atoms": [
+            101,
+            135
+          ],
+          "order": 1
+        },
+        {
+          "atoms": [
+            101,
+            152
+          ],
+          "order": 1
+        }
+      ],
+      "seed_sha256": "f45d295613b5611e6a982571d4c91d96c17ec78bff4dfc90e77bccaca791c50d",
+      "source_conflict": null,
+      "evidence_status": "preregistered_not_native_executed"
+    },
+    {
+      "control": "benzene-unqualified",
+      "file": "state-016.cdxml",
+      "description": "Alternating six-member carbon ring; aromatic domain not qualified",
+      "purpose": "unsupported_negative",
+      "expected_atoms": [
+        {
+          "atom_map": 101,
+          "role": "c1",
+          "element": "C",
+          "non_node_attached_h": 1,
+          "charge": 0,
+          "isotope": 0,
+          "radical_electrons": 0,
+          "explicit_h_neighbor_nodes": [],
+          "expected_native_serialized_label_h": "capture_presence_and_actual_value; not prefilled",
+          "source": "literal prospective control chemistry, not native output or valence inference"
+        },
+        {
+          "atom_map": 118,
+          "role": "c2",
+          "element": "C",
+          "non_node_attached_h": 1,
+          "charge": 0,
+          "isotope": 0,
+          "radical_electrons": 0,
+          "explicit_h_neighbor_nodes": [],
+          "expected_native_serialized_label_h": "capture_presence_and_actual_value; not prefilled",
+          "source": "literal prospective control chemistry, not native output or valence inference"
+        },
+        {
+          "atom_map": 135,
+          "role": "c3",
+          "element": "C",
+          "non_node_attached_h": 1,
+          "charge": 0,
+          "isotope": 0,
+          "radical_electrons": 0,
+          "explicit_h_neighbor_nodes": [],
+          "expected_native_serialized_label_h": "capture_presence_and_actual_value; not prefilled",
+          "source": "literal prospective control chemistry, not native output or valence inference"
+        },
+        {
+          "atom_map": 152,
+          "role": "c4",
+          "element": "C",
+          "non_node_attached_h": 1,
+          "charge": 0,
+          "isotope": 0,
+          "radical_electrons": 0,
+          "explicit_h_neighbor_nodes": [],
+          "expected_native_serialized_label_h": "capture_presence_and_actual_value; not prefilled",
+          "source": "literal prospective control chemistry, not native output or valence inference"
+        },
+        {
+          "atom_map": 169,
+          "role": "c5",
+          "element": "C",
+          "non_node_attached_h": 1,
+          "charge": 0,
+          "isotope": 0,
+          "radical_electrons": 0,
+          "explicit_h_neighbor_nodes": [],
+          "expected_native_serialized_label_h": "capture_presence_and_actual_value; not prefilled",
+          "source": "literal prospective control chemistry, not native output or valence inference"
+        },
+        {
+          "atom_map": 186,
+          "role": "c6",
+          "element": "C",
+          "non_node_attached_h": 1,
+          "charge": 0,
+          "isotope": 0,
+          "radical_electrons": 0,
+          "explicit_h_neighbor_nodes": [],
+          "expected_native_serialized_label_h": "capture_presence_and_actual_value; not prefilled",
+          "source": "literal prospective control chemistry, not native output or valence inference"
+        }
+      ],
+      "expected_bonds": [
+        {
+          "atoms": [
+            101,
+            118
+          ],
+          "order": 2
+        },
+        {
+          "atoms": [
+            118,
+            135
+          ],
+          "order": 1
+        },
+        {
+          "atoms": [
+            135,
+            152
+          ],
+          "order": 2
+        },
+        {
+          "atoms": [
+            152,
+            169
+          ],
+          "order": 1
+        },
+        {
+          "atoms": [
+            169,
+            186
+          ],
+          "order": 2
+        },
+        {
+          "atoms": [
+            186,
+            101
+          ],
+          "order": 1
+        }
+      ],
+      "seed_sha256": "955a858beff973725eca42078035d556a233f57f04d1764afb94c897201ad8b3",
+      "source_conflict": null,
+      "evidence_status": "preregistered_not_native_executed"
+    },
+    {
+      "control": "methyl-radical-unqualified",
+      "file": "state-017.cdxml",
+      "description": "Neutral CH3 doublet; radical domain not qualified",
+      "purpose": "unsupported_negative",
+      "expected_atoms": [
+        {
+          "atom_map": 101,
+          "role": "c",
+          "element": "C",
+          "non_node_attached_h": 3,
+          "charge": 0,
+          "isotope": 0,
+          "radical_electrons": 1,
+          "explicit_h_neighbor_nodes": [],
+          "expected_native_serialized_label_h": "capture_presence_and_actual_value; not prefilled",
+          "source": "literal prospective control chemistry, not native output or valence inference"
+        }
+      ],
+      "expected_bonds": [],
+      "seed_sha256": "ed305c4054db85164296ea38f82d47ddcb887d0cce1deeed4b494f6dd3ea17d7",
+      "source_conflict": null,
+      "evidence_status": "preregistered_not_native_executed"
+    },
+    {
+      "control": "ammonium",
+      "file": "state-018.cdxml",
+      "description": "Isolated NH4+; label/API scopes must remain distinct",
+      "purpose": "observation_candidate",
+      "expected_atoms": [
+        {
+          "atom_map": 101,
+          "role": "n",
+          "element": "N",
+          "non_node_attached_h": 4,
+          "charge": 1,
+          "isotope": 0,
+          "radical_electrons": 0,
+          "explicit_h_neighbor_nodes": [],
+          "expected_native_serialized_label_h": "capture_presence_and_actual_value; not prefilled",
+          "source": "literal prospective control chemistry, not native output or valence inference"
+        }
+      ],
+      "expected_bonds": [],
+      "seed_sha256": "cef0c0a82a654cea2e1feb5e1750225c783f56450f04ad510dfebbadf00f108e",
+      "source_conflict": null,
+      "evidence_status": "preregistered_not_native_executed"
+    },
+    {
+      "control": "chloride",
+      "file": "state-019.cdxml",
+      "description": "Isolated Cl-; unused valences must not supply H",
+      "purpose": "observation_candidate",
+      "expected_atoms": [
+        {
+          "atom_map": 101,
+          "role": "cl",
+          "element": "Cl",
+          "non_node_attached_h": 0,
+          "charge": -1,
+          "isotope": 0,
+          "radical_electrons": 0,
+          "explicit_h_neighbor_nodes": [],
+          "expected_native_serialized_label_h": "capture_presence_and_actual_value; not prefilled",
+          "source": "literal prospective control chemistry, not native output or valence inference"
+        }
+      ],
+      "expected_bonds": [],
+      "seed_sha256": "ec66d6743aaf862923c8d3cbd98b91991bbcf37e5f1871219feccb4239c73874",
+      "source_conflict": null,
+      "evidence_status": "preregistered_not_native_executed"
+    }
+  ],
+  "no_private_candidate_or_target_input": true,
+  "no_model_inference": true,
+  "no_native_execution": true,
+  "expectations": "Independent literal chemical definitions. Labels/API/field presence after native execution are observations, not copied from these expectations.",
+  "unsupported_domains": [
+    "aromatic",
+    "query",
+    "radical",
+    "abnormal_valence",
+    "unqualified_elements_or_encodings"
+  ],
+  "query_and_abnormal_controls": "Parser/guard negative unit fixtures only; no native chemical qualification is claimed for those domains."
+}

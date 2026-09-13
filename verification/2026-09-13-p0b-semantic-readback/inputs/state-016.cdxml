@@ -1,0 +1,26 @@
+<?xml version='1.0' encoding='utf-8'?>
+<CDXML CreationProgram="ChemDraw Companion experimental adapter" LabelFont="3" CaptionFont="3" LabelSize="8" CaptionSize="8" LabelFace="96" CaptionFace="0" BondLength="14.4" BondSpacing="18" LineWidth="0.6" BoldWidth="1.9799999999999998" HashSpacing="2.4998400000000003" MarginWidth="1.5984" ShowAtomNumber="no" ShowTerminalCarbonLabels="yes" color="0" bgcolor="1">
+  <colortable>
+    <color r="1" g="1" b="1" />
+    <color r="0" g="0" b="0" />
+  </colortable>
+  <fonttable>
+    <font id="3" charset="iso-8859-1" name="Arial" />
+  </fonttable>
+  <page id="1" BoundingBox="0 0 453.5433 283.4646" DrawingSpace="poster" WidthPages="1" HeightPages="1">
+    <fragment id="5">
+      <n id="100" NodeType="Element" AtomNumber="101" Element="6" NumHydrogens="1" p="50 60" />
+      <n id="101" NodeType="Element" AtomNumber="118" Element="6" NumHydrogens="1" p="75 60" />
+      <n id="102" NodeType="Element" AtomNumber="135" Element="6" NumHydrogens="1" p="100 60" />
+      <n id="103" NodeType="Element" AtomNumber="152" Element="6" NumHydrogens="1" p="125 60" />
+      <n id="104" NodeType="Element" AtomNumber="169" Element="6" NumHydrogens="1" p="50 85" />
+      <n id="105" NodeType="Element" AtomNumber="186" Element="6" NumHydrogens="1" p="75 85" />
+      <b id="200" B="100" E="101" Order="2" />
+      <b id="201" B="101" E="102" Order="1" />
+      <b id="202" B="102" E="103" Order="2" />
+      <b id="203" B="103" E="104" Order="1" />
+      <b id="204" B="104" E="105" Order="2" />
+      <b id="205" B="105" E="100" Order="1" />
+    </fragment>
+  </page>
+</CDXML>

@@ -1,0 +1,168 @@
+{
+  "version": "p0b-semantic-preregistration-freeze/0.1",
+  "runtime_baseline": "bc428205a0066d7b544fe634910310d55fb3a893",
+  "architecture_protocol": "c29af27d429a2e8c9fd4c4e94e0eb0def6071837",
+  "status": "awaiting_independent_controller_review_before_native_execution",
+  "control_count": 20,
+  "atom_count": 66,
+  "static_molecular_formula_checks": 19,
+  "deliberate_conflict_controls": 1,
+  "duplicate_generation_byte_equality": true,
+  "native_executions": 0,
+  "files": [
+    {
+      "file": "inputs/control-matrix.json",
+      "sha256": "69c3a3e34437fe85b926908bcff14015d384278db4bff146583d66d5c52b1348",
+      "bytes": 46991
+    },
+    {
+      "file": "inputs/geometry-manifest.json",
+      "sha256": "a8f5186d4a52bfd8610d24162ce63063504c8cb670154ffa0a35d63f9a92965e",
+      "bytes": 1472
+    },
+    {
+      "file": "inputs/seed-provenance.json",
+      "sha256": "b37c41a96629bed08b9b674d5dd875b8b058fbc4afdc08e455a5ebdc8a03b1ab",
+      "bytes": 2763
+    },
+    {
+      "file": "inputs/state-000.cdxml",
+      "sha256": "190b76acbb1dbba42d6a96d6364d95cf7e68cb8429ff65b02b8ebea6ebfdd343",
+      "bytes": 854
+    },
+    {
+      "file": "inputs/state-001.cdxml",
+      "sha256": "a92d9154db1fa3d41e25aa39e2697fb4c847c2f8fe97b4fdc825cd160ca34a1d",
+      "bytes": 1145
+    },
+    {
+      "file": "inputs/state-002.cdxml",
+      "sha256": "5802698680e0a7823594256ca5bfb39d6357eb24bb725442648ed2190f149236",
+      "bytes": 1145
+    },
+    {
+      "file": "inputs/state-003.cdxml",
+      "sha256": "d9599f6821e1a4aed3ff8b5311a700ae01d4f2073bfd687a1130e077dfe2a0ec",
+      "bytes": 959
+    },
+    {
+      "file": "inputs/state-004.cdxml",
+      "sha256": "29dd22c440998111a31bac93e90e6aceb0242ee6ed4d596c48c04077eb7b9f1d",
+      "bytes": 1291
+    },
+    {
+      "file": "inputs/state-005.cdxml",
+      "sha256": "2318846250754d14712e5990ccbb90426d28e9d1c66c0127ad965c327ed459d9",
+      "bytes": 1145
+    },
+    {
+      "file": "inputs/state-006.cdxml",
+      "sha256": "b6c0f0afcc6fe17cf60b9692820b32aa71311eecf62b0903f7c98ab2f9d319fc",
+      "bytes": 1291
+    },
+    {
+      "file": "inputs/state-007.cdxml",
+      "sha256": "170c2ab0d941098fa01443d3eab8f13af9cc98936e6772b26381409c8f4dc4cc",
+      "bytes": 1436
+    },
+    {
+      "file": "inputs/state-008.cdxml",
+      "sha256": "c707456a4baebfdd3e9f0f5e2cf7fff9925e7227edcca0a4919ab7c25b99e665",
+      "bytes": 1291
+    },
+    {
+      "file": "inputs/state-009.cdxml",
+      "sha256": "48377e892207f08900298cfa19967a46e6398a0b3849ef8bb6d015aa35b2b4f6",
+      "bytes": 999
+    },
+    {
+      "file": "inputs/state-010.cdxml",
+      "sha256": "530181576a68b49b4d37346088f9bd7dfe5ea032957652665fc2c501ca10f1aa",
+      "bytes": 1145
+    },
+    {
+      "file": "inputs/state-011.cdxml",
+      "sha256": "d66e2bfbcd31e3cd72908ec7e6dc96249da5ead388af6866d64aa680fac55469",
+      "bytes": 1629
+    },
+    {
+      "file": "inputs/state-012.cdxml",
+      "sha256": "32f02e09613cf94cb98cbb45025700ae3c4ac6d69a205887899738a63304b700",
+      "bytes": 1484
+    },
+    {
+      "file": "inputs/state-013.cdxml",
+      "sha256": "bb12ccb3fbc6419934ac540d2f9a94876912e766a04feb25d6d43916fca4d5e0",
+      "bytes": 1629
+    },
+    {
+      "file": "inputs/state-014.cdxml",
+      "sha256": "bec4b592178206d43c3ad0add6ee12f6cf643bd4a1f39aca58a8ffc41aa11b91",
+      "bytes": 1157
+    },
+    {
+      "file": "inputs/state-015.cdxml",
+      "sha256": "f45d295613b5611e6a982571d4c91d96c17ec78bff4dfc90e77bccaca791c50d",
+      "bytes": 1303
+    },
+    {
+      "file": "inputs/state-016.cdxml",
+      "sha256": "955a858beff973725eca42078035d556a233f57f04d1764afb94c897201ad8b3",
+      "bytes": 1629
+    },
+    {
+      "file": "inputs/state-017.cdxml",
+      "sha256": "ed305c4054db85164296ea38f82d47ddcb887d0cce1deeed4b494f6dd3ea17d7",
+      "bytes": 872
+    },
+    {
+      "file": "inputs/state-018.cdxml",
+      "sha256": "cef0c0a82a654cea2e1feb5e1750225c783f56450f04ad510dfebbadf00f108e",
+      "bytes": 865
+    },
+    {
+      "file": "inputs/state-019.cdxml",
+      "sha256": "ec66d6743aaf862923c8d3cbd98b91991bbcf37e5f1871219feccb4239c73874",
+      "bytes": 867
+    }
+  ],
+  "source_bytes": [
+    {
+      "file": "probes/make_native_semantic_controls.py",
+      "sha256": "f4cc12efb98e0de7a54a2cd5353a4746bd13424b7d0ab77a2e1383ebdc6d256d"
+    },
+    {
+      "file": "runtime/NATIVE_SEMANTIC_READBACK_PLAN.md",
+      "sha256": "a424d10749b2fd6f7493a68067222c71b4dbd9664d8aeaf5959666adbe37c26d"
+    },
+    {
+      "file": "runtime/adapters/chemdraw_cdxml.py",
+      "sha256": "46d5516c2880e454b48a2b4c6bb4309b2246ed5a3aa5fb69f32d991df30f95fd"
+    },
+    {
+      "file": "runtime/adapters/cdxml_atom_identity.py",
+      "sha256": "4aa26e476868120c6e341c035ad2592d78a7b069ad5e519175297c3019a39a2f"
+    },
+    {
+      "file": "runtime/native_provenance.py",
+      "sha256": "37e6387137e9c5a4bf25b3b82b370a06e38810cc09767906cf8c86953f13f0e0"
+    },
+    {
+      "file": "probes/native-ir-fragments.ps1",
+      "sha256": "761e7b41caac106a784236312172c94d2476f72fc598d9cadbec970e7d4b73b2"
+    },
+    {
+      "file": "probes/native-common.ps1",
+      "sha256": "0fe06575b88a8f2b14f6f3937dd72d2f2709b146564ac2e17b80b3b0ab01655f"
+    },
+    {
+      "file": "probes/NativeChemDraw.cs",
+      "sha256": "52eb2fe1e66d9b13aba84dfba010959ddcb8fcf6109b919a498324400681b73c"
+    }
+  ],
+  "source_scope": "Current generator/plan and baseline runtime/observer references; the actual proposed execution implementation must be separately frozen before native use.",
+  "worker_initial_snapshot_sha256": "6abcfd2d0cb0d172f4927f472c30758a45c1df331ead4f38aab8973b4a77c913",
+  "new_dependencies": [],
+  "quality_acceptance": "not_implied",
+  "gold": 0
+}
