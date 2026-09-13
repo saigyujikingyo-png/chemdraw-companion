@@ -24,7 +24,7 @@ def check_style(path,style):
         if not math.isfinite(value) or abs(value-style['font_pt'])>1e-4 or fonts.get(run.get('font'))!=style['font_family']:raise ValueError('Native text run style mismatch')
 
 
-def verify_geometry_receipt(mechanism,style,manifest,input_folder,output_folder):
+def verify_geometry_receipt(mechanism,style,manifest,input_folder,output_folder,*,depiction_plan=None):
     input_folder=Path(input_folder);output_folder=Path(output_folder)
     receipt_path=output_folder/'native-geometry-receipt.json'
     if not receipt_path.is_file():raise ValueError('Missing completed native geometry execution receipt')
@@ -34,6 +34,12 @@ def verify_geometry_receipt(mechanism,style,manifest,input_folder,output_folder)
     if receipt.get('version')!='native-geometry-receipt/0.1' or receipt.get('status')!='complete' or receipt.get('operation')!='ChemDraw.Objects.Clean(true)':raise ValueError('Uncompleted or wrong native operation')
     if receipt.get('seed_provenance_sha256')!=file_hash(input_folder/'seed-provenance.json'):raise ValueError('Seed receipt hash mismatch')
     if seed.get('mechanism_sha256')!=canonical_hash(mechanism) or seed.get('style_sha256')!=canonical_hash(style):raise ValueError('IR/style provenance mismatch')
+    if depiction_plan:
+        for key in ('ir_sha256','chemical_inventory_sha256','depiction_plan_sha256'):
+            if seed.get(key)!=depiction_plan[key]:raise ValueError('Depiction provenance mismatch: '+key)
+        if seed.get('lowered_depiction_file_sha256')!=file_hash(input_folder/'lowered-depiction.json') or read(input_folder/'lowered-depiction.json')!=depiction_plan:raise ValueError('Lowered depiction file mismatch')
+        expected={s['state_ref']:sorted(a['atom_ref'] for a in s['visible_atoms']) for s in depiction_plan['states']}
+        if len(manifest)!=len(expected) or {e['state']:e.get('visible_atom_refs') for e in manifest}!=expected:raise ValueError('Visible occurrence manifest mismatch')
     if receipt.get('manifest_sha256')!=file_hash(input_folder/'geometry-manifest.json'):raise ValueError('Geometry manifest hash mismatch')
     environment=receipt.get('environment',{})
     for key in ('application_build','interop_version','executable_sha256','interop_sha256','executor_sha256','bridge_sha256'):

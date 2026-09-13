@@ -1,4 +1,8 @@
-param([Parameter(Mandatory)][string]$InputDirectory,[Parameter(Mandatory)][string]$OutputDirectory)
+param(
+    [Parameter(Mandatory)][string]$InputDirectory,
+    [Parameter(Mandatory)][string]$OutputDirectory,
+    [switch]$IncludeAtomReadback
+)
 $ErrorActionPreference='Stop';Set-StrictMode -Version Latest
 . (Join-Path $PSScriptRoot 'native-common.ps1')
 $run=[IO.Path]::GetFullPath($OutputDirectory)
@@ -6,6 +10,28 @@ if(Test-Path -LiteralPath $run){throw 'Output directory exists.'}
 [void][IO.Directory]::CreateDirectory($run)
 function Record($stage,$detail){[ordered]@{utc=[DateTime]::UtcNow.ToString('o');stage=$stage;detail=$detail}|ConvertTo-Json -Depth 12 -Compress|Add-Content -LiteralPath (Join-Path $run 'events.jsonl') -Encoding utf8;Write-Host $stage}
 function Save-Checked($doc,$name){$r=[NativeChemDraw]::Save($doc,(Join-Path $run $name),'text/xml',600);Record 'save_return' $r;if(!$r.Exists -or $r.Bytes -le 0){throw "Missing artifact: $name"}}
+function Save-AtomReadback($doc,[string]$name,[string]$nativeFile){
+    $path=Join-Path $run $name
+    $readback=[ordered]@{
+        version='native-atom-readback/0.1'
+        observation='Raw COM properties from the current native document after cleanup and serialization; not an independent disk reopen. NumImplicitHydrogens is not qualified as a total hydrogen-count oracle.'
+        source_cdxml_sha256=(Get-FileHash -LiteralPath $nativeFile).Hash.ToLowerInvariant()
+        atoms=@($doc.Atoms|ForEach-Object{[ordered]@{
+            native_id=$_.ID
+            atom_map=$_.AtomNumber
+            atomic_number=$_.ElementNumber
+            formal_charge=$_.Charge
+            implicit_h_native_value=$_.NumImplicitHydrogens
+            implicit_h_native_property='IChemDrawAtom.NumImplicitHydrogens'
+            isotope=$_.Isotope
+            radical_native_value=[int]$_.Radical
+            radical_native_name=$_.Radical.ToString()
+        }})
+    }
+    [IO.File]::WriteAllText($path,($readback|ConvertTo-Json -Depth 12),[Text.UTF8Encoding]::new($false))
+    Record 'native_atom_readback' @{file=$name;source_cdxml_sha256=$readback.source_cdxml_sha256;sha256=(Get-FileHash -LiteralPath $path).Hash.ToLowerInvariant();atoms=$readback.atoms.Count}
+    return @{file=$name;sha256=(Get-FileHash -LiteralPath $path).Hash.ToLowerInvariant()}
+}
 $app=$null;$owned=[Collections.Generic.List[object]]::new();$failed=$false
 $manifestPath=Join-Path $InputDirectory 'geometry-manifest.json';$seedPath=Join-Path $InputDirectory 'seed-provenance.json'
 $manifest=Get-Content -LiteralPath $manifestPath -Raw|ConvertFrom-Json
@@ -30,9 +56,14 @@ try{
         $doc.Objects.Clean($true)
         Record 'cleanup_return' @{id=$file.BaseName;atoms=$doc.Atoms.Count;bonds=$doc.Bonds.Count;warnings=$doc.NumChemicalWarnings;smiles=[NativeChemDraw]::Data($doc,'chemical/x-smiles')}
         $nativeWarnings=$doc.NumChemicalWarnings
-        Save-Checked $doc ($file.BaseName+'.cdxml');[NativeChemDraw]::Close($doc)
+        Save-Checked $doc ($file.BaseName+'.cdxml')
+        $atomReadback=$null
+        if($IncludeAtomReadback){$atomReadback=Save-AtomReadback $doc ($file.BaseName+'.atoms.json') (Join-Path $run ($file.BaseName+'.cdxml'))}
+        [NativeChemDraw]::Close($doc)
         if((Get-FileHash -LiteralPath $file.FullName).Hash.ToLowerInvariant() -ne $inputHash){throw 'Seed changed during native operation.'}
-        $receipt.artifacts+=@{file=$file.Name;input_sha256=$inputHash;before_sha256=(Get-FileHash -LiteralPath (Join-Path $run ($file.BaseName+'-before.cdxml'))).Hash.ToLowerInvariant();output_sha256=(Get-FileHash -LiteralPath (Join-Path $run ($file.BaseName+'.cdxml'))).Hash.ToLowerInvariant();cleanup_completed=$true;warnings=$nativeWarnings}
+        $artifact=@{file=$file.Name;input_sha256=$inputHash;before_sha256=(Get-FileHash -LiteralPath (Join-Path $run ($file.BaseName+'-before.cdxml'))).Hash.ToLowerInvariant();output_sha256=(Get-FileHash -LiteralPath (Join-Path $run ($file.BaseName+'.cdxml'))).Hash.ToLowerInvariant();cleanup_completed=$true;warnings=$nativeWarnings}
+        if($IncludeAtomReadback){$artifact.atom_readback=$atomReadback}
+        $receipt.artifacts+=$artifact
     }
     $receipt.status='complete';$receipt.completed_utc=[DateTime]::UtcNow.ToString('o');$receipt|ConvertTo-Json -Depth 12|Set-Content -LiteralPath $receiptPath -Encoding utf8
     Record 'complete' @{scope='IR graphs materialized and laid out by ChemDraw; composition separate'}

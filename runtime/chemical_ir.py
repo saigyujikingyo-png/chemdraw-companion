@@ -140,16 +140,20 @@ def chemical_colors(mechanism):
     """
     states,transitions=linear_order(mechanism)
     catalog={a['map']:a for a in mechanism['atom_catalog']};initial={}
+    v02=mechanism.get('ir_version')=='mechanism-ir/0.2';sides=('source','sink') if v02 else ('source','target')
     for i,a in catalog.items():
         state_roles=[];flow_roles=[];stereo_roles=[]
         for s in states:
             q={x['atom']:x['value'] for x in s['formal_charges']};lp={x['atom']:x['count'] for x in s['lone_pairs']}
             state_roles.append((q.get(i,0),lp.get(i,0),sorted(b['order'] for b in s['bonds'] if i in b['atoms'])))
+            if v02:
+                override=next((x for x in s.get('atom_properties',[]) if x['atom']==i),{})
+                state_roles[-1]+=(override.get('implicit_h',a['implicit_h']),override.get('radical_electrons',a.get('radical_electrons',0)),a.get('isotope',0))
             stereo_roles.append(sorted((r['type'],'central' if i in r['central_bond'] else 'substituent') for r in mechanism['stereo_constraints'] if s['id'] in r['states'] and i in r['central_bond']+r['substituent_atoms']))
         for t in transitions:
             roles=[]
             for f in t['electron_flows']:
-                for side in ('source','target'):
+                for side in sides:
                     p=f[side]
                     if p.get('atom')==i or i in p.get('atoms',[]):roles.append((side,p['type'],p.get('electrons',''),p.get('pair_index',-1)))
             flow_roles.append(sorted(roles))
@@ -164,8 +168,8 @@ def chemical_colors(mechanism):
                 roles=[]
                 for f in t['electron_flows']:
                     atoms=lambda p:[p['atom']] if 'atom' in p else p['atoms']
-                    if i in atoms(f['source'])+atoms(f['target']):
-                        roles.append(tuple((side,tuple(sorted(colors[j] for j in atoms(f[side])))) for side in ('source','target')))
+                    if i in atoms(f[sides[0]])+atoms(f[sides[1]]):
+                        roles.append(tuple((side,tuple(sorted(colors[j] for j in atoms(f[side])))) for side in sides))
                 flow_neighbours.append(sorted(roles))
             new[i]=canonical_hash((initial[i],neighbourhoods,flow_neighbours))
         # Partition stability is enough; digest equality need not converge.

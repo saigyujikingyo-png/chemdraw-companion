@@ -30,7 +30,7 @@ def rotate_component(component,angle):
 def component_bounds(component,padding):
     xs=[];ys=[]
     for a in component['atoms']:
-        x,y=a['position'];reserve=padding if a['element'] in ('N','O') else padding*.06;xs.extend((x-reserve,x+reserve));ys.extend((y-reserve,y+reserve))
+        x,y=a['position'];reserve=padding if (a['label'] if 'atomic_number' in a else a['element'] in ('N','O')) else padding*.06;xs.extend((x-reserve,x+reserve));ys.extend((y-reserve,y+reserve))
         if a['label']:
             b=a['label']['bbox_offset'];xs.extend((x+b[0],x+b[2]));ys.extend((y+b[1],y+b[3]))
     return min(xs),min(ys),max(xs),max(ys)
@@ -115,16 +115,21 @@ def pack_panel(components,flows,width,B,label_height,step_height):
     if not choices:raise ValueError('Auxiliary inventory cannot fit at fixed style')
     _,positioned,height=min(choices,key=lambda t:(round(t[0],7),geometry_key(t[1])));return positioned,height
 
-def lone_pair_ports(state,components,B):
+def lone_pair_ports(state,components,B,slots=None):
     atoms={a['map']:a for c in components for a in c['atoms']};positions={i:a['position'] for i,a in atoms.items()};result=[]
-    for entry in state['lone_pairs']:
+    selected={}
+    if slots is not None:
+        for slot in slots:selected.setdefault(slot['atom_ref'],{})[slot['pair_index']]=slot
+    entries=state['lone_pairs'] if slots is None else [{'atom':i,'count':len(v)} for i,v in selected.items()]
+    for entry in entries:
         i=entry['atom'];p=positions[i];occupied=[math.atan2(positions[j][1]-p[1],positions[j][0]-p[0]) for b in state['bonds'] if i in b['atoms'] for j in b['atoms'] if j!=i];chosen=[]
-        for slot in range(entry['count']):
+        for slot in (range(entry['count']) if slots is None else sorted(selected[i])):
             def radius(a):
                 label=atoms[i]['label'];lower=B*RULES['electron_radius_bonds'];upper=B*1.1
                 if not label:return lower
                 box=label['bbox_offset'];u=(math.cos(a),math.sin(a));half=B*.0764
-                def clearance(r):return min(point_box_distance((r*u[0]+side*half,r*u[1]),box) for side in (-1,1))
+                axis=(-u[1],u[0]) if slots is not None else (1,0)
+                def clearance(r):return min(point_box_distance((r*u[0]+side*half*axis[0],r*u[1]+side*half*axis[1]),box) for side in (-1,1))
                 required=B*.18+B*.03
                 if clearance(upper)<required:return float('inf')
                 if clearance(lower)>=required:return lower
@@ -138,6 +143,7 @@ def lone_pair_ports(state,components,B):
             if not angles:raise ValueError('No lone-pair port outside measured label at fixed atom-association bound')
             angle=max(angles,key=lambda a:(round(score(a),10),-round(radius(a),7),-a));chosen.append(angle);r=radius(angle)
             position=add(p,(r*math.cos(angle),r*math.sin(angle)));result.append({'atom':i,'pair_index':slot,'position':position})
+            if slots is not None:result[-1].update(**selected[i][slot],dot_axis=[-math.sin(angle),math.cos(angle)])
     return result
 
 def route_flows(state,flows,components,pairs,B,head_extension=0,stroke=.6,pixel=.12):
@@ -173,10 +179,25 @@ def route_flows(state,flows,components,pairs,B,head_extension=0,stroke=.6,pixel=
                 candidates.append((penalty+B*bend*.03,points,samples,minimum))
         score,points,samples,minimum=min(candidates,key=lambda c:(round(c[0],7),tuple(round(v,7) for p in c[1] for v in p)));prior.append(samples)
         result.append({'id':f['id'],'electron_count':f['electron_count'],'source':{'state':state['id'],**source},'target':{'state':state['id'],**target},'bezier':points,'diagnostics':{'native_label_bbox_clearance_pt':minimum,'required_clearance_pt':threshold,'route_score':score}})
+        if 'lowered_ports' in f:result[-1]['lowered_ports']=copy.deepcopy(f['lowered_ports'])
     return result
 
-def compose(mechanism,style,geometry,head_metrics=None):
+def compose(mechanism,style,geometry,head_metrics=None,*,depiction_plan=None):
+    from runtime.ir_v02_runtime import verify_runtime_plan
+    verify_runtime_plan(mechanism,style,depiction_plan)
     states,transitions=linear_order(mechanism);catalog={a['map']:a for a in mechanism['atom_catalog']};outgoing={t['from']:t for t in transitions}
+    depictions={s['state_ref']:s for s in depiction_plan['states']} if depiction_plan else {}
+    slots_by_state={}
+    if depiction_plan:
+        # This is a geometry projection, never a replacement chemical IR.
+        states=[{**s,'bonds':depictions[s['id']]['visible_bonds']} for s in states]
+        outgoing={t['from']:{**t,'electron_flows':[]} for t in transitions}
+        slots_by_state={sid:[{**s,'draw_lone_pair':True} for s in d['lone_pair_slots']] for sid,d in depictions.items()}
+        for f in depiction_plan['electron_flows']:
+            outgoing[f['state_ref']]['electron_flows'].append({'id':f['flow_ref'],'electron_count':f['electron_count'],'source':copy.deepcopy(f['source']['chemical_port']),'target':copy.deepcopy(f['sink']['chemical_port']),'lowered_ports':copy.deepcopy(f)})
+            if f['source'].get('kind')=='virtual_lone_pair':
+                p=f['source']['chemical_port'];slots=slots_by_state[f['state_ref']]
+                if not any(s['atom_ref']==p['atom'] and s['pair_index']==p['pair_index'] for s in slots):slots.append({'atom_ref':p['atom'],'pair_index':p['pair_index'],'orientation':'auto','draw_lone_pair':False})
     B=style['bond_length_pt'];font=style['font_pt'];width=style['canvas_width_mm']*72/25.4;height=style['canvas_height_mm']*72/25.4;margin=style['outer_margin_mm']*72/25.4
     head_extension=0
     if head_metrics is not None:
@@ -186,7 +207,8 @@ def compose(mechanism,style,geometry,head_metrics=None):
     header=font*2.8;footer=font*1.5;column_gap=B*RULES['panel_gap_bonds'];row_gap=B*style['row_gap_bond_lengths'];available_width=width-2*margin;available_height=height-2*margin-header-footer
     prepared={};previous=None;roles=chemical_colors(mechanism)
     for state in states:
-        cs=prepare_components(state,geometry[state['id']],catalog,previous,roles);prepared[state['id']]=cs;previous={a['map']:a['position'] for a in cs[0]['atoms'] if a['element']!='H'}
+        visible_catalog={i:catalog[i] for i in geometry[state['id']]['atoms']} if depiction_plan else catalog
+        cs=prepare_components(state,geometry[state['id']],visible_catalog,previous,roles);prepared[state['id']]=cs;previous={a['map']:a['position'] for a in cs[0]['atoms'] if a['element']!='H'}
     plan=None;rejections=[]
     for columns in range(min(style['max_columns'],len(states)),0,-1):
         rows=math.ceil(len(states)/columns)
@@ -198,6 +220,12 @@ def compose(mechanism,style,geometry,head_metrics=None):
                 # Character capacity is a shared preliminary estimate; native
                 # glyph readback remains the final typography check.
                 chars=max(6,int(panel_width/(font*.53)));label_lines=textwrap.wrap(state['label'],chars) or [''];transition=outgoing.get(state['id']);step_lines=textwrap.wrap(transition['label'],chars) if transition else []
+                if depiction_plan:
+                    label_lines=[];step_lines=[]
+                    for caption in depictions[state['id']]['captions']:
+                        destination=step_lines if 'transition_ref' in caption else label_lines
+                        for line in textwrap.wrap(caption['text'],chars) or ['']:
+                            destination.append({'text':line,'caption_ref':caption['occurrence_ref'],'role':caption['role'],'species_refs':caption.get('species_refs',[]),'original_text':caption['text']})
                 label_height=(len(label_lines)+.4)*font*1.2;step_height=len(step_lines)*font*1.2
                 components,panel_height=pack_panel(prepared[state['id']],transition['electron_flows'] if transition else [],panel_width,B,label_height,step_height)
                 packed.append({'state':state,'components':components,'height':panel_height,'labels':label_lines,'step_labels':step_lines,'step_height':step_height})
@@ -208,7 +236,10 @@ def compose(mechanism,style,geometry,head_metrics=None):
         except ValueError as exc:rejections.append({'columns':columns,'reason':str(exc)})
     if plan is None:raise ValueError('No layout at the frozen font/bond scale: '+str(rejections))
     columns,panel_width,packed,row_heights=plan;scene={'scene_version':'mechanism-scene/0.1','rule_version':RULE_VERSION,'rules':RULES,'style':style,'mechanism_sha256':canonical_hash(mechanism),'width_pt':width,'height_pt':height,'states':[],'flows':[],'connectors':[],'texts':[],'layout_diagnostics':{'columns':columns,'row_heights_pt':row_heights,'rejected_plans':rejections},'source_geometry':'provided intrinsic geometry; native qualification is established by the adapter execution receipt, not asserted by Composer'}
-    scene['texts'].append({'text':'Reaction mechanism','position':[margin,margin+font],'font_pt':font})
+    if depiction_plan:
+        scene.update(scene_version='mechanism-scene/0.2',rule_version='generic-composer/0.4-v02-development',depiction_states=copy.deepcopy(depiction_plan['states']),chemical_inventory=copy.deepcopy(depiction_plan['chemical_inventory']))
+        scene.update({k:depiction_plan[k] for k in ('ir_sha256','chemical_inventory_sha256','depiction_plan_sha256')})
+    else:scene['texts'].append({'text':'Reaction mechanism','position':[margin,margin+font],'font_pt':font})
     if head_metrics is not None:scene['native_head_metrics']={k:head_metrics[k] for k in ('bond_pt','font_pt','head_size','conservative_forward_extension_pt','source_sha256')}
     origins={};sizes={};row_y=margin+header
     for row,start in enumerate(range(0,len(packed),columns)):
@@ -218,9 +249,10 @@ def compose(mechanism,style,geometry,head_metrics=None):
             column=logical if left_to_right else columns-1-logical;x=margin+column*(panel_width+column_gap);y=row_y;state=entry['state'];sid=state['id'];components=copy.deepcopy(entry['components'])
             for c in components:
                 for a in c['atoms']:a['position']=add(a['position'],(x,y))
-            pairs=lone_pair_ports(state,components,B);placed={'id':sid,'origin':[x,y],'row':row,'column':column,'components':components,'lone_pairs':pairs,'native_source_sha256':geometry[sid]['source_sha256']};scene['states'].append(placed);origins[sid]=(x,y);sizes[sid]=(panel_width,row_heights[row])
-            for line,text in enumerate(entry['labels']):scene['texts'].append({'text':text,'position':[x,y+(line+1)*font*1.2],'font_pt':font})
-            for line,text in enumerate(entry['step_labels']):scene['texts'].append({'text':text,'position':[x,y+entry['height']-entry['step_height']+(line+1)*font*1.2],'font_pt':font})
+            pairs=lone_pair_ports(state,components,B,slots_by_state.get(sid) if depiction_plan else None);placed={'id':sid,'origin':[x,y],'row':row,'column':column,'components':components,'lone_pairs':[p for p in pairs if p.get('draw_lone_pair',True)],'native_source_sha256':geometry[sid]['source_sha256']};scene['states'].append(placed);origins[sid]=(x,y);sizes[sid]=(panel_width,row_heights[row])
+            if depiction_plan:placed['virtual_lone_pair_ports']=[p for p in pairs if not p.get('draw_lone_pair',True)]
+            for line,text in enumerate(entry['labels']):scene['texts'].append({**(text if isinstance(text,dict) else {'text':text}),'position':[x,y+(line+1)*font*1.2],'font_pt':font})
+            for line,text in enumerate(entry['step_labels']):scene['texts'].append({**(text if isinstance(text,dict) else {'text':text}),'position':[x,y+entry['height']-entry['step_height']+(line+1)*font*1.2],'font_pt':font})
             if sid in outgoing:scene['flows']+=route_flows(state,outgoing[sid]['electron_flows'],components,pairs,B,head_extension,style['stroke_pt'],72/style['minimum_native_dpi'])
         row_y+=row_heights[row]+row_gap
     state_index={s['id']:s for s in scene['states']}

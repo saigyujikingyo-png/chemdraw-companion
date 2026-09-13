@@ -4,8 +4,10 @@ import copy,json,math,hashlib
 from pathlib import Path
 import xml.etree.ElementTree as ET
 from runtime.chemical_ir import connected_components,linear_order,edge,canonical_hash,chemical_colors
+from contracts.ir_v02 import ATOMIC_NUMBERS
+from runtime.adapters.cdxml_atom_identity import node_attributes,read_explicit_geometry,NativeDepictionError
 
-ELEMENTS={'H':1,'C':6,'N':7,'O':8}
+ELEMENTS=ATOMIC_NUMBERS
 
 def kekule_orders(state,catalog):
     """Solve valence demands for supported all-carbon aromatic subgraphs."""
@@ -37,10 +39,18 @@ def document(style):
     page=ET.SubElement(root,'page',{'id':'1','BoundingBox':f'0 0 {w:.4f} {h:.4f}','DrawingSpace':'poster','WidthPages':'1','HeightPages':'1'})
     return root,page
 
-def seed_documents(mechanism,style,folder):
+def seed_documents(mechanism,style,folder,*,depiction_plan=None):
+    from runtime.ir_v02_runtime import verify_runtime_plan
+    verify_runtime_plan(mechanism,style,depiction_plan)
     folder.mkdir(parents=True,exist_ok=False);catalog={a['map']:a for a in mechanism['atom_catalog']};colors=chemical_colors(mechanism);states,_=linear_order(mechanism);manifest=[];B=style['bond_length_pt']
+    plans={s['state_ref']:s for s in depiction_plan['states']} if depiction_plan else {}
     for index,state in enumerate(states):
-        root,page=document(style);ids={};positions={};ordered=sorted(catalog,key=lambda i:colors[i]);groups=connected_components(state,ordered)
+        state_catalog=catalog
+        if depiction_plan:
+            visible=plans[state['id']]
+            state_catalog={a['atom_ref']:{**catalog[a['atom_ref']],**a} for a in visible['visible_atoms']}
+            state={**state,'bonds':visible['visible_bonds']}
+        root,page=document(style);ids={};positions={};ordered=sorted(state_catalog,key=lambda i:colors[i]);groups=connected_components(state,ordered)
         groups.sort(key=lambda g:(-len(g),tuple(sorted(colors[i] for i in g))))
         for ci,group in enumerate(groups):
             order=sorted(group,key=lambda i:colors[i]);radius=max(B,B*len(order)/(2*math.pi));center=(B*8+ci*B*8,B*8)
@@ -56,28 +66,48 @@ def seed_documents(mechanism,style,folder):
                 others=[j for bond in state['bonds'] if center in bond['atoms'] for j in bond['atoms'] if j not in (center,partner,chosen)]
                 if len(others)>1:raise ValueError('Unsupported substituent multiplicity at stereo double bond')
                 for other in others:positions[other]=(positions[center][0]+dx,positions[center][1]+side*vertical)
-        q={x['atom']:x['value'] for x in state['formal_charges']};orders=kekule_orders(state,catalog);uid=10
+        q={x['atom']:x['value'] for x in state['formal_charges']};orders=kekule_orders(state,state_catalog);uid=10
         for group in groups:
             uid+=1;fragment=ET.SubElement(page,'fragment',{'id':str(uid)})
             for i in sorted(group,key=lambda i:colors[i]):
-                uid+=1;ids[i]=str(uid);x,y=positions[i];attrs={'id':ids[i],'AtomNumber':str(i),'ShowAtomNumber':'no','p':f'{x:.4f} {y:.4f}','Element':str(ELEMENTS[catalog[i]['element']]),'NumHydrogens':str(catalog[i]['implicit_h'])}
-                if q.get(i):attrs['Charge']=str(q[i])
+                uid+=1;ids[i]=str(uid);x,y=positions[i];attrs={'id':ids[i],'AtomNumber':str(i),'ShowAtomNumber':'no','p':f'{x:.4f} {y:.4f}',**node_attributes({**state_catalog[i],'charge':q.get(i,0)},ELEMENTS[state_catalog[i]['element']])}
                 ET.SubElement(fragment,'n',attrs)
             for bond in state['bonds']:
                 a,b=bond['atoms']
                 if a in group:
                     uid+=1;ET.SubElement(fragment,'b',{'id':str(uid),'B':ids[a],'E':ids[b],'Order':format(orders[edge((a,b))],'g')})
         name=f'state-{index:03d}.cdxml';ET.indent(root);ET.ElementTree(root).write(folder/name,encoding='utf-8',xml_declaration=True);manifest.append({'state':state['id'],'file':name})
+        if depiction_plan:manifest[-1]['visible_atom_refs']=sorted(state_catalog)
     (folder/'geometry-manifest.json').write_text(json.dumps(manifest,indent=2),encoding='utf-8')
     provenance={'version':'native-seed/0.1','mechanism_sha256':canonical_hash(mechanism),'style_sha256':canonical_hash(style),'inputs':[{'file':e['file'],'sha256':hashlib.sha256((folder/e['file']).read_bytes()).hexdigest()} for e in manifest]}
+    if depiction_plan:
+        provenance.update({k:depiction_plan[k] for k in ('ir_sha256','chemical_inventory_sha256','depiction_plan_sha256')})
+        (folder/'lowered-depiction.json').write_text(json.dumps(depiction_plan,indent=2),encoding='utf-8')
+        provenance['lowered_depiction_file_sha256']=hashlib.sha256((folder/'lowered-depiction.json').read_bytes()).hexdigest()
     (folder/'seed-provenance.json').write_text(json.dumps(provenance,indent=2),encoding='utf-8')
     return manifest
 
-def read_geometry(mechanism,manifest,folder,*,input_folder=None,style=None):
+def read_geometry(mechanism,manifest,folder,*,input_folder=None,style=None,depiction_plan=None):
     from runtime.native_provenance import verify_geometry_receipt
     if input_folder is None or style is None:raise ValueError('Verified native geometry requires seed path, style and execution receipt')
-    provenance=verify_geometry_receipt(mechanism,style,manifest,input_folder,folder)
+    from runtime.ir_v02_runtime import verify_runtime_plan
+    verify_runtime_plan(mechanism,style,depiction_plan)
+    provenance=verify_geometry_receipt(mechanism,style,manifest,input_folder,folder,depiction_plan=depiction_plan)
     catalog={a['map']:a for a in mechanism['atom_catalog']};states={s['id']:s for s in mechanism['states']};result={}
+    if depiction_plan:
+        plans={s['state_ref']:s for s in depiction_plan['states']}
+        for entry in manifest:
+            sid=entry['state'];plan=plans[sid];path=folder/entry['file']
+            expected_atoms={a['atom_ref']:{**a,'atomic_number':ELEMENTS[a['element']],'charge':a['formal_charge']} for a in plan['visible_atoms']}
+            visible_state={**states[sid],'bonds':plan['visible_bonds']}
+            orders=kekule_orders(visible_state,expected_atoms)
+            expected_bonds=[{**b,'order':orders[edge(b['atoms'])]} for b in plan['visible_bonds']]
+            measured=read_explicit_geometry(path,expected_atoms,expected_bonds)
+            for relation in mechanism['stereo_constraints']:
+                if sid in relation['states'] and not stereo_satisfied(relation,{i:a['position'] for i,a in measured['atoms'].items()}):raise NativeDepictionError('NATIVE_STEREO_CHANGED',sid,'Native cleanup did not preserve the declared stereo relation.')
+            measured.update(source_sha256=hashlib.sha256(path.read_bytes()).hexdigest(),source=provenance['source'],native_execution=provenance)
+            result[sid]=measured
+        return result
     for entry in manifest:
         path=folder/entry['file'];root=ET.parse(path).getroot();state=states[entry['state']];q={x['atom']:x['value'] for x in state['formal_charges']};nodes={int(n.get('AtomNumber','-1')):n for n in root.iter('n')}
         if set(nodes)!=set(catalog) or len(list(root.iter('n')))!=len(catalog):raise ValueError('Native atom mapping changed')
@@ -121,8 +151,7 @@ def materialize(scene,folder,stem='mechanism'):
         for component in state['components']:
             f=ET.SubElement(page,'fragment',{'id':new_id()});record['fragment_ids'].append(f.get('id'));ids={}
             for atom in component['atoms']:
-                nid=new_id();ids[atom['map']]=nid;pos=atom['position'];attrs={'id':nid,'AtomNumber':str(atom['map']),'ShowAtomNumber':'no','p':f'{pos[0]:.4f} {pos[1]:.4f}','Element':str(ELEMENTS[atom['element']]),'NumHydrogens':str(atom['implicit_h'])}
-                if atom['charge']:attrs['Charge']=str(atom['charge'])
+                nid=new_id();ids[atom['map']]=nid;pos=atom['position'];attrs={'id':nid,'AtomNumber':str(atom['map']),'ShowAtomNumber':'no','p':f'{pos[0]:.4f} {pos[1]:.4f}',**node_attributes(atom,ELEMENTS[atom['element']])}
                 n=ET.SubElement(f,'n',attrs);record['atoms'][str(atom['map'])]={'native_id':nid,'position':pos}
                 if atom['label']:
                     label=atom['label'];t=ET.SubElement(n,'t',{'p':f'{pos[0]+label["offset"][0]:.4f} {pos[1]+label["offset"][1]:.4f}',**label.get('alignment',{})})
@@ -131,17 +160,21 @@ def materialize(scene,folder,stem='mechanism'):
             # the otherwise valid numeric string "2.0" as a single bond.
             for b in component['bonds']:ET.SubElement(f,'b',{'id':new_id(),'B':ids[b['atoms'][0]],'E':ids[b['atoms'][1]],'Order':format(b['order'],'g'),'Display':b['display']})
         for lp in state['lone_pairs']:
-            x,y=lp['position'];nid=new_id();half=scene['style']['bond_length_pt']*.0764;ET.SubElement(page,'graphic',{'id':nid,'GraphicType':'Symbol','SymbolType':'LonePair','BoundingBox':f'{x-half} {y} {x+half} {y}'})
+            x,y=lp['position'];nid=new_id();half=scene['style']['bond_length_pt']*.0764;dx,dy=lp.get('dot_axis',(1,0));ET.SubElement(page,'graphic',{'id':nid,'GraphicType':'Symbol','SymbolType':'LonePair','BoundingBox':f'{x-half*dx} {y-half*dy} {x+half*dx} {y+half*dy}'})
             record['lone_pairs'].append({**lp,'native_id':nid,'atom_native_id':record['atoms'][str(lp['atom'])]['native_id']})
         mapping['states'].append(record)
     for text in scene['texts']:
         n=ET.SubElement(page,'t',{'id':new_id(),'p':f'{text["position"][0]} {text["position"][1]}','InterpretChemically':'no'})
         ET.SubElement(n,'s',{'font':'3','size':str(text['font_pt']),'face':'0','color':'0'}).text=text['text']
     for flow in scene['flows']:
+        if flow['electron_count']!=2:raise NativeDepictionError('NATIVE_FLOW_ELECTRON_COUNT_UNSUPPORTED',str(flow['id']),'One-electron arrows cannot be serialized as full arrowheads.')
         p=flow['bezier'];points=[p[0],p[0],p[1],p[2],p[3],p[3]];nid=new_id();ET.SubElement(page,'curve',{'id':nid,'CurveType':'8','ArrowheadHead':'Full','ArrowheadType':'Solid','HeadSize':'650','ArrowheadCenterSize':'569','ArrowheadWidth':'163','LineWidth':str(scene['style']['stroke_pt']),'CurvePoints':' '.join(f'{v:.4f}' for q in points for v in q)})
         mapping['flows'].append({**flow,'native_id':nid})
     for connector in scene['connectors']:
         start,end=connector['path'];nid=new_id();ET.SubElement(page,'arrow',{'id':nid,'ArrowheadHead':'Full','ArrowheadType':'Solid','HeadSize':'900','ArrowheadCenterSize':'800','ArrowheadWidth':'250','Head3D':f'{end[0]} {end[1]} 0','Tail3D':f'{start[0]} {start[1]} 0','FillType':'None','LineWidth':str(scene['style']['stroke_pt'])});mapping['connectors'].append({**connector,'native_id':nid})
+    if scene.get('scene_version')=='mechanism-scene/0.2':
+        mapping.update({k:scene[k] for k in ('ir_sha256','chemical_inventory_sha256','depiction_plan_sha256')})
+        mapping['depiction_states']=scene['depiction_states']
     ET.indent(root);ET.ElementTree(root).write(folder/(stem+'.cdxml'),encoding='utf-8',xml_declaration=True)
     (folder/(stem+'.mapping.json')).write_text(json.dumps(mapping,indent=2),encoding='utf-8');(folder/(stem+'.scene.json')).write_text(json.dumps(scene,indent=2),encoding='utf-8')
     return mapping

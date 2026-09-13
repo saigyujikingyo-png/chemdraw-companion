@@ -108,6 +108,13 @@ def main():
     save()
     completed = stage('seed', [py, str(ROOT / 'probes/run_composer.py'), 'seed',
                               '--request', str(request), '--out', str(seed)], 30)
+    seed_result = seed / 'stage-result.json'
+    if seed_result.is_file():
+        checked = json.loads(seed_result.read_text(encoding='utf-8'))
+        receipt['input_semantic_validation'] = checked['input_semantic_validation']
+        receipt['seed_result'] = checked
+    elif not completed:
+        receipt['input_semantic_validation'] = 'unknown_after_seed_failure'
     if completed:
         receipt['input_semantic_validation'] = 'pass'
         completed = stage('fragments', native_command('fragments', 'native-ir-fragments.ps1', 180,
