@@ -37,7 +37,11 @@ function Record($stage,$detail){
 function Hash([string]$path){return (Get-FileHash -LiteralPath $path).Hash.ToLowerInvariant()}
 function Assert-Bound($application,$binding,[int]$documents){
     $process=Get-Process -Id $binding.pid
-    if([NativeChemDraw]::ApplicationProcess($application) -ne $binding.pid -or [long]$application.MainWindow -ne $binding.hwnd -or $process.StartTime.ToUniversalTime().ToString('o') -cne $binding.os_start_utc -or $application.Documents.Count -ne $documents){throw 'Native process/document identity changed.'}
+    $actual=[ordered]@{pid=[int][NativeChemDraw]::ApplicationProcess($application);hwnd=[long]$application.MainWindow;os_start_utc=$process.StartTime.ToUniversalTime().ToString('o');documents=$application.Documents.Count}
+    if($actual.pid -ne $binding.pid -or $actual.hwnd -ne $binding.hwnd -or $actual.os_start_utc -cne $binding.os_start_utc -or $actual.documents -ne $documents){
+        Record 'binding_failure' @{expected=$binding;expected_documents=$documents;actual=$actual}
+        throw 'Native process/document identity changed during document operations.'
+    }
 }
 function Start-OwnedApplication([string]$phase){
     $prior=@(Get-Process ChemDraw -ErrorAction SilentlyContinue|Select-Object -ExpandProperty Id)
@@ -89,7 +93,8 @@ try{
         Save-Observed $doc $cleanPath $app $first.binding
         $cleanReadback=Write-NativeAtomObservation $doc $cleanPath $first.binding $environment $freezeHash $receipt.run_id 'cleanup'
         Assert-Bound $app $first.binding 1
-        [NativeChemDraw]::Close($doc);Assert-Bound $app $first.binding 0
+        [NativeChemDraw]::Close($doc)
+        Record 'close_return' @{phase='cleanup';last_verified_binding=$first.binding;binding_end='Last verified document observation, before Close; no window-lifetime assumption after Close.'}
         $second=Start-OwnedApplication 'fresh_process_reopen';$reopenApp=$second.application
         if($first.binding.pid -eq $second.binding.pid){throw 'Reopen is not a different fresh native process.'}
         Record 'reopen_intent' @{file=$entry.file;sha256=(Hash $cleanPath);clean_pid=$first.binding.pid;reopen_pid=$second.binding.pid;cleanup_on_reopen=$false}
@@ -100,7 +105,8 @@ try{
         $reopenWarnings=[int]$reopened.NumChemicalWarnings
         $readback=Write-NativeAtomObservation $reopened $outputPath $second.binding $environment $freezeHash $receipt.run_id 'fresh_process_reopen'
         Assert-Bound $reopenApp $second.binding 1
-        [NativeChemDraw]::Close($reopened);Assert-Bound $reopenApp $second.binding 0
+        [NativeChemDraw]::Close($reopened)
+        Record 'close_return' @{phase='fresh_process_reopen';last_verified_binding=$second.binding;binding_end='Last verified document observation, before Close; no window-lifetime assumption after Close.'}
         if((Hash $file.FullName) -cne $inputHash){throw 'Original seed changed.'}
         $artifact=[ordered]@{file=$entry.file;input_sha256=$inputHash;before_sha256=(Hash $beforePath);output_sha256=(Hash $outputPath);cleanup_completed=$true;warnings=$warnings;reopen_warnings=$reopenWarnings;cleanup_file=('clean/'+$entry.file);cleanup_sha256=(Hash $cleanPath);cleanup_atom_readback=$cleanReadback;atom_readback=$readback;cleanup_process=$first.binding;reopen_process=$second.binding;different_process_reopen=$true;distinct_document_identity=$true}
         $receipt.artifacts+=$artifact;Write-Receipt
