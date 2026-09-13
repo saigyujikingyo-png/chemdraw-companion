@@ -200,28 +200,28 @@
   "evidence_files": [
     {
       "file": "actual-agent-calls.sanitized.json",
-      "bytes": 240237,
-      "sha256": "691fdcf8f5ee08d0e6b2776f5f388000d5b2fe7ca7485a26dcc44bc197a52835"
+      "bytes": 233806,
+      "sha256": "9e106ecc092f29b15429691e8c816100607a52667bfff782a6ab97822c09d30b"
     },
     {
       "file": "independent-a-audit.sanitized.json",
-      "bytes": 75976,
-      "sha256": "99ec4c64b9b4f3102ebe531e621fff8de94cd3733e172b28ac336c17704ce2bb"
+      "bytes": 73767,
+      "sha256": "edaafc8b7430f03302dc737f607ea9a1d2ef221ad543fa458ae0784eee69a4ac"
     },
     {
       "file": "independent-final-audit.sanitized.json",
-      "bytes": 126496,
-      "sha256": "65d11fed9b1fc167c350c88ae5c4f9c334bfd4e81d98c295c472c11cd0e030b7"
+      "bytes": 122734,
+      "sha256": "4922eb184411ee691f21e818a33e2ad4ccc982baa095097d1a3ff984b30a042d"
     },
     {
       "file": "machine-interface-review.sanitized.json",
-      "bytes": 13346,
-      "sha256": "47afad04141f77257739e6c1cbc11c20012c00b58c2bf1687f03e45458525188"
+      "bytes": 12937,
+      "sha256": "61db07b1cc426c757afe93a52c37426686b510c59a1bf7053a4dd2588802901f"
     },
     {
       "file": "static-verification.sanitized.json",
-      "bytes": 14287,
-      "sha256": "5e7c9c246dc91ff6757a6309786eb1138033a8da951d05dbbb4b16a9676dd4f0"
+      "bytes": 13914,
+      "sha256": "eae736336554c33325760c317a6338a8af07412c27fa312dce6d171bcfa566cb"
     }
   ],
   "private_evidence": [
@@ -257,5 +257,6 @@
       "file": "final-worker-inventory.json",
       "sha256": "d13f15a2e4c27beded8e4dbe461436e37df03e1770d525e31b781391fb580ede"
     }
-  ]
+  ],
+  "public_serialization": "Public sanitized derivatives are UTF-8 LF; private original/raw evidence hashes refer to their unchanged original bytes. This is publication serialization, not runtime-source substitution."
 }
