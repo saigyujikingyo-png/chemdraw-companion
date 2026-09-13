@@ -1,6 +1,6 @@
 # ChemDraw Companion contributor instructions
 
-Before design, implementation, tests or release, read DEVELOPMENT_PRINCIPLES.md (shared rule version 2026-09-12.4), then CHEMBRIDGE.md and CLOUD_STORAGE.md. User instructions override local guidance. Read docs/IMPLEMENTATION_HANDOFF.md and the architecture, interface and quality contracts before changes.
+Before design, implementation, tests or release, read DEVELOPMENT_PRINCIPLES.md (shared rule version 2026-09-13.1), then CHEMBRIDGE.md and CLOUD_STORAGE.md. User instructions override local guidance. Read docs/IMPLEMENTATION_HANDOFF.md and the architecture, interface and quality contracts before changes.
 
 This independent repository is for the ChemDraw product. Preserve existing Origin and ChemAIst installations, repositories, credentials, user files and uncommitted changes. Do not embed this product in the Origin runtime or reuse rejected ChemAIst layouts without requalification. Reuse only individually verified infrastructure with licence review and attribution.
 
@@ -15,3 +15,9 @@ M2 must pass docs/M2_GENERALIZATION_GATE.md: no Beckmann-specific templates, sam
 The OpenAI frontend project-synchronisation bug is an external known issue. The user explicitly stopped investigation. Do not repair caches, registrations or the application for that issue.
 
 Public content is English and sanitized. No accounts, licence material, tokens, tunnel configuration, private coursework or experimental inputs. Do not redistribute vendor binaries. Defaults remain one product entry, credential reuse, non-developer installation, thin host adapters, Terra max benchmarks and bounded resource use.
+
+## Chembridge cloud development
+
+The shared umbrella entrypoint is https://github.com/saigyujikingyo-png/chembridge. Read the current included DEVELOPMENT_PRINCIPLES.md and CODEX_CLOUD.md. Use `bash scripts/setup_codex_cloud.sh` from this repository root for setup and cached-container maintenance. Each product task remains independent; do not automatically relay messages or status between Origin, ChemDraw and other tasks.
+
+Cloud configuration, portable checks, native execution, model/host acceptance and artifact delivery are separate gates. The known OpenAI local Work project-sync frontend bug remains out of scope; do not repair application caches, registrations or internals for that issue.

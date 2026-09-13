@@ -1,2 +1,3 @@
 * text=auto eol=lf
 DEVELOPMENT_PRINCIPLES.md -text whitespace=cr-at-eol
+scripts/setup_codex_cloud.sh text eol=lf
