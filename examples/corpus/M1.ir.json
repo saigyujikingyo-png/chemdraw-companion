@@ -1,0 +1,391 @@
+{
+  "version": "corpus-mechanism-ir/0.1",
+  "id": "M1",
+  "entry_state": "before",
+  "scope": {
+    "atom_inventory": "closed",
+    "omissions": [
+      "No implicit counterion is asserted; total represented charge is checked."
+    ],
+    "scientific_status": "unreviewed"
+  },
+  "atoms": [
+    {
+      "id": "a1",
+      "element": "O",
+      "isotope": null
+    },
+    {
+      "id": "a2",
+      "element": "C",
+      "isotope": null
+    },
+    {
+      "id": "a3",
+      "element": "Br",
+      "isotope": null
+    }
+  ],
+  "states": [
+    {
+      "id": "before",
+      "label": "before",
+      "species_refs": [
+        "before:species0",
+        "before:species1"
+      ]
+    },
+    {
+      "id": "after",
+      "label": "after",
+      "species_refs": [
+        "after:species0",
+        "after:species1"
+      ]
+    }
+  ],
+  "species": [
+    {
+      "id": "before:species0",
+      "state_ref": "before",
+      "molecule_refs": [
+        "before:m0"
+      ],
+      "role": "nucleophile",
+      "stoichiometry": 1
+    },
+    {
+      "id": "before:species1",
+      "state_ref": "before",
+      "molecule_refs": [
+        "before:m1"
+      ],
+      "role": "substrate",
+      "stoichiometry": 1
+    },
+    {
+      "id": "after:species0",
+      "state_ref": "after",
+      "molecule_refs": [
+        "after:m0"
+      ],
+      "role": "product",
+      "stoichiometry": 1
+    },
+    {
+      "id": "after:species1",
+      "state_ref": "after",
+      "molecule_refs": [
+        "after:m1"
+      ],
+      "role": "product",
+      "stoichiometry": 1
+    }
+  ],
+  "molecules": [
+    {
+      "id": "before:m0",
+      "state_ref": "before",
+      "atom_refs": [
+        "before:a1"
+      ],
+      "bond_refs": []
+    },
+    {
+      "id": "before:m1",
+      "state_ref": "before",
+      "atom_refs": [
+        "before:a2",
+        "before:a3"
+      ],
+      "bond_refs": [
+        "before:b:2:3"
+      ]
+    },
+    {
+      "id": "after:m0",
+      "state_ref": "after",
+      "atom_refs": [
+        "after:a1",
+        "after:a2"
+      ],
+      "bond_refs": [
+        "after:b:1:2"
+      ]
+    },
+    {
+      "id": "after:m1",
+      "state_ref": "after",
+      "atom_refs": [
+        "after:a3"
+      ],
+      "bond_refs": []
+    }
+  ],
+  "atom_occurrences": [
+    {
+      "id": "before:a1",
+      "atom_ref": "a1",
+      "state_ref": "before",
+      "molecule_ref": "before:m0",
+      "implicit_h": 1
+    },
+    {
+      "id": "before:a2",
+      "atom_ref": "a2",
+      "state_ref": "before",
+      "molecule_ref": "before:m1",
+      "implicit_h": 3
+    },
+    {
+      "id": "before:a3",
+      "atom_ref": "a3",
+      "state_ref": "before",
+      "molecule_ref": "before:m1",
+      "implicit_h": 0
+    },
+    {
+      "id": "after:a1",
+      "atom_ref": "a1",
+      "state_ref": "after",
+      "molecule_ref": "after:m0",
+      "implicit_h": 1
+    },
+    {
+      "id": "after:a2",
+      "atom_ref": "a2",
+      "state_ref": "after",
+      "molecule_ref": "after:m0",
+      "implicit_h": 3
+    },
+    {
+      "id": "after:a3",
+      "atom_ref": "a3",
+      "state_ref": "after",
+      "molecule_ref": "after:m1",
+      "implicit_h": 0
+    }
+  ],
+  "bonds": [
+    {
+      "id": "before:b:2:3",
+      "state_ref": "before",
+      "atom_refs": [
+        "before:a2",
+        "before:a3"
+      ],
+      "order": 1,
+      "stereo": "none"
+    },
+    {
+      "id": "after:b:1:2",
+      "state_ref": "after",
+      "atom_refs": [
+        "after:a1",
+        "after:a2"
+      ],
+      "order": 1,
+      "stereo": "none"
+    }
+  ],
+  "charges": [
+    {
+      "id": "before:q1",
+      "atom_ref": "before:a1",
+      "value": -1,
+      "display": "shown"
+    },
+    {
+      "id": "after:q3",
+      "atom_ref": "after:a3",
+      "value": -1,
+      "display": "shown"
+    }
+  ],
+  "radicals": [],
+  "lone_pairs": [
+    {
+      "id": "before:lp1:0",
+      "atom_ref": "before:a1",
+      "slot": 0,
+      "display": "unresolved"
+    },
+    {
+      "id": "before:lp1:1",
+      "atom_ref": "before:a1",
+      "slot": 1,
+      "display": "unresolved"
+    },
+    {
+      "id": "before:lp1:2",
+      "atom_ref": "before:a1",
+      "slot": 2,
+      "display": "unresolved"
+    },
+    {
+      "id": "before:lp3:0",
+      "atom_ref": "before:a3",
+      "slot": 0,
+      "display": "unresolved"
+    },
+    {
+      "id": "before:lp3:1",
+      "atom_ref": "before:a3",
+      "slot": 1,
+      "display": "unresolved"
+    },
+    {
+      "id": "before:lp3:2",
+      "atom_ref": "before:a3",
+      "slot": 2,
+      "display": "unresolved"
+    },
+    {
+      "id": "after:lp1:0",
+      "atom_ref": "after:a1",
+      "slot": 0,
+      "display": "unresolved"
+    },
+    {
+      "id": "after:lp1:1",
+      "atom_ref": "after:a1",
+      "slot": 1,
+      "display": "unresolved"
+    },
+    {
+      "id": "after:lp3:0",
+      "atom_ref": "after:a3",
+      "slot": 0,
+      "display": "unresolved"
+    },
+    {
+      "id": "after:lp3:1",
+      "atom_ref": "after:a3",
+      "slot": 1,
+      "display": "unresolved"
+    },
+    {
+      "id": "after:lp3:2",
+      "atom_ref": "after:a3",
+      "slot": 2,
+      "display": "unresolved"
+    },
+    {
+      "id": "after:lp3:3",
+      "atom_ref": "after:a3",
+      "slot": 3,
+      "display": "unresolved"
+    }
+  ],
+  "reaction_steps": [
+    {
+      "id": "substitution",
+      "from_state": "before",
+      "to_state": "after",
+      "kind": "teaching_elementary",
+      "electron_flow_refs": [
+        "attack",
+        "departure"
+      ],
+      "condition_refs": [
+        "condition:substitution"
+      ]
+    }
+  ],
+  "reaction_arrows": [
+    {
+      "id": "reaction-arrow:substitution",
+      "step_ref": "substitution",
+      "kind": "forward",
+      "from_state": "before",
+      "to_state": "after"
+    }
+  ],
+  "condition_texts": [
+    {
+      "id": "condition:substitution",
+      "step_ref": "substitution",
+      "text": "aqueous medium",
+      "kind": "condition",
+      "evidence_status": "specified"
+    }
+  ],
+  "electron_flows": [
+    {
+      "id": "attack",
+      "step_ref": "substitution",
+      "electron_count": 2,
+      "source": {
+        "type": "lone_pair",
+        "state_ref": "before",
+        "lone_pair_ref": "before:lp1:0"
+      },
+      "sink": {
+        "type": "atom",
+        "state_ref": "before",
+        "atom_ref": "before:a2"
+      },
+      "simultaneous_group": "substitution"
+    },
+    {
+      "id": "departure",
+      "step_ref": "substitution",
+      "electron_count": 2,
+      "source": {
+        "type": "bond",
+        "state_ref": "before",
+        "bond_ref": "before:b:2:3",
+        "electron_kind": "sigma"
+      },
+      "sink": {
+        "type": "atom",
+        "state_ref": "before",
+        "atom_ref": "before:a3"
+      },
+      "simultaneous_group": "substitution"
+    }
+  ],
+  "layout_constraints": [
+    {
+      "id": "constraint:reading",
+      "kind": "reading_order",
+      "subjects": [],
+      "strength": "hard",
+      "parameters": {}
+    },
+    {
+      "id": "constraint:clearance",
+      "kind": "min_clearance",
+      "subjects": [],
+      "strength": "hard",
+      "parameters": {
+        "minimum_gap": 0.18,
+        "unit": "bond_length"
+      }
+    },
+    {
+      "id": "constraint:snake",
+      "kind": "serpentine",
+      "subjects": [],
+      "strength": "soft",
+      "parameters": {
+        "direction": "alternating",
+        "max_columns": 3,
+        "minimum_row_turns": 0
+      }
+    },
+    {
+      "id": "constraint:backside",
+      "kind": "backside_approach",
+      "subjects": [
+        "before:a1",
+        "before:a2",
+        "before:a3"
+      ],
+      "strength": "hard",
+      "parameters": {
+        "angle_deg": 180
+      }
+    }
+  ]
+}

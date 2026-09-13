@@ -1,0 +1,732 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://chembridge.invalid/contracts/corpus/corpus-manifest.schema.json",
+  "title": "corpus-manifest corpus draft 0.1",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "version": {
+      "const": "corpus-manifest/0.1"
+    },
+    "id": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 200
+    },
+    "revision": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 200
+    },
+    "policy_version": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 200
+    },
+    "samples": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 200
+          },
+          "revision_id": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 200
+          },
+          "tier": {
+            "enum": [
+              "ungraded",
+              "silver",
+              "gold",
+              "quarantined"
+            ]
+          },
+          "gold_scopes": {
+            "type": "array",
+            "items": {
+              "enum": [
+                "semantic",
+                "native_geometry",
+                "visual",
+                "correction"
+              ]
+            },
+            "uniqueItems": true
+          },
+          "split": {
+            "enum": [
+              "development",
+              "fixed_regression",
+              "evaluation_reserved",
+              "quarantined"
+            ]
+          },
+          "exposure_status": {
+            "enum": [
+              "not_assessed",
+              "exposed",
+              "exposed_and_tuned",
+              "unseen"
+            ]
+          },
+          "leakage_group_id": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 200
+          },
+          "derived_from": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 200
+            },
+            "minItems": 0,
+            "uniqueItems": true
+          },
+          "family_tags": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "minItems": 0
+          },
+          "stress_tags": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "minItems": 0
+          },
+          "source": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "kind": {
+                "enum": [
+                  "first_party",
+                  "licensed_external",
+                  "schema_probe"
+                ]
+              },
+              "url": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "accession_or_version": {
+                "type": "string"
+              },
+              "retrieved_on": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "author": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "kind",
+              "url",
+              "accession_or_version",
+              "retrieved_on",
+              "author"
+            ]
+          },
+          "mechanism_asset_ref": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 200
+          },
+          "annotation_asset_ref": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "assets": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "id": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 200
+                },
+                "kind": {
+                  "enum": [
+                    "cdx",
+                    "cdxml",
+                    "svg",
+                    "native_render",
+                    "raster_source",
+                    "ir",
+                    "annotation",
+                    "correction",
+                    "receipt",
+                    "reference",
+                    "substrate_input"
+                  ]
+                },
+                "mime": {
+                  "type": "string"
+                },
+                "uri": {
+                  "type": "string"
+                },
+                "sha256": {
+                  "type": "string",
+                  "pattern": "^[a-f0-9]{64}$"
+                },
+                "bytes": {
+                  "type": "integer",
+                  "minimum": 1
+                },
+                "producer": {
+                  "type": "string"
+                },
+                "derived_from": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 200
+                  },
+                  "minItems": 0,
+                  "uniqueItems": true
+                },
+                "rights_ref": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 200
+                },
+                "frames": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "properties": {
+                      "id": {
+                        "type": "string",
+                        "minLength": 1,
+                        "maxLength": 200
+                      },
+                      "page": {
+                        "type": "integer",
+                        "minimum": 0
+                      },
+                      "units": {
+                        "enum": [
+                          "pt",
+                          "px",
+                          "mm",
+                          "svg_user_unit"
+                        ]
+                      },
+                      "origin": {
+                        "enum": [
+                          "top_left",
+                          "bottom_left",
+                          "declared"
+                        ]
+                      },
+                      "y_axis": {
+                        "enum": [
+                          "down",
+                          "up"
+                        ]
+                      },
+                      "width": {
+                        "type": "number",
+                        "exclusiveMinimum": 0
+                      },
+                      "height": {
+                        "type": "number",
+                        "exclusiveMinimum": 0
+                      },
+                      "parent_frame_ref": {
+                        "type": [
+                          "string",
+                          "null"
+                        ]
+                      },
+                      "to_parent_affine": {
+                        "oneOf": [
+                          {
+                            "type": "null"
+                          },
+                          {
+                            "type": "array",
+                            "items": {
+                              "type": "number"
+                            },
+                            "minItems": 6,
+                            "maxItems": 6
+                          }
+                        ]
+                      },
+                      "calibration": {
+                        "enum": [
+                          "native_readback",
+                          "measured",
+                          "metadata_only",
+                          "unverified"
+                        ]
+                      }
+                    },
+                    "required": [
+                      "id",
+                      "page",
+                      "units",
+                      "origin",
+                      "y_axis",
+                      "width",
+                      "height",
+                      "parent_frame_ref",
+                      "to_parent_affine",
+                      "calibration"
+                    ]
+                  },
+                  "minItems": 0
+                }
+              },
+              "required": [
+                "id",
+                "kind",
+                "mime",
+                "uri",
+                "sha256",
+                "bytes",
+                "producer",
+                "derived_from",
+                "rights_ref",
+                "frames"
+              ]
+            },
+            "minItems": 1
+          },
+          "rights": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "id": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 200
+                },
+                "status": {
+                  "enum": [
+                    "approved",
+                    "pending",
+                    "denied"
+                  ]
+                },
+                "license_expression": {
+                  "type": "string"
+                },
+                "license_url": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                },
+                "scope": {
+                  "type": "string"
+                },
+                "attribution": {
+                  "type": "string"
+                },
+                "permission_evidence": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  },
+                  "minItems": 0
+                },
+                "checked_on": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                },
+                "permissions": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "properties": {
+                    "store": {
+                      "type": "boolean"
+                    },
+                    "annotate": {
+                      "type": "boolean"
+                    },
+                    "train": {
+                      "type": "boolean"
+                    },
+                    "redistribute": {
+                      "type": "boolean"
+                    }
+                  },
+                  "required": [
+                    "store",
+                    "annotate",
+                    "train",
+                    "redistribute"
+                  ]
+                }
+              },
+              "required": [
+                "id",
+                "status",
+                "license_expression",
+                "license_url",
+                "scope",
+                "attribution",
+                "permission_evidence",
+                "checked_on",
+                "permissions"
+              ]
+            },
+            "minItems": 1
+          },
+          "reviews": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "id": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 200
+                },
+                "actor_id": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 200
+                },
+                "actor_kind": {
+                  "enum": [
+                    "human",
+                    "ai",
+                    "tool"
+                  ]
+                },
+                "independent_of_author": {
+                  "type": "boolean"
+                },
+                "scope": {
+                  "enum": [
+                    "semantic",
+                    "native_geometry",
+                    "visual",
+                    "correction"
+                  ]
+                },
+                "revision_id": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 200
+                },
+                "target_sha256": {
+                  "type": "string",
+                  "pattern": "^[a-f0-9]{64}$"
+                },
+                "decision": {
+                  "enum": [
+                    "accepted",
+                    "rejected",
+                    "needs_work"
+                  ]
+                },
+                "evidence_refs": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 200
+                  },
+                  "minItems": 1,
+                  "uniqueItems": true
+                },
+                "reviewed_at": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              },
+              "required": [
+                "id",
+                "actor_id",
+                "actor_kind",
+                "independent_of_author",
+                "scope",
+                "revision_id",
+                "target_sha256",
+                "decision",
+                "evidence_refs",
+                "reviewed_at"
+              ]
+            },
+            "minItems": 0
+          },
+          "uses": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "rule_tuning": {
+                "type": "boolean"
+              },
+              "training": {
+                "type": "boolean"
+              },
+              "evaluation": {
+                "type": "boolean"
+              },
+              "public_distribution": {
+                "type": "boolean"
+              }
+            },
+            "required": [
+              "rule_tuning",
+              "training",
+              "evaluation",
+              "public_distribution"
+            ]
+          },
+          "status": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "representable": {
+                "enum": [
+                  "pass",
+                  "failed",
+                  "unverified"
+                ]
+              },
+              "semantic_valid": {
+                "enum": [
+                  "bounded_pass",
+                  "failed",
+                  "unverified",
+                  "unsupported"
+                ]
+              },
+              "runtime_projection": {
+                "enum": [
+                  "unverified",
+                  "supported_subset",
+                  "unsupported"
+                ]
+              },
+              "native_verified": {
+                "enum": [
+                  "pass",
+                  "failed",
+                  "unverified"
+                ]
+              },
+              "visual_accepted": {
+                "enum": [
+                  "pass",
+                  "failed",
+                  "unverified"
+                ]
+              }
+            },
+            "required": [
+              "representable",
+              "semantic_valid",
+              "runtime_projection",
+              "native_verified",
+              "visual_accepted"
+            ]
+          },
+          "exposure_log": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "event": {
+                  "enum": [
+                    "authoring",
+                    "annotation",
+                    "review",
+                    "tuning",
+                    "evaluation",
+                    "disclosure"
+                  ]
+                },
+                "at": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "known_to": {
+                  "enum": [
+                    "development",
+                    "tuning",
+                    "independent_evaluator"
+                  ]
+                },
+                "artifact_sha256": {
+                  "type": "string",
+                  "pattern": "^[a-f0-9]{64}$"
+                }
+              },
+              "required": [
+                "event",
+                "at",
+                "known_to",
+                "artifact_sha256"
+              ]
+            }
+          },
+          "task_mode": {
+            "enum": [
+              "schema_representation",
+              "composition_from_complete_ir",
+              "anti_selection",
+              "annotation_reconstruction",
+              "correction_analysis"
+            ]
+          },
+          "generation_asset_refs": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            },
+            "uniqueItems": true
+          },
+          "oracle_asset_refs": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            },
+            "uniqueItems": true
+          },
+          "lineage_relation": {
+            "enum": [
+              "root",
+              "same_semantics",
+              "chemical_perturbation"
+            ]
+          }
+        },
+        "required": [
+          "id",
+          "revision_id",
+          "tier",
+          "gold_scopes",
+          "split",
+          "exposure_status",
+          "leakage_group_id",
+          "derived_from",
+          "family_tags",
+          "stress_tags",
+          "source",
+          "mechanism_asset_ref",
+          "annotation_asset_ref",
+          "assets",
+          "rights",
+          "reviews",
+          "uses",
+          "status",
+          "exposure_log",
+          "task_mode",
+          "generation_asset_refs",
+          "oracle_asset_refs",
+          "lineage_relation"
+        ],
+        "allOf": [
+          {
+            "if": {
+              "properties": {
+                "split": {
+                  "enum": [
+                    "fixed_regression",
+                    "evaluation_reserved",
+                    "quarantined"
+                  ]
+                }
+              }
+            },
+            "then": {
+              "properties": {
+                "uses": {
+                  "properties": {
+                    "rule_tuning": {
+                      "const": false
+                    },
+                    "training": {
+                      "const": false
+                    }
+                  }
+                }
+              }
+            }
+          },
+          {
+            "if": {
+              "properties": {
+                "tier": {
+                  "const": "gold"
+                }
+              }
+            },
+            "then": {
+              "properties": {
+                "gold_scopes": {
+                  "minItems": 1
+                },
+                "reviews": {
+                  "minItems": 1
+                }
+              }
+            }
+          },
+          {
+            "if": {
+              "properties": {
+                "exposure_status": {
+                  "const": "exposed_and_tuned"
+                }
+              }
+            },
+            "then": {
+              "properties": {
+                "split": {
+                  "not": {
+                    "const": "evaluation_reserved"
+                  }
+                }
+              }
+            }
+          }
+        ]
+      },
+      "minItems": 0
+    }
+  },
+  "required": [
+    "version",
+    "id",
+    "revision",
+    "policy_version",
+    "samples"
+  ]
+}

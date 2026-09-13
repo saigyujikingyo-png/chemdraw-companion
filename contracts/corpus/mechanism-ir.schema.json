@@ -1,0 +1,1027 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://chembridge.invalid/contracts/corpus/mechanism-ir.schema.json",
+  "title": "mechanism-ir corpus draft 0.1",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "version": {
+      "const": "corpus-mechanism-ir/0.1"
+    },
+    "id": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 200
+    },
+    "entry_state": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 200
+    },
+    "scope": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "atom_inventory": {
+          "enum": [
+            "closed",
+            "open_declared"
+          ]
+        },
+        "omissions": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "minItems": 0
+        },
+        "scientific_status": {
+          "enum": [
+            "unreviewed",
+            "proposed",
+            "human_reviewed",
+            "disputed"
+          ]
+        }
+      },
+      "required": [
+        "atom_inventory",
+        "omissions",
+        "scientific_status"
+      ]
+    },
+    "atoms": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/atom"
+      },
+      "minItems": 1
+    },
+    "states": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/state"
+      },
+      "minItems": 1
+    },
+    "species": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/species"
+      },
+      "minItems": 1
+    },
+    "molecules": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/molecule"
+      },
+      "minItems": 1
+    },
+    "atom_occurrences": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/atom_occurrence"
+      },
+      "minItems": 1
+    },
+    "bonds": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/bond"
+      },
+      "minItems": 0
+    },
+    "charges": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/charge"
+      },
+      "minItems": 0
+    },
+    "radicals": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/radical"
+      },
+      "minItems": 0
+    },
+    "lone_pairs": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/lone_pair"
+      },
+      "minItems": 0
+    },
+    "reaction_steps": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/reaction_step"
+      },
+      "minItems": 0
+    },
+    "reaction_arrows": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/reaction_arrow"
+      },
+      "minItems": 0
+    },
+    "condition_texts": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/condition_text"
+      },
+      "minItems": 0
+    },
+    "electron_flows": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/electron_flow"
+      },
+      "minItems": 0
+    },
+    "layout_constraints": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/layout_constraint"
+      },
+      "minItems": 0
+    }
+  },
+  "required": [
+    "version",
+    "id",
+    "entry_state",
+    "scope",
+    "atoms",
+    "states",
+    "species",
+    "molecules",
+    "atom_occurrences",
+    "bonds",
+    "charges",
+    "radicals",
+    "lone_pairs",
+    "reaction_steps",
+    "reaction_arrows",
+    "condition_texts",
+    "electron_flows",
+    "layout_constraints"
+  ],
+  "$defs": {
+    "atom": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 200
+        },
+        "element": {
+          "type": "string",
+          "pattern": "^[A-Z][a-z]?$"
+        },
+        "isotope": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 1
+        }
+      },
+      "required": [
+        "id",
+        "element",
+        "isotope"
+      ]
+    },
+    "state": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 200
+        },
+        "label": {
+          "type": "string"
+        },
+        "species_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 200
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        }
+      },
+      "required": [
+        "id",
+        "label",
+        "species_refs"
+      ]
+    },
+    "species": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 200
+        },
+        "state_ref": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 200
+        },
+        "molecule_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 200
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        },
+        "role": {
+          "enum": [
+            "reactant",
+            "intermediate",
+            "product",
+            "nucleophile",
+            "substrate",
+            "reagent",
+            "catalyst",
+            "proton_shuttle",
+            "byproduct",
+            "spectator",
+            "participant",
+            "unresolved"
+          ]
+        },
+        "stoichiometry": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        }
+      },
+      "required": [
+        "id",
+        "state_ref",
+        "molecule_refs",
+        "role",
+        "stoichiometry"
+      ]
+    },
+    "molecule": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 200
+        },
+        "state_ref": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 200
+        },
+        "atom_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 200
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        },
+        "bond_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 200
+          },
+          "minItems": 0,
+          "uniqueItems": true
+        }
+      },
+      "required": [
+        "id",
+        "state_ref",
+        "atom_refs",
+        "bond_refs"
+      ]
+    },
+    "atom_occurrence": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 200
+        },
+        "atom_ref": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 200
+        },
+        "state_ref": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 200
+        },
+        "molecule_ref": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 200
+        },
+        "implicit_h": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 8
+        }
+      },
+      "required": [
+        "id",
+        "atom_ref",
+        "state_ref",
+        "molecule_ref",
+        "implicit_h"
+      ]
+    },
+    "bond": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 200
+        },
+        "state_ref": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 200
+        },
+        "atom_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 200
+          },
+          "minItems": 2,
+          "uniqueItems": true,
+          "maxItems": 2
+        },
+        "order": {
+          "enum": [
+            1,
+            1.5,
+            2,
+            3
+          ]
+        },
+        "stereo": {
+          "enum": [
+            "none",
+            "wedge",
+            "hash",
+            "unknown"
+          ]
+        }
+      },
+      "required": [
+        "id",
+        "state_ref",
+        "atom_refs",
+        "order",
+        "stereo"
+      ]
+    },
+    "charge": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 200
+        },
+        "atom_ref": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 200
+        },
+        "value": {
+          "type": "integer",
+          "minimum": -8,
+          "maximum": 8
+        },
+        "display": {
+          "enum": [
+            "shown",
+            "omitted",
+            "unresolved"
+          ]
+        }
+      },
+      "required": [
+        "id",
+        "atom_ref",
+        "value",
+        "display"
+      ]
+    },
+    "radical": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 200
+        },
+        "atom_ref": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 200
+        },
+        "unpaired_electrons": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 2
+        },
+        "display": {
+          "enum": [
+            "shown",
+            "omitted",
+            "unresolved"
+          ]
+        }
+      },
+      "required": [
+        "id",
+        "atom_ref",
+        "unpaired_electrons",
+        "display"
+      ]
+    },
+    "lone_pair": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 200
+        },
+        "atom_ref": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 200
+        },
+        "slot": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 7
+        },
+        "display": {
+          "enum": [
+            "shown",
+            "omitted",
+            "unresolved"
+          ]
+        }
+      },
+      "required": [
+        "id",
+        "atom_ref",
+        "slot",
+        "display"
+      ]
+    },
+    "port": {
+      "oneOf": [
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "type": {
+              "const": "atom"
+            },
+            "state_ref": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 200
+            },
+            "atom_ref": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 200
+            }
+          },
+          "required": [
+            "type",
+            "state_ref",
+            "atom_ref"
+          ]
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "type": {
+              "const": "bond"
+            },
+            "state_ref": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 200
+            },
+            "bond_ref": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 200
+            },
+            "electron_kind": {
+              "enum": [
+                "sigma",
+                "pi"
+              ]
+            }
+          },
+          "required": [
+            "type",
+            "state_ref",
+            "bond_ref",
+            "electron_kind"
+          ]
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "type": {
+              "const": "lone_pair"
+            },
+            "state_ref": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 200
+            },
+            "lone_pair_ref": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 200
+            }
+          },
+          "required": [
+            "type",
+            "state_ref",
+            "lone_pair_ref"
+          ]
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "type": {
+              "const": "radical"
+            },
+            "state_ref": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 200
+            },
+            "radical_ref": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 200
+            }
+          },
+          "required": [
+            "type",
+            "state_ref",
+            "radical_ref"
+          ]
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "type": {
+              "const": "prospective_bond"
+            },
+            "state_ref": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 200
+            },
+            "atom_refs": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 200
+              },
+              "minItems": 2,
+              "uniqueItems": true,
+              "maxItems": 2
+            }
+          },
+          "required": [
+            "type",
+            "state_ref",
+            "atom_refs"
+          ]
+        }
+      ]
+    },
+    "source_port": {
+      "oneOf": [
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "type": {
+              "const": "atom"
+            },
+            "state_ref": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 200
+            },
+            "atom_ref": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 200
+            }
+          },
+          "required": [
+            "type",
+            "state_ref",
+            "atom_ref"
+          ]
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "type": {
+              "const": "bond"
+            },
+            "state_ref": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 200
+            },
+            "bond_ref": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 200
+            },
+            "electron_kind": {
+              "enum": [
+                "sigma",
+                "pi"
+              ]
+            }
+          },
+          "required": [
+            "type",
+            "state_ref",
+            "bond_ref",
+            "electron_kind"
+          ]
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "type": {
+              "const": "lone_pair"
+            },
+            "state_ref": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 200
+            },
+            "lone_pair_ref": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 200
+            }
+          },
+          "required": [
+            "type",
+            "state_ref",
+            "lone_pair_ref"
+          ]
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "type": {
+              "const": "radical"
+            },
+            "state_ref": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 200
+            },
+            "radical_ref": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 200
+            }
+          },
+          "required": [
+            "type",
+            "state_ref",
+            "radical_ref"
+          ]
+        }
+      ]
+    },
+    "reaction_step": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 200
+        },
+        "from_state": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 200
+        },
+        "to_state": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 200
+        },
+        "kind": {
+          "enum": [
+            "elementary",
+            "teaching_elementary",
+            "composite",
+            "unresolved"
+          ]
+        },
+        "electron_flow_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 200
+          },
+          "minItems": 0,
+          "uniqueItems": true
+        },
+        "condition_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 200
+          },
+          "minItems": 0,
+          "uniqueItems": true
+        }
+      },
+      "required": [
+        "id",
+        "from_state",
+        "to_state",
+        "kind",
+        "electron_flow_refs",
+        "condition_refs"
+      ]
+    },
+    "reaction_arrow": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 200
+        },
+        "step_ref": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 200
+        },
+        "kind": {
+          "enum": [
+            "forward",
+            "equilibrium",
+            "reversible",
+            "retrosynthetic"
+          ]
+        },
+        "from_state": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 200
+        },
+        "to_state": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 200
+        }
+      },
+      "required": [
+        "id",
+        "step_ref",
+        "kind",
+        "from_state",
+        "to_state"
+      ]
+    },
+    "condition_text": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 200
+        },
+        "step_ref": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 200
+        },
+        "text": {
+          "type": "string"
+        },
+        "kind": {
+          "enum": [
+            "condition",
+            "reagent",
+            "solvent",
+            "temperature",
+            "time",
+            "catalyst",
+            "annotation"
+          ]
+        },
+        "evidence_status": {
+          "enum": [
+            "specified",
+            "observed",
+            "proposed",
+            "unresolved"
+          ]
+        }
+      },
+      "required": [
+        "id",
+        "step_ref",
+        "text",
+        "kind",
+        "evidence_status"
+      ]
+    },
+    "electron_flow": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 200
+        },
+        "step_ref": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 200
+        },
+        "electron_count": {
+          "enum": [
+            1,
+            2
+          ]
+        },
+        "source": {
+          "$ref": "#/$defs/source_port"
+        },
+        "sink": {
+          "$ref": "#/$defs/port"
+        },
+        "simultaneous_group": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 200
+        }
+      },
+      "required": [
+        "id",
+        "step_ref",
+        "electron_count",
+        "source",
+        "sink",
+        "simultaneous_group"
+      ]
+    },
+    "layout_constraint": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 200
+        },
+        "kind": {
+          "enum": [
+            "reading_order",
+            "serpentine",
+            "avoid_overlap",
+            "min_clearance",
+            "alignment",
+            "keep_near",
+            "anti",
+            "syn",
+            "backside_approach",
+            "preserve_orientation"
+          ]
+        },
+        "subjects": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 200
+          },
+          "minItems": 0,
+          "uniqueItems": true,
+          "description": "For anti/syn, ordered [central_A, central_B, substituent_on_A, substituent_on_B], all atom occurrences in one state. Chemical stereo is hard, never an optional style preference."
+        },
+        "strength": {
+          "enum": [
+            "hard",
+            "soft"
+          ]
+        },
+        "parameters": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "minimum_gap": {
+              "type": "number"
+            },
+            "unit": {
+              "enum": [
+                "pt",
+                "mm",
+                "bond_length"
+              ]
+            },
+            "direction": {
+              "enum": [
+                "left_to_right",
+                "right_to_left",
+                "alternating"
+              ]
+            },
+            "max_columns": {
+              "type": "integer",
+              "minimum": 1
+            },
+            "minimum_row_turns": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "angle_deg": {
+              "type": "number"
+            }
+          },
+          "required": []
+        }
+      },
+      "required": [
+        "id",
+        "kind",
+        "subjects",
+        "strength",
+        "parameters"
+      ]
+    }
+  }
+}

@@ -1,0 +1,258 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://chembridge.invalid/contracts/corpus/split-manifest.schema.json",
+  "title": "split-manifest corpus draft 0.1",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "version": {
+      "const": "split-manifest/0.1"
+    },
+    "id": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 200
+    },
+    "corpus_revision": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 200
+    },
+    "policy_version": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 200
+    },
+    "assignments": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "sample_id": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 200
+          },
+          "leakage_group_id": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 200
+          },
+          "split": {
+            "enum": [
+              "development",
+              "fixed_regression",
+              "evaluation_reserved",
+              "quarantined"
+            ]
+          },
+          "exposure_status": {
+            "enum": [
+              "not_assessed",
+              "exposed",
+              "exposed_and_tuned",
+              "unseen"
+            ]
+          },
+          "assigned_at": {
+            "type": "string"
+          },
+          "reason": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "sample_id",
+          "leakage_group_id",
+          "split",
+          "exposure_status",
+          "assigned_at",
+          "reason"
+        ]
+      },
+      "minItems": 0
+    },
+    "freeze": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "status": {
+          "enum": [
+            "not_started",
+            "frozen"
+          ]
+        },
+        "commit": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "bundle_sha256": {
+          "oneOf": [
+            {
+              "type": "string",
+              "pattern": "^[a-f0-9]{64}$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "selected_holdout_ids": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 200
+          },
+          "minItems": 0,
+          "uniqueItems": true
+        },
+        "generation": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "base_pass_receipt_sha256": {
+          "oneOf": [
+            {
+              "type": "string",
+              "pattern": "^[a-f0-9]{64}$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "base_passed_at": {
+          "oneOf": [
+            {
+              "type": "string",
+              "minLength": 1
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "frozen_at": {
+          "oneOf": [
+            {
+              "type": "string",
+              "minLength": 1
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "selections": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "sample_id": {
+                "type": "string",
+                "minLength": 1
+              },
+              "selected_at": {
+                "type": "string",
+                "minLength": 1
+              },
+              "disclosed_at": {
+                "oneOf": [
+                  {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "evaluator_id": {
+                "type": "string",
+                "minLength": 1
+              },
+              "independent_of_tuning": {
+                "type": "boolean"
+              },
+              "freeze_bundle_sha256": {
+                "type": "string",
+                "pattern": "^[a-f0-9]{64}$"
+              }
+            },
+            "required": [
+              "sample_id",
+              "selected_at",
+              "disclosed_at",
+              "evaluator_id",
+              "independent_of_tuning",
+              "freeze_bundle_sha256"
+            ]
+          }
+        }
+      },
+      "required": [
+        "status",
+        "commit",
+        "bundle_sha256",
+        "selected_holdout_ids",
+        "generation",
+        "base_pass_receipt_sha256",
+        "base_passed_at",
+        "frozen_at",
+        "selections"
+      ]
+    },
+    "duplicate_audit": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "status": {
+          "enum": [
+            "not_started",
+            "reviewed"
+          ]
+        },
+        "methods": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "minItems": 0
+        },
+        "version": {
+          "type": "string"
+        },
+        "unresolved_groups": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 200
+          },
+          "minItems": 0,
+          "uniqueItems": true
+        }
+      },
+      "required": [
+        "status",
+        "methods",
+        "version",
+        "unresolved_groups"
+      ]
+    }
+  },
+  "required": [
+    "version",
+    "id",
+    "corpus_revision",
+    "policy_version",
+    "assignments",
+    "freeze",
+    "duplicate_audit"
+  ]
+}

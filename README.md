@@ -11,3 +11,7 @@ The first milestone separates P0-A transport, P0-B object control and P0-C mecha
 Use one host-neutral execution core and one product identity. ChatGPT Work cloud/local, Claude and WorkBuddy are targets until their actual workflows and artifact delivery have been tested. GPT-5.6 Terra with max reasoning is the acceptance benchmark; the development model is not benchmark evidence.
 
 Public documentation and future GitHub Releases are in English. Ordinary use must not require a checkout, Git, a separately installed programming runtime or hand-edited JSON. Installation and update behavior remain design requirements until implemented and tested.
+
+## Composer R&D and dataset design
+
+The [first corpus/annotation architecture](docs/MECHANISM_IR_V0_1.md) aligns chemical semantics, native objects, rendered geometry and corrections. It includes draft schemas and ungraded representation proofs, not a collected gold dataset or native acceptance. See [the phase handoff](docs/COMPOSER_RND_HANDOFF.md), [annotation workflow](docs/ANNOTATION_PIPELINE_V0_1.md), [quality and splits](docs/CORPUS_QUALITY_AND_SPLITS.md), [rights](docs/CORPUS_ACQUISITION_AND_RIGHTS.md) and [sample plan](docs/CORPUS_SAMPLE_PLAN.md).

@@ -1,0 +1,350 @@
+{
+  "version": "corpus-manifest/0.1",
+  "id": "schema-representation-pilots",
+  "revision": "corpus-proof-r1",
+  "policy_version": "corpus-policy/0.1",
+  "samples": [
+    {
+      "id": "proton-transfer",
+      "revision_id": "corpus-proof-r1",
+      "tier": "ungraded",
+      "gold_scopes": [],
+      "split": "development",
+      "exposure_status": "exposed",
+      "leakage_group_id": "schema-proof/proton-transfer",
+      "derived_from": [],
+      "lineage_relation": "root",
+      "family_tags": [
+        "proton_transfer"
+      ],
+      "stress_tags": [
+        "schema_representation_only"
+      ],
+      "task_mode": "schema_representation",
+      "generation_asset_refs": [],
+      "oracle_asset_refs": [],
+      "source": {
+        "kind": "schema_probe",
+        "url": null,
+        "accession_or_version": "new synthetic schema probe",
+        "retrieved_on": null,
+        "author": "AI architecture task; no human scientific sign-off"
+      },
+      "mechanism_asset_ref": "proton-transfer-ir",
+      "annotation_asset_ref": null,
+      "assets": [
+        {
+          "id": "proton-transfer-ir",
+          "kind": "ir",
+          "mime": "application/json",
+          "uri": "proton-transfer.ir.json",
+          "sha256": "bd0f1912eee1c97d63b18363514d4f97d6e5b62a7caa7924471e5c47e696f686",
+          "bytes": 9909,
+          "producer": "schema probe",
+          "derived_from": [],
+          "rights_ref": "rights-probe",
+          "frames": []
+        }
+      ],
+      "rights": [
+        {
+          "id": "rights-probe",
+          "status": "pending",
+          "license_expression": "NOASSERTION",
+          "license_url": null,
+          "scope": "Schema representation probes and references to previously published synthetic native benchmark artifacts; no dataset reuse permission inferred.",
+          "attribution": "ChemDraw Companion project; native execution evidence eb8b4c8",
+          "permission_evidence": [],
+          "checked_on": null,
+          "permissions": {
+            "store": true,
+            "annotate": true,
+            "train": false,
+            "redistribute": false
+          }
+        }
+      ],
+      "reviews": [],
+      "uses": {
+        "rule_tuning": false,
+        "training": false,
+        "evaluation": false,
+        "public_distribution": false
+      },
+      "status": {
+        "representable": "pass",
+        "semantic_valid": "unverified",
+        "runtime_projection": "unverified",
+        "native_verified": "unverified",
+        "visual_accepted": "unverified"
+      },
+      "exposure_log": [
+        {
+          "event": "authoring",
+          "at": "2026-09-13",
+          "known_to": "development",
+          "artifact_sha256": "bd0f1912eee1c97d63b18363514d4f97d6e5b62a7caa7924471e5c47e696f686"
+        }
+      ]
+    },
+    {
+      "id": "M1",
+      "revision_id": "corpus-proof-r1",
+      "tier": "ungraded",
+      "gold_scopes": [],
+      "split": "fixed_regression",
+      "exposure_status": "exposed_and_tuned",
+      "leakage_group_id": "benchmark/M1",
+      "derived_from": [],
+      "lineage_relation": "root",
+      "family_tags": [
+        "SN2"
+      ],
+      "stress_tags": [
+        "schema_representation_only"
+      ],
+      "task_mode": "schema_representation",
+      "generation_asset_refs": [],
+      "oracle_asset_refs": [],
+      "source": {
+        "kind": "schema_probe",
+        "url": null,
+        "accession_or_version": "existing exposed fixture re-encoded",
+        "retrieved_on": null,
+        "author": "AI architecture task; no human scientific sign-off"
+      },
+      "mechanism_asset_ref": "M1-ir",
+      "annotation_asset_ref": "M1-annotation",
+      "assets": [
+        {
+          "id": "M1-ir",
+          "kind": "ir",
+          "mime": "application/json",
+          "uri": "M1.ir.json",
+          "sha256": "e37540a1fdc2e1748bb41f337e9d873e46b0b2604b035607907d91824827fc70",
+          "bytes": 7622,
+          "producer": "schema probe",
+          "derived_from": [],
+          "rights_ref": "rights-probe",
+          "frames": []
+        },
+        {
+          "id": "M1-annotation",
+          "kind": "annotation",
+          "mime": "application/json",
+          "uri": "M1.annotation.json",
+          "sha256": "8f8206ea5df9c182c7927c378794d9100e2c77d11d0242a300f44bd8202fb063",
+          "bytes": 4421,
+          "producer": "schema probe",
+          "derived_from": [],
+          "rights_ref": "rights-probe",
+          "frames": []
+        },
+        {
+          "id": "M1-native-cdx",
+          "kind": "cdx",
+          "mime": "chemical/x-cdx",
+          "uri": "https://github.com/saigyujikingyo-png/chemdraw-companion/blob/eb8b4c869a23237f726f8cf127be18743f573a14/verification/2026-09-12-r2/samples/M1/M1.cdx",
+          "sha256": "c07c63e9e8360e4e7133bb368e96318e89e16058a5690e326d2d348e2097c1d3",
+          "bytes": 3182,
+          "producer": "recorded ChemDraw Prime 26.0.0.6141",
+          "derived_from": [],
+          "rights_ref": "rights-probe",
+          "frames": []
+        },
+        {
+          "id": "M1-native-cdxml",
+          "kind": "cdxml",
+          "mime": "chemical/x-cdxml",
+          "uri": "https://github.com/saigyujikingyo-png/chemdraw-companion/blob/eb8b4c869a23237f726f8cf127be18743f573a14/verification/2026-09-12-r2/samples/M1/M1.cdxml",
+          "sha256": "292b361cf452eeacba7c3e3d891c587c9f799c3b8831a4e248279c23df071b30",
+          "bytes": 7063,
+          "producer": "recorded ChemDraw Prime 26.0.0.6141",
+          "derived_from": [],
+          "rights_ref": "rights-probe",
+          "frames": [
+            {
+              "id": "M1-native-page",
+              "page": 0,
+              "units": "pt",
+              "origin": "top_left",
+              "y_axis": "down",
+              "width": 240.9448818897638,
+              "height": 119.05511811023622,
+              "parent_frame_ref": null,
+              "to_parent_affine": null,
+              "calibration": "native_readback"
+            }
+          ]
+        },
+        {
+          "id": "M1-native-png",
+          "kind": "native_render",
+          "mime": "image/png",
+          "uri": "https://github.com/saigyujikingyo-png/chemdraw-companion/blob/eb8b4c869a23237f726f8cf127be18743f573a14/verification/2026-09-12-r2/samples/M1/M1.png",
+          "sha256": "2bbb64b741ec85cedb01ac86e71f3577217929bfecfe8276dd8c01321961b184",
+          "bytes": 42853,
+          "producer": "recorded ChemDraw Prime 26.0.0.6141",
+          "derived_from": [],
+          "rights_ref": "rights-probe",
+          "frames": [
+            {
+              "id": "M1-native-pixels",
+              "page": 0,
+              "units": "px",
+              "origin": "top_left",
+              "y_axis": "down",
+              "width": 2044,
+              "height": 1028,
+              "parent_frame_ref": "M1-native-page",
+              "to_parent_affine": [
+                0.11999985328737661,
+                0,
+                0,
+                0.1199851204260088,
+                -2.099997432529091,
+                -2.0997396074551538
+              ],
+              "calibration": "measured"
+            }
+          ]
+        },
+        {
+          "id": "M1-mask-calibration",
+          "kind": "receipt",
+          "mime": "application/json",
+          "uri": "https://github.com/saigyujikingyo-png/chemdraw-companion/blob/eb8b4c869a23237f726f8cf127be18743f573a14/verification/2026-09-12-r2/small-native-mask-verification.json",
+          "sha256": "a54f5e043cd83ef2c88bf63dcc0b20d609671b38cee5e0f8aa47142e919fda6b",
+          "bytes": 9651,
+          "producer": "schema probe",
+          "derived_from": [],
+          "rights_ref": "rights-probe",
+          "frames": []
+        }
+      ],
+      "rights": [
+        {
+          "id": "rights-probe",
+          "status": "pending",
+          "license_expression": "NOASSERTION",
+          "license_url": null,
+          "scope": "Schema representation probes and references to previously published synthetic native benchmark artifacts; no dataset reuse permission inferred.",
+          "attribution": "ChemDraw Companion project; native execution evidence eb8b4c8",
+          "permission_evidence": [],
+          "checked_on": null,
+          "permissions": {
+            "store": true,
+            "annotate": true,
+            "train": false,
+            "redistribute": false
+          }
+        }
+      ],
+      "reviews": [],
+      "uses": {
+        "rule_tuning": false,
+        "training": false,
+        "evaluation": true,
+        "public_distribution": false
+      },
+      "status": {
+        "representable": "pass",
+        "semantic_valid": "unverified",
+        "runtime_projection": "unverified",
+        "native_verified": "unverified",
+        "visual_accepted": "unverified"
+      },
+      "exposure_log": [
+        {
+          "event": "tuning",
+          "at": "2026-09-12",
+          "known_to": "development",
+          "artifact_sha256": "14efd9fdc2022de80987c728eca84f4aa520c38a5389d4f9092d394eb9663b45"
+        }
+      ]
+    },
+    {
+      "id": "M2",
+      "revision_id": "corpus-proof-r1",
+      "tier": "ungraded",
+      "gold_scopes": [],
+      "split": "fixed_regression",
+      "exposure_status": "exposed_and_tuned",
+      "leakage_group_id": "benchmark/M2",
+      "derived_from": [],
+      "lineage_relation": "root",
+      "family_tags": [
+        "rearrangement"
+      ],
+      "stress_tags": [
+        "schema_representation_only"
+      ],
+      "task_mode": "schema_representation",
+      "generation_asset_refs": [],
+      "oracle_asset_refs": [],
+      "source": {
+        "kind": "schema_probe",
+        "url": null,
+        "accession_or_version": "existing exposed fixture re-encoded",
+        "retrieved_on": null,
+        "author": "AI architecture task; no human scientific sign-off"
+      },
+      "mechanism_asset_ref": "M2-ir",
+      "annotation_asset_ref": null,
+      "assets": [
+        {
+          "id": "M2-ir",
+          "kind": "ir",
+          "mime": "application/json",
+          "uri": "M2.ir.json",
+          "sha256": "89139849264ddb0e6259b29fcf940ed355cdc505359312275aa62169486332bf",
+          "bytes": 65673,
+          "producer": "schema probe",
+          "derived_from": [],
+          "rights_ref": "rights-probe",
+          "frames": []
+        }
+      ],
+      "rights": [
+        {
+          "id": "rights-probe",
+          "status": "pending",
+          "license_expression": "NOASSERTION",
+          "license_url": null,
+          "scope": "Schema representation probes and references to previously published synthetic native benchmark artifacts; no dataset reuse permission inferred.",
+          "attribution": "ChemDraw Companion project; native execution evidence eb8b4c8",
+          "permission_evidence": [],
+          "checked_on": null,
+          "permissions": {
+            "store": true,
+            "annotate": true,
+            "train": false,
+            "redistribute": false
+          }
+        }
+      ],
+      "reviews": [],
+      "uses": {
+        "rule_tuning": false,
+        "training": false,
+        "evaluation": true,
+        "public_distribution": false
+      },
+      "status": {
+        "representable": "pass",
+        "semantic_valid": "unverified",
+        "runtime_projection": "unverified",
+        "native_verified": "unverified",
+        "visual_accepted": "unverified"
+      },
+      "exposure_log": [
+        {
+          "event": "tuning",
+          "at": "2026-09-12",
+          "known_to": "development",
+          "artifact_sha256": "dd42b718af7aa7bb9a282e0a3c6ad7c8e4b5ac47a0fa2460542ad305f84b168d"
+        }
+      ]
+    }
+  ]
+}

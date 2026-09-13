@@ -1,0 +1,49 @@
+{
+  "version": "split-manifest/0.1",
+  "id": "schema-pilot-splits",
+  "corpus_revision": "corpus-proof-r1",
+  "policy_version": "corpus-policy/0.1",
+  "assignments": [
+    {
+      "sample_id": "proton-transfer",
+      "leakage_group_id": "schema-proof/proton-transfer",
+      "split": "development",
+      "exposure_status": "exposed",
+      "assigned_at": "2026-09-13",
+      "reason": "Ungraded schema proof only"
+    },
+    {
+      "sample_id": "M1",
+      "leakage_group_id": "benchmark/M1",
+      "split": "fixed_regression",
+      "exposure_status": "exposed_and_tuned",
+      "assigned_at": "2026-09-13",
+      "reason": "Exposed regression lineage, no fitting"
+    },
+    {
+      "sample_id": "M2",
+      "leakage_group_id": "benchmark/M2",
+      "split": "fixed_regression",
+      "exposure_status": "exposed_and_tuned",
+      "assigned_at": "2026-09-13",
+      "reason": "Exposed regression lineage, no fitting"
+    }
+  ],
+  "freeze": {
+    "status": "not_started",
+    "commit": null,
+    "bundle_sha256": null,
+    "selected_holdout_ids": [],
+    "generation": 0,
+    "base_pass_receipt_sha256": null,
+    "base_passed_at": null,
+    "frozen_at": null,
+    "selections": []
+  },
+  "duplicate_audit": {
+    "status": "not_started",
+    "methods": [],
+    "version": "not_run",
+    "unresolved_groups": []
+  }
+}

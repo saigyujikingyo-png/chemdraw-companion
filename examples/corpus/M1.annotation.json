@@ -1,0 +1,192 @@
+{
+  "version": "mechanism-annotation/0.1",
+  "id": "annotation:M1",
+  "sample_id": "M1",
+  "revision_id": "corpus-proof-r1",
+  "mechanism_sha256": "e37540a1fdc2e1748bb41f337e9d873e46b0b2604b035607907d91824827fc70",
+  "layers": [
+    {
+      "name": "page_and_reading_order",
+      "status": "not_started",
+      "depends_on": []
+    },
+    {
+      "name": "molecular_graph",
+      "status": "not_started",
+      "depends_on": [
+        "page_and_reading_order"
+      ]
+    },
+    {
+      "name": "participant_roles",
+      "status": "not_started",
+      "depends_on": [
+        "page_and_reading_order",
+        "molecular_graph"
+      ]
+    },
+    {
+      "name": "reaction_arrows",
+      "status": "not_started",
+      "depends_on": [
+        "page_and_reading_order",
+        "molecular_graph",
+        "participant_roles"
+      ]
+    },
+    {
+      "name": "conditions",
+      "status": "not_started",
+      "depends_on": [
+        "page_and_reading_order",
+        "molecular_graph",
+        "participant_roles",
+        "reaction_arrows"
+      ]
+    },
+    {
+      "name": "electronic_marks",
+      "status": "not_started",
+      "depends_on": [
+        "page_and_reading_order",
+        "molecular_graph",
+        "participant_roles",
+        "reaction_arrows",
+        "conditions"
+      ]
+    },
+    {
+      "name": "electron_flow",
+      "status": "proposed",
+      "depends_on": [
+        "page_and_reading_order",
+        "molecular_graph",
+        "participant_roles",
+        "reaction_arrows",
+        "conditions",
+        "electronic_marks"
+      ]
+    },
+    {
+      "name": "visual_geometry",
+      "status": "proposed",
+      "depends_on": [
+        "page_and_reading_order",
+        "molecular_graph",
+        "participant_roles",
+        "reaction_arrows",
+        "conditions",
+        "electronic_marks",
+        "electron_flow"
+      ]
+    }
+  ],
+  "observations": [
+    {
+      "id": "observation:attack",
+      "layer": "electron_flow",
+      "entity_refs": [
+        "attack"
+      ],
+      "asset_ref": "M1-native-cdxml",
+      "asset_sha256": "292b361cf452eeacba7c3e3d891c587c9f799c3b8831a4e248279c23df071b30",
+      "frame_ref": "M1-native-page",
+      "locator": {
+        "kind": "native_id",
+        "value": "31"
+      },
+      "geometry": {
+        "kind": "bezier",
+        "points": [
+          [
+            42.25,
+            52.46
+          ],
+          [
+            49.14,
+            42.76
+          ],
+          [
+            57.57,
+            59.73
+          ],
+          [
+            69.81,
+            59.73
+          ]
+        ],
+        "measurement_status": "observed"
+      },
+      "method": "derived_measurement",
+      "actor_ref": "schema-agent",
+      "alignment_status": "proposed",
+      "confidence": null,
+      "alternatives": [],
+      "review_refs": [],
+      "evidence_asset_refs": [
+        "M1-native-cdxml"
+      ],
+      "assessments": []
+    },
+    {
+      "id": "observation:departure-tip",
+      "layer": "visual_geometry",
+      "entity_refs": [
+        "departure",
+        "before:a3"
+      ],
+      "asset_ref": "M1-native-png",
+      "asset_sha256": "2bbb64b741ec85cedb01ac86e71f3577217929bfecfe8276dd8c01321961b184",
+      "frame_ref": "M1-native-pixels",
+      "locator": {
+        "kind": "raster_region",
+        "value": "visible departure tip measured in archived native-mask receipt"
+      },
+      "geometry": {
+        "kind": "point",
+        "points": [
+          [
+            738.8342152402921,
+            522.0
+          ]
+        ],
+        "measurement_status": "observed"
+      },
+      "method": "derived_measurement",
+      "actor_ref": "schema-agent",
+      "alignment_status": "proposed",
+      "confidence": null,
+      "alternatives": [],
+      "review_refs": [],
+      "evidence_asset_refs": [
+        "M1-native-png",
+        "M1-mask-calibration"
+      ],
+      "assessments": [
+        {
+          "kind": "clearance",
+          "entity_refs": [
+            "departure",
+            "before:a3"
+          ],
+          "value": 0,
+          "unit": "pt",
+          "label": "failed",
+          "intended_contact": false,
+          "evidence_asset_refs": [
+            "M1-mask-calibration"
+          ]
+        }
+      ]
+    }
+  ],
+  "actors": [
+    {
+      "id": "schema-agent",
+      "kind": "ai",
+      "tool_or_model": "unavailable",
+      "version_or_run": "corpus-schema-proof-r1"
+    }
+  ],
+  "reviews": []
+}
