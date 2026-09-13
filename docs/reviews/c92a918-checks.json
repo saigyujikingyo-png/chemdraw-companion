@@ -1,0 +1,87 @@
+{
+  "reviewed_commit": "c92a91881a017d3d3d4a619dce77b840013a82cc",
+  "date": "2026-09-13",
+  "decision": "partial_engineering_checkpoint_only_project_not_accepted",
+  "checks": {
+    "runtime": {
+      "tests": 51,
+      "failures": 0,
+      "errors": 0,
+      "pass": true,
+      "python": "3.12.14"
+    },
+    "corpus": {
+      "tests": 36,
+      "failures": 0,
+      "errors": 0,
+      "pass": true,
+      "python": "3.12.14"
+    },
+    "public_source_archive_entries": 282,
+    "git_source_hashes": 70,
+    "first_attempt_environment": "Default Python 3.13 lacked numpy; bundled Python 3.12 initially mixed with cp313 rpds. Both failed logs retained. Resolved with isolated jsonschema 4.26.0 dependencies matching bundled Python. No global environment changes.",
+    "dependencies": {
+      "jsonschema": "4.26.0",
+      "numpy": "2.3.5",
+      "Pillow": "12.3.0",
+      "rpds-py": "2026.6.3",
+      "referencing": "0.37.0",
+      "attrs": "26.1.0"
+    },
+    "R3_retained_evidence": {
+      "entries": 241,
+      "source_hashes_at_4ca3ffd": 58,
+      "origin_counts": {
+        "input_measurement_or_execution_record": 58,
+        "native_output": 24,
+        "pre_execution_source_snapshot": 56,
+        "fault_injection_or_guard_control": 45,
+        "final_source_snapshot": 58
+      }
+    }
+  },
+  "additional_corpus_controls": {
+    "count": 8,
+    "matched_expectations": 8
+  },
+  "new_finding": {
+    "priority": 2,
+    "id": "unbound_head_metric_allowance",
+    "synthetic_baseline": "pass",
+    "wrong_target_endpoint_30pt": "rejected",
+    "same_endpoint_with_scene_allowance_1000000": "incorrectly_accepted_by_inventory_subcheck",
+    "stroke_change_0_6_to_1_2_with_old_calibration": "accepted",
+    "complete_native_mask_bypass": "not_tested_or_claimed"
+  },
+  "current_pilot_raw_archive": {
+    "expected_bytes": 1954700,
+    "expected_sha256": "f0265ff53be8709fb098743c9de8534b44b57e2183df0b9447c1a6eacc9c57e0",
+    "received_by_this_reviewer": false,
+    "independent_native_files_checked": 0,
+    "reported_native_files": 38,
+    "reported_entries": 507
+  },
+  "gates": {
+    "P0_A": "historical_bounded_current_pilot_not_replayed",
+    "P0_B": "historical_partial_current_pilot_not_replayed",
+    "P0_C": "not_accepted",
+    "pilot_visual": "failed_and_owner_rejected",
+    "M1": "historical_failure_not_requalified",
+    "scored_M2": "not_run",
+    "freeze": "not_started",
+    "holdout": "not_selected",
+    "gold": 0,
+    "manual_active_correction_seconds": null
+  },
+  "native_execution_in_this_review": false,
+  "code_changed_by_reviewer": false,
+  "retained_R2_current_verifier_replay": {
+    "S1": "pass",
+    "R1": "pass",
+    "M1": "failed",
+    "M1_unclassified_mixed_pixels": 120,
+    "native_generation": "not_run",
+    "actual_CDXML_style_negative_controls_rejected": 5,
+    "complete_mask_false_pass_reproduced": false
+  }
+}
