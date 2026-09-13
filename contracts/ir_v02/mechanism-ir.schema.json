@@ -1,0 +1,993 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://chembridge.invalid/contracts/ir_v02/mechanism-ir.schema.json",
+  "title": "Mechanism IR v0.2: chemical inventory and explicit depiction intent",
+  "description": "Coordinate-free syntax. Executable invariants, bounded valence coverage and adapter depiction capability are separate checks.",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "ir_version": {
+      "const": "mechanism-ir/0.2"
+    },
+    "atom_catalog": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "map": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "element": {
+            "enum": [
+              "H",
+              "He",
+              "Li",
+              "Be",
+              "B",
+              "C",
+              "N",
+              "O",
+              "F",
+              "Ne",
+              "Na",
+              "Mg",
+              "Al",
+              "Si",
+              "P",
+              "S",
+              "Cl",
+              "Ar",
+              "K",
+              "Ca",
+              "Sc",
+              "Ti",
+              "V",
+              "Cr",
+              "Mn",
+              "Fe",
+              "Co",
+              "Ni",
+              "Cu",
+              "Zn",
+              "Ga",
+              "Ge",
+              "As",
+              "Se",
+              "Br",
+              "Kr",
+              "Rb",
+              "Sr",
+              "Y",
+              "Zr",
+              "Nb",
+              "Mo",
+              "Tc",
+              "Ru",
+              "Rh",
+              "Pd",
+              "Ag",
+              "Cd",
+              "In",
+              "Sn",
+              "Sb",
+              "Te",
+              "I",
+              "Xe",
+              "Cs",
+              "Ba",
+              "La",
+              "Ce",
+              "Pr",
+              "Nd",
+              "Pm",
+              "Sm",
+              "Eu",
+              "Gd",
+              "Tb",
+              "Dy",
+              "Ho",
+              "Er",
+              "Tm",
+              "Yb",
+              "Lu",
+              "Hf",
+              "Ta",
+              "W",
+              "Re",
+              "Os",
+              "Ir",
+              "Pt",
+              "Au",
+              "Hg",
+              "Tl",
+              "Pb",
+              "Bi",
+              "Po",
+              "At",
+              "Rn",
+              "Fr",
+              "Ra",
+              "Ac",
+              "Th",
+              "Pa",
+              "U",
+              "Np",
+              "Pu",
+              "Am",
+              "Cm",
+              "Bk",
+              "Cf",
+              "Es",
+              "Fm",
+              "Md",
+              "No",
+              "Lr",
+              "Rf",
+              "Db",
+              "Sg",
+              "Bh",
+              "Hs",
+              "Mt",
+              "Ds",
+              "Rg",
+              "Cn",
+              "Nh",
+              "Fl",
+              "Mc",
+              "Lv",
+              "Ts",
+              "Og"
+            ]
+          },
+          "implicit_h": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 32
+          },
+          "isotope": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 400
+          },
+          "radical_electrons": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 32
+          }
+        },
+        "required": [
+          "map",
+          "element",
+          "implicit_h"
+        ]
+      },
+      "minItems": 1,
+      "maxItems": 1000
+    },
+    "states": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 128
+          },
+          "label": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 2048
+          },
+          "formal_charges": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "atom": {
+                  "type": "integer",
+                  "minimum": 1
+                },
+                "value": {
+                  "type": "integer",
+                  "minimum": -16,
+                  "maximum": 16
+                }
+              },
+              "required": [
+                "atom",
+                "value"
+              ]
+            },
+            "minItems": 0,
+            "maxItems": 1000
+          },
+          "lone_pairs": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "atom": {
+                  "type": "integer",
+                  "minimum": 1
+                },
+                "count": {
+                  "type": "integer",
+                  "minimum": 0,
+                  "maximum": 32
+                }
+              },
+              "required": [
+                "atom",
+                "count"
+              ]
+            },
+            "minItems": 0,
+            "maxItems": 1000
+          },
+          "bonds": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "atoms": {
+                  "type": "array",
+                  "items": {
+                    "type": "integer",
+                    "minimum": 1
+                  },
+                  "minItems": 2,
+                  "maxItems": 2,
+                  "uniqueItems": true
+                },
+                "order": {
+                  "enum": [
+                    1,
+                    1.5,
+                    2,
+                    3
+                  ]
+                }
+              },
+              "required": [
+                "atoms",
+                "order"
+              ]
+            },
+            "minItems": 0,
+            "maxItems": 1000
+          },
+          "chemical_species": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "id": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 128
+                },
+                "atoms": {
+                  "type": "array",
+                  "items": {
+                    "type": "integer",
+                    "minimum": 1
+                  },
+                  "minItems": 1,
+                  "maxItems": 1000,
+                  "uniqueItems": true
+                }
+              },
+              "required": [
+                "id",
+                "atoms"
+              ]
+            },
+            "minItems": 1,
+            "maxItems": 1000
+          },
+          "atom_properties": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "atom": {
+                  "type": "integer",
+                  "minimum": 1
+                },
+                "implicit_h": {
+                  "type": "integer",
+                  "minimum": 0,
+                  "maximum": 32
+                },
+                "radical_electrons": {
+                  "type": "integer",
+                  "minimum": 0,
+                  "maximum": 32
+                }
+              },
+              "required": [
+                "atom"
+              ],
+              "minProperties": 2
+            },
+            "minItems": 0,
+            "maxItems": 1000
+          }
+        },
+        "required": [
+          "id",
+          "label",
+          "formal_charges",
+          "lone_pairs",
+          "bonds",
+          "chemical_species"
+        ]
+      },
+      "minItems": 1,
+      "maxItems": 128
+    },
+    "transitions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 128
+          },
+          "from": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 128
+          },
+          "to": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 128
+          },
+          "label": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 2048
+          },
+          "kind": {
+            "enum": [
+              "elementary_step",
+              "elementary_teaching_step"
+            ]
+          },
+          "electron_flows": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "id": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 128
+                },
+                "electron_count": {
+                  "enum": [
+                    1,
+                    2
+                  ]
+                },
+                "source": {
+                  "oneOf": [
+                    {
+                      "type": "object",
+                      "additionalProperties": false,
+                      "properties": {
+                        "type": {
+                          "const": "lone_pair"
+                        },
+                        "atom": {
+                          "type": "integer",
+                          "minimum": 1
+                        },
+                        "pair_index": {
+                          "type": "integer",
+                          "minimum": 0,
+                          "maximum": 32
+                        }
+                      },
+                      "required": [
+                        "type",
+                        "atom",
+                        "pair_index"
+                      ]
+                    },
+                    {
+                      "type": "object",
+                      "additionalProperties": false,
+                      "properties": {
+                        "type": {
+                          "const": "bond"
+                        },
+                        "atoms": {
+                          "type": "array",
+                          "items": {
+                            "type": "integer",
+                            "minimum": 1
+                          },
+                          "minItems": 2,
+                          "maxItems": 2,
+                          "uniqueItems": true
+                        },
+                        "electrons": {
+                          "enum": [
+                            "sigma",
+                            "pi"
+                          ]
+                        }
+                      },
+                      "required": [
+                        "type",
+                        "atoms",
+                        "electrons"
+                      ]
+                    },
+                    {
+                      "type": "object",
+                      "additionalProperties": false,
+                      "properties": {
+                        "type": {
+                          "const": "atom"
+                        },
+                        "atom": {
+                          "type": "integer",
+                          "minimum": 1
+                        }
+                      },
+                      "required": [
+                        "type",
+                        "atom"
+                      ]
+                    },
+                    {
+                      "type": "object",
+                      "additionalProperties": false,
+                      "properties": {
+                        "type": {
+                          "const": "radical"
+                        },
+                        "atom": {
+                          "type": "integer",
+                          "minimum": 1
+                        }
+                      },
+                      "required": [
+                        "type",
+                        "atom"
+                      ]
+                    }
+                  ]
+                },
+                "sink": {
+                  "oneOf": [
+                    {
+                      "type": "object",
+                      "additionalProperties": false,
+                      "properties": {
+                        "type": {
+                          "const": "atom"
+                        },
+                        "atom": {
+                          "type": "integer",
+                          "minimum": 1
+                        }
+                      },
+                      "required": [
+                        "type",
+                        "atom"
+                      ]
+                    },
+                    {
+                      "type": "object",
+                      "additionalProperties": false,
+                      "properties": {
+                        "type": {
+                          "const": "bond"
+                        },
+                        "atoms": {
+                          "type": "array",
+                          "items": {
+                            "type": "integer",
+                            "minimum": 1
+                          },
+                          "minItems": 2,
+                          "maxItems": 2,
+                          "uniqueItems": true
+                        }
+                      },
+                      "required": [
+                        "type",
+                        "atoms"
+                      ]
+                    },
+                    {
+                      "type": "object",
+                      "additionalProperties": false,
+                      "properties": {
+                        "type": {
+                          "const": "forming_bond"
+                        },
+                        "atoms": {
+                          "type": "array",
+                          "items": {
+                            "type": "integer",
+                            "minimum": 1
+                          },
+                          "minItems": 2,
+                          "maxItems": 2,
+                          "uniqueItems": true
+                        }
+                      },
+                      "required": [
+                        "type",
+                        "atoms"
+                      ]
+                    }
+                  ]
+                },
+                "effect": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "properties": {
+                    "bond_changes": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "additionalProperties": false,
+                        "properties": {
+                          "atoms": {
+                            "type": "array",
+                            "items": {
+                              "type": "integer",
+                              "minimum": 1
+                            },
+                            "minItems": 2,
+                            "maxItems": 2,
+                            "uniqueItems": true
+                          },
+                          "from_order": {
+                            "enum": [
+                              0,
+                              1,
+                              1.5,
+                              2,
+                              3
+                            ]
+                          },
+                          "to_order": {
+                            "enum": [
+                              0,
+                              1,
+                              1.5,
+                              2,
+                              3
+                            ]
+                          }
+                        },
+                        "required": [
+                          "atoms",
+                          "from_order",
+                          "to_order"
+                        ]
+                      },
+                      "minItems": 0,
+                      "maxItems": 1000
+                    },
+                    "charge_changes": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "additionalProperties": false,
+                        "properties": {
+                          "atom": {
+                            "type": "integer",
+                            "minimum": 1
+                          },
+                          "from": {
+                            "type": "integer"
+                          },
+                          "to": {
+                            "type": "integer"
+                          }
+                        },
+                        "required": [
+                          "atom",
+                          "from",
+                          "to"
+                        ]
+                      },
+                      "minItems": 0,
+                      "maxItems": 1000
+                    }
+                  },
+                  "required": [
+                    "bond_changes",
+                    "charge_changes"
+                  ]
+                }
+              },
+              "required": [
+                "id",
+                "electron_count",
+                "source",
+                "sink"
+              ]
+            },
+            "minItems": 1,
+            "maxItems": 128
+          },
+          "bond_changes": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "atoms": {
+                  "type": "array",
+                  "items": {
+                    "type": "integer",
+                    "minimum": 1
+                  },
+                  "minItems": 2,
+                  "maxItems": 2,
+                  "uniqueItems": true
+                },
+                "from_order": {
+                  "enum": [
+                    0,
+                    1,
+                    1.5,
+                    2,
+                    3
+                  ]
+                },
+                "to_order": {
+                  "enum": [
+                    0,
+                    1,
+                    1.5,
+                    2,
+                    3
+                  ]
+                }
+              },
+              "required": [
+                "atoms",
+                "from_order",
+                "to_order"
+              ]
+            },
+            "minItems": 0,
+            "maxItems": 1000
+          },
+          "charge_changes": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "atom": {
+                  "type": "integer",
+                  "minimum": 1
+                },
+                "from": {
+                  "type": "integer"
+                },
+                "to": {
+                  "type": "integer"
+                }
+              },
+              "required": [
+                "atom",
+                "from",
+                "to"
+              ]
+            },
+            "minItems": 0,
+            "maxItems": 1000
+          }
+        },
+        "required": [
+          "id",
+          "from",
+          "to",
+          "label",
+          "kind",
+          "electron_flows",
+          "bond_changes",
+          "charge_changes"
+        ]
+      },
+      "minItems": 0,
+      "maxItems": 256
+    },
+    "depiction_states": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "state_ref": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 128
+          },
+          "species": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "species_ref": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 128
+                },
+                "role": {
+                  "enum": [
+                    "explicitly_drawn",
+                    "abbreviated",
+                    "condition_caption",
+                    "reagent_caption",
+                    "catalyst_caption",
+                    "counterion_hidden",
+                    "spectator_hidden",
+                    "implicit",
+                    "omitted_by_convention"
+                  ]
+                },
+                "label": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 2048
+                },
+                "attachment_atom_ref": {
+                  "type": "integer",
+                  "minimum": 1
+                }
+              },
+              "required": [
+                "species_ref",
+                "role"
+              ]
+            },
+            "minItems": 1,
+            "maxItems": 1000
+          },
+          "lone_pairs": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "atom_ref": {
+                  "type": "integer",
+                  "minimum": 1
+                },
+                "displayed_pairs": {
+                  "type": "integer",
+                  "minimum": 0,
+                  "maximum": 32
+                },
+                "slots": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "properties": {
+                      "pair_index": {
+                        "type": "integer",
+                        "minimum": 0,
+                        "maximum": 32
+                      },
+                      "orientation": {
+                        "enum": [
+                          "auto",
+                          "north",
+                          "northeast",
+                          "east",
+                          "southeast",
+                          "south",
+                          "southwest",
+                          "west",
+                          "northwest",
+                          "outward",
+                          "inward"
+                        ]
+                      }
+                    },
+                    "required": [
+                      "pair_index",
+                      "orientation"
+                    ]
+                  },
+                  "minItems": 0,
+                  "maxItems": 32
+                }
+              },
+              "required": [
+                "atom_ref",
+                "displayed_pairs"
+              ]
+            },
+            "minItems": 0,
+            "maxItems": 1000
+          },
+          "captions": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "id": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 128
+                },
+                "role": {
+                  "enum": [
+                    "condition",
+                    "reagent",
+                    "catalyst",
+                    "solvent",
+                    "temperature",
+                    "time",
+                    "workup",
+                    "annotation",
+                    "state_label",
+                    "molecule_label"
+                  ]
+                },
+                "text": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 2048
+                },
+                "species_refs": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 128
+                  },
+                  "minItems": 1,
+                  "maxItems": 1000,
+                  "uniqueItems": true
+                },
+                "transition_ref": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 128
+                }
+              },
+              "required": [
+                "id",
+                "role",
+                "text"
+              ]
+            },
+            "minItems": 0,
+            "maxItems": 1000
+          }
+        },
+        "required": [
+          "state_ref",
+          "species",
+          "lone_pairs",
+          "captions"
+        ]
+      },
+      "minItems": 1,
+      "maxItems": 128
+    },
+    "stereo_constraints": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "type": {
+            "enum": [
+              "anti_across_double_bond",
+              "syn_across_double_bond"
+            ]
+          },
+          "states": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 128
+            },
+            "minItems": 1,
+            "maxItems": 64,
+            "uniqueItems": true
+          },
+          "central_bond": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "minimum": 1
+            },
+            "minItems": 2,
+            "maxItems": 2,
+            "uniqueItems": true
+          },
+          "substituent_atoms": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "minimum": 1
+            },
+            "minItems": 2,
+            "maxItems": 2,
+            "uniqueItems": true
+          }
+        },
+        "required": [
+          "type",
+          "states",
+          "central_bond",
+          "substituent_atoms"
+        ]
+      },
+      "minItems": 0,
+      "maxItems": 100
+    },
+    "entry_state": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 128
+    },
+    "migration": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "source_version": {
+          "const": "mechanism-ir/0.1"
+        },
+        "policy": {
+          "enum": [
+            "strict",
+            "preserve_v01_display"
+          ]
+        },
+        "source_sha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        }
+      },
+      "required": [
+        "source_version",
+        "policy",
+        "source_sha256"
+      ]
+    }
+  },
+  "required": [
+    "ir_version",
+    "atom_catalog",
+    "states",
+    "transitions",
+    "depiction_states",
+    "stereo_constraints",
+    "entry_state"
+  ]
+}
