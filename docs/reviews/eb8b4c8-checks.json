@@ -1,0 +1,834 @@
+{
+  "revision": "eb8b4c869a23237f726f8cf127be18743f573a14",
+  "python": "3.13.15 (tags/v3.13.15:4061bc4, Aug  5 2026, 13:05:39) [MSC v.1944 64 bit (AMD64)]",
+  "archive": {
+    "bytes": 2382106,
+    "sha256": "b343c732297e7d67774518eab0c52ecafe3636e2664d3dc204a6a67bc40f58d8",
+    "hash_matches": true,
+    "manifest_entries": 502,
+    "origin_counts": {
+      "input_measurement_or_execution_record": 164,
+      "fault_injection_or_guard_control": 96,
+      "native_output": 186,
+      "final_execution_source_snapshot": 56
+    },
+    "mismatches": [],
+    "extra_entries": [
+      "README.txt"
+    ]
+  },
+  "samples": [
+    {
+      "file": "samples/S1/S1.cdx",
+      "pass": true
+    },
+    {
+      "file": "samples/S1/S1.cdxml",
+      "pass": true
+    },
+    {
+      "file": "samples/S1/S1.png",
+      "pass": true
+    },
+    {
+      "file": "samples/S1/S1.jpg",
+      "pass": true
+    },
+    {
+      "file": "samples/R1/R1.cdx",
+      "pass": true
+    },
+    {
+      "file": "samples/R1/R1.cdxml",
+      "pass": true
+    },
+    {
+      "file": "samples/R1/R1.png",
+      "pass": true
+    },
+    {
+      "file": "samples/R1/R1.jpg",
+      "pass": true
+    },
+    {
+      "file": "samples/M1/M1.cdx",
+      "pass": true
+    },
+    {
+      "file": "samples/M1/M1.cdxml",
+      "pass": true
+    },
+    {
+      "file": "samples/M1/M1.png",
+      "pass": true
+    },
+    {
+      "file": "samples/M1/M1.jpg",
+      "pass": true
+    }
+  ],
+  "tests": {
+    "count": 39,
+    "failures": 0,
+    "errors": 0,
+    "successful": true,
+    "log": "independent-unittests.txt"
+  },
+  "modules": {
+    "PIL": false,
+    "pypdf": false,
+    "fitz": false
+  },
+  "native_original_bytes": {
+    "count": 186,
+    "mismatches": []
+  },
+  "source_audit": {
+    "count": 56,
+    "staged_mismatches": []
+  },
+  "small_fixtures": {
+    "exit_code": 0,
+    "stderr": "",
+    "stdout": {
+      "scope": "Native semantics, declared edits, style, containment and ports; masks/owner acceptance separate",
+      "results": [
+        {
+          "fixture": "S1",
+          "issues": [
+            [],
+            [],
+            []
+          ],
+          "stereo": "pass",
+          "edit_checks": [
+            {
+              "format": "cdx",
+              "status": "pass",
+              "issues": []
+            },
+            {
+              "format": "cdxml",
+              "status": "pass",
+              "issues": []
+            }
+          ],
+          "warnings": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "fixture": "R1",
+          "issues": [
+            [],
+            [],
+            []
+          ],
+          "stereo": "not_applicable",
+          "edit_checks": [
+            {
+              "format": "cdx",
+              "status": "pass",
+              "issues": []
+            },
+            {
+              "format": "cdxml",
+              "status": "pass",
+              "issues": []
+            }
+          ],
+          "warnings": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "fixture": "M1",
+          "issues": [
+            [],
+            [],
+            []
+          ],
+          "stereo": "not_applicable",
+          "edit_checks": [
+            {
+              "format": "cdx",
+              "status": "pass",
+              "issues": []
+            },
+            {
+              "format": "cdxml",
+              "status": "pass",
+              "issues": []
+            }
+          ],
+          "warnings": [
+            0,
+            0,
+            0
+          ]
+        }
+      ]
+    }
+  },
+  "review_scope": "Independent current-code replay of saved native evidence and visual review; no fresh native ChemDraw execution",
+  "powershell_syntax": {
+    "files": 11,
+    "failures": []
+  },
+  "native_reaudit": {
+    "checkpoint": "eb8b4c869a23237f726f8cf127be18743f573a14",
+    "utc": "2026-09-13T06:18:02.157307+00:00",
+    "scope": "Independent replay of current code against archived native journals and saved provenance controls. No fresh native execution, no quality or holdout pass claimed.",
+    "input_sha256": {
+      "evidence\\native-core-r2\\edit-guard-final\\events.jsonl": "156620e168b6f71a1c9bed1596ddfd6be14f4d28a9e226768c40b4d4ee5eafd7",
+      "source\\probes\\verify_native_edits.py": "0ae50817b8aae3823ed1a5b94e0a0b0151c52f778595eeddb3ba6065fa79b0c2",
+      "source\\probes\\native-snapshot.ps1": "c74669dacb81023eef6826e63308ca17be06462615c8904e97e9fbcd1540ea46",
+      "source\\runtime\\native_provenance.py": "334c3f4164bd9325eb68d9dd00d14b1468e5871ac8f541fbbf2e4a468329d8fa"
+    },
+    "edit_baseline": {
+      "results": [
+        {
+          "source_format": "cdx",
+          "native_edit_save_reopen": "pass",
+          "issues": [],
+          "diagnostic_chemistry_accepted": false
+        },
+        {
+          "source_format": "cdxml",
+          "native_edit_save_reopen": "pass",
+          "issues": [],
+          "diagnostic_chemistry_accepted": false
+        }
+      ],
+      "manual_active_correction_seconds": null,
+      "scope": "Exact declared nonzero edits and all captured non-target chemical/drawable fields. Separate figure quality and owner acceptance required."
+    },
+    "actual_before_to_motion_edited_change_counts": {
+      "cdx": {
+        "atoms": 11,
+        "bonds": 0,
+        "curves": 1,
+        "symbols": 3,
+        "captions": 1,
+        "arrows": 0
+      },
+      "cdxml": {
+        "atoms": 11,
+        "bonds": 0,
+        "curves": 1,
+        "symbols": 3,
+        "captions": 1,
+        "arrows": 0
+      }
+    },
+    "negative_edit_controls": [
+      {
+        "case": "old_combined_noop",
+        "statuses": {
+          "cdx": "failed",
+          "cdxml": "failed"
+        },
+        "issues": {
+          "cdx": [
+            "undeclared_or_missing_edit:curves:331",
+            "undeclared_or_missing_edit:symbols:49",
+            "undeclared_or_missing_edit:symbols:50",
+            "undeclared_or_missing_edit:symbols:51",
+            "undeclared_or_missing_edit:captions:313",
+            "incomplete_or_invalid_evidence:Caption precondition or nonzero edit missing"
+          ],
+          "cdxml": [
+            "undeclared_or_missing_edit:curves:331",
+            "undeclared_or_missing_edit:symbols:49",
+            "undeclared_or_missing_edit:symbols:50",
+            "undeclared_or_missing_edit:symbols:51",
+            "undeclared_or_missing_edit:captions:313",
+            "incomplete_or_invalid_evidence:Caption precondition or nonzero edit missing"
+          ]
+        }
+      },
+      {
+        "case": "noop_curves",
+        "statuses": {
+          "cdx": "failed",
+          "cdxml": "failed"
+        },
+        "issues": {
+          "cdx": [
+            "undeclared_or_missing_edit:curves:331",
+            "undeclared_or_missing_edit:curves:331"
+          ],
+          "cdxml": [
+            "undeclared_or_missing_edit:curves:331",
+            "undeclared_or_missing_edit:curves:331"
+          ]
+        }
+      },
+      {
+        "case": "noop_symbols",
+        "statuses": {
+          "cdx": "failed",
+          "cdxml": "failed"
+        },
+        "issues": {
+          "cdx": [
+            "undeclared_or_missing_edit:symbols:49",
+            "undeclared_or_missing_edit:symbols:50",
+            "undeclared_or_missing_edit:symbols:51",
+            "undeclared_or_missing_edit:symbols:50",
+            "undeclared_or_missing_edit:symbols:51"
+          ],
+          "cdxml": [
+            "undeclared_or_missing_edit:symbols:49",
+            "undeclared_or_missing_edit:symbols:50",
+            "undeclared_or_missing_edit:symbols:51",
+            "undeclared_or_missing_edit:symbols:50",
+            "undeclared_or_missing_edit:symbols:51"
+          ]
+        }
+      },
+      {
+        "case": "noop_captions",
+        "statuses": {
+          "cdx": "failed",
+          "cdxml": "failed"
+        },
+        "issues": {
+          "cdx": [
+            "undeclared_or_missing_edit:captions:313",
+            "incomplete_or_invalid_evidence:Caption precondition or nonzero edit missing"
+          ],
+          "cdxml": [
+            "undeclared_or_missing_edit:captions:313",
+            "incomplete_or_invalid_evidence:Caption precondition or nonzero edit missing"
+          ]
+        }
+      },
+      {
+        "case": "wrong_hydrogens",
+        "statuses": {
+          "cdx": "failed",
+          "cdxml": "failed"
+        },
+        "issues": {
+          "cdx": [
+            "undeclared_or_missing_edit:atoms:13",
+            "undeclared_or_missing_edit:atoms:13"
+          ],
+          "cdxml": [
+            "undeclared_or_missing_edit:atoms:13",
+            "undeclared_or_missing_edit:atoms:13"
+          ]
+        }
+      },
+      {
+        "case": "wrong_bond_stereo",
+        "statuses": {
+          "cdx": "failed",
+          "cdxml": "failed"
+        },
+        "issues": {
+          "cdx": [
+            "undeclared_or_missing_edit:bonds:24",
+            "undeclared_or_missing_edit:bonds:24"
+          ],
+          "cdxml": [
+            "undeclared_or_missing_edit:bonds:24",
+            "undeclared_or_missing_edit:bonds:24"
+          ]
+        }
+      },
+      {
+        "case": "missing_arrowhead",
+        "statuses": {
+          "cdx": "failed",
+          "cdxml": "failed"
+        },
+        "issues": {
+          "cdx": [
+            "incomplete_or_invalid_evidence:Incomplete curves properties"
+          ],
+          "cdxml": [
+            "incomplete_or_invalid_evidence:Incomplete curves properties"
+          ]
+        }
+      },
+      {
+        "case": "fractional_charge",
+        "statuses": {
+          "cdx": "failed",
+          "cdxml": "failed"
+        },
+        "issues": {
+          "cdx": [
+            "undeclared_or_missing_edit:atoms:13",
+            "incomplete_or_invalid_evidence:Charge edit precondition/nonzero missing"
+          ],
+          "cdxml": [
+            "undeclared_or_missing_edit:atoms:13",
+            "incomplete_or_invalid_evidence:Charge edit precondition/nonzero missing"
+          ]
+        }
+      },
+      {
+        "case": "missing_bonds",
+        "statuses": {
+          "cdx": "failed",
+          "cdxml": "failed"
+        },
+        "issues": {
+          "cdx": [
+            "incomplete_or_invalid_evidence:Missing object collection: bonds"
+          ],
+          "cdxml": [
+            "incomplete_or_invalid_evidence:Missing object collection: bonds"
+          ]
+        }
+      },
+      {
+        "case": "reopen_only_100pt",
+        "statuses": {
+          "cdx": "failed",
+          "cdxml": "failed"
+        },
+        "issues": {
+          "cdx": [
+            "undeclared_or_missing_edit:atoms:13",
+            "undeclared_or_missing_edit:atoms:13"
+          ],
+          "cdxml": [
+            "undeclared_or_missing_edit:atoms:13",
+            "undeclared_or_missing_edit:atoms:13"
+          ]
+        }
+      }
+    ],
+    "cli_failure_control": {
+      "returncode": 1,
+      "stderr": "",
+      "report_statuses": {
+        "cdx": "failed",
+        "cdxml": "failed"
+      },
+      "exact_verifier_main_executed": true,
+      "filesystem_reads_and_writes_virtualized": true
+    },
+    "provenance_positive": {
+      "receipt_sha256": "5f734c590b04c593f620c71afe534741db908bd9f3126717504f1ff44709a765",
+      "source": "ChemDraw native Clean(true), bound to completed local execution receipt",
+      "environment": {
+        "application_build": "26.0.0.6141",
+        "interop_version": "22.0.0.0",
+        "executable_sha256": "f5383228898b6e6be08abded9f6db0909d0841a2f6a5bbef50ba00f44af8a084",
+        "interop_sha256": "ecaed777a648df79927c79c3d7a33e1a813c6b027c4111396b7139fdda81959a",
+        "executor_sha256": "6c798634a06853987c976f358fa5def35847c6f003b84d8d009435956b5e35bf",
+        "bridge_sha256": "52eb2fe1e66d9b13aba84dfba010959ddcb8fcf6109b919a498324400681b73c",
+        "owned_pid": 16404,
+        "hwnd_bound_pid": 16404
+      }
+    },
+    "provenance_controls": [
+      {
+        "case": "raw_seed",
+        "verdict": "rejected",
+        "error": "Missing completed native geometry execution receipt"
+      },
+      {
+        "case": "changed_output_bytes",
+        "verdict": "rejected",
+        "error": "Seed receipt hash mismatch"
+      },
+      {
+        "case": "wrong_input_hash",
+        "verdict": "rejected",
+        "error": "Seed receipt hash mismatch"
+      },
+      {
+        "case": "wrong_build_hash",
+        "verdict": "rejected",
+        "error": "Seed receipt hash mismatch"
+      },
+      {
+        "case": "wrong_style",
+        "verdict": "rejected",
+        "error": "Seed receipt hash mismatch"
+      },
+      {
+        "case": "wrong_text_run_with_matching_hash",
+        "verdict": "rejected",
+        "error": "Seed receipt hash mismatch"
+      },
+      {
+        "case": "wrong_state_manifest",
+        "verdict": "rejected",
+        "error": "Caller manifest differs from executed seed manifest"
+      }
+    ],
+    "input_files_unchanged": true,
+    "chemdraw_launched": false
+  },
+  "composer_reaudit": {
+    "scope": "Read-only source/native-file review and pure Python scene replay; no native application launched, no holdout selected",
+    "source": "<review-root>\\source",
+    "checks": [
+      {
+        "case": "independent_array_and_port_order_seed_0",
+        "result": {
+          "status": "pass",
+          "equivalence": "strict supplied identity bijection",
+          "differences": {
+            "relationships_equal": true,
+            "max_atom_displacement_pt": 0.0,
+            "max_lone_pair_displacement_pt": 0.0,
+            "max_curve_control_displacement_pt": 0.0,
+            "max_connector_displacement_pt": 0.0,
+            "max_caption_displacement_pt": 0.0
+          },
+          "symmetry_permutation": null
+        }
+      },
+      {
+        "case": "independent_array_and_port_order_seed_1",
+        "result": {
+          "status": "pass",
+          "equivalence": "strict supplied identity bijection",
+          "differences": {
+            "relationships_equal": true,
+            "max_atom_displacement_pt": 0.0,
+            "max_lone_pair_displacement_pt": 0.0,
+            "max_curve_control_displacement_pt": 0.0,
+            "max_connector_displacement_pt": 0.0,
+            "max_caption_displacement_pt": 0.0
+          },
+          "symmetry_permutation": null
+        }
+      },
+      {
+        "case": "independent_array_and_port_order_seed_7",
+        "result": {
+          "status": "pass",
+          "equivalence": "strict supplied identity bijection",
+          "differences": {
+            "relationships_equal": true,
+            "max_atom_displacement_pt": 0.0,
+            "max_lone_pair_displacement_pt": 0.0,
+            "max_curve_control_displacement_pt": 0.0,
+            "max_connector_displacement_pt": 0.0,
+            "max_caption_displacement_pt": 0.0
+          },
+          "symmetry_permutation": null
+        }
+      },
+      {
+        "case": "independent_array_and_port_order_seed_23",
+        "result": {
+          "status": "pass",
+          "equivalence": "strict supplied identity bijection",
+          "differences": {
+            "relationships_equal": true,
+            "max_atom_displacement_pt": 0.0,
+            "max_lone_pair_displacement_pt": 0.0,
+            "max_curve_control_displacement_pt": 0.0,
+            "max_connector_displacement_pt": 0.0,
+            "max_caption_displacement_pt": 0.0
+          },
+          "symmetry_permutation": null
+        }
+      },
+      {
+        "case": "independent_array_and_port_order_seed_101",
+        "result": {
+          "status": "pass",
+          "equivalence": "strict supplied identity bijection",
+          "differences": {
+            "relationships_equal": true,
+            "max_atom_displacement_pt": 0.0,
+            "max_lone_pair_displacement_pt": 0.0,
+            "max_curve_control_displacement_pt": 0.0,
+            "max_connector_displacement_pt": 0.0,
+            "max_caption_displacement_pt": 0.0
+          },
+          "symmetry_permutation": null
+        }
+      },
+      {
+        "case": "independent_array_and_port_order_seed_313",
+        "result": {
+          "status": "pass",
+          "equivalence": "strict supplied identity bijection",
+          "differences": {
+            "relationships_equal": true,
+            "max_atom_displacement_pt": 0.0,
+            "max_lone_pair_displacement_pt": 0.0,
+            "max_curve_control_displacement_pt": 0.0,
+            "max_connector_displacement_pt": 0.0,
+            "max_caption_displacement_pt": 0.0
+          },
+          "symmetry_permutation": null
+        }
+      },
+      {
+        "case": "independent_array_and_port_order_seed_4096",
+        "result": {
+          "status": "pass",
+          "equivalence": "strict supplied identity bijection",
+          "differences": {
+            "relationships_equal": true,
+            "max_atom_displacement_pt": 0.0,
+            "max_lone_pair_displacement_pt": 0.0,
+            "max_curve_control_displacement_pt": 0.0,
+            "max_connector_displacement_pt": 0.0,
+            "max_caption_displacement_pt": 0.0
+          },
+          "symmetry_permutation": null
+        }
+      },
+      {
+        "case": "published_relabel_and_shuffle",
+        "result": {
+          "status": "pass",
+          "equivalence": "strict supplied identity bijection",
+          "differences": {
+            "relationships_equal": true,
+            "max_atom_displacement_pt": 0.0,
+            "max_lone_pair_displacement_pt": 0.0,
+            "max_curve_control_displacement_pt": 0.0,
+            "max_connector_displacement_pt": 0.0,
+            "max_caption_displacement_pt": 0.0
+          },
+          "symmetry_permutation": null
+        }
+      },
+      {
+        "case": "independently_rotated_each_component",
+        "result": {
+          "status": "pass",
+          "equivalence": "strict supplied identity bijection",
+          "differences": {
+            "relationships_equal": true,
+            "max_atom_displacement_pt": 1.593251673292845e-11,
+            "max_lone_pair_displacement_pt": 8.935859572479662e-12,
+            "max_curve_control_displacement_pt": 8.058544560523832e-12,
+            "max_connector_displacement_pt": 5.8548721426632255e-12,
+            "max_caption_displacement_pt": 9.777068044058979e-12
+          },
+          "symmetry_permutation": null
+        }
+      },
+      {
+        "case": "prior_equal_length_flow_reversal",
+        "max_control_displacement_pt": 0.0
+      },
+      {
+        "case": "reparse_and_recompose_proton-transfer",
+        "result": {
+          "status": "pass",
+          "equivalence": "strict supplied identity bijection",
+          "differences": {
+            "relationships_equal": true,
+            "max_atom_displacement_pt": 0.0,
+            "max_lone_pair_displacement_pt": 0.0,
+            "max_curve_control_displacement_pt": 0.0,
+            "max_connector_displacement_pt": 0.0,
+            "max_caption_displacement_pt": 0.0
+          },
+          "symmetry_permutation": null
+        },
+        "scope": "native intrinsic geometry receipt + scene fit only; native composed page not run"
+      },
+      {
+        "case": "reparse_and_recompose_electrocyclization",
+        "result": {
+          "status": "pass",
+          "equivalence": "strict supplied identity bijection",
+          "differences": {
+            "relationships_equal": true,
+            "max_atom_displacement_pt": 0.0,
+            "max_lone_pair_displacement_pt": 0.0,
+            "max_curve_control_displacement_pt": 0.0,
+            "max_connector_displacement_pt": 0.0,
+            "max_caption_displacement_pt": 0.0
+          },
+          "symmetry_permutation": null
+        },
+        "scope": "native intrinsic geometry receipt + scene fit only; native composed page not run"
+      },
+      {
+        "case": "reparse_and_recompose_proton-transfer-renamed",
+        "result": {
+          "status": "pass",
+          "equivalence": "strict supplied identity bijection",
+          "differences": {
+            "relationships_equal": true,
+            "max_atom_displacement_pt": 0.0,
+            "max_lone_pair_displacement_pt": 0.0,
+            "max_curve_control_displacement_pt": 0.0,
+            "max_connector_displacement_pt": 0.0,
+            "max_caption_displacement_pt": 0.0
+          },
+          "symmetry_permutation": null
+        },
+        "scope": "native intrinsic geometry receipt + scene fit only; native composed page not run"
+      },
+      {
+        "case": "fresh_native_proton_transfer_regeneration_comparison",
+        "result": {
+          "status": "pass",
+          "equivalence": "strict supplied identity bijection",
+          "differences": {
+            "relationships_equal": true,
+            "max_atom_displacement_pt": 0.0,
+            "max_lone_pair_displacement_pt": 0.0,
+            "max_curve_control_displacement_pt": 0.0,
+            "max_connector_displacement_pt": 0.0,
+            "max_caption_displacement_pt": 0.0
+          },
+          "symmetry_permutation": null
+        }
+      }
+    ],
+    "scene_comparator_negative_controls": [
+      {
+        "case": "missing_final_curve_control",
+        "expected": "failed",
+        "actual": {
+          "status": "pass",
+          "equivalence": "strict supplied identity bijection",
+          "differences": {
+            "relationships_equal": true,
+            "max_atom_displacement_pt": 0.0,
+            "max_lone_pair_displacement_pt": 0.0,
+            "max_curve_control_displacement_pt": 0.0,
+            "max_connector_displacement_pt": 0.0,
+            "max_caption_displacement_pt": 0.0
+          },
+          "symmetry_permutation": null
+        }
+      },
+      {
+        "case": "extra_connector",
+        "expected": "failed",
+        "actual": {
+          "status": "pass",
+          "equivalence": "strict supplied identity bijection",
+          "differences": {
+            "relationships_equal": true,
+            "max_atom_displacement_pt": 0.0,
+            "max_lone_pair_displacement_pt": 0.0,
+            "max_curve_control_displacement_pt": 0.0,
+            "max_connector_displacement_pt": 0.0,
+            "max_caption_displacement_pt": 0.0
+          },
+          "symmetry_permutation": null
+        }
+      },
+      {
+        "case": "changed_scene_bond_order",
+        "expected": "failed",
+        "actual": {
+          "status": "pass",
+          "equivalence": "strict supplied identity bijection",
+          "differences": {
+            "relationships_equal": true,
+            "max_atom_displacement_pt": 0.0,
+            "max_lone_pair_displacement_pt": 0.0,
+            "max_curve_control_displacement_pt": 0.0,
+            "max_connector_displacement_pt": 0.0,
+            "max_caption_displacement_pt": 0.0
+          },
+          "symmetry_permutation": null
+        }
+      },
+      {
+        "case": "changed_scene_atom_charge",
+        "expected": "failed",
+        "actual": {
+          "status": "pass",
+          "equivalence": "strict supplied identity bijection",
+          "differences": {
+            "relationships_equal": true,
+            "max_atom_displacement_pt": 0.0,
+            "max_lone_pair_displacement_pt": 0.0,
+            "max_curve_control_displacement_pt": 0.0,
+            "max_connector_displacement_pt": 0.0,
+            "max_caption_displacement_pt": 0.0
+          },
+          "symmetry_permutation": null
+        }
+      }
+    ],
+    "runtime_oracle_imports_found": []
+  },
+  "mask_readback_negative_controls": {
+    "scope": "Fault injection in color-copy readback equivalence subcheck only; not a demonstrated full-mask gate bypass or native execution.",
+    "controls": [
+      {
+        "case": "changed_curve_width",
+        "field": "ArrowheadWidth",
+        "before": "163",
+        "after": "999",
+        "same_records": true,
+        "expected_same_records": false
+      },
+      {
+        "case": "changed_curve_type",
+        "field": "CurveType",
+        "before": "8",
+        "after": "0",
+        "same_records": true,
+        "expected_same_records": false
+      },
+      {
+        "case": "changed_run_font",
+        "field": "font",
+        "before": "3",
+        "after": "999",
+        "same_records": true,
+        "expected_same_records": false
+      },
+      {
+        "case": "missing_curve_head",
+        "field": "ArrowheadHead",
+        "before": "Full",
+        "after": "None",
+        "same_records": false,
+        "expected_same_records": false
+      }
+    ]
+  },
+  "mask_replay": {
+    "S1": "pass",
+    "R1": "pass",
+    "M1": "failed",
+    "objects": [
+      10,
+      12,
+      16
+    ],
+    "M1_zero_gap_object_pairs": [
+      [
+        "17",
+        "32"
+      ],
+      [
+        "25",
+        "31"
+      ]
+    ],
+    "third_object_contact_exemption": "Source-inspection gap; no full-gate bypass claimed"
+  },
+  "acceptance": {
+    "corrections": "partial_acceptance",
+    "P0": "not_accepted",
+    "M1": "native_quality_failed",
+    "M2": "no_new_scored_run",
+    "freeze": "not_started",
+    "holdout": "not_started",
+    "manual_active_correction_seconds": null,
+    "owner_physical_review": "pending"
+  }
+}
