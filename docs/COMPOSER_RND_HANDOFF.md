@@ -8,7 +8,7 @@ The user accepted c92a918 as an R&D delivery, not as an accepted ChemDraw produc
 
 Two trust-boundary aspects of the existing P2 remain in that implementation: calibration is not bound to the full native style, and an independent readback subcheck can trust an enlarged scene allowance. This phase adds a separately tested calibration/oracle prototype; it does not silently patch or qualify the existing runtime.
 
-The latest private pilot archive declares 38 native originals. Source summaries and checksums are not substitutes for actually receiving and hashing those bytes. Record exact receipt success or the current retrieval blocker separately. Do not publish the private archive, change sharing/connection configuration or create alternate native output to fill this gap.
+The private pilot archive has now been independently received and verified: 38/38 native outputs and 507/507 content-manifest members match their hashes. The [native receipt addendum](reviews/2026-09-13-c92a918-native-receipt.md) closes the earlier transfer gap. Stored edit/readback replay is consistent, but final native visual quality still fails; this is not a new native run or Quality Oracle v1 integration. Keep raw assets private and preserve the closed experiment.
 
 ## Work order
 

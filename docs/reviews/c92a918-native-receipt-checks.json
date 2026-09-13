@@ -1,0 +1,395 @@
+{
+  "version": "native-receipt-acceptance/1.0",
+  "date": "2026-09-13",
+  "implementation_commit": "c92a91881a017d3d3d4a619dce77b840013a82cc",
+  "architecture_prototype_commit": "891df38b567f46b71e3687f51121f3fe6b24a494",
+  "decision": "native_evidence_receipt_accepted_project_visual_and_gold_not_accepted",
+  "supersedes_only": "Earlier not-received status for this exact private archive; old dated receipts remain unchanged.",
+  "package_integrity": {
+    "zip_bytes": 1954700,
+    "zip_sha256": "f0265ff53be8709fb098743c9de8534b44b57e2183df0b9447c1a6eacc9c57e0",
+    "zip_entries": 509,
+    "zip_crc": "pass",
+    "content_manifest_entries_verified": 507,
+    "unlisted_entries": [
+      "README.txt",
+      "content-manifest.json"
+    ],
+    "native_originals_verified": 38
+  },
+  "native_format_counts": {
+    ".cdxml": 24,
+    ".cdx": 6,
+    ".jpg": 3,
+    ".png": 5
+  },
+  "readback_replays": [
+    {
+      "attempt": "first",
+      "readback_gate": "failed",
+      "full_quality_gate": "failed",
+      "native_warnings": [
+        0,
+        0,
+        0
+      ],
+      "fingerprints_equal": true,
+      "issues": [
+        "native_anchor:nitrogen_recovery:target"
+      ],
+      "glyph_bbox_failures": 0
+    },
+    {
+      "attempt": "repair-1",
+      "readback_gate": "pass",
+      "full_quality_gate": "blocked_required_native_masks_visible_head_ports_and_owner_review",
+      "native_warnings": [
+        0,
+        0,
+        0
+      ],
+      "fingerprints_equal": true,
+      "issues": [],
+      "glyph_bbox_failures": 0
+    },
+    {
+      "attempt": "repair-2",
+      "readback_gate": "pass",
+      "full_quality_gate": "failed",
+      "native_warnings": [
+        0,
+        0,
+        0
+      ],
+      "fingerprints_equal": true,
+      "issues": [],
+      "glyph_bbox_failures": 1
+    }
+  ],
+  "edit_replays": [
+    {
+      "attempt": "first",
+      "source_format": "cdx",
+      "status": "pass",
+      "issues": [],
+      "actual_native_readback_graph_equal": true,
+      "journal_artifacts_hash_bound": true,
+      "scope": "Stored nonzero atom/LP/control-point/caption edit journals and disk readback; not a fresh native operation or human correction."
+    },
+    {
+      "attempt": "first",
+      "source_format": "cdxml",
+      "status": "pass",
+      "issues": [],
+      "actual_native_readback_graph_equal": true,
+      "journal_artifacts_hash_bound": true,
+      "scope": "Stored nonzero atom/LP/control-point/caption edit journals and disk readback; not a fresh native operation or human correction."
+    },
+    {
+      "attempt": "repair-1",
+      "source_format": "cdx",
+      "status": "pass",
+      "issues": [],
+      "actual_native_readback_graph_equal": true,
+      "journal_artifacts_hash_bound": true,
+      "scope": "Stored nonzero atom/LP/control-point/caption edit journals and disk readback; not a fresh native operation or human correction."
+    },
+    {
+      "attempt": "repair-1",
+      "source_format": "cdxml",
+      "status": "pass",
+      "issues": [],
+      "actual_native_readback_graph_equal": true,
+      "journal_artifacts_hash_bound": true,
+      "scope": "Stored nonzero atom/LP/control-point/caption edit journals and disk readback; not a fresh native operation or human correction."
+    },
+    {
+      "attempt": "repair-2",
+      "source_format": "cdx",
+      "status": "pass",
+      "issues": [],
+      "actual_native_readback_graph_equal": true,
+      "journal_artifacts_hash_bound": true,
+      "scope": "Stored nonzero atom/LP/control-point/caption edit journals and disk readback; not a fresh native operation or human correction."
+    },
+    {
+      "attempt": "repair-2",
+      "source_format": "cdxml",
+      "status": "pass",
+      "issues": [],
+      "actual_native_readback_graph_equal": true,
+      "journal_artifacts_hash_bound": true,
+      "scope": "Stored nonzero atom/LP/control-point/caption edit journals and disk readback; not a fresh native operation or human correction."
+    }
+  ],
+  "visible_ink_replays": [
+    {
+      "attempt": "repair-1",
+      "status": "failed",
+      "issues": [
+        "visible_native_head_port:nitrogen_recovery",
+        "native_mask_clearance",
+        "unclassified_native_ink_outside_named_contacts"
+      ],
+      "clearance_failures": [
+        {
+          "objects": [
+            "13",
+            "22"
+          ],
+          "kinds": [
+            "atom_label",
+            "symbol"
+          ],
+          "conservative_ink_gap_pt": 1.379960273870904,
+          "required_pt": 1.728
+        },
+        {
+          "objects": [
+            "13",
+            "42"
+          ],
+          "kinds": [
+            "atom_label",
+            "curve"
+          ],
+          "conservative_ink_gap_pt": 2.1958155719142756,
+          "required_pt": 2.592
+        },
+        {
+          "objects": [
+            "16",
+            "43"
+          ],
+          "kinds": [
+            "b",
+            "curve"
+          ],
+          "conservative_ink_gap_pt": 1.304280477754059,
+          "required_pt": 2.592
+        },
+        {
+          "objects": [
+            "17",
+            "43"
+          ],
+          "kinds": [
+            "b",
+            "curve"
+          ],
+          "conservative_ink_gap_pt": 1.379960273870904,
+          "required_pt": 2.592
+        },
+        {
+          "objects": [
+            "34",
+            "37"
+          ],
+          "kinds": [
+            "atom_label",
+            "symbol"
+          ],
+          "conservative_ink_gap_pt": 0.0,
+          "required_pt": 1.728
+        }
+      ],
+      "unclassified_ink_pixels": 8,
+      "native_arrowhead_tips": [
+        {
+          "flow": "oxygen_donation",
+          "native_id": "42",
+          "head_extension_pt": 4.0799219698381535,
+          "visible_tip_native_pt": [
+            106.25992196983816,
+            94.08
+          ],
+          "target_port_deviation_pt": 2.100078030161839,
+          "head_size": "650",
+          "head_width": "163"
+        },
+        {
+          "flow": "nitrogen_recovery",
+          "native_id": "43",
+          "head_extension_pt": 4.016550209207709,
+          "visible_tip_native_pt": [
+            130.35138648706652,
+            91.3279650422064
+          ],
+          "target_port_deviation_pt": null,
+          "head_size": "650",
+          "head_width": "163"
+        }
+      ],
+      "silhouette_difference_fraction": 0.007367021600985522
+    },
+    {
+      "attempt": "repair-2",
+      "status": "failed",
+      "issues": [
+        "visible_native_head_port:nitrogen_recovery",
+        "native_mask_clearance",
+        "unclassified_native_ink_outside_named_contacts"
+      ],
+      "clearance_failures": [
+        {
+          "objects": [
+            "13",
+            "22"
+          ],
+          "kinds": [
+            "atom_label",
+            "symbol"
+          ],
+          "conservative_ink_gap_pt": 1.698248212136141,
+          "required_pt": 1.728
+        },
+        {
+          "objects": [
+            "13",
+            "42"
+          ],
+          "kinds": [
+            "atom_label",
+            "curve"
+          ],
+          "conservative_ink_gap_pt": 2.5352170562350276,
+          "required_pt": 2.592
+        },
+        {
+          "objects": [
+            "16",
+            "43"
+          ],
+          "kinds": [
+            "b",
+            "curve"
+          ],
+          "conservative_ink_gap_pt": 2.3399326383028374,
+          "required_pt": 2.592
+        },
+        {
+          "objects": [
+            "17",
+            "43"
+          ],
+          "kinds": [
+            "b",
+            "curve"
+          ],
+          "conservative_ink_gap_pt": 2.3399326383028374,
+          "required_pt": 2.592
+        }
+      ],
+      "unclassified_ink_pixels": 1,
+      "native_arrowhead_tips": [
+        {
+          "flow": "oxygen_donation",
+          "native_id": "42",
+          "head_extension_pt": 4.0799219698381535,
+          "visible_tip_native_pt": [
+            106.25992196983816,
+            94.08
+          ],
+          "target_port_deviation_pt": 2.100078030161839,
+          "head_size": "650",
+          "head_width": "163"
+        },
+        {
+          "flow": "nitrogen_recovery",
+          "native_id": "43",
+          "head_extension_pt": 4.016556783950699,
+          "visible_tip_native_pt": [
+            130.35161319473656,
+            91.32837088996766
+          ],
+          "target_port_deviation_pt": null,
+          "head_size": "650",
+          "head_width": "163"
+        }
+      ],
+      "silhouette_difference_fraction": 0.0069812082013913515
+    }
+  ],
+  "corpus_bundles": {
+    "bundle": {
+      "checker": {
+        "status": "pass",
+        "mechanisms": [
+          {
+            "representable": "pass",
+            "semantic_valid": "bounded_pass",
+            "states": 2,
+            "steps": 1,
+            "flows": 2,
+            "runtime_projection": "unverified",
+            "native_verified": "unverified",
+            "scientific_review": "unreviewed",
+            "sample_id": "development-alkoxide-ammonium-01"
+          }
+        ],
+        "local_assets_hash_checked": 48,
+        "external_asset_bindings_only": 0,
+        "gold_samples": 0,
+        "fresh_native_execution": false
+      },
+      "tier": "ungraded",
+      "split": "development",
+      "exposure": "exposed_and_tuned",
+      "annotation_observations": 39,
+      "correction_records": 2
+    },
+    "bundle-owner-rejection": {
+      "checker": {
+        "status": "pass",
+        "mechanisms": [
+          {
+            "representable": "pass",
+            "semantic_valid": "bounded_pass",
+            "states": 2,
+            "steps": 1,
+            "flows": 2,
+            "runtime_projection": "unverified",
+            "native_verified": "unverified",
+            "scientific_review": "unreviewed",
+            "sample_id": "development-alkoxide-ammonium-01"
+          }
+        ],
+        "local_assets_hash_checked": 50,
+        "external_asset_bindings_only": 0,
+        "gold_samples": 0,
+        "fresh_native_execution": false
+      },
+      "tier": "ungraded",
+      "split": "development",
+      "exposure": "exposed_and_tuned",
+      "annotation_observations": 42,
+      "correction_records": 2
+    }
+  },
+  "review_evidence": {
+    "owner_visual_decision": "rejected",
+    "reviewed_pdf_sha256": "b3ad72adcc873132791ad7d18ef20dfcdc3620d312d0c8f44389b1b71feafb2a",
+    "native_png_sha256": "ed92f803bab16f375955d3ea3a922d002edfa3e03d728d2dab594067c3ba89bb",
+    "inspected_native_jpeg_sha256": "6a6401f95de2c5ccc17e4bbfeb33d2c9bccc9d8e1335477fce390ded45bcf1ed",
+    "physical_size_approval": false,
+    "independent_scientific_approval": false
+  },
+  "gates": {
+    "archive_received": true,
+    "native_originals_independently_hashed": 38,
+    "new_native_execution": false,
+    "full_object_control": "not_qualified",
+    "P0_C": "failed",
+    "original_runtime_P2": "still_open",
+    "native_quality_oracle_v1_integration": "no_evidence_in_received_package",
+    "M1": "historical_failure_development_allowed",
+    "M2": "unscored_locked_against_tuning_training",
+    "holdout": "not_selected",
+    "gold": 0,
+    "human_active_correction_seconds": null
+  },
+  "originals_modified": false,
+  "business_code_modified": false,
+  "unit_suites_rerun": false,
+  "rights": "Original private assets retained privately; no new training or corpus redistribution grant."
+}

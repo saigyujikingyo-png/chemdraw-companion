@@ -64,3 +64,5 @@ Run the pixel validator with an independently supplied reference: python contrac
 Synthetic fixture generation is explicit and refuses an existing output directory. Test images and geometric annotations are never native ChemDraw renders, gold labels, M2 variants or training data. The adversarial receipt identifies which measurements were actually exercised and which native qualification gates remain outstanding.
 
 The [first-delivery verification](QUALITY_ORACLE_V1_VALIDATION.md) records actual checks and remaining native gates; the [synthetic controls](../examples/quality-v1/README.md) are separately reproducible.
+
+Subsequent evidence update: the [c92 native receipt addendum](reviews/2026-09-13-c92a918-native-receipt.md) independently verifies the previously missing private originals. This closes file receipt only; native visual quality and native v1 integration remain unaccepted.
