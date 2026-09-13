@@ -1,0 +1,346 @@
+{
+  "version": "p0b-native-semantic-phase-implementation-receipt/1.0",
+  "created_utc": "2026-09-13T17:16:28.317770+00:00",
+  "source_commit": "2d6ac0d8a510d912f8e03157cf182cd6ce403683",
+  "freeze_commit": "56ace46880bf946e058b31695791e358398fec87",
+  "source_freeze_sha256": "e12acc3f84333125476d47a1c2187873d03378da56ed3c0117324dbc1006ee1f",
+  "profile_sha256": "2f216d58e5147480766479006ea65be29d72bef078a043604689ce5a02f1a9e9",
+  "source_file_count": 33,
+  "input_file_count": 24,
+  "new_dependencies": false,
+  "native_revisions": [
+    {
+      "revision": "r1",
+      "source_commit": "167375a413cc0553a52a483f7037b6e2c0ee3d9c",
+      "source_freeze_sha256": "0aaaf49434941776d4a88d627d47dea01bd9e58f8de769dac8a5e97315204de0",
+      "native_status": "failed",
+      "native_receipt_sha256": "a501cf68cf802307a21fd0c440770a3925b4f43fdcc1e215bf89ecbf0df6744f",
+      "worker_receipt_sha256": "1c4ef307c388f7ad97ea243ee236a65b7cf2fe7d50f5b063cd2a582a3a8bffb2",
+      "events_sha256": "ec1e37217b4a7788534c1666f4508e204efe5aaf803588c4765514f3df137c13",
+      "complete_controls": 0,
+      "disposition": "First failure preserved: post-Close live HWND assertion, before first independent reopen."
+    },
+    {
+      "revision": "r2",
+      "source_commit": "7ecabf77f0689b67c398fcfdd47c5876b50b0fae",
+      "source_freeze_sha256": "df942fedf8b9f12922b0c99cbf424d061cfd93c93a8a25106f85ef64446d6d1d",
+      "native_status": "complete",
+      "native_receipt_sha256": "07de8e740558058de92006fc111a1080e1600f2273fd904b41a6a5712a602df2",
+      "worker_receipt_sha256": "ede6261aca7361ebcc177c74eccf32df92b99ee38a92454bb1ac1f117091341c",
+      "events_sha256": "7ae56fe2e5147096060789253f809120639cc00843033f63805a240fb405a28d",
+      "complete_controls": 20,
+      "disposition": "Completed candidate controls preserved; unexercised fallback admission was subsequently narrowed. Preliminary aggregate is not final production admission."
+    },
+    {
+      "revision": "r3",
+      "source_commit": "e3a79ac2ce4b00750ea885b64a5bb457d556054d",
+      "source_freeze_sha256": "f9d1eb76e918344d9a2f90efd9d0d4b9f35853f1b402ee75e3402bb97e04a96c",
+      "native_status": "complete",
+      "native_receipt_sha256": "2064d75d4ef658d4edd756749831bc8bf2f85a908814684698dfe78a39c54337",
+      "worker_receipt_sha256": "057a52a20f626b26383bea78856260fa5c91c5fd7a1b2c164c84d99e827eb757",
+      "events_sha256": "420c2e456a56437d34a0e518105120c5f44f414582be4ea8f8dab415276d81d5",
+      "complete_controls": 20,
+      "disposition": "Fallback branches removed; subsequent independent review identified query-name and complete-admission gaps. Preserved, not final production admission."
+    },
+    {
+      "revision": "r4",
+      "source_commit": "2d6ac0d8a510d912f8e03157cf182cd6ce403683",
+      "source_freeze_sha256": "e12acc3f84333125476d47a1c2187873d03378da56ed3c0117324dbc1006ee1f",
+      "native_status": "complete",
+      "native_receipt_sha256": "5d6882e2f6d94b34ccc51432a656e46c637308cc3e13508db2b336fae24320fb",
+      "worker_receipt_sha256": "28bd0139ea91b0ec643cce8d29056c88704486aa9d4c6c7ca72d9604f2cab277",
+      "events_sha256": "06648ae7c67fb61f295ed523ad2087fdce5b42d65fc6b814643e206358c7df7d",
+      "complete_controls": 20,
+      "disposition": "Final measured-branch source; independent controller review pending."
+    }
+  ],
+  "final_worker_seconds": 35.32799999997951,
+  "final_controls": 20,
+  "final_atoms": 66,
+  "final_control_outcomes": {
+    "diagnostic_observation_only": 2,
+    "qualification_match": 16,
+    "expected_scope_refusal": 2
+  },
+  "final_matching_control_atoms": 57,
+  "final_distinct_native_processes": 40,
+  "final_reopened_h_resolution": {
+    "selected_formula_api": 37,
+    "explicit_serialized_noncarbon_field": 20,
+    "unknown": 9
+  },
+  "final_native_field_presence": {
+    "present": 22,
+    "missing": 44
+  },
+  "raw_chemical_export_and_full_nested_label_invariance": true,
+  "expected_mutations_preserve_observations": true,
+  "unnormalized_conflict_test": "Exact frozen state-003.cdxml is refused by the pure reader; native normalization to H4 remains diagnostic-only.",
+  "warning_scope": "Methane warning 1 in both phases; all other controls warning 0; warning count is not acceptance.",
+  "label_only_and_carbon_field_only_resolution": "not qualified and refused in final source",
+  "unchanged_preexisting_native_processes": true,
+  "preexisting_native_process_count": 5,
+  "runtime_regression": {
+    "source_commit": "2d6ac0d8a510d912f8e03157cf182cd6ce403683",
+    "passed": 67,
+    "excluded": 12,
+    "unscheduled": 21,
+    "blocked_reserved_payload_reads": 0
+  },
+  "measured_admitted_branch_count": 19,
+  "full_control_evidence_file_count": 161,
+  "offline_admission_checks": {
+    "version": "native-semantic-admission-checks/1.0",
+    "source_commit": "2d6ac0d8a510d912f8e03157cf182cd6ce403683",
+    "source_freeze_sha256": "e12acc3f84333125476d47a1c2187873d03378da56ed3c0117324dbc1006ee1f",
+    "native_calls": 0,
+    "checks": [
+      {
+        "control": "complete_real_control_evidence",
+        "result": "accepted_for_test",
+        "admitted_branches": 19
+      },
+      {
+        "control": "missing_evidence_member",
+        "result": "rejected",
+        "reason": "NATIVE_SEMANTIC_CONTROL_EVIDENCE_COVERAGE_MISMATCH"
+      },
+      {
+        "control": "wrong_native_file_hash",
+        "result": "rejected",
+        "reason": "NATIVE_SOURCE_MISMATCH: native-r4/clean/state-000-selection-after.cdxml"
+      },
+      {
+        "control": "invented_branch",
+        "result": "rejected",
+        "reason": "NATIVE_SEMANTIC_BRANCH_COVERAGE_MISMATCH"
+      },
+      {
+        "control": "two_key_summary",
+        "result": "rejected",
+        "reason": "NATIVE_SEMANTIC_CONTROL_RECEIPT_INCOMPLETE"
+      }
+    ],
+    "status": "pass",
+    "production_admission": "not_created; positive is an explicitly private test fixture"
+  },
+  "native_evidence_archive": {
+    "file": "native-controls-r4.zip",
+    "bytes": 1422192,
+    "sha256": "33dfe5fc4d07ca02cfe7f82e65e52d05abc29f061625594b3281068954a5a76a",
+    "verified_content_members": 739
+  },
+  "full_source_files": [
+    {
+      "file": "contracts/composer-request.schema.json",
+      "bytes": 2582,
+      "sha256": "b6fb032a2983269d776c28d06620dfbe01946ca22e5e698274391445814309d9",
+      "matches_git_blob": true
+    },
+    {
+      "file": "contracts/ir_v02/__init__.py",
+      "bytes": 547,
+      "sha256": "d89dfbf42b1d96e32adecf2c823e2e81e10485678e1111aee44880eb865812db",
+      "matches_git_blob": true
+    },
+    {
+      "file": "contracts/ir_v02/core.py",
+      "bytes": 35829,
+      "sha256": "6f5a0b01db66cbc955f830d8676775a899ff6dec93adb5724748556b9d9ef133",
+      "matches_git_blob": true
+    },
+    {
+      "file": "contracts/ir_v02/elements.py",
+      "bytes": 649,
+      "sha256": "3c9de4759461c721b6f7ea74ced10648d13c05d878b8bed5d45f1c585f3e8bba",
+      "matches_git_blob": true
+    },
+    {
+      "file": "contracts/ir_v02/mechanism-ir.schema.json",
+      "bytes": 27220,
+      "sha256": "d0757f5f3c914cd8ae18db9dc874508f17a81900db2d62fa00e80ec5604fda82",
+      "matches_git_blob": true
+    },
+    {
+      "file": "contracts/mechanism-ir.schema.json",
+      "bytes": 12470,
+      "sha256": "619e46a20c20e9e5906b2298041379a8a832e310632a8a6bdc05d9174e7b2d2c",
+      "matches_git_blob": true
+    },
+    {
+      "file": "probes/NativeChemDraw.cs",
+      "bytes": 7874,
+      "sha256": "52eb2fe1e66d9b13aba84dfba010959ddcb8fcf6109b919a498324400681b73c",
+      "matches_git_blob": true
+    },
+    {
+      "file": "probes/freeze_native_semantic_sources.py",
+      "bytes": 4133,
+      "sha256": "64ec5708cbc572898cc11f25ce54aed0ba1157f8b67d9cf48679eda752967b8a",
+      "matches_git_blob": true
+    },
+    {
+      "file": "probes/make_native_semantic_controls.py",
+      "bytes": 8104,
+      "sha256": "f4cc12efb98e0de7a54a2cd5353a4746bd13424b7d0ab77a2e1383ebdc6d256d",
+      "matches_git_blob": true
+    },
+    {
+      "file": "probes/native-atom-observation.ps1",
+      "bytes": 5558,
+      "sha256": "351f86b140037b7fe940d1a26bc37bc9213be2012c082d59fc1c894f872398e5",
+      "matches_git_blob": true
+    },
+    {
+      "file": "probes/native-common.ps1",
+      "bytes": 1431,
+      "sha256": "0fe06575b88a8f2b14f6f3937dd72d2f2709b146564ac2e17b80b3b0ab01655f",
+      "matches_git_blob": true
+    },
+    {
+      "file": "probes/native-semantic-fragments.ps1",
+      "bytes": 11020,
+      "sha256": "bdc5585fb1aabde6733a455dc0ccab40d6faa44405191c3a3e8f75bc625a45f0",
+      "matches_git_blob": true
+    },
+    {
+      "file": "probes/run_composer.py",
+      "bytes": 5420,
+      "sha256": "d7a4e6c58ed95c217307dbe49e5188806aec07edc3957932c8b0c4a7db9ee470",
+      "matches_git_blob": true
+    },
+    {
+      "file": "probes/run_ir_v02_regression.py",
+      "bytes": 4937,
+      "sha256": "0b35a66d2a40b6d12db010d61412b2178e8d1154a005357e4d1b1320d3164737",
+      "matches_git_blob": true
+    },
+    {
+      "file": "probes/run_with_deadline.py",
+      "bytes": 2018,
+      "sha256": "06836f8b324a95b20f47a6bad234f8424a6d4429a32160b090882940fa9c9142",
+      "matches_git_blob": true
+    },
+    {
+      "file": "probes/verify_native_semantic_controls.py",
+      "bytes": 11773,
+      "sha256": "93f28721f36bc7ac84731c066040a21059e1c51567b391c70219448b3f92dffe",
+      "matches_git_blob": true
+    },
+    {
+      "file": "requirements-probes-win-py312.lock",
+      "bytes": 737,
+      "sha256": "e3c0e476ceebaea8d60f242ef4989d5b77d51cf94d90fcb100a6f2c14deada23",
+      "matches_git_blob": true
+    },
+    {
+      "file": "runtime/__init__.py",
+      "bytes": 82,
+      "sha256": "b29386a1d044664bbc789b45de0c5770391fc13e0440a95cf3fc50ca1b779ea7",
+      "matches_git_blob": true
+    },
+    {
+      "file": "runtime/adapters/__init__.py",
+      "bytes": 77,
+      "sha256": "dca158bfe0e18688c938cdcf0351e99bcd914071d12647e008ce1e3c24a726ed",
+      "matches_git_blob": true
+    },
+    {
+      "file": "runtime/adapters/cdxml_atom_identity.py",
+      "bytes": 21565,
+      "sha256": "41e0050dc0c50f2a700985437181fac8f47f0ec1b64f070537747e888c365b6a",
+      "matches_git_blob": true
+    },
+    {
+      "file": "runtime/adapters/chemdraw_cdxml.py",
+      "bytes": 17559,
+      "sha256": "7056400a4eb78f11b6233ba4a0e8c63a39048cea552d7f4b01d0e787740a0351",
+      "matches_git_blob": true
+    },
+    {
+      "file": "runtime/annotation_layout.py",
+      "bytes": 2768,
+      "sha256": "7da921de560ae304469e1a08f44bf7df79d97eda94fe256918d8aaa222cbb020",
+      "matches_git_blob": true
+    },
+    {
+      "file": "runtime/arrow_ports.py",
+      "bytes": 1053,
+      "sha256": "2f3ce67487efbc50bff014f6951521636eb54729e8bc33778cf378f679380321",
+      "matches_git_blob": true
+    },
+    {
+      "file": "runtime/chemical_ir.py",
+      "bytes": 11581,
+      "sha256": "05b30bc3ad4ea366e82aab437544a7b91c9d1a3d81202b51bdbe5b85d395b384",
+      "matches_git_blob": true
+    },
+    {
+      "file": "runtime/ir_v02_runtime.py",
+      "bytes": 5087,
+      "sha256": "568ce148b58da1171967086fe697918cf85260ef8e185b690d5ff53ce0fdfcbe",
+      "matches_git_blob": true
+    },
+    {
+      "file": "runtime/mechanism_composer.py",
+      "bytes": 22902,
+      "sha256": "b39cdaded2da6f107a882701b6afaab7ae9c483abaa0f24b93d44c284a8adeda",
+      "matches_git_blob": true
+    },
+    {
+      "file": "runtime/native_observation.py",
+      "bytes": 5111,
+      "sha256": "d19975925d0d720a44692e4a4feae495b572bab03981188300a93360ae6def27",
+      "matches_git_blob": true
+    },
+    {
+      "file": "runtime/native_provenance.py",
+      "bytes": 9853,
+      "sha256": "7839554279ac9529c1287c40cd9e0f11966eb50ced7131c00b2a858d2d2aae7b",
+      "matches_git_blob": true
+    },
+    {
+      "file": "runtime/native_semantic_profile.json",
+      "bytes": 2334,
+      "sha256": "2f216d58e5147480766479006ea65be29d72bef078a043604689ce5a02f1a9e9",
+      "matches_git_blob": true
+    },
+    {
+      "file": "runtime/native_semantics.py",
+      "bytes": 20685,
+      "sha256": "f0add1b90a8b862c4ee55f480b39a312e638f2c92db6a1b99ffc063da0a3f015",
+      "matches_git_blob": true
+    },
+    {
+      "file": "runtime/native_source_binding.py",
+      "bytes": 13886,
+      "sha256": "329eae9e616148429135fb7e136160335f1c2d501fa5521c0ca979ddfd5767ae",
+      "matches_git_blob": true
+    },
+    {
+      "file": "tests/test_native_observation.py",
+      "bytes": 3656,
+      "sha256": "9703e896fefd54ef7d1f84f426300105e32aab7eae5a258228cc7d140b86612d",
+      "matches_git_blob": true
+    },
+    {
+      "file": "tests/test_native_semantics.py",
+      "bytes": 16362,
+      "sha256": "d0efe67eff3b9a7abfc33c385f55ceed92d7852c076e7fa81d3bc0d2d3f08af6",
+      "matches_git_blob": true
+    }
+  ],
+  "controller_review": "pending",
+  "production_admission_proposal": "qualification-proposal-r4.json; intentionally rejected until independently admitted",
+  "fixed_private_candidate": "not read, replayed or executed here; controller owns preflight and at-most-one new-phase attempt",
+  "legacy_sidecars": "v0.4 rejected; v0.5 evidence cannot upgrade a historical observer",
+  "unchanged_scope": [
+    "Composer geometry/routing/thresholds",
+    "IR contract bytes",
+    "old failure receipts",
+    "M2/descendants/holdouts unread and unscored",
+    "no model, ChemScript, installer, MCP, UI or automation changes"
+  ],
+  "overall_acceptance": "not_established",
+  "gold": 0
+}

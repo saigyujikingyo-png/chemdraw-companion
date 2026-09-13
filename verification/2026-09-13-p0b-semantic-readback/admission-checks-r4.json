@@ -1,0 +1,35 @@
+{
+  "version": "native-semantic-admission-checks/1.0",
+  "source_commit": "2d6ac0d8a510d912f8e03157cf182cd6ce403683",
+  "source_freeze_sha256": "e12acc3f84333125476d47a1c2187873d03378da56ed3c0117324dbc1006ee1f",
+  "native_calls": 0,
+  "checks": [
+    {
+      "control": "complete_real_control_evidence",
+      "result": "accepted_for_test",
+      "admitted_branches": 19
+    },
+    {
+      "control": "missing_evidence_member",
+      "result": "rejected",
+      "reason": "NATIVE_SEMANTIC_CONTROL_EVIDENCE_COVERAGE_MISMATCH"
+    },
+    {
+      "control": "wrong_native_file_hash",
+      "result": "rejected",
+      "reason": "NATIVE_SOURCE_MISMATCH: native-r4/clean/state-000-selection-after.cdxml"
+    },
+    {
+      "control": "invented_branch",
+      "result": "rejected",
+      "reason": "NATIVE_SEMANTIC_BRANCH_COVERAGE_MISMATCH"
+    },
+    {
+      "control": "two_key_summary",
+      "result": "rejected",
+      "reason": "NATIVE_SEMANTIC_CONTROL_RECEIPT_INCOMPLETE"
+    }
+  ],
+  "status": "pass",
+  "production_admission": "not_created; positive is an explicitly private test fixture"
+}

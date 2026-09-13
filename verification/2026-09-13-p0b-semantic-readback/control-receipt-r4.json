@@ -1,0 +1,2049 @@
+{
+  "version": "native-semantic-control-receipt/1.1",
+  "profile": "native-semantic-readback/1.1",
+  "source_freeze_sha256": "e12acc3f84333125476d47a1c2187873d03378da56ed3c0117324dbc1006ee1f",
+  "native_receipt_sha256": "5d6882e2f6d94b34ccc51432a656e46c637308cc3e13508db2b336fae24320fb",
+  "matrix_sha256": "69c3a3e34437fe85b926908bcff14015d384278db4bff146583d66d5c52b1348",
+  "control_count": 20,
+  "atom_count": 66,
+  "distinct_native_process_count": 40,
+  "counts": {
+    "diagnostic_observation_only": 2,
+    "qualification_match": 16,
+    "expected_scope_refusal": 2
+  },
+  "branches": [
+    {
+      "phase": "cleanup",
+      "serialized_h_presence": "missing",
+      "resolved_source_class": "unknown",
+      "resolved_source_field": "scoped evidence resolution",
+      "scope": null,
+      "h": null,
+      "reason": "native_chemical_warnings",
+      "atoms": 1
+    },
+    {
+      "phase": "reopen",
+      "serialized_h_presence": "missing",
+      "resolved_source_class": "unknown",
+      "resolved_source_field": "scoped evidence resolution",
+      "scope": null,
+      "h": null,
+      "reason": "native_chemical_warnings",
+      "atoms": 1
+    },
+    {
+      "phase": "cleanup",
+      "serialized_h_presence": "missing",
+      "resolved_source_class": "native_api_observation",
+      "resolved_source_field": "Document.Selection.Objects.FormulaHTML",
+      "scope": "acyclic_normal_cno_hd",
+      "h": 3,
+      "reason": null,
+      "atoms": 10
+    },
+    {
+      "phase": "cleanup",
+      "serialized_h_presence": "missing",
+      "resolved_source_class": "native_api_observation",
+      "resolved_source_field": "Document.Selection.Objects.FormulaHTML",
+      "scope": "acyclic_normal_cno_hd",
+      "h": 2,
+      "reason": null,
+      "atoms": 5
+    },
+    {
+      "phase": "cleanup",
+      "serialized_h_presence": "present",
+      "resolved_source_class": "qualified_format_decode",
+      "resolved_source_field": "n@NumHydrogens",
+      "scope": "acyclic_normal_cno_hd",
+      "h": 1,
+      "reason": null,
+      "atoms": 3
+    },
+    {
+      "phase": "reopen",
+      "serialized_h_presence": "missing",
+      "resolved_source_class": "native_api_observation",
+      "resolved_source_field": "Document.Selection.Objects.FormulaHTML",
+      "scope": "acyclic_normal_cno_hd",
+      "h": 3,
+      "reason": null,
+      "atoms": 10
+    },
+    {
+      "phase": "reopen",
+      "serialized_h_presence": "missing",
+      "resolved_source_class": "native_api_observation",
+      "resolved_source_field": "Document.Selection.Objects.FormulaHTML",
+      "scope": "acyclic_normal_cno_hd",
+      "h": 2,
+      "reason": null,
+      "atoms": 5
+    },
+    {
+      "phase": "reopen",
+      "serialized_h_presence": "present",
+      "resolved_source_class": "qualified_format_decode",
+      "resolved_source_field": "n@NumHydrogens",
+      "scope": "acyclic_normal_cno_hd",
+      "h": 1,
+      "reason": null,
+      "atoms": 3
+    },
+    {
+      "phase": "cleanup",
+      "serialized_h_presence": "present",
+      "resolved_source_class": "qualified_format_decode",
+      "resolved_source_field": "n@NumHydrogens",
+      "scope": "acyclic_normal_cno_hd",
+      "h": 2,
+      "reason": null,
+      "atoms": 2
+    },
+    {
+      "phase": "reopen",
+      "serialized_h_presence": "present",
+      "resolved_source_class": "qualified_format_decode",
+      "resolved_source_field": "n@NumHydrogens",
+      "scope": "acyclic_normal_cno_hd",
+      "h": 2,
+      "reason": null,
+      "atoms": 2
+    },
+    {
+      "phase": "cleanup",
+      "serialized_h_presence": "present",
+      "resolved_source_class": "unknown",
+      "resolved_source_field": "scoped evidence resolution",
+      "scope": null,
+      "h": null,
+      "reason": "isolated_atom_attached_h_unqualified",
+      "atoms": 1
+    },
+    {
+      "phase": "reopen",
+      "serialized_h_presence": "present",
+      "resolved_source_class": "unknown",
+      "resolved_source_field": "scoped evidence resolution",
+      "scope": null,
+      "h": null,
+      "reason": "isolated_atom_attached_h_unqualified",
+      "atoms": 1
+    },
+    {
+      "phase": "cleanup",
+      "serialized_h_presence": "missing",
+      "resolved_source_class": "native_api_observation",
+      "resolved_source_field": "Document.Selection.Objects.FormulaHTML",
+      "scope": "acyclic_normal_cno_hd",
+      "h": 0,
+      "reason": null,
+      "atoms": 6
+    },
+    {
+      "phase": "cleanup",
+      "serialized_h_presence": "present",
+      "resolved_source_class": "qualified_format_decode",
+      "resolved_source_field": "n@NumHydrogens",
+      "scope": "acyclic_normal_cno_hd",
+      "h": 0,
+      "reason": null,
+      "atoms": 11
+    },
+    {
+      "phase": "reopen",
+      "serialized_h_presence": "missing",
+      "resolved_source_class": "native_api_observation",
+      "resolved_source_field": "Document.Selection.Objects.FormulaHTML",
+      "scope": "acyclic_normal_cno_hd",
+      "h": 0,
+      "reason": null,
+      "atoms": 6
+    },
+    {
+      "phase": "reopen",
+      "serialized_h_presence": "present",
+      "resolved_source_class": "qualified_format_decode",
+      "resolved_source_field": "n@NumHydrogens",
+      "scope": "acyclic_normal_cno_hd",
+      "h": 0,
+      "reason": null,
+      "atoms": 11
+    },
+    {
+      "phase": "cleanup",
+      "serialized_h_presence": "missing",
+      "resolved_source_class": "native_api_observation",
+      "resolved_source_field": "Document.Selection.Objects.FormulaHTML",
+      "scope": "acyclic_normal_cno_hd",
+      "h": 1,
+      "reason": null,
+      "atoms": 1
+    },
+    {
+      "phase": "reopen",
+      "serialized_h_presence": "missing",
+      "resolved_source_class": "native_api_observation",
+      "resolved_source_field": "Document.Selection.Objects.FormulaHTML",
+      "scope": "acyclic_normal_cno_hd",
+      "h": 1,
+      "reason": null,
+      "atoms": 1
+    },
+    {
+      "phase": "cleanup",
+      "serialized_h_presence": "missing",
+      "resolved_source_class": "native_api_observation",
+      "resolved_source_field": "Document.Selection.Objects.FormulaHTML",
+      "scope": "saturated_c5_c6_monocycle",
+      "h": 2,
+      "reason": null,
+      "atoms": 10
+    },
+    {
+      "phase": "reopen",
+      "serialized_h_presence": "missing",
+      "resolved_source_class": "native_api_observation",
+      "resolved_source_field": "Document.Selection.Objects.FormulaHTML",
+      "scope": "saturated_c5_c6_monocycle",
+      "h": 2,
+      "reason": null,
+      "atoms": 10
+    },
+    {
+      "phase": "cleanup",
+      "serialized_h_presence": "missing",
+      "resolved_source_class": "native_api_observation",
+      "resolved_source_field": "Document.Selection.Objects.FormulaHTML",
+      "scope": "saturated_c4o_five_cycle",
+      "h": 2,
+      "reason": null,
+      "atoms": 4
+    },
+    {
+      "phase": "cleanup",
+      "serialized_h_presence": "present",
+      "resolved_source_class": "qualified_format_decode",
+      "resolved_source_field": "n@NumHydrogens",
+      "scope": "saturated_c4o_five_cycle",
+      "h": 0,
+      "reason": null,
+      "atoms": 1
+    },
+    {
+      "phase": "reopen",
+      "serialized_h_presence": "missing",
+      "resolved_source_class": "native_api_observation",
+      "resolved_source_field": "Document.Selection.Objects.FormulaHTML",
+      "scope": "saturated_c4o_five_cycle",
+      "h": 2,
+      "reason": null,
+      "atoms": 4
+    },
+    {
+      "phase": "reopen",
+      "serialized_h_presence": "present",
+      "resolved_source_class": "qualified_format_decode",
+      "resolved_source_field": "n@NumHydrogens",
+      "scope": "saturated_c4o_five_cycle",
+      "h": 0,
+      "reason": null,
+      "atoms": 1
+    },
+    {
+      "phase": "cleanup",
+      "serialized_h_presence": "missing",
+      "resolved_source_class": "native_api_observation",
+      "resolved_source_field": "Document.Selection.Objects.FormulaHTML",
+      "scope": "saturated_c5_c6_monocycle",
+      "h": 0,
+      "reason": null,
+      "atoms": 1
+    },
+    {
+      "phase": "cleanup",
+      "serialized_h_presence": "present",
+      "resolved_source_class": "qualified_format_decode",
+      "resolved_source_field": "n@NumHydrogens",
+      "scope": "saturated_c5_c6_monocycle",
+      "h": 0,
+      "reason": null,
+      "atoms": 1
+    },
+    {
+      "phase": "reopen",
+      "serialized_h_presence": "missing",
+      "resolved_source_class": "native_api_observation",
+      "resolved_source_field": "Document.Selection.Objects.FormulaHTML",
+      "scope": "saturated_c5_c6_monocycle",
+      "h": 0,
+      "reason": null,
+      "atoms": 1
+    },
+    {
+      "phase": "reopen",
+      "serialized_h_presence": "present",
+      "resolved_source_class": "qualified_format_decode",
+      "resolved_source_field": "n@NumHydrogens",
+      "scope": "saturated_c5_c6_monocycle",
+      "h": 0,
+      "reason": null,
+      "atoms": 1
+    },
+    {
+      "phase": "cleanup",
+      "serialized_h_presence": "missing",
+      "resolved_source_class": "unknown",
+      "resolved_source_field": "scoped evidence resolution",
+      "scope": null,
+      "h": null,
+      "reason": "cyclic_unsaturation_unqualified",
+      "atoms": 6
+    },
+    {
+      "phase": "reopen",
+      "serialized_h_presence": "missing",
+      "resolved_source_class": "unknown",
+      "resolved_source_field": "scoped evidence resolution",
+      "scope": null,
+      "h": null,
+      "reason": "cyclic_unsaturation_unqualified",
+      "atoms": 6
+    },
+    {
+      "phase": "cleanup",
+      "serialized_h_presence": "present",
+      "resolved_source_class": "unknown",
+      "resolved_source_field": "scoped evidence resolution",
+      "scope": null,
+      "h": null,
+      "reason": "query_radical_abnormal_or_non_element",
+      "atoms": 1
+    },
+    {
+      "phase": "reopen",
+      "serialized_h_presence": "present",
+      "resolved_source_class": "unknown",
+      "resolved_source_field": "scoped evidence resolution",
+      "scope": null,
+      "h": null,
+      "reason": "query_radical_abnormal_or_non_element",
+      "atoms": 1
+    },
+    {
+      "phase": "cleanup",
+      "serialized_h_presence": "present",
+      "resolved_source_class": "qualified_format_decode",
+      "resolved_source_field": "n@NumHydrogens",
+      "scope": "isolated_ammonium_or_chloride",
+      "h": 4,
+      "reason": null,
+      "atoms": 1
+    },
+    {
+      "phase": "reopen",
+      "serialized_h_presence": "present",
+      "resolved_source_class": "qualified_format_decode",
+      "resolved_source_field": "n@NumHydrogens",
+      "scope": "isolated_ammonium_or_chloride",
+      "h": 4,
+      "reason": null,
+      "atoms": 1
+    },
+    {
+      "phase": "cleanup",
+      "serialized_h_presence": "present",
+      "resolved_source_class": "qualified_format_decode",
+      "resolved_source_field": "n@NumHydrogens",
+      "scope": "isolated_ammonium_or_chloride",
+      "h": 0,
+      "reason": null,
+      "atoms": 1
+    },
+    {
+      "phase": "reopen",
+      "serialized_h_presence": "present",
+      "resolved_source_class": "qualified_format_decode",
+      "resolved_source_field": "n@NumHydrogens",
+      "scope": "isolated_ammonium_or_chloride",
+      "h": 0,
+      "reason": null,
+      "atoms": 1
+    }
+  ],
+  "controls": [
+    {
+      "control": "methane",
+      "file": "state-000.cdxml",
+      "purpose": "observation_candidate",
+      "result": "diagnostic_observation_only",
+      "exact_preregistration_sha256": "190b76acbb1dbba42d6a96d6364d95cf7e68cb8429ff65b02b8ebea6ebfdd343",
+      "source_conflict": null,
+      "cross_process_semantic_consistency": true,
+      "independent_expected_source": "preregistered literal chemistry",
+      "native_consistency_is_independent_chemical_truth": false
+    },
+    {
+      "control": "ethanol",
+      "file": "state-001.cdxml",
+      "purpose": "qualification_candidate",
+      "result": "qualification_match",
+      "exact_preregistration_sha256": "a92d9154db1fa3d41e25aa39e2697fb4c847c2f8fe97b4fdc825cd160ca34a1d",
+      "source_conflict": null,
+      "cross_process_semantic_consistency": true,
+      "independent_expected_source": "preregistered literal chemistry",
+      "native_consistency_is_independent_chemical_truth": false
+    },
+    {
+      "control": "ethylamine",
+      "file": "state-002.cdxml",
+      "purpose": "qualification_candidate",
+      "result": "qualification_match",
+      "exact_preregistration_sha256": "5802698680e0a7823594256ca5bfb39d6357eb24bb725442648ed2190f149236",
+      "source_conflict": null,
+      "cross_process_semantic_consistency": true,
+      "independent_expected_source": "preregistered literal chemistry",
+      "native_consistency_is_independent_chemical_truth": false
+    },
+    {
+      "control": "label-field-conflict",
+      "file": "state-003.cdxml",
+      "purpose": "conflict_negative",
+      "result": "diagnostic_observation_only",
+      "exact_preregistration_sha256": "d9599f6821e1a4aed3ff8b5311a700ae01d4f2073bfd687a1130e077dfe2a0ec",
+      "source_conflict": {
+        "serialized_NumHydrogens": "3",
+        "nested_label_text": "CH4",
+        "resolved_expected_h": null
+      },
+      "cross_process_semantic_consistency": true,
+      "independent_expected_source": "preregistered literal chemistry",
+      "native_consistency_is_independent_chemical_truth": false
+    },
+    {
+      "control": "acetone",
+      "file": "state-004.cdxml",
+      "purpose": "qualification_candidate",
+      "result": "qualification_match",
+      "exact_preregistration_sha256": "29dd22c440998111a31bac93e90e6aceb0242ee6ed4d596c48c04077eb7b9f1d",
+      "source_conflict": null,
+      "cross_process_semantic_consistency": true,
+      "independent_expected_source": "preregistered literal chemistry",
+      "native_consistency_is_independent_chemical_truth": false
+    },
+    {
+      "control": "acetaldehyde",
+      "file": "state-005.cdxml",
+      "purpose": "qualification_candidate",
+      "result": "qualification_match",
+      "exact_preregistration_sha256": "2318846250754d14712e5990ccbb90426d28e9d1c66c0127ad965c327ed459d9",
+      "source_conflict": null,
+      "cross_process_semantic_consistency": true,
+      "independent_expected_source": "preregistered literal chemistry",
+      "native_consistency_is_independent_chemical_truth": false
+    },
+    {
+      "control": "acetic-acid",
+      "file": "state-006.cdxml",
+      "purpose": "qualification_candidate",
+      "result": "qualification_match",
+      "exact_preregistration_sha256": "b6c0f0afcc6fe17cf60b9692820b32aa71311eecf62b0903f7c98ab2f9d319fc",
+      "source_conflict": null,
+      "cross_process_semantic_consistency": true,
+      "independent_expected_source": "preregistered literal chemistry",
+      "native_consistency_is_independent_chemical_truth": false
+    },
+    {
+      "control": "methyl-acetate",
+      "file": "state-007.cdxml",
+      "purpose": "qualification_candidate",
+      "result": "qualification_match",
+      "exact_preregistration_sha256": "170c2ab0d941098fa01443d3eab8f13af9cc98936e6772b26381409c8f4dc4cc",
+      "source_conflict": null,
+      "cross_process_semantic_consistency": true,
+      "independent_expected_source": "preregistered literal chemistry",
+      "native_consistency_is_independent_chemical_truth": false
+    },
+    {
+      "control": "acetamide",
+      "file": "state-008.cdxml",
+      "purpose": "qualification_candidate",
+      "result": "qualification_match",
+      "exact_preregistration_sha256": "c707456a4baebfdd3e9f0f5e2cf7fff9925e7227edcca0a4919ab7c25b99e665",
+      "source_conflict": null,
+      "cross_process_semantic_consistency": true,
+      "independent_expected_source": "preregistered literal chemistry",
+      "native_consistency_is_independent_chemical_truth": false
+    },
+    {
+      "control": "ethene",
+      "file": "state-009.cdxml",
+      "purpose": "qualification_candidate",
+      "result": "qualification_match",
+      "exact_preregistration_sha256": "48377e892207f08900298cfa19967a46e6398a0b3849ef8bb6d015aa35b2b4f6",
+      "source_conflict": null,
+      "cross_process_semantic_consistency": true,
+      "independent_expected_source": "preregistered literal chemistry",
+      "native_consistency_is_independent_chemical_truth": false
+    },
+    {
+      "control": "acetonitrile",
+      "file": "state-010.cdxml",
+      "purpose": "qualification_candidate",
+      "result": "qualification_match",
+      "exact_preregistration_sha256": "530181576a68b49b4d37346088f9bd7dfe5ea032957652665fc2c501ca10f1aa",
+      "source_conflict": null,
+      "cross_process_semantic_consistency": true,
+      "independent_expected_source": "preregistered literal chemistry",
+      "native_consistency_is_independent_chemical_truth": false
+    },
+    {
+      "control": "cyclohexane",
+      "file": "state-011.cdxml",
+      "purpose": "qualification_candidate",
+      "result": "qualification_match",
+      "exact_preregistration_sha256": "d66e2bfbcd31e3cd72908ec7e6dc96249da5ead388af6866d64aa680fac55469",
+      "source_conflict": null,
+      "cross_process_semantic_consistency": true,
+      "independent_expected_source": "preregistered literal chemistry",
+      "native_consistency_is_independent_chemical_truth": false
+    },
+    {
+      "control": "tetrahydrofuran",
+      "file": "state-012.cdxml",
+      "purpose": "qualification_candidate",
+      "result": "qualification_match",
+      "exact_preregistration_sha256": "32f02e09613cf94cb98cbb45025700ae3c4ac6d69a205887899738a63304b700",
+      "source_conflict": null,
+      "cross_process_semantic_consistency": true,
+      "independent_expected_source": "preregistered literal chemistry",
+      "native_consistency_is_independent_chemical_truth": false
+    },
+    {
+      "control": "cyclopentanone",
+      "file": "state-013.cdxml",
+      "purpose": "qualification_candidate",
+      "result": "qualification_match",
+      "exact_preregistration_sha256": "bb12ccb3fbc6419934ac540d2f9a94876912e766a04feb25d6d43916fca4d5e0",
+      "source_conflict": null,
+      "cross_process_semantic_consistency": true,
+      "independent_expected_source": "preregistered literal chemistry",
+      "native_consistency_is_independent_chemical_truth": false
+    },
+    {
+      "control": "carbon-deuterated-methanol",
+      "file": "state-014.cdxml",
+      "purpose": "qualification_candidate",
+      "result": "qualification_match",
+      "exact_preregistration_sha256": "bec4b592178206d43c3ad0add6ee12f6cf643bd4a1f39aca58a8ffc41aa11b91",
+      "source_conflict": null,
+      "cross_process_semantic_consistency": true,
+      "independent_expected_source": "preregistered literal chemistry",
+      "native_consistency_is_independent_chemical_truth": false
+    },
+    {
+      "control": "explicit-h-d-formaldehyde",
+      "file": "state-015.cdxml",
+      "purpose": "qualification_candidate",
+      "result": "qualification_match",
+      "exact_preregistration_sha256": "f45d295613b5611e6a982571d4c91d96c17ec78bff4dfc90e77bccaca791c50d",
+      "source_conflict": null,
+      "cross_process_semantic_consistency": true,
+      "independent_expected_source": "preregistered literal chemistry",
+      "native_consistency_is_independent_chemical_truth": false
+    },
+    {
+      "control": "benzene-unqualified",
+      "file": "state-016.cdxml",
+      "purpose": "unsupported_negative",
+      "result": "expected_scope_refusal",
+      "exact_preregistration_sha256": "955a858beff973725eca42078035d556a233f57f04d1764afb94c897201ad8b3",
+      "source_conflict": null,
+      "cross_process_semantic_consistency": true,
+      "independent_expected_source": "preregistered literal chemistry",
+      "native_consistency_is_independent_chemical_truth": false
+    },
+    {
+      "control": "methyl-radical-unqualified",
+      "file": "state-017.cdxml",
+      "purpose": "unsupported_negative",
+      "result": "expected_scope_refusal",
+      "exact_preregistration_sha256": "ed305c4054db85164296ea38f82d47ddcb887d0cce1deeed4b494f6dd3ea17d7",
+      "source_conflict": null,
+      "cross_process_semantic_consistency": true,
+      "independent_expected_source": "preregistered literal chemistry",
+      "native_consistency_is_independent_chemical_truth": false
+    },
+    {
+      "control": "ammonium",
+      "file": "state-018.cdxml",
+      "purpose": "observation_candidate",
+      "result": "qualification_match",
+      "exact_preregistration_sha256": "cef0c0a82a654cea2e1feb5e1750225c783f56450f04ad510dfebbadf00f108e",
+      "source_conflict": null,
+      "cross_process_semantic_consistency": true,
+      "independent_expected_source": "preregistered literal chemistry",
+      "native_consistency_is_independent_chemical_truth": false
+    },
+    {
+      "control": "chloride",
+      "file": "state-019.cdxml",
+      "purpose": "observation_candidate",
+      "result": "qualification_match",
+      "exact_preregistration_sha256": "ec66d6743aaf862923c8d3cbd98b91991bbcf37e5f1871219feccb4239c73874",
+      "source_conflict": null,
+      "cross_process_semantic_consistency": true,
+      "independent_expected_source": "preregistered literal chemistry",
+      "native_consistency_is_independent_chemical_truth": false
+    }
+  ],
+  "qualification_status": "qualified_covered_branches",
+  "branch_coverage": [
+    {
+      "branch": {
+        "scope": "acyclic_normal_cno_hd",
+        "source_class": "qualified_format_decode",
+        "source_field": "n@NumHydrogens",
+        "serialized_h_present": true,
+        "label_present": true,
+        "atomic_number": 1,
+        "charge": 0,
+        "isotope": 0,
+        "h": 0,
+        "explicit_h_isotopes": []
+      },
+      "cleanup_atoms": 1,
+      "reopen_atoms": 1,
+      "controls": [
+        "state-015.cdxml"
+      ]
+    },
+    {
+      "branch": {
+        "scope": "acyclic_normal_cno_hd",
+        "source_class": "qualified_format_decode",
+        "source_field": "n@NumHydrogens",
+        "serialized_h_present": true,
+        "label_present": true,
+        "atomic_number": 1,
+        "charge": 0,
+        "isotope": 2,
+        "h": 0,
+        "explicit_h_isotopes": []
+      },
+      "cleanup_atoms": 2,
+      "reopen_atoms": 2,
+      "controls": [
+        "state-014.cdxml",
+        "state-015.cdxml"
+      ]
+    },
+    {
+      "branch": {
+        "scope": "isolated_ammonium_or_chloride",
+        "source_class": "qualified_format_decode",
+        "source_field": "n@NumHydrogens",
+        "serialized_h_present": true,
+        "label_present": true,
+        "atomic_number": 17,
+        "charge": -1,
+        "isotope": 0,
+        "h": 0,
+        "explicit_h_isotopes": []
+      },
+      "cleanup_atoms": 1,
+      "reopen_atoms": 1,
+      "controls": [
+        "state-019.cdxml"
+      ]
+    },
+    {
+      "branch": {
+        "scope": "acyclic_normal_cno_hd",
+        "source_class": "native_api_observation",
+        "source_field": "Document.Selection.Objects.FormulaHTML",
+        "serialized_h_present": false,
+        "label_present": false,
+        "atomic_number": 6,
+        "charge": 0,
+        "isotope": 0,
+        "h": 0,
+        "explicit_h_isotopes": [
+          0,
+          2
+        ]
+      },
+      "cleanup_atoms": 1,
+      "reopen_atoms": 1,
+      "controls": [
+        "state-015.cdxml"
+      ]
+    },
+    {
+      "branch": {
+        "scope": "acyclic_normal_cno_hd",
+        "source_class": "native_api_observation",
+        "source_field": "Document.Selection.Objects.FormulaHTML",
+        "serialized_h_present": false,
+        "label_present": false,
+        "atomic_number": 6,
+        "charge": 0,
+        "isotope": 0,
+        "h": 2,
+        "explicit_h_isotopes": [
+          2
+        ]
+      },
+      "cleanup_atoms": 1,
+      "reopen_atoms": 1,
+      "controls": [
+        "state-014.cdxml"
+      ]
+    },
+    {
+      "branch": {
+        "scope": "acyclic_normal_cno_hd",
+        "source_class": "native_api_observation",
+        "source_field": "Document.Selection.Objects.FormulaHTML",
+        "serialized_h_present": false,
+        "label_present": false,
+        "atomic_number": 6,
+        "charge": 0,
+        "isotope": 0,
+        "h": 0,
+        "explicit_h_isotopes": []
+      },
+      "cleanup_atoms": 5,
+      "reopen_atoms": 5,
+      "controls": [
+        "state-004.cdxml",
+        "state-006.cdxml",
+        "state-007.cdxml",
+        "state-008.cdxml",
+        "state-010.cdxml"
+      ]
+    },
+    {
+      "branch": {
+        "scope": "saturated_c5_c6_monocycle",
+        "source_class": "native_api_observation",
+        "source_field": "Document.Selection.Objects.FormulaHTML",
+        "serialized_h_present": false,
+        "label_present": false,
+        "atomic_number": 6,
+        "charge": 0,
+        "isotope": 0,
+        "h": 0,
+        "explicit_h_isotopes": []
+      },
+      "cleanup_atoms": 1,
+      "reopen_atoms": 1,
+      "controls": [
+        "state-013.cdxml"
+      ]
+    },
+    {
+      "branch": {
+        "scope": "acyclic_normal_cno_hd",
+        "source_class": "native_api_observation",
+        "source_field": "Document.Selection.Objects.FormulaHTML",
+        "serialized_h_present": false,
+        "label_present": false,
+        "atomic_number": 6,
+        "charge": 0,
+        "isotope": 0,
+        "h": 1,
+        "explicit_h_isotopes": []
+      },
+      "cleanup_atoms": 1,
+      "reopen_atoms": 1,
+      "controls": [
+        "state-005.cdxml"
+      ]
+    },
+    {
+      "branch": {
+        "scope": "acyclic_normal_cno_hd",
+        "source_class": "native_api_observation",
+        "source_field": "Document.Selection.Objects.FormulaHTML",
+        "serialized_h_present": false,
+        "label_present": false,
+        "atomic_number": 6,
+        "charge": 0,
+        "isotope": 0,
+        "h": 2,
+        "explicit_h_isotopes": []
+      },
+      "cleanup_atoms": 4,
+      "reopen_atoms": 4,
+      "controls": [
+        "state-001.cdxml",
+        "state-002.cdxml",
+        "state-009.cdxml"
+      ]
+    },
+    {
+      "branch": {
+        "scope": "saturated_c4o_five_cycle",
+        "source_class": "native_api_observation",
+        "source_field": "Document.Selection.Objects.FormulaHTML",
+        "serialized_h_present": false,
+        "label_present": false,
+        "atomic_number": 6,
+        "charge": 0,
+        "isotope": 0,
+        "h": 2,
+        "explicit_h_isotopes": []
+      },
+      "cleanup_atoms": 4,
+      "reopen_atoms": 4,
+      "controls": [
+        "state-012.cdxml"
+      ]
+    },
+    {
+      "branch": {
+        "scope": "saturated_c5_c6_monocycle",
+        "source_class": "native_api_observation",
+        "source_field": "Document.Selection.Objects.FormulaHTML",
+        "serialized_h_present": false,
+        "label_present": false,
+        "atomic_number": 6,
+        "charge": 0,
+        "isotope": 0,
+        "h": 2,
+        "explicit_h_isotopes": []
+      },
+      "cleanup_atoms": 10,
+      "reopen_atoms": 10,
+      "controls": [
+        "state-011.cdxml",
+        "state-013.cdxml"
+      ]
+    },
+    {
+      "branch": {
+        "scope": "acyclic_normal_cno_hd",
+        "source_class": "native_api_observation",
+        "source_field": "Document.Selection.Objects.FormulaHTML",
+        "serialized_h_present": false,
+        "label_present": false,
+        "atomic_number": 6,
+        "charge": 0,
+        "isotope": 0,
+        "h": 3,
+        "explicit_h_isotopes": []
+      },
+      "cleanup_atoms": 10,
+      "reopen_atoms": 10,
+      "controls": [
+        "state-001.cdxml",
+        "state-002.cdxml",
+        "state-004.cdxml",
+        "state-005.cdxml",
+        "state-006.cdxml",
+        "state-007.cdxml",
+        "state-008.cdxml",
+        "state-010.cdxml"
+      ]
+    },
+    {
+      "branch": {
+        "scope": "acyclic_normal_cno_hd",
+        "source_class": "qualified_format_decode",
+        "source_field": "n@NumHydrogens",
+        "serialized_h_present": true,
+        "label_present": true,
+        "atomic_number": 7,
+        "charge": 0,
+        "isotope": 0,
+        "h": 0,
+        "explicit_h_isotopes": []
+      },
+      "cleanup_atoms": 1,
+      "reopen_atoms": 1,
+      "controls": [
+        "state-010.cdxml"
+      ]
+    },
+    {
+      "branch": {
+        "scope": "acyclic_normal_cno_hd",
+        "source_class": "qualified_format_decode",
+        "source_field": "n@NumHydrogens",
+        "serialized_h_present": true,
+        "label_present": true,
+        "atomic_number": 7,
+        "charge": 0,
+        "isotope": 0,
+        "h": 2,
+        "explicit_h_isotopes": []
+      },
+      "cleanup_atoms": 2,
+      "reopen_atoms": 2,
+      "controls": [
+        "state-002.cdxml",
+        "state-008.cdxml"
+      ]
+    },
+    {
+      "branch": {
+        "scope": "isolated_ammonium_or_chloride",
+        "source_class": "qualified_format_decode",
+        "source_field": "n@NumHydrogens",
+        "serialized_h_present": true,
+        "label_present": true,
+        "atomic_number": 7,
+        "charge": 1,
+        "isotope": 0,
+        "h": 4,
+        "explicit_h_isotopes": []
+      },
+      "cleanup_atoms": 1,
+      "reopen_atoms": 1,
+      "controls": [
+        "state-018.cdxml"
+      ]
+    },
+    {
+      "branch": {
+        "scope": "acyclic_normal_cno_hd",
+        "source_class": "qualified_format_decode",
+        "source_field": "n@NumHydrogens",
+        "serialized_h_present": true,
+        "label_present": true,
+        "atomic_number": 8,
+        "charge": 0,
+        "isotope": 0,
+        "h": 0,
+        "explicit_h_isotopes": []
+      },
+      "cleanup_atoms": 7,
+      "reopen_atoms": 7,
+      "controls": [
+        "state-004.cdxml",
+        "state-005.cdxml",
+        "state-006.cdxml",
+        "state-007.cdxml",
+        "state-008.cdxml",
+        "state-015.cdxml"
+      ]
+    },
+    {
+      "branch": {
+        "scope": "saturated_c4o_five_cycle",
+        "source_class": "qualified_format_decode",
+        "source_field": "n@NumHydrogens",
+        "serialized_h_present": true,
+        "label_present": true,
+        "atomic_number": 8,
+        "charge": 0,
+        "isotope": 0,
+        "h": 0,
+        "explicit_h_isotopes": []
+      },
+      "cleanup_atoms": 1,
+      "reopen_atoms": 1,
+      "controls": [
+        "state-012.cdxml"
+      ]
+    },
+    {
+      "branch": {
+        "scope": "saturated_c5_c6_monocycle",
+        "source_class": "qualified_format_decode",
+        "source_field": "n@NumHydrogens",
+        "serialized_h_present": true,
+        "label_present": true,
+        "atomic_number": 8,
+        "charge": 0,
+        "isotope": 0,
+        "h": 0,
+        "explicit_h_isotopes": []
+      },
+      "cleanup_atoms": 1,
+      "reopen_atoms": 1,
+      "controls": [
+        "state-013.cdxml"
+      ]
+    },
+    {
+      "branch": {
+        "scope": "acyclic_normal_cno_hd",
+        "source_class": "qualified_format_decode",
+        "source_field": "n@NumHydrogens",
+        "serialized_h_present": true,
+        "label_present": true,
+        "atomic_number": 8,
+        "charge": 0,
+        "isotope": 0,
+        "h": 1,
+        "explicit_h_isotopes": []
+      },
+      "cleanup_atoms": 3,
+      "reopen_atoms": 3,
+      "controls": [
+        "state-001.cdxml",
+        "state-006.cdxml",
+        "state-014.cdxml"
+      ]
+    }
+  ],
+  "admitted_branches": [
+    {
+      "scope": "acyclic_normal_cno_hd",
+      "source_class": "qualified_format_decode",
+      "source_field": "n@NumHydrogens",
+      "serialized_h_present": true,
+      "label_present": true,
+      "atomic_number": 1,
+      "charge": 0,
+      "isotope": 0,
+      "h": 0,
+      "explicit_h_isotopes": []
+    },
+    {
+      "scope": "acyclic_normal_cno_hd",
+      "source_class": "qualified_format_decode",
+      "source_field": "n@NumHydrogens",
+      "serialized_h_present": true,
+      "label_present": true,
+      "atomic_number": 1,
+      "charge": 0,
+      "isotope": 2,
+      "h": 0,
+      "explicit_h_isotopes": []
+    },
+    {
+      "scope": "isolated_ammonium_or_chloride",
+      "source_class": "qualified_format_decode",
+      "source_field": "n@NumHydrogens",
+      "serialized_h_present": true,
+      "label_present": true,
+      "atomic_number": 17,
+      "charge": -1,
+      "isotope": 0,
+      "h": 0,
+      "explicit_h_isotopes": []
+    },
+    {
+      "scope": "acyclic_normal_cno_hd",
+      "source_class": "native_api_observation",
+      "source_field": "Document.Selection.Objects.FormulaHTML",
+      "serialized_h_present": false,
+      "label_present": false,
+      "atomic_number": 6,
+      "charge": 0,
+      "isotope": 0,
+      "h": 0,
+      "explicit_h_isotopes": [
+        0,
+        2
+      ]
+    },
+    {
+      "scope": "acyclic_normal_cno_hd",
+      "source_class": "native_api_observation",
+      "source_field": "Document.Selection.Objects.FormulaHTML",
+      "serialized_h_present": false,
+      "label_present": false,
+      "atomic_number": 6,
+      "charge": 0,
+      "isotope": 0,
+      "h": 2,
+      "explicit_h_isotopes": [
+        2
+      ]
+    },
+    {
+      "scope": "acyclic_normal_cno_hd",
+      "source_class": "native_api_observation",
+      "source_field": "Document.Selection.Objects.FormulaHTML",
+      "serialized_h_present": false,
+      "label_present": false,
+      "atomic_number": 6,
+      "charge": 0,
+      "isotope": 0,
+      "h": 0,
+      "explicit_h_isotopes": []
+    },
+    {
+      "scope": "saturated_c5_c6_monocycle",
+      "source_class": "native_api_observation",
+      "source_field": "Document.Selection.Objects.FormulaHTML",
+      "serialized_h_present": false,
+      "label_present": false,
+      "atomic_number": 6,
+      "charge": 0,
+      "isotope": 0,
+      "h": 0,
+      "explicit_h_isotopes": []
+    },
+    {
+      "scope": "acyclic_normal_cno_hd",
+      "source_class": "native_api_observation",
+      "source_field": "Document.Selection.Objects.FormulaHTML",
+      "serialized_h_present": false,
+      "label_present": false,
+      "atomic_number": 6,
+      "charge": 0,
+      "isotope": 0,
+      "h": 1,
+      "explicit_h_isotopes": []
+    },
+    {
+      "scope": "acyclic_normal_cno_hd",
+      "source_class": "native_api_observation",
+      "source_field": "Document.Selection.Objects.FormulaHTML",
+      "serialized_h_present": false,
+      "label_present": false,
+      "atomic_number": 6,
+      "charge": 0,
+      "isotope": 0,
+      "h": 2,
+      "explicit_h_isotopes": []
+    },
+    {
+      "scope": "saturated_c4o_five_cycle",
+      "source_class": "native_api_observation",
+      "source_field": "Document.Selection.Objects.FormulaHTML",
+      "serialized_h_present": false,
+      "label_present": false,
+      "atomic_number": 6,
+      "charge": 0,
+      "isotope": 0,
+      "h": 2,
+      "explicit_h_isotopes": []
+    },
+    {
+      "scope": "saturated_c5_c6_monocycle",
+      "source_class": "native_api_observation",
+      "source_field": "Document.Selection.Objects.FormulaHTML",
+      "serialized_h_present": false,
+      "label_present": false,
+      "atomic_number": 6,
+      "charge": 0,
+      "isotope": 0,
+      "h": 2,
+      "explicit_h_isotopes": []
+    },
+    {
+      "scope": "acyclic_normal_cno_hd",
+      "source_class": "native_api_observation",
+      "source_field": "Document.Selection.Objects.FormulaHTML",
+      "serialized_h_present": false,
+      "label_present": false,
+      "atomic_number": 6,
+      "charge": 0,
+      "isotope": 0,
+      "h": 3,
+      "explicit_h_isotopes": []
+    },
+    {
+      "scope": "acyclic_normal_cno_hd",
+      "source_class": "qualified_format_decode",
+      "source_field": "n@NumHydrogens",
+      "serialized_h_present": true,
+      "label_present": true,
+      "atomic_number": 7,
+      "charge": 0,
+      "isotope": 0,
+      "h": 0,
+      "explicit_h_isotopes": []
+    },
+    {
+      "scope": "acyclic_normal_cno_hd",
+      "source_class": "qualified_format_decode",
+      "source_field": "n@NumHydrogens",
+      "serialized_h_present": true,
+      "label_present": true,
+      "atomic_number": 7,
+      "charge": 0,
+      "isotope": 0,
+      "h": 2,
+      "explicit_h_isotopes": []
+    },
+    {
+      "scope": "isolated_ammonium_or_chloride",
+      "source_class": "qualified_format_decode",
+      "source_field": "n@NumHydrogens",
+      "serialized_h_present": true,
+      "label_present": true,
+      "atomic_number": 7,
+      "charge": 1,
+      "isotope": 0,
+      "h": 4,
+      "explicit_h_isotopes": []
+    },
+    {
+      "scope": "acyclic_normal_cno_hd",
+      "source_class": "qualified_format_decode",
+      "source_field": "n@NumHydrogens",
+      "serialized_h_present": true,
+      "label_present": true,
+      "atomic_number": 8,
+      "charge": 0,
+      "isotope": 0,
+      "h": 0,
+      "explicit_h_isotopes": []
+    },
+    {
+      "scope": "saturated_c4o_five_cycle",
+      "source_class": "qualified_format_decode",
+      "source_field": "n@NumHydrogens",
+      "serialized_h_present": true,
+      "label_present": true,
+      "atomic_number": 8,
+      "charge": 0,
+      "isotope": 0,
+      "h": 0,
+      "explicit_h_isotopes": []
+    },
+    {
+      "scope": "saturated_c5_c6_monocycle",
+      "source_class": "qualified_format_decode",
+      "source_field": "n@NumHydrogens",
+      "serialized_h_present": true,
+      "label_present": true,
+      "atomic_number": 8,
+      "charge": 0,
+      "isotope": 0,
+      "h": 0,
+      "explicit_h_isotopes": []
+    },
+    {
+      "scope": "acyclic_normal_cno_hd",
+      "source_class": "qualified_format_decode",
+      "source_field": "n@NumHydrogens",
+      "serialized_h_present": true,
+      "label_present": true,
+      "atomic_number": 8,
+      "charge": 0,
+      "isotope": 0,
+      "h": 1,
+      "explicit_h_isotopes": []
+    }
+  ],
+  "native_folder": "native-r4",
+  "analysis_folder": "analysis-r4",
+  "evidence_files": [
+    {
+      "file": "native-r4/clean/state-000-selection-after.cdxml",
+      "bytes": 2810,
+      "sha256": "fdc75606069f408bbb68e2af4ce9df8e1b0ed9799ec48484854cdbaca7811a38"
+    },
+    {
+      "file": "native-r4/clean/state-000.atoms.json",
+      "bytes": 2880,
+      "sha256": "d55b68c378812b957171e100ca266158b62c59bbea237038fb4e9cf7c7094451"
+    },
+    {
+      "file": "native-r4/clean/state-000.cdxml",
+      "bytes": 2794,
+      "sha256": "581af76bb0d5cab370997fcab4dfa3d6dc35b54649f0217f7c4e295fa9763f2b"
+    },
+    {
+      "file": "native-r4/clean/state-001-selection-after.cdxml",
+      "bytes": 3196,
+      "sha256": "7c915af8c225fd774893465e1650cd61ba269bed345ab7c97158230bea639a0b"
+    },
+    {
+      "file": "native-r4/clean/state-001.atoms.json",
+      "bytes": 4119,
+      "sha256": "4664d2a38b4fccf1f5cf38cbf1bdbd32aaa253e82e37ffd0054ab8ecda31d50f"
+    },
+    {
+      "file": "native-r4/clean/state-001.cdxml",
+      "bytes": 3180,
+      "sha256": "3620706949c5f370828bafacc76df672d3b250d472f39c3bf5e210bf5a28b64a"
+    },
+    {
+      "file": "native-r4/clean/state-002-selection-after.cdxml",
+      "bytes": 3197,
+      "sha256": "2bf82106e44e76249a85841d532eb9ae441bb2c2fafd75960598b9488ac50147"
+    },
+    {
+      "file": "native-r4/clean/state-002.atoms.json",
+      "bytes": 4146,
+      "sha256": "b93958307994980fc55857fb0a8b3a847af2adcd1291279f2f4607cd27f857bf"
+    },
+    {
+      "file": "native-r4/clean/state-002.cdxml",
+      "bytes": 3181,
+      "sha256": "a398ee8726a7602ee628e2589e12489725a05ebc40a8043a45074cf7fb686b2d"
+    },
+    {
+      "file": "native-r4/clean/state-003-selection-after.cdxml",
+      "bytes": 2920,
+      "sha256": "23af1b97c215b922cd5f98d07069323af1b06a8a48fb079713c0905c7a2b3324"
+    },
+    {
+      "file": "native-r4/clean/state-003.atoms.json",
+      "bytes": 2966,
+      "sha256": "b3016dd9d46a32b5d2283856430e925ab92d07a9353009b33dcd0691284d8a9e"
+    },
+    {
+      "file": "native-r4/clean/state-003.cdxml",
+      "bytes": 2904,
+      "sha256": "b4b73cb1ed26a6b23f18e20ec468d90bda2f472f5ffd2ddd37d033e04425309c"
+    },
+    {
+      "file": "native-r4/clean/state-004-selection-after.cdxml",
+      "bytes": 3297,
+      "sha256": "a990da2614825c9babd58e19618d41a4c77ca0b29ea9b35d0a26d92c79b56567"
+    },
+    {
+      "file": "native-r4/clean/state-004.atoms.json",
+      "bytes": 4903,
+      "sha256": "dce2a9c7c853e178ea6aa562a53d4d98ceab185ac62feef8b5bf1881d7e59567"
+    },
+    {
+      "file": "native-r4/clean/state-004.cdxml",
+      "bytes": 3281,
+      "sha256": "3ceb02870c255174b82a55b59d1801effc4c5a9d97f559b59b49ab6acc6fa199"
+    },
+    {
+      "file": "native-r4/clean/state-005-selection-after.cdxml",
+      "bytes": 3183,
+      "sha256": "37fc0c82e425ebc366c5ba754454b3428165f1f5be4c30a8be3b78a9f55d96c7"
+    },
+    {
+      "file": "native-r4/clean/state-005.atoms.json",
+      "bytes": 4220,
+      "sha256": "38ee0c22de21e54fb0cff161b5795b4216cfa09da5f792e0ccf2a13f5690928c"
+    },
+    {
+      "file": "native-r4/clean/state-005.cdxml",
+      "bytes": 3167,
+      "sha256": "96066b492869b8b36d4a2d53ef0f4f5563bb1d249117c897629324f73420828e"
+    },
+    {
+      "file": "native-r4/clean/state-006-selection-after.cdxml",
+      "bytes": 3518,
+      "sha256": "3be62e9f990a76f10ec75d4df4ab0902e09f61039d991ed0ab82240bdcca9ab5"
+    },
+    {
+      "file": "native-r4/clean/state-006.atoms.json",
+      "bytes": 4745,
+      "sha256": "8ea30af45da9d2808380be662e2a30d10099443924d415adac01c2ae987f6be9"
+    },
+    {
+      "file": "native-r4/clean/state-006.cdxml",
+      "bytes": 3502,
+      "sha256": "f5e463509fc93364aa09c7cb8e8ee859d86864982c032a98d655adbab54cc7d6"
+    },
+    {
+      "file": "native-r4/clean/state-007-selection-after.cdxml",
+      "bytes": 3620,
+      "sha256": "658accb16d08850931a5d77b6f84f750540d57147f0b01f42996a6353ed1bf69"
+    },
+    {
+      "file": "native-r4/clean/state-007.atoms.json",
+      "bytes": 5481,
+      "sha256": "2838e9e3e7094fae6e783c939714a84b529d5eb9681998de062645c05fb9acda"
+    },
+    {
+      "file": "native-r4/clean/state-007.cdxml",
+      "bytes": 3604,
+      "sha256": "b5612a62317519dba135757dfbc654f22acfc18e3d53cdba99ed33748d4ccb8d"
+    },
+    {
+      "file": "native-r4/clean/state-008-selection-after.cdxml",
+      "bytes": 3519,
+      "sha256": "9d5a84d9b2453cc2078d6eacf16d068d688b63828e6c2a118438f8646281a2cd"
+    },
+    {
+      "file": "native-r4/clean/state-008.atoms.json",
+      "bytes": 4800,
+      "sha256": "85d01b05deeb20024511e16b017a3c8e72ab1b23ce0ea0d9dd56505eda13fba0"
+    },
+    {
+      "file": "native-r4/clean/state-008.cdxml",
+      "bytes": 3503,
+      "sha256": "1dc8b44ebdf00a960621c9ff8cdb7c714a697bc63c086744fc6e9360b7e73477"
+    },
+    {
+      "file": "native-r4/clean/state-009-selection-after.cdxml",
+      "bytes": 2855,
+      "sha256": "0f221019fd0e67196b879bdf8fd86adade33e9f8e67da8a04442d17cb2318c5a"
+    },
+    {
+      "file": "native-r4/clean/state-009.atoms.json",
+      "bytes": 3846,
+      "sha256": "a83d56d926cf48145d967d50f5e2881a67bad13ee5a5b7d2b5bbd6fa03cbecd1"
+    },
+    {
+      "file": "native-r4/clean/state-009.cdxml",
+      "bytes": 2839,
+      "sha256": "ceb1d99956d90e188e1bd107dd9baf739974f91082b9a98de1854ec0d53f6090"
+    },
+    {
+      "file": "native-r4/clean/state-010-selection-after.cdxml",
+      "bytes": 3174,
+      "sha256": "d9787968df96eae4e8780941f7ee0e1df1eb97ac2a7388055763d5e02e8f5bbe"
+    },
+    {
+      "file": "native-r4/clean/state-010.atoms.json",
+      "bytes": 4357,
+      "sha256": "f18c8b3a544f219b5d8c8dccdab2661912b709f75e1825f9a410418192e45038"
+    },
+    {
+      "file": "native-r4/clean/state-010.cdxml",
+      "bytes": 3158,
+      "sha256": "c3111fcaa9039cac754e4cbf371a9db234cb2284e0c3060e986214304ecec71c"
+    },
+    {
+      "file": "native-r4/clean/state-011-selection-after.cdxml",
+      "bytes": 3377,
+      "sha256": "52e9682b6bcd2e9fb68430b666ae254eb581e5d43b84ca3220958da9e9e388ac"
+    },
+    {
+      "file": "native-r4/clean/state-011.atoms.json",
+      "bytes": 6743,
+      "sha256": "a71376f54aa0f034a8069da2318c8b30eb89d2a1d5725580479913710e189a09"
+    },
+    {
+      "file": "native-r4/clean/state-011.cdxml",
+      "bytes": 3361,
+      "sha256": "bbc37108846f10ba365e3c5cafef0d6e6252db187a002d5eaaf81907b6382ccb"
+    },
+    {
+      "file": "native-r4/clean/state-012-selection-after.cdxml",
+      "bytes": 3464,
+      "sha256": "75e566550d46de41f298d258a51110ee725686451aa432b632c7ce8e67630c45"
+    },
+    {
+      "file": "native-r4/clean/state-012.atoms.json",
+      "bytes": 5848,
+      "sha256": "b7f1edc7ffc4bfc1d876a79eb0ca8f186e5ab0208512930c89a65177388496af"
+    },
+    {
+      "file": "native-r4/clean/state-012.cdxml",
+      "bytes": 3448,
+      "sha256": "0a26aecb0b671a0f5e4d0e7450cf4d60d8ae40cf4b860cfeb509ec3554bbcffb"
+    },
+    {
+      "file": "native-r4/clean/state-013-selection-after.cdxml",
+      "bytes": 3603,
+      "sha256": "0d70bca475019f82962b573d86d45f202db790f4c7c8b1405fbc652b05c1450e"
+    },
+    {
+      "file": "native-r4/clean/state-013.atoms.json",
+      "bytes": 6573,
+      "sha256": "0b74769fd7c9ef7cfb36506403973131db5bb8eeffc47b34e4b7b3c91733d411"
+    },
+    {
+      "file": "native-r4/clean/state-013.cdxml",
+      "bytes": 3587,
+      "sha256": "5348138aace3395903a77a711073b308041a6cdb17e450b56c60da7e481f96db"
+    },
+    {
+      "file": "native-r4/clean/state-014-selection-after.cdxml",
+      "bytes": 3432,
+      "sha256": "99c2a2151b18391ebcd7eff6b93ebf543a585aff04e2bb29f3abd7828be1afef"
+    },
+    {
+      "file": "native-r4/clean/state-014.atoms.json",
+      "bytes": 4272,
+      "sha256": "db4dd043f4a5bd1e437ccf59cf86ca7a28a5b575782ba413f4e6168d1871e92c"
+    },
+    {
+      "file": "native-r4/clean/state-014.cdxml",
+      "bytes": 3416,
+      "sha256": "ed0fb432b27eb5cfbca5fd4b4258b5d0a06b0524338c4e075bcb83042a6a60af"
+    },
+    {
+      "file": "native-r4/clean/state-015-selection-after.cdxml",
+      "bytes": 3703,
+      "sha256": "9ed7f2ba3a6c8ce20fb76a12d47dba8b9ba7bbc0f6afe4015e249d0a2dcd2d65"
+    },
+    {
+      "file": "native-r4/clean/state-015.atoms.json",
+      "bytes": 4790,
+      "sha256": "3ba1fd9824cee44d01a5ec2ecf02579a5f5231fb40d2776585723ff47e2d68b9"
+    },
+    {
+      "file": "native-r4/clean/state-015.cdxml",
+      "bytes": 3687,
+      "sha256": "b041b81774fd34ffd7e17a8cc8f36421895d921dd3841cc40fb2ce0e57b20113"
+    },
+    {
+      "file": "native-r4/clean/state-016-selection-after.cdxml",
+      "bytes": 3524,
+      "sha256": "befa166fe1154900e79590f0aad7b5ce63e1169d5ba9ce21aa63e4c709f139d5"
+    },
+    {
+      "file": "native-r4/clean/state-016.atoms.json",
+      "bytes": 6816,
+      "sha256": "86c641ffe5df4daa9f526f94b105f2131c3a3f4fc092d11d5ec28c39e248cabd"
+    },
+    {
+      "file": "native-r4/clean/state-016.cdxml",
+      "bytes": 3508,
+      "sha256": "74dc1f7b381a8146822674fa62d3ad02a228ee86e35472313190b271e215316d"
+    },
+    {
+      "file": "native-r4/clean/state-017-selection-after.cdxml",
+      "bytes": 3008,
+      "sha256": "9ed1e527a19dacff6df829483f094a5e6f34280c3dce42659cc78de4c9f71ccc"
+    },
+    {
+      "file": "native-r4/clean/state-017.atoms.json",
+      "bytes": 3154,
+      "sha256": "f54cc1dc96e9e3241f3f5b245620a87a2b14b52e42f385ccc9bb9d7d2e860c92"
+    },
+    {
+      "file": "native-r4/clean/state-017.cdxml",
+      "bytes": 2992,
+      "sha256": "bac74737d1df88e36f8c07d8f9f7eb7b90a2388a27fb953b88911ed48aa3b9c0"
+    },
+    {
+      "file": "native-r4/clean/state-018-selection-after.cdxml",
+      "bytes": 2968,
+      "sha256": "1d84a9c93dce58b48dfa672ab66001ac511c55f66f78ca59e50c5748323c521c"
+    },
+    {
+      "file": "native-r4/clean/state-018.atoms.json",
+      "bytes": 3185,
+      "sha256": "27716fe4a8698cd542c5235db1c6d9caff80ac31b7cf084115b56801575e74a3"
+    },
+    {
+      "file": "native-r4/clean/state-018.cdxml",
+      "bytes": 2952,
+      "sha256": "dda84154cb73ba555408ba4e76060bf679d3462909e532c011bf884e2fb26e65"
+    },
+    {
+      "file": "native-r4/clean/state-019-selection-after.cdxml",
+      "bytes": 2969,
+      "sha256": "8ecf33f94b05a0156577820697aa35ef9628025b0d80066fb220213fe5777b13"
+    },
+    {
+      "file": "native-r4/clean/state-019.atoms.json",
+      "bytes": 3212,
+      "sha256": "0546c947d383b1c8c80d91922a810d5fc68ed4f55e26d69fd2b44b4cfbcf802a"
+    },
+    {
+      "file": "native-r4/clean/state-019.cdxml",
+      "bytes": 2953,
+      "sha256": "7a9b0fc625974bf074ed28c96696fee064262e98ce6d370d21015763c54e61fa"
+    },
+    {
+      "file": "native-r4/native-geometry-receipt.json",
+      "bytes": 53278,
+      "sha256": "5d6882e2f6d94b34ccc51432a656e46c637308cc3e13508db2b336fae24320fb"
+    },
+    {
+      "file": "native-r4/state-000-before.cdxml",
+      "bytes": 2801,
+      "sha256": "85c03ada02ae1f642f71b26b69d44215d818024cbfec5b93144d9ee7c545eef9"
+    },
+    {
+      "file": "native-r4/state-000-selection-after.cdxml",
+      "bytes": 2810,
+      "sha256": "43bcb5c9729ac6102fe428aae70a404518c7bf37aaf958f3eb6304a841f7147d"
+    },
+    {
+      "file": "native-r4/state-000.atoms.json",
+      "bytes": 2922,
+      "sha256": "a8431b2d1784bc606bdd86abb2eac65431d7bb7f3abd637d9e262ecb8784c03c"
+    },
+    {
+      "file": "native-r4/state-000.cdxml",
+      "bytes": 2794,
+      "sha256": "be74050b2a391a522a4bc7549a7cb1c749ebf577ad89bb3ebcdafde12d568e9e"
+    },
+    {
+      "file": "native-r4/state-001-before.cdxml",
+      "bytes": 3280,
+      "sha256": "2a9c1cbb96c94b97c588348b3d1e5e5af94251eeeb1b8c94a47a1c62d60e0978"
+    },
+    {
+      "file": "native-r4/state-001-selection-after.cdxml",
+      "bytes": 3196,
+      "sha256": "6640bf519a8c7d3c972dbc8ba3b2930b79d0cbead6503d91e019f1b23dabb2c7"
+    },
+    {
+      "file": "native-r4/state-001.atoms.json",
+      "bytes": 4158,
+      "sha256": "4b104ca2fbdfcb8a0aa75bf45a8c11d553b07cfa26ad6a6f484667f02d108e3a"
+    },
+    {
+      "file": "native-r4/state-001.cdxml",
+      "bytes": 3180,
+      "sha256": "2075fade56a5de02432bb35ea84f6bc43f90ff788d88dc6acf5f2835948bd626"
+    },
+    {
+      "file": "native-r4/state-002-before.cdxml",
+      "bytes": 3272,
+      "sha256": "a6f794b437ea3c72f573eee01304710bc8b5f5578f8bfcc050b638e8824cce2b"
+    },
+    {
+      "file": "native-r4/state-002-selection-after.cdxml",
+      "bytes": 3197,
+      "sha256": "11d00fdb08001f9e8481ed3675b7650b76534645bdc68f307092c9675072ceb2"
+    },
+    {
+      "file": "native-r4/state-002.atoms.json",
+      "bytes": 4187,
+      "sha256": "a3ae8c0723a87d2022dd0d2fe9a6f31f49d75c64027c0a5e5448e4a6296ed9aa"
+    },
+    {
+      "file": "native-r4/state-002.cdxml",
+      "bytes": 3181,
+      "sha256": "2444e817fb74b6381f2c6530e3dd855dbe7dfde753874840fc330e677bc69d1e"
+    },
+    {
+      "file": "native-r4/state-003-before.cdxml",
+      "bytes": 2911,
+      "sha256": "c4f138af6b0d2e776ea086f804b81241255a3a0558a420c94ddef15cca40099a"
+    },
+    {
+      "file": "native-r4/state-003-selection-after.cdxml",
+      "bytes": 2920,
+      "sha256": "7cc71dee3ea106f052ea8e7d42d9905421eba2bdc7d2ceebc186d8f411293d83"
+    },
+    {
+      "file": "native-r4/state-003.atoms.json",
+      "bytes": 3005,
+      "sha256": "4e40396827e6cae6a2eae93fb76ddb9f8d409b3b24cc9faf655cda1bd8c90106"
+    },
+    {
+      "file": "native-r4/state-003.cdxml",
+      "bytes": 2904,
+      "sha256": "433d250eefdc0d11eee1f104189f25619e5a66b3832fee605f85e347f16646a3"
+    },
+    {
+      "file": "native-r4/state-004-before.cdxml",
+      "bytes": 3266,
+      "sha256": "dcc4a6a43f556ad27be46b79a97c256a20dfff950d946bdb34c12e343242e208"
+    },
+    {
+      "file": "native-r4/state-004-selection-after.cdxml",
+      "bytes": 3297,
+      "sha256": "d3146c521622d4e4c89422ac4c114b111180ee908ae335b07bf4bbc8393d1679"
+    },
+    {
+      "file": "native-r4/state-004.atoms.json",
+      "bytes": 4944,
+      "sha256": "8f93ab317eca1fbeb67119cb938c2ac3e9477a2a615452c2c30ccc56fb0d68df"
+    },
+    {
+      "file": "native-r4/state-004.cdxml",
+      "bytes": 3281,
+      "sha256": "3f8e8d839ef8db929feebb43e29e120e8b381bc0469bf9dbfb41f2c37a7c139e"
+    },
+    {
+      "file": "native-r4/state-005-before.cdxml",
+      "bytes": 3157,
+      "sha256": "962483875e6d086f03bd21b139853d5a7c3a4f61cc969b4f2c9534d6e3d930eb"
+    },
+    {
+      "file": "native-r4/state-005-selection-after.cdxml",
+      "bytes": 3183,
+      "sha256": "4d6405a27b378d4f7017b2312b82bd349eca4af4e5ba5ac1f09cc2881740c58c"
+    },
+    {
+      "file": "native-r4/state-005.atoms.json",
+      "bytes": 4260,
+      "sha256": "7b89a9e7ea70046c7dfc15f93b0978f77b010672037cb33db08d4c3b2367acce"
+    },
+    {
+      "file": "native-r4/state-005.cdxml",
+      "bytes": 3167,
+      "sha256": "0dc013ad00dd8a7abd616144fb69fa6836c22f8b06f330aa1d2ed04095d7a41e"
+    },
+    {
+      "file": "native-r4/state-006-before.cdxml",
+      "bytes": 3496,
+      "sha256": "619f5f40d4aa1baac72225940e171eb104f858d2ae01a28e7a0f233fd462fcc5"
+    },
+    {
+      "file": "native-r4/state-006-selection-after.cdxml",
+      "bytes": 3518,
+      "sha256": "ef4d2d2b6860de8a0adf547ec859fddd28bd7f40256b713475356912cf779536"
+    },
+    {
+      "file": "native-r4/state-006.atoms.json",
+      "bytes": 4785,
+      "sha256": "1241f0e9848ba2b16618b4514cfbc74d61a2db7e71885af5601a24117e57a88c"
+    },
+    {
+      "file": "native-r4/state-006.cdxml",
+      "bytes": 3502,
+      "sha256": "f3970ba8cd5250d7266777b9afa7920c6347f91d583b794681951821b2bf33e7"
+    },
+    {
+      "file": "native-r4/state-007-before.cdxml",
+      "bytes": 3592,
+      "sha256": "c6c37c3ff37d90a98fb5639c8437c88e5a511022ff80252042b2e336b3564386"
+    },
+    {
+      "file": "native-r4/state-007-selection-after.cdxml",
+      "bytes": 3620,
+      "sha256": "970e60dfc8fd4d6f5c790de398566eb7c06fc94fa4b4293af0c9fe07d29f0c4d"
+    },
+    {
+      "file": "native-r4/state-007.atoms.json",
+      "bytes": 5520,
+      "sha256": "cafc38252694c290865578ef0d5a3d8e155d6ff23732c80e0b554613ac094388"
+    },
+    {
+      "file": "native-r4/state-007.cdxml",
+      "bytes": 3604,
+      "sha256": "0aee512ca4ff24c339451f56fe190f7a876a8e45a4922a9bcf23a0390f58461c"
+    },
+    {
+      "file": "native-r4/state-008-before.cdxml",
+      "bytes": 3488,
+      "sha256": "2d5be0a15feb509b77ab48231dc5a5870ec0f9db40ae4240b1285c3fe08569a0"
+    },
+    {
+      "file": "native-r4/state-008-selection-after.cdxml",
+      "bytes": 3519,
+      "sha256": "5728b3b2a280f30d693f7ba04c852168d0e77919f2456ebedf362fd49933bdb7"
+    },
+    {
+      "file": "native-r4/state-008.atoms.json",
+      "bytes": 4840,
+      "sha256": "8e4a4ac4719ccf0054aa132e28d434cd7714acb88cd654700b92e1ffbfa663bc"
+    },
+    {
+      "file": "native-r4/state-008.cdxml",
+      "bytes": 3503,
+      "sha256": "c2fd9f0390c1e264c3532341f5b650db58d250ecd7b676ea0dab4d87dfd7cd43"
+    },
+    {
+      "file": "native-r4/state-009-before.cdxml",
+      "bytes": 2837,
+      "sha256": "c1b04afd53691aeed1c06cf4150da422585d04285ff210ff7cf2bcf161e65dfc"
+    },
+    {
+      "file": "native-r4/state-009-selection-after.cdxml",
+      "bytes": 2855,
+      "sha256": "82490bc26d318c5e5c49789a69143fe6bf907d08d8883d025493c531f1873152"
+    },
+    {
+      "file": "native-r4/state-009.atoms.json",
+      "bytes": 3889,
+      "sha256": "85da5357b7681da8e64632d53c364e900ead341f5d571e117cd6b16f6b1bb9b4"
+    },
+    {
+      "file": "native-r4/state-009.cdxml",
+      "bytes": 2839,
+      "sha256": "f8be177881894d0388cd26c160763f217cacd565ababc90af4a3f45e7c38e7af"
+    },
+    {
+      "file": "native-r4/state-010-before.cdxml",
+      "bytes": 3157,
+      "sha256": "5cc3c97fc170f1549aeed3018f48710e3e6a73ff1d30d357c4ae18ed4b702b5c"
+    },
+    {
+      "file": "native-r4/state-010-selection-after.cdxml",
+      "bytes": 3174,
+      "sha256": "54d875259083e3af11e219e37bdad4a37180c3fbbe917796ffea2e8bd000ee6f"
+    },
+    {
+      "file": "native-r4/state-010.atoms.json",
+      "bytes": 4397,
+      "sha256": "d492196f9749eb1d5067bf5b5bfa9d039d6d2e2228ab070eeb509f3b0fd267a3"
+    },
+    {
+      "file": "native-r4/state-010.cdxml",
+      "bytes": 3158,
+      "sha256": "ac264984fc09e6ba3c45315bcbe2cfa74ed3c6c8ad94cadb542446eddd8d44fe"
+    },
+    {
+      "file": "native-r4/state-011-before.cdxml",
+      "bytes": 3610,
+      "sha256": "2c25953b4cf2b69f18f81f62247462fddaf4089903656c745d5553deb48a5ac3"
+    },
+    {
+      "file": "native-r4/state-011-selection-after.cdxml",
+      "bytes": 3377,
+      "sha256": "cf378851976ed84e47d02b96004a27e8a02697e8403786745dc10e12c81d328b"
+    },
+    {
+      "file": "native-r4/state-011.atoms.json",
+      "bytes": 6782,
+      "sha256": "6219d78730502411678f68b00286f5e66dc755e8b5801240ff52e7507a497b8b"
+    },
+    {
+      "file": "native-r4/state-011.cdxml",
+      "bytes": 3361,
+      "sha256": "6a36cb24542c08068191cb33629795d08293980b1a6a8ca7d8bb5a991979c150"
+    },
+    {
+      "file": "native-r4/state-012-before.cdxml",
+      "bytes": 3646,
+      "sha256": "5b11177e0462965dd952848842a9259d76d47430bdd54bc01a410d793ed60107"
+    },
+    {
+      "file": "native-r4/state-012-selection-after.cdxml",
+      "bytes": 3464,
+      "sha256": "d33bc7a27d25f102be304fcb0949587b0ef9110875ca3f20202c12d785d2e9e0"
+    },
+    {
+      "file": "native-r4/state-012.atoms.json",
+      "bytes": 5887,
+      "sha256": "c0d4da42523f77a37069b4c7d70cd587e205b4866c132b7dd5a9d022e15f0e1d"
+    },
+    {
+      "file": "native-r4/state-012.cdxml",
+      "bytes": 3448,
+      "sha256": "aa463886b2ec6eaba3b2fca11ca6b177ceb9b00eb51fcf6009c99743764e4c0a"
+    },
+    {
+      "file": "native-r4/state-013-before.cdxml",
+      "bytes": 3818,
+      "sha256": "895e5b69d107341946c7795b35e52a5b8612a1eafb36f942d6e646d6af59d6ef"
+    },
+    {
+      "file": "native-r4/state-013-selection-after.cdxml",
+      "bytes": 3603,
+      "sha256": "4daa58cf3fbe576e8da03e8f0ea58e3a94012bbf4b074c2636a955094b89bcee"
+    },
+    {
+      "file": "native-r4/state-013.atoms.json",
+      "bytes": 6613,
+      "sha256": "e83d4fc251e9eec8754056eafdc2288fadd105086413b135e9a568a9978cf139"
+    },
+    {
+      "file": "native-r4/state-013.cdxml",
+      "bytes": 3587,
+      "sha256": "d80b32b24175427a8e70295f1dfc64d3ed1febf209a9d39b4f994c89ba9700e2"
+    },
+    {
+      "file": "native-r4/state-014-before.cdxml",
+      "bytes": 3380,
+      "sha256": "a4c31e7e6aa740ac2029c5519b4888445474d0e3289c8e71c628f765b95769fa"
+    },
+    {
+      "file": "native-r4/state-014-selection-after.cdxml",
+      "bytes": 3432,
+      "sha256": "1f3705476bf152680111574c9838c54b37a1dc71641a208f261dce46974ae1aa"
+    },
+    {
+      "file": "native-r4/state-014.atoms.json",
+      "bytes": 4311,
+      "sha256": "ddebe12cd5c5af618cec65f104635b22d1055d08d054527c7c5c5ba5ae7d679e"
+    },
+    {
+      "file": "native-r4/state-014.cdxml",
+      "bytes": 3416,
+      "sha256": "317a98b6617150d629ea7f605a9484b1a53b2618f9460769a794998123a9bbce"
+    },
+    {
+      "file": "native-r4/state-015-before.cdxml",
+      "bytes": 3681,
+      "sha256": "7811c823b3cb4a6cebdbeb013d3fc5d31b057228cb4d15ca9638cf7259595125"
+    },
+    {
+      "file": "native-r4/state-015-selection-after.cdxml",
+      "bytes": 3703,
+      "sha256": "1ce31605d0e53b77a94ffd3027da60b53bc97aa8ca23d039ae23479729d37c14"
+    },
+    {
+      "file": "native-r4/state-015.atoms.json",
+      "bytes": 4830,
+      "sha256": "e4a83cf3dfd74823305a23af2bef2470816205fdb8c7aa4cb3a9460989ae3119"
+    },
+    {
+      "file": "native-r4/state-015.cdxml",
+      "bytes": 3687,
+      "sha256": "4c6b9e51a100170f65ecea95bef71f3b413b364904296216f3646f5a9f3024bf"
+    },
+    {
+      "file": "native-r4/state-016-before.cdxml",
+      "bytes": 3463,
+      "sha256": "e3197cc0e74c89fc3d1d1b233f9f179f7da366a61bfb8eed605cf0b16fc7ec96"
+    },
+    {
+      "file": "native-r4/state-016-selection-after.cdxml",
+      "bytes": 3524,
+      "sha256": "a01b06ece257cb7ab152789d4bf7bfa5529fe1b61c1ffd69791d24573e1c8f0a"
+    },
+    {
+      "file": "native-r4/state-016.atoms.json",
+      "bytes": 6856,
+      "sha256": "590c5735f86513cf1871223e7814d100bdf0417fa84911068db116b564b37815"
+    },
+    {
+      "file": "native-r4/state-016.cdxml",
+      "bytes": 3508,
+      "sha256": "ee9824d167526fe8f51cc1790440d456a89a56fb0c01be971a06c42944ac18b5"
+    },
+    {
+      "file": "native-r4/state-017-before.cdxml",
+      "bytes": 2999,
+      "sha256": "3c06c9101a69669ed2fbc5ccf0e00167b221a33fc79c1e953faf7ce1a7c6a3f1"
+    },
+    {
+      "file": "native-r4/state-017-selection-after.cdxml",
+      "bytes": 3008,
+      "sha256": "f761b455042f9b941b44f17ec4bbfbe12f4753ac9fa613de0227989af770d830"
+    },
+    {
+      "file": "native-r4/state-017.atoms.json",
+      "bytes": 3192,
+      "sha256": "b87b084b586a4d6cde030a627ed1fade37ec8f67fe5eefac5f9582fe8e6a3a6e"
+    },
+    {
+      "file": "native-r4/state-017.cdxml",
+      "bytes": 2992,
+      "sha256": "79dbb3fced2ed47563db1914034c40d62ab7d60a49fc5ebe3a3ff4d73b34d6a3"
+    },
+    {
+      "file": "native-r4/state-018-before.cdxml",
+      "bytes": 2959,
+      "sha256": "fafe83ba2e2a0d9a53c98101860f7c4c7e0d0663d72ff80561764a91b6c41523"
+    },
+    {
+      "file": "native-r4/state-018-selection-after.cdxml",
+      "bytes": 2968,
+      "sha256": "92297bddfb90ad3d8fd13f633bb27b1353c1fc403585dc760397d1394705a514"
+    },
+    {
+      "file": "native-r4/state-018.atoms.json",
+      "bytes": 3223,
+      "sha256": "4c86a15879749e6f5c9ecd1e7959b2df825cdbc5f595b32816bcb5aa0e2022fd"
+    },
+    {
+      "file": "native-r4/state-018.cdxml",
+      "bytes": 2952,
+      "sha256": "9ee9c748fa6759bec48cbe81efcb38c109578ddce9917ff7f99d0884c12fd8c7"
+    },
+    {
+      "file": "native-r4/state-019-before.cdxml",
+      "bytes": 2960,
+      "sha256": "a765abe51b48aab974a1bc977c2894fbbf2a75e125610b63993805aeddf6ccf9"
+    },
+    {
+      "file": "native-r4/state-019-selection-after.cdxml",
+      "bytes": 2969,
+      "sha256": "7cf6c690df14f951c4490de283d55bef0e6ef7d83c310a7fbfc52f75826af85f"
+    },
+    {
+      "file": "native-r4/state-019.atoms.json",
+      "bytes": 3251,
+      "sha256": "a578240f992228f86efb6f86fe233bcd5a77f9ed3596c521587f4dae6c43ad2b"
+    },
+    {
+      "file": "native-r4/state-019.cdxml",
+      "bytes": 2953,
+      "sha256": "e9027453034d942f8e469f9ce51fb964f6393191bb0deb64e22d82151820a528"
+    },
+    {
+      "file": "analysis-r4/state-000.semantic.json",
+      "bytes": 41671,
+      "sha256": "7a1db396c4ba744a0f98d7e36c0a2e947f105dbfe155bbc5ad095bda92cc2981"
+    },
+    {
+      "file": "analysis-r4/state-001.semantic.json",
+      "bytes": 58828,
+      "sha256": "d54a00ea6724b6fc3da27bf5ba48e22799f38809405e000b1e92f43818a161f6"
+    },
+    {
+      "file": "analysis-r4/state-002.semantic.json",
+      "bytes": 58837,
+      "sha256": "067ab0787285a20b6bc34c6b7943eca773eba50c94580d7541a46f87cd54987b"
+    },
+    {
+      "file": "analysis-r4/state-003.semantic.json",
+      "bytes": 49469,
+      "sha256": "6700b095773bc8e1742fe484e5782060ab08465e95443edc4ba449f40d50ba38"
+    },
+    {
+      "file": "analysis-r4/state-004.semantic.json",
+      "bytes": 76568,
+      "sha256": "40c13d5320bf95a0f6970c52373a9e2ab6f6d67c24fcdc05344795e5f25bc1b4"
+    },
+    {
+      "file": "analysis-r4/state-005.semantic.json",
+      "bytes": 58595,
+      "sha256": "609eb66b06cc214e337784824f3a93c952b0b7daf09527e7ca5d581b32a899b4"
+    },
+    {
+      "file": "analysis-r4/state-006.semantic.json",
+      "bytes": 79634,
+      "sha256": "3cdd6ade0a9c39716e81077bdb6ce1bc4d61bcc68320b0f45107f15ee0ad383a"
+    },
+    {
+      "file": "analysis-r4/state-007.semantic.json",
+      "bytes": 97441,
+      "sha256": "c09dc73316c44d442385bd27e99f574d81462cc01a2659e8ee54f0f921831352"
+    },
+    {
+      "file": "analysis-r4/state-008.semantic.json",
+      "bytes": 79638,
+      "sha256": "8f8aa885a67808c34c32791e227bf37ec5825428a9adb3336ebd057dbe8ce211"
+    },
+    {
+      "file": "analysis-r4/state-009.semantic.json",
+      "bytes": 37775,
+      "sha256": "081d8cb89820133077094faa3ac3ea7bcd00d5dd514cfb81775bcc4a51421a13"
+    },
+    {
+      "file": "analysis-r4/state-010.semantic.json",
+      "bytes": 58591,
+      "sha256": "f3a89f6846b76165f7650f6fcb873d6bbc0c8400fe5938d2b28edf589849a68f"
+    },
+    {
+      "file": "analysis-r4/state-011.semantic.json",
+      "bytes": 110130,
+      "sha256": "018518438a0703bae47ad9ed7ba78a70bdb604686375db367c67f3b5e8bdb5b0"
+    },
+    {
+      "file": "analysis-r4/state-012.semantic.json",
+      "bytes": 94998,
+      "sha256": "1eac1ef1b7c75187aa66a9b58883f3fb632d28312bd637c09767260cffe5cb33"
+    },
+    {
+      "file": "analysis-r4/state-013.semantic.json",
+      "bytes": 112961,
+      "sha256": "14c070859074844b87d2206fbfecf088be8d8d23836d81762f6b6f7306b7fb36"
+    },
+    {
+      "file": "analysis-r4/state-014.semantic.json",
+      "bytes": 63231,
+      "sha256": "54f430b86d556b586c2e77317a7ad55a336cc5e427fafe220c7a1f201a344678"
+    },
+    {
+      "file": "analysis-r4/state-015.semantic.json",
+      "bytes": 84870,
+      "sha256": "24db747c051c2dcf28ebbb68709ea14673513f6f199d8c8870174b304ffc9135"
+    },
+    {
+      "file": "analysis-r4/state-016.semantic.json",
+      "bytes": 235397,
+      "sha256": "faf8d0db15da11ce9a2accb6ece6f18e4da72612c3b539d731225da30a41eb2b"
+    },
+    {
+      "file": "analysis-r4/state-017.semantic.json",
+      "bytes": 51912,
+      "sha256": "7a414e6cadeb72c7438758281f28a0bc22e9b1ea2b682e05b6467b15fd6c7086"
+    },
+    {
+      "file": "analysis-r4/state-018.semantic.json",
+      "bytes": 22835,
+      "sha256": "d60d52dafaec37a93d1cfb99315d48cdb04448fbac376e4fd323be356f9ee06e"
+    },
+    {
+      "file": "analysis-r4/state-019.semantic.json",
+      "bytes": 22853,
+      "sha256": "ba4535c4d1c528cdc9602278fce95eb1ffdf6f469a5830a33a18a8a28506ba6a"
+    }
+  ],
+  "qualification_scope": "Only the listed actually observed branches, not the entire proposed profile.",
+  "all_expected_mutations_preserved_observations": true,
+  "source_bytes_rechecked": true,
+  "limitations": [
+    "All seeds explicitly contained NumHydrogens; branch coverage is measured only after native cleanup/reopen.",
+    "Conflict input and methane remain diagnostic-only regardless of native normalization.",
+    "Cyclopentanone is a new qualification of exposed chemistry, not retroactive acceptance of an old negative.",
+    "Query, abnormal, cyclic-unsaturation and multiple-cycle guard fixtures are unit controls, not additional native executions.",
+    "No private candidate, visual acceptance, chemical-mechanism approval or Gold promotion."
+  ]
+}

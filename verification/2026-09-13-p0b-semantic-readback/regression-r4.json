@@ -1,0 +1,225 @@
+{
+  "version": "ir-v02-runtime-regression/0.1",
+  "scope": "Explicit synthetic runtime subset; no corpus or blind native run.",
+  "inventory_test_count": 100,
+  "selected_count": 67,
+  "tests_run": 67,
+  "passed_count": 67,
+  "failed_count": 0,
+  "error_count": 0,
+  "skipped": [],
+  "excluded_count": 12,
+  "excluded": [
+    {
+      "test": "test_general_ir.GeneralIrChecks.test_independent_chemistry_and_different_flow_count",
+      "reason": "Reads the excluded request before replacing chemistry or checking its schema."
+    },
+    {
+      "test": "test_general_ir.GeneralIrChecks.test_schema_rejects_oracle_or_layout_coordinates",
+      "reason": "Reads the excluded request before replacing chemistry or checking its schema."
+    },
+    {
+      "test": "test_native_provenance.NativeProvenanceGuards.test_seed_cannot_claim_native_execution",
+      "reason": "Setup reads excluded evaluation chemistry, including style-only access."
+    },
+    {
+      "test": "test_native_provenance.NativeProvenanceGuards.test_missing_receipt_and_incomplete_status_rejected",
+      "reason": "Setup reads excluded evaluation chemistry, including style-only access."
+    },
+    {
+      "test": "test_native_provenance.NativeProvenanceGuards.test_nonfinite_and_wrong_style_rejected",
+      "reason": "Setup reads excluded evaluation chemistry, including style-only access."
+    },
+    {
+      "test": "test_readback_guards.NativeReadbackGuards.test_native_hydrogen_override_changes_fingerprint_and_fails",
+      "reason": "Setup reads excluded evaluation chemistry, including style-only access."
+    },
+    {
+      "test": "test_readback_guards.NativeReadbackGuards.test_displaced_state_fails_actual_anchor_and_containment",
+      "reason": "Setup reads excluded evaluation chemistry, including style-only access."
+    },
+    {
+      "test": "test_readback_guards.NativeReadbackGuards.test_lone_pair_in_wrong_corner_is_rejected",
+      "reason": "Setup reads excluded evaluation chemistry, including style-only access."
+    },
+    {
+      "test": "test_readback_guards.NativeReadbackGuards.test_missing_arrowhead_fails",
+      "reason": "Setup reads excluded evaluation chemistry, including style-only access."
+    },
+    {
+      "test": "test_readback_guards.NativeReadbackGuards.test_native_h_inference_does_not_use_ir",
+      "reason": "Setup reads excluded evaluation chemistry, including style-only access."
+    },
+    {
+      "test": "test_readback_guards.NativeReadbackGuards.test_product_side_flow_binding_is_rejected",
+      "reason": "Setup reads excluded evaluation chemistry, including style-only access."
+    },
+    {
+      "test": "test_readback_guards.NativeReadbackGuards.test_native_font_run_overrides_cannot_hide_behind_root_default",
+      "reason": "Setup reads excluded evaluation chemistry, including style-only access."
+    }
+  ],
+  "unscheduled_count": 21,
+  "unscheduled": [
+    {
+      "test": "test_edit_intents.EditIntentChecks.test_exact_declared_changes_pass",
+      "reason": "Outside this explicitly audited runtime integration subset."
+    },
+    {
+      "test": "test_edit_intents.EditIntentChecks.test_noop_curve_symbol_caption_setters_fail",
+      "reason": "Outside this explicitly audited runtime integration subset."
+    },
+    {
+      "test": "test_edit_intents.EditIntentChecks.test_undeclared_chemistry_and_missing_head_fail",
+      "reason": "Outside this explicitly audited runtime integration subset."
+    },
+    {
+      "test": "test_edit_intents.EditIntentChecks.test_wrong_atom_and_new_warning_fail",
+      "reason": "Outside this explicitly audited runtime integration subset."
+    },
+    {
+      "test": "test_edit_intents.EditIntentChecks.test_missing_before_or_intent_fails_and_cli_exits_nonzero",
+      "reason": "Outside this explicitly audited runtime integration subset."
+    },
+    {
+      "test": "test_mask_guards.MaskReadbackChecks.test_font_inheritance_mapping_and_curve_fields",
+      "reason": "Outside this explicitly audited runtime integration subset."
+    },
+    {
+      "test": "test_mask_guards.MaskReadbackChecks.test_run_stays_bound_to_its_atom",
+      "reason": "Outside this explicitly audited runtime integration subset."
+    },
+    {
+      "test": "test_mask_guards.MaskReadbackChecks.test_consistent_font_identity_renaming_preserves_effective_font",
+      "reason": "Outside this explicitly audited runtime integration subset."
+    },
+    {
+      "test": "test_mask_guards.MaskReadbackChecks.test_third_object_cannot_borrow_allowed_circle",
+      "reason": "Outside this explicitly audited runtime integration subset."
+    },
+    {
+      "test": "test_mask_guards.MaskReadbackChecks.test_ambiguous_colour_contributors_fail_closed",
+      "reason": "Outside this explicitly audited runtime integration subset."
+    },
+    {
+      "test": "test_smoke_verifier.SmokeEvidenceChecks.test_ids_may_be_renumbered_without_changing_appearance",
+      "reason": "Outside this explicitly audited runtime integration subset."
+    },
+    {
+      "test": "test_smoke_verifier.SmokeEvidenceChecks.test_charge_loss_is_not_equivalent",
+      "reason": "Outside this explicitly audited runtime integration subset."
+    },
+    {
+      "test": "test_smoke_verifier.SmokeEvidenceChecks.test_wedge_direction_is_not_ignored",
+      "reason": "Outside this explicitly audited runtime integration subset."
+    },
+    {
+      "test": "test_smoke_verifier.SmokeEvidenceChecks.test_dropped_caption_is_not_equivalent",
+      "reason": "Outside this explicitly audited runtime integration subset."
+    },
+    {
+      "test": "test_smoke_verifier.SmokeEvidenceChecks.test_arrows_require_separate_comparator",
+      "reason": "Outside this explicitly audited runtime integration subset."
+    },
+    {
+      "test": "test_smoke_verifier.SmokeEvidenceChecks.test_dangling_bond_is_rejected",
+      "reason": "Outside this explicitly audited runtime integration subset."
+    },
+    {
+      "test": "test_smoke_verifier.SmokeEvidenceChecks.test_duplicate_ids_are_rejected",
+      "reason": "Outside this explicitly audited runtime integration subset."
+    },
+    {
+      "test": "test_stereo_and_layout_guards.StereoAndLayoutGuards.test_branch_permutation_preserves_input_stereo",
+      "reason": "Outside this explicitly audited runtime integration subset."
+    },
+    {
+      "test": "test_stereo_and_layout_guards.StereoAndLayoutGuards.test_enantiomer_missing_stereo_and_isotope_are_rejected",
+      "reason": "Outside this explicitly audited runtime integration subset."
+    },
+    {
+      "test": "test_stereo_and_layout_guards.StereoAndLayoutGuards.test_unsupported_smiles_cannot_pass",
+      "reason": "Outside this explicitly audited runtime integration subset."
+    },
+    {
+      "test": "test_stereo_and_layout_guards.StereoAndLayoutGuards.test_annotation_gap_covers_head_and_control_port",
+      "reason": "Outside this explicitly audited runtime integration subset."
+    }
+  ],
+  "selected": [
+    "test_arrow_ports.ArrowPorts.test_asymmetric_labels_use_measured_boundary",
+    "test_arrow_ports.ArrowPorts.test_unlabelled_atom_and_translation",
+    "test_cdxml_atom_identity.ExplicitNativeIdentityChecks.test_missing_h_is_unknown_even_for_familiar_elements",
+    "test_cdxml_atom_identity.ExplicitNativeIdentityChecks.test_observed_h_is_compared_and_not_replaced_by_expected",
+    "test_cdxml_atom_identity.ExplicitNativeIdentityChecks.test_isotope_charge_and_non_hcno_identity_are_checked",
+    "test_cdxml_atom_identity.ExplicitNativeIdentityChecks.test_nonfinite_h_and_radical_are_not_silently_normalized",
+    "test_cdxml_atom_identity.ExplicitNativeIdentityChecks.test_h_is_observed_not_calculated_from_expected_ir",
+    "test_cdxml_atom_identity.ExplicitNativeIdentityChecks.test_chloride_unused_valence_is_not_promoted_to_hydrogen",
+    "test_cdxml_atom_identity.ExplicitNativeIdentityChecks.test_unqualified_native_profiles_stay_unknown",
+    "test_cdxml_atom_identity.ExplicitNativeIdentityChecks.test_formula_h_zero_to_three_does_not_use_raw_valence_h_fields",
+    "test_cdxml_atom_identity.ExplicitNativeIdentityChecks.test_h4_rings_and_unqualified_explicit_h_profiles_are_rejected",
+    "test_cdxml_atom_identity.ExplicitNativeIdentityChecks.test_saturated_monocycles_need_complete_native_component_evidence",
+    "test_cdxml_atom_identity.ExplicitNativeIdentityChecks.test_cyclic_carbonyl_unsaturation_aromatic_and_other_profiles_stay_unknown",
+    "test_cdxml_atom_identity.ExplicitNativeIdentityChecks.test_cyclic_native_formula_is_compared_with_expected_h_without_replacement",
+    "test_cdxml_atom_identity.ExplicitNativeIdentityChecks.test_sidecar_requires_matching_native_bytes_and_coverage",
+    "test_general_ir.GeneralIrChecks.test_simultaneous_flow_order_is_irrelevant",
+    "test_general_ir.GeneralIrChecks.test_graph_order_not_lexical_or_storage",
+    "test_general_ir.GeneralIrChecks.test_reversed_donor_rejected",
+    "test_general_ir.GeneralIrChecks.test_nonexistent_lone_pair_rejected",
+    "test_general_ir.GeneralIrChecks.test_carbon_lone_pair_outside_scope_rejected",
+    "test_general_ir.GeneralIrChecks.test_cycle_and_disconnected_states_rejected",
+    "test_general_ir.GeneralIrChecks.test_cdxml_bond_enum_serialization",
+    "test_general_ir.GeneralIrChecks.test_runtime_has_no_oracle_imports",
+    "test_generic_mask_scene.MaskRelationshipChecks.test_distinct_pair_slots_keep_declared_source",
+    "test_generic_mask_scene.MaskRelationshipChecks.test_unqualified_bond_sink_is_rejected",
+    "test_ir_v02_runtime.DepictionRuntimeChecks.test_native_atom_sidecar_receipt_hash_and_identity_are_enforced",
+    "test_ir_v02_runtime.DepictionRuntimeChecks.test_full_table_encoding_is_not_a_native_quality_claim",
+    "test_ir_v02_runtime.DepictionRuntimeChecks.test_nonendpoint_flow_bypasses_legacy_validator",
+    "test_ir_v02_runtime.DepictionRuntimeChecks.test_hidden_counterion_preserves_inventory_and_excludes_native_atom",
+    "test_ir_v02_runtime.DepictionRuntimeChecks.test_display_edit_changes_only_depiction_hash_and_not_chemical_roles",
+    "test_ir_v02_runtime.DepictionRuntimeChecks.test_selected_pair_index_and_virtual_donor_are_separate",
+    "test_ir_v02_runtime.DepictionRuntimeChecks.test_abbreviation_has_typed_rejection_without_expansion",
+    "test_ir_v02_runtime.DepictionRuntimeChecks.test_condition_species_caption_is_preserved",
+    "test_ir_v02_runtime.DepictionRuntimeChecks.test_explicit_orientation_is_not_silently_replaced_by_auto",
+    "test_ir_v02_runtime.DepictionRuntimeChecks.test_native_readback_rejects_unexpected_visible_counterion",
+    "test_ir_v02_runtime.DepictionRuntimeChecks.test_forged_lowered_plan_is_rejected_before_seed_writes",
+    "test_ir_v02_runtime.DepictionRuntimeChecks.test_one_electron_flow_never_becomes_full_head",
+    "test_ir_v02_runtime.DepictionRuntimeChecks.test_cli_records_semantic_success_separately_from_capability_failure",
+    "test_native_observation.NativeObservationChecks.test_missing_zero_and_malformed_fields_remain_distinct",
+    "test_native_observation.NativeObservationChecks.test_only_nested_label_h_change_is_not_an_unchanged_graph",
+    "test_native_observation.NativeObservationChecks.test_expected_change_never_changes_or_fills_observed_value",
+    "test_native_observation.NativeObservationChecks.test_freeze_requires_matching_bytes_and_complete_required_sources",
+    "test_native_observation.NativeObservationChecks.test_unknown_cannot_contain_a_resolved_value",
+    "test_native_semantics.NativeSemanticChecks.test_simple_labels_have_explicit_scope_and_reverse_orientation",
+    "test_native_semantics.NativeSemanticChecks.test_unmodified_preregistered_conflict_is_refused_before_native_normalization",
+    "test_native_semantics.NativeSemanticChecks.test_missing_field_does_not_fill_from_expected_or_unused_valences",
+    "test_native_semantics.NativeSemanticChecks.test_expected_h_changes_only_comparison",
+    "test_native_semantics.NativeSemanticChecks.test_explicit_h_and_d_are_not_added_to_non_node_h",
+    "test_native_semantics.NativeSemanticChecks.test_unexercised_label_only_and_carbon_field_only_branches_are_not_admitted",
+    "test_native_semantics.NativeSemanticChecks.test_selected_formula_requires_exact_selection_and_cut_bonds",
+    "test_native_semantics.NativeSemanticChecks.test_warnings_or_native_field_conflicts_do_not_resolve_h",
+    "test_native_semantics.NativeSemanticChecks.test_query_radical_abnormal_and_aromatic_bonds_are_refused",
+    "test_native_semantics.NativeSemanticChecks.test_real_cdxml_query_fields_reject_an_otherwise_matching_api_baseline",
+    "test_native_semantics.NativeSemanticChecks.test_actual_field_source_scope_branches_limit_admission",
+    "test_native_semantics.NativeSemanticChecks.test_branch_coverage_requires_both_native_phases",
+    "test_native_semantics.NativeSemanticChecks.test_cleanup_reopen_comparison_ignores_native_id_changes_but_rejects_h_change",
+    "test_native_semantics.NativeSemanticChecks.test_two_key_control_summary_cannot_qualify_production",
+    "test_native_semantics.NativeSemanticChecks.test_unqualified_cyclic_unsaturation_and_multiple_cycles_are_refused",
+    "test_native_semantics.NativeSemanticChecks.test_legacy_observer_cannot_receive_new_qualification",
+    "test_native_semantics.NativeSemanticChecks.test_actual_sidecar_verifier_rejects_label_only_snapshot_mutation",
+    "test_native_semantics.NativeSemanticChecks.test_hash_syntax_and_matching_build_are_not_observer_qualification",
+    "test_scene_equivalence.SceneSymmetryChecks.test_true_global_spectator_exchange_is_allowed",
+    "test_scene_equivalence.SceneSymmetryChecks.test_inconsistent_state_local_exchange_is_rejected",
+    "test_scene_equivalence.SceneSymmetryChecks.test_curve_change_cannot_pass_atom_only_equivalence",
+    "test_scene_equivalence.SceneSymmetryChecks.test_inventory_chemistry_and_control_corruption_fail_closed",
+    "test_scene_equivalence.SceneSymmetryChecks.test_empty_or_nonbijective_identity_map_is_rejected",
+    "test_scene_equivalence.SceneSymmetryChecks.test_matching_corruption_on_both_sides_cannot_pass"
+  ],
+  "blocked_payload_reads": [],
+  "limitations": "Selection is source-audited; the path guard is additional defense, not proof against renamed or embedded derivatives.",
+  "status": "pass",
+  "quality_acceptance": "not_implied",
+  "source_commit": "2d6ac0d8a510d912f8e03157cf182cd6ce403683",
+  "raw_record_sha256": "073f77d33c614ac16d289ddf48adc0caf0f1a96e78451250a08f5a5f85af459a",
+  "sanitation": "Only machine-local read paths omitted; selected/excluded/unscheduled results retained."
+}

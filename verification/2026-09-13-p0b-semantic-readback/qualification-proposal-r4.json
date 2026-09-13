@@ -1,0 +1,15 @@
+{
+  "version": "native-semantic-qualification/1.0",
+  "profile": "native-semantic-readback/1.1",
+  "status": "awaiting_independent_controller_review",
+  "source_freeze": {
+    "file": "source-freeze-r4.json",
+    "sha256": "e12acc3f84333125476d47a1c2187873d03378da56ed3c0117324dbc1006ee1f"
+  },
+  "control_receipt": {
+    "file": "control-receipt-r4.json",
+    "sha256": "bc3d514c2870ea472fa096b98e2ddfa53c6697bedaf0a90dfdb84bedc45937b5"
+  },
+  "evidence_directory": "native-controls-r4",
+  "purpose": "Reviewable admission proposal; the production loader intentionally refuses this pending status."
+}
