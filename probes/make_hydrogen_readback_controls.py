@@ -49,7 +49,7 @@ def main():
         ET.ElementTree(root).write(folder/file, encoding='utf-8', xml_declaration=True)
         manifest.append(dict(state=name,file=file))
         expected[file] = dict(control=name, unmapped_h={str(m):h for m,_,h in atoms},
-                              fallback_eligible=name not in ('methane','explicit-deuterium','explicit-hydrogen'))
+                              fallback_eligible=name != 'methane')
         inputs.append(dict(file=file,sha256=hashlib.sha256((folder/file).read_bytes()).hexdigest()))
     for name, value in [('geometry-manifest.json',manifest),('control-expected.json',expected),
                         ('seed-provenance.json',dict(scope='Synthetic native adapter control only; not a Composer seed receipt.',inputs=inputs))]:
