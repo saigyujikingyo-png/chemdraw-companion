@@ -1,4 +1,4 @@
-# Paired mechanism corpus and blind reconstruction: active handoff
+# Mechanism IR v0.2 and native rerun: active handoff
 
 Effective 13 September 2026. Issue #2 advances the Quality Oracle / Gold Correction phase into actual external-source acquisition and blind reconstruction. Read DEVELOPMENT_PRINCIPLES.md, CHEMBRIDGE.md, CLOUD_STORAGE.md, QUALITY_ORACLE_V1.md, GOLD_CORRECTION_CORPUS_V1.md and GOLD_SILVER_HOLDOUT_V1.md.
 
@@ -12,7 +12,11 @@ The private pilot archive has now been independently received and verified: 38/3
 
 The [Issue #2 execution receipt](reviews/2026-09-13-issue2-paired-pilot.md) records twelve real native target pairs, two authorized PNG-only Terra max calls, partial semantic recovery and the actual runtime rejection of Br/K. The latest 402a31e generic entry was independently executed with the same request and failed at the same semantic guard; its private 80-file synthetic-control package was also received and checked. No candidate native render or blind correction delta exists. Prioritize general IR compilation/depiction and native visual integration before bulk corpus expansion.
 
-## Current Issue #2 order
+## Current v0.2 phase
+
+The latest user task stops corpus expansion and upgrades the semantic/depiction/compiler boundary. Read MECHANISM_IR_V0_2.md, DEPICTION_SEMANTICS_V1.md and ELECTRON_FLOW_COMPILER_V1.md. Preserve the original blind IR and use explicit deterministic migration; no hidden-target edits or new inference by default. The architecture owner supplies contracts and evaluator semantics; the existing implementation task supplies native integration. Run the real candidate through validation/lowering and stop at the first observed geometry/route frontier without sample tuning. M2/descendants/future holdouts are excluded from all design, fixtures, debugging and acceptance in this phase.
+
+## Issue #2 acquisition order (completed historical phase)
 
 1. Preserve the accepted R&D history and independent quality gates. Read PAIRED_MECHANISM_CORPUS_SURVEY.md, BLIND_RECONSTRUCTION_PROTOCOL_V1.md, DATA_LEAKAGE_FIREWALL_V1.md and AUTOMATIC_TARGET_COMPARISON_V1.md.
 2. Use bounded real external author assets and hash-bound provenance. Unknown redistribution does not prevent authorized internal research; raw originals remain private.
