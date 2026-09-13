@@ -1,0 +1,779 @@
+{
+  "version": "agent-edit-loop-implementation-receipt/0.1",
+  "source_commit": "8c923c0fe7100ada0e116228ffeca26408d0e11e",
+  "status": "bounded CLI and script safety delivered for independent controller Agent exercise",
+  "agent_acceptance": "not performed here",
+  "visual_acceptance": "not asserted",
+  "chemical_or_hydrogen_qualification": "not asserted; unknown remains unknown",
+  "control_b": "not accessed; controller-owned independent input",
+  "tests": {
+    "focused_unittest_methods": 5,
+    "passed": 5,
+    "scope": "derived association and initial stereo-marker counterexamples"
+  },
+  "runs": [
+    {
+      "run": "script-edit-a",
+      "classification": "script only, not controller Agent or visual acceptance",
+      "source_commit": "8c923c0fe7100ada0e116228ffeca26408d0e11e",
+      "source_hashes": {
+        "native-common.ps1": "0fe06575b88a8f2b14f6f3937dd72d2f2709b146564ac2e17b80b3b0ab01655f",
+        "native_edit_loop.py": "85df09a998aabea171aa645f29c08aabdf435a93006e5b6481f99128bae3e0ad",
+        "NativeChemDraw.cs": "52eb2fe1e66d9b13aba84dfba010959ddcb8fcf6109b919a498324400681b73c",
+        "native-edit-loop.ps1": "6fc9dd2d509f410702e02be60dd1e901b139079fb4585ec1aacd986f31a5476c"
+      },
+      "exact_git_source_hashes_match": true,
+      "actions": 17,
+      "ok_responses": 12,
+      "expected_refusals": 5,
+      "original_source_unchanged": true,
+      "normalization": [
+        {
+          "ok": true,
+          "xml_differences": [],
+          "native_differences": [],
+          "metadata_differences": [
+            {
+              "path": "/1/value",
+              "before": "source.cdxml",
+              "after": "saved-a.cdx"
+            }
+          ],
+          "derived_association": [],
+          "initial_native_normalization": [],
+          "allowed_target_position_id": null,
+          "other_object_tolerance": 0
+        },
+        {
+          "ok": false,
+          "xml_differences": [
+            {
+              "path": "/children/2/attributes/id",
+              "before": "7152",
+              "after": "7155"
+            },
+            {
+              "path": "/children/2/children/4/attributes/SupersededBy",
+              "before": "7153",
+              "after": "7156"
+            },
+            {
+              "path": "/children/2/children/4/attributes/Z",
+              "before": "17",
+              "after": "18"
+            },
+            {
+              "path": "/children/2/children/4/attributes/id",
+              "before": "7130",
+              "after": "7153"
+            },
+            {
+              "path": "/children/2/children/5/attributes/id",
+              "before": "7154",
+              "after": "7157"
+            },
+            {
+              "path": "/children/2/children/5/children/0/attributes/ReactionStepArrows",
+              "before": "7130",
+              "after": "7153"
+            },
+            {
+              "path": "/children/2/children/5/children/0/attributes/id",
+              "before": "7155",
+              "after": "7158"
+            },
+            {
+              "path": "/children/2/children/6/attributes/Z",
+              "before": "17",
+              "after": "18"
+            },
+            {
+              "path": "/children/2/children/6/attributes/id",
+              "before": "7153",
+              "after": "7156"
+            }
+          ],
+          "native_differences": [
+            {
+              "path": "/arrows/0/id",
+              "before": 7130,
+              "after": 7153
+            },
+            {
+              "path": "/captions/0/anchor/0",
+              "before": 191.4208984375,
+              "after": 191.4199981689453
+            },
+            {
+              "path": "/captions/0/anchor/1",
+              "before": 134.69166666666666,
+              "after": 134.6899871826172
+            },
+            {
+              "path": "/captions/0/bounds/0",
+              "before": 191.4208984375,
+              "after": 191.4199981689453
+            },
+            {
+              "path": "/captions/0/bounds/1",
+              "before": 124.65833333333333,
+              "after": 124.65665384928386
+            },
+            {
+              "path": "/captions/0/bounds/2",
+              "before": 257.5791015625,
+              "after": 257.5782012939453
+            },
+            {
+              "path": "/captions/0/bounds/3",
+              "before": 148.49999999999997,
+              "after": 148.49832051595052
+            }
+          ],
+          "metadata_differences": [
+            {
+              "path": "/1/value",
+              "before": "saved-a.cdx",
+              "after": "saved-a.cdxml"
+            },
+            {
+              "path": "/2/id",
+              "before": "7152",
+              "after": "7155"
+            }
+          ],
+          "derived_association": [],
+          "initial_native_normalization": [],
+          "allowed_target_position_id": null,
+          "other_object_tolerance": 0
+        },
+        {
+          "ok": true,
+          "xml_differences": [],
+          "native_differences": [],
+          "metadata_differences": [
+            {
+              "path": "/1/value",
+              "before": "saved-a.cdxml",
+              "after": "after-cdxml.cdx"
+            }
+          ],
+          "derived_association": [],
+          "initial_native_normalization": [],
+          "allowed_target_position_id": null,
+          "other_object_tolerance": 0
+        },
+        {
+          "ok": false,
+          "xml_differences": [
+            {
+              "path": "/children/2/attributes/id",
+              "before": "7152",
+              "after": "7155"
+            },
+            {
+              "path": "/children/2/children/4/attributes/SupersededBy",
+              "before": "7153",
+              "after": "7156"
+            },
+            {
+              "path": "/children/2/children/4/attributes/Z",
+              "before": "17",
+              "after": "18"
+            },
+            {
+              "path": "/children/2/children/4/attributes/id",
+              "before": "7130",
+              "after": "7153"
+            },
+            {
+              "path": "/children/2/children/5/attributes/id",
+              "before": "7154",
+              "after": "7157"
+            },
+            {
+              "path": "/children/2/children/5/children/0/attributes/ReactionStepArrows",
+              "before": "7130",
+              "after": "7153"
+            },
+            {
+              "path": "/children/2/children/5/children/0/attributes/id",
+              "before": "7155",
+              "after": "7158"
+            },
+            {
+              "path": "/children/2/children/6/attributes/Z",
+              "before": "17",
+              "after": "18"
+            },
+            {
+              "path": "/children/2/children/6/attributes/id",
+              "before": "7153",
+              "after": "7156"
+            }
+          ],
+          "native_differences": [
+            {
+              "path": "/arrows/0/id",
+              "before": 7130,
+              "after": 7153
+            },
+            {
+              "path": "/captions/0/anchor/1",
+              "before": 134.69166666666666,
+              "after": 134.69166564941406
+            },
+            {
+              "path": "/captions/0/bounds/1",
+              "before": 124.65833333333333,
+              "after": 124.65833231608073
+            },
+            {
+              "path": "/captions/0/bounds/3",
+              "before": 148.49999999999997,
+              "after": 148.4999989827474
+            }
+          ],
+          "metadata_differences": [
+            {
+              "path": "/2/id",
+              "before": "7152",
+              "after": "7155"
+            }
+          ],
+          "derived_association": [],
+          "initial_native_normalization": [],
+          "allowed_target_position_id": null,
+          "other_object_tolerance": 0
+        },
+        {
+          "ok": true,
+          "xml_differences": [],
+          "native_differences": [],
+          "metadata_differences": [
+            {
+              "path": "/1/value",
+              "before": "saved-a.cdx",
+              "after": "after-cdx.cdx"
+            }
+          ],
+          "derived_association": [],
+          "initial_native_normalization": [],
+          "allowed_target_position_id": null,
+          "other_object_tolerance": 0
+        }
+      ],
+      "initial_native_normalization": {
+        "ok": true,
+        "xml_differences": [],
+        "native_differences": [],
+        "metadata_differences": [],
+        "derived_association": [],
+        "initial_native_normalization": [],
+        "allowed_target_position_id": null,
+        "other_object_tolerance": 0
+      },
+      "close_receipt": {
+        "owned_binding": {
+          "start_utc": "2026-09-13T18:45:08.1884597Z",
+          "initial_documents": 0,
+          "pid": 54184,
+          "hwnd": 73374,
+          "preexisting_count": 17
+        },
+        "native_close_returned": true,
+        "documents_after_close": 1,
+        "poisoned": false,
+        "utc": "2026-09-13T18:45:13.0621661Z",
+        "source_unchanged": true
+      }
+    },
+    {
+      "run": "no-edit-a",
+      "classification": "script only, not controller Agent or visual acceptance",
+      "source_commit": "406e643bb8a803732f45727988fb5d05d773b5d8",
+      "source_hashes": {
+        "NativeChemDraw.cs": "52eb2fe1e66d9b13aba84dfba010959ddcb8fcf6109b919a498324400681b73c",
+        "native-edit-loop.ps1": "0fd66c344cac4e5258f5985f7f4ff2c741a64c80fd7888f97f2f973ddc4b6dd7",
+        "native-common.ps1": "0fe06575b88a8f2b14f6f3937dd72d2f2709b146564ac2e17b80b3b0ab01655f",
+        "native_edit_loop.py": "e8bc621556f4f63e0e9e77555675d72a1fa780a67bec0fc8d7918293afd12f3b"
+      },
+      "exact_git_source_hashes_match": true,
+      "actions": 8,
+      "ok_responses": 6,
+      "expected_refusals": 2,
+      "original_source_unchanged": true,
+      "normalization": [
+        {
+          "ok": true,
+          "xml_differences": [],
+          "native_differences": [],
+          "metadata_differences": [
+            {
+              "path": "/1/value",
+              "before": "source.cdxml",
+              "after": "saved-a.cdx"
+            }
+          ],
+          "allowed_target_position_id": null,
+          "other_object_tolerance": 0
+        },
+        {
+          "ok": false,
+          "xml_differences": [
+            {
+              "path": "/children/2/attributes/id",
+              "before": "7152",
+              "after": "7155"
+            },
+            {
+              "path": "/children/2/children/4/attributes/SupersededBy",
+              "before": "7153",
+              "after": "7156"
+            },
+            {
+              "path": "/children/2/children/4/attributes/Z",
+              "before": "17",
+              "after": "18"
+            },
+            {
+              "path": "/children/2/children/4/attributes/id",
+              "before": "7130",
+              "after": "7153"
+            },
+            {
+              "path": "/children/2/children/5/attributes/id",
+              "before": "7154",
+              "after": "7157"
+            },
+            {
+              "path": "/children/2/children/5/children/0/attributes/ReactionStepArrows",
+              "before": "7130",
+              "after": "7153"
+            },
+            {
+              "path": "/children/2/children/5/children/0/attributes/id",
+              "before": "7155",
+              "after": "7158"
+            },
+            {
+              "path": "/children/2/children/6/attributes/Z",
+              "before": "17",
+              "after": "18"
+            },
+            {
+              "path": "/children/2/children/6/attributes/id",
+              "before": "7153",
+              "after": "7156"
+            }
+          ],
+          "native_differences": [
+            {
+              "path": "/arrows/0/id",
+              "before": 7130,
+              "after": 7153
+            }
+          ],
+          "metadata_differences": [
+            {
+              "path": "/1/value",
+              "before": "saved-a.cdx",
+              "after": "saved-a.cdxml"
+            },
+            {
+              "path": "/2/id",
+              "before": "7152",
+              "after": "7155"
+            }
+          ],
+          "allowed_target_position_id": null,
+          "other_object_tolerance": 0
+        },
+        {
+          "ok": false,
+          "xml_differences": [
+            {
+              "path": "/children/2/attributes/id",
+              "before": "7152",
+              "after": "7155"
+            },
+            {
+              "path": "/children/2/children/4/attributes/SupersededBy",
+              "before": "7153",
+              "after": "7156"
+            },
+            {
+              "path": "/children/2/children/4/attributes/Z",
+              "before": "17",
+              "after": "18"
+            },
+            {
+              "path": "/children/2/children/4/attributes/id",
+              "before": "7130",
+              "after": "7153"
+            },
+            {
+              "path": "/children/2/children/5/attributes/id",
+              "before": "7154",
+              "after": "7157"
+            },
+            {
+              "path": "/children/2/children/5/children/0/attributes/ReactionStepArrows",
+              "before": "7130",
+              "after": "7153"
+            },
+            {
+              "path": "/children/2/children/5/children/0/attributes/id",
+              "before": "7155",
+              "after": "7158"
+            },
+            {
+              "path": "/children/2/children/6/attributes/Z",
+              "before": "17",
+              "after": "18"
+            },
+            {
+              "path": "/children/2/children/6/attributes/id",
+              "before": "7153",
+              "after": "7156"
+            }
+          ],
+          "native_differences": [
+            {
+              "path": "/arrows/0/id",
+              "before": 7130,
+              "after": 7153
+            }
+          ],
+          "metadata_differences": [
+            {
+              "path": "/2/id",
+              "before": "7152",
+              "after": "7155"
+            }
+          ],
+          "allowed_target_position_id": null,
+          "other_object_tolerance": 0
+        }
+      ],
+      "initial_native_normalization": null,
+      "close_receipt": {
+        "utc": "2026-09-13T18:39:33.9015822Z",
+        "owned_binding": {
+          "pid": 50184,
+          "initial_documents": 0,
+          "start_utc": "2026-09-13T18:39:31.1044744Z",
+          "hwnd": 72516,
+          "preexisting_count": 14
+        },
+        "source_unchanged": true,
+        "poisoned": false,
+        "document_full_name": "<REPO>\\.local\\agent-edit-loop\\1364e718-e36b-4cb1-b1c1-22d6b6668cdc\\saved\\saved-a.cdx",
+        "ownership_transferred_to_user": true,
+        "detached_saved_document": true
+      }
+    }
+  ],
+  "preserved_failure": "First above-arrow attempt rejected exact native ReactionStepObjectsAboveArrow addition; original remains failed after the later controller-authorised comparison rule.",
+  "controller_initial_failure": "Reported separately by controller on 406e643: seven AS and five BS absent-to-N additions on initial PNG export; not locally replayed or relabelled.",
+  "close_limit": "Close returning is not proof of closure. documents_after_close can remain 1; no unknown/preexisting process is killed. Saved keep_open detach was observed separately.",
+  "sanitization": "Receipt copies replace repo paths and omit preexisting process lists. Full originals remain private. Native CDXML/CDX/PNG files are exact bytes, renamed only; white PNG is labelled alpha-composite.",
+  "native_file_manifest": [
+    {
+      "file": "script-edit-a/native/01-open-copy.cdxml",
+      "sha256": "18cda6e5a8c98bdcef77f78609d0ac4f6e02c67117d3457e34b1c60140319470",
+      "bytes": 4867,
+      "kind": "exact native/source bytes; filename may be changed"
+    },
+    {
+      "file": "script-edit-a/native/02-inspect.cdxml",
+      "sha256": "18cda6e5a8c98bdcef77f78609d0ac4f6e02c67117d3457e34b1c60140319470",
+      "bytes": 4867,
+      "kind": "exact native/source bytes; filename may be changed"
+    },
+    {
+      "file": "script-edit-a/native/08-relative-position.cdxml",
+      "sha256": "6644eae0ccfecdd36ab47a32c285546c2a0692a2072ad4315461100ea0d18e74",
+      "bytes": 4912,
+      "kind": "exact native/source bytes; filename may be changed"
+    },
+    {
+      "file": "script-edit-a/native/08-relative-position.png",
+      "sha256": "e361939da413560f2e12f091cee270d6b833ece790e11d2477c46a8d6ad602d2",
+      "bytes": 34049,
+      "kind": "exact native/source bytes; filename may be changed"
+    },
+    {
+      "file": "script-edit-a/native/08-relative-position.white.png",
+      "sha256": "c060225e4010ffb0990e34b768d6b0f0f7ed8f1ab1fcd713cba4399c7bc4b8cc",
+      "bytes": 39541,
+      "kind": "exact native/source bytes; filename may be changed"
+    },
+    {
+      "file": "script-edit-a/native/09-relative-position.cdxml",
+      "sha256": "565a74c5848146b4709c11f19dc74a53fce5f15aacc8182d4be6ceed88024225",
+      "bytes": 4912,
+      "kind": "exact native/source bytes; filename may be changed"
+    },
+    {
+      "file": "script-edit-a/native/09-relative-position.png",
+      "sha256": "4385689056472d167e4e2756815042ced025332db7d31d9e288f4665097c53b2",
+      "bytes": 34143,
+      "kind": "exact native/source bytes; filename may be changed"
+    },
+    {
+      "file": "script-edit-a/native/09-relative-position.white.png",
+      "sha256": "b108149f5bae1216dcb6afb66f7d1abe5339f92b3fc757e602f5ad0ce258a24b",
+      "bytes": 39790,
+      "kind": "exact native/source bytes; filename may be changed"
+    },
+    {
+      "file": "script-edit-a/native/10-save.cdxml",
+      "sha256": "54848edc83f6667eeb695ad22564dfb346d5483ffacb75b7a32f279d9eaca37f",
+      "bytes": 4911,
+      "kind": "exact native/source bytes; filename may be changed"
+    },
+    {
+      "file": "script-edit-a/native/11-reopen.cdxml",
+      "sha256": "d9fc0f0fd0fe856c70bebe87d44513e10b1edb31e0ac465488e6ce3b05b940f5",
+      "bytes": 4913,
+      "kind": "exact native/source bytes; filename may be changed"
+    },
+    {
+      "file": "script-edit-a/native/12-relative-position.cdxml",
+      "sha256": "c76325567de69188e5b729b713be722f5ec1668a87930157937947403576d663",
+      "bytes": 4913,
+      "kind": "exact native/source bytes; filename may be changed"
+    },
+    {
+      "file": "script-edit-a/native/12-relative-position.png",
+      "sha256": "153dbf81fcb1e9c1c830616b839dc5f027a3e8739f52bbf7608af4ea31d24351",
+      "bytes": 34447,
+      "kind": "exact native/source bytes; filename may be changed"
+    },
+    {
+      "file": "script-edit-a/native/12-relative-position.white.png",
+      "sha256": "ac6fedef58bec48e96df78c9daf899b4dd4df2c02fae367cea4aa34ae7fee79c",
+      "bytes": 39869,
+      "kind": "exact native/source bytes; filename may be changed"
+    },
+    {
+      "file": "script-edit-a/native/13-save.cdxml",
+      "sha256": "08aba16c4d7539415fca1757ff4600fe55b36c431214b0459e9b4f4a4e43c8c0",
+      "bytes": 4915,
+      "kind": "exact native/source bytes; filename may be changed"
+    },
+    {
+      "file": "script-edit-a/native/14-reopen.cdxml",
+      "sha256": "be85425c89af0e939e402ed4a3a3f6f2e367e3081c106993264481f1b89d06de",
+      "bytes": 4911,
+      "kind": "exact native/source bytes; filename may be changed"
+    },
+    {
+      "file": "script-edit-a/native/15-relative-position.cdxml",
+      "sha256": "4b7d6b35667741b688528ef7038a8ebca9cf076ed1c80a4d2a13928737cf0ddf",
+      "bytes": 4911,
+      "kind": "exact native/source bytes; filename may be changed"
+    },
+    {
+      "file": "script-edit-a/native/15-relative-position.png",
+      "sha256": "554900eb0306ed8168fbdf0502dc3e5ba47c2143525938da67690f10b3293222",
+      "bytes": 34175,
+      "kind": "exact native/source bytes; filename may be changed"
+    },
+    {
+      "file": "script-edit-a/native/15-relative-position.white.png",
+      "sha256": "9ee98f2d7649348f37952148f83d124daf562f91db430f73ed39790c9d184924",
+      "bytes": 39895,
+      "kind": "exact native/source bytes; filename may be changed"
+    },
+    {
+      "file": "script-edit-a/native/16-save.cdxml",
+      "sha256": "9c338a65950162bde48d773aac99004ef4ce6ab4eec077320fa14b822918581f",
+      "bytes": 4913,
+      "kind": "exact native/source bytes; filename may be changed"
+    },
+    {
+      "file": "script-edit-a/native/17-inspect.cdxml",
+      "sha256": "9c338a65950162bde48d773aac99004ef4ce6ab4eec077320fa14b822918581f",
+      "bytes": 4913,
+      "kind": "exact native/source bytes; filename may be changed"
+    },
+    {
+      "file": "script-edit-a/native/17-inspect.png",
+      "sha256": "554900eb0306ed8168fbdf0502dc3e5ba47c2143525938da67690f10b3293222",
+      "bytes": 34175,
+      "kind": "exact native/source bytes; filename may be changed"
+    },
+    {
+      "file": "script-edit-a/native/17-inspect.white.png",
+      "sha256": "9ee98f2d7649348f37952148f83d124daf562f91db430f73ed39790c9d184924",
+      "bytes": 39895,
+      "kind": "exact native/source bytes; filename may be changed"
+    },
+    {
+      "file": "script-edit-a/saved/after-cdx.cdx",
+      "sha256": "42f0eef93c83dd165ea0e12eec0de59075a917e7bac54ff031c627f6d886afcf",
+      "bytes": 2320,
+      "kind": "exact native/source bytes; filename may be changed"
+    },
+    {
+      "file": "script-edit-a/saved/after-cdx.cdxml",
+      "sha256": "9fa70c001558c9932bd7a92128c9e24bc9679e2f4e2eaaa3f7e539c94c314714",
+      "bytes": 4927,
+      "kind": "exact native/source bytes; filename may be changed"
+    },
+    {
+      "file": "script-edit-a/saved/after-cdxml.cdx",
+      "sha256": "effbbc7758f25b52922480b56d0ce7fc22793974a0c67cfac3151c89e0387603",
+      "bytes": 2322,
+      "kind": "exact native/source bytes; filename may be changed"
+    },
+    {
+      "file": "script-edit-a/saved/after-cdxml.cdxml",
+      "sha256": "93eaab3c4174bb516e2e2b9db3422c2ec165066b47a8023bb71a7e94dbce0807",
+      "bytes": 4929,
+      "kind": "exact native/source bytes; filename may be changed"
+    },
+    {
+      "file": "script-edit-a/saved/saved-a.cdx",
+      "sha256": "8a40c3f4e02aaafac433094c1ab9335c2b51f96696080f9d7f51d10abcad8dc5",
+      "bytes": 2318,
+      "kind": "exact native/source bytes; filename may be changed"
+    },
+    {
+      "file": "script-edit-a/saved/saved-a.cdxml",
+      "sha256": "a66333fc884eea100223f541f3226fb9494321ac8bfae666934bd15acf0343ff",
+      "bytes": 4925,
+      "kind": "exact native/source bytes; filename may be changed"
+    },
+    {
+      "file": "no-edit-a/native/01-open-copy.cdxml",
+      "sha256": "18cda6e5a8c98bdcef77f78609d0ac4f6e02c67117d3457e34b1c60140319470",
+      "bytes": 4867,
+      "kind": "exact native/source bytes; filename may be changed"
+    },
+    {
+      "file": "no-edit-a/native/02-inspect.cdxml",
+      "sha256": "18cda6e5a8c98bdcef77f78609d0ac4f6e02c67117d3457e34b1c60140319470",
+      "bytes": 4867,
+      "kind": "exact native/source bytes; filename may be changed"
+    },
+    {
+      "file": "no-edit-a/native/05-save.cdxml",
+      "sha256": "3d10a529aa06a248e886356050c9ad73f7c863f01a63a16353c4d3b644764538",
+      "bytes": 4866,
+      "kind": "exact native/source bytes; filename may be changed"
+    },
+    {
+      "file": "no-edit-a/native/06-reopen.cdxml",
+      "sha256": "9c94ff642fcaccf26c2b3e350da21d910f76f4c2bd9ab32b841917fea72e40c3",
+      "bytes": 4868,
+      "kind": "exact native/source bytes; filename may be changed"
+    },
+    {
+      "file": "no-edit-a/native/07-reopen.cdxml",
+      "sha256": "433810c0f74769c4953559b7fa3c22a4bed6ad9616b797ea0da8c0770fb60b62",
+      "bytes": 4866,
+      "kind": "exact native/source bytes; filename may be changed"
+    },
+    {
+      "file": "no-edit-a/native/08-inspect.cdxml",
+      "sha256": "433810c0f74769c4953559b7fa3c22a4bed6ad9616b797ea0da8c0770fb60b62",
+      "bytes": 4866,
+      "kind": "exact native/source bytes; filename may be changed"
+    },
+    {
+      "file": "no-edit-a/native/08-inspect.png",
+      "sha256": "2a131cb1eb41329e20336cec4a31bb55b162d1eb82ba5316c46b6f46ee441eac",
+      "bytes": 39454,
+      "kind": "exact native/source bytes; filename may be changed"
+    },
+    {
+      "file": "no-edit-a/native/08-inspect.white.png",
+      "sha256": "ef56527a1c43af7e7e06810075c32c396f77fd02d810546735e96f3e7781443c",
+      "bytes": 44143,
+      "kind": "exact native/source bytes; filename may be changed"
+    },
+    {
+      "file": "no-edit-a/saved/saved-a.cdx",
+      "sha256": "19870dc0fb3236fd55d57b13bcc174afacc71b8d1d8c7c0a9c062994f699e227",
+      "bytes": 2310,
+      "kind": "exact native/source bytes; filename may be changed"
+    },
+    {
+      "file": "no-edit-a/saved/saved-a.cdxml",
+      "sha256": "cadca022d8ba713819faebea98abe1179276851b28ed9c3a990c1de324032b50",
+      "bytes": 4880,
+      "kind": "exact native/source bytes; filename may be changed"
+    },
+    {
+      "file": "preserved-first-association-failure/before.cdxml",
+      "sha256": "18cda6e5a8c98bdcef77f78609d0ac4f6e02c67117d3457e34b1c60140319470",
+      "bytes": 4867,
+      "kind": "exact native/source bytes; filename may be changed"
+    },
+    {
+      "file": "preserved-first-association-failure/after.cdxml",
+      "sha256": "6644eae0ccfecdd36ab47a32c285546c2a0692a2072ad4315461100ea0d18e74",
+      "bytes": 4912,
+      "kind": "exact native/source bytes; filename may be changed"
+    },
+    {
+      "file": "control-a.cdxml",
+      "sha256": "e70f6727683d8d68358a8e1531219f220e2543f0187ca4d181443165137813ef",
+      "bytes": 1309,
+      "kind": "exact native/source bytes; filename may be changed"
+    },
+    {
+      "file": "control-a.role.json",
+      "sha256": "b0b906600f32ad3fbb3f5e102b5ee84a673d0eb7491579a826f9a48eaf9aaf57",
+      "bytes": 763,
+      "kind": "exact native/source bytes; filename may be changed"
+    }
+  ],
+  "current_cli_commit": "85f1d4a2f28c7bd72358934c3e12054f747d5f93",
+  "saved_detach_check": {
+    "source_commit": "85f1d4a2f28c7bd72358934c3e12054f747d5f93",
+    "source_hashes": {
+      "native-common.ps1": "0fe06575b88a8f2b14f6f3937dd72d2f2709b146564ac2e17b80b3b0ab01655f",
+      "NativeChemDraw.cs": "52eb2fe1e66d9b13aba84dfba010959ddcb8fcf6109b919a498324400681b73c",
+      "native_edit_loop.py": "85df09a998aabea171aa645f29c08aabdf435a93006e5b6481f99128bae3e0ad",
+      "native-edit-loop.ps1": "e198319ebc052f7cd5375b70b36d99c66974b17a6ab65e7a4c177ab6c9fda332"
+    },
+    "exact_git_source_hashes_match": true,
+    "actions": 4,
+    "ok_responses": 3,
+    "expected_unsaved_refusal": 1,
+    "closed": {
+      "source_unchanged": true,
+      "poisoned": false,
+      "owned_binding": {
+        "hwnd": 3150378,
+        "initial_documents": 0,
+        "start_utc": "2026-09-13T18:49:20.8631079Z",
+        "pid": 21596,
+        "preexisting_count": 18
+      },
+      "ownership_transferred_to_user": true,
+      "detached_saved_document": true,
+      "document_full_name": "<REPO>\\.local\\agent-edit-loop\\a3d669c5-8bb9-4b7c-af1e-06cdf1f7f473\\saved\\detach-control.cdx",
+      "utc": "2026-09-13T18:49:25.6278733Z"
+    },
+    "post_worker_observation": {
+      "observed_utc": "2026-09-13T18:50:31.6544518Z",
+      "native_start_utc": "2026-09-13T18:49:20.8631079Z",
+      "worker_running": false,
+      "native_hwnd": 3150378,
+      "native_pid": 21596,
+      "worker_pid": 68488,
+      "native_title": "ChemDraw Prime - [detach-control.cdx]"
+    },
+    "scope": "Only saved-detach lifecycle; earlier edit/no-edit runs retain their original source commits."
+  },
+  "artifact": {
+    "file": "native-script-evidence-v2.zip",
+    "sha256": "35f916b4b77de8b188f35292ee2320907897134bc9856c2fdcff5c07a88372f3",
+    "bytes": 466642
+  }
+}
