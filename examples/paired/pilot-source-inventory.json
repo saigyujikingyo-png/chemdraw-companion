@@ -1,0 +1,2426 @@
+[
+  {
+    "version": "paired-registry/1.0",
+    "sample_id": "flynn-aldol-055",
+    "source": {
+      "source_url": "https://www.flynnresearchgroup.com/s/Problem-Set-6-Aldol-answers.docx",
+      "citation": "Flynn Research Group. Organic Chemistry Assessments, CHM 2120, Problem Set 6: Aldol (answers). n.d. Accessed 13 September 2026.",
+      "author_or_project": "Flynn Research Group",
+      "retrieved_at": "2026-09-13T10:30:04.438664+00:00",
+      "original_sha256": "de90d98615712b2ee69d9fb060955076cab92a1dacce255ac25a7638d66650f6",
+      "asset_types": [
+        "CDX",
+        "EMF",
+        "PNG",
+        "DOCX"
+      ],
+      "redistributable": "unknown",
+      "license": null,
+      "license_evidence_url": "https://www.flynnresearchgroup.com/organic-assessments",
+      "container": {
+        "sha256": "3b63557df14651b3ddaf7f4756e29ec6c43a75c3e9870218da257f961b7eb0cd",
+        "member": "word/embeddings/oleObject55.bin",
+        "stream": "CONTENTS"
+      }
+    },
+    "mechanism_family": "proton_transfer; SN2; carbonyl",
+    "complexity_profile": {
+      "molecule_count": null,
+      "caption_count": null,
+      "simultaneous_flow_count": null,
+      "common_scaffold_count": null,
+      "dense_anchor_risk": null,
+      "curved_arrow_count": 6,
+      "lone_pair_count": 2,
+      "charge_count": 1,
+      "radical_count": null,
+      "state_count": 3,
+      "step_count": 2,
+      "multirow": false,
+      "snake_layout": false,
+      "curved_arrow_candidate_count": 6
+    },
+    "curved_arrow_count": 6,
+    "lone_pair_count": 2,
+    "charge_count": 1,
+    "state_count": 3,
+    "step_count": 2,
+    "condition_text_present": true,
+    "structured_target_available": true,
+    "native_render_available": true,
+    "research_status": "native_paired",
+    "redistributable": "unknown",
+    "split": "research_development",
+    "frozen_or_descendant": false,
+    "lineage": [
+      "external-author-acquisition/2026-09-13"
+    ],
+    "exposure_history": [
+      {
+        "timestamp": "2026-09-13T10:43:30.793472+00:00",
+        "actor_role": "custodian",
+        "asset_sha256": [
+          "de90d98615712b2ee69d9fb060955076cab92a1dacce255ac25a7638d66650f6"
+        ],
+        "purpose": "source extraction and author-preview screening; separate from generator"
+      },
+      {
+        "timestamp": "2026-09-13T10:42:37.4164793Z",
+        "actor_role": "custodian",
+        "asset_sha256": [
+          "de90d98615712b2ee69d9fb060955076cab92a1dacce255ac25a7638d66650f6",
+          "3b63557df14651b3ddaf7f4756e29ec6c43a75c3e9870218da257f961b7eb0cd",
+          "780a49c8de9cda5dcd019f90af2a3457667a3a7e8f64b5d39681f93bc8851a0b",
+          "bda51fbeec5a8348466de19c71d402cb0a207b8aca941547b2d1691e81ec13ce",
+          "2aec591006d2e8e85e0e358ffdafdb0a1426dd9db8297258d0e06da2a79a6b6c",
+          "9c501f09c5ca98389cb970038dab84306356667ca43197894cbaa097075ebf27",
+          "00fce43a126bd665c2c744a4f87e80c42292127068ab3fc39a51fc75f8816918",
+          "b607686c4c291138f85c38f5d99becc318a6c3725386a2d0c334ac825a8bffc6",
+          "58edc246a052afdd106a70f6a0258eb10762bf54f5c6f2c7f21fa8f3aa9cdf20",
+          "05d315e5459c37132d25aaf6af77717924d23d2ce460a9e3260478957811f6b2"
+        ],
+        "purpose": "native render/save/reopen and evaluator inventory; no generator context"
+      },
+      {
+        "timestamp": "2026-09-13T11:08:56.920871+00:00",
+        "actor_role": "evaluator",
+        "asset_sha256": [
+          "72ea565bc8eb4061987c6c6428b782873cb9fb36793ef680b513f0ee2dd59166",
+          "d861b2a4d071fe06013e69827b8a190e6d84e4bd24a0f2d3cf9af32a819e5467",
+          "c84ead0751e07bdedc681fd1364238a50c77df78532a5d56335e6de3268002f9",
+          "4ba682d0247eafedff248957e4489927b63e8d564303edbd82d77327a33dcd6b"
+        ],
+        "purpose": "Independent fresh-process disk reads; separate from already completed generator input sealing."
+      }
+    ],
+    "assets": [
+      {
+        "role": "original_target",
+        "relative_locator": "source-survey-academic/extracted/flynn-org2-ps6-aldol-answers/oleObject55.cdx",
+        "sha256": "de90d98615712b2ee69d9fb060955076cab92a1dacce255ac25a7638d66650f6",
+        "bytes": 5690,
+        "media_type": "chemical/x-cdx"
+      },
+      {
+        "role": "source_container",
+        "relative_locator": "source-survey-academic/flynn-org2-ps6-aldol-answers.docx",
+        "sha256": "3b63557df14651b3ddaf7f4756e29ec6c43a75c3e9870218da257f961b7eb0cd",
+        "bytes": 4549496,
+        "media_type": "application/octet-stream"
+      },
+      {
+        "role": "author_vector_preview",
+        "relative_locator": "source-survey-academic/extracted/flynn-org2-ps6-aldol-answers/oleObject55.emf",
+        "sha256": "780a49c8de9cda5dcd019f90af2a3457667a3a7e8f64b5d39681f93bc8851a0b",
+        "bytes": 29200,
+        "media_type": "image/emf"
+      },
+      {
+        "role": "native_cdxml",
+        "relative_locator": "native-target-55-attempt1/native.cdxml",
+        "sha256": "bda51fbeec5a8348466de19c71d402cb0a207b8aca941547b2d1691e81ec13ce",
+        "bytes": 16167,
+        "media_type": "text/xml"
+      },
+      {
+        "role": "native_cdx",
+        "relative_locator": "native-target-55-attempt1/native.cdx",
+        "sha256": "2aec591006d2e8e85e0e358ffdafdb0a1426dd9db8297258d0e06da2a79a6b6c",
+        "bytes": 7216,
+        "media_type": "chemical/x-cdx"
+      },
+      {
+        "role": "native_reference_png",
+        "relative_locator": "native-target-55-attempt1/native.png",
+        "sha256": "9c501f09c5ca98389cb970038dab84306356667ca43197894cbaa097075ebf27",
+        "bytes": 85697,
+        "media_type": "image/png"
+      },
+      {
+        "role": "native_viewing_jpeg",
+        "relative_locator": "native-target-55-attempt1/native.jpeg",
+        "sha256": "00fce43a126bd665c2c744a4f87e80c42292127068ab3fc39a51fc75f8816918",
+        "bytes": 24562,
+        "media_type": "image/jpeg"
+      },
+      {
+        "role": "historical_same_process_cdx_reopen_readback",
+        "relative_locator": "native-target-55-attempt1/cdx-readback.cdxml",
+        "sha256": "b607686c4c291138f85c38f5d99becc318a6c3725386a2d0c334ac825a8bffc6",
+        "bytes": 16173,
+        "media_type": "text/xml"
+      },
+      {
+        "role": "historical_same_process_cdxml_reopen_readback",
+        "relative_locator": "native-target-55-attempt1/cdxml-readback.cdxml",
+        "sha256": "58edc246a052afdd106a70f6a0258eb10762bf54f5c6f2c7f21fa8f3aa9cdf20",
+        "bytes": 16446,
+        "media_type": "text/xml"
+      },
+      {
+        "role": "native_receipt",
+        "relative_locator": "native-target-55-attempt1/events.jsonl",
+        "sha256": "05d315e5459c37132d25aaf6af77717924d23d2ce460a9e3260478957811f6b2",
+        "bytes": 38262,
+        "media_type": "application/x-ndjson"
+      },
+      {
+        "role": "cdx_fresh_process_readback",
+        "relative_locator": "native-fresh-readbacks/flynn-aldol-055-cdx/readback.cdxml",
+        "sha256": "72ea565bc8eb4061987c6c6428b782873cb9fb36793ef680b513f0ee2dd59166",
+        "bytes": 16437,
+        "media_type": "text/xml"
+      },
+      {
+        "role": "cdx_fresh_process_receipt",
+        "relative_locator": "native-fresh-readbacks/flynn-aldol-055-cdx/events.jsonl",
+        "sha256": "d861b2a4d071fe06013e69827b8a190e6d84e4bd24a0f2d3cf9af32a819e5467",
+        "bytes": 14153,
+        "media_type": "application/x-ndjson"
+      },
+      {
+        "role": "cdxml_fresh_process_readback",
+        "relative_locator": "native-fresh-readbacks/flynn-aldol-055-cdxml/readback.cdxml",
+        "sha256": "c84ead0751e07bdedc681fd1364238a50c77df78532a5d56335e6de3268002f9",
+        "bytes": 16440,
+        "media_type": "text/xml"
+      },
+      {
+        "role": "cdxml_fresh_process_receipt",
+        "relative_locator": "native-fresh-readbacks/flynn-aldol-055-cdxml/events.jsonl",
+        "sha256": "4ba682d0247eafedff248957e4489927b63e8d564303edbd82d77327a33dcd6b",
+        "bytes": 14215,
+        "media_type": "application/x-ndjson"
+      }
+    ],
+    "evidence_notes": [
+      "Curved electron arrows and broad layout screened in author EMF rendered through Windows GDI. LP count is explicit symbol-object count; charge count is explicit nonzero atom-charge property count. Neither includes implicit chemistry or all text glyphs. Fragment/node/text inventories are raw native object counts, not segmented molecules/states/captions.",
+      "Primary native pilot target selected by root; ester OMe and tert-butoxide abbreviations require semantic handling.",
+      "Original-source and native-import counts may differ after abbreviation expansion. Native candidate arrow count is not a certified semantic binding.",
+      "All source screening is AI-assisted development exposure; gold remains zero.",
+      "Historical same-process readbacks preserve original hashes but do not prove disk reopening. Fresh per-format zero-document PID/HWND events and readbacks below supersede that claim; see verification/2026-09-13-paired-pilot/native-survey-checks.json. Native pairing does not imply lossless fidelity, editability, visual quality or human acceptance."
+    ]
+  },
+  {
+    "version": "paired-registry/1.0",
+    "sample_id": "flynn-aldol-032",
+    "source": {
+      "source_url": "https://www.flynnresearchgroup.com/s/Problem-Set-6-Aldol-answers.docx",
+      "citation": "Flynn Research Group. Organic Chemistry Assessments, CHM 2120, Problem Set 6: Aldol (answers). n.d. Accessed 13 September 2026.",
+      "author_or_project": "Flynn Research Group",
+      "retrieved_at": "2026-09-13T10:30:04.438664+00:00",
+      "original_sha256": "1ea45a87ece50bfdf606d11c2666a07ed46029994bdb6379243cb4bc01e6baa3",
+      "asset_types": [
+        "CDX",
+        "EMF",
+        "PNG",
+        "DOCX"
+      ],
+      "redistributable": "unknown",
+      "license": null,
+      "license_evidence_url": "https://www.flynnresearchgroup.com/organic-assessments",
+      "container": {
+        "sha256": "3b63557df14651b3ddaf7f4756e29ec6c43a75c3e9870218da257f961b7eb0cd",
+        "member": "word/embeddings/oleObject32.bin",
+        "stream": "CONTENTS"
+      }
+    },
+    "mechanism_family": "proton_transfer; SN2",
+    "complexity_profile": {
+      "molecule_count": null,
+      "caption_count": null,
+      "simultaneous_flow_count": null,
+      "common_scaffold_count": null,
+      "dense_anchor_risk": null,
+      "curved_arrow_count": 4,
+      "lone_pair_count": 2,
+      "charge_count": 2,
+      "radical_count": null,
+      "state_count": 3,
+      "step_count": 2,
+      "multirow": false,
+      "snake_layout": false,
+      "curved_arrow_candidate_count": 4
+    },
+    "curved_arrow_count": 4,
+    "lone_pair_count": 2,
+    "charge_count": 2,
+    "state_count": 3,
+    "step_count": 2,
+    "condition_text_present": true,
+    "structured_target_available": true,
+    "native_render_available": true,
+    "research_status": "native_paired",
+    "redistributable": "unknown",
+    "split": "research_development",
+    "frozen_or_descendant": false,
+    "lineage": [
+      "external-author-acquisition/2026-09-13"
+    ],
+    "exposure_history": [
+      {
+        "timestamp": "2026-09-13T10:43:30.793472+00:00",
+        "actor_role": "custodian",
+        "asset_sha256": [
+          "1ea45a87ece50bfdf606d11c2666a07ed46029994bdb6379243cb4bc01e6baa3"
+        ],
+        "purpose": "source extraction and author-preview screening; separate from generator"
+      },
+      {
+        "timestamp": "2026-09-13T10:45:07.4808836Z",
+        "actor_role": "custodian",
+        "asset_sha256": [
+          "1ea45a87ece50bfdf606d11c2666a07ed46029994bdb6379243cb4bc01e6baa3",
+          "3b63557df14651b3ddaf7f4756e29ec6c43a75c3e9870218da257f961b7eb0cd",
+          "b41cf51c5dcf38aedd75cd7bbe74751f4cec829f37da7c875ecac5da0417aa77",
+          "6e78330f65d63048dd2dd1ad713f9840342a9081e57ac0168d1b8e7d9b09a0d0",
+          "b79054ae76e24df732e035cb898034d1c5c3c7d7bc3100706bd722f08ba89c4f",
+          "912bdadc25f16da7202f00f308f8990ae1057467f756eeb75bb90e816a9d5833",
+          "5fbe6918a82862b041f2727b49eed05526b11a677bd131fd27b1a6f8ac3b0419",
+          "fc5a6c80e02f360be58f5c807a2023324df61501cbbb54597ea35d975de609ce",
+          "00898c386d9255c9befe496346948ec50bccd2ba505358742f539ebe2426a50a",
+          "c3ed59e654eee0ec14cb90616e16b7f44c874eed73b42904bbe21da209b76837"
+        ],
+        "purpose": "native render/save/reopen and evaluator inventory; no generator context"
+      },
+      {
+        "timestamp": "2026-09-13T11:08:56.920871+00:00",
+        "actor_role": "evaluator",
+        "asset_sha256": [
+          "7be37a4268d81916100b078b9b955805e02e3e46ea9454157265c5311a48707c",
+          "7394d94340aba196e63cb9472afb40f49d71c5385ddbd988fddde6b6df3c3c9d",
+          "db26fda365c96782e9e7ee8d2dc289625ed38ddea19bf951822692f873fd3c7f",
+          "9c63328bc91564e638a9afa9cbc9785971a58325757375aaf8ef076c5498cde1"
+        ],
+        "purpose": "Independent fresh-process disk reads; separate from already completed generator input sealing."
+      }
+    ],
+    "assets": [
+      {
+        "role": "original_target",
+        "relative_locator": "source-survey-academic/extracted/flynn-org2-ps6-aldol-answers/oleObject32.cdx",
+        "sha256": "1ea45a87ece50bfdf606d11c2666a07ed46029994bdb6379243cb4bc01e6baa3",
+        "bytes": 6616,
+        "media_type": "chemical/x-cdx"
+      },
+      {
+        "role": "source_container",
+        "relative_locator": "source-survey-academic/flynn-org2-ps6-aldol-answers.docx",
+        "sha256": "3b63557df14651b3ddaf7f4756e29ec6c43a75c3e9870218da257f961b7eb0cd",
+        "bytes": 4549496,
+        "media_type": "application/octet-stream"
+      },
+      {
+        "role": "author_vector_preview",
+        "relative_locator": "source-survey-academic/extracted/flynn-org2-ps6-aldol-answers/oleObject32.emf",
+        "sha256": "b41cf51c5dcf38aedd75cd7bbe74751f4cec829f37da7c875ecac5da0417aa77",
+        "bytes": 29472,
+        "media_type": "image/emf"
+      },
+      {
+        "role": "native_cdxml",
+        "relative_locator": "native-survey/flynn-aldol-032/native.cdxml",
+        "sha256": "6e78330f65d63048dd2dd1ad713f9840342a9081e57ac0168d1b8e7d9b09a0d0",
+        "bytes": 16866,
+        "media_type": "text/xml"
+      },
+      {
+        "role": "native_cdx",
+        "relative_locator": "native-survey/flynn-aldol-032/native.cdx",
+        "sha256": "b79054ae76e24df732e035cb898034d1c5c3c7d7bc3100706bd722f08ba89c4f",
+        "bytes": 7696,
+        "media_type": "chemical/x-cdx"
+      },
+      {
+        "role": "native_reference_png",
+        "relative_locator": "native-survey/flynn-aldol-032/native.png",
+        "sha256": "912bdadc25f16da7202f00f308f8990ae1057467f756eeb75bb90e816a9d5833",
+        "bytes": 75612,
+        "media_type": "image/png"
+      },
+      {
+        "role": "native_viewing_jpeg",
+        "relative_locator": "native-survey/flynn-aldol-032/native.jpeg",
+        "sha256": "5fbe6918a82862b041f2727b49eed05526b11a677bd131fd27b1a6f8ac3b0419",
+        "bytes": 24988,
+        "media_type": "image/jpeg"
+      },
+      {
+        "role": "historical_same_process_cdx_reopen_readback",
+        "relative_locator": "native-survey/flynn-aldol-032/cdx-readback.cdxml",
+        "sha256": "fc5a6c80e02f360be58f5c807a2023324df61501cbbb54597ea35d975de609ce",
+        "bytes": 16872,
+        "media_type": "text/xml"
+      },
+      {
+        "role": "historical_same_process_cdxml_reopen_readback",
+        "relative_locator": "native-survey/flynn-aldol-032/cdxml-readback.cdxml",
+        "sha256": "00898c386d9255c9befe496346948ec50bccd2ba505358742f539ebe2426a50a",
+        "bytes": 16882,
+        "media_type": "text/xml"
+      },
+      {
+        "role": "native_receipt",
+        "relative_locator": "native-survey/flynn-aldol-032/events.jsonl",
+        "sha256": "c3ed59e654eee0ec14cb90616e16b7f44c874eed73b42904bbe21da209b76837",
+        "bytes": 43526,
+        "media_type": "application/x-ndjson"
+      },
+      {
+        "role": "cdx_fresh_process_readback",
+        "relative_locator": "native-fresh-readbacks/flynn-aldol-032-cdx/readback.cdxml",
+        "sha256": "7be37a4268d81916100b078b9b955805e02e3e46ea9454157265c5311a48707c",
+        "bytes": 16876,
+        "media_type": "text/xml"
+      },
+      {
+        "role": "cdx_fresh_process_receipt",
+        "relative_locator": "native-fresh-readbacks/flynn-aldol-032-cdx/events.jsonl",
+        "sha256": "7394d94340aba196e63cb9472afb40f49d71c5385ddbd988fddde6b6df3c3c9d",
+        "bytes": 15901,
+        "media_type": "application/x-ndjson"
+      },
+      {
+        "role": "cdxml_fresh_process_readback",
+        "relative_locator": "native-fresh-readbacks/flynn-aldol-032-cdxml/readback.cdxml",
+        "sha256": "db26fda365c96782e9e7ee8d2dc289625ed38ddea19bf951822692f873fd3c7f",
+        "bytes": 16876,
+        "media_type": "text/xml"
+      },
+      {
+        "role": "cdxml_fresh_process_receipt",
+        "relative_locator": "native-fresh-readbacks/flynn-aldol-032-cdxml/events.jsonl",
+        "sha256": "9c63328bc91564e638a9afa9cbc9785971a58325757375aaf8ef076c5498cde1",
+        "bytes": 15923,
+        "media_type": "application/x-ndjson"
+      }
+    ],
+    "evidence_notes": [
+      "Curved electron arrows and broad layout screened in author EMF rendered through Windows GDI. LP count is explicit symbol-object count; charge count is explicit nonzero atom-charge property count. Neither includes implicit chemistry or all text glyphs. Fragment/node/text inventories are raw native object counts, not segmented molecules/states/captions.",
+      "Bounded alternative; benzoic acid side chain closes to six-membered lactone. Do not silently add omitted coproducts to the source.",
+      "Original-source and native-import counts may differ after abbreviation expansion. Native candidate arrow count is not a certified semantic binding.",
+      "All source screening is AI-assisted development exposure; gold remains zero.",
+      "Historical same-process readbacks preserve original hashes but do not prove disk reopening. Fresh per-format zero-document PID/HWND events and readbacks below supersede that claim; see verification/2026-09-13-paired-pilot/native-survey-checks.json. Native pairing does not imply lossless fidelity, editability, visual quality or human acceptance."
+    ]
+  },
+  {
+    "version": "paired-registry/1.0",
+    "sample_id": "flynn-aldol-013",
+    "source": {
+      "source_url": "https://www.flynnresearchgroup.com/s/Problem-Set-6-Aldol-answers.docx",
+      "citation": "Flynn Research Group. Organic Chemistry Assessments, CHM 2120, Problem Set 6: Aldol (answers). n.d. Accessed 13 September 2026.",
+      "author_or_project": "Flynn Research Group",
+      "retrieved_at": "2026-09-13T10:30:04.438664+00:00",
+      "original_sha256": "f94b43f27029c0b67ecc39f6eaf26e777d8a6779e2ef4b8c0605ed3feca9b429",
+      "asset_types": [
+        "CDX",
+        "EMF",
+        "PNG",
+        "DOCX"
+      ],
+      "redistributable": "unknown",
+      "license": null,
+      "license_evidence_url": "https://www.flynnresearchgroup.com/organic-assessments",
+      "container": {
+        "sha256": "3b63557df14651b3ddaf7f4756e29ec6c43a75c3e9870218da257f961b7eb0cd",
+        "member": "word/embeddings/oleObject13.bin",
+        "stream": "CONTENTS"
+      }
+    },
+    "mechanism_family": "proton_transfer; carbonyl",
+    "complexity_profile": {
+      "molecule_count": null,
+      "caption_count": null,
+      "simultaneous_flow_count": null,
+      "common_scaffold_count": null,
+      "dense_anchor_risk": null,
+      "curved_arrow_count": 6,
+      "lone_pair_count": 2,
+      "charge_count": 2,
+      "radical_count": null,
+      "state_count": 3,
+      "step_count": 2,
+      "multirow": true,
+      "snake_layout": false,
+      "curved_arrow_candidate_count": 6
+    },
+    "curved_arrow_count": 6,
+    "lone_pair_count": 2,
+    "charge_count": 2,
+    "state_count": 3,
+    "step_count": 2,
+    "condition_text_present": true,
+    "structured_target_available": true,
+    "native_render_available": true,
+    "research_status": "native_paired",
+    "redistributable": "unknown",
+    "split": "research_development",
+    "frozen_or_descendant": false,
+    "lineage": [
+      "external-author-acquisition/2026-09-13"
+    ],
+    "exposure_history": [
+      {
+        "timestamp": "2026-09-13T10:43:30.793472+00:00",
+        "actor_role": "custodian",
+        "asset_sha256": [
+          "f94b43f27029c0b67ecc39f6eaf26e777d8a6779e2ef4b8c0605ed3feca9b429"
+        ],
+        "purpose": "source extraction and author-preview screening; separate from generator"
+      },
+      {
+        "timestamp": "2026-09-13T10:45:31.3072621Z",
+        "actor_role": "custodian",
+        "asset_sha256": [
+          "f94b43f27029c0b67ecc39f6eaf26e777d8a6779e2ef4b8c0605ed3feca9b429",
+          "3b63557df14651b3ddaf7f4756e29ec6c43a75c3e9870218da257f961b7eb0cd",
+          "388ef4fc6173fe3a05ff4a291072501185834e69f6d002c08c9d54feeef6c28d",
+          "ea557762532d7d9c82684edd11f3b06f2cca09871e570f7f587ad46d2bd3c5cf",
+          "e693fd7ce6b0a8325fb702831b08371bf769b69512461fe7140dc72c632874b5",
+          "a102753767ebe253a37541c3533a001c9610696951baba79e13d834cbf4b31d1",
+          "2ff2795bb964a2a2fc06325205c53e2fe612587264b04ebfa4e01be315a3712e",
+          "a95cf7c32f6de8e7e2215faff8b0e4e8a0bbe499a7560e6b5e714344d3564dbe",
+          "6f31e334e2de624fe10bde665e2f947a54f321bd287b74c782640785c1e73a96",
+          "0de0e877cae8a5285ef9187bdad98b74a30614afef9c01d6c43b212f5b1903f8"
+        ],
+        "purpose": "native render/save/reopen and evaluator inventory; no generator context"
+      },
+      {
+        "timestamp": "2026-09-13T11:08:56.920871+00:00",
+        "actor_role": "evaluator",
+        "asset_sha256": [
+          "705c8dc9456b3bad8d3570c7044a6cc88f60b5e13c6cf726ea96a1c18e198792",
+          "1cf3639c38915995a18587285c668729035dae5ebe26925dfb91465de3ed4d06",
+          "e3c2f3063886a6fbd29722bf722879fa8bc57eed47933e4f524ffc6d1c3a2f07",
+          "8b64ad1700fecd2f5833204bbf50bbecfbebee84bc54a2f677b9fe350ce8375d"
+        ],
+        "purpose": "Independent fresh-process disk reads; separate from already completed generator input sealing."
+      }
+    ],
+    "assets": [
+      {
+        "role": "original_target",
+        "relative_locator": "source-survey-academic/extracted/flynn-org2-ps6-aldol-answers/oleObject13.cdx",
+        "sha256": "f94b43f27029c0b67ecc39f6eaf26e777d8a6779e2ef4b8c0605ed3feca9b429",
+        "bytes": 6538,
+        "media_type": "chemical/x-cdx"
+      },
+      {
+        "role": "source_container",
+        "relative_locator": "source-survey-academic/flynn-org2-ps6-aldol-answers.docx",
+        "sha256": "3b63557df14651b3ddaf7f4756e29ec6c43a75c3e9870218da257f961b7eb0cd",
+        "bytes": 4549496,
+        "media_type": "application/octet-stream"
+      },
+      {
+        "role": "author_vector_preview",
+        "relative_locator": "source-survey-academic/extracted/flynn-org2-ps6-aldol-answers/oleObject13.emf",
+        "sha256": "388ef4fc6173fe3a05ff4a291072501185834e69f6d002c08c9d54feeef6c28d",
+        "bytes": 46796,
+        "media_type": "image/emf"
+      },
+      {
+        "role": "native_cdxml",
+        "relative_locator": "native-survey/flynn-aldol-013/native.cdxml",
+        "sha256": "ea557762532d7d9c82684edd11f3b06f2cca09871e570f7f587ad46d2bd3c5cf",
+        "bytes": 17774,
+        "media_type": "text/xml"
+      },
+      {
+        "role": "native_cdx",
+        "relative_locator": "native-survey/flynn-aldol-013/native.cdx",
+        "sha256": "e693fd7ce6b0a8325fb702831b08371bf769b69512461fe7140dc72c632874b5",
+        "bytes": 7968,
+        "media_type": "chemical/x-cdx"
+      },
+      {
+        "role": "native_reference_png",
+        "relative_locator": "native-survey/flynn-aldol-013/native.png",
+        "sha256": "a102753767ebe253a37541c3533a001c9610696951baba79e13d834cbf4b31d1",
+        "bytes": 153636,
+        "media_type": "image/png"
+      },
+      {
+        "role": "native_viewing_jpeg",
+        "relative_locator": "native-survey/flynn-aldol-013/native.jpeg",
+        "sha256": "2ff2795bb964a2a2fc06325205c53e2fe612587264b04ebfa4e01be315a3712e",
+        "bytes": 44520,
+        "media_type": "image/jpeg"
+      },
+      {
+        "role": "historical_same_process_cdx_reopen_readback",
+        "relative_locator": "native-survey/flynn-aldol-013/cdx-readback.cdxml",
+        "sha256": "a95cf7c32f6de8e7e2215faff8b0e4e8a0bbe499a7560e6b5e714344d3564dbe",
+        "bytes": 17780,
+        "media_type": "text/xml"
+      },
+      {
+        "role": "historical_same_process_cdxml_reopen_readback",
+        "relative_locator": "native-survey/flynn-aldol-013/cdxml-readback.cdxml",
+        "sha256": "6f31e334e2de624fe10bde665e2f947a54f321bd287b74c782640785c1e73a96",
+        "bytes": 17788,
+        "media_type": "text/xml"
+      },
+      {
+        "role": "native_receipt",
+        "relative_locator": "native-survey/flynn-aldol-013/events.jsonl",
+        "sha256": "0de0e877cae8a5285ef9187bdad98b74a30614afef9c01d6c43b212f5b1903f8",
+        "bytes": 40851,
+        "media_type": "application/x-ndjson"
+      },
+      {
+        "role": "cdx_fresh_process_readback",
+        "relative_locator": "native-fresh-readbacks/flynn-aldol-013-cdx/readback.cdxml",
+        "sha256": "705c8dc9456b3bad8d3570c7044a6cc88f60b5e13c6cf726ea96a1c18e198792",
+        "bytes": 17782,
+        "media_type": "text/xml"
+      },
+      {
+        "role": "cdx_fresh_process_receipt",
+        "relative_locator": "native-fresh-readbacks/flynn-aldol-013-cdx/events.jsonl",
+        "sha256": "1cf3639c38915995a18587285c668729035dae5ebe26925dfb91465de3ed4d06",
+        "bytes": 15024,
+        "media_type": "application/x-ndjson"
+      },
+      {
+        "role": "cdxml_fresh_process_readback",
+        "relative_locator": "native-fresh-readbacks/flynn-aldol-013-cdxml/readback.cdxml",
+        "sha256": "e3c2f3063886a6fbd29722bf722879fa8bc57eed47933e4f524ffc6d1c3a2f07",
+        "bytes": 17782,
+        "media_type": "text/xml"
+      },
+      {
+        "role": "cdxml_fresh_process_receipt",
+        "relative_locator": "native-fresh-readbacks/flynn-aldol-013-cdxml/events.jsonl",
+        "sha256": "8b64ad1700fecd2f5833204bbf50bbecfbebee84bc54a2f677b9fe350ce8375d",
+        "bytes": 14989,
+        "media_type": "application/x-ndjson"
+      }
+    ],
+    "evidence_notes": [
+      "Curved electron arrows and broad layout screened in author EMF rendered through Windows GDI. LP count is explicit symbol-object count; charge count is explicit nonzero atom-charge property count. Neither includes implicit chemistry or all text glyphs. Fragment/node/text inventories are raw native object counts, not segmented molecules/states/captions.",
+      "Stereochemical wedges, alternative reprotonation routes and colored explanatory captions.",
+      "Original-source and native-import counts may differ after abbreviation expansion. Native candidate arrow count is not a certified semantic binding.",
+      "All source screening is AI-assisted development exposure; gold remains zero.",
+      "Historical same-process readbacks preserve original hashes but do not prove disk reopening. Fresh per-format zero-document PID/HWND events and readbacks below supersede that claim; see verification/2026-09-13-paired-pilot/native-survey-checks.json. Native pairing does not imply lossless fidelity, editability, visual quality or human acceptance."
+    ]
+  },
+  {
+    "version": "paired-registry/1.0",
+    "sample_id": "flynn-aldol-026",
+    "source": {
+      "source_url": "https://www.flynnresearchgroup.com/s/Problem-Set-6-Aldol-answers.docx",
+      "citation": "Flynn Research Group. Organic Chemistry Assessments, CHM 2120, Problem Set 6: Aldol (answers). n.d. Accessed 13 September 2026.",
+      "author_or_project": "Flynn Research Group",
+      "retrieved_at": "2026-09-13T10:30:04.438664+00:00",
+      "original_sha256": "7c5b27e44e722c7878262726bd157d320b03ab68f4f7da352d653dfded0c54c8",
+      "asset_types": [
+        "CDX",
+        "EMF",
+        "PNG",
+        "DOCX"
+      ],
+      "redistributable": "unknown",
+      "license": null,
+      "license_evidence_url": "https://www.flynnresearchgroup.com/organic-assessments",
+      "container": {
+        "sha256": "3b63557df14651b3ddaf7f4756e29ec6c43a75c3e9870218da257f961b7eb0cd",
+        "member": "word/embeddings/oleObject26.bin",
+        "stream": "CONTENTS"
+      }
+    },
+    "mechanism_family": "carbonyl; proton_transfer",
+    "complexity_profile": {
+      "molecule_count": null,
+      "caption_count": null,
+      "simultaneous_flow_count": null,
+      "common_scaffold_count": null,
+      "dense_anchor_risk": null,
+      "curved_arrow_count": 8,
+      "lone_pair_count": 3,
+      "charge_count": 3,
+      "radical_count": null,
+      "state_count": 4,
+      "step_count": 3,
+      "multirow": true,
+      "snake_layout": false,
+      "curved_arrow_candidate_count": 8
+    },
+    "curved_arrow_count": 8,
+    "lone_pair_count": 3,
+    "charge_count": 3,
+    "state_count": 4,
+    "step_count": 3,
+    "condition_text_present": true,
+    "structured_target_available": true,
+    "native_render_available": true,
+    "research_status": "native_paired",
+    "redistributable": "unknown",
+    "split": "research_development",
+    "frozen_or_descendant": false,
+    "lineage": [
+      "external-author-acquisition/2026-09-13"
+    ],
+    "exposure_history": [
+      {
+        "timestamp": "2026-09-13T10:43:30.793472+00:00",
+        "actor_role": "custodian",
+        "asset_sha256": [
+          "7c5b27e44e722c7878262726bd157d320b03ab68f4f7da352d653dfded0c54c8"
+        ],
+        "purpose": "source extraction and author-preview screening; separate from generator"
+      },
+      {
+        "timestamp": "2026-09-13T10:45:33.4528680Z",
+        "actor_role": "custodian",
+        "asset_sha256": [
+          "7c5b27e44e722c7878262726bd157d320b03ab68f4f7da352d653dfded0c54c8",
+          "3b63557df14651b3ddaf7f4756e29ec6c43a75c3e9870218da257f961b7eb0cd",
+          "5544a5dcbf2262dcd0dea1b91ddbe94f37acefa0f3a9ad00158d87b23932929c",
+          "ff456b9c070d1fe2707b24099ad6178c7f98f01edc38e9968e2381de95c4f0d4",
+          "f2890cc21307a93218f9b4259c14a7480f6b228f7b232b3eae8d6404a5f025a9",
+          "139cb8b33d75cd94544d9f2103a064986802620f934be7a2f9b56bd1ca30b81f",
+          "92b43af328e5a1fca6d7a476e68dbd5d8b14a02010bb94d22a082ad5eb80c636",
+          "61d096681bdf1dad0f8d3cc2df8f51b0d119801ea7cdbdcdbba5fc68adaff2ee",
+          "d41b51bd3b41fe003ea677852edc8bdf625eef2ea4be775e104ca904fcdacfb6",
+          "fa67856aff1c54e8a63cd959dd3b557641db2044ea1bbcccc49e850c7dc84737"
+        ],
+        "purpose": "native render/save/reopen and evaluator inventory; no generator context"
+      },
+      {
+        "timestamp": "2026-09-13T11:08:56.920871+00:00",
+        "actor_role": "evaluator",
+        "asset_sha256": [
+          "6aee76d0a75778ae5817f893968452dddf96b19cf575ad0bde0ee4db89456e08",
+          "8e085ac17877752699af0daa172718692366a3bbf40b2968b130f68386c32d9c",
+          "298fbca408c6b1ba9939af4395e3a587f04042c8e979f46f0b7f2360798ea803",
+          "6bb2e0368bb8980ef69732f6f367a0946d10645652003ec5b57728c72b8e5a10"
+        ],
+        "purpose": "Independent fresh-process disk reads; separate from already completed generator input sealing."
+      }
+    ],
+    "assets": [
+      {
+        "role": "original_target",
+        "relative_locator": "source-survey-academic/extracted/flynn-org2-ps6-aldol-answers/oleObject26.cdx",
+        "sha256": "7c5b27e44e722c7878262726bd157d320b03ab68f4f7da352d653dfded0c54c8",
+        "bytes": 8722,
+        "media_type": "chemical/x-cdx"
+      },
+      {
+        "role": "source_container",
+        "relative_locator": "source-survey-academic/flynn-org2-ps6-aldol-answers.docx",
+        "sha256": "3b63557df14651b3ddaf7f4756e29ec6c43a75c3e9870218da257f961b7eb0cd",
+        "bytes": 4549496,
+        "media_type": "application/octet-stream"
+      },
+      {
+        "role": "author_vector_preview",
+        "relative_locator": "source-survey-academic/extracted/flynn-org2-ps6-aldol-answers/oleObject26.emf",
+        "sha256": "5544a5dcbf2262dcd0dea1b91ddbe94f37acefa0f3a9ad00158d87b23932929c",
+        "bytes": 41140,
+        "media_type": "image/emf"
+      },
+      {
+        "role": "native_cdxml",
+        "relative_locator": "native-survey/flynn-aldol-026/native.cdxml",
+        "sha256": "ff456b9c070d1fe2707b24099ad6178c7f98f01edc38e9968e2381de95c4f0d4",
+        "bytes": 22602,
+        "media_type": "text/xml"
+      },
+      {
+        "role": "native_cdx",
+        "relative_locator": "native-survey/flynn-aldol-026/native.cdx",
+        "sha256": "f2890cc21307a93218f9b4259c14a7480f6b228f7b232b3eae8d6404a5f025a9",
+        "bytes": 10124,
+        "media_type": "chemical/x-cdx"
+      },
+      {
+        "role": "native_reference_png",
+        "relative_locator": "native-survey/flynn-aldol-026/native.png",
+        "sha256": "139cb8b33d75cd94544d9f2103a064986802620f934be7a2f9b56bd1ca30b81f",
+        "bytes": 111073,
+        "media_type": "image/png"
+      },
+      {
+        "role": "native_viewing_jpeg",
+        "relative_locator": "native-survey/flynn-aldol-026/native.jpeg",
+        "sha256": "92b43af328e5a1fca6d7a476e68dbd5d8b14a02010bb94d22a082ad5eb80c636",
+        "bytes": 35278,
+        "media_type": "image/jpeg"
+      },
+      {
+        "role": "historical_same_process_cdx_reopen_readback",
+        "relative_locator": "native-survey/flynn-aldol-026/cdx-readback.cdxml",
+        "sha256": "61d096681bdf1dad0f8d3cc2df8f51b0d119801ea7cdbdcdbba5fc68adaff2ee",
+        "bytes": 22608,
+        "media_type": "text/xml"
+      },
+      {
+        "role": "historical_same_process_cdxml_reopen_readback",
+        "relative_locator": "native-survey/flynn-aldol-026/cdxml-readback.cdxml",
+        "sha256": "d41b51bd3b41fe003ea677852edc8bdf625eef2ea4be775e104ca904fcdacfb6",
+        "bytes": 22618,
+        "media_type": "text/xml"
+      },
+      {
+        "role": "native_receipt",
+        "relative_locator": "native-survey/flynn-aldol-026/events.jsonl",
+        "sha256": "fa67856aff1c54e8a63cd959dd3b557641db2044ea1bbcccc49e850c7dc84737",
+        "bytes": 47725,
+        "media_type": "application/x-ndjson"
+      },
+      {
+        "role": "cdx_fresh_process_readback",
+        "relative_locator": "native-fresh-readbacks/flynn-aldol-026-cdx/readback.cdxml",
+        "sha256": "6aee76d0a75778ae5817f893968452dddf96b19cf575ad0bde0ee4db89456e08",
+        "bytes": 22612,
+        "media_type": "text/xml"
+      },
+      {
+        "role": "cdx_fresh_process_receipt",
+        "relative_locator": "native-fresh-readbacks/flynn-aldol-026-cdx/events.jsonl",
+        "sha256": "8e085ac17877752699af0daa172718692366a3bbf40b2968b130f68386c32d9c",
+        "bytes": 17155,
+        "media_type": "application/x-ndjson"
+      },
+      {
+        "role": "cdxml_fresh_process_readback",
+        "relative_locator": "native-fresh-readbacks/flynn-aldol-026-cdxml/readback.cdxml",
+        "sha256": "298fbca408c6b1ba9939af4395e3a587f04042c8e979f46f0b7f2360798ea803",
+        "bytes": 22612,
+        "media_type": "text/xml"
+      },
+      {
+        "role": "cdxml_fresh_process_receipt",
+        "relative_locator": "native-fresh-readbacks/flynn-aldol-026-cdxml/events.jsonl",
+        "sha256": "6bb2e0368bb8980ef69732f6f367a0946d10645652003ec5b57728c72b8e5a10",
+        "bytes": 17619,
+        "media_type": "application/x-ndjson"
+      }
+    ],
+    "evidence_notes": [
+      "Curved electron arrows and broad layout screened in author EMF rendered through Windows GDI. LP count is explicit symbol-object count; charge count is explicit nonzero atom-charge property count. Neither includes implicit chemistry or all text glyphs. Fragment/node/text inventories are raw native object counts, not segmented molecules/states/captions.",
+      "Enolate generation, C-C bond formation and protonation; OR is a source abbreviation.",
+      "Original-source and native-import counts may differ after abbreviation expansion. Native candidate arrow count is not a certified semantic binding.",
+      "All source screening is AI-assisted development exposure; gold remains zero.",
+      "Historical same-process readbacks preserve original hashes but do not prove disk reopening. Fresh per-format zero-document PID/HWND events and readbacks below supersede that claim; see verification/2026-09-13-paired-pilot/native-survey-checks.json. Native pairing does not imply lossless fidelity, editability, visual quality or human acceptance."
+    ]
+  },
+  {
+    "version": "paired-registry/1.0",
+    "sample_id": "flynn-aldol-033",
+    "source": {
+      "source_url": "https://www.flynnresearchgroup.com/s/Problem-Set-6-Aldol-answers.docx",
+      "citation": "Flynn Research Group. Organic Chemistry Assessments, CHM 2120, Problem Set 6: Aldol (answers). n.d. Accessed 13 September 2026.",
+      "author_or_project": "Flynn Research Group",
+      "retrieved_at": "2026-09-13T10:30:04.438664+00:00",
+      "original_sha256": "59a5c5ba7ee2b5654fe5dbd4ab92ea0bb1bc7dc7f02e12e6fee2725198af5b03",
+      "asset_types": [
+        "CDX",
+        "EMF",
+        "PNG",
+        "DOCX"
+      ],
+      "redistributable": "unknown",
+      "license": null,
+      "license_evidence_url": "https://www.flynnresearchgroup.com/organic-assessments",
+      "container": {
+        "sha256": "3b63557df14651b3ddaf7f4756e29ec6c43a75c3e9870218da257f961b7eb0cd",
+        "member": "word/embeddings/oleObject33.bin",
+        "stream": "CONTENTS"
+      }
+    },
+    "mechanism_family": "aromatic; carbonyl; proton_transfer",
+    "complexity_profile": {
+      "molecule_count": null,
+      "caption_count": null,
+      "simultaneous_flow_count": null,
+      "common_scaffold_count": null,
+      "dense_anchor_risk": null,
+      "curved_arrow_count": 8,
+      "lone_pair_count": 6,
+      "charge_count": 5,
+      "radical_count": null,
+      "state_count": 5,
+      "step_count": 4,
+      "multirow": true,
+      "snake_layout": false,
+      "curved_arrow_candidate_count": 8
+    },
+    "curved_arrow_count": 8,
+    "lone_pair_count": 6,
+    "charge_count": 5,
+    "state_count": 5,
+    "step_count": 4,
+    "condition_text_present": true,
+    "structured_target_available": true,
+    "native_render_available": true,
+    "research_status": "native_paired",
+    "redistributable": "unknown",
+    "split": "research_development",
+    "frozen_or_descendant": false,
+    "lineage": [
+      "external-author-acquisition/2026-09-13"
+    ],
+    "exposure_history": [
+      {
+        "timestamp": "2026-09-13T10:43:30.793472+00:00",
+        "actor_role": "custodian",
+        "asset_sha256": [
+          "59a5c5ba7ee2b5654fe5dbd4ab92ea0bb1bc7dc7f02e12e6fee2725198af5b03"
+        ],
+        "purpose": "source extraction and author-preview screening; separate from generator"
+      },
+      {
+        "timestamp": "2026-09-13T10:45:35.5509529Z",
+        "actor_role": "custodian",
+        "asset_sha256": [
+          "59a5c5ba7ee2b5654fe5dbd4ab92ea0bb1bc7dc7f02e12e6fee2725198af5b03",
+          "3b63557df14651b3ddaf7f4756e29ec6c43a75c3e9870218da257f961b7eb0cd",
+          "3b2aea4fbead941c9fe78e94fcd7cb32ae5e392536f881b98c449b23643dace7",
+          "10dd749e711f7e30d2187834ab2f4cb73f6c69c4714e18d0817e8f554dcf8d6e",
+          "9a37756a2e237b67d2897ebb9598f05a80517a85eb2d86caea2ac7b37be3c3cf",
+          "d70e04e83d3268fce8c901a154e2dab2ab5dc115ddd6ffc454d1c584b2b1001a",
+          "b877c116b7da8d99ef7d2ebd829927fb44ff23b86e44fc29907217b82daa9380",
+          "77f561b7decd09e986b2a7b6b80d3f9e03fb400d7dde0cd2dbaac80e2dfe1554",
+          "228ced7b4015c5739b11b7533bc55908d1b61f102499defea5d95cda48940370",
+          "b950bd5a5c553f00c2f94a5a6bb031b96ff99031ff13c16f1cb2ce9dc2273efc"
+        ],
+        "purpose": "native render/save/reopen and evaluator inventory; no generator context"
+      },
+      {
+        "timestamp": "2026-09-13T11:08:56.920871+00:00",
+        "actor_role": "evaluator",
+        "asset_sha256": [
+          "ec6ca4bd3695cb0c496d98eff9d73b5b8d3148653b05c24d034e3ef80682cf20",
+          "2dbe0e7de454e88062133e7c5f0ce5816b395a1bb3bc90bfe8fc7e0860fa7b85",
+          "83c94c1f07a633689c924a3e4af557109ae12e0b7ef815ad499072d6e9d37345",
+          "23f02987f08961bc396e61180f32c201a8228deb54d8cb2b57727c1eccd7925a"
+        ],
+        "purpose": "Independent fresh-process disk reads; separate from already completed generator input sealing."
+      }
+    ],
+    "assets": [
+      {
+        "role": "original_target",
+        "relative_locator": "source-survey-academic/extracted/flynn-org2-ps6-aldol-answers/oleObject33.cdx",
+        "sha256": "59a5c5ba7ee2b5654fe5dbd4ab92ea0bb1bc7dc7f02e12e6fee2725198af5b03",
+        "bytes": 11088,
+        "media_type": "chemical/x-cdx"
+      },
+      {
+        "role": "source_container",
+        "relative_locator": "source-survey-academic/flynn-org2-ps6-aldol-answers.docx",
+        "sha256": "3b63557df14651b3ddaf7f4756e29ec6c43a75c3e9870218da257f961b7eb0cd",
+        "bytes": 4549496,
+        "media_type": "application/octet-stream"
+      },
+      {
+        "role": "author_vector_preview",
+        "relative_locator": "source-survey-academic/extracted/flynn-org2-ps6-aldol-answers/oleObject33.emf",
+        "sha256": "3b2aea4fbead941c9fe78e94fcd7cb32ae5e392536f881b98c449b23643dace7",
+        "bytes": 59484,
+        "media_type": "image/emf"
+      },
+      {
+        "role": "native_cdxml",
+        "relative_locator": "native-survey/flynn-aldol-033/native.cdxml",
+        "sha256": "10dd749e711f7e30d2187834ab2f4cb73f6c69c4714e18d0817e8f554dcf8d6e",
+        "bytes": 29042,
+        "media_type": "text/xml"
+      },
+      {
+        "role": "native_cdx",
+        "relative_locator": "native-survey/flynn-aldol-033/native.cdx",
+        "sha256": "9a37756a2e237b67d2897ebb9598f05a80517a85eb2d86caea2ac7b37be3c3cf",
+        "bytes": 13116,
+        "media_type": "chemical/x-cdx"
+      },
+      {
+        "role": "native_reference_png",
+        "relative_locator": "native-survey/flynn-aldol-033/native.png",
+        "sha256": "d70e04e83d3268fce8c901a154e2dab2ab5dc115ddd6ffc454d1c584b2b1001a",
+        "bytes": 165861,
+        "media_type": "image/png"
+      },
+      {
+        "role": "native_viewing_jpeg",
+        "relative_locator": "native-survey/flynn-aldol-033/native.jpeg",
+        "sha256": "b877c116b7da8d99ef7d2ebd829927fb44ff23b86e44fc29907217b82daa9380",
+        "bytes": 50598,
+        "media_type": "image/jpeg"
+      },
+      {
+        "role": "historical_same_process_cdx_reopen_readback",
+        "relative_locator": "native-survey/flynn-aldol-033/cdx-readback.cdxml",
+        "sha256": "77f561b7decd09e986b2a7b6b80d3f9e03fb400d7dde0cd2dbaac80e2dfe1554",
+        "bytes": 29048,
+        "media_type": "text/xml"
+      },
+      {
+        "role": "historical_same_process_cdxml_reopen_readback",
+        "relative_locator": "native-survey/flynn-aldol-033/cdxml-readback.cdxml",
+        "sha256": "228ced7b4015c5739b11b7533bc55908d1b61f102499defea5d95cda48940370",
+        "bytes": 29040,
+        "media_type": "text/xml"
+      },
+      {
+        "role": "native_receipt",
+        "relative_locator": "native-survey/flynn-aldol-033/events.jsonl",
+        "sha256": "b950bd5a5c553f00c2f94a5a6bb031b96ff99031ff13c16f1cb2ce9dc2273efc",
+        "bytes": 61114,
+        "media_type": "application/x-ndjson"
+      },
+      {
+        "role": "cdx_fresh_process_readback",
+        "relative_locator": "native-fresh-readbacks/flynn-aldol-033-cdx/readback.cdxml",
+        "sha256": "ec6ca4bd3695cb0c496d98eff9d73b5b8d3148653b05c24d034e3ef80682cf20",
+        "bytes": 29053,
+        "media_type": "text/xml"
+      },
+      {
+        "role": "cdx_fresh_process_receipt",
+        "relative_locator": "native-fresh-readbacks/flynn-aldol-033-cdx/events.jsonl",
+        "sha256": "2dbe0e7de454e88062133e7c5f0ce5816b395a1bb3bc90bfe8fc7e0860fa7b85",
+        "bytes": 21646,
+        "media_type": "application/x-ndjson"
+      },
+      {
+        "role": "cdxml_fresh_process_readback",
+        "relative_locator": "native-fresh-readbacks/flynn-aldol-033-cdxml/readback.cdxml",
+        "sha256": "83c94c1f07a633689c924a3e4af557109ae12e0b7ef815ad499072d6e9d37345",
+        "bytes": 29034,
+        "media_type": "text/xml"
+      },
+      {
+        "role": "cdxml_fresh_process_receipt",
+        "relative_locator": "native-fresh-readbacks/flynn-aldol-033-cdxml/events.jsonl",
+        "sha256": "23f02987f08961bc396e61180f32c201a8228deb54d8cb2b57727c1eccd7925a",
+        "bytes": 22010,
+        "media_type": "application/x-ndjson"
+      }
+    ],
+    "evidence_notes": [
+      "Curved electron arrows and broad layout screened in author EMF rendered through Windows GDI. LP count is explicit symbol-object count; charge count is explicit nonzero atom-charge property count. Neither includes implicit chemistry or all text glyphs. Fragment/node/text inventories are raw native object counts, not segmented molecules/states/captions.",
+      "Aromatic electron delocalization, CO2 addition and rearomatization; atom Radical=1 encodes two dots and is not certified chemical radical truth.",
+      "Original-source and native-import counts may differ after abbreviation expansion. Native candidate arrow count is not a certified semantic binding.",
+      "All source screening is AI-assisted development exposure; gold remains zero.",
+      "Historical same-process readbacks preserve original hashes but do not prove disk reopening. Fresh per-format zero-document PID/HWND events and readbacks below supersede that claim; see verification/2026-09-13-paired-pilot/native-survey-checks.json. Native pairing does not imply lossless fidelity, editability, visual quality or human acceptance."
+    ]
+  },
+  {
+    "version": "paired-registry/1.0",
+    "sample_id": "flynn-aldol-024",
+    "source": {
+      "source_url": "https://www.flynnresearchgroup.com/s/Problem-Set-6-Aldol-answers.docx",
+      "citation": "Flynn Research Group. Organic Chemistry Assessments, CHM 2120, Problem Set 6: Aldol (answers). n.d. Accessed 13 September 2026.",
+      "author_or_project": "Flynn Research Group",
+      "retrieved_at": "2026-09-13T10:30:04.438664+00:00",
+      "original_sha256": "51976c3314bfd276e685433cfe8de704c0629f78ee75ed49b74367cb9e056538",
+      "asset_types": [
+        "CDX",
+        "EMF",
+        "PNG",
+        "DOCX"
+      ],
+      "redistributable": "unknown",
+      "license": null,
+      "license_evidence_url": "https://www.flynnresearchgroup.com/organic-assessments",
+      "container": {
+        "sha256": "3b63557df14651b3ddaf7f4756e29ec6c43a75c3e9870218da257f961b7eb0cd",
+        "member": "word/embeddings/oleObject24.bin",
+        "stream": "CONTENTS"
+      }
+    },
+    "mechanism_family": "SN2; carbonyl; proton_transfer",
+    "complexity_profile": {
+      "molecule_count": null,
+      "caption_count": null,
+      "simultaneous_flow_count": null,
+      "common_scaffold_count": null,
+      "dense_anchor_risk": null,
+      "curved_arrow_count": 6,
+      "lone_pair_count": 3,
+      "charge_count": 4,
+      "radical_count": null,
+      "state_count": 3,
+      "step_count": 2,
+      "multirow": true,
+      "snake_layout": false,
+      "curved_arrow_candidate_count": 6
+    },
+    "curved_arrow_count": 6,
+    "lone_pair_count": 3,
+    "charge_count": 4,
+    "state_count": 3,
+    "step_count": 2,
+    "condition_text_present": true,
+    "structured_target_available": true,
+    "native_render_available": true,
+    "research_status": "native_paired",
+    "redistributable": "unknown",
+    "split": "research_development",
+    "frozen_or_descendant": false,
+    "lineage": [
+      "external-author-acquisition/2026-09-13"
+    ],
+    "exposure_history": [
+      {
+        "timestamp": "2026-09-13T10:43:30.793472+00:00",
+        "actor_role": "custodian",
+        "asset_sha256": [
+          "51976c3314bfd276e685433cfe8de704c0629f78ee75ed49b74367cb9e056538"
+        ],
+        "purpose": "source extraction and author-preview screening; separate from generator"
+      },
+      {
+        "timestamp": "2026-09-13T10:45:37.9975427Z",
+        "actor_role": "custodian",
+        "asset_sha256": [
+          "51976c3314bfd276e685433cfe8de704c0629f78ee75ed49b74367cb9e056538",
+          "3b63557df14651b3ddaf7f4756e29ec6c43a75c3e9870218da257f961b7eb0cd",
+          "916c61251d3b7844614cc6e7ddae52a1a53fa05325d613853a16d0f50cc15e6d",
+          "c733f3e85f952fb6dfd16e8d234229eba9b8fe0cc6daf5e3b6058c3ec9c788d2",
+          "1a726c421a0574b9ff4ae65c4a904ec1d3cf6449a32092d391191134118d1f78",
+          "50ccac1bc91cba5e8effc6ddf540cb41c0bb77420f1f5a9c34c9c0a481dd3ede",
+          "2fe72a0c6a1482a8c7acf3cb944aee2c8c09d45b817f51cd6a35d31cc2f541e9",
+          "798bc827adf680e6c2f9f484d24d1f44ed2b3606920c616bdf5c22bb24cc5be9",
+          "4803f0a55f0c642fceab6aaa9f27acf9e8f40994763a10abd0c4eec8067d61fc",
+          "04a5b67a3b1d10025855fcd35eaee1ceff1291be2620b09ee7ec07e5aadea5d0"
+        ],
+        "purpose": "native render/save/reopen and evaluator inventory; no generator context"
+      },
+      {
+        "timestamp": "2026-09-13T11:08:56.920871+00:00",
+        "actor_role": "evaluator",
+        "asset_sha256": [
+          "a5064a3e9b04dcafd5254252baf8bcd3c693c3f7c1cf9fbeef5fca077854c610",
+          "882f7d9856caaecec03047f8e6fedd4dd3474aeb4557078a3de4c3909d1b44aa",
+          "aef3136004289d9b6ec2d1270c1000221d09a8ea19ebf40a43b215193c0ebc57",
+          "9eb82dad22eaffaa1f1b88bbf89eeb2a67e98ebb89e2e72b50dfab1d2d955eff"
+        ],
+        "purpose": "Independent fresh-process disk reads; separate from already completed generator input sealing."
+      }
+    ],
+    "assets": [
+      {
+        "role": "original_target",
+        "relative_locator": "source-survey-academic/extracted/flynn-org2-ps6-aldol-answers/oleObject24.cdx",
+        "sha256": "51976c3314bfd276e685433cfe8de704c0629f78ee75ed49b74367cb9e056538",
+        "bytes": 7934,
+        "media_type": "chemical/x-cdx"
+      },
+      {
+        "role": "source_container",
+        "relative_locator": "source-survey-academic/flynn-org2-ps6-aldol-answers.docx",
+        "sha256": "3b63557df14651b3ddaf7f4756e29ec6c43a75c3e9870218da257f961b7eb0cd",
+        "bytes": 4549496,
+        "media_type": "application/octet-stream"
+      },
+      {
+        "role": "author_vector_preview",
+        "relative_locator": "source-survey-academic/extracted/flynn-org2-ps6-aldol-answers/oleObject24.emf",
+        "sha256": "916c61251d3b7844614cc6e7ddae52a1a53fa05325d613853a16d0f50cc15e6d",
+        "bytes": 41492,
+        "media_type": "image/emf"
+      },
+      {
+        "role": "native_cdxml",
+        "relative_locator": "native-survey/flynn-aldol-024/native.cdxml",
+        "sha256": "c733f3e85f952fb6dfd16e8d234229eba9b8fe0cc6daf5e3b6058c3ec9c788d2",
+        "bytes": 20078,
+        "media_type": "text/xml"
+      },
+      {
+        "role": "native_cdx",
+        "relative_locator": "native-survey/flynn-aldol-024/native.cdx",
+        "sha256": "1a726c421a0574b9ff4ae65c4a904ec1d3cf6449a32092d391191134118d1f78",
+        "bytes": 9195,
+        "media_type": "chemical/x-cdx"
+      },
+      {
+        "role": "native_reference_png",
+        "relative_locator": "native-survey/flynn-aldol-024/native.png",
+        "sha256": "50ccac1bc91cba5e8effc6ddf540cb41c0bb77420f1f5a9c34c9c0a481dd3ede",
+        "bytes": 114327,
+        "media_type": "image/png"
+      },
+      {
+        "role": "native_viewing_jpeg",
+        "relative_locator": "native-survey/flynn-aldol-024/native.jpeg",
+        "sha256": "2fe72a0c6a1482a8c7acf3cb944aee2c8c09d45b817f51cd6a35d31cc2f541e9",
+        "bytes": 34097,
+        "media_type": "image/jpeg"
+      },
+      {
+        "role": "historical_same_process_cdx_reopen_readback",
+        "relative_locator": "native-survey/flynn-aldol-024/cdx-readback.cdxml",
+        "sha256": "798bc827adf680e6c2f9f484d24d1f44ed2b3606920c616bdf5c22bb24cc5be9",
+        "bytes": 20084,
+        "media_type": "text/xml"
+      },
+      {
+        "role": "historical_same_process_cdxml_reopen_readback",
+        "relative_locator": "native-survey/flynn-aldol-024/cdxml-readback.cdxml",
+        "sha256": "4803f0a55f0c642fceab6aaa9f27acf9e8f40994763a10abd0c4eec8067d61fc",
+        "bytes": 20093,
+        "media_type": "text/xml"
+      },
+      {
+        "role": "native_receipt",
+        "relative_locator": "native-survey/flynn-aldol-024/events.jsonl",
+        "sha256": "04a5b67a3b1d10025855fcd35eaee1ceff1291be2620b09ee7ec07e5aadea5d0",
+        "bytes": 57363,
+        "media_type": "application/x-ndjson"
+      },
+      {
+        "role": "cdx_fresh_process_readback",
+        "relative_locator": "native-fresh-readbacks/flynn-aldol-024-cdx/readback.cdxml",
+        "sha256": "a5064a3e9b04dcafd5254252baf8bcd3c693c3f7c1cf9fbeef5fca077854c610",
+        "bytes": 20087,
+        "media_type": "text/xml"
+      },
+      {
+        "role": "cdx_fresh_process_receipt",
+        "relative_locator": "native-fresh-readbacks/flynn-aldol-024-cdx/events.jsonl",
+        "sha256": "882f7d9856caaecec03047f8e6fedd4dd3474aeb4557078a3de4c3909d1b44aa",
+        "bytes": 20458,
+        "media_type": "application/x-ndjson"
+      },
+      {
+        "role": "cdxml_fresh_process_readback",
+        "relative_locator": "native-fresh-readbacks/flynn-aldol-024-cdxml/readback.cdxml",
+        "sha256": "aef3136004289d9b6ec2d1270c1000221d09a8ea19ebf40a43b215193c0ebc57",
+        "bytes": 20087,
+        "media_type": "text/xml"
+      },
+      {
+        "role": "cdxml_fresh_process_receipt",
+        "relative_locator": "native-fresh-readbacks/flynn-aldol-024-cdxml/events.jsonl",
+        "sha256": "9eb82dad22eaffaa1f1b88bbf89eeb2a67e98ebb89e2e72b50dfab1d2d955eff",
+        "bytes": 20655,
+        "media_type": "application/x-ndjson"
+      }
+    ],
+    "evidence_notes": [
+      "Curved electron arrows and broad layout screened in author EMF rendered through Windows GDI. LP count is explicit symbol-object count; charge count is explicit nonzero atom-charge property count. Neither includes implicit chemistry or all text glyphs. Fragment/node/text inventories are raw native object counts, not segmented molecules/states/captions.",
+      "LDA and lithium ion plus alkyl iodide require abbreviation and spectator handling.",
+      "Original-source and native-import counts may differ after abbreviation expansion. Native candidate arrow count is not a certified semantic binding.",
+      "All source screening is AI-assisted development exposure; gold remains zero.",
+      "Historical same-process readbacks preserve original hashes but do not prove disk reopening. Fresh per-format zero-document PID/HWND events and readbacks below supersede that claim; see verification/2026-09-13-paired-pilot/native-survey-checks.json. Native pairing does not imply lossless fidelity, editability, visual quality or human acceptance."
+    ]
+  },
+  {
+    "version": "paired-registry/1.0",
+    "sample_id": "flynn-aldol-040",
+    "source": {
+      "source_url": "https://www.flynnresearchgroup.com/s/Problem-Set-6-Aldol-answers.docx",
+      "citation": "Flynn Research Group. Organic Chemistry Assessments, CHM 2120, Problem Set 6: Aldol (answers). n.d. Accessed 13 September 2026.",
+      "author_or_project": "Flynn Research Group",
+      "retrieved_at": "2026-09-13T10:30:04.438664+00:00",
+      "original_sha256": "ea2b591ddffd33a56601f73427e2b1469a3d073f33655eab2f4287abda202f26",
+      "asset_types": [
+        "CDX",
+        "EMF",
+        "PNG",
+        "DOCX"
+      ],
+      "redistributable": "unknown",
+      "license": null,
+      "license_evidence_url": "https://www.flynnresearchgroup.com/organic-assessments",
+      "container": {
+        "sha256": "3b63557df14651b3ddaf7f4756e29ec6c43a75c3e9870218da257f961b7eb0cd",
+        "member": "word/embeddings/oleObject40.bin",
+        "stream": "CONTENTS"
+      }
+    },
+    "mechanism_family": "carbonyl; proton_transfer; elimination",
+    "complexity_profile": {
+      "molecule_count": null,
+      "caption_count": null,
+      "simultaneous_flow_count": null,
+      "common_scaffold_count": null,
+      "dense_anchor_risk": null,
+      "curved_arrow_count": 17,
+      "lone_pair_count": 8,
+      "charge_count": 8,
+      "radical_count": null,
+      "state_count": null,
+      "step_count": null,
+      "multirow": true,
+      "snake_layout": true,
+      "curved_arrow_candidate_count": 17
+    },
+    "curved_arrow_count": 17,
+    "lone_pair_count": 8,
+    "charge_count": 8,
+    "state_count": null,
+    "step_count": null,
+    "condition_text_present": true,
+    "structured_target_available": true,
+    "native_render_available": true,
+    "research_status": "native_paired",
+    "redistributable": "unknown",
+    "split": "research_development",
+    "frozen_or_descendant": false,
+    "lineage": [
+      "external-author-acquisition/2026-09-13"
+    ],
+    "exposure_history": [
+      {
+        "timestamp": "2026-09-13T10:43:30.793472+00:00",
+        "actor_role": "custodian",
+        "asset_sha256": [
+          "ea2b591ddffd33a56601f73427e2b1469a3d073f33655eab2f4287abda202f26"
+        ],
+        "purpose": "source extraction and author-preview screening; separate from generator"
+      },
+      {
+        "timestamp": "2026-09-13T10:45:40.1289532Z",
+        "actor_role": "custodian",
+        "asset_sha256": [
+          "ea2b591ddffd33a56601f73427e2b1469a3d073f33655eab2f4287abda202f26",
+          "3b63557df14651b3ddaf7f4756e29ec6c43a75c3e9870218da257f961b7eb0cd",
+          "2ad79c58681e280b961eb1f5f25e7b3f727890e21454b8e3664b9b34facaad74",
+          "ebdf8f7491140c88eefdf4c42e4618a849d0695da2824c6f4c48b0aa4ac9f5de",
+          "505d1add1a04a6cbebc066a9fd9017f5f7918f7c617e4c435c60671d99c20b8e",
+          "0d20c58b63dc07a8ea0113673ae73ea08fc6a0d15c7a02b6b97b5288d0965df3",
+          "b42dc20444f28fff149c7881f0e4c61727a3b55931026759d5a5e6a81e65bbe9",
+          "40f21a3c1f838ae89393b5438ae8e96acc52173fcd45226f945a09aeeb6f1db5",
+          "6a2f5bada0a8d153ca2a9271f4e6608f05eb9c7b462f8e75f4131e0193df4df6",
+          "90d4b69c50464b92a5609825b0a3d80b9480f47d935e7d3c42e80006fe766a40"
+        ],
+        "purpose": "native render/save/reopen and evaluator inventory; no generator context"
+      },
+      {
+        "timestamp": "2026-09-13T11:08:56.920871+00:00",
+        "actor_role": "evaluator",
+        "asset_sha256": [
+          "ae7cd52834eecd595d9d3f8d3aa45fc4567138114709611b857b8dfd2f1fa9a9",
+          "2441d292e3dbc57abf158d1bdcf5addf616c14e3bf18dcb0c9a70d29a3df2bf5",
+          "33338118fc28519c5a65d9f2eb625fdd70842efe036a0a2316796136898ca7c3",
+          "73fa48b66f6aa6e000b189ba0d32f466b9387a1ff489f73b073bb3d138296b83"
+        ],
+        "purpose": "Independent fresh-process disk reads; separate from already completed generator input sealing."
+      }
+    ],
+    "assets": [
+      {
+        "role": "original_target",
+        "relative_locator": "source-survey-academic/extracted/flynn-org2-ps6-aldol-answers/oleObject40.cdx",
+        "sha256": "ea2b591ddffd33a56601f73427e2b1469a3d073f33655eab2f4287abda202f26",
+        "bytes": 26425,
+        "media_type": "chemical/x-cdx"
+      },
+      {
+        "role": "source_container",
+        "relative_locator": "source-survey-academic/flynn-org2-ps6-aldol-answers.docx",
+        "sha256": "3b63557df14651b3ddaf7f4756e29ec6c43a75c3e9870218da257f961b7eb0cd",
+        "bytes": 4549496,
+        "media_type": "application/octet-stream"
+      },
+      {
+        "role": "author_vector_preview",
+        "relative_locator": "source-survey-academic/extracted/flynn-org2-ps6-aldol-answers/oleObject40.emf",
+        "sha256": "2ad79c58681e280b961eb1f5f25e7b3f727890e21454b8e3664b9b34facaad74",
+        "bytes": 112996,
+        "media_type": "image/emf"
+      },
+      {
+        "role": "native_cdxml",
+        "relative_locator": "native-survey/flynn-aldol-040/native.cdxml",
+        "sha256": "ebdf8f7491140c88eefdf4c42e4618a849d0695da2824c6f4c48b0aa4ac9f5de",
+        "bytes": 62344,
+        "media_type": "text/xml"
+      },
+      {
+        "role": "native_cdx",
+        "relative_locator": "native-survey/flynn-aldol-040/native.cdx",
+        "sha256": "505d1add1a04a6cbebc066a9fd9017f5f7918f7c617e4c435c60671d99c20b8e",
+        "bytes": 29378,
+        "media_type": "chemical/x-cdx"
+      },
+      {
+        "role": "native_reference_png",
+        "relative_locator": "native-survey/flynn-aldol-040/native.png",
+        "sha256": "0d20c58b63dc07a8ea0113673ae73ea08fc6a0d15c7a02b6b97b5288d0965df3",
+        "bytes": 324014,
+        "media_type": "image/png"
+      },
+      {
+        "role": "native_viewing_jpeg",
+        "relative_locator": "native-survey/flynn-aldol-040/native.jpeg",
+        "sha256": "b42dc20444f28fff149c7881f0e4c61727a3b55931026759d5a5e6a81e65bbe9",
+        "bytes": 97553,
+        "media_type": "image/jpeg"
+      },
+      {
+        "role": "historical_same_process_cdx_reopen_readback",
+        "relative_locator": "native-survey/flynn-aldol-040/cdx-readback.cdxml",
+        "sha256": "40f21a3c1f838ae89393b5438ae8e96acc52173fcd45226f945a09aeeb6f1db5",
+        "bytes": 62350,
+        "media_type": "text/xml"
+      },
+      {
+        "role": "historical_same_process_cdxml_reopen_readback",
+        "relative_locator": "native-survey/flynn-aldol-040/cdxml-readback.cdxml",
+        "sha256": "6a2f5bada0a8d153ca2a9271f4e6608f05eb9c7b462f8e75f4131e0193df4df6",
+        "bytes": 62362,
+        "media_type": "text/xml"
+      },
+      {
+        "role": "native_receipt",
+        "relative_locator": "native-survey/flynn-aldol-040/events.jsonl",
+        "sha256": "90d4b69c50464b92a5609825b0a3d80b9480f47d935e7d3c42e80006fe766a40",
+        "bytes": 90230,
+        "media_type": "application/x-ndjson"
+      },
+      {
+        "role": "cdx_fresh_process_readback",
+        "relative_locator": "native-fresh-readbacks/flynn-aldol-040-cdx/readback.cdxml",
+        "sha256": "ae7cd52834eecd595d9d3f8d3aa45fc4567138114709611b857b8dfd2f1fa9a9",
+        "bytes": 62353,
+        "media_type": "text/xml"
+      },
+      {
+        "role": "cdx_fresh_process_receipt",
+        "relative_locator": "native-fresh-readbacks/flynn-aldol-040-cdx/events.jsonl",
+        "sha256": "2441d292e3dbc57abf158d1bdcf5addf616c14e3bf18dcb0c9a70d29a3df2bf5",
+        "bytes": 31513,
+        "media_type": "application/x-ndjson"
+      },
+      {
+        "role": "cdxml_fresh_process_readback",
+        "relative_locator": "native-fresh-readbacks/flynn-aldol-040-cdxml/readback.cdxml",
+        "sha256": "33338118fc28519c5a65d9f2eb625fdd70842efe036a0a2316796136898ca7c3",
+        "bytes": 62356,
+        "media_type": "text/xml"
+      },
+      {
+        "role": "cdxml_fresh_process_receipt",
+        "relative_locator": "native-fresh-readbacks/flynn-aldol-040-cdxml/events.jsonl",
+        "sha256": "73fa48b66f6aa6e000b189ba0d32f466b9387a1ff489f73b073bb3d138296b83",
+        "bytes": 31407,
+        "media_type": "application/x-ndjson"
+      }
+    ],
+    "evidence_notes": [
+      "Curved electron arrows and broad layout screened in author EMF rendered through Windows GDI. LP count is explicit symbol-object count; charge count is explicit nonzero atom-charge property count. Neither includes implicit chemistry or all text glyphs. Fragment/node/text inventories are raw native object counts, not segmented molecules/states/captions.",
+      "High complexity, branching convergence, multiple proton transfers and reverse reading direction. States not yet segmented.",
+      "Original-source and native-import counts may differ after abbreviation expansion. Native candidate arrow count is not a certified semantic binding.",
+      "All source screening is AI-assisted development exposure; gold remains zero.",
+      "Historical same-process readbacks preserve original hashes but do not prove disk reopening. Fresh per-format zero-document PID/HWND events and readbacks below supersede that claim; see verification/2026-09-13-paired-pilot/native-survey-checks.json. Native pairing does not imply lossless fidelity, editability, visual quality or human acceptance."
+    ]
+  },
+  {
+    "version": "paired-registry/1.0",
+    "sample_id": "flynn-aldol-051",
+    "source": {
+      "source_url": "https://www.flynnresearchgroup.com/s/Problem-Set-6-Aldol-answers.docx",
+      "citation": "Flynn Research Group. Organic Chemistry Assessments, CHM 2120, Problem Set 6: Aldol (answers). n.d. Accessed 13 September 2026.",
+      "author_or_project": "Flynn Research Group",
+      "retrieved_at": "2026-09-13T10:30:04.438664+00:00",
+      "original_sha256": "8c9b38013f52886b2dbc7336e913e6ac61e06e8f2fb00e11501e90f9b9d257a9",
+      "asset_types": [
+        "CDX",
+        "EMF",
+        "PNG",
+        "DOCX"
+      ],
+      "redistributable": "unknown",
+      "license": null,
+      "license_evidence_url": "https://www.flynnresearchgroup.com/organic-assessments",
+      "container": {
+        "sha256": "3b63557df14651b3ddaf7f4756e29ec6c43a75c3e9870218da257f961b7eb0cd",
+        "member": "word/embeddings/oleObject51.bin",
+        "stream": "CONTENTS"
+      }
+    },
+    "mechanism_family": "carbonyl; proton_transfer; elimination",
+    "complexity_profile": {
+      "molecule_count": null,
+      "caption_count": null,
+      "simultaneous_flow_count": null,
+      "common_scaffold_count": null,
+      "dense_anchor_risk": null,
+      "curved_arrow_count": 14,
+      "lone_pair_count": 5,
+      "charge_count": 3,
+      "radical_count": null,
+      "state_count": 6,
+      "step_count": null,
+      "multirow": true,
+      "snake_layout": false,
+      "curved_arrow_candidate_count": 14
+    },
+    "curved_arrow_count": 14,
+    "lone_pair_count": 5,
+    "charge_count": 3,
+    "state_count": 6,
+    "step_count": null,
+    "condition_text_present": true,
+    "structured_target_available": true,
+    "native_render_available": true,
+    "research_status": "native_paired",
+    "redistributable": "unknown",
+    "split": "research_development",
+    "frozen_or_descendant": false,
+    "lineage": [
+      "external-author-acquisition/2026-09-13"
+    ],
+    "exposure_history": [
+      {
+        "timestamp": "2026-09-13T10:43:30.793472+00:00",
+        "actor_role": "custodian",
+        "asset_sha256": [
+          "8c9b38013f52886b2dbc7336e913e6ac61e06e8f2fb00e11501e90f9b9d257a9"
+        ],
+        "purpose": "source extraction and author-preview screening; separate from generator"
+      },
+      {
+        "timestamp": "2026-09-13T10:45:43.3718665Z",
+        "actor_role": "custodian",
+        "asset_sha256": [
+          "8c9b38013f52886b2dbc7336e913e6ac61e06e8f2fb00e11501e90f9b9d257a9",
+          "3b63557df14651b3ddaf7f4756e29ec6c43a75c3e9870218da257f961b7eb0cd",
+          "418866f6a29dc96a43fbd01363d2c3317dbe1d323f12c4323f25981b69069a3f",
+          "3d7b817173b578fff333aa879b167bf23b9a5c6112af8b100780de2983506d00",
+          "6fa207cd55ff1a573881003bd85372a2f73ed49610d7c24470378048ee101e1d",
+          "b5a296fc79c93b2ecffa71dcd5d2aa79a369fe50d42728927c5531d8e54aed57",
+          "1f38dc07a4e14f66c9667f7b4c193a8cfc266a35880b01cfc341f67b670d4889",
+          "dd0e26e344212809acfeb6791f2ff6ffc87b88a555b74ea3444249544b7e484c",
+          "e45a855ecc61d9b2c8593b2b22c8ed9d52cae370bbc190e2f583a7c26080b74f",
+          "00cc07afd1255ca0c35e651d5f161a10cc267c6c375e8a050c8bc57f3628a7e7"
+        ],
+        "purpose": "native render/save/reopen and evaluator inventory; no generator context"
+      },
+      {
+        "timestamp": "2026-09-13T11:08:56.920871+00:00",
+        "actor_role": "evaluator",
+        "asset_sha256": [
+          "10c8ae8d926aee93f4cc429cc7115786b316fcdc8c0c61955f89f34dd124550c",
+          "c5b19c59d3f6b07aecfecfbe040b27ffbec0d73902e59fa03ca793701061f5bd",
+          "ae35c32b2a543a1a7ab6f259826b889c8c5ecde6ee2bd78ba211b1789dbe1e8a",
+          "a2340ac0b3a4807d0f22a1907722772416328b19770d20b5dcc3536db1f20349"
+        ],
+        "purpose": "Independent fresh-process disk reads; separate from already completed generator input sealing."
+      }
+    ],
+    "assets": [
+      {
+        "role": "original_target",
+        "relative_locator": "source-survey-academic/extracted/flynn-org2-ps6-aldol-answers/oleObject51.cdx",
+        "sha256": "8c9b38013f52886b2dbc7336e913e6ac61e06e8f2fb00e11501e90f9b9d257a9",
+        "bytes": 13041,
+        "media_type": "chemical/x-cdx"
+      },
+      {
+        "role": "source_container",
+        "relative_locator": "source-survey-academic/flynn-org2-ps6-aldol-answers.docx",
+        "sha256": "3b63557df14651b3ddaf7f4756e29ec6c43a75c3e9870218da257f961b7eb0cd",
+        "bytes": 4549496,
+        "media_type": "application/octet-stream"
+      },
+      {
+        "role": "author_vector_preview",
+        "relative_locator": "source-survey-academic/extracted/flynn-org2-ps6-aldol-answers/oleObject51.emf",
+        "sha256": "418866f6a29dc96a43fbd01363d2c3317dbe1d323f12c4323f25981b69069a3f",
+        "bytes": 69512,
+        "media_type": "image/emf"
+      },
+      {
+        "role": "native_cdxml",
+        "relative_locator": "native-survey/flynn-aldol-051/native.cdxml",
+        "sha256": "3d7b817173b578fff333aa879b167bf23b9a5c6112af8b100780de2983506d00",
+        "bytes": 34041,
+        "media_type": "text/xml"
+      },
+      {
+        "role": "native_cdx",
+        "relative_locator": "native-survey/flynn-aldol-051/native.cdx",
+        "sha256": "6fa207cd55ff1a573881003bd85372a2f73ed49610d7c24470378048ee101e1d",
+        "bytes": 15433,
+        "media_type": "chemical/x-cdx"
+      },
+      {
+        "role": "native_reference_png",
+        "relative_locator": "native-survey/flynn-aldol-051/native.png",
+        "sha256": "b5a296fc79c93b2ecffa71dcd5d2aa79a369fe50d42728927c5531d8e54aed57",
+        "bytes": 198978,
+        "media_type": "image/png"
+      },
+      {
+        "role": "native_viewing_jpeg",
+        "relative_locator": "native-survey/flynn-aldol-051/native.jpeg",
+        "sha256": "1f38dc07a4e14f66c9667f7b4c193a8cfc266a35880b01cfc341f67b670d4889",
+        "bytes": 58036,
+        "media_type": "image/jpeg"
+      },
+      {
+        "role": "historical_same_process_cdx_reopen_readback",
+        "relative_locator": "native-survey/flynn-aldol-051/cdx-readback.cdxml",
+        "sha256": "dd0e26e344212809acfeb6791f2ff6ffc87b88a555b74ea3444249544b7e484c",
+        "bytes": 34047,
+        "media_type": "text/xml"
+      },
+      {
+        "role": "historical_same_process_cdxml_reopen_readback",
+        "relative_locator": "native-survey/flynn-aldol-051/cdxml-readback.cdxml",
+        "sha256": "e45a855ecc61d9b2c8593b2b22c8ed9d52cae370bbc190e2f583a7c26080b74f",
+        "bytes": 34473,
+        "media_type": "text/xml"
+      },
+      {
+        "role": "native_receipt",
+        "relative_locator": "native-survey/flynn-aldol-051/events.jsonl",
+        "sha256": "00cc07afd1255ca0c35e651d5f161a10cc267c6c375e8a050c8bc57f3628a7e7",
+        "bytes": 87867,
+        "media_type": "application/x-ndjson"
+      },
+      {
+        "role": "cdx_fresh_process_readback",
+        "relative_locator": "native-fresh-readbacks/flynn-aldol-051-cdx/readback.cdxml",
+        "sha256": "10c8ae8d926aee93f4cc429cc7115786b316fcdc8c0c61955f89f34dd124550c",
+        "bytes": 34467,
+        "media_type": "text/xml"
+      },
+      {
+        "role": "cdx_fresh_process_receipt",
+        "relative_locator": "native-fresh-readbacks/flynn-aldol-051-cdx/events.jsonl",
+        "sha256": "c5b19c59d3f6b07aecfecfbe040b27ffbec0d73902e59fa03ca793701061f5bd",
+        "bytes": 30638,
+        "media_type": "application/x-ndjson"
+      },
+      {
+        "role": "cdxml_fresh_process_readback",
+        "relative_locator": "native-fresh-readbacks/flynn-aldol-051-cdxml/readback.cdxml",
+        "sha256": "ae35c32b2a543a1a7ab6f259826b889c8c5ecde6ee2bd78ba211b1789dbe1e8a",
+        "bytes": 34467,
+        "media_type": "text/xml"
+      },
+      {
+        "role": "cdxml_fresh_process_receipt",
+        "relative_locator": "native-fresh-readbacks/flynn-aldol-051-cdxml/events.jsonl",
+        "sha256": "a2340ac0b3a4807d0f22a1907722772416328b19770d20b5dcc3536db1f20349",
+        "bytes": 30833,
+        "media_type": "application/x-ndjson"
+      }
+    ],
+    "evidence_notes": [
+      "Curved electron arrows and broad layout screened in author EMF rendered through Windows GDI. LP count is explicit symbol-object count; charge count is explicit nonzero atom-charge property count. Neither includes implicit chemistry or all text glyphs. Fragment/node/text inventories are raw native object counts, not segmented molecules/states/captions.",
+      "Multiple states and dense enolate/alkoxide anchoring; formal alignment of state sequence remains unreviewed.",
+      "Original-source and native-import counts may differ after abbreviation expansion. Native candidate arrow count is not a certified semantic binding.",
+      "All source screening is AI-assisted development exposure; gold remains zero.",
+      "Historical same-process readbacks preserve original hashes but do not prove disk reopening. Fresh per-format zero-document PID/HWND events and readbacks below supersede that claim; see verification/2026-09-13-paired-pilot/native-survey-checks.json. Native pairing does not imply lossless fidelity, editability, visual quality or human acceptance."
+    ]
+  },
+  {
+    "version": "paired-registry/1.0",
+    "sample_id": "flynn-aldol-061",
+    "source": {
+      "source_url": "https://www.flynnresearchgroup.com/s/Problem-Set-6-Aldol-answers.docx",
+      "citation": "Flynn Research Group. Organic Chemistry Assessments, CHM 2120, Problem Set 6: Aldol (answers). n.d. Accessed 13 September 2026.",
+      "author_or_project": "Flynn Research Group",
+      "retrieved_at": "2026-09-13T10:30:04.438664+00:00",
+      "original_sha256": "6904b73e2b9fb09cbf9faeb0a0ea2ccabeac60c6e0e24e1f9d7db1f118cad3ea",
+      "asset_types": [
+        "CDX",
+        "EMF",
+        "PNG",
+        "DOCX"
+      ],
+      "redistributable": "unknown",
+      "license": null,
+      "license_evidence_url": "https://www.flynnresearchgroup.com/organic-assessments",
+      "container": {
+        "sha256": "3b63557df14651b3ddaf7f4756e29ec6c43a75c3e9870218da257f961b7eb0cd",
+        "member": "word/embeddings/oleObject61.bin",
+        "stream": "CONTENTS"
+      }
+    },
+    "mechanism_family": "carbonyl; proton_transfer; reduction",
+    "complexity_profile": {
+      "molecule_count": null,
+      "caption_count": null,
+      "simultaneous_flow_count": null,
+      "common_scaffold_count": null,
+      "dense_anchor_risk": null,
+      "curved_arrow_count": 22,
+      "lone_pair_count": 10,
+      "charge_count": 12,
+      "radical_count": null,
+      "state_count": null,
+      "step_count": null,
+      "multirow": true,
+      "snake_layout": true,
+      "curved_arrow_candidate_count": 22
+    },
+    "curved_arrow_count": 22,
+    "lone_pair_count": 10,
+    "charge_count": 12,
+    "state_count": null,
+    "step_count": null,
+    "condition_text_present": true,
+    "structured_target_available": true,
+    "native_render_available": true,
+    "research_status": "native_paired",
+    "redistributable": "unknown",
+    "split": "research_development",
+    "frozen_or_descendant": false,
+    "lineage": [
+      "external-author-acquisition/2026-09-13"
+    ],
+    "exposure_history": [
+      {
+        "timestamp": "2026-09-13T10:43:30.793472+00:00",
+        "actor_role": "custodian",
+        "asset_sha256": [
+          "6904b73e2b9fb09cbf9faeb0a0ea2ccabeac60c6e0e24e1f9d7db1f118cad3ea"
+        ],
+        "purpose": "source extraction and author-preview screening; separate from generator"
+      },
+      {
+        "timestamp": "2026-09-13T10:45:46.4627949Z",
+        "actor_role": "custodian",
+        "asset_sha256": [
+          "6904b73e2b9fb09cbf9faeb0a0ea2ccabeac60c6e0e24e1f9d7db1f118cad3ea",
+          "3b63557df14651b3ddaf7f4756e29ec6c43a75c3e9870218da257f961b7eb0cd",
+          "699e4c4929b9d801cdf0db9c419ac20da3a57e92d49ea73f5d5e98064d425f07",
+          "da9967af96933610108364c3a14b682060cc6be690bc7ab784ea7a9f048a0449",
+          "53d6b303fecbc490802d34e70973f9efa7a826cd577680c4147c3f907050a7ce",
+          "091567d9c0a489715a5c28b0d88dd4215a31fee6c5c14e891688cfbae7d18e20",
+          "5d7185af8f27372d9247be82e8e610c6b59bd2ff6cfe2493332edf21cf70b118",
+          "63e8eda14e04384a18e1ffc1ac1b8b8452437e40241ca88c2273dbcf63d0d73e",
+          "d7919123cc9fb33f350227c04ee5c86ef757de86223467412342218547d7d239",
+          "93504aa0c3d1ec1a69e1ab05f82879ed18253b5571ecaf358eb0516211fe7192"
+        ],
+        "purpose": "native render/save/reopen and evaluator inventory; no generator context"
+      },
+      {
+        "timestamp": "2026-09-13T11:08:56.920871+00:00",
+        "actor_role": "evaluator",
+        "asset_sha256": [
+          "f7673cbe75cb591c0f9c0f2a88f3635ecdcb7e315f6f4856230b05555f2f1c6d",
+          "c455b2aa084255ec9433349b0cbd4d1867b33bff22fdd129e37af93311d8ddf5",
+          "865ab481434e8397fc90205d6909c1069db9243bfb98bb66b8a95d548e91a7c3",
+          "10fb899f0218a439b91a8ec850abf98fbd72b9a905cbadd95b69728328a5a1a1"
+        ],
+        "purpose": "Independent fresh-process disk reads; separate from already completed generator input sealing."
+      }
+    ],
+    "assets": [
+      {
+        "role": "original_target",
+        "relative_locator": "source-survey-academic/extracted/flynn-org2-ps6-aldol-answers/oleObject61.cdx",
+        "sha256": "6904b73e2b9fb09cbf9faeb0a0ea2ccabeac60c6e0e24e1f9d7db1f118cad3ea",
+        "bytes": 26290,
+        "media_type": "chemical/x-cdx"
+      },
+      {
+        "role": "source_container",
+        "relative_locator": "source-survey-academic/flynn-org2-ps6-aldol-answers.docx",
+        "sha256": "3b63557df14651b3ddaf7f4756e29ec6c43a75c3e9870218da257f961b7eb0cd",
+        "bytes": 4549496,
+        "media_type": "application/octet-stream"
+      },
+      {
+        "role": "author_vector_preview",
+        "relative_locator": "source-survey-academic/extracted/flynn-org2-ps6-aldol-answers/oleObject61.emf",
+        "sha256": "699e4c4929b9d801cdf0db9c419ac20da3a57e92d49ea73f5d5e98064d425f07",
+        "bytes": 151204,
+        "media_type": "image/emf"
+      },
+      {
+        "role": "native_cdxml",
+        "relative_locator": "native-survey/flynn-aldol-061/native.cdxml",
+        "sha256": "da9967af96933610108364c3a14b682060cc6be690bc7ab784ea7a9f048a0449",
+        "bytes": 66789,
+        "media_type": "text/xml"
+      },
+      {
+        "role": "native_cdx",
+        "relative_locator": "native-survey/flynn-aldol-061/native.cdx",
+        "sha256": "53d6b303fecbc490802d34e70973f9efa7a826cd577680c4147c3f907050a7ce",
+        "bytes": 30781,
+        "media_type": "chemical/x-cdx"
+      },
+      {
+        "role": "native_reference_png",
+        "relative_locator": "native-survey/flynn-aldol-061/native.png",
+        "sha256": "091567d9c0a489715a5c28b0d88dd4215a31fee6c5c14e891688cfbae7d18e20",
+        "bytes": 421165,
+        "media_type": "image/png"
+      },
+      {
+        "role": "native_viewing_jpeg",
+        "relative_locator": "native-survey/flynn-aldol-061/native.jpeg",
+        "sha256": "5d7185af8f27372d9247be82e8e610c6b59bd2ff6cfe2493332edf21cf70b118",
+        "bytes": 115883,
+        "media_type": "image/jpeg"
+      },
+      {
+        "role": "historical_same_process_cdx_reopen_readback",
+        "relative_locator": "native-survey/flynn-aldol-061/cdx-readback.cdxml",
+        "sha256": "63e8eda14e04384a18e1ffc1ac1b8b8452437e40241ca88c2273dbcf63d0d73e",
+        "bytes": 66795,
+        "media_type": "text/xml"
+      },
+      {
+        "role": "historical_same_process_cdxml_reopen_readback",
+        "relative_locator": "native-survey/flynn-aldol-061/cdxml-readback.cdxml",
+        "sha256": "d7919123cc9fb33f350227c04ee5c86ef757de86223467412342218547d7d239",
+        "bytes": 66819,
+        "media_type": "text/xml"
+      },
+      {
+        "role": "native_receipt",
+        "relative_locator": "native-survey/flynn-aldol-061/events.jsonl",
+        "sha256": "93504aa0c3d1ec1a69e1ab05f82879ed18253b5571ecaf358eb0516211fe7192",
+        "bytes": 174495,
+        "media_type": "application/x-ndjson"
+      },
+      {
+        "role": "cdx_fresh_process_readback",
+        "relative_locator": "native-fresh-readbacks/flynn-aldol-061-cdx/readback.cdxml",
+        "sha256": "f7673cbe75cb591c0f9c0f2a88f3635ecdcb7e315f6f4856230b05555f2f1c6d",
+        "bytes": 66798,
+        "media_type": "text/xml"
+      },
+      {
+        "role": "cdx_fresh_process_receipt",
+        "relative_locator": "native-fresh-readbacks/flynn-aldol-061-cdx/events.jsonl",
+        "sha256": "c455b2aa084255ec9433349b0cbd4d1867b33bff22fdd129e37af93311d8ddf5",
+        "bytes": 59361,
+        "media_type": "application/x-ndjson"
+      },
+      {
+        "role": "cdxml_fresh_process_readback",
+        "relative_locator": "native-fresh-readbacks/flynn-aldol-061-cdxml/readback.cdxml",
+        "sha256": "865ab481434e8397fc90205d6909c1069db9243bfb98bb66b8a95d548e91a7c3",
+        "bytes": 66813,
+        "media_type": "text/xml"
+      },
+      {
+        "role": "cdxml_fresh_process_receipt",
+        "relative_locator": "native-fresh-readbacks/flynn-aldol-061-cdxml/events.jsonl",
+        "sha256": "10fb899f0218a439b91a8ec850abf98fbd72b9a905cbadd95b69728328a5a1a1",
+        "bytes": 59967,
+        "media_type": "application/x-ndjson"
+      }
+    ],
+    "evidence_notes": [
+      "Curved electron arrows and broad layout screened in author EMF rendered through Windows GDI. LP count is explicit symbol-object count; charge count is explicit nonzero atom-charge property count. Neither includes implicit chemistry or all text glyphs. Fragment/node/text inventories are raw native object counts, not segmented molecules/states/captions.",
+      "Independent public hydrazone reduction, not Beckmann; numerous nitrogen states, charges and proton-transfer arrows.",
+      "Original-source and native-import counts may differ after abbreviation expansion. Native candidate arrow count is not a certified semantic binding.",
+      "All source screening is AI-assisted development exposure; gold remains zero.",
+      "Historical same-process readbacks preserve original hashes but do not prove disk reopening. Fresh per-format zero-document PID/HWND events and readbacks below supersede that claim; see verification/2026-09-13-paired-pilot/native-survey-checks.json. Native pairing does not imply lossless fidelity, editability, visual quality or human acceptance."
+    ]
+  },
+  {
+    "version": "paired-registry/1.0",
+    "sample_id": "flynn-aldol-063",
+    "source": {
+      "source_url": "https://www.flynnresearchgroup.com/s/Problem-Set-6-Aldol-answers.docx",
+      "citation": "Flynn Research Group. Organic Chemistry Assessments, CHM 2120, Problem Set 6: Aldol (answers). n.d. Accessed 13 September 2026.",
+      "author_or_project": "Flynn Research Group",
+      "retrieved_at": "2026-09-13T10:30:04.438664+00:00",
+      "original_sha256": "7aaafd863bf2bc9c0525e6b1c0a45b0be971275495ba6cb183aa40cee3243d82",
+      "asset_types": [
+        "CDX",
+        "EMF",
+        "PNG",
+        "DOCX"
+      ],
+      "redistributable": "unknown",
+      "license": null,
+      "license_evidence_url": "https://www.flynnresearchgroup.com/organic-assessments",
+      "container": {
+        "sha256": "3b63557df14651b3ddaf7f4756e29ec6c43a75c3e9870218da257f961b7eb0cd",
+        "member": "word/embeddings/oleObject63.bin",
+        "stream": "CONTENTS"
+      }
+    },
+    "mechanism_family": "carbonyl; proton_transfer",
+    "complexity_profile": {
+      "molecule_count": null,
+      "caption_count": null,
+      "simultaneous_flow_count": null,
+      "common_scaffold_count": null,
+      "dense_anchor_risk": null,
+      "curved_arrow_count": 17,
+      "lone_pair_count": 10,
+      "charge_count": 10,
+      "radical_count": null,
+      "state_count": null,
+      "step_count": null,
+      "multirow": true,
+      "snake_layout": true,
+      "curved_arrow_candidate_count": 17
+    },
+    "curved_arrow_count": 17,
+    "lone_pair_count": 10,
+    "charge_count": 10,
+    "state_count": null,
+    "step_count": null,
+    "condition_text_present": true,
+    "structured_target_available": true,
+    "native_render_available": true,
+    "research_status": "native_paired",
+    "redistributable": "unknown",
+    "split": "research_development",
+    "frozen_or_descendant": false,
+    "lineage": [
+      "external-author-acquisition/2026-09-13"
+    ],
+    "exposure_history": [
+      {
+        "timestamp": "2026-09-13T10:43:30.793472+00:00",
+        "actor_role": "custodian",
+        "asset_sha256": [
+          "7aaafd863bf2bc9c0525e6b1c0a45b0be971275495ba6cb183aa40cee3243d82"
+        ],
+        "purpose": "source extraction and author-preview screening; separate from generator"
+      },
+      {
+        "timestamp": "2026-09-13T10:45:51.8217481Z",
+        "actor_role": "custodian",
+        "asset_sha256": [
+          "7aaafd863bf2bc9c0525e6b1c0a45b0be971275495ba6cb183aa40cee3243d82",
+          "3b63557df14651b3ddaf7f4756e29ec6c43a75c3e9870218da257f961b7eb0cd",
+          "dfcd4c6be13eb69ebdbb61f4d13d25c5ab59d9af3b20e82a3f16b862c6f26681",
+          "ca464b2e2dcc3d16ff2576d5ceb6cc26472a083343ee1fa5d83b65cfa1f6fd7e",
+          "b3a353e230568937d0254bc772c937e1fce3e071536b2d7723285ff9c4aa8523",
+          "b5a442b188b1e1a212931fe010232da1016dd6d51be8a94dd1d3d41a1a9ec61a",
+          "a308dd025fe26358a211cd84e5908dbaf9f627665a536b846a571cf5d6f8ff5c",
+          "e7c2664aed9bc364a779a6e929781d35c13afbbd1829bc7b4b5bc4bd1dab8ecc",
+          "8291cfd9893e2ef393b556d9823c3affa1f2ece658f82fcb31c4f6c4fe45b4a3",
+          "c1e818becd0ee69bd90e70a9a6aaf4d367a821bdd95219d908a831278beace5c"
+        ],
+        "purpose": "native render/save/reopen and evaluator inventory; no generator context"
+      },
+      {
+        "timestamp": "2026-09-13T11:08:56.920871+00:00",
+        "actor_role": "evaluator",
+        "asset_sha256": [
+          "b193fa4e8b80d86c541dfb5ad38f6eaced37aac68d04ab70ee6ece2d84b53c91",
+          "75aac5c9556037631dbe7d097b4dc7f350b3e797bf3e3be7b4dc8c226836340f",
+          "3d604e597a556b4f0f2c0c1cb925d414ba28086fb2f8dd681f35d30106abe678",
+          "ef8d0d9cae694c3bf155249a887956bdedf20b60fa0da4a984c69017541f32fd"
+        ],
+        "purpose": "Independent fresh-process disk reads; separate from already completed generator input sealing."
+      }
+    ],
+    "assets": [
+      {
+        "role": "original_target",
+        "relative_locator": "source-survey-academic/extracted/flynn-org2-ps6-aldol-answers/oleObject63.cdx",
+        "sha256": "7aaafd863bf2bc9c0525e6b1c0a45b0be971275495ba6cb183aa40cee3243d82",
+        "bytes": 23376,
+        "media_type": "chemical/x-cdx"
+      },
+      {
+        "role": "source_container",
+        "relative_locator": "source-survey-academic/flynn-org2-ps6-aldol-answers.docx",
+        "sha256": "3b63557df14651b3ddaf7f4756e29ec6c43a75c3e9870218da257f961b7eb0cd",
+        "bytes": 4549496,
+        "media_type": "application/octet-stream"
+      },
+      {
+        "role": "author_vector_preview",
+        "relative_locator": "source-survey-academic/extracted/flynn-org2-ps6-aldol-answers/oleObject63.emf",
+        "sha256": "dfcd4c6be13eb69ebdbb61f4d13d25c5ab59d9af3b20e82a3f16b862c6f26681",
+        "bytes": 113456,
+        "media_type": "image/emf"
+      },
+      {
+        "role": "native_cdxml",
+        "relative_locator": "native-survey/flynn-aldol-063/native.cdxml",
+        "sha256": "ca464b2e2dcc3d16ff2576d5ceb6cc26472a083343ee1fa5d83b65cfa1f6fd7e",
+        "bytes": 58969,
+        "media_type": "text/xml"
+      },
+      {
+        "role": "native_cdx",
+        "relative_locator": "native-survey/flynn-aldol-063/native.cdx",
+        "sha256": "b3a353e230568937d0254bc772c937e1fce3e071536b2d7723285ff9c4aa8523",
+        "bytes": 26868,
+        "media_type": "chemical/x-cdx"
+      },
+      {
+        "role": "native_reference_png",
+        "relative_locator": "native-survey/flynn-aldol-063/native.png",
+        "sha256": "b5a442b188b1e1a212931fe010232da1016dd6d51be8a94dd1d3d41a1a9ec61a",
+        "bytes": 258423,
+        "media_type": "image/png"
+      },
+      {
+        "role": "native_viewing_jpeg",
+        "relative_locator": "native-survey/flynn-aldol-063/native.jpeg",
+        "sha256": "a308dd025fe26358a211cd84e5908dbaf9f627665a536b846a571cf5d6f8ff5c",
+        "bytes": 87309,
+        "media_type": "image/jpeg"
+      },
+      {
+        "role": "historical_same_process_cdx_reopen_readback",
+        "relative_locator": "native-survey/flynn-aldol-063/cdx-readback.cdxml",
+        "sha256": "e7c2664aed9bc364a779a6e929781d35c13afbbd1829bc7b4b5bc4bd1dab8ecc",
+        "bytes": 58975,
+        "media_type": "text/xml"
+      },
+      {
+        "role": "historical_same_process_cdxml_reopen_readback",
+        "relative_locator": "native-survey/flynn-aldol-063/cdxml-readback.cdxml",
+        "sha256": "8291cfd9893e2ef393b556d9823c3affa1f2ece658f82fcb31c4f6c4fe45b4a3",
+        "bytes": 58997,
+        "media_type": "text/xml"
+      },
+      {
+        "role": "native_receipt",
+        "relative_locator": "native-survey/flynn-aldol-063/events.jsonl",
+        "sha256": "c1e818becd0ee69bd90e70a9a6aaf4d367a821bdd95219d908a831278beace5c",
+        "bytes": 104313,
+        "media_type": "application/x-ndjson"
+      },
+      {
+        "role": "cdx_fresh_process_readback",
+        "relative_locator": "native-fresh-readbacks/flynn-aldol-063-cdx/readback.cdxml",
+        "sha256": "b193fa4e8b80d86c541dfb5ad38f6eaced37aac68d04ab70ee6ece2d84b53c91",
+        "bytes": 58985,
+        "media_type": "text/xml"
+      },
+      {
+        "role": "cdx_fresh_process_receipt",
+        "relative_locator": "native-fresh-readbacks/flynn-aldol-063-cdx/events.jsonl",
+        "sha256": "75aac5c9556037631dbe7d097b4dc7f350b3e797bf3e3be7b4dc8c226836340f",
+        "bytes": 35852,
+        "media_type": "application/x-ndjson"
+      },
+      {
+        "role": "cdxml_fresh_process_readback",
+        "relative_locator": "native-fresh-readbacks/flynn-aldol-063-cdxml/readback.cdxml",
+        "sha256": "3d604e597a556b4f0f2c0c1cb925d414ba28086fb2f8dd681f35d30106abe678",
+        "bytes": 58991,
+        "media_type": "text/xml"
+      },
+      {
+        "role": "cdxml_fresh_process_receipt",
+        "relative_locator": "native-fresh-readbacks/flynn-aldol-063-cdxml/events.jsonl",
+        "sha256": "ef8d0d9cae694c3bf155249a887956bdedf20b60fa0da4a984c69017541f32fd",
+        "bytes": 36805,
+        "media_type": "application/x-ndjson"
+      }
+    ],
+    "evidence_notes": [
+      "Curved electron arrows and broad layout screened in author EMF rendered through Windows GDI. LP count is explicit symbol-object count; charge count is explicit nonzero atom-charge property count. Neither includes implicit chemistry or all text glyphs. Fragment/node/text inventories are raw native object counts, not segmented molecules/states/captions.",
+      "Nitrile hydration and amide hydrolysis with source R abbreviation; long serpentine mechanism.",
+      "Original-source and native-import counts may differ after abbreviation expansion. Native candidate arrow count is not a certified semantic binding.",
+      "All source screening is AI-assisted development exposure; gold remains zero.",
+      "Historical same-process readbacks preserve original hashes but do not prove disk reopening. Fresh per-format zero-document PID/HWND events and readbacks below supersede that claim; see verification/2026-09-13-paired-pilot/native-survey-checks.json. Native pairing does not imply lossless fidelity, editability, visual quality or human acceptance."
+    ]
+  },
+  {
+    "version": "paired-registry/1.0",
+    "sample_id": "flynn-carbonyl-1257156820",
+    "source": {
+      "source_url": "https://www.flynnresearchgroup.com/s/Problem-Set-4-Addition-to-Carbonyls-answers.doc",
+      "citation": "Flynn Research Group. Organic Chemistry Assessments, CHM 2120, Problem Set 4: Addition to Carbonyls (answers). n.d. Accessed 13 September 2026.",
+      "author_or_project": "Flynn Research Group",
+      "retrieved_at": "2026-09-13T10:30:04.027348+00:00",
+      "original_sha256": "2cfed3b110f7a74de82c3020a83eb875489579f8d8bb1d1e5fc26a37e75671a3",
+      "asset_types": [
+        "CDX",
+        "EMF",
+        "PNG",
+        "DOC"
+      ],
+      "redistributable": "unknown",
+      "license": null,
+      "license_evidence_url": "https://www.flynnresearchgroup.com/organic-assessments",
+      "container": {
+        "sha256": "fe3e693a5372f0144a5d97c175fd960e9b393655f73dd7faab684c60c10aed91",
+        "member": null,
+        "stream": "ObjectPool/_1257156820/CONTENTS"
+      }
+    },
+    "mechanism_family": "proton_transfer; SN2",
+    "complexity_profile": {
+      "molecule_count": null,
+      "caption_count": null,
+      "simultaneous_flow_count": null,
+      "common_scaffold_count": null,
+      "dense_anchor_risk": null,
+      "curved_arrow_count": 4,
+      "lone_pair_count": 2,
+      "charge_count": 5,
+      "radical_count": null,
+      "state_count": 3,
+      "step_count": 2,
+      "multirow": false,
+      "snake_layout": false,
+      "curved_arrow_candidate_count": 4
+    },
+    "curved_arrow_count": 4,
+    "lone_pair_count": 2,
+    "charge_count": 5,
+    "state_count": 3,
+    "step_count": 2,
+    "condition_text_present": true,
+    "structured_target_available": true,
+    "native_render_available": true,
+    "research_status": "native_paired",
+    "redistributable": "unknown",
+    "split": "research_development",
+    "frozen_or_descendant": false,
+    "lineage": [
+      "external-author-acquisition/2026-09-13"
+    ],
+    "exposure_history": [
+      {
+        "timestamp": "2026-09-13T10:43:30.793472+00:00",
+        "actor_role": "custodian",
+        "asset_sha256": [
+          "2cfed3b110f7a74de82c3020a83eb875489579f8d8bb1d1e5fc26a37e75671a3"
+        ],
+        "purpose": "source extraction and author-preview screening; separate from generator"
+      },
+      {
+        "timestamp": "2026-09-13T10:45:55.1884837Z",
+        "actor_role": "custodian",
+        "asset_sha256": [
+          "2cfed3b110f7a74de82c3020a83eb875489579f8d8bb1d1e5fc26a37e75671a3",
+          "fe3e693a5372f0144a5d97c175fd960e9b393655f73dd7faab684c60c10aed91",
+          "40cadc22ede8da75d8dc895d11d4fec7a450a83654bcb910afc522f7822f84e7",
+          "6b1c7a10c4347b792fa3c0ee1dffd53233d828fc6af3b65f51e1b6d648461911",
+          "5b3446dde6aa20a422aff4e321d47823108830ff348e40899a79b376f2b9b619",
+          "2b1582f7de1910d068b743d2ffabffa34fc2b38a315203b32f117b9965731ef3",
+          "ac4a373f728bdfe4ba909297eee97837b88de38c8b2d9ba3753b718c5162cb87",
+          "75acdb87dcef131e2a35cff208b4a8f79b79450eedd52a97925653919553ef14",
+          "0f57232f38d583865292b099a70832389e0ec45ee5d95a5c10f2ccdc0ee3542f",
+          "898cb7106de71a4c3d87e8e9c236447a245a7876b4321c1116cd9d42e9d67029"
+        ],
+        "purpose": "native render/save/reopen and evaluator inventory; no generator context"
+      },
+      {
+        "timestamp": "2026-09-13T11:08:56.920871+00:00",
+        "actor_role": "evaluator",
+        "asset_sha256": [
+          "1ff729b7f53b67fd9514e1e8f58c0dc5ec6879a27bccfbfa517f06939584f9bc",
+          "9dcbf042482e1cc74e43671628710900c5b259fdad7ae55db3e064c4e16cf0ca",
+          "1cc23a535821c8a363cedfbeb7bb60dee2cf95bf456aa8a301e5ea78f9b9296a",
+          "b5e3a98cab8878d261b045e5663a937ecefbd67b0437ad1657dbeeb4afb679e4"
+        ],
+        "purpose": "Independent fresh-process disk reads; separate from already completed generator input sealing."
+      }
+    ],
+    "assets": [
+      {
+        "role": "original_target",
+        "relative_locator": "source-survey-academic/extracted/flynn-org2-ps4-carbonyl-answers/1257156820.cdx",
+        "sha256": "2cfed3b110f7a74de82c3020a83eb875489579f8d8bb1d1e5fc26a37e75671a3",
+        "bytes": 6725,
+        "media_type": "chemical/x-cdx"
+      },
+      {
+        "role": "source_container",
+        "relative_locator": "source-survey-academic/flynn-org2-ps4-carbonyl-answers.doc",
+        "sha256": "fe3e693a5372f0144a5d97c175fd960e9b393655f73dd7faab684c60c10aed91",
+        "bytes": 10724864,
+        "media_type": "application/octet-stream"
+      },
+      {
+        "role": "author_vector_preview",
+        "relative_locator": "source-survey-academic/extracted/flynn-org2-ps4-carbonyl-answers/1257156820.emf",
+        "sha256": "40cadc22ede8da75d8dc895d11d4fec7a450a83654bcb910afc522f7822f84e7",
+        "bytes": 35356,
+        "media_type": "image/emf"
+      },
+      {
+        "role": "native_cdxml",
+        "relative_locator": "native-survey/flynn-carbonyl-1257156820/native.cdxml",
+        "sha256": "6b1c7a10c4347b792fa3c0ee1dffd53233d828fc6af3b65f51e1b6d648461911",
+        "bytes": 18198,
+        "media_type": "text/xml"
+      },
+      {
+        "role": "native_cdx",
+        "relative_locator": "native-survey/flynn-carbonyl-1257156820/native.cdx",
+        "sha256": "5b3446dde6aa20a422aff4e321d47823108830ff348e40899a79b376f2b9b619",
+        "bytes": 8041,
+        "media_type": "chemical/x-cdx"
+      },
+      {
+        "role": "native_reference_png",
+        "relative_locator": "native-survey/flynn-carbonyl-1257156820/native.png",
+        "sha256": "2b1582f7de1910d068b743d2ffabffa34fc2b38a315203b32f117b9965731ef3",
+        "bytes": 87810,
+        "media_type": "image/png"
+      },
+      {
+        "role": "native_viewing_jpeg",
+        "relative_locator": "native-survey/flynn-carbonyl-1257156820/native.jpeg",
+        "sha256": "ac4a373f728bdfe4ba909297eee97837b88de38c8b2d9ba3753b718c5162cb87",
+        "bytes": 29943,
+        "media_type": "image/jpeg"
+      },
+      {
+        "role": "historical_same_process_cdx_reopen_readback",
+        "relative_locator": "native-survey/flynn-carbonyl-1257156820/cdx-readback.cdxml",
+        "sha256": "75acdb87dcef131e2a35cff208b4a8f79b79450eedd52a97925653919553ef14",
+        "bytes": 18204,
+        "media_type": "text/xml"
+      },
+      {
+        "role": "historical_same_process_cdxml_reopen_readback",
+        "relative_locator": "native-survey/flynn-carbonyl-1257156820/cdxml-readback.cdxml",
+        "sha256": "0f57232f38d583865292b099a70832389e0ec45ee5d95a5c10f2ccdc0ee3542f",
+        "bytes": 18217,
+        "media_type": "text/xml"
+      },
+      {
+        "role": "native_receipt",
+        "relative_locator": "native-survey/flynn-carbonyl-1257156820/events.jsonl",
+        "sha256": "898cb7106de71a4c3d87e8e9c236447a245a7876b4321c1116cd9d42e9d67029",
+        "bytes": 39959,
+        "media_type": "application/x-ndjson"
+      },
+      {
+        "role": "cdx_fresh_process_readback",
+        "relative_locator": "native-fresh-readbacks/flynn-carbonyl-1257156820-cdx/readback.cdxml",
+        "sha256": "1ff729b7f53b67fd9514e1e8f58c0dc5ec6879a27bccfbfa517f06939584f9bc",
+        "bytes": 18208,
+        "media_type": "text/xml"
+      },
+      {
+        "role": "cdx_fresh_process_receipt",
+        "relative_locator": "native-fresh-readbacks/flynn-carbonyl-1257156820-cdx/events.jsonl",
+        "sha256": "9dcbf042482e1cc74e43671628710900c5b259fdad7ae55db3e064c4e16cf0ca",
+        "bytes": 14748,
+        "media_type": "application/x-ndjson"
+      },
+      {
+        "role": "cdxml_fresh_process_readback",
+        "relative_locator": "native-fresh-readbacks/flynn-carbonyl-1257156820-cdxml/readback.cdxml",
+        "sha256": "1cc23a535821c8a363cedfbeb7bb60dee2cf95bf456aa8a301e5ea78f9b9296a",
+        "bytes": 18211,
+        "media_type": "text/xml"
+      },
+      {
+        "role": "cdxml_fresh_process_receipt",
+        "relative_locator": "native-fresh-readbacks/flynn-carbonyl-1257156820-cdxml/events.jsonl",
+        "sha256": "b5e3a98cab8878d261b045e5663a937ecefbd67b0437ad1657dbeeb4afb679e4",
+        "bytes": 14765,
+        "media_type": "application/x-ndjson"
+      }
+    ],
+    "evidence_notes": [
+      "Curved electron arrows and broad layout screened in author EMF rendered through Windows GDI. LP count is explicit symbol-object count; charge count is explicit nonzero atom-charge property count. Neither includes implicit chemistry or all text glyphs. Fragment/node/text inventories are raw native object counts, not segmented molecules/states/captions.",
+      "Two explicit charged partners and nitrogen loss; author source structure is retained unchanged.",
+      "Original-source and native-import counts may differ after abbreviation expansion. Native candidate arrow count is not a certified semantic binding.",
+      "All source screening is AI-assisted development exposure; gold remains zero.",
+      "Historical same-process readbacks preserve original hashes but do not prove disk reopening. Fresh per-format zero-document PID/HWND events and readbacks below supersede that claim; see verification/2026-09-13-paired-pilot/native-survey-checks.json. Native pairing does not imply lossless fidelity, editability, visual quality or human acceptance."
+    ]
+  },
+  {
+    "version": "paired-registry/1.0",
+    "sample_id": "flynn-carbonyl-1255682419",
+    "source": {
+      "source_url": "https://www.flynnresearchgroup.com/s/Problem-Set-4-Addition-to-Carbonyls-answers.doc",
+      "citation": "Flynn Research Group. Organic Chemistry Assessments, CHM 2120, Problem Set 4: Addition to Carbonyls (answers). n.d. Accessed 13 September 2026.",
+      "author_or_project": "Flynn Research Group",
+      "retrieved_at": "2026-09-13T10:30:04.027348+00:00",
+      "original_sha256": "ab71b69edc0b95f80ab7c5f6281bc6169ecbfaace58d5487dbb7bb6b3a1a9145",
+      "asset_types": [
+        "CDX",
+        "EMF",
+        "PNG",
+        "DOC"
+      ],
+      "redistributable": "unknown",
+      "license": null,
+      "license_evidence_url": "https://www.flynnresearchgroup.com/organic-assessments",
+      "container": {
+        "sha256": "fe3e693a5372f0144a5d97c175fd960e9b393655f73dd7faab684c60c10aed91",
+        "member": null,
+        "stream": "ObjectPool/_1255682419/CONTENTS"
+      }
+    },
+    "mechanism_family": "proton_transfer; organometallic",
+    "complexity_profile": {
+      "molecule_count": null,
+      "caption_count": null,
+      "simultaneous_flow_count": null,
+      "common_scaffold_count": null,
+      "dense_anchor_risk": null,
+      "curved_arrow_count": 2,
+      "lone_pair_count": 0,
+      "charge_count": 0,
+      "radical_count": null,
+      "state_count": 2,
+      "step_count": 1,
+      "multirow": false,
+      "snake_layout": false,
+      "curved_arrow_candidate_count": 2
+    },
+    "curved_arrow_count": 2,
+    "lone_pair_count": 0,
+    "charge_count": 0,
+    "state_count": 2,
+    "step_count": 1,
+    "condition_text_present": true,
+    "structured_target_available": true,
+    "native_render_available": true,
+    "research_status": "native_paired",
+    "redistributable": "unknown",
+    "split": "research_development",
+    "frozen_or_descendant": false,
+    "lineage": [
+      "external-author-acquisition/2026-09-13"
+    ],
+    "exposure_history": [
+      {
+        "timestamp": "2026-09-13T10:43:30.793472+00:00",
+        "actor_role": "custodian",
+        "asset_sha256": [
+          "ab71b69edc0b95f80ab7c5f6281bc6169ecbfaace58d5487dbb7bb6b3a1a9145"
+        ],
+        "purpose": "source extraction and author-preview screening; separate from generator"
+      },
+      {
+        "timestamp": "2026-09-13T10:45:56.9743278Z",
+        "actor_role": "custodian",
+        "asset_sha256": [
+          "ab71b69edc0b95f80ab7c5f6281bc6169ecbfaace58d5487dbb7bb6b3a1a9145",
+          "fe3e693a5372f0144a5d97c175fd960e9b393655f73dd7faab684c60c10aed91",
+          "c1b5854bb7df8891e42b86b3f821737a77f9ccb827f32f453789677585f90d8a",
+          "68347ab823569a6fe0e1232ce1395e47fd91bb4b036a3426192c50a24a902689",
+          "b20e71ab24bccfb7442b47bc8a8783c0d2089d81586958ff2afb1d3bf1be751c",
+          "f0be9284bfcf3fd45a3e2438049bf608fdc058a79fcda5f75fe715b648f592a0",
+          "8e1095d0bbeb0780d617940f4717adb3de23c0f033cb8293f5895acacf24a479",
+          "8957d6724c6be429c95a7f248dcf7677d9b7a9edb73a9de19579367e9b184f3a",
+          "9eb31a1ed2c4eb06082128b97e136b73f4bc04c5b918d8b9e3b07ea3c542b5cc",
+          "490c0098c14676cf78a2441e86c19e14b230970458dca13c768d55362b9f1ea5"
+        ],
+        "purpose": "native render/save/reopen and evaluator inventory; no generator context"
+      },
+      {
+        "timestamp": "2026-09-13T11:08:56.920871+00:00",
+        "actor_role": "evaluator",
+        "asset_sha256": [
+          "1fdc9098251c0510fa98012790557369a69fbedef737663a6efab2729bf17e96",
+          "eff5d351a209fddb469326537601624af2ae0d55fe24b651d1bc92cc8c24db1e",
+          "8734ea73c4b1a7e2a430d50d4c548e454e654afbc985fef269eb39cf6dc64c8f",
+          "9d21f5ef68030606dc1dd036f84a4b92b243746a1e6cab4571836239c6a5100c"
+        ],
+        "purpose": "Independent fresh-process disk reads; separate from already completed generator input sealing."
+      }
+    ],
+    "assets": [
+      {
+        "role": "original_target",
+        "relative_locator": "source-survey-academic/extracted/flynn-org2-ps4-carbonyl-answers/1255682419.cdx",
+        "sha256": "ab71b69edc0b95f80ab7c5f6281bc6169ecbfaace58d5487dbb7bb6b3a1a9145",
+        "bytes": 3625,
+        "media_type": "chemical/x-cdx"
+      },
+      {
+        "role": "source_container",
+        "relative_locator": "source-survey-academic/flynn-org2-ps4-carbonyl-answers.doc",
+        "sha256": "fe3e693a5372f0144a5d97c175fd960e9b393655f73dd7faab684c60c10aed91",
+        "bytes": 10724864,
+        "media_type": "application/octet-stream"
+      },
+      {
+        "role": "author_vector_preview",
+        "relative_locator": "source-survey-academic/extracted/flynn-org2-ps4-carbonyl-answers/1255682419.emf",
+        "sha256": "c1b5854bb7df8891e42b86b3f821737a77f9ccb827f32f453789677585f90d8a",
+        "bytes": 15668,
+        "media_type": "image/emf"
+      },
+      {
+        "role": "native_cdxml",
+        "relative_locator": "native-survey/flynn-carbonyl-1255682419/native.cdxml",
+        "sha256": "68347ab823569a6fe0e1232ce1395e47fd91bb4b036a3426192c50a24a902689",
+        "bytes": 10319,
+        "media_type": "text/xml"
+      },
+      {
+        "role": "native_cdx",
+        "relative_locator": "native-survey/flynn-carbonyl-1255682419/native.cdx",
+        "sha256": "b20e71ab24bccfb7442b47bc8a8783c0d2089d81586958ff2afb1d3bf1be751c",
+        "bytes": 4492,
+        "media_type": "chemical/x-cdx"
+      },
+      {
+        "role": "native_reference_png",
+        "relative_locator": "native-survey/flynn-carbonyl-1255682419/native.png",
+        "sha256": "f0be9284bfcf3fd45a3e2438049bf608fdc058a79fcda5f75fe715b648f592a0",
+        "bytes": 40524,
+        "media_type": "image/png"
+      },
+      {
+        "role": "native_viewing_jpeg",
+        "relative_locator": "native-survey/flynn-carbonyl-1255682419/native.jpeg",
+        "sha256": "8e1095d0bbeb0780d617940f4717adb3de23c0f033cb8293f5895acacf24a479",
+        "bytes": 15033,
+        "media_type": "image/jpeg"
+      },
+      {
+        "role": "historical_same_process_cdx_reopen_readback",
+        "relative_locator": "native-survey/flynn-carbonyl-1255682419/cdx-readback.cdxml",
+        "sha256": "8957d6724c6be429c95a7f248dcf7677d9b7a9edb73a9de19579367e9b184f3a",
+        "bytes": 10325,
+        "media_type": "text/xml"
+      },
+      {
+        "role": "historical_same_process_cdxml_reopen_readback",
+        "relative_locator": "native-survey/flynn-carbonyl-1255682419/cdxml-readback.cdxml",
+        "sha256": "9eb31a1ed2c4eb06082128b97e136b73f4bc04c5b918d8b9e3b07ea3c542b5cc",
+        "bytes": 10328,
+        "media_type": "text/xml"
+      },
+      {
+        "role": "native_receipt",
+        "relative_locator": "native-survey/flynn-carbonyl-1255682419/events.jsonl",
+        "sha256": "490c0098c14676cf78a2441e86c19e14b230970458dca13c768d55362b9f1ea5",
+        "bytes": 16720,
+        "media_type": "application/x-ndjson"
+      },
+      {
+        "role": "cdx_fresh_process_readback",
+        "relative_locator": "native-fresh-readbacks/flynn-carbonyl-1255682419-cdx/readback.cdxml",
+        "sha256": "1fdc9098251c0510fa98012790557369a69fbedef737663a6efab2729bf17e96",
+        "bytes": 10322,
+        "media_type": "text/xml"
+      },
+      {
+        "role": "cdx_fresh_process_receipt",
+        "relative_locator": "native-fresh-readbacks/flynn-carbonyl-1255682419-cdx/events.jsonl",
+        "sha256": "eff5d351a209fddb469326537601624af2ae0d55fe24b651d1bc92cc8c24db1e",
+        "bytes": 7027,
+        "media_type": "application/x-ndjson"
+      },
+      {
+        "role": "cdxml_fresh_process_readback",
+        "relative_locator": "native-fresh-readbacks/flynn-carbonyl-1255682419-cdxml/readback.cdxml",
+        "sha256": "8734ea73c4b1a7e2a430d50d4c548e454e654afbc985fef269eb39cf6dc64c8f",
+        "bytes": 10322,
+        "media_type": "text/xml"
+      },
+      {
+        "role": "cdxml_fresh_process_receipt",
+        "relative_locator": "native-fresh-readbacks/flynn-carbonyl-1255682419-cdxml/events.jsonl",
+        "sha256": "9d21f5ef68030606dc1dd036f84a4b92b243746a1e6cab4571836239c6a5100c",
+        "bytes": 6961,
+        "media_type": "application/x-ndjson"
+      }
+    ],
+    "evidence_notes": [
+      "Curved electron arrows and broad layout screened in author EMF rendered through Windows GDI. LP count is explicit symbol-object count; charge count is explicit nonzero atom-charge property count. Neither includes implicit chemistry or all text glyphs. Fragment/node/text inventories are raw native object counts, not segmented molecules/states/captions.",
+      "Compact two-arrow target, but organometallic bond and MgBr abbreviation may be outside current runtime vocabulary.",
+      "Original-source and native-import counts may differ after abbreviation expansion. Native candidate arrow count is not a certified semantic binding.",
+      "All source screening is AI-assisted development exposure; gold remains zero.",
+      "Historical same-process readbacks preserve original hashes but do not prove disk reopening. Fresh per-format zero-document PID/HWND events and readbacks below supersede that claim; see verification/2026-09-13-paired-pilot/native-survey-checks.json. Native pairing does not imply lossless fidelity, editability, visual quality or human acceptance."
+    ]
+  }
+]

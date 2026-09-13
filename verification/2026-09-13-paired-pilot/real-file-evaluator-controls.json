@@ -1,0 +1,608 @@
+[
+  {
+    "sample_id": "flynn-aldol-055",
+    "format": "cdx",
+    "purpose": "native roundtrip parser/evaluator control; not model reconstruction",
+    "evaluation_sha256": "e7e5b0c1dc4b04806a0815b335e2472b21908dccc1574e17e4bdbca1668b6314",
+    "matched_fragments": 2,
+    "delta_count": 25,
+    "unmeasured_kinds": [
+      "lp_displacement",
+      "lp_angular",
+      "charge_displacement",
+      "caption_displacement",
+      "arrow_source_anchor",
+      "arrow_target_anchor",
+      "control_point",
+      "curve_shape",
+      "step_spacing"
+    ],
+    "gates": {
+      "chemical_correctness": "unmeasured",
+      "native_editability": "unmeasured",
+      "visual_quality": "unmeasured",
+      "human_acceptance": "unmeasured"
+    }
+  },
+  {
+    "sample_id": "flynn-aldol-055",
+    "format": "cdxml",
+    "purpose": "native roundtrip parser/evaluator control; not model reconstruction",
+    "evaluation_sha256": "ea7b20f3195fcec4198d5b4d0f0e967ee86ed6388674abd3124c42f04be0df6f",
+    "matched_fragments": 2,
+    "delta_count": 25,
+    "unmeasured_kinds": [
+      "lp_displacement",
+      "lp_angular",
+      "charge_displacement",
+      "caption_displacement",
+      "arrow_source_anchor",
+      "arrow_target_anchor",
+      "control_point",
+      "curve_shape",
+      "step_spacing"
+    ],
+    "gates": {
+      "chemical_correctness": "unmeasured",
+      "native_editability": "unmeasured",
+      "visual_quality": "unmeasured",
+      "human_acceptance": "unmeasured"
+    }
+  },
+  {
+    "sample_id": "flynn-aldol-013",
+    "format": "cdx",
+    "purpose": "native roundtrip parser/evaluator control; not model reconstruction",
+    "evaluation_sha256": "746b01096cb1f4c6da2705eedf6dca14084a5f9a243af16aebf296e88961660b",
+    "matched_fragments": 2,
+    "delta_count": 14,
+    "unmeasured_kinds": [
+      "lp_displacement",
+      "lp_angular",
+      "charge_displacement",
+      "caption_displacement",
+      "arrow_source_anchor",
+      "arrow_target_anchor",
+      "control_point",
+      "curve_shape",
+      "step_spacing"
+    ],
+    "gates": {
+      "chemical_correctness": "unmeasured",
+      "native_editability": "unmeasured",
+      "visual_quality": "unmeasured",
+      "human_acceptance": "unmeasured"
+    }
+  },
+  {
+    "sample_id": "flynn-aldol-013",
+    "format": "cdxml",
+    "purpose": "native roundtrip parser/evaluator control; not model reconstruction",
+    "evaluation_sha256": "d248080294472c5b402ecaa0a4c66fa21ee11303b0b566bb9a0264eb20f42640",
+    "matched_fragments": 2,
+    "delta_count": 14,
+    "unmeasured_kinds": [
+      "lp_displacement",
+      "lp_angular",
+      "charge_displacement",
+      "caption_displacement",
+      "arrow_source_anchor",
+      "arrow_target_anchor",
+      "control_point",
+      "curve_shape",
+      "step_spacing"
+    ],
+    "gates": {
+      "chemical_correctness": "unmeasured",
+      "native_editability": "unmeasured",
+      "visual_quality": "unmeasured",
+      "human_acceptance": "unmeasured"
+    }
+  },
+  {
+    "sample_id": "flynn-aldol-024",
+    "format": "cdx",
+    "purpose": "native roundtrip parser/evaluator control; not model reconstruction",
+    "evaluation_sha256": "6331005843a42f1b6f28c235efbd756a327b0acf3f5d9dcf0402a35dae4ba28a",
+    "matched_fragments": 6,
+    "delta_count": 56,
+    "unmeasured_kinds": [
+      "lp_displacement",
+      "lp_angular",
+      "charge_displacement",
+      "caption_displacement",
+      "arrow_source_anchor",
+      "arrow_target_anchor",
+      "control_point",
+      "curve_shape",
+      "step_spacing"
+    ],
+    "gates": {
+      "chemical_correctness": "unmeasured",
+      "native_editability": "unmeasured",
+      "visual_quality": "unmeasured",
+      "human_acceptance": "unmeasured"
+    }
+  },
+  {
+    "sample_id": "flynn-aldol-024",
+    "format": "cdxml",
+    "purpose": "native roundtrip parser/evaluator control; not model reconstruction",
+    "evaluation_sha256": "da477b2d28c3f53a0d6dabd122f47c4fa71eeb83030b8de68a1b9ca4fe0faacf",
+    "matched_fragments": 6,
+    "delta_count": 56,
+    "unmeasured_kinds": [
+      "lp_displacement",
+      "lp_angular",
+      "charge_displacement",
+      "caption_displacement",
+      "arrow_source_anchor",
+      "arrow_target_anchor",
+      "control_point",
+      "curve_shape",
+      "step_spacing"
+    ],
+    "gates": {
+      "chemical_correctness": "unmeasured",
+      "native_editability": "unmeasured",
+      "visual_quality": "unmeasured",
+      "human_acceptance": "unmeasured"
+    }
+  },
+  {
+    "sample_id": "flynn-aldol-026",
+    "format": "cdx",
+    "purpose": "native roundtrip parser/evaluator control; not model reconstruction",
+    "evaluation_sha256": "2187741a5fbfbfb701c0a97db9a324cffa358ca667aab8c25586df4bfde4f58e",
+    "matched_fragments": 6,
+    "delta_count": 52,
+    "unmeasured_kinds": [
+      "lp_displacement",
+      "lp_angular",
+      "charge_displacement",
+      "caption_displacement",
+      "arrow_source_anchor",
+      "arrow_target_anchor",
+      "control_point",
+      "curve_shape",
+      "step_spacing"
+    ],
+    "gates": {
+      "chemical_correctness": "unmeasured",
+      "native_editability": "unmeasured",
+      "visual_quality": "unmeasured",
+      "human_acceptance": "unmeasured"
+    }
+  },
+  {
+    "sample_id": "flynn-aldol-026",
+    "format": "cdxml",
+    "purpose": "native roundtrip parser/evaluator control; not model reconstruction",
+    "evaluation_sha256": "ce07a0b252c56af11b6f9b9046750940de26dbdad7baa49a8e4eeeb465918dee",
+    "matched_fragments": 6,
+    "delta_count": 52,
+    "unmeasured_kinds": [
+      "lp_displacement",
+      "lp_angular",
+      "charge_displacement",
+      "caption_displacement",
+      "arrow_source_anchor",
+      "arrow_target_anchor",
+      "control_point",
+      "curve_shape",
+      "step_spacing"
+    ],
+    "gates": {
+      "chemical_correctness": "unmeasured",
+      "native_editability": "unmeasured",
+      "visual_quality": "unmeasured",
+      "human_acceptance": "unmeasured"
+    }
+  },
+  {
+    "sample_id": "flynn-aldol-032",
+    "format": "cdx",
+    "purpose": "native roundtrip parser/evaluator control; not model reconstruction",
+    "evaluation_sha256": "48fa87f3dd3a45adf974abd95d89f82fe1c6611ad7d8944d4d637e52126ec2c5",
+    "matched_fragments": 5,
+    "delta_count": 49,
+    "unmeasured_kinds": [
+      "lp_displacement",
+      "lp_angular",
+      "charge_displacement",
+      "caption_displacement",
+      "arrow_source_anchor",
+      "arrow_target_anchor",
+      "control_point",
+      "curve_shape",
+      "step_spacing"
+    ],
+    "gates": {
+      "chemical_correctness": "unmeasured",
+      "native_editability": "unmeasured",
+      "visual_quality": "unmeasured",
+      "human_acceptance": "unmeasured"
+    }
+  },
+  {
+    "sample_id": "flynn-aldol-032",
+    "format": "cdxml",
+    "purpose": "native roundtrip parser/evaluator control; not model reconstruction",
+    "evaluation_sha256": "6dac81c7734905da309a3359dd4b8e21d32a4e1b3e6f7ebd81eddc8fb9a14896",
+    "matched_fragments": 5,
+    "delta_count": 49,
+    "unmeasured_kinds": [
+      "lp_displacement",
+      "lp_angular",
+      "charge_displacement",
+      "caption_displacement",
+      "arrow_source_anchor",
+      "arrow_target_anchor",
+      "control_point",
+      "curve_shape",
+      "step_spacing"
+    ],
+    "gates": {
+      "chemical_correctness": "unmeasured",
+      "native_editability": "unmeasured",
+      "visual_quality": "unmeasured",
+      "human_acceptance": "unmeasured"
+    }
+  },
+  {
+    "sample_id": "flynn-aldol-033",
+    "format": "cdx",
+    "purpose": "native roundtrip parser/evaluator control; not model reconstruction",
+    "evaluation_sha256": "0af929326c3e19f355a1789cd18279a35db01e6299cdbd915887400378268c50",
+    "matched_fragments": 7,
+    "delta_count": 53,
+    "unmeasured_kinds": [
+      "lp_displacement",
+      "lp_angular",
+      "charge_displacement",
+      "caption_displacement",
+      "arrow_source_anchor",
+      "arrow_target_anchor",
+      "control_point",
+      "curve_shape",
+      "step_spacing"
+    ],
+    "gates": {
+      "chemical_correctness": "unmeasured",
+      "native_editability": "unmeasured",
+      "visual_quality": "unmeasured",
+      "human_acceptance": "unmeasured"
+    }
+  },
+  {
+    "sample_id": "flynn-aldol-033",
+    "format": "cdxml",
+    "purpose": "native roundtrip parser/evaluator control; not model reconstruction",
+    "evaluation_sha256": "f9ca15c0f075908aa5bdaea9a6faf17d208ca3278d0c5602ef70fe2573b388a8",
+    "matched_fragments": 7,
+    "delta_count": 53,
+    "unmeasured_kinds": [
+      "lp_displacement",
+      "lp_angular",
+      "charge_displacement",
+      "caption_displacement",
+      "arrow_source_anchor",
+      "arrow_target_anchor",
+      "control_point",
+      "curve_shape",
+      "step_spacing"
+    ],
+    "gates": {
+      "chemical_correctness": "unmeasured",
+      "native_editability": "unmeasured",
+      "visual_quality": "unmeasured",
+      "human_acceptance": "unmeasured"
+    }
+  },
+  {
+    "sample_id": "flynn-aldol-040",
+    "format": "cdx",
+    "purpose": "native roundtrip parser/evaluator control; not model reconstruction",
+    "evaluation_sha256": "619220bfbf9ef47d23166b819a3590b094008fb9ba94ae764f4ca79c8ccb4c73",
+    "matched_fragments": 0,
+    "delta_count": 0,
+    "unmeasured_kinds": [
+      "fragment_translation",
+      "fragment_rotation",
+      "atom_displacement",
+      "lp_displacement",
+      "lp_angular",
+      "charge_displacement",
+      "caption_displacement",
+      "arrow_source_anchor",
+      "arrow_target_anchor",
+      "control_point",
+      "curve_shape",
+      "step_spacing"
+    ],
+    "gates": {
+      "chemical_correctness": "unmeasured",
+      "native_editability": "unmeasured",
+      "visual_quality": "unmeasured",
+      "human_acceptance": "unmeasured"
+    }
+  },
+  {
+    "sample_id": "flynn-aldol-040",
+    "format": "cdxml",
+    "purpose": "native roundtrip parser/evaluator control; not model reconstruction",
+    "evaluation_sha256": "9675880a9c8d617b726a9dbf01c67841c16ca08c181f177148ce8bd3f4116d4b",
+    "matched_fragments": 0,
+    "delta_count": 0,
+    "unmeasured_kinds": [
+      "fragment_translation",
+      "fragment_rotation",
+      "atom_displacement",
+      "lp_displacement",
+      "lp_angular",
+      "charge_displacement",
+      "caption_displacement",
+      "arrow_source_anchor",
+      "arrow_target_anchor",
+      "control_point",
+      "curve_shape",
+      "step_spacing"
+    ],
+    "gates": {
+      "chemical_correctness": "unmeasured",
+      "native_editability": "unmeasured",
+      "visual_quality": "unmeasured",
+      "human_acceptance": "unmeasured"
+    }
+  },
+  {
+    "sample_id": "flynn-aldol-051",
+    "format": "cdx",
+    "purpose": "native roundtrip parser/evaluator control; not model reconstruction",
+    "evaluation_sha256": "35a690f0c8044673bb2597e3207596a47a8244dd9a14a6026031ea55289abc81",
+    "matched_fragments": 8,
+    "delta_count": 95,
+    "unmeasured_kinds": [
+      "lp_displacement",
+      "lp_angular",
+      "charge_displacement",
+      "caption_displacement",
+      "arrow_source_anchor",
+      "arrow_target_anchor",
+      "control_point",
+      "curve_shape",
+      "step_spacing"
+    ],
+    "gates": {
+      "chemical_correctness": "unmeasured",
+      "native_editability": "unmeasured",
+      "visual_quality": "unmeasured",
+      "human_acceptance": "unmeasured"
+    }
+  },
+  {
+    "sample_id": "flynn-aldol-051",
+    "format": "cdxml",
+    "purpose": "native roundtrip parser/evaluator control; not model reconstruction",
+    "evaluation_sha256": "b6633dd0274c99c0ffa30043fddab24eb7defa400be7e1fec4083753b8fc14ef",
+    "matched_fragments": 8,
+    "delta_count": 95,
+    "unmeasured_kinds": [
+      "lp_displacement",
+      "lp_angular",
+      "charge_displacement",
+      "caption_displacement",
+      "arrow_source_anchor",
+      "arrow_target_anchor",
+      "control_point",
+      "curve_shape",
+      "step_spacing"
+    ],
+    "gates": {
+      "chemical_correctness": "unmeasured",
+      "native_editability": "unmeasured",
+      "visual_quality": "unmeasured",
+      "human_acceptance": "unmeasured"
+    }
+  },
+  {
+    "sample_id": "flynn-aldol-061",
+    "format": "cdx",
+    "purpose": "native roundtrip parser/evaluator control; not model reconstruction",
+    "evaluation_sha256": "948ecef55fdf1d045d2a9bf8108e3ef00a73cd336ca8542112a38148f7814b87",
+    "matched_fragments": 10,
+    "delta_count": 137,
+    "unmeasured_kinds": [
+      "lp_displacement",
+      "lp_angular",
+      "charge_displacement",
+      "caption_displacement",
+      "arrow_source_anchor",
+      "arrow_target_anchor",
+      "control_point",
+      "curve_shape",
+      "step_spacing"
+    ],
+    "gates": {
+      "chemical_correctness": "unmeasured",
+      "native_editability": "unmeasured",
+      "visual_quality": "unmeasured",
+      "human_acceptance": "unmeasured"
+    }
+  },
+  {
+    "sample_id": "flynn-aldol-061",
+    "format": "cdxml",
+    "purpose": "native roundtrip parser/evaluator control; not model reconstruction",
+    "evaluation_sha256": "6a11df0d9e2a9cbafb359a81005df10c37c07f4f1d004c0494ca545ade11db25",
+    "matched_fragments": 10,
+    "delta_count": 137,
+    "unmeasured_kinds": [
+      "lp_displacement",
+      "lp_angular",
+      "charge_displacement",
+      "caption_displacement",
+      "arrow_source_anchor",
+      "arrow_target_anchor",
+      "control_point",
+      "curve_shape",
+      "step_spacing"
+    ],
+    "gates": {
+      "chemical_correctness": "unmeasured",
+      "native_editability": "unmeasured",
+      "visual_quality": "unmeasured",
+      "human_acceptance": "unmeasured"
+    }
+  },
+  {
+    "sample_id": "flynn-aldol-063",
+    "format": "cdx",
+    "purpose": "native roundtrip parser/evaluator control; not model reconstruction",
+    "evaluation_sha256": "beffa2ae782791aad61f72abc0ca3cb69a8f71f793bb2f536c7c4f3b5dce137d",
+    "matched_fragments": 2,
+    "delta_count": 21,
+    "unmeasured_kinds": [
+      "lp_displacement",
+      "lp_angular",
+      "charge_displacement",
+      "caption_displacement",
+      "arrow_source_anchor",
+      "arrow_target_anchor",
+      "control_point",
+      "curve_shape",
+      "step_spacing"
+    ],
+    "gates": {
+      "chemical_correctness": "unmeasured",
+      "native_editability": "unmeasured",
+      "visual_quality": "unmeasured",
+      "human_acceptance": "unmeasured"
+    }
+  },
+  {
+    "sample_id": "flynn-aldol-063",
+    "format": "cdxml",
+    "purpose": "native roundtrip parser/evaluator control; not model reconstruction",
+    "evaluation_sha256": "b75cac198abecf0a94cc609fd503271ce4914eff909d20d0ce87fd9d2e49828a",
+    "matched_fragments": 2,
+    "delta_count": 21,
+    "unmeasured_kinds": [
+      "lp_displacement",
+      "lp_angular",
+      "charge_displacement",
+      "caption_displacement",
+      "arrow_source_anchor",
+      "arrow_target_anchor",
+      "control_point",
+      "curve_shape",
+      "step_spacing"
+    ],
+    "gates": {
+      "chemical_correctness": "unmeasured",
+      "native_editability": "unmeasured",
+      "visual_quality": "unmeasured",
+      "human_acceptance": "unmeasured"
+    }
+  },
+  {
+    "sample_id": "flynn-carbonyl-1255682419",
+    "format": "cdx",
+    "purpose": "native roundtrip parser/evaluator control; not model reconstruction",
+    "evaluation_sha256": "e7d3a325f7fb570f9e55e114ac8f2138f0f374cf8ca6c9f8ddb54200fb389981",
+    "matched_fragments": 2,
+    "delta_count": 9,
+    "unmeasured_kinds": [
+      "lp_displacement",
+      "lp_angular",
+      "charge_displacement",
+      "caption_displacement",
+      "arrow_source_anchor",
+      "arrow_target_anchor",
+      "control_point",
+      "curve_shape",
+      "step_spacing"
+    ],
+    "gates": {
+      "chemical_correctness": "unmeasured",
+      "native_editability": "unmeasured",
+      "visual_quality": "unmeasured",
+      "human_acceptance": "unmeasured"
+    }
+  },
+  {
+    "sample_id": "flynn-carbonyl-1255682419",
+    "format": "cdxml",
+    "purpose": "native roundtrip parser/evaluator control; not model reconstruction",
+    "evaluation_sha256": "818f2d9ef000320266ba169562de633cf91cd3c994ad14f4a8dc4baee5e1ced6",
+    "matched_fragments": 2,
+    "delta_count": 9,
+    "unmeasured_kinds": [
+      "lp_displacement",
+      "lp_angular",
+      "charge_displacement",
+      "caption_displacement",
+      "arrow_source_anchor",
+      "arrow_target_anchor",
+      "control_point",
+      "curve_shape",
+      "step_spacing"
+    ],
+    "gates": {
+      "chemical_correctness": "unmeasured",
+      "native_editability": "unmeasured",
+      "visual_quality": "unmeasured",
+      "human_acceptance": "unmeasured"
+    }
+  },
+  {
+    "sample_id": "flynn-carbonyl-1257156820",
+    "format": "cdx",
+    "purpose": "native roundtrip parser/evaluator control; not model reconstruction",
+    "evaluation_sha256": "910a25db9dff18501d29ee8a8537f132bd8f18511a425919c8116cd87891c4b1",
+    "matched_fragments": 2,
+    "delta_count": 10,
+    "unmeasured_kinds": [
+      "lp_displacement",
+      "lp_angular",
+      "charge_displacement",
+      "caption_displacement",
+      "arrow_source_anchor",
+      "arrow_target_anchor",
+      "control_point",
+      "curve_shape",
+      "step_spacing"
+    ],
+    "gates": {
+      "chemical_correctness": "unmeasured",
+      "native_editability": "unmeasured",
+      "visual_quality": "unmeasured",
+      "human_acceptance": "unmeasured"
+    }
+  },
+  {
+    "sample_id": "flynn-carbonyl-1257156820",
+    "format": "cdxml",
+    "purpose": "native roundtrip parser/evaluator control; not model reconstruction",
+    "evaluation_sha256": "6261ec4fa746e8c18343bbcced8d2566edccff7132e48b843339204b93c826d1",
+    "matched_fragments": 2,
+    "delta_count": 10,
+    "unmeasured_kinds": [
+      "lp_displacement",
+      "lp_angular",
+      "charge_displacement",
+      "caption_displacement",
+      "arrow_source_anchor",
+      "arrow_target_anchor",
+      "control_point",
+      "curve_shape",
+      "step_spacing"
+    ],
+    "gates": {
+      "chemical_correctness": "unmeasured",
+      "native_editability": "unmeasured",
+      "visual_quality": "unmeasured",
+      "human_acceptance": "unmeasured"
+    }
+  }
+]

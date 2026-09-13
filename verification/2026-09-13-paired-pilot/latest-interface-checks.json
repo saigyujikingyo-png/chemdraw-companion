@@ -1,0 +1,50 @@
+{
+  "commit": "402a31e2e5f36faaa088e4013e88eb99fa8bbdf5",
+  "started_at": "2026-09-13T11:40:58.743585+00:00",
+  "completed_at": "2026-09-13T11:40:59.441248+00:00",
+  "interface_invocations": 1,
+  "request_sha256_before": "d3cfa3451c4ae104dc11672de980a725fa37122b30ad46ac1c6e7f9c039bbe0e",
+  "request_sha256_after": "d3cfa3451c4ae104dc11672de980a725fa37122b30ad46ac1c6e7f9c039bbe0e",
+  "request_elements": [
+    "Br",
+    "C",
+    "H",
+    "K",
+    "O"
+  ],
+  "unsupported_elements_in_unchanged_H_C_N_O_scope": [
+    "Br",
+    "K"
+  ],
+  "entrypoint_sha256": "bec7c3e67d1e1b9e8a0cedec109cfe320d56910af1b957d8003e6b80f93e86ec",
+  "source_snapshot_manifest_sha256": "2903d3b0fe0133883ca4fc12aae7e84f491ac8eeba5d7e9d8c84ae502a49f3f6",
+  "snapshot_file_count": 237,
+  "snapshot_all_files_unchanged_after_execution": true,
+  "supplier_zip_sha256": "0eb1ee14c2973cc2595a4cdeb8f74565051ee5db88e5be5a8957d4543b276178",
+  "supplier_integrity_receipt_sha256": "da2272e2fd16bd848147c621a3a6f58e5693c4adef0e1db0b93d0e7d85c59d8c",
+  "supplier_scope": "Synthetic transport/integration controls only; not external reconstruction success.",
+  "interface_exit_code": 1,
+  "interface_status": "failed",
+  "semantic_validation_observation": "attempted and rejected in seed: Element outside the declared semantic scope",
+  "supplier_input_semantic_validation_field": "not_run",
+  "native_candidate_stage_entered": false,
+  "native_fragments_stage_entered": false,
+  "compose_stage_entered": false,
+  "model_inference_executed": false,
+  "IR_modified": false,
+  "support_elements_modified": false,
+  "candidate_run_receipt_sha256": "67fd2ced8c84c3dea7e5af2878350163a05949daf6cb610b42d59915c744d778",
+  "seed_stderr_sha256": "1d160a38a5c2e73b4f977c8debc0912ccc71bf79cd9d86018851054e3d283764",
+  "quality_or_editability_pass": false,
+  "gold": false,
+  "version": "latest-interface-public-check/1.0",
+  "private_execution_receipt_sha256": "7cd836468621958c5f01cb09c17e07738b000e9a331ce2b92ff7031dc32518ef",
+  "supplier_manifest_members_verified": 80,
+  "observed_stages": [
+    {
+      "stage": "seed",
+      "status": "failed",
+      "exit_code": 1
+    }
+  ]
+}

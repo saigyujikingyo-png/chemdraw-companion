@@ -1,0 +1,413 @@
+{
+  "version": "paired-pilot-execution/1.0",
+  "recorded_at": "2026-09-13T11:33:07.942840+00:00",
+  "issue": "https://github.com/saigyujikingyo-png/chemdraw-companion/issues/2",
+  "architecture_parent_commit": "dc931b4d2401fcde8c75e11e04c085e881e9b4de",
+  "runtime_commit": "c92a91881a017d3d3d4a619dce77b840013a82cc",
+  "delivery_status": "research_delivery_with_observed_blocker",
+  "full_external_pipeline_status": "blocked_before_candidate_native_generation",
+  "product_acceptance": false,
+  "survey": {
+    "native_drawings_with_arc_or_curve": 77,
+    "exact_author_emf_pairs": 64,
+    "ai_screened_mechanism_candidates": 12,
+    "candidates_with_electron_flow_arrows": 12,
+    "screened_electron_arrows": 114,
+    "native_export_pairs": 12,
+    "original_export_hashes_and_sizes_verified": 72,
+    "source_manifest_bindings_initially_verified": 120,
+    "source_bias": "one teaching author; incomplete E1/E2, rearrangement and pericyclic coverage",
+    "sample_tier": "exposed AI-screened silver research candidates",
+    "lossless_fidelity_claim": false,
+    "source_manifest_asset_bindings_current_verified": 168
+  },
+  "native": {
+    "application": "ChemDraw Prime 26.0.0.6141",
+    "fresh_readback_summary": {
+      "fresh_formats_opened": 24,
+      "unique_zero_document_pid_hwnd_instances": 24,
+      "original_saved_cdx_cdxml_inputs_verified": 24,
+      "new_readback_artifact_hashes_verified": 24,
+      "all_original_receipted_artifacts_unchanged": true,
+      "original_receipted_artifacts_checked": 72,
+      "frozen_native_png_files_unchanged": 12,
+      "unexpected_com_snapshot_semantic_or_style_field_changes": 0,
+      "same_process_cdx_snapshots_equal_fresh": 0,
+      "same_process_cdxml_snapshots_equal_fresh": 12,
+      "maximum_coordinate_delta_by_format": {
+        "cdx": 1.525408220004465e-05,
+        "cdxml": 0.013005965895644067
+      }
+    },
+    "limits": [
+      "Same-process Close/Open is not independent disk-read evidence.",
+      "Abbreviation expansion, ID/text-count changes, coordinate quantization and one lost CrossingBonds attribute.",
+      "COM is_radical convenience flag also identifies some LonePair symbols.",
+      "Requested 600 DPI is not effective calibrated DPI; all twelve PNG headers are approximately 191.9986 DPI.",
+      "Pairing is not a retained-object edit test or visual PASS."
+    ]
+  },
+  "isolation": {
+    "context": "fresh API, one PNG plus public schema plus reaction-independent instruction; tools empty",
+    "actual_hidden_categories_denied": 6,
+    "real_os_tests_passed": 8,
+    "custodian_has_target_access": true,
+    "scope": "restricted broker and allowlisted official API projection; not whole-host isolation",
+    "payload_equivalence": "attempts differ only in PNG data URL",
+    "pre_run_code_hash_seal": false,
+    "code_seal_limit": "Post-run snapshots and explicit postprocessing addendum; no pre-run cryptographic code attestation.",
+    "model_calls_total": 2,
+    "new_calls_during_postprocessing": 0
+  },
+  "runs": [
+    {
+      "run_id": "blind-inference-01",
+      "task": "A",
+      "model": "gpt-5.6-terra",
+      "reasoning": "max",
+      "model_calls": 1,
+      "input_png_sha256": "9c501f09c5ca98389cb970038dab84306356667ca43197894cbaa097075ebf27",
+      "payload_sha256": "3be5bc8614d1d70d81b95b6c951dbd19752b6ddc283bd2550b92bca1994aaf69",
+      "authorization": "explicit user approval for one original PNG plus schema",
+      "tokens": {
+        "input": 2947,
+        "output": 2094,
+        "reasoning": 2070,
+        "total": 5041
+      },
+      "result": "No chemistry is visibly recoverable from the supplied image.",
+      "schema_status": "failed",
+      "diagnosis": "RGB black; ink in alpha. Original retained.",
+      "composer_run": false,
+      "postprocessing": "Completed SSE output-item text recovered without new inference."
+    },
+    {
+      "run_id": "blind-inference-02",
+      "task": "A",
+      "model": "gpt-5.6-terra",
+      "reasoning": "max",
+      "model_calls": 1,
+      "input_png_sha256": "0f0fc8449049e785c4387f1908e9ddd78efeebd016d3c4254343fbee606f3538",
+      "payload_sha256": "5480ef1b2625773422f7a020187e9709fd28a6d000a66345c37757ed9e78147f",
+      "authorization": "explicit user approval for one fixed-white PNG plus same schema",
+      "tokens": {
+        "input": 2947,
+        "output": 42085,
+        "reasoning": 38629,
+        "total": 45032
+      },
+      "schema_status": "pass",
+      "atoms": 17,
+      "states": 3,
+      "transitions": 2,
+      "electron_flows": 6,
+      "candidate_file_bytes": 12886,
+      "candidate_file_sha256": "093048ab3fb1f5e3a92f2fe41b25b567d7c205550cdf1bcf64cde59197577efc",
+      "model_utf8_sha256": "513fb32a0206a81e73c7741171268c18bbe0a4047118175670aeb20fd9f8c794",
+      "serialization_limit": "LF to CRLF changed stored bytes; JSON and original candidate unchanged.",
+      "chemical_review": {
+        "overall": "partial semantic recovery with runtime and depiction incompatibilities",
+        "authenticated_human_review": false,
+        "actual_gold": false,
+        "full_chemical_correctness_pass": false,
+        "native_candidate_render_available": false,
+        "visual_comparison_pass": false,
+        "geometry_comparison": "not_run_no_candidate_native_artifact",
+        "runtime_composer_attempt_by_this_reviewer": false,
+        "candidate_ir_edited": false
+      },
+      "chemical_content_modified": false
+    }
+  ],
+  "normalization": {
+    "type": "fixed_white_alpha_composite",
+    "direct_native_export": false,
+    "dimensions": [
+      4664,
+      992
+    ],
+    "changed_ink_mask_pixels": 0,
+    "all_rgb_equal_255_minus_alpha": true,
+    "source_unchanged": true,
+    "layout_repair": false
+  },
+  "composer": {
+    "version": "paired-composer-attempt/1.0",
+    "timestamp": "2026-09-13T11:15:10.880438+00:00",
+    "stage": "existing_generic_composer_seed",
+    "implementation_commit": "c92a91881a017d3d3d4a619dce77b840013a82cc",
+    "script_sha256": "32fc9af7394507360c39b301a7cb230a99f1260f77e0cdfa4fdb51080336b0b5",
+    "request_sha256": "d3cfa3451c4ae104dc11672de980a725fa37122b30ad46ac1c6e7f9c039bbe0e",
+    "exit_code": 1,
+    "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stderr_sha256": "9b0f8e5353320184577e5e290ebe1bbce5ee842d438f09a8ef314272006cd221",
+    "seed_created": false,
+    "chemical_content_modified": false,
+    "source_of_mechanism": "unaltered second PNG-only model response",
+    "layout_policy": "fixed A4 generic policy",
+    "native_candidate_created": false,
+    "failure_class": "runtime_semantic_scope",
+    "blocked_stages": [
+      "candidate geometry",
+      "native candidate export/reopen",
+      "target-versus-candidate geometry",
+      "native visual oracle",
+      "blind candidate correction deltas"
+    ]
+  },
+  "observed_composer_error": "Element outside the declared semantic scope",
+  "observed_cause": "H/C/N/O-only runtime rejects essential Br and K.",
+  "additional_static_issue_not_executed": "Bond source to non-endpoint atom conflicts with migrating-bond rule; intended new bond is declared elsewhere.",
+  "representation_gaps": [
+    "No per-state species display/omission flag while the shared atom catalog is rendered in every state.",
+    "No separation between chemical lone-pair count and explicitly visible LP slots.",
+    "No abbreviation/expanded-subgraph depiction preference.",
+    "No typed reagent/solvent/condition caption anchors distinct from state and transition labels."
+  ],
+  "verified_runtime_git_blobs": {
+    "probes/run_composer.py": "9bb1428dd328d18e2fed018ce348a6ec199828b3",
+    "runtime/chemical_ir.py": "5b466a7fffff10138a1ed7c9f727cd83175e675d"
+  },
+  "layout_policy_sha256": "7d51a998812e9ac267f56c7a7edb77d8f9f401489c1554ce10dac402b28cc760",
+  "evaluation": {
+    "semantic": "partial_AI_assessment",
+    "native_objects": "unmeasured_no_candidate",
+    "geometry": "unmeasured_no_candidate",
+    "native_visual_quality": "unmeasured_no_candidate",
+    "human_acceptance": "unmeasured",
+    "blind_candidate_correction_deltas": 0,
+    "human_active_correction_seconds": null,
+    "authenticated_gold": 0,
+    "task_B": "not_run",
+    "M1": "historical_visual_failure_not_rerun",
+    "M2_and_holdouts": "frozen_excluded_unscored"
+  },
+  "prototype_controls": {
+    "paired_tests_passed": 77,
+    "skipped": 0,
+    "test_groups": {
+      "extractor_evaluator": 17,
+      "metadata": 37,
+      "real_os_firewall": 8,
+      "api_projection_serialization": 15
+    },
+    "real_native_roundtrip_controls": 24,
+    "matched_fragments": 104,
+    "fragment_atom_deltas": 1042,
+    "purpose": "parser/evaluator controls; not model reconstruction, learning yield or human correction",
+    "qualification_gates": "all unmeasured",
+    "unimplemented_deltas": [
+      "LP",
+      "charge",
+      "caption",
+      "arrow anchors",
+      "control points",
+      "curve shape",
+      "step spacing"
+    ]
+  },
+  "decision": "Prioritize general IR compilation/depiction and existing Composer-to-native-oracle integration before bulk corpus expansion.",
+  "private_evidence_bindings": [
+    {
+      "private_locator": "issue-2-received.json",
+      "bytes": 15358,
+      "sha256": "98973b3a8dc7b81021a07456949a0693abcd63981bd2a4910bd010cffc2dbcfa"
+    },
+    {
+      "private_locator": "source-survey-academic/academic-source-survey.json",
+      "bytes": 117645,
+      "sha256": "d2611f91594b2a71d52a535901624186da8c326a1dfe12a4cc6615bfee64e8fe"
+    },
+    {
+      "private_locator": "source-survey-academic/curated-candidates.json",
+      "bytes": 55898,
+      "sha256": "df89bd193a9c08de20caedda641036dc067c7a59541553d78c5c130081b635f6"
+    },
+    {
+      "private_locator": "source-survey-academic/semantic-review-02.json",
+      "bytes": 18224,
+      "sha256": "55937ff519634c00be7f483026418cfceb9577a66e18169ffbaf4c54d4129468"
+    },
+    {
+      "private_locator": "source-survey-editors/source-survey.json",
+      "bytes": 36646,
+      "sha256": "fe6ca0044ef5d1639bb5a9b75e4c269209632eb59dc61ce84fd3c143453b0632"
+    },
+    {
+      "private_locator": "source-survey-editors/native-survey-verification.json",
+      "bytes": 819977,
+      "sha256": "ae09c75cad5b2e5d1f6670453ac8816c290127d6dae4733618d7730216624048"
+    },
+    {
+      "private_locator": "native-fresh-readbacks/fresh-readback-verification.json",
+      "bytes": 492646,
+      "sha256": "57af7f7f02fa412dae6284a0aebef0b2d2f4a9319f9e9bb8bc0309febfc03277"
+    },
+    {
+      "private_locator": "native-target-55-attempt1/native.cdxml",
+      "bytes": 16167,
+      "sha256": "bda51fbeec5a8348466de19c71d402cb0a207b8aca941547b2d1691e81ec13ce"
+    },
+    {
+      "private_locator": "native-target-55-attempt1/native.cdx",
+      "bytes": 7216,
+      "sha256": "2aec591006d2e8e85e0e358ffdafdb0a1426dd9db8297258d0e06da2a79a6b6c"
+    },
+    {
+      "private_locator": "native-target-55-attempt1/native.png",
+      "bytes": 85697,
+      "sha256": "9c501f09c5ca98389cb970038dab84306356667ca43197894cbaa097075ebf27"
+    },
+    {
+      "private_locator": "native-target-55-attempt1/png-pixel-diagnostic.json",
+      "bytes": 1170,
+      "sha256": "0ae866917fd989b95985cd8592845b442358447e4aa1071c52bd4f0fa4b59f46"
+    },
+    {
+      "private_locator": "reference-display-normalized/reference.png",
+      "bytes": 102005,
+      "sha256": "0f0fc8449049e785c4387f1908e9ddd78efeebd016d3c4254343fbee606f3538"
+    },
+    {
+      "private_locator": "reference-display-normalized/normalization-receipt.json",
+      "bytes": 578,
+      "sha256": "c060f43ce373a7290f9401aa662a5dfa8f363eed110cd58d17fce650ec47b620"
+    },
+    {
+      "private_locator": "reference-display-normalized/pixel-equivalence.json",
+      "bytes": 628,
+      "sha256": "c1b57b48326d8b34d62eb1747eae4888e10564e4c98c29d102e206afff30b712"
+    },
+    {
+      "private_locator": "firewall/final-os-probe/receipt.json",
+      "bytes": 5246,
+      "sha256": "62e7fe9d16c84b603758837c906693f8041c6eeda99a6de82d80061651092e92"
+    },
+    {
+      "private_locator": "firewall/blind-inference-01/candidate/projected-request.json",
+      "bytes": 121764,
+      "sha256": "3be5bc8614d1d70d81b95b6c951dbd19752b6ddc283bd2550b92bca1994aaf69"
+    },
+    {
+      "private_locator": "firewall/blind-inference-01/candidate/response.sse",
+      "bytes": 37688,
+      "sha256": "8daea462c4baec4bd2c41773802e37d45f7ab40d38f2c29f649fe4aefe1bcc66"
+    },
+    {
+      "private_locator": "firewall/blind-inference-01/candidate/candidate.ir.json",
+      "bytes": 72,
+      "sha256": "058135935bf3416d97396526cc6eb08a505a2cbb95e4859c6d84940d0cd18491"
+    },
+    {
+      "private_locator": "firewall/blind-inference-02/candidate/projected-request.json",
+      "bytes": 143508,
+      "sha256": "5480ef1b2625773422f7a020187e9709fd28a6d000a66345c37757ed9e78147f"
+    },
+    {
+      "private_locator": "firewall/blind-inference-02/candidate/response.sse",
+      "bytes": 1403768,
+      "sha256": "8bfa3713a58266f801a6b9cfc5b97aecf81ba4533ffc7b4e649b37c15c74b393"
+    },
+    {
+      "private_locator": "firewall/blind-inference-02/candidate/candidate.ir.json",
+      "bytes": 12886,
+      "sha256": "093048ab3fb1f5e3a92f2fe41b25b567d7c205550cdf1bcf64cde59197577efc"
+    },
+    {
+      "private_locator": "firewall/blind-inference-02/operator-receipt.json",
+      "bytes": 11823,
+      "sha256": "4ea22ea5fb6e1bdfcba99976a3f10407717be1eb22573095555dedcac8cb8732"
+    },
+    {
+      "private_locator": "firewall/blind-inference-02/operator-seal-addendum.json",
+      "bytes": 3023,
+      "sha256": "ec2abab720dc0eeec561939a636ad34d00d798050c88489161fd509f46b9ed85"
+    },
+    {
+      "private_locator": "candidate-compose-02/composer-attempt.json",
+      "bytes": 1064,
+      "sha256": "295d5e63165a671401fd97f6763fc104ebf9956e3245cad55e4f6ed440ff3dd6"
+    },
+    {
+      "private_locator": "candidate-compose-02/request.json",
+      "bytes": 14753,
+      "sha256": "d3cfa3451c4ae104dc11672de980a725fa37122b30ad46ac1c6e7f9c039bbe0e"
+    },
+    {
+      "private_locator": "candidate-compose-02/seed.stderr.txt",
+      "bytes": 1099,
+      "sha256": "9b0f8e5353320184577e5e290ebe1bbce5ee842d438f09a8ef314272006cd221"
+    },
+    {
+      "private_locator": "final-checks/paired-tests.txt",
+      "bytes": 102,
+      "sha256": "a8c6689481f295042bf17b7368a24999673fcfebd99cdaeadc3a8fb50713f188"
+    },
+    {
+      "private_locator": "latest-interface-402a31e/independent-execution-receipt.json",
+      "bytes": 4035,
+      "sha256": "7cd836468621958c5f01cb09c17e07738b000e9a331ce2b92ff7031dc32518ef"
+    },
+    {
+      "private_locator": "latest-interface-402a31e/supplier-control-verification.json",
+      "bytes": 17640,
+      "sha256": "da2272e2fd16bd848147c621a3a6f58e5693c4adef0e1db0b93d0e7d85c59d8c"
+    },
+    {
+      "private_locator": "latest-interface-402a31e/source-snapshot-manifest.json",
+      "bytes": 59245,
+      "sha256": "2903d3b0fe0133883ca4fc12aae7e84f491ac8eeba5d7e9d8c84ae502a49f3f6"
+    }
+  ],
+  "public_manifest_readback_policy": "Old same-process entries retain their hashes under explicit historical roles; fresh-process entries and receipts are independently bound.",
+  "latest_implementation_check": {
+    "commit": "402a31e2e5f36faaa088e4013e88eb99fa8bbdf5",
+    "started_at": "2026-09-13T11:40:58.743585+00:00",
+    "completed_at": "2026-09-13T11:40:59.441248+00:00",
+    "interface_invocations": 1,
+    "request_sha256_before": "d3cfa3451c4ae104dc11672de980a725fa37122b30ad46ac1c6e7f9c039bbe0e",
+    "request_sha256_after": "d3cfa3451c4ae104dc11672de980a725fa37122b30ad46ac1c6e7f9c039bbe0e",
+    "request_elements": [
+      "Br",
+      "C",
+      "H",
+      "K",
+      "O"
+    ],
+    "unsupported_elements_in_unchanged_H_C_N_O_scope": [
+      "Br",
+      "K"
+    ],
+    "entrypoint_sha256": "bec7c3e67d1e1b9e8a0cedec109cfe320d56910af1b957d8003e6b80f93e86ec",
+    "source_snapshot_manifest_sha256": "2903d3b0fe0133883ca4fc12aae7e84f491ac8eeba5d7e9d8c84ae502a49f3f6",
+    "snapshot_file_count": 237,
+    "snapshot_all_files_unchanged_after_execution": true,
+    "supplier_zip_sha256": "0eb1ee14c2973cc2595a4cdeb8f74565051ee5db88e5be5a8957d4543b276178",
+    "supplier_integrity_receipt_sha256": "da2272e2fd16bd848147c621a3a6f58e5693c4adef0e1db0b93d0e7d85c59d8c",
+    "supplier_scope": "Synthetic transport/integration controls only; not external reconstruction success.",
+    "interface_exit_code": 1,
+    "interface_status": "failed",
+    "semantic_validation_observation": "attempted and rejected in seed: Element outside the declared semantic scope",
+    "supplier_input_semantic_validation_field": "not_run",
+    "native_candidate_stage_entered": false,
+    "native_fragments_stage_entered": false,
+    "compose_stage_entered": false,
+    "model_inference_executed": false,
+    "IR_modified": false,
+    "support_elements_modified": false,
+    "candidate_run_receipt_sha256": "67fd2ced8c84c3dea7e5af2878350163a05949daf6cb610b42d59915c744d778",
+    "seed_stderr_sha256": "1d160a38a5c2e73b4f977c8debc0912ccc71bf79cd9d86018851054e3d283764",
+    "quality_or_editability_pass": false,
+    "gold": false,
+    "version": "latest-interface-public-check/1.0",
+    "private_execution_receipt_sha256": "7cd836468621958c5f01cb09c17e07738b000e9a331ce2b92ff7031dc32518ef",
+    "supplier_manifest_members_verified": 80,
+    "observed_stages": [
+      {
+        "stage": "seed",
+        "status": "failed",
+        "exit_code": 1
+      }
+    ]
+  }
+}

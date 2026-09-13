@@ -1,0 +1,423 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://chembridge.invalid/contracts/paired/registry.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "version": {
+      "const": "paired-registry/1.0"
+    },
+    "sample_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "source": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "source_url": {
+          "type": "string",
+          "minLength": 1
+        },
+        "citation": {
+          "type": "string",
+          "minLength": 1
+        },
+        "author_or_project": {
+          "type": "string",
+          "minLength": 1
+        },
+        "retrieved_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "original_sha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "asset_types": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "redistributable": {
+          "enum": [
+            "yes",
+            "no",
+            "unknown"
+          ]
+        },
+        "license": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "license_evidence_url": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "container": {
+          "anyOf": [
+            {
+              "type": "null"
+            },
+            {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "sha256": {
+                  "type": "string",
+                  "pattern": "^[a-f0-9]{64}$"
+                },
+                "member": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                },
+                "stream": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                }
+              },
+              "required": [
+                "sha256",
+                "member",
+                "stream"
+              ]
+            }
+          ]
+        }
+      },
+      "required": [
+        "source_url",
+        "citation",
+        "author_or_project",
+        "retrieved_at",
+        "original_sha256",
+        "asset_types",
+        "redistributable",
+        "license",
+        "license_evidence_url",
+        "container"
+      ]
+    },
+    "mechanism_family": {
+      "type": "string",
+      "minLength": 1
+    },
+    "complexity_profile": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "curved_arrow_count": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "curved_arrow_candidate_count": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "lone_pair_count": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "charge_count": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "radical_count": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "molecule_count": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "state_count": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "step_count": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "caption_count": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "simultaneous_flow_count": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "common_scaffold_count": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "dense_anchor_risk": {
+          "type": [
+            "boolean",
+            "null"
+          ]
+        },
+        "multirow": {
+          "type": [
+            "boolean",
+            "null"
+          ]
+        },
+        "snake_layout": {
+          "type": [
+            "boolean",
+            "null"
+          ]
+        }
+      },
+      "required": [
+        "curved_arrow_count",
+        "curved_arrow_candidate_count",
+        "lone_pair_count",
+        "charge_count",
+        "radical_count",
+        "molecule_count",
+        "state_count",
+        "step_count",
+        "caption_count",
+        "simultaneous_flow_count",
+        "common_scaffold_count",
+        "dense_anchor_risk",
+        "multirow",
+        "snake_layout"
+      ]
+    },
+    "curved_arrow_count": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "minimum": 0
+    },
+    "lone_pair_count": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "minimum": 0
+    },
+    "charge_count": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "minimum": 0
+    },
+    "state_count": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "minimum": 0
+    },
+    "step_count": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "minimum": 0
+    },
+    "condition_text_present": {
+      "type": [
+        "boolean",
+        "null"
+      ]
+    },
+    "structured_target_available": {
+      "type": "boolean"
+    },
+    "native_render_available": {
+      "type": "boolean"
+    },
+    "research_status": {
+      "enum": [
+        "discovered",
+        "downloaded",
+        "inventory_only",
+        "native_paired",
+        "blind_attempted",
+        "evaluated",
+        "blocked",
+        "rejected"
+      ]
+    },
+    "redistributable": {
+      "enum": [
+        "yes",
+        "no",
+        "unknown"
+      ]
+    },
+    "split": {
+      "enum": [
+        "research_development",
+        "image_only_silver",
+        "excluded"
+      ]
+    },
+    "frozen_or_descendant": {
+      "type": "boolean"
+    },
+    "lineage": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "exposure_history": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "timestamp": {
+            "type": "string",
+            "minLength": 1,
+            "format": "date-time"
+          },
+          "actor_role": {
+            "enum": [
+              "custodian",
+              "generator",
+              "evaluator",
+              "human_reviewer"
+            ]
+          },
+          "asset_sha256": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "pattern": "^[a-f0-9]{64}$"
+            }
+          },
+          "purpose": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "required": [
+          "timestamp",
+          "actor_role",
+          "asset_sha256",
+          "purpose"
+        ]
+      }
+    },
+    "assets": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "role": {
+            "type": "string",
+            "minLength": 1
+          },
+          "relative_locator": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "^(?!/)(?!.*\\\\)(?!.*(?:^|/)\\.\\.(?:/|$))(?![A-Za-z]:).+$"
+          },
+          "sha256": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{64}$"
+          },
+          "bytes": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "media_type": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "required": [
+          "role",
+          "relative_locator",
+          "sha256",
+          "bytes",
+          "media_type"
+        ]
+      }
+    },
+    "evidence_notes": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    }
+  },
+  "required": [
+    "version",
+    "sample_id",
+    "source",
+    "mechanism_family",
+    "complexity_profile",
+    "curved_arrow_count",
+    "lone_pair_count",
+    "charge_count",
+    "state_count",
+    "step_count",
+    "condition_text_present",
+    "structured_target_available",
+    "native_render_available",
+    "research_status",
+    "redistributable",
+    "split",
+    "frozen_or_descendant",
+    "lineage",
+    "exposure_history",
+    "assets",
+    "evidence_notes"
+  ]
+}

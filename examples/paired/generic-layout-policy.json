@@ -1,0 +1,15 @@
+{
+  "flow": "serpentine",
+  "first_row_direction": "left_to_right",
+  "max_columns": 3,
+  "minimum_row_turns": 0,
+  "canvas_width_mm": 210,
+  "canvas_height_mm": 297,
+  "outer_margin_mm": 12,
+  "row_gap_bond_lengths": 3,
+  "font_family": "Arial",
+  "font_pt": 10,
+  "bond_length_pt": 14.4,
+  "stroke_pt": 0.6,
+  "minimum_native_dpi": 600
+}

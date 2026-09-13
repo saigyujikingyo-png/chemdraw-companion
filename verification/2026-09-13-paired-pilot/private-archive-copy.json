@@ -1,0 +1,12 @@
+{
+  "version": "paired-private-archive-copy/1.0",
+  "archive_name": "chemdraw-issue2-private-evidence-20260913.zip",
+  "bytes": 41642757,
+  "sha256": "efb4383361c0422a647c87a9bc1ad4ada9382e4be401ee94497697062a2b2096",
+  "manifest_content_entries_verified": 712,
+  "uncompressed_content_bytes": 79083967,
+  "local_copy_and_destination_sha256_match": true,
+  "all_destination_zip_members_read_and_hash_verified": true,
+  "remote_sync_status": "not_verified",
+  "raw_asset_distribution": "private_only"
+}

@@ -1,0 +1,312 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://chembridge.invalid/contracts/paired/hidden-split.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "version": {
+      "const": "paired-hidden-split/1.0"
+    },
+    "sample_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "task": {
+      "enum": [
+        "A_png_reconstruction",
+        "B_blind_composition"
+      ]
+    },
+    "generator_input": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "role": {
+            "type": "string",
+            "minLength": 1
+          },
+          "relative_locator": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "^(?!/)(?!.*\\\\)(?!.*(?:^|/)\\.\\.(?:/|$))(?![A-Za-z]:).+$"
+          },
+          "sha256": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{64}$"
+          },
+          "bytes": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "media_type": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "required": [
+          "role",
+          "relative_locator",
+          "sha256",
+          "bytes",
+          "media_type"
+        ]
+      }
+    },
+    "hidden_target": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "role": {
+            "type": "string",
+            "minLength": 1
+          },
+          "relative_locator": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "^(?!/)(?!.*\\\\)(?!.*(?:^|/)\\.\\.(?:/|$))(?![A-Za-z]:).+$"
+          },
+          "sha256": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{64}$"
+          },
+          "bytes": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "media_type": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "required": [
+          "role",
+          "relative_locator",
+          "sha256",
+          "bytes",
+          "media_type"
+        ]
+      }
+    },
+    "candidate": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "role": {
+            "type": "string",
+            "minLength": 1
+          },
+          "relative_locator": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "^(?!/)(?!.*\\\\)(?!.*(?:^|/)\\.\\.(?:/|$))(?![A-Za-z]:).+$"
+          },
+          "sha256": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{64}$"
+          },
+          "bytes": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "media_type": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "required": [
+          "role",
+          "relative_locator",
+          "sha256",
+          "bytes",
+          "media_type"
+        ]
+      }
+    },
+    "evaluation": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "role": {
+            "type": "string",
+            "minLength": 1
+          },
+          "relative_locator": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "^(?!/)(?!.*\\\\)(?!.*(?:^|/)\\.\\.(?:/|$))(?![A-Za-z]:).+$"
+          },
+          "sha256": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{64}$"
+          },
+          "bytes": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "media_type": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "required": [
+          "role",
+          "relative_locator",
+          "sha256",
+          "bytes",
+          "media_type"
+        ]
+      }
+    },
+    "run": {
+      "anyOf": [
+        {
+          "type": "null"
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "run_id": {
+              "type": "string",
+              "minLength": 1
+            },
+            "timestamp": {
+              "type": "string",
+              "minLength": 1,
+              "format": "date-time"
+            },
+            "task": {
+              "enum": [
+                "A_png_reconstruction",
+                "B_blind_composition"
+              ]
+            },
+            "requested_model": {
+              "type": "string",
+              "minLength": 1
+            },
+            "actual_model": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "reasoning_effort": {
+              "const": "max"
+            },
+            "prompt": {
+              "type": "string",
+              "minLength": 1
+            },
+            "exposed_assets": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                  "role": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "relative_locator": {
+                    "type": "string",
+                    "minLength": 1,
+                    "pattern": "^(?!/)(?!.*\\\\)(?!.*(?:^|/)\\.\\.(?:/|$))(?![A-Za-z]:).+$"
+                  },
+                  "sha256": {
+                    "type": "string",
+                    "pattern": "^[a-f0-9]{64}$"
+                  },
+                  "bytes": {
+                    "type": "integer",
+                    "minimum": 1
+                  },
+                  "media_type": {
+                    "type": "string",
+                    "minLength": 1
+                  }
+                },
+                "required": [
+                  "role",
+                  "relative_locator",
+                  "sha256",
+                  "bytes",
+                  "media_type"
+                ]
+              }
+            },
+            "exposed_payload_sha256": {
+              "type": "string",
+              "pattern": "^[a-f0-9]{64}$"
+            },
+            "isolation_receipt_sha256": {
+              "type": "string",
+              "pattern": "^[a-f0-9]{64}$"
+            },
+            "generator_tools": {
+              "type": "array",
+              "maxItems": 0
+            },
+            "target_access_test": {
+              "enum": [
+                "pass",
+                "fail",
+                "not_run"
+              ]
+            },
+            "status": {
+              "enum": [
+                "ready",
+                "attempted",
+                "completed",
+                "blocked",
+                "failed"
+              ]
+            }
+          },
+          "required": [
+            "run_id",
+            "timestamp",
+            "task",
+            "requested_model",
+            "actual_model",
+            "reasoning_effort",
+            "prompt",
+            "exposed_assets",
+            "exposed_payload_sha256",
+            "isolation_receipt_sha256",
+            "generator_tools",
+            "target_access_test",
+            "status"
+          ]
+        }
+      ]
+    },
+    "sealed_before_generation": {
+      "type": "boolean"
+    },
+    "target_geometry_exposed": {
+      "type": "boolean"
+    }
+  },
+  "required": [
+    "version",
+    "sample_id",
+    "task",
+    "generator_input",
+    "hidden_target",
+    "candidate",
+    "evaluation",
+    "run",
+    "sealed_before_generation",
+    "target_geometry_exposed"
+  ]
+}

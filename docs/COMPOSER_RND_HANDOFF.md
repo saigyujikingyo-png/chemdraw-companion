@@ -1,6 +1,6 @@
-# Quality Oracle + Gold Correction Corpus: active handoff
+# Paired mechanism corpus and blind reconstruction: active handoff
 
-Effective 13 September 2026. This is the active successor to the Composer R&D / Dataset Phase. Read DEVELOPMENT_PRINCIPLES.md, CHEMBRIDGE.md, CLOUD_STORAGE.md, QUALITY_ORACLE_V1.md, GOLD_CORRECTION_CORPUS_V1.md and GOLD_SILVER_HOLDOUT_V1.md.
+Effective 13 September 2026. Issue #2 advances the Quality Oracle / Gold Correction phase into actual external-source acquisition and blind reconstruction. Read DEVELOPMENT_PRINCIPLES.md, CHEMBRIDGE.md, CLOUD_STORAGE.md, QUALITY_ORACLE_V1.md, GOLD_CORRECTION_CORPUS_V1.md and GOLD_SILVER_HOLDOUT_V1.md.
 
 ## Current state
 
@@ -10,12 +10,24 @@ Two trust-boundary aspects of the existing P2 remain in that implementation: cal
 
 The private pilot archive has now been independently received and verified: 38/38 native outputs and 507/507 content-manifest members match their hashes. The [native receipt addendum](reviews/2026-09-13-c92a918-native-receipt.md) closes the earlier transfer gap. Stored edit/readback replay is consistent, but final native visual quality still fails; this is not a new native run or Quality Oracle v1 integration. Keep raw assets private and preserve the closed experiment.
 
-## Work order
+The [Issue #2 execution receipt](reviews/2026-09-13-issue2-paired-pilot.md) records twelve real native target pairs, two authorized PNG-only Terra max calls, partial semantic recovery and the actual runtime rejection of Br/K. The latest 402a31e generic entry was independently executed with the same request and failed at the same semantic guard; its private 80-file synthetic-control package was also received and checked. No candidate native render or blind correction delta exists. Prioritize general IR compilation/depiction and native visual integration before bulk corpus expansion.
+
+## Current Issue #2 order
+
+1. Preserve the accepted R&D history and independent quality gates. Read PAIRED_MECHANISM_CORPUS_SURVEY.md, BLIND_RECONSTRUCTION_PROTOCOL_V1.md, DATA_LEAKAGE_FIREWALL_V1.md and AUTOMATIC_TARGET_COMPARISON_V1.md.
+2. Use bounded real external author assets and hash-bound provenance. Unknown redistribution does not prevent authorized internal research; raw originals remain private.
+3. Freeze the native PNG and hide CDX/CDXML/readback/IDs/geometry from a new, actually isolated no-tools model context. Keep Task A PNG reconstruction separate from Task B blind composition.
+4. Preserve every real failure. Transparent native PNG display normalization must be deterministic, hash-bound and geometry-preserving; it is not a native layout repair. A different exposed PNG starts a new recorded run.
+5. Reuse the existing runtime IR, generic Composer and native adapter. H/C/N/O support is narrower than schema syntax; unsupported atoms, chemical accounting or lone-pair states must fail explicitly, never be removed to fit the implementation.
+6. Require fresh PID/HWND-bound instances for independent disk reopening. Same-process Close/Open may return cached COM identity; old matching snapshots alone are insufficient. Keep native field drift and warning records.
+7. Join hidden target and candidate only in the evaluator. Report independent chemical/object/geometry/native visual results, typed silver correction signals and unmeasured fields. The execution receipt determines progress; no unit-test total confers project acceptance.
+
+## Predecessor work order (historical context)
 
 1. Establish trustworthy reference custody, native-render provenance, complete object inventory and measurable visual signals. Keep chemical correctness, native editability, visual quality and human acceptance separate.
 2. Evaluate eight independent metric families and adversarial controls. Use final native ink, separately supplied reference geometry and a versioned policy. Never expand all tolerances, move the expected target toward a bad arrow or add measured head extension to the port acceptance threshold.
 3. Validate the gold correction schema and immutable first/final evidence. Record full object correspondence, typed deltas, source/rights, actual active human correction time and separate real reviews. Synthetic controls and AI annotations confer no gold status.
-4. Only after the evidence workflow is usable, establish a small high-value set: pilot five, coverage ten, working target thirty within a 20-50 range. This is a selection strategy, not samples already acquired. The current task does not collect, scrape or train.
+4. Only after the evidence workflow is usable, establish a small high-value set: pilot five, coverage ten, working target thirty within a 20-50 range. This is a selection strategy, not samples already acquired. That previous task did not collect or train. Issue #2 now authorizes bounded source acquisition and internal experiments; learned-model training remains prohibited.
 5. On the implementation branch, a later scoped integration must adopt the calibration guards and native exporter/extractor contracts, then demonstrate current native results. No prototype test substitutes for that integration or for human acceptance.
 
 ## M1/M2 policy change

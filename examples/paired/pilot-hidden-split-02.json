@@ -1,0 +1,164 @@
+{
+  "version": "paired-hidden-split/1.0",
+  "sample_id": "flynn-aldol-055-attempt-02",
+  "task": "A_png_reconstruction",
+  "generator_input": [
+    {
+      "role": "reference_png",
+      "relative_locator": "firewall/blind-inference-02/generator_input/reference.png",
+      "sha256": "0f0fc8449049e785c4387f1908e9ddd78efeebd016d3c4254343fbee606f3538",
+      "bytes": 102005,
+      "media_type": "image/png"
+    },
+    {
+      "role": "runtime_ir_schema",
+      "relative_locator": "firewall/blind-inference-02/generator_input/mechanism-ir.schema.json",
+      "sha256": "619e46a20c20e9e5906b2298041379a8a832e310632a8a6bdc05d9174e7b2d2c",
+      "bytes": 12470,
+      "media_type": "application/schema+json"
+    }
+  ],
+  "hidden_target": [
+    {
+      "role": "target_cdx",
+      "relative_locator": "native-target-55-attempt1/native.cdx",
+      "sha256": "2aec591006d2e8e85e0e358ffdafdb0a1426dd9db8297258d0e06da2a79a6b6c",
+      "bytes": 7216,
+      "media_type": "chemical/x-cdx"
+    },
+    {
+      "role": "target_cdxml",
+      "relative_locator": "native-target-55-attempt1/native.cdxml",
+      "sha256": "bda51fbeec5a8348466de19c71d402cb0a207b8aca941547b2d1691e81ec13ce",
+      "bytes": 16167,
+      "media_type": "text/xml"
+    },
+    {
+      "role": "native_reference_png",
+      "relative_locator": "native-target-55-attempt1/native.png",
+      "sha256": "9c501f09c5ca98389cb970038dab84306356667ca43197894cbaa097075ebf27",
+      "bytes": 85697,
+      "media_type": "image/png"
+    },
+    {
+      "role": "target_readback",
+      "relative_locator": "native-target-55-attempt1/events.jsonl",
+      "sha256": "05d315e5459c37132d25aaf6af77717924d23d2ce460a9e3260478957811f6b2",
+      "bytes": 38262,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "role": "target_inventory",
+      "relative_locator": "native-target-55-attempt1/native.cdxml",
+      "sha256": "bda51fbeec5a8348466de19c71d402cb0a207b8aca941547b2d1691e81ec13ce",
+      "bytes": 16167,
+      "media_type": "text/xml"
+    },
+    {
+      "role": "target_geometry",
+      "relative_locator": "native-target-55-attempt1/native.cdxml",
+      "sha256": "bda51fbeec5a8348466de19c71d402cb0a207b8aca941547b2d1691e81ec13ce",
+      "bytes": 16167,
+      "media_type": "text/xml"
+    }
+  ],
+  "candidate": [
+    {
+      "role": "candidate_ir",
+      "relative_locator": "firewall/blind-inference-02/candidate/candidate.ir.json",
+      "sha256": "093048ab3fb1f5e3a92f2fe41b25b567d7c205550cdf1bcf64cde59197577efc",
+      "bytes": 12886,
+      "media_type": "application/json"
+    },
+    {
+      "role": "raw_model_response",
+      "relative_locator": "firewall/blind-inference-02/candidate/response.sse",
+      "sha256": "8bfa3713a58266f801a6b9cfc5b97aecf81ba4533ffc7b4e649b37c15c74b393",
+      "bytes": 1403768,
+      "media_type": "text/event-stream"
+    }
+  ],
+  "evaluation": [
+    {
+      "role": "model_request_packet",
+      "relative_locator": "firewall/blind-inference-02/candidate/projected-request.json",
+      "sha256": "5480ef1b2625773422f7a020187e9709fd28a6d000a66345c37757ed9e78147f",
+      "bytes": 143508,
+      "media_type": "application/json"
+    },
+    {
+      "role": "isolation_receipt",
+      "relative_locator": "firewall/final-os-probe/receipt.json",
+      "sha256": "62e7fe9d16c84b603758837c906693f8041c6eeda99a6de82d80061651092e92",
+      "bytes": 5246,
+      "media_type": "application/json"
+    },
+    {
+      "role": "generator_receipt",
+      "relative_locator": "firewall/blind-inference-02/candidate/generator-receipt.json",
+      "sha256": "7931bbde3b8704426ea44607d9565c389daa1cd04a56cc65b4c166a1d8112df8",
+      "bytes": 18750,
+      "media_type": "application/json"
+    },
+    {
+      "role": "generator_operator_receipt",
+      "relative_locator": "firewall/blind-inference-02/operator-receipt.json",
+      "sha256": "4ea22ea5fb6e1bdfcba99976a3f10407717be1eb22573095555dedcac8cb8732",
+      "bytes": 11823,
+      "media_type": "application/json"
+    },
+    {
+      "role": "operator_seal_addendum",
+      "relative_locator": "firewall/blind-inference-02/operator-seal-addendum.json",
+      "sha256": "ec2abab720dc0eeec561939a636ad34d00d798050c88489161fd509f46b9ed85",
+      "bytes": 3023,
+      "media_type": "application/json"
+    },
+    {
+      "role": "display_transformation",
+      "relative_locator": "reference-display-normalized/normalization-receipt.json",
+      "sha256": "c060f43ce373a7290f9401aa662a5dfa8f363eed110cd58d17fce650ec47b620",
+      "bytes": 578,
+      "media_type": "application/json"
+    },
+    {
+      "role": "display_pixel_equivalence",
+      "relative_locator": "reference-display-normalized/pixel-equivalence.json",
+      "sha256": "c1b57b48326d8b34d62eb1747eae4888e10564e4c98c29d102e206afff30b712",
+      "bytes": 628,
+      "media_type": "application/json"
+    }
+  ],
+  "sealed_before_generation": true,
+  "target_geometry_exposed": false,
+  "run": {
+    "run_id": "blind-inference-02",
+    "timestamp": "2026-09-13T11:00:08.424572+00:00",
+    "task": "A_png_reconstruction",
+    "requested_model": "gpt-5.6-terra",
+    "actual_model": "gpt-5.6-terra",
+    "reasoning_effort": "max",
+    "prompt": "Interpret the supplied chemistry diagram and produce the requested JSON representation.\n\nReconstruct the chemistry visible in the attached diagram as Mechanism IR JSON conforming to the supplied schema. Recover the visible molecular graphs, states, transitions, charges, lone pairs and electron-flow semantics. Use fresh opaque identifiers. Base chemical content only on the image; do not invent invisible structures. Return the IR JSON only. Do not return CDXML, drawing coordinates or an explanation.\n\nMechanism IR JSON schema:\n{\"$id\": \"https://chembridge.invalid/contracts/mechanism-ir.schema.json\", \"$schema\": \"https://json-schema.org/draft/2020-12/schema\", \"additionalProperties\": false, \"description\": \"No fixture identity, answer key, fixed state counts or layout coordinates. Semantic support requires independent verification. Array bounds are resource limits, not state-count algorithms.\", \"properties\": {\"atom_catalog\": {\"items\": {\"additionalProperties\": false, \"properties\": {\"element\": {\"description\": \"Syntax only; semantic validation must check the element and actual backend support.\", \"pattern\": \"^[A-Z][a-z]?$\", \"type\": \"string\"}, \"implicit_h\": {\"maximum\": 4, \"minimum\": 0, \"type\": \"integer\"}, \"map\": {\"minimum\": 1, \"type\": \"integer\"}}, \"required\": [\"map\", \"element\", \"implicit_h\"], \"type\": \"object\"}, \"maxItems\": 200, \"minItems\": 1, \"type\": \"array\"}, \"entry_state\": {\"maxLength\": 128, \"minLength\": 1, \"type\": \"string\"}, \"ir_version\": {\"const\": \"mechanism-ir/0.1\"}, \"states\": {\"items\": {\"additionalProperties\": false, \"properties\": {\"bonds\": {\"items\": {\"additionalProperties\": false, \"properties\": {\"atoms\": {\"items\": {\"minimum\": 1, \"type\": \"integer\"}, \"maxItems\": 2, \"minItems\": 2, \"type\": \"array\", \"uniqueItems\": true}, \"order\": {\"enum\": [1, 1.5, 2, 3]}}, \"required\": [\"atoms\", \"order\"], \"type\": \"object\"}, \"maxItems\": 200, \"minItems\": 1, \"type\": \"array\"}, \"formal_charges\": {\"items\": {\"additionalProperties\": false, \"properties\": {\"atom\": {\"minimum\": 1, \"type\": \"integer\"}, \"value\": {\"maximum\": 3, \"minimum\": -3, \"type\": \"integer\"}}, \"required\": [\"atom\", \"value\"], \"type\": \"object\"}, \"maxItems\": 30, \"minItems\": 0, \"type\": \"array\"}, \"id\": {\"maxLength\": 128, \"minLength\": 1, \"type\": \"string\"}, \"label\": {\"maxLength\": 2048, \"minLength\": 1, \"type\": \"string\"}, \"lone_pairs\": {\"items\": {\"additionalProperties\": false, \"properties\": {\"atom\": {\"minimum\": 1, \"type\": \"integer\"}, \"count\": {\"maximum\": 4, \"minimum\": 0, \"type\": \"integer\"}}, \"required\": [\"atom\", \"count\"], \"type\": \"object\"}, \"maxItems\": 30, \"minItems\": 0, \"type\": \"array\"}}, \"required\": [\"id\", \"label\", \"formal_charges\", \"lone_pairs\", \"bonds\"], \"type\": \"object\"}, \"maxItems\": 64, \"minItems\": 2, \"type\": \"array\"}, \"stereo_constraints\": {\"items\": {\"additionalProperties\": false, \"properties\": {\"central_bond\": {\"items\": {\"minimum\": 1, \"type\": \"integer\"}, \"maxItems\": 2, \"minItems\": 2, \"type\": \"array\", \"uniqueItems\": true}, \"states\": {\"items\": {\"maxLength\": 128, \"minLength\": 1, \"type\": \"string\"}, \"maxItems\": 64, \"minItems\": 1, \"type\": \"array\"}, \"substituent_atoms\": {\"items\": {\"minimum\": 1, \"type\": \"integer\"}, \"maxItems\": 2, \"minItems\": 2, \"type\": \"array\", \"uniqueItems\": true}, \"type\": {\"enum\": [\"anti_across_double_bond\", \"syn_across_double_bond\"]}}, \"required\": [\"type\", \"states\", \"central_bond\", \"substituent_atoms\"], \"type\": \"object\"}, \"maxItems\": 10, \"minItems\": 0, \"type\": \"array\"}, \"transitions\": {\"items\": {\"additionalProperties\": false, \"properties\": {\"bond_changes\": {\"items\": {\"additionalProperties\": false, \"properties\": {\"atoms\": {\"items\": {\"minimum\": 1, \"type\": \"integer\"}, \"maxItems\": 2, \"minItems\": 2, \"type\": \"array\", \"uniqueItems\": true}, \"from_order\": {\"enum\": [0, 1, 1.5, 2, 3]}, \"to_order\": {\"enum\": [0, 1, 1.5, 2, 3]}}, \"required\": [\"atoms\", \"from_order\", \"to_order\"], \"type\": \"object\"}, \"maxItems\": 20, \"minItems\": 1, \"type\": \"array\"}, \"charge_changes\": {\"items\": {\"additionalProperties\": false, \"properties\": {\"atom\": {\"minimum\": 1, \"type\": \"integer\"}, \"from\": {\"type\": \"integer\"}, \"to\": {\"type\": \"integer\"}}, \"required\": [\"atom\", \"from\", \"to\"], \"type\": \"object\"}, \"maxItems\": 10, \"minItems\": 0, \"type\": \"array\"}, \"electron_flows\": {\"items\": {\"additionalProperties\": false, \"properties\": {\"electron_count\": {\"const\": 2}, \"id\": {\"maxLength\": 128, \"minLength\": 1, \"type\": \"string\"}, \"source\": {\"oneOf\": [{\"additionalProperties\": false, \"properties\": {\"atom\": {\"minimum\": 1, \"type\": \"integer\"}, \"pair_index\": {\"maximum\": 3, \"minimum\": 0, \"type\": \"integer\"}, \"type\": {\"const\": \"lone_pair\"}}, \"required\": [\"type\", \"atom\", \"pair_index\"], \"type\": \"object\"}, {\"additionalProperties\": false, \"properties\": {\"atoms\": {\"items\": {\"minimum\": 1, \"type\": \"integer\"}, \"maxItems\": 2, \"minItems\": 2, \"type\": \"array\", \"uniqueItems\": true}, \"electrons\": {\"enum\": [\"sigma\", \"pi\"]}, \"type\": {\"const\": \"bond\"}}, \"required\": [\"type\", \"atoms\", \"electrons\"], \"type\": \"object\"}]}, \"target\": {\"oneOf\": [{\"additionalProperties\": false, \"properties\": {\"atom\": {\"minimum\": 1, \"type\": \"integer\"}, \"type\": {\"const\": \"atom\"}}, \"required\": [\"type\", \"atom\"], \"type\": \"object\"}, {\"additionalProperties\": false, \"properties\": {\"atoms\": {\"items\": {\"minimum\": 1, \"type\": \"integer\"}, \"maxItems\": 2, \"minItems\": 2, \"type\": \"array\", \"uniqueItems\": true}, \"type\": {\"const\": \"bond\"}}, \"required\": [\"type\", \"atoms\"], \"type\": \"object\"}]}}, \"required\": [\"id\", \"electron_count\", \"source\", \"target\"], \"type\": \"object\"}, \"maxItems\": 32, \"minItems\": 1, \"type\": \"array\"}, \"from\": {\"maxLength\": 128, \"minLength\": 1, \"type\": \"string\"}, \"id\": {\"maxLength\": 128, \"minLength\": 1, \"type\": \"string\"}, \"kind\": {\"enum\": [\"elementary_step\", \"elementary_teaching_step\"]}, \"label\": {\"maxLength\": 2048, \"minLength\": 1, \"type\": \"string\"}, \"to\": {\"maxLength\": 128, \"minLength\": 1, \"type\": \"string\"}}, \"required\": [\"id\", \"from\", \"to\", \"label\", \"kind\", \"electron_flows\", \"bond_changes\", \"charge_changes\"], \"type\": \"object\"}, \"maxItems\": 128, \"minItems\": 1, \"type\": \"array\"}}, \"required\": [\"ir_version\", \"atom_catalog\", \"states\", \"transitions\", \"stereo_constraints\", \"entry_state\"], \"title\": \"Reaction-neutral mechanism IR syntax, draft 0.1\", \"type\": \"object\"}",
+    "exposed_assets": [
+      {
+        "role": "reference_png",
+        "relative_locator": "firewall/blind-inference-02/generator_input/reference.png",
+        "sha256": "0f0fc8449049e785c4387f1908e9ddd78efeebd016d3c4254343fbee606f3538",
+        "bytes": 102005,
+        "media_type": "image/png"
+      },
+      {
+        "role": "runtime_ir_schema",
+        "relative_locator": "firewall/blind-inference-02/generator_input/mechanism-ir.schema.json",
+        "sha256": "619e46a20c20e9e5906b2298041379a8a832e310632a8a6bdc05d9174e7b2d2c",
+        "bytes": 12470,
+        "media_type": "application/schema+json"
+      }
+    ],
+    "exposed_payload_sha256": "5480ef1b2625773422f7a020187e9709fd28a6d000a66345c37757ed9e78147f",
+    "isolation_receipt_sha256": "62e7fe9d16c84b603758837c906693f8041c6eeda99a6de82d80061651092e92",
+    "generator_tools": [],
+    "target_access_test": "pass",
+    "status": "completed"
+  }
+}

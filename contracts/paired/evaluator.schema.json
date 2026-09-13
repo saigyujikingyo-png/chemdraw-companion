@@ -1,0 +1,279 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://chembridge.invalid/contracts/paired/evaluator.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "version": {
+      "const": "paired-evaluation/1.0"
+    },
+    "target_sha256": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "candidate_sha256": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "gates": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "chemical_correctness": {
+          "const": "unmeasured"
+        },
+        "native_editability": {
+          "const": "unmeasured"
+        },
+        "visual_quality": {
+          "const": "unmeasured"
+        },
+        "human_acceptance": {
+          "const": "unmeasured"
+        }
+      },
+      "required": [
+        "chemical_correctness",
+        "native_editability",
+        "visual_quality",
+        "human_acceptance"
+      ]
+    },
+    "semantic": {
+      "type": "object",
+      "required": [
+        "status"
+      ]
+    },
+    "objects": {
+      "type": "object",
+      "required": [
+        "status"
+      ]
+    },
+    "geometry": {
+      "type": "object",
+      "required": [
+        "status"
+      ]
+    },
+    "native_visual": {
+      "type": "object",
+      "required": [
+        "status"
+      ]
+    },
+    "correction": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "version": {
+          "const": "paired-correction-deltas/1.0"
+        },
+        "tier": {
+          "const": "silver"
+        },
+        "actual_gold": {
+          "const": false
+        },
+        "direction": {
+          "const": "candidate_to_target"
+        },
+        "target_sha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "candidate_sha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "deltas": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "kind": {
+                "enum": [
+                  "fragment_translation",
+                  "fragment_rotation",
+                  "atom_displacement",
+                  "lp_displacement",
+                  "lp_angular",
+                  "charge_displacement",
+                  "caption_displacement",
+                  "arrow_source_anchor",
+                  "arrow_target_anchor",
+                  "control_point",
+                  "curve_shape",
+                  "step_spacing"
+                ]
+              },
+              "target_id": {
+                "type": "string",
+                "minLength": 1
+              },
+              "candidate_id": {
+                "type": "string",
+                "minLength": 1
+              },
+              "value": {
+                "type": [
+                  "number",
+                  "array",
+                  "object",
+                  "null"
+                ]
+              },
+              "unit": {
+                "enum": [
+                  "CDXML points",
+                  "radians"
+                ]
+              },
+              "frame": {
+                "enum": [
+                  "candidate_to_target_global_rigid",
+                  "candidate_centroid_to_target_centroid",
+                  "unaligned_native_global"
+                ]
+              }
+            },
+            "required": [
+              "kind",
+              "target_id",
+              "candidate_id",
+              "value",
+              "unit",
+              "frame"
+            ],
+            "allOf": [
+              {
+                "if": {
+                  "properties": {
+                    "kind": {
+                      "enum": [
+                        "fragment_rotation",
+                        "lp_angular"
+                      ]
+                    }
+                  }
+                },
+                "then": {
+                  "properties": {
+                    "value": {
+                      "type": [
+                        "number",
+                        "null"
+                      ]
+                    },
+                    "unit": {
+                      "const": "radians"
+                    }
+                  }
+                }
+              },
+              {
+                "if": {
+                  "properties": {
+                    "kind": {
+                      "enum": [
+                        "fragment_translation",
+                        "atom_displacement",
+                        "lp_displacement",
+                        "charge_displacement",
+                        "caption_displacement",
+                        "arrow_source_anchor",
+                        "arrow_target_anchor"
+                      ]
+                    }
+                  }
+                },
+                "then": {
+                  "properties": {
+                    "value": {
+                      "type": "array",
+                      "minItems": 2,
+                      "maxItems": 2,
+                      "items": {
+                        "type": "number"
+                      }
+                    },
+                    "unit": {
+                      "const": "CDXML points"
+                    }
+                  }
+                }
+              },
+              {
+                "if": {
+                  "properties": {
+                    "kind": {
+                      "enum": [
+                        "control_point",
+                        "curve_shape",
+                        "step_spacing"
+                      ]
+                    }
+                  }
+                },
+                "then": {
+                  "properties": {
+                    "value": {
+                      "type": "null"
+                    }
+                  },
+                  "description": "Reserved; executable v1 rejects emission until implemented and correspondence is qualified."
+                }
+              }
+            ]
+          }
+        },
+        "unmeasured_kinds": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "human_active_seconds": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0
+        }
+      },
+      "required": [
+        "version",
+        "tier",
+        "actual_gold",
+        "direction",
+        "target_sha256",
+        "candidate_sha256",
+        "deltas",
+        "unmeasured_kinds",
+        "human_active_seconds"
+      ]
+    },
+    "limits": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    }
+  },
+  "required": [
+    "version",
+    "target_sha256",
+    "candidate_sha256",
+    "gates",
+    "semantic",
+    "objects",
+    "geometry",
+    "native_visual",
+    "correction",
+    "limits"
+  ]
+}
