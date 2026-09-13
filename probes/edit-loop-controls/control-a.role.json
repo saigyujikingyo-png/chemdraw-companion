@@ -1,0 +1,11 @@
+{
+  "role": "ordinary independent workflow-control A, authored before native execution",
+  "source": "control-a.cdxml",
+  "original_synthetic": true,
+  "not_benchmark_or_mechanism_qualification": true,
+  "conditions_text": "NaH, THF\n0 °C, 20 min",
+  "other_objects": "Two molecular fragments, their atom-owned labels, one main reaction arrow and an unrelated italic note. These are protected objects.",
+  "allowed_edit": "Move only the conditions caption; preserve every text run and font property.",
+  "selection": "The agent must choose from live native objects and preview. This role file is not consumed by the tool and IDs/layout are not hardcoded in its algorithm.",
+  "control_b": "Authored independently by the controller; not included or read here."
+}

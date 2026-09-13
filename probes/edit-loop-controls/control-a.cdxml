@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE CDXML SYSTEM "http://www.cambridgesoft.com/xml/cdxml.dtd">
+<CDXML BondLength="18" LineWidth="0.6" BoldWidth="2" CaptionFont="3" CaptionSize="12" LabelFont="3" LabelSize="10">
+  <fonttable><font id="3" charset="iso-8859-1" name="Arial"/></fonttable>
+  <page id="7100" BoundingBox="0 0 480 300" WidthPages="1" HeightPages="1">
+    <fragment id="7110"><n id="7111" p="75 165"/><n id="7112" p="90.59 156"/><n id="7113" p="106.18 165" Element="8"><t id="7114" p="102 168"><s font="3" size="10">OH</s></t></n><b id="7115" B="7111" E="7112"/><b id="7116" B="7112" E="7113"/></fragment>
+    <fragment id="7120"><n id="7121" p="333 165"/><n id="7122" p="348.59 156"/><n id="7123" p="364.18 165" Element="8"><t id="7124" p="360 168"><s font="3" size="10">O</s></t></n><n id="7125" p="379.77 156"/><b id="7126" B="7121" E="7122"/><b id="7127" B="7122" E="7123"/><b id="7128" B="7123" E="7125"/></fragment>
+    <arrow id="7130" Tail3D="155 162 0" Head3D="294 162 0" ArrowheadHead="Full" ArrowheadType="Solid" HeadSize="900" ArrowheadWidth="250"/>
+    <t id="7140" p="124 214"><s font="3" size="12" face="1">NaH, THF</s><s font="3" size="12">&#10;0 °C, 20 min</s></t>
+    <t id="7150" p="65 61"><s font="3" size="10" face="2">Workflow control A</s></t>
+  </page>
+</CDXML>
