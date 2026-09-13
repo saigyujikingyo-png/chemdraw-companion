@@ -1,0 +1,374 @@
+{
+  "derivative_notice": "Sanitized copy; original private source remains unchanged.",
+  "original_sha256": "237ea12bd645d281f32e3fcda7797c6d50c0ca7cff888886f443786c171d6a8c",
+  "record": {
+    "version": "agent-edit-loop-final-static-verification/0.1",
+    "role": "independent_non_native_verification",
+    "status": "PASS_SCOPED_STATIC_CHECKS",
+    "started_utc": "2026-09-13T19:24:15.375793+00:00",
+    "completed_utc": "2026-09-13T19:24:15.792838+00:00",
+    "exact_source_commit": "b9363abfce19481d33e8d6409cb3d8d7dd477310",
+    "source_manifest": {
+      "file": "<stage>\\source-b9363ab\\source-manifest.json",
+      "before": {
+        "bytes": 2124,
+        "sha256": "f2063ad84fce6c3dd5cd66519d4031cc58d9c44e9238fdac42e0d820a8770963"
+      },
+      "after": {
+        "bytes": 2124,
+        "sha256": "f2063ad84fce6c3dd5cd66519d4031cc58d9c44e9238fdac42e0d820a8770963"
+      }
+    },
+    "focused_tests": {
+      "command": [
+        "<user>\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+        "-B",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "<stage>\\source-b9363ab\\tests",
+        "-p",
+        "test_edit_loop_associations.py",
+        "-v"
+      ],
+      "cwd": "<stage>\\source-b9363ab",
+      "python": "<user>\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+      "execution_count": 1,
+      "started_utc": "2026-09-13T19:24:15.658616+00:00",
+      "completed_utc": "2026-09-13T19:24:15.782773+00:00",
+      "elapsed_seconds": 0.125,
+      "exit_code": 0,
+      "actual_test_count": 6,
+      "results": [
+        {
+          "name": "test_ambiguous_selected_step_refuses",
+          "test_id": "test_edit_loop_associations.DerivedAssociationChecks.test_ambiguous_selected_step_refuses",
+          "result": "ok"
+        },
+        {
+          "name": "test_arrow_atommap_and_reactants_changes_refuse",
+          "test_id": "test_edit_loop_associations.DerivedAssociationChecks.test_arrow_atommap_and_reactants_changes_refuse",
+          "result": "ok"
+        },
+        {
+          "name": "test_initial_stereo_only_missing_to_N_and_not_arbitrary_atom_changes",
+          "test_id": "test_edit_loop_associations.DerivedAssociationChecks.test_initial_stereo_only_missing_to_N_and_not_arbitrary_atom_changes",
+          "result": "ok"
+        },
+        {
+          "name": "test_only_target_add_remove_pass_with_exact_receipt",
+          "test_id": "test_edit_loop_associations.DerivedAssociationChecks.test_only_target_add_remove_pass_with_exact_receipt",
+          "result": "ok"
+        },
+        {
+          "name": "test_other_ids_order_duplicate_target_and_other_steps_refuse",
+          "test_id": "test_edit_loop_associations.DerivedAssociationChecks.test_other_ids_order_duplicate_target_and_other_steps_refuse",
+          "result": "ok"
+        },
+        {
+          "name": "test_root_window_size_is_recorded_but_object_geometry_and_style_stay_strict",
+          "test_id": "test_edit_loop_associations.DerivedAssociationChecks.test_root_window_size_is_recorded_but_object_geometry_and_style_stay_strict",
+          "result": "ok"
+        }
+      ],
+      "passed": true,
+      "rawlog": {
+        "file": "final-static-tests.raw.log",
+        "bytes": 1167,
+        "sha256": "47f8a1046a92aa493ba4dffa7e473acd534a4ff48d81fbe85ea7fc04a8b03e26"
+      }
+    },
+    "four_call_chain_sources": [
+      {
+        "file": "probes/native_edit_loop.py",
+        "before": {
+          "bytes": 23752,
+          "sha256": "c4cc5068f5be6986f17079cc147bc0c6406cdae4ec79ca125e875fcd9b048515"
+        },
+        "expected_manifest": {
+          "bytes": 23752,
+          "sha256": "c4cc5068f5be6986f17079cc147bc0c6406cdae4ec79ca125e875fcd9b048515"
+        },
+        "git_blob_sha256": "c4cc5068f5be6986f17079cc147bc0c6406cdae4ec79ca125e875fcd9b048515",
+        "git_blob_bytes": 23752,
+        "frozen_matches_git_and_manifest": true,
+        "after": {
+          "bytes": 23752,
+          "sha256": "c4cc5068f5be6986f17079cc147bc0c6406cdae4ec79ca125e875fcd9b048515"
+        },
+        "unchanged": true
+      },
+      {
+        "file": "probes/native-edit-loop.ps1",
+        "before": {
+          "bytes": 22973,
+          "sha256": "e198319ebc052f7cd5375b70b36d99c66974b17a6ab65e7a4c177ab6c9fda332"
+        },
+        "expected_manifest": {
+          "bytes": 22973,
+          "sha256": "e198319ebc052f7cd5375b70b36d99c66974b17a6ab65e7a4c177ab6c9fda332"
+        },
+        "git_blob_sha256": "e198319ebc052f7cd5375b70b36d99c66974b17a6ab65e7a4c177ab6c9fda332",
+        "git_blob_bytes": 22973,
+        "frozen_matches_git_and_manifest": true,
+        "after": {
+          "bytes": 22973,
+          "sha256": "e198319ebc052f7cd5375b70b36d99c66974b17a6ab65e7a4c177ab6c9fda332"
+        },
+        "unchanged": true
+      },
+      {
+        "file": "probes/native-common.ps1",
+        "before": {
+          "bytes": 1431,
+          "sha256": "0fe06575b88a8f2b14f6f3937dd72d2f2709b146564ac2e17b80b3b0ab01655f"
+        },
+        "expected_manifest": {
+          "bytes": 1431,
+          "sha256": "0fe06575b88a8f2b14f6f3937dd72d2f2709b146564ac2e17b80b3b0ab01655f"
+        },
+        "git_blob_sha256": "0fe06575b88a8f2b14f6f3937dd72d2f2709b146564ac2e17b80b3b0ab01655f",
+        "git_blob_bytes": 1431,
+        "frozen_matches_git_and_manifest": true,
+        "after": {
+          "bytes": 1431,
+          "sha256": "0fe06575b88a8f2b14f6f3937dd72d2f2709b146564ac2e17b80b3b0ab01655f"
+        },
+        "unchanged": true
+      },
+      {
+        "file": "probes/NativeChemDraw.cs",
+        "before": {
+          "bytes": 7874,
+          "sha256": "52eb2fe1e66d9b13aba84dfba010959ddcb8fcf6109b919a498324400681b73c"
+        },
+        "expected_manifest": {
+          "bytes": 7874,
+          "sha256": "52eb2fe1e66d9b13aba84dfba010959ddcb8fcf6109b919a498324400681b73c"
+        },
+        "git_blob_sha256": "52eb2fe1e66d9b13aba84dfba010959ddcb8fcf6109b919a498324400681b73c",
+        "git_blob_bytes": 7874,
+        "frozen_matches_git_and_manifest": true,
+        "after": {
+          "bytes": 7874,
+          "sha256": "52eb2fe1e66d9b13aba84dfba010959ddcb8fcf6109b919a498324400681b73c"
+        },
+        "unchanged": true
+      }
+    ],
+    "focused_test_source": {
+      "file": "tests/test_edit_loop_associations.py",
+      "before": {
+        "bytes": 5371,
+        "sha256": "d42ca2f93e279f495f57099efe1831c248b40fc20206e3010986d9e71fdaf70a"
+      },
+      "expected_manifest": {
+        "bytes": 5371,
+        "sha256": "d42ca2f93e279f495f57099efe1831c248b40fc20206e3010986d9e71fdaf70a"
+      },
+      "git_blob_sha256": "d42ca2f93e279f495f57099efe1831c248b40fc20206e3010986d9e71fdaf70a",
+      "git_blob_bytes": 5371,
+      "frozen_matches_git_and_manifest": true,
+      "after": {
+        "bytes": 5371,
+        "sha256": "d42ca2f93e279f495f57099efe1831c248b40fc20206e3010986d9e71fdaf70a"
+      },
+      "unchanged": true
+    },
+    "baseline": {
+      "file": "<stage>\\baseline.json",
+      "before": {
+        "bytes": 2144,
+        "sha256": "2ef5262457f9d8ce7a1c90668b8701803c1726792cd658cecbb0b4cdecc9a6c4"
+      },
+      "after": {
+        "bytes": 2144,
+        "sha256": "2ef5262457f9d8ce7a1c90668b8701803c1726792cd658cecbb0b4cdecc9a6c4"
+      },
+      "unchanged": true
+    },
+    "historical_receipts": [
+      {
+        "file": "docs/NATIVE_SEMANTIC_PHASE_RECEIPT.md",
+        "expected": {
+          "bytes": 6393,
+          "sha256": "1456ec611dac62edd3875659c1f0e8f22f08eb7dcc5a0b94518298860c163266"
+        },
+        "before": {
+          "bytes": 6393,
+          "sha256": "1456ec611dac62edd3875659c1f0e8f22f08eb7dcc5a0b94518298860c163266"
+        },
+        "after": {
+          "bytes": 6393,
+          "sha256": "1456ec611dac62edd3875659c1f0e8f22f08eb7dcc5a0b94518298860c163266"
+        },
+        "matches_baseline": true,
+        "unchanged_during_check": true
+      },
+      {
+        "file": "docs/IR_V0_2_PHASE_RECEIPT.md",
+        "expected": {
+          "bytes": 31693,
+          "sha256": "5ac93124bc40993e4151f24e0badc168d911fca560dcdb9d82860684dd163512"
+        },
+        "before": {
+          "bytes": 31693,
+          "sha256": "5ac93124bc40993e4151f24e0badc168d911fca560dcdb9d82860684dd163512"
+        },
+        "after": {
+          "bytes": 31693,
+          "sha256": "5ac93124bc40993e4151f24e0badc168d911fca560dcdb9d82860684dd163512"
+        },
+        "matches_baseline": true,
+        "unchanged_during_check": true
+      },
+      {
+        "file": ".local/ir-v02-phase/native-attempt-01-independent.json",
+        "expected": {
+          "bytes": 4159,
+          "sha256": "6e1c13e687c483464db91c36ee093a3f028e12f27df18dd86b190542b025163e"
+        },
+        "before": {
+          "bytes": 4159,
+          "sha256": "6e1c13e687c483464db91c36ee093a3f028e12f27df18dd86b190542b025163e"
+        },
+        "after": {
+          "bytes": 4159,
+          "sha256": "6e1c13e687c483464db91c36ee093a3f028e12f27df18dd86b190542b025163e"
+        },
+        "matches_baseline": true,
+        "unchanged_during_check": true
+      },
+      {
+        "file": ".local/ir-v02-phase/native-attempt-02-independent.json",
+        "expected": {
+          "bytes": 5309,
+          "sha256": "31ce78ed74ce2c942a78fd6572c40274708e464a8b52f99186f253d0593b8dff"
+        },
+        "before": {
+          "bytes": 5309,
+          "sha256": "31ce78ed74ce2c942a78fd6572c40274708e464a8b52f99186f253d0593b8dff"
+        },
+        "after": {
+          "bytes": 5309,
+          "sha256": "31ce78ed74ce2c942a78fd6572c40274708e464a8b52f99186f253d0593b8dff"
+        },
+        "matches_baseline": true,
+        "unchanged_during_check": true
+      },
+      {
+        "file": ".local/ir-v02-phase/native-attempt-03-independent.json",
+        "expected": {
+          "bytes": 7654,
+          "sha256": "bbb08b8f01f09171df2f37759543ade7e90aa2ec79ab1445e584b2be5abde597"
+        },
+        "before": {
+          "bytes": 7654,
+          "sha256": "bbb08b8f01f09171df2f37759543ade7e90aa2ec79ab1445e584b2be5abde597"
+        },
+        "after": {
+          "bytes": 7654,
+          "sha256": "bbb08b8f01f09171df2f37759543ade7e90aa2ec79ab1445e584b2be5abde597"
+        },
+        "matches_baseline": true,
+        "unchanged_during_check": true
+      },
+      {
+        "file": ".local/native-semantic-readback-20260913/offline-replay-01/offline-replay-receipt.json",
+        "expected": {
+          "bytes": 285124,
+          "sha256": "8395ec70a72fbb22982cd49d270f97d1f7da6b437dc7caf612a2953b666603ef"
+        },
+        "before": {
+          "bytes": 285124,
+          "sha256": "8395ec70a72fbb22982cd49d270f97d1f7da6b437dc7caf612a2953b666603ef"
+        },
+        "after": {
+          "bytes": 285124,
+          "sha256": "8395ec70a72fbb22982cd49d270f97d1f7da6b437dc7caf612a2953b666603ef"
+        },
+        "matches_baseline": true,
+        "unchanged_during_check": true
+      },
+      {
+        "file": ".local/native-semantic-readback-20260913/offline-replay-02/offline-replay-receipt.json",
+        "expected": {
+          "bytes": 239186,
+          "sha256": "d37fd9d55929d557978e7b18966cfcb33899b3ede7ba01af762c60b86e912ce2"
+        },
+        "before": {
+          "bytes": 239186,
+          "sha256": "d37fd9d55929d557978e7b18966cfcb33899b3ede7ba01af762c60b86e912ce2"
+        },
+        "after": {
+          "bytes": 239186,
+          "sha256": "d37fd9d55929d557978e7b18966cfcb33899b3ede7ba01af762c60b86e912ce2"
+        },
+        "matches_baseline": true,
+        "unchanged_during_check": true
+      },
+      {
+        "file": ".local/window-crop-repair-20260913/verification-receipt.json",
+        "expected": {
+          "bytes": 3779,
+          "sha256": "8879bbd07043f9b37e8a77dee6f187cb5a2ffdc902f2a065c7e5706e319ae95e"
+        },
+        "before": {
+          "bytes": 3779,
+          "sha256": "8879bbd07043f9b37e8a77dee6f187cb5a2ffdc902f2a065c7e5706e319ae95e"
+        },
+        "after": {
+          "bytes": 3779,
+          "sha256": "8879bbd07043f9b37e8a77dee6f187cb5a2ffdc902f2a065c7e5706e319ae95e"
+        },
+        "matches_baseline": true,
+        "unchanged_during_check": true
+      }
+    ],
+    "historical_original_files_preserved": true,
+    "control_inputs": [
+      {
+        "control": "A",
+        "file": "<stage>\\source-b9363ab\\probes\\edit-loop-controls\\control-a.cdxml",
+        "before": {
+          "bytes": 1309,
+          "sha256": "e70f6727683d8d68358a8e1531219f220e2543f0187ca4d181443165137813ef"
+        },
+        "after": {
+          "bytes": 1309,
+          "sha256": "e70f6727683d8d68358a8e1531219f220e2543f0187ca4d181443165137813ef"
+        },
+        "expected_sha256": "e70f6727683d8d68358a8e1531219f220e2543f0187ca4d181443165137813ef",
+        "matches_freeze": true
+      },
+      {
+        "control": "B",
+        "file": "<stage>\\independent-control-b\\control-b.cdxml",
+        "before": {
+          "bytes": 2524,
+          "sha256": "7db8f8c259ce8d32d2d839818111ab0632368c9b8b93435a862db0dd3840e697"
+        },
+        "after": {
+          "bytes": 2524,
+          "sha256": "7db8f8c259ce8d32d2d839818111ab0632368c9b8b93435a862db0dd3840e697"
+        },
+        "expected_sha256": "7db8f8c259ce8d32d2d839818111ab0632368c9b8b93435a862db0dd3840e697",
+        "matches_freeze": true
+      }
+    ],
+    "all_checked_originals_unchanged": true,
+    "scope": {
+      "native_or_ui_invoked": false,
+      "protected_payloads_read": false,
+      "historical_files_hashed_without_parsing_contents": true,
+      "source_modified": false,
+      "broad_recursive_scan": false
+    },
+    "limitations": [
+      "Six focused pure XML tests only, not the complete runtime suite or native acceptance.",
+      "Hashes establish preservation of precisely the eight historical paths listed in baseline.json; no claim about unlisted files.",
+      "A/B inputs were hashed only; no native replay, edit, render or visual qualification."
+    ]
+  }
+}

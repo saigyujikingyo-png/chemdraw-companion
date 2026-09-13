@@ -1,0 +1,261 @@
+{
+  "schema": "agent-edit-loop-operation-evidence/0.1",
+  "stage": "Agent Edit Loop v0.1",
+  "status": "PARTIAL",
+  "implementation_commit": "b9363abfce19481d33e8d6409cb3d8d7dd477310",
+  "machine_core": "actual native caption edit loop demonstrated on two independent workflow controls",
+  "scope": "supervised caption position operations; not universal native preservation, chemical correctness or mechanism composition",
+  "counts": {
+    "actual_agent_calls": 25,
+    "completed_operations": 22,
+    "expected_refusals": 3,
+    "caption_moves": 6,
+    "fresh_process_reopens": 8,
+    "final_native_files": 4,
+    "focused_synthetic_tests_on_b9363ab": 6,
+    "gold_added": 0
+  },
+  "retained_final_documents": {
+    "A": {
+      "pid": 16788,
+      "start_utc": "2026-09-13T19:04:57.9523477Z",
+      "hwnd": 4984962,
+      "revision": 9,
+      "desktop_final_canvas": "observed"
+    },
+    "B": {
+      "pid": 32964,
+      "start_utc": "2026-09-13T19:18:45.0753600Z",
+      "hwnd": 73424,
+      "revision": 9,
+      "desktop_final_canvas": "unverified"
+    }
+  },
+  "execution": {
+    "api_route": "Native COM + validated native CDXML readback",
+    "content_GUI_automation": false,
+    "screen_coordinates_used": false,
+    "clipboard_used": false,
+    "Selection_used": false,
+    "headless_supported": false,
+    "native_ActiveDocument_identity_required": true,
+    "native_PNG_export_required": true
+  },
+  "strict_roundtrip_pass": false,
+  "normalization": {
+    "A_CDXML_x_delta_pt": -0.0009002685546875,
+    "B_CDXML_x_delta_pt": 0.0018310546875,
+    "CDX_live_coordinates_retained": true,
+    "independent_fractional_noedit_calls": [
+      40,
+      41,
+      42,
+      43,
+      44
+    ],
+    "ID_reference_isomorphism_independently_checked": true,
+    "global_tolerance_widened": false
+  },
+  "remaining_gaps": [
+    "B final desktop canvas unverified; no GUI fallback",
+    "No automatic classifier distinguishing harmless native reserialization from unexplained cross-reopen changes; outer ok is not equivalence",
+    "Native Close/Quit left residual processes; qualified machine-interface cleanup needs_interface"
+  ],
+  "worker_inventory": {
+    "worker_count": 7,
+    "workers_still_running": 0,
+    "native_processes_remaining": 12,
+    "intentionally_retained_final_processes": 2,
+    "raw_private_sha256": "d13f15a2e4c27beded8e4dbe461436e37df03e1770d525e31b781391fb580ede"
+  },
+  "input_and_history": {
+    "original_A_B_unchanged": true,
+    "historical_evidence_files_hash_matched": 8,
+    "old_failures_preserved": true,
+    "reserved_inputs_read": false,
+    "055_rerun": false,
+    "M2_or_derived_run": false,
+    "H_profiles_expanded": false
+  },
+  "unmeasured": [
+    "input chemical correctness",
+    "human acceptance",
+    "manual correction time",
+    "headless or other-host support"
+  ],
+  "visual": {
+    "native_PNG_A_B_reviewed_by_agent": true,
+    "white_previews_are_labelled_derivatives": true,
+    "desktop_screenshots_are_not_execution_inputs": true,
+    "earlier_GUI_diagnostics": "Window activation and Alt+F4 of precisely owned retired windows before the Machine Interface Only supplement; no content edits through GUI.",
+    "GUI_actions_after_machine_only": false
+  },
+  "artifacts": [
+    {
+      "file": "a-before.native.png",
+      "role": "original native Document.SaveAs PNG",
+      "bytes": 64719,
+      "sha256": "c480d2ba2a7cf9ab8bfb117a05cd6f08e8656f4d47c0456fb0ad615a3cf70b65",
+      "source": "<stage>\\sessions\\b45ca113-d9d3-44e1-9055-7652885cbafe\\evidence\\b9cd2d6e-44d5-43d5-bfbc-05739f135b68-opened-stable.png"
+    },
+    {
+      "file": "a-before.white.png",
+      "role": "labelled alpha composite on white; no geometry edits",
+      "bytes": 68465,
+      "sha256": "9916ccea8e84a7d463fc72675e5523af425eff84fe9b3e3dd9cd6d58168cb827",
+      "source": "<stage>\\sessions\\b45ca113-d9d3-44e1-9055-7652885cbafe\\evidence\\b9cd2d6e-44d5-43d5-bfbc-05739f135b68-opened-stable.white.png"
+    },
+    {
+      "file": "a-after.native.png",
+      "role": "original native Document.SaveAs PNG",
+      "bytes": 55374,
+      "sha256": "31588c787f94cba2c23a8711335a43bc60b640fbd6a6427c1883179d37c9ba81",
+      "source": "<stage>\\sessions\\b45ca113-d9d3-44e1-9055-7652885cbafe\\evidence\\e5494f40-b11d-433e-a3c9-a8a823145401-inspect.png"
+    },
+    {
+      "file": "a-after.white.png",
+      "role": "labelled alpha composite on white; no geometry edits",
+      "bytes": 59903,
+      "sha256": "ffc519f01dcf39541a880dea0b6b4621de2fdd0b3da9f9684c913fdc89dd30a5",
+      "source": "<stage>\\sessions\\b45ca113-d9d3-44e1-9055-7652885cbafe\\evidence\\e5494f40-b11d-433e-a3c9-a8a823145401-inspect.white.png"
+    },
+    {
+      "file": "a-final.cdxml",
+      "role": "native editable output; exact original bytes",
+      "bytes": 4944,
+      "sha256": "350a4b4909b1a345f2f93ff0f87a394200676a7f34606496a96be04a83af0918",
+      "source": "<stage>\\sessions\\b45ca113-d9d3-44e1-9055-7652885cbafe\\saved\\agent-a-final.cdxml"
+    },
+    {
+      "file": "a-final.cdx",
+      "role": "native editable output; exact original bytes",
+      "bytes": 2324,
+      "sha256": "c0135e9a04f4fb128b1361eb5fd9d4c1cdaa53ab97a23535da2e37fcd1edf2ed",
+      "source": "<stage>\\sessions\\b45ca113-d9d3-44e1-9055-7652885cbafe\\saved\\agent-a-final.cdx"
+    },
+    {
+      "file": "b-before.native.png",
+      "role": "original native Document.SaveAs PNG",
+      "bytes": 33503,
+      "sha256": "5847ef86a519a896568c52371dee2c1ad10421221b53d1352797293158a617e6",
+      "source": "<stage>\\sessions\\3bbf8519-f0d2-40ee-b217-06e4dc465a7d\\evidence\\69202c19-2774-4921-9a44-b1cfde478925-opened-stable.png"
+    },
+    {
+      "file": "b-before.white.png",
+      "role": "labelled alpha composite on white; no geometry edits",
+      "bytes": 39253,
+      "sha256": "583c06fa80eb4f3d89e900df98b732bd708dbb5fd51306e9717def0160fc4305",
+      "source": "<stage>\\sessions\\3bbf8519-f0d2-40ee-b217-06e4dc465a7d\\evidence\\69202c19-2774-4921-9a44-b1cfde478925-opened-stable.white.png"
+    },
+    {
+      "file": "b-after.native.png",
+      "role": "original native Document.SaveAs PNG",
+      "bytes": 29558,
+      "sha256": "98046fb672cf31aab271982e6d8d3e5d052d0b8c6c3dab32ca1be50ddd03a377",
+      "source": "<stage>\\sessions\\3bbf8519-f0d2-40ee-b217-06e4dc465a7d\\evidence\\fa35333a-9446-4896-9931-235ee4dbc882-inspect.png"
+    },
+    {
+      "file": "b-after.white.png",
+      "role": "labelled alpha composite on white; no geometry edits",
+      "bytes": 35548,
+      "sha256": "7cf437ff681a4874104ef4bbcd6f9dd90680dc427c075cf12bdc45b8f2b5f1ac",
+      "source": "<stage>\\sessions\\3bbf8519-f0d2-40ee-b217-06e4dc465a7d\\evidence\\fa35333a-9446-4896-9931-235ee4dbc882-inspect.white.png"
+    },
+    {
+      "file": "b-final.cdxml",
+      "role": "native editable output; exact original bytes",
+      "bytes": 4760,
+      "sha256": "b05d1ad504d58fc74739d7894e0aae7a2be098db0d732a1feaeeb650a9238aa8",
+      "source": "<stage>\\sessions\\3bbf8519-f0d2-40ee-b217-06e4dc465a7d\\saved\\agent-b-final.cdxml"
+    },
+    {
+      "file": "b-final.cdx",
+      "role": "native editable output; exact original bytes",
+      "bytes": 1998,
+      "sha256": "d4223be629f904a612f5f74ba278014a1fa2f09b033be4d41da33d980c40f3d5",
+      "source": "<stage>\\sessions\\3bbf8519-f0d2-40ee-b217-06e4dc465a7d\\saved\\agent-b-final.cdx"
+    },
+    {
+      "file": "a-before-canvas.png",
+      "role": "unmodified desktop display evidence, not execution input",
+      "bytes": 49261,
+      "sha256": "2e37f2b398ab85f629df0f884d00bae99f84a517ed24c4ec87c3e81a3f0483e7",
+      "source": "<user>\\.codex\\visualizations\\2026\\09\\12\\01a096bc-22a7-7bb0-8833-d03a88c2d27b\\agent-edit-loop\\a-current-before-canvas-0.png"
+    },
+    {
+      "file": "a-after-canvas.png",
+      "role": "unmodified desktop display evidence, not execution input",
+      "bytes": 48331,
+      "sha256": "bae66bc4e4187d401be80f20d05bc4ea50e9ff77cbeba61420c2a01d186bece0",
+      "source": "<user>\\.codex\\visualizations\\2026\\09\\12\\01a096bc-22a7-7bb0-8833-d03a88c2d27b\\agent-edit-loop\\a-final-canvas-0.png"
+    },
+    {
+      "file": "b-before-canvas.png",
+      "role": "unmodified desktop display evidence, not execution input",
+      "bytes": 46331,
+      "sha256": "ae452a120f1cfce6f9ec72fb724189a595f2703914e6abfb4b2be8f0fe44b52c",
+      "source": "<user>\\.codex\\visualizations\\2026\\09\\12\\01a096bc-22a7-7bb0-8833-d03a88c2d27b\\agent-edit-loop\\b-before-canvas-0.png"
+    }
+  ],
+  "evidence_files": [
+    {
+      "file": "actual-agent-calls.sanitized.json",
+      "bytes": 240237,
+      "sha256": "691fdcf8f5ee08d0e6b2776f5f388000d5b2fe7ca7485a26dcc44bc197a52835"
+    },
+    {
+      "file": "independent-a-audit.sanitized.json",
+      "bytes": 75976,
+      "sha256": "99ec4c64b9b4f3102ebe531e621fff8de94cd3733e172b28ac336c17704ce2bb"
+    },
+    {
+      "file": "independent-final-audit.sanitized.json",
+      "bytes": 126496,
+      "sha256": "65d11fed9b1fc167c350c88ae5c4f9c334bfd4e81d98c295c472c11cd0e030b7"
+    },
+    {
+      "file": "machine-interface-review.sanitized.json",
+      "bytes": 13346,
+      "sha256": "47afad04141f77257739e6c1cbc11c20012c00b58c2bf1687f03e45458525188"
+    },
+    {
+      "file": "static-verification.sanitized.json",
+      "bytes": 14287,
+      "sha256": "5e7c9c246dc91ff6757a6309786eb1138033a8da951d05dbbb4b16a9676dd4f0"
+    }
+  ],
+  "private_evidence": [
+    {
+      "file": "baseline.json",
+      "sha256": "2ef5262457f9d8ce7a1c90668b8701803c1726792cd658cecbb0b4cdecc9a6c4"
+    },
+    {
+      "file": "final-static-verification.json",
+      "sha256": "237ea12bd645d281f32e3fcda7797c6d50c0ca7cff888886f443786c171d6a8c"
+    },
+    {
+      "file": "stage/machine-interface-review.json",
+      "sha256": "032db7813f0f89f3947e6312e98ae0da01bbdab68cb46f2f0db1e47bf063e52a"
+    },
+    {
+      "file": "audit-a/audit-a-calls-000002-000019.json",
+      "sha256": "09401352636fa292a1515cd9b75ed4c9e2e5e1439f2f9859a1a16a42c792e83e"
+    },
+    {
+      "file": "audit-ab/audit-a-final-b-final-and-fractional.json",
+      "sha256": "bf5aacd495854c3000cecb669f3af772a3a4514ceb790abeaa0081025b146103"
+    },
+    {
+      "file": "audit-ab/audit-a-b-final-summary.json",
+      "sha256": "c5c8cdbe11b23f488b331310a7efef51cf696ac5f9d329dd3ced7cf356a5cdb6"
+    },
+    {
+      "file": "delivery/actual-agent-call-record.private.json",
+      "sha256": "9207d5fe695b3c29c0e9b905e5ac90e789db824146c873a76a8849eb8d6b45eb"
+    },
+    {
+      "file": "final-worker-inventory.json",
+      "sha256": "d13f15a2e4c27beded8e4dbe461436e37df03e1770d525e31b781391fb580ede"
+    }
+  ]
+}

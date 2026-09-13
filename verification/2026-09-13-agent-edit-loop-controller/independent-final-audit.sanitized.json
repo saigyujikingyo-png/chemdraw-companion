@@ -1,0 +1,3763 @@
+{
+  "derivative_notice": "Sanitized derivative of independently checked private evidence; originals remain unchanged.",
+  "original_sha256": "bf5aacd495854c3000cecb669f3af772a3a4514ceb790abeaa0081025b146103",
+  "record": {
+    "version": "agent-edit-loop-AB-incremental-independent-audit/0.1",
+    "created_utc": "2026-09-13T19:27:00.845915+00:00",
+    "status": "bounded_edit_and_reference_preservation_verified_strict_roundtrip_false_retained",
+    "scope": {
+      "calls": [
+        19,
+        20,
+        21,
+        22,
+        23,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44
+      ],
+      "A19": "Previously audited final-move baseline only; A increment is 20-23.",
+      "B": "29-39; three moves and final two-format reopen.",
+      "fractional_control": "40-44; three independently authored captions and no Position action.",
+      "native_or_GUI_called_by_reviewer": false,
+      "protected_payload_accessed": false,
+      "Machine_Interface_Only": "Recorded machine operations and native COM readback reviewed; display is a separate, unverified gate here."
+    },
+    "roles": [
+      {
+        "path": "independent-control-b/role-manifest.json",
+        "sha256": "46b589b57f06667238416bfcaa361feebfa8447aa401a3e03889612482997166",
+        "role": "independent_agent_edit_loop_workflow_control_b",
+        "artifact_sha256": "7db8f8c259ce8d32d2d839818111ab0632368c9b8b93435a862db0dd3840e697"
+      },
+      {
+        "path": "fractional-noedit-control/input-freeze-manifest.json",
+        "sha256": "ce1f0ec3c0c8af331c5d33c54a38a5d73f9e420de58feb8aa5ca8c534de2a57b",
+        "role": "independent_fractional_caption_serialization_control",
+        "artifact_sha256": "b1fc848aea3ac01e503c7e1fc5930b224a59d46bf12db275357396d1c58cfa7e"
+      }
+    ],
+    "source_bindings": [
+      {
+        "file": "native_edit_loop.py",
+        "commit": "b9363abfce19481d33e8d6409cb3d8d7dd477310",
+        "sha256": "c4cc5068f5be6986f17079cc147bc0c6406cdae4ec79ca125e875fcd9b048515"
+      },
+      {
+        "file": "NativeChemDraw.cs",
+        "commit": "b9363abfce19481d33e8d6409cb3d8d7dd477310",
+        "sha256": "52eb2fe1e66d9b13aba84dfba010959ddcb8fcf6109b919a498324400681b73c"
+      },
+      {
+        "file": "native-common.ps1",
+        "commit": "b9363abfce19481d33e8d6409cb3d8d7dd477310",
+        "sha256": "0fe06575b88a8f2b14f6f3937dd72d2f2709b146564ac2e17b80b3b0ab01655f"
+      },
+      {
+        "file": "native-edit-loop.ps1",
+        "commit": "b9363abfce19481d33e8d6409cb3d8d7dd477310",
+        "sha256": "e198319ebc052f7cd5375b70b36d99c66974b17a6ab65e7a4c177ab6c9fda332"
+      }
+    ],
+    "calls": [
+      {
+        "call": 19,
+        "action": "relative-position",
+        "outer_ok": true,
+        "strict_normalization_ok": null,
+        "revision": 6,
+        "document_id": "6377cd88-1588-4539-8911-521259840b91",
+        "pid": 47668,
+        "hwnd": 42471160,
+        "process_start_utc": "2026-09-13T19:03:06.2935934Z",
+        "request_sha256": "f79be930b4cb29a7c9ab4097b09f707431714ddad857782996d62a71a390696d",
+        "response_sha256": "65f99e9a4421475cf1a06daf3ad4b24cc22f441610ded7bf14b07419aa85dc2b"
+      },
+      {
+        "call": 20,
+        "action": "save",
+        "outer_ok": true,
+        "strict_normalization_ok": true,
+        "revision": 7,
+        "document_id": "6377cd88-1588-4539-8911-521259840b91",
+        "pid": 47668,
+        "hwnd": 42471160,
+        "process_start_utc": "2026-09-13T19:03:06.2935934Z",
+        "request_sha256": "e0661e4742a3450a712f2f282cdb5f7f0eb23bc9643e3f78e07428ed90568117",
+        "response_sha256": "f2aac0b2d5edd88df240880564c1a4cafee53887cb50e69b68bd9bd737709d64"
+      },
+      {
+        "call": 21,
+        "action": "reopen",
+        "outer_ok": true,
+        "strict_normalization_ok": false,
+        "revision": 8,
+        "document_id": "7302d7ce-ae2b-4234-a70d-73661fa0180c",
+        "pid": 11412,
+        "hwnd": 661764,
+        "process_start_utc": "2026-09-13T19:04:41.8989703Z",
+        "request_sha256": "05254a0210426b1eb65e01e47d708320d990ca8125431ad1f56b6b2c6cc08281",
+        "response_sha256": "d8faf72f05a330c0c5e2617df0a9a1181d85282b5c4e542ac2914a91f6dca85e"
+      },
+      {
+        "call": 22,
+        "action": "reopen",
+        "outer_ok": true,
+        "strict_normalization_ok": false,
+        "revision": 9,
+        "document_id": "69cb7ddb-49aa-4ecd-8271-f1552ce4f9cf",
+        "pid": 16788,
+        "hwnd": 4984962,
+        "process_start_utc": "2026-09-13T19:04:57.9523477Z",
+        "request_sha256": "d367e188480c520ad63f9da1203ab5eb5930c8713bfafb7e055a2825bb9ad849",
+        "response_sha256": "49fd56d1cce51ed2e7a830213c725d448bbf27a62ce695c1d98c35151d22340c"
+      },
+      {
+        "call": 23,
+        "action": "inspect",
+        "outer_ok": true,
+        "strict_normalization_ok": null,
+        "revision": 9,
+        "document_id": "69cb7ddb-49aa-4ecd-8271-f1552ce4f9cf",
+        "pid": 16788,
+        "hwnd": 4984962,
+        "process_start_utc": "2026-09-13T19:04:57.9523477Z",
+        "request_sha256": "41293c9be251860fa63367c745d247d9bff3ef354967590bc662a87662923170",
+        "response_sha256": "ff66ab614dcb570c81cace6e8ba437d42b7da6703bb66e629873ec249ad70f22"
+      },
+      {
+        "call": 29,
+        "action": "open-copy",
+        "outer_ok": true,
+        "strict_normalization_ok": null,
+        "revision": 0,
+        "document_id": "a890ef5e-6184-4935-9a1c-58a05ea9e287",
+        "pid": 19092,
+        "hwnd": 113184780,
+        "process_start_utc": "2026-09-13T19:10:06.1794518Z",
+        "request_sha256": "116ed6ed429b01076b38d92af7e3f838ecc3e37b79d210a6a3839ea9ef26db1f",
+        "response_sha256": "fdc5c67600af0637c72541204247c4d6e0e46039eaf657bbd503de3b4ed347e2"
+      },
+      {
+        "call": 30,
+        "action": "relative-position",
+        "outer_ok": true,
+        "strict_normalization_ok": null,
+        "revision": 1,
+        "document_id": "a890ef5e-6184-4935-9a1c-58a05ea9e287",
+        "pid": 19092,
+        "hwnd": 113184780,
+        "process_start_utc": "2026-09-13T19:10:06.1794518Z",
+        "request_sha256": "15335da0e3564da715054593c149a2ee6cfae23397dc06912578f2eece010e2e",
+        "response_sha256": "d310a3f5e092863c5a0081143a0725f03a025346540ed667beec40eda51ff81e"
+      },
+      {
+        "call": 31,
+        "action": "relative-position",
+        "outer_ok": true,
+        "strict_normalization_ok": null,
+        "revision": 2,
+        "document_id": "a890ef5e-6184-4935-9a1c-58a05ea9e287",
+        "pid": 19092,
+        "hwnd": 113184780,
+        "process_start_utc": "2026-09-13T19:10:06.1794518Z",
+        "request_sha256": "fd31bd4c11d80f3d5470d4580647f43c795eeb03bd319224be854e96a7863b9b",
+        "response_sha256": "338f964d8ec88b6f136782f661ccad54ef7e3b73da3fe0cf0d5dd4875f70d9f3"
+      },
+      {
+        "call": 32,
+        "action": "save",
+        "outer_ok": true,
+        "strict_normalization_ok": true,
+        "revision": 3,
+        "document_id": "a890ef5e-6184-4935-9a1c-58a05ea9e287",
+        "pid": 19092,
+        "hwnd": 113184780,
+        "process_start_utc": "2026-09-13T19:10:06.1794518Z",
+        "request_sha256": "2ee94fea22585db1c95abd0d70fabb4b7c8d5da9c89b7940b223b1ba21939e23",
+        "response_sha256": "932c7ae8e1c9deceba9068e46764c052e7385067111ed84a2816d18503ed5958"
+      },
+      {
+        "call": 33,
+        "action": "reopen",
+        "outer_ok": true,
+        "strict_normalization_ok": false,
+        "revision": 4,
+        "document_id": "3a843825-0653-450a-81f0-63ccbd77b4d2",
+        "pid": 1168,
+        "hwnd": 727664,
+        "process_start_utc": "2026-09-13T19:16:32.4257482Z",
+        "request_sha256": "f2e319342c6a766b6d3f6ab8945e8214c6c8e1a3b59bac5d08e96f70f76969e5",
+        "response_sha256": "8169ee7fe6227ce6971801ddd3fea307d9801a35c01c6f6d9f0cfe85b915c313"
+      },
+      {
+        "call": 34,
+        "action": "reopen",
+        "outer_ok": true,
+        "strict_normalization_ok": false,
+        "revision": 5,
+        "document_id": "0fa6451a-f8b5-4eb9-969c-e3e0960f76f4",
+        "pid": 42300,
+        "hwnd": 269130,
+        "process_start_utc": "2026-09-13T19:16:48.1795063Z",
+        "request_sha256": "07323f362a8376a2313f10e875bf48695dd26784e621b3253b8e724dabf39c97",
+        "response_sha256": "5d16e34703b52410005d117543ae0c9415c34ed6dbd118a327966fbe8400fdb9"
+      },
+      {
+        "call": 35,
+        "action": "relative-position",
+        "outer_ok": true,
+        "strict_normalization_ok": null,
+        "revision": 6,
+        "document_id": "0fa6451a-f8b5-4eb9-969c-e3e0960f76f4",
+        "pid": 42300,
+        "hwnd": 269130,
+        "process_start_utc": "2026-09-13T19:16:48.1795063Z",
+        "request_sha256": "457d32984e3b76f8f8ba1b3d65dff0114b20bebb052fd5f79d2bfe5d594f7026",
+        "response_sha256": "3c3a278fc939ee8bf8eef3310f4722da9e11be0c087cb58ae23e9a048bdbc675"
+      },
+      {
+        "call": 36,
+        "action": "save",
+        "outer_ok": true,
+        "strict_normalization_ok": true,
+        "revision": 7,
+        "document_id": "0fa6451a-f8b5-4eb9-969c-e3e0960f76f4",
+        "pid": 42300,
+        "hwnd": 269130,
+        "process_start_utc": "2026-09-13T19:16:48.1795063Z",
+        "request_sha256": "957130e559f4460cb3d865f3519d01944c3d4845ce3609a7a3b185ee68663053",
+        "response_sha256": "7ae047a57e7b3004a0f43a954cfa12b850a44f9c0e6dca3594cb9c7a21076506"
+      },
+      {
+        "call": 37,
+        "action": "reopen",
+        "outer_ok": true,
+        "strict_normalization_ok": false,
+        "revision": 8,
+        "document_id": "f925037a-1b08-4d92-ae8b-2615da0a1fb3",
+        "pid": 22568,
+        "hwnd": 72990,
+        "process_start_utc": "2026-09-13T19:18:22.3029629Z",
+        "request_sha256": "c4b6ab6a490a5c760453e2dfe424d781d405f6b8cc48c1afafa9dd4948365419",
+        "response_sha256": "3e48d97113128338e97406fa5ed3e4b05734a313d86d2ecd50876f2a66450b78"
+      },
+      {
+        "call": 38,
+        "action": "reopen",
+        "outer_ok": true,
+        "strict_normalization_ok": false,
+        "revision": 9,
+        "document_id": "be74d492-907f-4eb9-b75d-71f24ef382ca",
+        "pid": 32964,
+        "hwnd": 73424,
+        "process_start_utc": "2026-09-13T19:18:45.07536Z",
+        "request_sha256": "b7bc29258f6517b9d1759ee59a11632bb6d7abd63464a069d8145869a98f60a7",
+        "response_sha256": "851d60e777dc7644bd4b7cb6a2cfaa7198e303cb23c07c59bf7c6db215ac1fc4"
+      },
+      {
+        "call": 39,
+        "action": "inspect",
+        "outer_ok": true,
+        "strict_normalization_ok": null,
+        "revision": 9,
+        "document_id": "be74d492-907f-4eb9-b75d-71f24ef382ca",
+        "pid": 32964,
+        "hwnd": 73424,
+        "process_start_utc": "2026-09-13T19:18:45.07536Z",
+        "request_sha256": "d18dfc9095c7c1143644e9d6e8c3a685092b412dee0219d2f66be8fbcf585384",
+        "response_sha256": "8135475fc64120dd7d7f278fed39a045a8ec2d6bc575f900745df6123210b472"
+      },
+      {
+        "call": 40,
+        "action": "open-copy",
+        "outer_ok": true,
+        "strict_normalization_ok": null,
+        "revision": 0,
+        "document_id": "261979ee-fae8-45af-b38f-8943135693d4",
+        "pid": 1100,
+        "hwnd": 21958754,
+        "process_start_utc": "2026-09-13T19:20:09.9023537Z",
+        "request_sha256": "c4eff08cbbf57975ba65fdcbd5bc508a256fd77444ca4225c7980366995c3026",
+        "response_sha256": "d4d0c3ef4d6653a0a02709c6933760f34c334af09e90e2fc213b1c4016f001b2"
+      },
+      {
+        "call": 41,
+        "action": "save",
+        "outer_ok": true,
+        "strict_normalization_ok": true,
+        "revision": 1,
+        "document_id": "261979ee-fae8-45af-b38f-8943135693d4",
+        "pid": 1100,
+        "hwnd": 21958754,
+        "process_start_utc": "2026-09-13T19:20:09.9023537Z",
+        "request_sha256": "08f3a0800cc4d8081bbcf87f82e3cf43daf4350b10fea79a1a538c0c488c420d",
+        "response_sha256": "78d6b1787e3b155579002de294b9c9ee8fb3ecad21a71c62bf357c20df72a727"
+      },
+      {
+        "call": 42,
+        "action": "reopen",
+        "outer_ok": true,
+        "strict_normalization_ok": false,
+        "revision": 2,
+        "document_id": "b6da596a-a589-4567-a936-eabf5165b07a",
+        "pid": 47972,
+        "hwnd": 74128,
+        "process_start_utc": "2026-09-13T19:21:10.0777546Z",
+        "request_sha256": "e0ccdc494606ce1bc487edd08b591367533fd814928a4133b156a2c62a8ae7ef",
+        "response_sha256": "f71a516db6a25f68b94fb7cd7cdb398cc39549b367a48a56ed586b7b6e090f95"
+      },
+      {
+        "call": 43,
+        "action": "reopen",
+        "outer_ok": true,
+        "strict_normalization_ok": false,
+        "revision": 3,
+        "document_id": "a8f0acee-0acb-4e73-bf1c-a809e3002632",
+        "pid": 14304,
+        "hwnd": 74560,
+        "process_start_utc": "2026-09-13T19:21:24.3601775Z",
+        "request_sha256": "e5d85abdcd12b95ccd3a42a93e2b5140b6b301e236c3be1f1e3a4e5dc0046ef7",
+        "response_sha256": "c30f142cd370d826964df0b60ae8d36b16a8aaa06d70dd8060c6d3a21419d0ba"
+      },
+      {
+        "call": 44,
+        "action": "inspect",
+        "outer_ok": true,
+        "strict_normalization_ok": null,
+        "revision": 3,
+        "document_id": "a8f0acee-0acb-4e73-bf1c-a809e3002632",
+        "pid": 14304,
+        "hwnd": 74560,
+        "process_start_utc": "2026-09-13T19:21:24.3601775Z",
+        "request_sha256": "6448da3fd9dfd9ec54d17f5fbcb579363505f6c105ba305da909902a36aa8028",
+        "response_sha256": "b70e555262acb7ecbdaaa94011120d0617a122c9ab11d771605c3572f9921a91"
+      }
+    ],
+    "moves": [
+      {
+        "call": 30,
+        "intent": "above-arrow",
+        "actual_delta_pt": [
+          60.6181640625,
+          -70.5
+        ],
+        "native_bond_length": 24.0,
+        "actual_minus_recorded_expected_residuals": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "existing_tolerance": 1e-06,
+        "non_target_native_differences": [],
+        "non_target_xml_differences": [],
+        "derived_association_differences": [
+          {
+            "path": "/children/2/children/4/children/0/attributes/ReactionStepObjectsAboveArrow",
+            "before": null,
+            "after": "5757753"
+          }
+        ],
+        "metadata_differences": [
+          {
+            "path": "/attributes/BoundingBox",
+            "before": "111.75 110.42 468.99 183.50",
+            "after": "111.75 102.63 468.99 128.50"
+          }
+        ],
+        "fresh_tokens_and_CAS_verified": true
+      },
+      {
+        "call": 31,
+        "intent": "up-half-bond",
+        "actual_delta_pt": [
+          0.0,
+          -12.0
+        ],
+        "native_bond_length": 24.0,
+        "actual_minus_recorded_expected_residuals": [
+          0.0,
+          0.0,
+          0.0,
+          1.4210854715202004e-14,
+          0.0,
+          0.0
+        ],
+        "existing_tolerance": 1e-06,
+        "non_target_native_differences": [],
+        "non_target_xml_differences": [],
+        "derived_association_differences": [],
+        "metadata_differences": [
+          {
+            "path": "/attributes/BoundingBox",
+            "before": "111.75 102.63 468.99 128.50",
+            "after": "111.75 90.63 468.99 128.50"
+          }
+        ],
+        "fresh_tokens_and_CAS_verified": true
+      },
+      {
+        "call": 35,
+        "intent": "up-half-bond",
+        "actual_delta_pt": [
+          0.0,
+          -12.0
+        ],
+        "native_bond_length": 24.0,
+        "actual_minus_recorded_expected_residuals": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "existing_tolerance": 1e-06,
+        "non_target_native_differences": [],
+        "non_target_xml_differences": [],
+        "derived_association_differences": [],
+        "metadata_differences": [
+          {
+            "path": "/attributes/BoundingBox",
+            "before": "111.75 90.63 468.99 128.50",
+            "after": "111.75 78.63 468.99 128.50"
+          }
+        ],
+        "fresh_tokens_and_CAS_verified": true
+      }
+    ],
+    "comparisons": [
+      {
+        "before": 19,
+        "after": 20,
+        "label": "A-final-save",
+        "protection": {
+          "atom_subtrees_exact": true,
+          "bond_subtrees_exact": true,
+          "text_runs_exact": true,
+          "font_color_tables_exact": true,
+          "counts_exact": true,
+          "bond_length_exact": true
+        },
+        "differences": {
+          "xml": [
+            {
+              "path": "/attributes/Name",
+              "before": "agent-a-r2.cdx",
+              "after": "agent-a-final.cdx"
+            }
+          ],
+          "native": []
+        }
+      },
+      {
+        "before": 20,
+        "after": 21,
+        "label": "A-final-CDXML-reopen",
+        "protection": {
+          "atom_subtrees_exact": true,
+          "bond_subtrees_exact": true,
+          "text_runs_exact": true,
+          "font_color_tables_exact": true,
+          "counts_exact": true,
+          "bond_length_exact": true
+        },
+        "differences": {
+          "xml": [
+            {
+              "path": "/attributes/Name",
+              "before": "agent-a-final.cdx",
+              "after": "agent-a-final.cdxml"
+            },
+            {
+              "path": "/children/2/attributes/id",
+              "before": "7155",
+              "after": "7158"
+            },
+            {
+              "path": "/children/2/children/4/attributes/SupersededBy",
+              "before": "7156",
+              "after": "7159"
+            },
+            {
+              "path": "/children/2/children/4/attributes/id",
+              "before": "7153",
+              "after": "7156"
+            },
+            {
+              "path": "/children/2/children/5/attributes/id",
+              "before": "7157",
+              "after": "7160"
+            },
+            {
+              "path": "/children/2/children/5/children/0/attributes/ReactionStepArrows",
+              "before": "7153",
+              "after": "7156"
+            },
+            {
+              "path": "/children/2/children/5/children/0/attributes/id",
+              "before": "7158",
+              "after": "7161"
+            },
+            {
+              "path": "/children/2/children/6/attributes/id",
+              "before": "7156",
+              "after": "7159"
+            }
+          ],
+          "native": [
+            {
+              "path": "/arrows/0/id",
+              "before": 7153,
+              "after": 7156
+            },
+            {
+              "path": "/captions/0/anchor/0",
+              "before": 191.4208984375,
+              "after": 191.4199981689453
+            },
+            {
+              "path": "/captions/0/bounds/0",
+              "before": 191.4208984375,
+              "after": 191.4199981689453
+            },
+            {
+              "path": "/captions/0/bounds/2",
+              "before": 257.5791015625,
+              "after": 257.5782012939453
+            }
+          ]
+        }
+      },
+      {
+        "before": 20,
+        "after": 22,
+        "label": "A-final-CDX-reopen",
+        "protection": {
+          "atom_subtrees_exact": true,
+          "bond_subtrees_exact": true,
+          "text_runs_exact": true,
+          "font_color_tables_exact": true,
+          "counts_exact": true,
+          "bond_length_exact": true
+        },
+        "differences": {
+          "xml": [
+            {
+              "path": "/children/2/attributes/id",
+              "before": "7155",
+              "after": "7158"
+            },
+            {
+              "path": "/children/2/children/4/attributes/SupersededBy",
+              "before": "7156",
+              "after": "7159"
+            },
+            {
+              "path": "/children/2/children/4/attributes/id",
+              "before": "7153",
+              "after": "7156"
+            },
+            {
+              "path": "/children/2/children/5/attributes/id",
+              "before": "7157",
+              "after": "7160"
+            },
+            {
+              "path": "/children/2/children/5/children/0/attributes/ReactionStepArrows",
+              "before": "7153",
+              "after": "7156"
+            },
+            {
+              "path": "/children/2/children/5/children/0/attributes/id",
+              "before": "7158",
+              "after": "7161"
+            },
+            {
+              "path": "/children/2/children/6/attributes/id",
+              "before": "7156",
+              "after": "7159"
+            }
+          ],
+          "native": [
+            {
+              "path": "/arrows/0/id",
+              "before": 7153,
+              "after": 7156
+            }
+          ]
+        }
+      },
+      {
+        "before": 22,
+        "after": 23,
+        "label": "A-end-inspect",
+        "protection": {
+          "atom_subtrees_exact": true,
+          "bond_subtrees_exact": true,
+          "text_runs_exact": true,
+          "font_color_tables_exact": true,
+          "counts_exact": true,
+          "bond_length_exact": true
+        },
+        "differences": {
+          "xml": [
+            {
+              "path": "/attributes/WindowSize",
+              "before": "0 -1610612736",
+              "after": "1073741824 -536870912"
+            }
+          ],
+          "native": []
+        }
+      },
+      {
+        "before": 29,
+        "after": 30,
+        "label": "B-above-arrow",
+        "protection": {
+          "atom_subtrees_exact": true,
+          "bond_subtrees_exact": true,
+          "text_runs_exact": true,
+          "font_color_tables_exact": true,
+          "counts_exact": true,
+          "bond_length_exact": true
+        },
+        "differences": {
+          "xml": [
+            {
+              "path": "/attributes/BoundingBox",
+              "before": "111.75 110.42 468.99 183.50",
+              "after": "111.75 102.63 468.99 128.50"
+            },
+            {
+              "path": "/attributes/WindowSize",
+              "before": "0 -1610612736",
+              "after": "1073741824 -536870912"
+            },
+            {
+              "path": "/children/2/children/2/attributes/BoundingBox",
+              "before": "182 173.13 246.76 183.50",
+              "after": "242.62 102.63 307.38 113"
+            },
+            {
+              "path": "/children/2/children/2/attributes/p",
+              "before": "182 182",
+              "after": "242.62 111.50"
+            },
+            {
+              "path": "/children/2/children/4/children/0/attributes/ReactionStepObjectsAboveArrow",
+              "before": null,
+              "after": "5757753"
+            }
+          ],
+          "native": [
+            {
+              "path": "/captions/0/anchor/0",
+              "before": 182.0,
+              "after": 242.6181640625
+            },
+            {
+              "path": "/captions/0/anchor/1",
+              "before": 182.0,
+              "after": 111.5
+            },
+            {
+              "path": "/captions/0/bounds/0",
+              "before": 182.0,
+              "after": 242.6181640625
+            },
+            {
+              "path": "/captions/0/bounds/1",
+              "before": 173.13333333333333,
+              "after": 102.63333333333333
+            },
+            {
+              "path": "/captions/0/bounds/2",
+              "before": 246.763671875,
+              "after": 307.3818359375
+            },
+            {
+              "path": "/captions/0/bounds/3",
+              "before": 183.5,
+              "after": 113.0
+            }
+          ]
+        }
+      },
+      {
+        "before": 30,
+        "after": 31,
+        "label": "B-half-bond",
+        "protection": {
+          "atom_subtrees_exact": true,
+          "bond_subtrees_exact": true,
+          "text_runs_exact": true,
+          "font_color_tables_exact": true,
+          "counts_exact": true,
+          "bond_length_exact": true
+        },
+        "differences": {
+          "xml": [
+            {
+              "path": "/attributes/BoundingBox",
+              "before": "111.75 102.63 468.99 128.50",
+              "after": "111.75 90.63 468.99 128.50"
+            },
+            {
+              "path": "/children/2/children/2/attributes/BoundingBox",
+              "before": "242.62 102.63 307.38 113",
+              "after": "242.62 90.63 307.38 101"
+            },
+            {
+              "path": "/children/2/children/2/attributes/p",
+              "before": "242.62 111.50",
+              "after": "242.62 99.50"
+            }
+          ],
+          "native": [
+            {
+              "path": "/captions/0/anchor/1",
+              "before": 111.5,
+              "after": 99.5
+            },
+            {
+              "path": "/captions/0/bounds/1",
+              "before": 102.63333333333333,
+              "after": 90.63333333333334
+            },
+            {
+              "path": "/captions/0/bounds/3",
+              "before": 113.0,
+              "after": 101.0
+            }
+          ]
+        }
+      },
+      {
+        "before": 31,
+        "after": 32,
+        "label": "B-continuous-save",
+        "protection": {
+          "atom_subtrees_exact": true,
+          "bond_subtrees_exact": true,
+          "text_runs_exact": true,
+          "font_color_tables_exact": true,
+          "counts_exact": true,
+          "bond_length_exact": true
+        },
+        "differences": {
+          "xml": [
+            {
+              "path": "/attributes/Name",
+              "before": "source.cdxml",
+              "after": "agent-b-continuous.cdx"
+            }
+          ],
+          "native": []
+        }
+      },
+      {
+        "before": 32,
+        "after": 33,
+        "label": "B-continuous-CDXML-reopen",
+        "protection": {
+          "atom_subtrees_exact": true,
+          "bond_subtrees_exact": true,
+          "text_runs_exact": true,
+          "font_color_tables_exact": true,
+          "counts_exact": true,
+          "bond_length_exact": true
+        },
+        "differences": {
+          "xml": [
+            {
+              "path": "/attributes/Name",
+              "before": "agent-b-continuous.cdx",
+              "after": "agent-b-continuous.cdxml"
+            },
+            {
+              "path": "/attributes/WindowSize",
+              "before": "1073741824 -536870912",
+              "after": "0 -1610612736"
+            },
+            {
+              "path": "/children/2/attributes/id",
+              "before": "5757755",
+              "after": "5757758"
+            },
+            {
+              "path": "/children/2/children/3/attributes/SupersededBy",
+              "before": "5757756",
+              "after": "5757759"
+            },
+            {
+              "path": "/children/2/children/3/attributes/Z",
+              "before": "14",
+              "after": "15"
+            },
+            {
+              "path": "/children/2/children/3/attributes/id",
+              "before": "5757752",
+              "after": "5757756"
+            },
+            {
+              "path": "/children/2/children/4/attributes/id",
+              "before": "5757757",
+              "after": "5757760"
+            },
+            {
+              "path": "/children/2/children/4/children/0/attributes/ReactionStepArrows",
+              "before": "5757752",
+              "after": "5757756"
+            },
+            {
+              "path": "/children/2/children/4/children/0/attributes/id",
+              "before": "5757758",
+              "after": "5757761"
+            },
+            {
+              "path": "/children/2/children/5/attributes/Z",
+              "before": "14",
+              "after": "15"
+            },
+            {
+              "path": "/children/2/children/5/attributes/id",
+              "before": "5757756",
+              "after": "5757759"
+            }
+          ],
+          "native": [
+            {
+              "path": "/arrows/0/id",
+              "before": 5757752,
+              "after": 5757756
+            },
+            {
+              "path": "/captions/0/anchor/0",
+              "before": 242.6181640625,
+              "after": 242.6199951171875
+            },
+            {
+              "path": "/captions/0/bounds/0",
+              "before": 242.6181640625,
+              "after": 242.6199951171875
+            },
+            {
+              "path": "/captions/0/bounds/2",
+              "before": 307.3818359375,
+              "after": 307.3836669921875
+            }
+          ]
+        }
+      },
+      {
+        "before": 32,
+        "after": 34,
+        "label": "B-continuous-CDX-reopen",
+        "protection": {
+          "atom_subtrees_exact": true,
+          "bond_subtrees_exact": true,
+          "text_runs_exact": true,
+          "font_color_tables_exact": true,
+          "counts_exact": true,
+          "bond_length_exact": true
+        },
+        "differences": {
+          "xml": [
+            {
+              "path": "/attributes/WindowSize",
+              "before": "1073741824 -536870912",
+              "after": "0 -1610612736"
+            },
+            {
+              "path": "/children/2/attributes/id",
+              "before": "5757755",
+              "after": "5757758"
+            },
+            {
+              "path": "/children/2/children/3/attributes/SupersededBy",
+              "before": "5757756",
+              "after": "5757759"
+            },
+            {
+              "path": "/children/2/children/3/attributes/Z",
+              "before": "14",
+              "after": "15"
+            },
+            {
+              "path": "/children/2/children/3/attributes/id",
+              "before": "5757752",
+              "after": "5757756"
+            },
+            {
+              "path": "/children/2/children/4/attributes/id",
+              "before": "5757757",
+              "after": "5757760"
+            },
+            {
+              "path": "/children/2/children/4/children/0/attributes/ReactionStepArrows",
+              "before": "5757752",
+              "after": "5757756"
+            },
+            {
+              "path": "/children/2/children/4/children/0/attributes/id",
+              "before": "5757758",
+              "after": "5757761"
+            },
+            {
+              "path": "/children/2/children/5/attributes/Z",
+              "before": "14",
+              "after": "15"
+            },
+            {
+              "path": "/children/2/children/5/attributes/id",
+              "before": "5757756",
+              "after": "5757759"
+            }
+          ],
+          "native": [
+            {
+              "path": "/arrows/0/id",
+              "before": 5757752,
+              "after": 5757756
+            }
+          ]
+        }
+      },
+      {
+        "before": 34,
+        "after": 35,
+        "label": "B-post-reopen-half-bond",
+        "protection": {
+          "atom_subtrees_exact": true,
+          "bond_subtrees_exact": true,
+          "text_runs_exact": true,
+          "font_color_tables_exact": true,
+          "counts_exact": true,
+          "bond_length_exact": true
+        },
+        "differences": {
+          "xml": [
+            {
+              "path": "/attributes/BoundingBox",
+              "before": "111.75 90.63 468.99 128.50",
+              "after": "111.75 78.63 468.99 128.50"
+            },
+            {
+              "path": "/children/2/children/2/attributes/BoundingBox",
+              "before": "242.62 90.63 307.38 101",
+              "after": "242.62 78.63 307.38 89"
+            },
+            {
+              "path": "/children/2/children/2/attributes/p",
+              "before": "242.62 99.50",
+              "after": "242.62 87.50"
+            }
+          ],
+          "native": [
+            {
+              "path": "/captions/0/anchor/1",
+              "before": 99.5,
+              "after": 87.5
+            },
+            {
+              "path": "/captions/0/bounds/1",
+              "before": 90.63333333333334,
+              "after": 78.63333333333334
+            },
+            {
+              "path": "/captions/0/bounds/3",
+              "before": 101.0,
+              "after": 89.0
+            }
+          ]
+        }
+      },
+      {
+        "before": 35,
+        "after": 36,
+        "label": "B-final-save",
+        "protection": {
+          "atom_subtrees_exact": true,
+          "bond_subtrees_exact": true,
+          "text_runs_exact": true,
+          "font_color_tables_exact": true,
+          "counts_exact": true,
+          "bond_length_exact": true
+        },
+        "differences": {
+          "xml": [
+            {
+              "path": "/attributes/Name",
+              "before": "agent-b-continuous.cdx",
+              "after": "agent-b-final.cdx"
+            }
+          ],
+          "native": []
+        }
+      },
+      {
+        "before": 36,
+        "after": 37,
+        "label": "B-final-CDXML-reopen",
+        "protection": {
+          "atom_subtrees_exact": true,
+          "bond_subtrees_exact": true,
+          "text_runs_exact": true,
+          "font_color_tables_exact": true,
+          "counts_exact": true,
+          "bond_length_exact": true
+        },
+        "differences": {
+          "xml": [
+            {
+              "path": "/attributes/Name",
+              "before": "agent-b-final.cdx",
+              "after": "agent-b-final.cdxml"
+            },
+            {
+              "path": "/children/2/attributes/id",
+              "before": "5757758",
+              "after": "5757761"
+            },
+            {
+              "path": "/children/2/children/3/attributes/SupersededBy",
+              "before": "5757759",
+              "after": "5757762"
+            },
+            {
+              "path": "/children/2/children/3/attributes/id",
+              "before": "5757756",
+              "after": "5757759"
+            },
+            {
+              "path": "/children/2/children/4/attributes/id",
+              "before": "5757760",
+              "after": "5757763"
+            },
+            {
+              "path": "/children/2/children/4/children/0/attributes/ReactionStepArrows",
+              "before": "5757756",
+              "after": "5757759"
+            },
+            {
+              "path": "/children/2/children/4/children/0/attributes/id",
+              "before": "5757761",
+              "after": "5757764"
+            },
+            {
+              "path": "/children/2/children/5/attributes/id",
+              "before": "5757759",
+              "after": "5757762"
+            }
+          ],
+          "native": [
+            {
+              "path": "/arrows/0/id",
+              "before": 5757756,
+              "after": 5757759
+            },
+            {
+              "path": "/captions/0/anchor/0",
+              "before": 242.6181640625,
+              "after": 242.6199951171875
+            },
+            {
+              "path": "/captions/0/bounds/0",
+              "before": 242.6181640625,
+              "after": 242.6199951171875
+            },
+            {
+              "path": "/captions/0/bounds/2",
+              "before": 307.3818359375,
+              "after": 307.3836669921875
+            }
+          ]
+        }
+      },
+      {
+        "before": 36,
+        "after": 38,
+        "label": "B-final-CDX-reopen",
+        "protection": {
+          "atom_subtrees_exact": true,
+          "bond_subtrees_exact": true,
+          "text_runs_exact": true,
+          "font_color_tables_exact": true,
+          "counts_exact": true,
+          "bond_length_exact": true
+        },
+        "differences": {
+          "xml": [
+            {
+              "path": "/children/2/attributes/id",
+              "before": "5757758",
+              "after": "5757761"
+            },
+            {
+              "path": "/children/2/children/3/attributes/SupersededBy",
+              "before": "5757759",
+              "after": "5757762"
+            },
+            {
+              "path": "/children/2/children/3/attributes/id",
+              "before": "5757756",
+              "after": "5757759"
+            },
+            {
+              "path": "/children/2/children/4/attributes/id",
+              "before": "5757760",
+              "after": "5757763"
+            },
+            {
+              "path": "/children/2/children/4/children/0/attributes/ReactionStepArrows",
+              "before": "5757756",
+              "after": "5757759"
+            },
+            {
+              "path": "/children/2/children/4/children/0/attributes/id",
+              "before": "5757761",
+              "after": "5757764"
+            },
+            {
+              "path": "/children/2/children/5/attributes/id",
+              "before": "5757759",
+              "after": "5757762"
+            }
+          ],
+          "native": [
+            {
+              "path": "/arrows/0/id",
+              "before": 5757756,
+              "after": 5757759
+            }
+          ]
+        }
+      },
+      {
+        "before": 38,
+        "after": 39,
+        "label": "B-end-inspect",
+        "protection": {
+          "atom_subtrees_exact": true,
+          "bond_subtrees_exact": true,
+          "text_runs_exact": true,
+          "font_color_tables_exact": true,
+          "counts_exact": true,
+          "bond_length_exact": true
+        },
+        "differences": {
+          "xml": [],
+          "native": []
+        }
+      },
+      {
+        "before": 40,
+        "after": 41,
+        "label": "fractional-no-edit-save",
+        "protection": {
+          "atom_subtrees_exact": true,
+          "bond_subtrees_exact": true,
+          "text_runs_exact": true,
+          "font_color_tables_exact": true,
+          "counts_exact": true,
+          "bond_length_exact": true
+        },
+        "differences": {
+          "xml": [
+            {
+              "path": "/attributes/Name",
+              "before": "source.cdxml",
+              "after": "fractional-noedit.cdx"
+            }
+          ],
+          "native": []
+        }
+      },
+      {
+        "before": 41,
+        "after": 42,
+        "label": "fractional-CDXML-reopen",
+        "protection": {
+          "atom_subtrees_exact": true,
+          "bond_subtrees_exact": true,
+          "text_runs_exact": true,
+          "font_color_tables_exact": true,
+          "counts_exact": true,
+          "bond_length_exact": true
+        },
+        "differences": {
+          "xml": [
+            {
+              "path": "/attributes/BoundingBox",
+              "before": "123.46 82.89 469.86 223.51",
+              "after": "123.46 82.89 469.87 223.51"
+            },
+            {
+              "path": "/attributes/Name",
+              "before": "fractional-noedit.cdx",
+              "after": "fractional-noedit.cdxml"
+            },
+            {
+              "path": "/children/2/attributes/id",
+              "before": "8731051",
+              "after": "8731053"
+            },
+            {
+              "path": "/children/2/children/1/attributes/BoundingBox",
+              "before": "258.27 154.80 316.64 163.24",
+              "after": "258.27 154.80 316.63 163.24"
+            },
+            {
+              "path": "/children/2/children/2/attributes/BoundingBox",
+              "before": "397.62 213.07 469.86 223.51",
+              "after": "397.62 213.07 469.87 223.51"
+            }
+          ],
+          "native": [
+            {
+              "path": "/captions/0/anchor/0",
+              "before": 123.456787109375,
+              "after": 123.45999145507812
+            },
+            {
+              "path": "/captions/0/anchor/1",
+              "before": 91.23455810546875,
+              "after": 91.22999572753906
+            },
+            {
+              "path": "/captions/0/bounds/0",
+              "before": 123.456787109375,
+              "after": 123.45999145507812
+            },
+            {
+              "path": "/captions/0/bounds/1",
+              "before": 82.89289143880208,
+              "after": 82.8883290608724
+            },
+            {
+              "path": "/captions/0/bounds/2",
+              "before": 186.825927734375,
+              "after": 186.82913208007812
+            },
+            {
+              "path": "/captions/0/bounds/3",
+              "before": 93.23455810546875,
+              "after": 93.22999572753906
+            },
+            {
+              "path": "/captions/1/anchor/0",
+              "before": 258.2718200683594,
+              "after": 258.2699890136719
+            },
+            {
+              "path": "/captions/1/anchor/1",
+              "before": 163.14158630371094,
+              "after": 163.13999938964844
+            },
+            {
+              "path": "/captions/1/bounds/0",
+              "before": 258.2718200683594,
+              "after": 258.2699890136719
+            },
+            {
+              "path": "/captions/1/bounds/1",
+              "before": 154.79991963704427,
+              "after": 154.79833272298177
+            },
+            {
+              "path": "/captions/1/bounds/2",
+              "before": 316.6360778808594,
+              "after": 316.6342468261719
+            },
+            {
+              "path": "/captions/1/bounds/3",
+              "before": 163.24158630371093,
+              "after": 163.23999938964843
+            },
+            {
+              "path": "/captions/2/anchor/0",
+              "before": 397.61802673339844,
+              "after": 397.6199951171875
+            },
+            {
+              "path": "/captions/2/anchor/1",
+              "before": 221.41419982910156,
+              "after": 221.4099884033203
+            },
+            {
+              "path": "/captions/2/bounds/0",
+              "before": 397.61802673339844,
+              "after": 397.6199951171875
+            },
+            {
+              "path": "/captions/2/bounds/1",
+              "before": 213.07253316243492,
+              "after": 213.06832173665367
+            },
+            {
+              "path": "/captions/2/bounds/2",
+              "before": 469.86412048339844,
+              "after": 469.8660888671875
+            },
+            {
+              "path": "/captions/2/bounds/3",
+              "before": 223.51419982910156,
+              "after": 223.5099884033203
+            }
+          ]
+        }
+      },
+      {
+        "before": 41,
+        "after": 43,
+        "label": "fractional-CDX-reopen",
+        "protection": {
+          "atom_subtrees_exact": true,
+          "bond_subtrees_exact": true,
+          "text_runs_exact": true,
+          "font_color_tables_exact": true,
+          "counts_exact": true,
+          "bond_length_exact": true
+        },
+        "differences": {
+          "xml": [
+            {
+              "path": "/children/2/attributes/id",
+              "before": "8731051",
+              "after": "8731053"
+            }
+          ],
+          "native": []
+        }
+      },
+      {
+        "before": 43,
+        "after": 44,
+        "label": "fractional-end-inspect",
+        "protection": {
+          "atom_subtrees_exact": true,
+          "bond_subtrees_exact": true,
+          "text_runs_exact": true,
+          "font_color_tables_exact": true,
+          "counts_exact": true,
+          "bond_length_exact": true
+        },
+        "differences": {
+          "xml": [],
+          "native": []
+        }
+      }
+    ],
+    "reopen_isomorphism": [
+      {
+        "call": 21,
+        "saved_call": 20,
+        "format": "cdxml",
+        "saved_sha256": "350a4b4909b1a345f2f93ff0f87a394200676a7f34606496a96be04a83af0918",
+        "strict_normalization_ok": false,
+        "ID_bijection_and_typed_reference_edges_isomorphic": true,
+        "mapping_method": "Full XML tag/ordered containment tree; one-to-one IDs; every present typed reference resolved and compared under that mapping. No string substitution or acceptance exemption.",
+        "changed_IDs": [
+          {
+            "path": "/children/2",
+            "tag": "page",
+            "before": "7155",
+            "after": "7158"
+          },
+          {
+            "path": "/children/2/children/4",
+            "tag": "graphic",
+            "before": "7153",
+            "after": "7156"
+          },
+          {
+            "path": "/children/2/children/5",
+            "tag": "scheme",
+            "before": "7157",
+            "after": "7160"
+          },
+          {
+            "path": "/children/2/children/5/children/0",
+            "tag": "step",
+            "before": "7158",
+            "after": "7161"
+          },
+          {
+            "path": "/children/2/children/6",
+            "tag": "arrow",
+            "before": "7156",
+            "after": "7159"
+          }
+        ],
+        "checked_reference_edges": [
+          {
+            "path": "/children/2/children/0/children/3",
+            "attribute": "B",
+            "before": [
+              "7111"
+            ],
+            "after": [
+              "7111"
+            ]
+          },
+          {
+            "path": "/children/2/children/0/children/3",
+            "attribute": "E",
+            "before": [
+              "7112"
+            ],
+            "after": [
+              "7112"
+            ]
+          },
+          {
+            "path": "/children/2/children/0/children/4",
+            "attribute": "B",
+            "before": [
+              "7112"
+            ],
+            "after": [
+              "7112"
+            ]
+          },
+          {
+            "path": "/children/2/children/0/children/4",
+            "attribute": "E",
+            "before": [
+              "7113"
+            ],
+            "after": [
+              "7113"
+            ]
+          },
+          {
+            "path": "/children/2/children/1/children/4",
+            "attribute": "B",
+            "before": [
+              "7121"
+            ],
+            "after": [
+              "7121"
+            ]
+          },
+          {
+            "path": "/children/2/children/1/children/4",
+            "attribute": "E",
+            "before": [
+              "7122"
+            ],
+            "after": [
+              "7122"
+            ]
+          },
+          {
+            "path": "/children/2/children/1/children/5",
+            "attribute": "B",
+            "before": [
+              "7122"
+            ],
+            "after": [
+              "7122"
+            ]
+          },
+          {
+            "path": "/children/2/children/1/children/5",
+            "attribute": "E",
+            "before": [
+              "7123"
+            ],
+            "after": [
+              "7123"
+            ]
+          },
+          {
+            "path": "/children/2/children/1/children/6",
+            "attribute": "B",
+            "before": [
+              "7123"
+            ],
+            "after": [
+              "7123"
+            ]
+          },
+          {
+            "path": "/children/2/children/1/children/6",
+            "attribute": "E",
+            "before": [
+              "7125"
+            ],
+            "after": [
+              "7125"
+            ]
+          },
+          {
+            "path": "/children/2/children/4",
+            "attribute": "SupersededBy",
+            "before": [
+              "7156"
+            ],
+            "after": [
+              "7159"
+            ]
+          },
+          {
+            "path": "/children/2/children/5/children/0",
+            "attribute": "ReactionStepProducts",
+            "before": [
+              "7120"
+            ],
+            "after": [
+              "7120"
+            ]
+          },
+          {
+            "path": "/children/2/children/5/children/0",
+            "attribute": "ReactionStepObjectsAboveArrow",
+            "before": [
+              "7140"
+            ],
+            "after": [
+              "7140"
+            ]
+          },
+          {
+            "path": "/children/2/children/5/children/0",
+            "attribute": "ReactionStepArrows",
+            "before": [
+              "7153"
+            ],
+            "after": [
+              "7156"
+            ]
+          },
+          {
+            "path": "/children/2/children/5/children/0",
+            "attribute": "ReactionStepReactants",
+            "before": [
+              "7110"
+            ],
+            "after": [
+              "7110"
+            ]
+          }
+        ],
+        "native_differences_after_ID_mapping": [
+          {
+            "path": "/captions/0/anchor/0",
+            "before": 191.4208984375,
+            "after": 191.4199981689453
+          },
+          {
+            "path": "/captions/0/bounds/0",
+            "before": 191.4208984375,
+            "after": 191.4199981689453
+          },
+          {
+            "path": "/captions/0/bounds/2",
+            "before": 257.5791015625,
+            "after": 257.5782012939453
+          }
+        ],
+        "raw_Z_differences": [],
+        "relative_Z_order_preserved": true,
+        "new_PID_start_HWND_and_document_verified": true
+      },
+      {
+        "call": 22,
+        "saved_call": 20,
+        "format": "cdx",
+        "saved_sha256": "c0135e9a04f4fb128b1361eb5fd9d4c1cdaa53ab97a23535da2e37fcd1edf2ed",
+        "strict_normalization_ok": false,
+        "ID_bijection_and_typed_reference_edges_isomorphic": true,
+        "mapping_method": "Full XML tag/ordered containment tree; one-to-one IDs; every present typed reference resolved and compared under that mapping. No string substitution or acceptance exemption.",
+        "changed_IDs": [
+          {
+            "path": "/children/2",
+            "tag": "page",
+            "before": "7155",
+            "after": "7158"
+          },
+          {
+            "path": "/children/2/children/4",
+            "tag": "graphic",
+            "before": "7153",
+            "after": "7156"
+          },
+          {
+            "path": "/children/2/children/5",
+            "tag": "scheme",
+            "before": "7157",
+            "after": "7160"
+          },
+          {
+            "path": "/children/2/children/5/children/0",
+            "tag": "step",
+            "before": "7158",
+            "after": "7161"
+          },
+          {
+            "path": "/children/2/children/6",
+            "tag": "arrow",
+            "before": "7156",
+            "after": "7159"
+          }
+        ],
+        "checked_reference_edges": [
+          {
+            "path": "/children/2/children/0/children/3",
+            "attribute": "B",
+            "before": [
+              "7111"
+            ],
+            "after": [
+              "7111"
+            ]
+          },
+          {
+            "path": "/children/2/children/0/children/3",
+            "attribute": "E",
+            "before": [
+              "7112"
+            ],
+            "after": [
+              "7112"
+            ]
+          },
+          {
+            "path": "/children/2/children/0/children/4",
+            "attribute": "B",
+            "before": [
+              "7112"
+            ],
+            "after": [
+              "7112"
+            ]
+          },
+          {
+            "path": "/children/2/children/0/children/4",
+            "attribute": "E",
+            "before": [
+              "7113"
+            ],
+            "after": [
+              "7113"
+            ]
+          },
+          {
+            "path": "/children/2/children/1/children/4",
+            "attribute": "B",
+            "before": [
+              "7121"
+            ],
+            "after": [
+              "7121"
+            ]
+          },
+          {
+            "path": "/children/2/children/1/children/4",
+            "attribute": "E",
+            "before": [
+              "7122"
+            ],
+            "after": [
+              "7122"
+            ]
+          },
+          {
+            "path": "/children/2/children/1/children/5",
+            "attribute": "B",
+            "before": [
+              "7122"
+            ],
+            "after": [
+              "7122"
+            ]
+          },
+          {
+            "path": "/children/2/children/1/children/5",
+            "attribute": "E",
+            "before": [
+              "7123"
+            ],
+            "after": [
+              "7123"
+            ]
+          },
+          {
+            "path": "/children/2/children/1/children/6",
+            "attribute": "B",
+            "before": [
+              "7123"
+            ],
+            "after": [
+              "7123"
+            ]
+          },
+          {
+            "path": "/children/2/children/1/children/6",
+            "attribute": "E",
+            "before": [
+              "7125"
+            ],
+            "after": [
+              "7125"
+            ]
+          },
+          {
+            "path": "/children/2/children/4",
+            "attribute": "SupersededBy",
+            "before": [
+              "7156"
+            ],
+            "after": [
+              "7159"
+            ]
+          },
+          {
+            "path": "/children/2/children/5/children/0",
+            "attribute": "ReactionStepProducts",
+            "before": [
+              "7120"
+            ],
+            "after": [
+              "7120"
+            ]
+          },
+          {
+            "path": "/children/2/children/5/children/0",
+            "attribute": "ReactionStepObjectsAboveArrow",
+            "before": [
+              "7140"
+            ],
+            "after": [
+              "7140"
+            ]
+          },
+          {
+            "path": "/children/2/children/5/children/0",
+            "attribute": "ReactionStepArrows",
+            "before": [
+              "7153"
+            ],
+            "after": [
+              "7156"
+            ]
+          },
+          {
+            "path": "/children/2/children/5/children/0",
+            "attribute": "ReactionStepReactants",
+            "before": [
+              "7110"
+            ],
+            "after": [
+              "7110"
+            ]
+          }
+        ],
+        "native_differences_after_ID_mapping": [],
+        "raw_Z_differences": [],
+        "relative_Z_order_preserved": true,
+        "new_PID_start_HWND_and_document_verified": true
+      },
+      {
+        "call": 33,
+        "saved_call": 32,
+        "format": "cdxml",
+        "saved_sha256": "abe0f48e49f3ca76e259143c8eaafaf31334431332eac63cc5e6e5498aa058bb",
+        "strict_normalization_ok": false,
+        "ID_bijection_and_typed_reference_edges_isomorphic": true,
+        "mapping_method": "Full XML tag/ordered containment tree; one-to-one IDs; every present typed reference resolved and compared under that mapping. No string substitution or acceptance exemption.",
+        "changed_IDs": [
+          {
+            "path": "/children/2",
+            "tag": "page",
+            "before": "5757755",
+            "after": "5757758"
+          },
+          {
+            "path": "/children/2/children/3",
+            "tag": "graphic",
+            "before": "5757752",
+            "after": "5757756"
+          },
+          {
+            "path": "/children/2/children/4",
+            "tag": "scheme",
+            "before": "5757757",
+            "after": "5757760"
+          },
+          {
+            "path": "/children/2/children/4/children/0",
+            "tag": "step",
+            "before": "5757758",
+            "after": "5757761"
+          },
+          {
+            "path": "/children/2/children/5",
+            "tag": "arrow",
+            "before": "5757756",
+            "after": "5757759"
+          }
+        ],
+        "checked_reference_edges": [
+          {
+            "path": "/children/2/children/0/children/3",
+            "attribute": "B",
+            "before": [
+              "5757716"
+            ],
+            "after": [
+              "5757716"
+            ]
+          },
+          {
+            "path": "/children/2/children/0/children/3",
+            "attribute": "E",
+            "before": [
+              "5757719"
+            ],
+            "after": [
+              "5757719"
+            ]
+          },
+          {
+            "path": "/children/2/children/0/children/4",
+            "attribute": "B",
+            "before": [
+              "5757719"
+            ],
+            "after": [
+              "5757719"
+            ]
+          },
+          {
+            "path": "/children/2/children/0/children/4",
+            "attribute": "E",
+            "before": [
+              "5757721"
+            ],
+            "after": [
+              "5757721"
+            ]
+          },
+          {
+            "path": "/children/2/children/1/children/3",
+            "attribute": "B",
+            "before": [
+              "5757731"
+            ],
+            "after": [
+              "5757731"
+            ]
+          },
+          {
+            "path": "/children/2/children/1/children/3",
+            "attribute": "E",
+            "before": [
+              "5757734"
+            ],
+            "after": [
+              "5757734"
+            ]
+          },
+          {
+            "path": "/children/2/children/1/children/4",
+            "attribute": "B",
+            "before": [
+              "5757734"
+            ],
+            "after": [
+              "5757734"
+            ]
+          },
+          {
+            "path": "/children/2/children/1/children/4",
+            "attribute": "E",
+            "before": [
+              "5757739"
+            ],
+            "after": [
+              "5757739"
+            ]
+          },
+          {
+            "path": "/children/2/children/3",
+            "attribute": "SupersededBy",
+            "before": [
+              "5757756"
+            ],
+            "after": [
+              "5757759"
+            ]
+          },
+          {
+            "path": "/children/2/children/4/children/0",
+            "attribute": "ReactionStepProducts",
+            "before": [
+              "5757729"
+            ],
+            "after": [
+              "5757729"
+            ]
+          },
+          {
+            "path": "/children/2/children/4/children/0",
+            "attribute": "ReactionStepObjectsAboveArrow",
+            "before": [
+              "5757753"
+            ],
+            "after": [
+              "5757753"
+            ]
+          },
+          {
+            "path": "/children/2/children/4/children/0",
+            "attribute": "ReactionStepArrows",
+            "before": [
+              "5757752"
+            ],
+            "after": [
+              "5757756"
+            ]
+          },
+          {
+            "path": "/children/2/children/4/children/0",
+            "attribute": "ReactionStepReactants",
+            "before": [
+              "5757713"
+            ],
+            "after": [
+              "5757713"
+            ]
+          }
+        ],
+        "native_differences_after_ID_mapping": [
+          {
+            "path": "/captions/0/anchor/0",
+            "before": 242.6181640625,
+            "after": 242.6199951171875
+          },
+          {
+            "path": "/captions/0/bounds/0",
+            "before": 242.6181640625,
+            "after": 242.6199951171875
+          },
+          {
+            "path": "/captions/0/bounds/2",
+            "before": 307.3818359375,
+            "after": 307.3836669921875
+          }
+        ],
+        "raw_Z_differences": [
+          {
+            "path": "/children/2/children/3/attributes/Z",
+            "before": "14",
+            "after": "15"
+          },
+          {
+            "path": "/children/2/children/5/attributes/Z",
+            "before": "14",
+            "after": "15"
+          }
+        ],
+        "relative_Z_order_preserved": true,
+        "new_PID_start_HWND_and_document_verified": true
+      },
+      {
+        "call": 34,
+        "saved_call": 32,
+        "format": "cdx",
+        "saved_sha256": "bc81afb242e66071358471d971c99b7d528473afbf8df5e3b618792d1ad49956",
+        "strict_normalization_ok": false,
+        "ID_bijection_and_typed_reference_edges_isomorphic": true,
+        "mapping_method": "Full XML tag/ordered containment tree; one-to-one IDs; every present typed reference resolved and compared under that mapping. No string substitution or acceptance exemption.",
+        "changed_IDs": [
+          {
+            "path": "/children/2",
+            "tag": "page",
+            "before": "5757755",
+            "after": "5757758"
+          },
+          {
+            "path": "/children/2/children/3",
+            "tag": "graphic",
+            "before": "5757752",
+            "after": "5757756"
+          },
+          {
+            "path": "/children/2/children/4",
+            "tag": "scheme",
+            "before": "5757757",
+            "after": "5757760"
+          },
+          {
+            "path": "/children/2/children/4/children/0",
+            "tag": "step",
+            "before": "5757758",
+            "after": "5757761"
+          },
+          {
+            "path": "/children/2/children/5",
+            "tag": "arrow",
+            "before": "5757756",
+            "after": "5757759"
+          }
+        ],
+        "checked_reference_edges": [
+          {
+            "path": "/children/2/children/0/children/3",
+            "attribute": "B",
+            "before": [
+              "5757716"
+            ],
+            "after": [
+              "5757716"
+            ]
+          },
+          {
+            "path": "/children/2/children/0/children/3",
+            "attribute": "E",
+            "before": [
+              "5757719"
+            ],
+            "after": [
+              "5757719"
+            ]
+          },
+          {
+            "path": "/children/2/children/0/children/4",
+            "attribute": "B",
+            "before": [
+              "5757719"
+            ],
+            "after": [
+              "5757719"
+            ]
+          },
+          {
+            "path": "/children/2/children/0/children/4",
+            "attribute": "E",
+            "before": [
+              "5757721"
+            ],
+            "after": [
+              "5757721"
+            ]
+          },
+          {
+            "path": "/children/2/children/1/children/3",
+            "attribute": "B",
+            "before": [
+              "5757731"
+            ],
+            "after": [
+              "5757731"
+            ]
+          },
+          {
+            "path": "/children/2/children/1/children/3",
+            "attribute": "E",
+            "before": [
+              "5757734"
+            ],
+            "after": [
+              "5757734"
+            ]
+          },
+          {
+            "path": "/children/2/children/1/children/4",
+            "attribute": "B",
+            "before": [
+              "5757734"
+            ],
+            "after": [
+              "5757734"
+            ]
+          },
+          {
+            "path": "/children/2/children/1/children/4",
+            "attribute": "E",
+            "before": [
+              "5757739"
+            ],
+            "after": [
+              "5757739"
+            ]
+          },
+          {
+            "path": "/children/2/children/3",
+            "attribute": "SupersededBy",
+            "before": [
+              "5757756"
+            ],
+            "after": [
+              "5757759"
+            ]
+          },
+          {
+            "path": "/children/2/children/4/children/0",
+            "attribute": "ReactionStepProducts",
+            "before": [
+              "5757729"
+            ],
+            "after": [
+              "5757729"
+            ]
+          },
+          {
+            "path": "/children/2/children/4/children/0",
+            "attribute": "ReactionStepObjectsAboveArrow",
+            "before": [
+              "5757753"
+            ],
+            "after": [
+              "5757753"
+            ]
+          },
+          {
+            "path": "/children/2/children/4/children/0",
+            "attribute": "ReactionStepArrows",
+            "before": [
+              "5757752"
+            ],
+            "after": [
+              "5757756"
+            ]
+          },
+          {
+            "path": "/children/2/children/4/children/0",
+            "attribute": "ReactionStepReactants",
+            "before": [
+              "5757713"
+            ],
+            "after": [
+              "5757713"
+            ]
+          }
+        ],
+        "native_differences_after_ID_mapping": [],
+        "raw_Z_differences": [
+          {
+            "path": "/children/2/children/3/attributes/Z",
+            "before": "14",
+            "after": "15"
+          },
+          {
+            "path": "/children/2/children/5/attributes/Z",
+            "before": "14",
+            "after": "15"
+          }
+        ],
+        "relative_Z_order_preserved": true,
+        "new_PID_start_HWND_and_document_verified": true
+      },
+      {
+        "call": 37,
+        "saved_call": 36,
+        "format": "cdxml",
+        "saved_sha256": "b05d1ad504d58fc74739d7894e0aae7a2be098db0d732a1feaeeb650a9238aa8",
+        "strict_normalization_ok": false,
+        "ID_bijection_and_typed_reference_edges_isomorphic": true,
+        "mapping_method": "Full XML tag/ordered containment tree; one-to-one IDs; every present typed reference resolved and compared under that mapping. No string substitution or acceptance exemption.",
+        "changed_IDs": [
+          {
+            "path": "/children/2",
+            "tag": "page",
+            "before": "5757758",
+            "after": "5757761"
+          },
+          {
+            "path": "/children/2/children/3",
+            "tag": "graphic",
+            "before": "5757756",
+            "after": "5757759"
+          },
+          {
+            "path": "/children/2/children/4",
+            "tag": "scheme",
+            "before": "5757760",
+            "after": "5757763"
+          },
+          {
+            "path": "/children/2/children/4/children/0",
+            "tag": "step",
+            "before": "5757761",
+            "after": "5757764"
+          },
+          {
+            "path": "/children/2/children/5",
+            "tag": "arrow",
+            "before": "5757759",
+            "after": "5757762"
+          }
+        ],
+        "checked_reference_edges": [
+          {
+            "path": "/children/2/children/0/children/3",
+            "attribute": "B",
+            "before": [
+              "5757716"
+            ],
+            "after": [
+              "5757716"
+            ]
+          },
+          {
+            "path": "/children/2/children/0/children/3",
+            "attribute": "E",
+            "before": [
+              "5757719"
+            ],
+            "after": [
+              "5757719"
+            ]
+          },
+          {
+            "path": "/children/2/children/0/children/4",
+            "attribute": "B",
+            "before": [
+              "5757719"
+            ],
+            "after": [
+              "5757719"
+            ]
+          },
+          {
+            "path": "/children/2/children/0/children/4",
+            "attribute": "E",
+            "before": [
+              "5757721"
+            ],
+            "after": [
+              "5757721"
+            ]
+          },
+          {
+            "path": "/children/2/children/1/children/3",
+            "attribute": "B",
+            "before": [
+              "5757731"
+            ],
+            "after": [
+              "5757731"
+            ]
+          },
+          {
+            "path": "/children/2/children/1/children/3",
+            "attribute": "E",
+            "before": [
+              "5757734"
+            ],
+            "after": [
+              "5757734"
+            ]
+          },
+          {
+            "path": "/children/2/children/1/children/4",
+            "attribute": "B",
+            "before": [
+              "5757734"
+            ],
+            "after": [
+              "5757734"
+            ]
+          },
+          {
+            "path": "/children/2/children/1/children/4",
+            "attribute": "E",
+            "before": [
+              "5757739"
+            ],
+            "after": [
+              "5757739"
+            ]
+          },
+          {
+            "path": "/children/2/children/3",
+            "attribute": "SupersededBy",
+            "before": [
+              "5757759"
+            ],
+            "after": [
+              "5757762"
+            ]
+          },
+          {
+            "path": "/children/2/children/4/children/0",
+            "attribute": "ReactionStepProducts",
+            "before": [
+              "5757729"
+            ],
+            "after": [
+              "5757729"
+            ]
+          },
+          {
+            "path": "/children/2/children/4/children/0",
+            "attribute": "ReactionStepObjectsAboveArrow",
+            "before": [
+              "5757753"
+            ],
+            "after": [
+              "5757753"
+            ]
+          },
+          {
+            "path": "/children/2/children/4/children/0",
+            "attribute": "ReactionStepArrows",
+            "before": [
+              "5757756"
+            ],
+            "after": [
+              "5757759"
+            ]
+          },
+          {
+            "path": "/children/2/children/4/children/0",
+            "attribute": "ReactionStepReactants",
+            "before": [
+              "5757713"
+            ],
+            "after": [
+              "5757713"
+            ]
+          }
+        ],
+        "native_differences_after_ID_mapping": [
+          {
+            "path": "/captions/0/anchor/0",
+            "before": 242.6181640625,
+            "after": 242.6199951171875
+          },
+          {
+            "path": "/captions/0/bounds/0",
+            "before": 242.6181640625,
+            "after": 242.6199951171875
+          },
+          {
+            "path": "/captions/0/bounds/2",
+            "before": 307.3818359375,
+            "after": 307.3836669921875
+          }
+        ],
+        "raw_Z_differences": [],
+        "relative_Z_order_preserved": true,
+        "new_PID_start_HWND_and_document_verified": true
+      },
+      {
+        "call": 38,
+        "saved_call": 36,
+        "format": "cdx",
+        "saved_sha256": "d4223be629f904a612f5f74ba278014a1fa2f09b033be4d41da33d980c40f3d5",
+        "strict_normalization_ok": false,
+        "ID_bijection_and_typed_reference_edges_isomorphic": true,
+        "mapping_method": "Full XML tag/ordered containment tree; one-to-one IDs; every present typed reference resolved and compared under that mapping. No string substitution or acceptance exemption.",
+        "changed_IDs": [
+          {
+            "path": "/children/2",
+            "tag": "page",
+            "before": "5757758",
+            "after": "5757761"
+          },
+          {
+            "path": "/children/2/children/3",
+            "tag": "graphic",
+            "before": "5757756",
+            "after": "5757759"
+          },
+          {
+            "path": "/children/2/children/4",
+            "tag": "scheme",
+            "before": "5757760",
+            "after": "5757763"
+          },
+          {
+            "path": "/children/2/children/4/children/0",
+            "tag": "step",
+            "before": "5757761",
+            "after": "5757764"
+          },
+          {
+            "path": "/children/2/children/5",
+            "tag": "arrow",
+            "before": "5757759",
+            "after": "5757762"
+          }
+        ],
+        "checked_reference_edges": [
+          {
+            "path": "/children/2/children/0/children/3",
+            "attribute": "B",
+            "before": [
+              "5757716"
+            ],
+            "after": [
+              "5757716"
+            ]
+          },
+          {
+            "path": "/children/2/children/0/children/3",
+            "attribute": "E",
+            "before": [
+              "5757719"
+            ],
+            "after": [
+              "5757719"
+            ]
+          },
+          {
+            "path": "/children/2/children/0/children/4",
+            "attribute": "B",
+            "before": [
+              "5757719"
+            ],
+            "after": [
+              "5757719"
+            ]
+          },
+          {
+            "path": "/children/2/children/0/children/4",
+            "attribute": "E",
+            "before": [
+              "5757721"
+            ],
+            "after": [
+              "5757721"
+            ]
+          },
+          {
+            "path": "/children/2/children/1/children/3",
+            "attribute": "B",
+            "before": [
+              "5757731"
+            ],
+            "after": [
+              "5757731"
+            ]
+          },
+          {
+            "path": "/children/2/children/1/children/3",
+            "attribute": "E",
+            "before": [
+              "5757734"
+            ],
+            "after": [
+              "5757734"
+            ]
+          },
+          {
+            "path": "/children/2/children/1/children/4",
+            "attribute": "B",
+            "before": [
+              "5757734"
+            ],
+            "after": [
+              "5757734"
+            ]
+          },
+          {
+            "path": "/children/2/children/1/children/4",
+            "attribute": "E",
+            "before": [
+              "5757739"
+            ],
+            "after": [
+              "5757739"
+            ]
+          },
+          {
+            "path": "/children/2/children/3",
+            "attribute": "SupersededBy",
+            "before": [
+              "5757759"
+            ],
+            "after": [
+              "5757762"
+            ]
+          },
+          {
+            "path": "/children/2/children/4/children/0",
+            "attribute": "ReactionStepProducts",
+            "before": [
+              "5757729"
+            ],
+            "after": [
+              "5757729"
+            ]
+          },
+          {
+            "path": "/children/2/children/4/children/0",
+            "attribute": "ReactionStepObjectsAboveArrow",
+            "before": [
+              "5757753"
+            ],
+            "after": [
+              "5757753"
+            ]
+          },
+          {
+            "path": "/children/2/children/4/children/0",
+            "attribute": "ReactionStepArrows",
+            "before": [
+              "5757756"
+            ],
+            "after": [
+              "5757759"
+            ]
+          },
+          {
+            "path": "/children/2/children/4/children/0",
+            "attribute": "ReactionStepReactants",
+            "before": [
+              "5757713"
+            ],
+            "after": [
+              "5757713"
+            ]
+          }
+        ],
+        "native_differences_after_ID_mapping": [],
+        "raw_Z_differences": [],
+        "relative_Z_order_preserved": true,
+        "new_PID_start_HWND_and_document_verified": true
+      },
+      {
+        "call": 42,
+        "saved_call": 41,
+        "format": "cdxml",
+        "saved_sha256": "4e00c9f5c9b59e532372623b22a3d4e1f653b9b919f8fc0ccd75fd0d9d785b13",
+        "strict_normalization_ok": false,
+        "ID_bijection_and_typed_reference_edges_isomorphic": true,
+        "mapping_method": "Full XML tag/ordered containment tree; one-to-one IDs; every present typed reference resolved and compared under that mapping. No string substitution or acceptance exemption.",
+        "changed_IDs": [
+          {
+            "path": "/children/2",
+            "tag": "page",
+            "before": "8731051",
+            "after": "8731053"
+          }
+        ],
+        "checked_reference_edges": [],
+        "native_differences_after_ID_mapping": [
+          {
+            "path": "/captions/0/anchor/0",
+            "before": 123.456787109375,
+            "after": 123.45999145507812
+          },
+          {
+            "path": "/captions/0/anchor/1",
+            "before": 91.23455810546875,
+            "after": 91.22999572753906
+          },
+          {
+            "path": "/captions/0/bounds/0",
+            "before": 123.456787109375,
+            "after": 123.45999145507812
+          },
+          {
+            "path": "/captions/0/bounds/1",
+            "before": 82.89289143880208,
+            "after": 82.8883290608724
+          },
+          {
+            "path": "/captions/0/bounds/2",
+            "before": 186.825927734375,
+            "after": 186.82913208007812
+          },
+          {
+            "path": "/captions/0/bounds/3",
+            "before": 93.23455810546875,
+            "after": 93.22999572753906
+          },
+          {
+            "path": "/captions/1/anchor/0",
+            "before": 258.2718200683594,
+            "after": 258.2699890136719
+          },
+          {
+            "path": "/captions/1/anchor/1",
+            "before": 163.14158630371094,
+            "after": 163.13999938964844
+          },
+          {
+            "path": "/captions/1/bounds/0",
+            "before": 258.2718200683594,
+            "after": 258.2699890136719
+          },
+          {
+            "path": "/captions/1/bounds/1",
+            "before": 154.79991963704427,
+            "after": 154.79833272298177
+          },
+          {
+            "path": "/captions/1/bounds/2",
+            "before": 316.6360778808594,
+            "after": 316.6342468261719
+          },
+          {
+            "path": "/captions/1/bounds/3",
+            "before": 163.24158630371093,
+            "after": 163.23999938964843
+          },
+          {
+            "path": "/captions/2/anchor/0",
+            "before": 397.61802673339844,
+            "after": 397.6199951171875
+          },
+          {
+            "path": "/captions/2/anchor/1",
+            "before": 221.41419982910156,
+            "after": 221.4099884033203
+          },
+          {
+            "path": "/captions/2/bounds/0",
+            "before": 397.61802673339844,
+            "after": 397.6199951171875
+          },
+          {
+            "path": "/captions/2/bounds/1",
+            "before": 213.07253316243492,
+            "after": 213.06832173665367
+          },
+          {
+            "path": "/captions/2/bounds/2",
+            "before": 469.86412048339844,
+            "after": 469.8660888671875
+          },
+          {
+            "path": "/captions/2/bounds/3",
+            "before": 223.51419982910156,
+            "after": 223.5099884033203
+          }
+        ],
+        "raw_Z_differences": [],
+        "relative_Z_order_preserved": true,
+        "new_PID_start_HWND_and_document_verified": true
+      },
+      {
+        "call": 43,
+        "saved_call": 41,
+        "format": "cdx",
+        "saved_sha256": "eaabdf266b494055e66ca20277404ced80cbfe0d98b0fe364a7a5e31d56bb97d",
+        "strict_normalization_ok": false,
+        "ID_bijection_and_typed_reference_edges_isomorphic": true,
+        "mapping_method": "Full XML tag/ordered containment tree; one-to-one IDs; every present typed reference resolved and compared under that mapping. No string substitution or acceptance exemption.",
+        "changed_IDs": [
+          {
+            "path": "/children/2",
+            "tag": "page",
+            "before": "8731051",
+            "after": "8731053"
+          }
+        ],
+        "checked_reference_edges": [],
+        "native_differences_after_ID_mapping": [],
+        "raw_Z_differences": [],
+        "relative_Z_order_preserved": true,
+        "new_PID_start_HWND_and_document_verified": true
+      }
+    ],
+    "serialization_observations": [
+      {
+        "saved_call": 20,
+        "caption_id": 7140,
+        "live_anchor": [
+          191.4208984375,
+          125.75
+        ],
+        "saved_cdxml_p_strings": [
+          "191.42",
+          "125.75"
+        ],
+        "CDXML_reopen_anchor": [
+          191.4199981689453,
+          125.75
+        ],
+        "CDXML_delta_from_live": [
+          -0.0009002685546875,
+          0.0
+        ],
+        "CDX_anchor_exact_live": true,
+        "CDX_bounds_exact_live": true,
+        "floor_1_over_65536_prediction": [
+          191.4199981689453,
+          125.75
+        ],
+        "floor_prediction_exact": true,
+        "nearest_1_over_65536_prediction": [
+          191.4199981689453,
+          125.75
+        ],
+        "nearest_prediction_exact": true
+      },
+      {
+        "saved_call": 20,
+        "caption_id": 7150,
+        "live_anchor": [
+          65.0,
+          61.0
+        ],
+        "saved_cdxml_p_strings": [
+          "65",
+          "61"
+        ],
+        "CDXML_reopen_anchor": [
+          65.0,
+          61.0
+        ],
+        "CDXML_delta_from_live": [
+          0.0,
+          0.0
+        ],
+        "CDX_anchor_exact_live": true,
+        "CDX_bounds_exact_live": true,
+        "floor_1_over_65536_prediction": [
+          65.0,
+          61.0
+        ],
+        "floor_prediction_exact": true,
+        "nearest_1_over_65536_prediction": [
+          65.0,
+          61.0
+        ],
+        "nearest_prediction_exact": true
+      },
+      {
+        "saved_call": 32,
+        "caption_id": 5757753,
+        "live_anchor": [
+          242.6181640625,
+          99.5
+        ],
+        "saved_cdxml_p_strings": [
+          "242.62",
+          "99.50"
+        ],
+        "CDXML_reopen_anchor": [
+          242.6199951171875,
+          99.5
+        ],
+        "CDXML_delta_from_live": [
+          0.0018310546875,
+          0.0
+        ],
+        "CDX_anchor_exact_live": true,
+        "CDX_bounds_exact_live": true,
+        "floor_1_over_65536_prediction": [
+          242.6199951171875,
+          99.5
+        ],
+        "floor_prediction_exact": true,
+        "nearest_1_over_65536_prediction": [
+          242.6199951171875,
+          99.5
+        ],
+        "nearest_prediction_exact": true
+      },
+      {
+        "saved_call": 36,
+        "caption_id": 5757753,
+        "live_anchor": [
+          242.6181640625,
+          87.5
+        ],
+        "saved_cdxml_p_strings": [
+          "242.62",
+          "87.50"
+        ],
+        "CDXML_reopen_anchor": [
+          242.6199951171875,
+          87.5
+        ],
+        "CDXML_delta_from_live": [
+          0.0018310546875,
+          0.0
+        ],
+        "CDX_anchor_exact_live": true,
+        "CDX_bounds_exact_live": true,
+        "floor_1_over_65536_prediction": [
+          242.6199951171875,
+          87.5
+        ],
+        "floor_prediction_exact": true,
+        "nearest_1_over_65536_prediction": [
+          242.6199951171875,
+          87.5
+        ],
+        "nearest_prediction_exact": true
+      },
+      {
+        "saved_call": 41,
+        "caption_id": 8731017,
+        "live_anchor": [
+          123.456787109375,
+          91.23455810546875
+        ],
+        "saved_cdxml_p_strings": [
+          "123.46",
+          "91.23"
+        ],
+        "CDXML_reopen_anchor": [
+          123.45999145507812,
+          91.22999572753906
+        ],
+        "CDXML_delta_from_live": [
+          0.003204345703125,
+          -0.0045623779296875
+        ],
+        "CDX_anchor_exact_live": true,
+        "CDX_bounds_exact_live": true,
+        "floor_1_over_65536_prediction": [
+          123.45999145507812,
+          91.22999572753906
+        ],
+        "floor_prediction_exact": true,
+        "nearest_1_over_65536_prediction": [
+          123.46000671386719,
+          91.22999572753906
+        ],
+        "nearest_prediction_exact": false
+      },
+      {
+        "saved_call": 41,
+        "caption_id": 8731031,
+        "live_anchor": [
+          258.2718200683594,
+          163.14158630371094
+        ],
+        "saved_cdxml_p_strings": [
+          "258.27",
+          "163.14"
+        ],
+        "CDXML_reopen_anchor": [
+          258.2699890136719,
+          163.13999938964844
+        ],
+        "CDXML_delta_from_live": [
+          -0.0018310546875,
+          -0.0015869140625
+        ],
+        "CDX_anchor_exact_live": true,
+        "CDX_bounds_exact_live": true,
+        "floor_1_over_65536_prediction": [
+          258.2699890136719,
+          163.13999938964844
+        ],
+        "floor_prediction_exact": true,
+        "nearest_1_over_65536_prediction": [
+          258.27000427246094,
+          163.13999938964844
+        ],
+        "nearest_prediction_exact": false
+      },
+      {
+        "saved_call": 41,
+        "caption_id": 8731049,
+        "live_anchor": [
+          397.61802673339844,
+          221.41419982910156
+        ],
+        "saved_cdxml_p_strings": [
+          "397.62",
+          "221.41"
+        ],
+        "CDXML_reopen_anchor": [
+          397.6199951171875,
+          221.4099884033203
+        ],
+        "CDXML_delta_from_live": [
+          0.0019683837890625,
+          -0.00421142578125
+        ],
+        "CDX_anchor_exact_live": true,
+        "CDX_bounds_exact_live": true,
+        "floor_1_over_65536_prediction": [
+          397.6199951171875,
+          221.4099884033203
+        ],
+        "floor_prediction_exact": true,
+        "nearest_1_over_65536_prediction": [
+          397.6199951171875,
+          221.41000366210938
+        ],
+        "nearest_prediction_exact": false
+      }
+    ],
+    "conclusions": [
+      "Every compared A/B atom and bond subtree, atom-owned label, text run, font/color table, count and declared BondLength is exactly preserved. This is preservation of the recorded document, not an independent chemistry/H correctness verdict.",
+      "B above-arrow moves by (+60.6181640625,-70.5) pt; each half-bond is exactly -12 pt from BondLength24, including the move using new reopen tokens. One bounding residual is about 1.42e-14 pt; original 1e-6 movement tolerance is not altered.",
+      "All eight audited reopens return outer ok while strict normalization remains false. Full containment and typed reference graphs are isomorphic. Native non-caption fields are identical after ID mapping; raw ID and possible Z changes remain recorded.",
+      "Both final CDX reopens exactly preserve their live caption anchors/bounds. A final CDXML x loss is -0.0009002685546875 pt; B final x change is +0.0018310546875 pt. No roundtrip tolerance was widened.",
+      "The independent no-edit fractional control reproduces two-decimal serialized-coordinate loss in all six axes, followed by values consistent here with positive-value truncation to 1/65536. This rejects a general nearest-grid explanation. It is evidence for this build, positive coordinates and these captions, not a universal format precision guarantee.",
+      "Final A/B keep_open replies and unchanged inspection snapshots are present. Independent live post-worker handoff and final canvas display are not established by these artifacts. Root reports the B desktop image captured ChatGPT; therefore final B display stays unverified, with no GUI fallback used."
+    ],
+    "limits": [
+      "No visual acceptance, native chemistry/H qualification, human authentication or universal document-format fidelity is claimed.",
+      "No edits to product source or original artifacts; prior receipts are not overwritten.",
+      "The independent synthetic controls do not establish multiple-arrow or repeated-caption ambiguity coverage."
+    ],
+    "input_files": [
+      {
+        "path": "calls\\000019\\receipt.json",
+        "bytes": 4041,
+        "sha256": "926cefba4b83aa19e757b8e9060f113a81229d84a8e550c3b1f67b9dec6467eb"
+      },
+      {
+        "path": "calls\\000019\\request.json",
+        "bytes": 387,
+        "sha256": "f79be930b4cb29a7c9ab4097b09f707431714ddad857782996d62a71a390696d"
+      },
+      {
+        "path": "calls\\000019\\stderr.raw",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "path": "calls\\000019\\stdout.raw",
+        "bytes": 6526,
+        "sha256": "65f99e9a4421475cf1a06daf3ad4b24cc22f441610ded7bf14b07419aa85dc2b"
+      },
+      {
+        "path": "calls\\000020\\receipt.json",
+        "bytes": 3975,
+        "sha256": "5b0d2fbf29938b1bfee35a1101925ee3d41a9af90dd9d380e7fbb3ad14f6e8f6"
+      },
+      {
+        "path": "calls\\000020\\request.json",
+        "bytes": 167,
+        "sha256": "e0661e4742a3450a712f2f282cdb5f7f0eb23bc9643e3f78e07428ed90568117"
+      },
+      {
+        "path": "calls\\000020\\stderr.raw",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "path": "calls\\000020\\stdout.raw",
+        "bytes": 6996,
+        "sha256": "f2aac0b2d5edd88df240880564c1a4cafee53887cb50e69b68bd9bd737709d64"
+      },
+      {
+        "path": "calls\\000021\\receipt.json",
+        "bytes": 3966,
+        "sha256": "bcd62ac2777c881c1011fb5e7388bbbd71409898b7af37896babe8612ee0e10a"
+      },
+      {
+        "path": "calls\\000021\\request.json",
+        "bytes": 199,
+        "sha256": "05254a0210426b1eb65e01e47d708320d990ca8125431ad1f56b6b2c6cc08281"
+      },
+      {
+        "path": "calls\\000021\\stderr.raw",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "path": "calls\\000021\\stdout.raw",
+        "bytes": 7756,
+        "sha256": "d8faf72f05a330c0c5e2617df0a9a1181d85282b5c4e542ac2914a91f6dca85e"
+      },
+      {
+        "path": "calls\\000022\\receipt.json",
+        "bytes": 4000,
+        "sha256": "01e6a4c5ddb728db183a2c6d05f2a6566e7bc7b896e6f62c225e6c3f7e0dfe38"
+      },
+      {
+        "path": "calls\\000022\\request.json",
+        "bytes": 199,
+        "sha256": "d367e188480c520ad63f9da1203ab5eb5930c8713bfafb7e055a2825bb9ad849"
+      },
+      {
+        "path": "calls\\000022\\stderr.raw",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "path": "calls\\000022\\stdout.raw",
+        "bytes": 7547,
+        "sha256": "49fd56d1cce51ed2e7a830213c725d448bbf27a62ce695c1d98c35151d22340c"
+      },
+      {
+        "path": "calls\\000023\\receipt.json",
+        "bytes": 4049,
+        "sha256": "acb4331ec18352e0b96e1da1c321a2e8d01a4f8b3632c31b1fd296cd1110be15"
+      },
+      {
+        "path": "calls\\000023\\request.json",
+        "bytes": 185,
+        "sha256": "41293c9be251860fa63367c745d247d9bff3ef354967590bc662a87662923170"
+      },
+      {
+        "path": "calls\\000023\\stderr.raw",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "path": "calls\\000023\\stdout.raw",
+        "bytes": 5569,
+        "sha256": "ff66ab614dcb570c81cace6e8ba437d42b7da6703bb66e629873ec249ad70f22"
+      },
+      {
+        "path": "calls\\000029\\receipt.json",
+        "bytes": 4075,
+        "sha256": "c854490f22039d790deddcb42052991d649fa8cc3cbe54b52f96e2cba6766cd7"
+      },
+      {
+        "path": "calls\\000029\\request.json",
+        "bytes": 258,
+        "sha256": "116ed6ed429b01076b38d92af7e3f838ecc3e37b79d210a6a3839ea9ef26db1f"
+      },
+      {
+        "path": "calls\\000029\\stderr.raw",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "path": "calls\\000029\\stdout.raw",
+        "bytes": 6485,
+        "sha256": "fdc5c67600af0637c72541204247c4d6e0e46039eaf657bbd503de3b4ed347e2"
+      },
+      {
+        "path": "calls\\000030\\receipt.json",
+        "bytes": 4108,
+        "sha256": "9509def1393b19871c3f2754e6de4ae0712227cfe5e7d1e9e83db13e9cf1cb65"
+      },
+      {
+        "path": "calls\\000030\\request.json",
+        "bytes": 392,
+        "sha256": "15335da0e3564da715054593c149a2ee6cfae23397dc06912578f2eece010e2e"
+      },
+      {
+        "path": "calls\\000030\\stderr.raw",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "path": "calls\\000030\\stdout.raw",
+        "bytes": 6240,
+        "sha256": "d310a3f5e092863c5a0081143a0725f03a025346540ed667beec40eda51ff81e"
+      },
+      {
+        "path": "calls\\000031\\receipt.json",
+        "bytes": 4003,
+        "sha256": "751175eebdfe4dff3f3add03b06d5c066bb329f56fe5b27b4ae6c1ba216d9720"
+      },
+      {
+        "path": "calls\\000031\\request.json",
+        "bytes": 393,
+        "sha256": "fd31bd4c11d80f3d5470d4580647f43c795eeb03bd319224be854e96a7863b9b"
+      },
+      {
+        "path": "calls\\000031\\stderr.raw",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "path": "calls\\000031\\stdout.raw",
+        "bytes": 5958,
+        "sha256": "338f964d8ec88b6f136782f661ccad54ef7e3b73da3fe0cf0d5dd4875f70d9f3"
+      },
+      {
+        "path": "calls\\000032\\receipt.json",
+        "bytes": 4010,
+        "sha256": "9e7f0976504138bdf545c7b343a9a43d71559ddedfa591432c53718d3af97744"
+      },
+      {
+        "path": "calls\\000032\\request.json",
+        "bytes": 172,
+        "sha256": "2ee94fea22585db1c95abd0d70fabb4b7c8d5da9c89b7940b223b1ba21939e23"
+      },
+      {
+        "path": "calls\\000032\\stderr.raw",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "path": "calls\\000032\\stdout.raw",
+        "bytes": 6336,
+        "sha256": "932c7ae8e1c9deceba9068e46764c052e7385067111ed84a2816d18503ed5958"
+      },
+      {
+        "path": "calls\\000033\\receipt.json",
+        "bytes": 3934,
+        "sha256": "83f3992823f6bd8bd5cce7e0c7392b2d5fb33d04fe853d9f894886d31542a254"
+      },
+      {
+        "path": "calls\\000033\\request.json",
+        "bytes": 199,
+        "sha256": "f2e319342c6a766b6d3f6ab8945e8214c6c8e1a3b59bac5d08e96f70f76969e5"
+      },
+      {
+        "path": "calls\\000033\\stderr.raw",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "path": "calls\\000033\\stdout.raw",
+        "bytes": 7544,
+        "sha256": "8169ee7fe6227ce6971801ddd3fea307d9801a35c01c6f6d9f0cfe85b915c313"
+      },
+      {
+        "path": "calls\\000034\\receipt.json",
+        "bytes": 4011,
+        "sha256": "22b3fed5885111d3ca1fb914d184766cf68485a7c1a5cc339fc36db53c0e4011"
+      },
+      {
+        "path": "calls\\000034\\request.json",
+        "bytes": 199,
+        "sha256": "07323f362a8376a2313f10e875bf48695dd26784e621b3253b8e724dabf39c97"
+      },
+      {
+        "path": "calls\\000034\\stderr.raw",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "path": "calls\\000034\\stdout.raw",
+        "bytes": 7323,
+        "sha256": "5d16e34703b52410005d117543ae0c9415c34ed6dbd118a327966fbe8400fdb9"
+      },
+      {
+        "path": "calls\\000035\\receipt.json",
+        "bytes": 4032,
+        "sha256": "8e06c21f379176ad248f76837507992efbc15555c9e7863081428814141d0e57"
+      },
+      {
+        "path": "calls\\000035\\request.json",
+        "bytes": 393,
+        "sha256": "457d32984e3b76f8f8ba1b3d65dff0114b20bebb052fd5f79d2bfe5d594f7026"
+      },
+      {
+        "path": "calls\\000035\\stderr.raw",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "path": "calls\\000035\\stdout.raw",
+        "bytes": 6088,
+        "sha256": "3c3a278fc939ee8bf8eef3310f4722da9e11be0c087cb58ae23e9a048bdbc675"
+      },
+      {
+        "path": "calls\\000036\\receipt.json",
+        "bytes": 3993,
+        "sha256": "adeded8e29e036a970ab08b7785b909cc04082173e4f3be045a8124fd633c11c"
+      },
+      {
+        "path": "calls\\000036\\request.json",
+        "bytes": 167,
+        "sha256": "957130e559f4460cb3d865f3519d01944c3d4845ce3609a7a3b185ee68663053"
+      },
+      {
+        "path": "calls\\000036\\stderr.raw",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "path": "calls\\000036\\stdout.raw",
+        "bytes": 6469,
+        "sha256": "7ae047a57e7b3004a0f43a954cfa12b850a44f9c0e6dca3594cb9c7a21076506"
+      },
+      {
+        "path": "calls\\000037\\receipt.json",
+        "bytes": 3944,
+        "sha256": "bc4d6842ee5869acecc496fb223b80adf64f608a2cd113347d7b70a320f0290f"
+      },
+      {
+        "path": "calls\\000037\\request.json",
+        "bytes": 199,
+        "sha256": "c4b6ab6a490a5c760453e2dfe424d781d405f6b8cc48c1afafa9dd4948365419"
+      },
+      {
+        "path": "calls\\000037\\stderr.raw",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "path": "calls\\000037\\stdout.raw",
+        "bytes": 7585,
+        "sha256": "3e48d97113128338e97406fa5ed3e4b05734a313d86d2ecd50876f2a66450b78"
+      },
+      {
+        "path": "calls\\000038\\receipt.json",
+        "bytes": 3955,
+        "sha256": "4d931226d6f85419dca4ac5fc53ad61884bd29738ea52f945e8df224ea6cd026"
+      },
+      {
+        "path": "calls\\000038\\request.json",
+        "bytes": 199,
+        "sha256": "b7bc29258f6517b9d1759ee59a11632bb6d7abd63464a069d8145869a98f60a7"
+      },
+      {
+        "path": "calls\\000038\\stderr.raw",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "path": "calls\\000038\\stdout.raw",
+        "bytes": 7371,
+        "sha256": "851d60e777dc7644bd4b7cb6a2cfaa7198e303cb23c07c59bf7c6db215ac1fc4"
+      },
+      {
+        "path": "calls\\000039\\receipt.json",
+        "bytes": 4058,
+        "sha256": "8407c080074ecb3f617e49ac19862bbbf5187dd975dce3c232f79ad7b315d3ff"
+      },
+      {
+        "path": "calls\\000039\\request.json",
+        "bytes": 185,
+        "sha256": "d18dfc9095c7c1143644e9d6e8c3a685092b412dee0219d2f66be8fbcf585384"
+      },
+      {
+        "path": "calls\\000039\\stderr.raw",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "path": "calls\\000039\\stdout.raw",
+        "bytes": 5021,
+        "sha256": "8135475fc64120dd7d7f278fed39a045a8ec2d6bc575f900745df6123210b472"
+      },
+      {
+        "path": "calls\\000040\\receipt.json",
+        "bytes": 4012,
+        "sha256": "4240abee979409ef3bc4b095217c41b9b1ee9d54611808b3eb9d8cb8717970d0"
+      },
+      {
+        "path": "calls\\000040\\request.json",
+        "bytes": 269,
+        "sha256": "c4eff08cbbf57975ba65fdcbd5bc508a256fd77444ca4225c7980366995c3026"
+      },
+      {
+        "path": "calls\\000040\\stderr.raw",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "path": "calls\\000040\\stdout.raw",
+        "bytes": 7000,
+        "sha256": "d4d0c3ef4d6653a0a02709c6933760f34c334af09e90e2fc213b1c4016f001b2"
+      },
+      {
+        "path": "calls\\000041\\receipt.json",
+        "bytes": 3955,
+        "sha256": "d93fd7b7d36357f37aa6725f7094b5ad317bc142013b4d2c843544affb9ecab6"
+      },
+      {
+        "path": "calls\\000041\\request.json",
+        "bytes": 171,
+        "sha256": "08f3a0800cc4d8081bbcf87f82e3cf43daf4350b10fea79a1a538c0c488c420d"
+      },
+      {
+        "path": "calls\\000041\\stderr.raw",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "path": "calls\\000041\\stdout.raw",
+        "bytes": 8008,
+        "sha256": "78d6b1787e3b155579002de294b9c9ee8fb3ecad21a71c62bf357c20df72a727"
+      },
+      {
+        "path": "calls\\000042\\receipt.json",
+        "bytes": 3962,
+        "sha256": "1c38d3c2924211f987607fc2966b49d6a1455b514fa985855d642bc96b29ac6b"
+      },
+      {
+        "path": "calls\\000042\\request.json",
+        "bytes": 199,
+        "sha256": "e0ccdc494606ce1bc487edd08b591367533fd814928a4133b156a2c62a8ae7ef"
+      },
+      {
+        "path": "calls\\000042\\stderr.raw",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "path": "calls\\000042\\stdout.raw",
+        "bytes": 10465,
+        "sha256": "f71a516db6a25f68b94fb7cd7cdb398cc39549b367a48a56ed586b7b6e090f95"
+      },
+      {
+        "path": "calls\\000043\\receipt.json",
+        "bytes": 4033,
+        "sha256": "6d8d08b4657dbee3dcd6229d51878bb086eb684f9cffec37ed5ef6632b8580e8"
+      },
+      {
+        "path": "calls\\000043\\request.json",
+        "bytes": 199,
+        "sha256": "e5d85abdcd12b95ccd3a42a93e2b5140b6b301e236c3be1f1e3a4e5dc0046ef7"
+      },
+      {
+        "path": "calls\\000043\\stderr.raw",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "path": "calls\\000043\\stdout.raw",
+        "bytes": 8489,
+        "sha256": "c30f142cd370d826964df0b60ae8d36b16a8aaa06d70dd8060c6d3a21419d0ba"
+      },
+      {
+        "path": "calls\\000044\\receipt.json",
+        "bytes": 4014,
+        "sha256": "f182b73eab7871078523086e418dc1f98ab9cbe876926d0cde6bb92afd420760"
+      },
+      {
+        "path": "calls\\000044\\request.json",
+        "bytes": 166,
+        "sha256": "6448da3fd9dfd9ec54d17f5fbcb579363505f6c105ba305da909902a36aa8028"
+      },
+      {
+        "path": "calls\\000044\\stderr.raw",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "path": "calls\\000044\\stdout.raw",
+        "bytes": 6561,
+        "sha256": "b70e555262acb7ecbdaaa94011120d0617a122c9ab11d771605c3572f9921a91"
+      },
+      {
+        "path": "fractional-noedit-control\\fractional-noedit.cdxml",
+        "bytes": 1068,
+        "sha256": "b1fc848aea3ac01e503c7e1fc5930b224a59d46bf12db275357396d1c58cfa7e"
+      },
+      {
+        "path": "fractional-noedit-control\\input-freeze-manifest.json",
+        "bytes": 2507,
+        "sha256": "ce1f0ec3c0c8af331c5d33c54a38a5d73f9e420de58feb8aa5ca8c534de2a57b"
+      },
+      {
+        "path": "independent-control-b\\control-b.cdxml",
+        "bytes": 2524,
+        "sha256": "7db8f8c259ce8d32d2d839818111ab0632368c9b8b93435a862db0dd3840e697"
+      },
+      {
+        "path": "independent-control-b\\role-manifest.json",
+        "bytes": 2000,
+        "sha256": "46b589b57f06667238416bfcaa361feebfa8447aa401a3e03889612482997166"
+      },
+      {
+        "path": "sessions\\2898282f-fe51-4ad9-bb07-276a7b45a768\\evidence\\76e11645-7445-4a74-9f55-e237c5caaf9c-reopened-after-render.cdxml",
+        "bytes": 3162,
+        "sha256": "ef95cddb0315abad890855ee4e96e0639f8e0c20655404b3cc1afb14d3bc78bd"
+      },
+      {
+        "path": "sessions\\2898282f-fe51-4ad9-bb07-276a7b45a768\\evidence\\76e11645-7445-4a74-9f55-e237c5caaf9c-reopened-after-render.native.json",
+        "bytes": 3439,
+        "sha256": "67aae68f56f8a46a1527491f3b618cca90a1d750071e816fca020fb7ead1c4d5"
+      },
+      {
+        "path": "sessions\\2898282f-fe51-4ad9-bb07-276a7b45a768\\evidence\\76e11645-7445-4a74-9f55-e237c5caaf9c-reopened-after-render.snapshot.json",
+        "bytes": 7690,
+        "sha256": "871185a697a3d2c2587ec341ae5cb7bdfa38986e27dab6f93304c7f0a8c5284e"
+      },
+      {
+        "path": "sessions\\2898282f-fe51-4ad9-bb07-276a7b45a768\\evidence\\8c9b585a-1a41-4535-8568-dda2abffae3f-opened-stable-after-render.cdxml",
+        "bytes": 3151,
+        "sha256": "67521347e3c91e307e6f7b6579cd65ec123e543d86bee4242b52e3c14e56558f"
+      },
+      {
+        "path": "sessions\\2898282f-fe51-4ad9-bb07-276a7b45a768\\evidence\\8c9b585a-1a41-4535-8568-dda2abffae3f-opened-stable-after-render.native.json",
+        "bytes": 3302,
+        "sha256": "9435daf0f14a6e5ea1baceee13e6153de6ea1325eb28097b6236c68fb1c3a49d"
+      },
+      {
+        "path": "sessions\\2898282f-fe51-4ad9-bb07-276a7b45a768\\evidence\\8c9b585a-1a41-4535-8568-dda2abffae3f-opened-stable-after-render.snapshot.json",
+        "bytes": 7585,
+        "sha256": "74df4c454215bb03e9dd2a5c02c9f5b43fef4ea1b8ca2d0cfbfa27637ffcf1be"
+      },
+      {
+        "path": "sessions\\2898282f-fe51-4ad9-bb07-276a7b45a768\\evidence\\de2d1bc3-e1d3-41c7-8bbf-845aee05df93-reopened-after-render.cdxml",
+        "bytes": 3160,
+        "sha256": "88634ac31db0563698b5268d5956d2fbe763109480fb526b42db1e97a80bf102"
+      },
+      {
+        "path": "sessions\\2898282f-fe51-4ad9-bb07-276a7b45a768\\evidence\\de2d1bc3-e1d3-41c7-8bbf-845aee05df93-reopened-after-render.native.json",
+        "bytes": 3556,
+        "sha256": "5bd7ab6f17060f9c7220c27ad5952da579f86af9b2e80dcf42cb1a599abf793c"
+      },
+      {
+        "path": "sessions\\2898282f-fe51-4ad9-bb07-276a7b45a768\\evidence\\de2d1bc3-e1d3-41c7-8bbf-845aee05df93-reopened-after-render.snapshot.json",
+        "bytes": 7807,
+        "sha256": "3fa69dfa907c9fd0e4aff47040aea42a1d5f94188fed5ba1c6e04bdeb9ef4608"
+      },
+      {
+        "path": "sessions\\2898282f-fe51-4ad9-bb07-276a7b45a768\\evidence\\e25dde17-688c-4fbf-9507-1e6d0886567a-saved-after-render.cdxml",
+        "bytes": 3160,
+        "sha256": "2bf5f92132a015b0c7a20919889de3cd46f5fb3681e5dc2198cceb68dcedbdb2"
+      },
+      {
+        "path": "sessions\\2898282f-fe51-4ad9-bb07-276a7b45a768\\evidence\\e25dde17-688c-4fbf-9507-1e6d0886567a-saved-after-render.native.json",
+        "bytes": 3318,
+        "sha256": "9dfed563bd5013209ecd3d4ead4984536b4bb1d37f17c9de3232b326dcd34e5c"
+      },
+      {
+        "path": "sessions\\2898282f-fe51-4ad9-bb07-276a7b45a768\\evidence\\e25dde17-688c-4fbf-9507-1e6d0886567a-saved-after-render.snapshot.json",
+        "bytes": 7554,
+        "sha256": "2e5dd47712d3beed9ea52cc2bf64492059e73604ade8fa67a58f00efab0020c8"
+      },
+      {
+        "path": "sessions\\2898282f-fe51-4ad9-bb07-276a7b45a768\\evidence\\e6d22cbe-f6ad-47cc-8f49-213f32e5d0d6-inspect-after-render.cdxml",
+        "bytes": 3160,
+        "sha256": "88634ac31db0563698b5268d5956d2fbe763109480fb526b42db1e97a80bf102"
+      },
+      {
+        "path": "sessions\\2898282f-fe51-4ad9-bb07-276a7b45a768\\evidence\\e6d22cbe-f6ad-47cc-8f49-213f32e5d0d6-inspect-after-render.native.json",
+        "bytes": 3556,
+        "sha256": "5bd7ab6f17060f9c7220c27ad5952da579f86af9b2e80dcf42cb1a599abf793c"
+      },
+      {
+        "path": "sessions\\2898282f-fe51-4ad9-bb07-276a7b45a768\\evidence\\e6d22cbe-f6ad-47cc-8f49-213f32e5d0d6-inspect-after-render.snapshot.json",
+        "bytes": 7802,
+        "sha256": "9b7445579892a379291ee8890528a5af8e2eca4df4646cf21245c506de5f3fc5"
+      },
+      {
+        "path": "sessions\\2898282f-fe51-4ad9-bb07-276a7b45a768\\saved\\fractional-noedit.cdx",
+        "bytes": 1332,
+        "sha256": "eaabdf266b494055e66ca20277404ced80cbfe0d98b0fe364a7a5e31d56bb97d"
+      },
+      {
+        "path": "sessions\\2898282f-fe51-4ad9-bb07-276a7b45a768\\saved\\fractional-noedit.cdxml",
+        "bytes": 3178,
+        "sha256": "4e00c9f5c9b59e532372623b22a3d4e1f653b9b919f8fc0ccd75fd0d9d785b13"
+      },
+      {
+        "path": "sessions\\3bbf8519-f0d2-40ee-b217-06e4dc465a7d\\evidence\\1252ad47-cb1e-4fa0-81a1-4bdbb839f989-positioned-after-render.cdxml",
+        "bytes": 4746,
+        "sha256": "01bab19862f8e70a1adb14690655295ece150dbf70ab8726c2c75e6488fa4380"
+      },
+      {
+        "path": "sessions\\3bbf8519-f0d2-40ee-b217-06e4dc465a7d\\evidence\\1252ad47-cb1e-4fa0-81a1-4bdbb839f989-positioned-after-render.native.json",
+        "bytes": 1955,
+        "sha256": "f7d785c333d44ff669ec981ef0bb0a4c24843b10ae700a6ef77eb5bd95ea981e"
+      },
+      {
+        "path": "sessions\\3bbf8519-f0d2-40ee-b217-06e4dc465a7d\\evidence\\1252ad47-cb1e-4fa0-81a1-4bdbb839f989-positioned-after-render.snapshot.json",
+        "bytes": 5066,
+        "sha256": "5dbfae0b7297d1ee769cc0044394e49c63dbd0074c3515a81f04d3fed84358c0"
+      },
+      {
+        "path": "sessions\\3bbf8519-f0d2-40ee-b217-06e4dc465a7d\\evidence\\1252ad47-cb1e-4fa0-81a1-4bdbb839f989-pre.cdxml",
+        "bytes": 4749,
+        "sha256": "f192ff6fbbed0737795311aca74c2da8952e756dbba5177d7831f682da13c971"
+      },
+      {
+        "path": "sessions\\3bbf8519-f0d2-40ee-b217-06e4dc465a7d\\evidence\\1252ad47-cb1e-4fa0-81a1-4bdbb839f989-pre.native.json",
+        "bytes": 1957,
+        "sha256": "213b9b0b0dc595f635a77d5992f6fc40d792b7f99c84b23307f225d2b9fb10ec"
+      },
+      {
+        "path": "sessions\\3bbf8519-f0d2-40ee-b217-06e4dc465a7d\\evidence\\1252ad47-cb1e-4fa0-81a1-4bdbb839f989-pre.snapshot.json",
+        "bytes": 3820,
+        "sha256": "cdd80a543c033b7d462c40c42483513bef8ce6a48619d641409296e55d600bc5"
+      },
+      {
+        "path": "sessions\\3bbf8519-f0d2-40ee-b217-06e4dc465a7d\\evidence\\1b6ab282-9559-41e5-9dd7-660a0a6f1283-positioned-after-render.cdxml",
+        "bytes": 4747,
+        "sha256": "863dcaf171484cb20364d9675d5ae97360d18256c0b3891f845fdf3499b74b12"
+      },
+      {
+        "path": "sessions\\3bbf8519-f0d2-40ee-b217-06e4dc465a7d\\evidence\\1b6ab282-9559-41e5-9dd7-660a0a6f1283-positioned-after-render.native.json",
+        "bytes": 2210,
+        "sha256": "f87db9b009dc27249b3f27f958671c9edc13842b0f34dfb262b46f722c5ffcd5"
+      },
+      {
+        "path": "sessions\\3bbf8519-f0d2-40ee-b217-06e4dc465a7d\\evidence\\1b6ab282-9559-41e5-9dd7-660a0a6f1283-positioned-after-render.snapshot.json",
+        "bytes": 5305,
+        "sha256": "901c2708157cc717efaee2266d81e858a0e37b8639893adedec791551cdc8755"
+      },
+      {
+        "path": "sessions\\3bbf8519-f0d2-40ee-b217-06e4dc465a7d\\evidence\\1b6ab282-9559-41e5-9dd7-660a0a6f1283-pre.cdxml",
+        "bytes": 4748,
+        "sha256": "c42257f9f941f345ea31974c409bee8901be88c1ac57b6b8c4b8f2bff9d92598"
+      },
+      {
+        "path": "sessions\\3bbf8519-f0d2-40ee-b217-06e4dc465a7d\\evidence\\1b6ab282-9559-41e5-9dd7-660a0a6f1283-pre.native.json",
+        "bytes": 2211,
+        "sha256": "d0ca1ca8cc7e09f0c748b4dc4d54ef77ddedf26a3ca90a32526cede2a8d52237"
+      },
+      {
+        "path": "sessions\\3bbf8519-f0d2-40ee-b217-06e4dc465a7d\\evidence\\1b6ab282-9559-41e5-9dd7-660a0a6f1283-pre.snapshot.json",
+        "bytes": 4056,
+        "sha256": "f8cb2afed88aa56408c795652cc8411cced2bcb35327e92119f687cd4bb3b363"
+      },
+      {
+        "path": "sessions\\3bbf8519-f0d2-40ee-b217-06e4dc465a7d\\evidence\\69202c19-2774-4921-9a44-b1cfde478925-opened-stable-after-render.cdxml",
+        "bytes": 4693,
+        "sha256": "6b239d7e347e58a67cd8c91c6b088e48d8702bf68df27a3be61655c167ba7a42"
+      },
+      {
+        "path": "sessions\\3bbf8519-f0d2-40ee-b217-06e4dc465a7d\\evidence\\69202c19-2774-4921-9a44-b1cfde478925-opened-stable-after-render.native.json",
+        "bytes": 1938,
+        "sha256": "c957c0a501334006de845e7e5ded98148338e213ac954c71cc805172a96bda95"
+      },
+      {
+        "path": "sessions\\3bbf8519-f0d2-40ee-b217-06e4dc465a7d\\evidence\\69202c19-2774-4921-9a44-b1cfde478925-opened-stable-after-render.snapshot.json",
+        "bytes": 5050,
+        "sha256": "7439eae7d61d2be1f6a0c46e965cc0a55750d7aaf033f9fd6b229ddf17fcb0cd"
+      },
+      {
+        "path": "sessions\\3bbf8519-f0d2-40ee-b217-06e4dc465a7d\\evidence\\7c3e91ef-dcc5-4602-a2bd-c7d2a6d6daa8-saved-after-render.cdxml",
+        "bytes": 4742,
+        "sha256": "aa31cf5cf63ace0d0bcedb1c17c5f638323e9d3c4861644ba5c8ddac893a05e1"
+      },
+      {
+        "path": "sessions\\3bbf8519-f0d2-40ee-b217-06e4dc465a7d\\evidence\\7c3e91ef-dcc5-4602-a2bd-c7d2a6d6daa8-saved-after-render.native.json",
+        "bytes": 2205,
+        "sha256": "1fbd5b0db489042732927dd443c9c6f8befa0819e78913f49d25cd7902efbd55"
+      },
+      {
+        "path": "sessions\\3bbf8519-f0d2-40ee-b217-06e4dc465a7d\\evidence\\7c3e91ef-dcc5-4602-a2bd-c7d2a6d6daa8-saved-after-render.snapshot.json",
+        "bytes": 5272,
+        "sha256": "5e10962c64333522a49a81a84e494ed813c85a8cbaa6d50c482decf548d05eb1"
+      },
+      {
+        "path": "sessions\\3bbf8519-f0d2-40ee-b217-06e4dc465a7d\\evidence\\8c007d40-940b-4352-bfc2-3f436f1ee83d-positioned-after-render.cdxml",
+        "bytes": 4749,
+        "sha256": "f192ff6fbbed0737795311aca74c2da8952e756dbba5177d7831f682da13c971"
+      },
+      {
+        "path": "sessions\\3bbf8519-f0d2-40ee-b217-06e4dc465a7d\\evidence\\8c007d40-940b-4352-bfc2-3f436f1ee83d-positioned-after-render.native.json",
+        "bytes": 1957,
+        "sha256": "213b9b0b0dc595f635a77d5992f6fc40d792b7f99c84b23307f225d2b9fb10ec"
+      },
+      {
+        "path": "sessions\\3bbf8519-f0d2-40ee-b217-06e4dc465a7d\\evidence\\8c007d40-940b-4352-bfc2-3f436f1ee83d-positioned-after-render.snapshot.json",
+        "bytes": 5071,
+        "sha256": "15877754af549fa11451857a7c03c09fc410a85fc5e64d1d7c7f56805aff33ec"
+      },
+      {
+        "path": "sessions\\3bbf8519-f0d2-40ee-b217-06e4dc465a7d\\evidence\\8c007d40-940b-4352-bfc2-3f436f1ee83d-pre.cdxml",
+        "bytes": 4701,
+        "sha256": "1b04d385e6cbe3107c12f367748a672b821e7f7b36b04779321eff8880212148"
+      },
+      {
+        "path": "sessions\\3bbf8519-f0d2-40ee-b217-06e4dc465a7d\\evidence\\8c007d40-940b-4352-bfc2-3f436f1ee83d-pre.native.json",
+        "bytes": 1938,
+        "sha256": "c957c0a501334006de845e7e5ded98148338e213ac954c71cc805172a96bda95"
+      },
+      {
+        "path": "sessions\\3bbf8519-f0d2-40ee-b217-06e4dc465a7d\\evidence\\8c007d40-940b-4352-bfc2-3f436f1ee83d-pre.snapshot.json",
+        "bytes": 3795,
+        "sha256": "8a05cbecb5b9e4bf54cb42d8a3ab12a0bc9b970a3385375eaf4ff832ec46892a"
+      },
+      {
+        "path": "sessions\\3bbf8519-f0d2-40ee-b217-06e4dc465a7d\\evidence\\d277feca-4682-41f5-98a3-d3fcc0bbd3d8-saved-after-render.cdxml",
+        "bytes": 4756,
+        "sha256": "4e893857f351f42cc08bc27b08e7f256c315d68b2caaaec4a8d37066de0f62b3"
+      },
+      {
+        "path": "sessions\\3bbf8519-f0d2-40ee-b217-06e4dc465a7d\\evidence\\d277feca-4682-41f5-98a3-d3fcc0bbd3d8-saved-after-render.native.json",
+        "bytes": 1972,
+        "sha256": "93fbd73beaa5c5d300405872fdeae47b79238f3a11c1ec09d1e9c1833235027a"
+      },
+      {
+        "path": "sessions\\3bbf8519-f0d2-40ee-b217-06e4dc465a7d\\evidence\\d277feca-4682-41f5-98a3-d3fcc0bbd3d8-saved-after-render.snapshot.json",
+        "bytes": 5048,
+        "sha256": "da2d36b39d2e9f2961d623fa152d5d0fc9359f2ca0ed9569afa184810b2bb007"
+      },
+      {
+        "path": "sessions\\3bbf8519-f0d2-40ee-b217-06e4dc465a7d\\evidence\\d27cd201-b479-4db0-b3ef-36368052238f-reopened-after-render.cdxml",
+        "bytes": 4748,
+        "sha256": "c42257f9f941f345ea31974c409bee8901be88c1ac57b6b8c4b8f2bff9d92598"
+      },
+      {
+        "path": "sessions\\3bbf8519-f0d2-40ee-b217-06e4dc465a7d\\evidence\\d27cd201-b479-4db0-b3ef-36368052238f-reopened-after-render.native.json",
+        "bytes": 2211,
+        "sha256": "d0ca1ca8cc7e09f0c748b4dc4d54ef77ddedf26a3ca90a32526cede2a8d52237"
+      },
+      {
+        "path": "sessions\\3bbf8519-f0d2-40ee-b217-06e4dc465a7d\\evidence\\d27cd201-b479-4db0-b3ef-36368052238f-reopened-after-render.snapshot.json",
+        "bytes": 5294,
+        "sha256": "c4be195cdc271b2fea7ce552b1f5023a06ac6d6433c694e7d123aa9454feb63f"
+      },
+      {
+        "path": "sessions\\3bbf8519-f0d2-40ee-b217-06e4dc465a7d\\evidence\\da845900-2d1e-4f43-87b4-a91a83e1bf39-reopened-after-render.cdxml",
+        "bytes": 4744,
+        "sha256": "f245dd209d6c9356ad95163a2d5e9ecb5d6e14ed8bef738dbe464f494cf023b6"
+      },
+      {
+        "path": "sessions\\3bbf8519-f0d2-40ee-b217-06e4dc465a7d\\evidence\\da845900-2d1e-4f43-87b4-a91a83e1bf39-reopened-after-render.native.json",
+        "bytes": 2335,
+        "sha256": "278c377267d4c2dfa4448d51dbc9c388a8546acdafa9128afbdaf3f3a7ebc679"
+      },
+      {
+        "path": "sessions\\3bbf8519-f0d2-40ee-b217-06e4dc465a7d\\evidence\\da845900-2d1e-4f43-87b4-a91a83e1bf39-reopened-after-render.snapshot.json",
+        "bytes": 5417,
+        "sha256": "e517d02bf0ffb80cab75e5328b6064685b2cf0ab831efba8744a893b98176720"
+      },
+      {
+        "path": "sessions\\3bbf8519-f0d2-40ee-b217-06e4dc465a7d\\evidence\\e97cfa5a-f07b-40fc-a0d5-311a68b5209d-reopened-after-render.cdxml",
+        "bytes": 4742,
+        "sha256": "7fa9850bf78da06a6c4da24609c8d5c3f9ec849cea9d47841653d5abffc9e7c1"
+      },
+      {
+        "path": "sessions\\3bbf8519-f0d2-40ee-b217-06e4dc465a7d\\evidence\\e97cfa5a-f07b-40fc-a0d5-311a68b5209d-reopened-after-render.native.json",
+        "bytes": 2443,
+        "sha256": "19baecd0fe4f524d4dcdde040eba5f3d51597daf9106c97a62ceeeeccbca69b3"
+      },
+      {
+        "path": "sessions\\3bbf8519-f0d2-40ee-b217-06e4dc465a7d\\evidence\\e97cfa5a-f07b-40fc-a0d5-311a68b5209d-reopened-after-render.snapshot.json",
+        "bytes": 5523,
+        "sha256": "b6dd4c2e2ead9235bc7a8c0d06e0777f4fc98d8e72d8a1a87422390beb5da42a"
+      },
+      {
+        "path": "sessions\\3bbf8519-f0d2-40ee-b217-06e4dc465a7d\\evidence\\ec8ce113-4c6d-41aa-a6df-5d613bd59a24-reopened-after-render.cdxml",
+        "bytes": 4750,
+        "sha256": "2185f540e54885e37eb7d5e97b7d1cbcfdbe1a484d0acb5d0327d060e0ee309b"
+      },
+      {
+        "path": "sessions\\3bbf8519-f0d2-40ee-b217-06e4dc465a7d\\evidence\\ec8ce113-4c6d-41aa-a6df-5d613bd59a24-reopened-after-render.native.json",
+        "bytes": 2102,
+        "sha256": "22456207ec3b1f2ddcdd1c0f8df7ad7d9aad7340a685b2f959636cec72f5570f"
+      },
+      {
+        "path": "sessions\\3bbf8519-f0d2-40ee-b217-06e4dc465a7d\\evidence\\ec8ce113-4c6d-41aa-a6df-5d613bd59a24-reopened-after-render.snapshot.json",
+        "bytes": 5185,
+        "sha256": "71ab11f8ae201818d8e26ad94f825725ddc2dd6f57b9e1f2eca8ac3fbab08761"
+      },
+      {
+        "path": "sessions\\3bbf8519-f0d2-40ee-b217-06e4dc465a7d\\evidence\\fa35333a-9446-4896-9931-235ee4dbc882-inspect-after-render.cdxml",
+        "bytes": 4742,
+        "sha256": "7fa9850bf78da06a6c4da24609c8d5c3f9ec849cea9d47841653d5abffc9e7c1"
+      },
+      {
+        "path": "sessions\\3bbf8519-f0d2-40ee-b217-06e4dc465a7d\\evidence\\fa35333a-9446-4896-9931-235ee4dbc882-inspect-after-render.native.json",
+        "bytes": 2443,
+        "sha256": "19baecd0fe4f524d4dcdde040eba5f3d51597daf9106c97a62ceeeeccbca69b3"
+      },
+      {
+        "path": "sessions\\3bbf8519-f0d2-40ee-b217-06e4dc465a7d\\evidence\\fa35333a-9446-4896-9931-235ee4dbc882-inspect-after-render.snapshot.json",
+        "bytes": 5518,
+        "sha256": "cff30f5fd2446759b01cdc64d68008f0552ebf1571c0bb83cb5670cf512d25ce"
+      },
+      {
+        "path": "sessions\\3bbf8519-f0d2-40ee-b217-06e4dc465a7d\\saved\\agent-b-continuous.cdx",
+        "bytes": 2003,
+        "sha256": "bc81afb242e66071358471d971c99b7d528473afbf8df5e3b618792d1ad49956"
+      },
+      {
+        "path": "sessions\\3bbf8519-f0d2-40ee-b217-06e4dc465a7d\\saved\\agent-b-continuous.cdxml",
+        "bytes": 4774,
+        "sha256": "abe0f48e49f3ca76e259143c8eaafaf31334431332eac63cc5e6e5498aa058bb"
+      },
+      {
+        "path": "sessions\\3bbf8519-f0d2-40ee-b217-06e4dc465a7d\\saved\\agent-b-final.cdx",
+        "bytes": 1998,
+        "sha256": "d4223be629f904a612f5f74ba278014a1fa2f09b033be4d41da33d980c40f3d5"
+      },
+      {
+        "path": "sessions\\3bbf8519-f0d2-40ee-b217-06e4dc465a7d\\saved\\agent-b-final.cdxml",
+        "bytes": 4760,
+        "sha256": "b05d1ad504d58fc74739d7894e0aae7a2be098db0d732a1feaeeb650a9238aa8"
+      },
+      {
+        "path": "sessions\\b45ca113-d9d3-44e1-9055-7652885cbafe\\evidence\\14ffe2d8-7acb-4b92-b440-e41e48ecea08-reopened-after-render.cdxml",
+        "bytes": 4930,
+        "sha256": "78205dc6aa5c5aee4be5abe60765261f17339a877147d5aac468fbf7b0e1a5b2"
+      },
+      {
+        "path": "sessions\\b45ca113-d9d3-44e1-9055-7652885cbafe\\evidence\\14ffe2d8-7acb-4b92-b440-e41e48ecea08-reopened-after-render.native.json",
+        "bytes": 2500,
+        "sha256": "f42d726349a78f64e45aa1725e41d8d7deb335813c07f9685e880b3e18a11ce7"
+      },
+      {
+        "path": "sessions\\b45ca113-d9d3-44e1-9055-7652885cbafe\\evidence\\14ffe2d8-7acb-4b92-b440-e41e48ecea08-reopened-after-render.snapshot.json",
+        "bytes": 6393,
+        "sha256": "1db82df0e156b3161473689d7f74b442f60c7afa44809577657324077165b922"
+      },
+      {
+        "path": "sessions\\b45ca113-d9d3-44e1-9055-7652885cbafe\\evidence\\568fd39e-0753-4237-b7e9-27fd187706b0-positioned-after-render.cdxml",
+        "bytes": 4927,
+        "sha256": "5955cc580755b78640074f6fd772e6688018df8f6ba74746c29197f5043d1e74"
+      },
+      {
+        "path": "sessions\\b45ca113-d9d3-44e1-9055-7652885cbafe\\evidence\\568fd39e-0753-4237-b7e9-27fd187706b0-positioned-after-render.native.json",
+        "bytes": 2256,
+        "sha256": "1a738775aeecdc828afac9cedc538d4c3ea5d1644d1eccab1e8d18bd250d55b7"
+      },
+      {
+        "path": "sessions\\b45ca113-d9d3-44e1-9055-7652885cbafe\\evidence\\568fd39e-0753-4237-b7e9-27fd187706b0-positioned-after-render.snapshot.json",
+        "bytes": 6159,
+        "sha256": "d1b69d262ab28079a8743538d0f352b0cf17f520b9b7e8727f29e1aa0ecb02e8"
+      },
+      {
+        "path": "sessions\\b45ca113-d9d3-44e1-9055-7652885cbafe\\evidence\\5d8afcbf-e228-47ce-a394-e31a59114362-saved-after-render.cdxml",
+        "bytes": 4930,
+        "sha256": "80963d4ac966a581d1c2dc6f6d4f4b2bcfcd042d36ea014d3439d33b25e41ba1"
+      },
+      {
+        "path": "sessions\\b45ca113-d9d3-44e1-9055-7652885cbafe\\evidence\\5d8afcbf-e228-47ce-a394-e31a59114362-saved-after-render.native.json",
+        "bytes": 2259,
+        "sha256": "72e7eb0532a8d854402e1a83fc4b8f8518eb8841ef4a9faafab9ad7146d37dd6"
+      },
+      {
+        "path": "sessions\\b45ca113-d9d3-44e1-9055-7652885cbafe\\evidence\\5d8afcbf-e228-47ce-a394-e31a59114362-saved-after-render.snapshot.json",
+        "bytes": 6137,
+        "sha256": "10cd26a060d30ced8709565a54fb1e6337b119285ffcf1ec6e8134324bb974a9"
+      },
+      {
+        "path": "sessions\\b45ca113-d9d3-44e1-9055-7652885cbafe\\evidence\\9bcfcaa1-1842-434f-895b-66f7205e527c-reopened-after-render.cdxml",
+        "bytes": 4932,
+        "sha256": "1be479ce4b1aa96fb2e6835caab574688288c8c7dce331e197354d20003b6f7c"
+      },
+      {
+        "path": "sessions\\b45ca113-d9d3-44e1-9055-7652885cbafe\\evidence\\9bcfcaa1-1842-434f-895b-66f7205e527c-reopened-after-render.native.json",
+        "bytes": 2390,
+        "sha256": "021d4154ff6ced9efe54ec8ce33489fc6768100bfbab889ea5c3adaa2db98b30"
+      },
+      {
+        "path": "sessions\\b45ca113-d9d3-44e1-9055-7652885cbafe\\evidence\\9bcfcaa1-1842-434f-895b-66f7205e527c-reopened-after-render.snapshot.json",
+        "bytes": 6283,
+        "sha256": "8ce0fe38dbc44e042b9e00faa692d94fefbfc24ae4a4d682849bb42b57c80646"
+      },
+      {
+        "path": "sessions\\b45ca113-d9d3-44e1-9055-7652885cbafe\\evidence\\e5494f40-b11d-433e-a3c9-a8a823145401-inspect-after-render.cdxml",
+        "bytes": 4938,
+        "sha256": "82bff12188b3d74671954c3fbab9c155b49dc0d78eaa80a424606df0abfb440f"
+      },
+      {
+        "path": "sessions\\b45ca113-d9d3-44e1-9055-7652885cbafe\\evidence\\e5494f40-b11d-433e-a3c9-a8a823145401-inspect-after-render.native.json",
+        "bytes": 2500,
+        "sha256": "f42d726349a78f64e45aa1725e41d8d7deb335813c07f9685e880b3e18a11ce7"
+      },
+      {
+        "path": "sessions\\b45ca113-d9d3-44e1-9055-7652885cbafe\\evidence\\e5494f40-b11d-433e-a3c9-a8a823145401-inspect-after-render.snapshot.json",
+        "bytes": 6396,
+        "sha256": "278105918edbd45a1bc70b355baf9026c42ed3e61967f6eb5f096d9f36f7c19e"
+      },
+      {
+        "path": "sessions\\b45ca113-d9d3-44e1-9055-7652885cbafe\\saved\\agent-a-final.cdx",
+        "bytes": 2324,
+        "sha256": "c0135e9a04f4fb128b1361eb5fd9d4c1cdaa53ab97a23535da2e37fcd1edf2ed"
+      },
+      {
+        "path": "sessions\\b45ca113-d9d3-44e1-9055-7652885cbafe\\saved\\agent-a-final.cdxml",
+        "bytes": 4944,
+        "sha256": "350a4b4909b1a345f2f93ff0f87a394200676a7f34606496a96be04a83af0918"
+      }
+    ],
+    "input_file_count": 168,
+    "input_bytes_unchanged": true,
+    "audit_script_sha256": "10afb4386858c0b96b1dac8a7fdffb150c30ba69a64189f32e2e7513e6d4004c"
+  }
+}
