@@ -24,7 +24,7 @@ METADATA = {"CDXML": {"CreationDate", "ModificationDate", "Name", "BoundingBox"}
 BASE_KEYS = {"action", "session_id", "document_id", "revision", "request_id"}
 ACTION_KEYS = {
     "open-copy": {"source", "expected_sha256", "role"},
-    "inspect": {"end_session"},
+    "inspect": {"end_session", "keep_open"},
     "relative-position": {"caption_id", "caption_token", "arrow_id", "arrow_token", "intent"},
     "save": {"stem"},
     "reopen": {"artifact_id"},
@@ -55,7 +55,7 @@ def tree_value(node, target=None, metadata=None):
     may be omitted for a movement comparison; no other object tolerance.
     """
     attrs = dict(node.attrib)
-    for name in METADATA.get(node.tag, set()):
+    for name in sorted(METADATA.get(node.tag, set())):
         if name in attrs:
             if metadata is not None:
                 metadata.append({"tag": node.tag, "id": node.get("id"),
@@ -111,6 +111,12 @@ def snapshot(base):
             if node.tag == "n":
                 return True
         return False
+    def page_owner(node):
+        while node in parents:
+            node = parents[node]
+            if node.tag == "page":
+                return node.get("id")
+        return None
     metadata = []
     tree = tree_value(root, metadata=metadata)
     captions, excluded = [], []
@@ -127,6 +133,7 @@ def snapshot(base):
         item["size_api_raw"] = item.pop("size")
         item["styles_api_raw"] = item.pop("styles")
         item["owner"] = parents[node].tag
+        item["page_id"] = page_owner(node)
         item["xml_attributes"] = dict(node.attrib)
         item["text_runs"] = [dict(n.attrib, text=n.text or "") for n in node.iter("s")]
         captions.append(item)
@@ -147,7 +154,8 @@ def snapshot(base):
         elif node.tag != "arrow":
             raise ValueError("Native arrow has an unsupported XML owner")
         arrow["xml_ids"] = ids
-    content = {k: v for k, v in raw.items() if k not in {"binding", "document_full_name"}}
+        arrow["page_ids"] = sorted({page_owner(by_id[i]) or "unknown" for i in ids})
+    content = {k: v for k, v in raw.items() if k not in {"binding", "document_full_name", "session_id", "document_id", "revision"}}
     fingerprint = digest({"xml": tree, "native": content})
     context = {"session_id": raw["session_id"], "document_id": raw["document_id"],
                "revision": raw["revision"], "fingerprint": fingerprint}
@@ -156,6 +164,9 @@ def snapshot(base):
     result = {**context, "bond_length": raw["bond_length"], "binding": raw["binding"],
               "captions": captions, "arrows": raw["arrows"], "excluded_text": excluded,
               "counts": raw["counts"], "hydrogen_status": "unknown; not inferred or qualified by this edit loop",
+              "pages": [{"id": p.get("id"), "bounds": [float(v) for v in p.get("BoundingBox", "").split()],
+                         "width_pages": p.get("WidthPages"), "height_pages": p.get("HeightPages")}
+                        for p in root.iter("page")],
               "xml": str(base) + ".cdxml", "xml_sha256": file_hash(str(base) + ".cdxml"),
               "raw_native": str(base) + ".native.json", "metadata": metadata}
     write(str(base) + ".snapshot.json", result)
@@ -200,6 +211,17 @@ def plan(req, snap):
         return refuse("Stale or incorrect object token")
     if abs(cap["angle"]) > 1e-9:
         return refuse("Rotated caption avoidance is not qualified")
+    if cap["owner"] != "page":
+        return refuse("This version supports direct page captions only; fragment/group captions refuse")
+    pages = snap["pages"]
+    if len(pages) != 1 or pages[0]["width_pages"] != "1" or pages[0]["height_pages"] != "1":
+        return refuse("This version requires one known physical page")
+    page = pages[0]
+    bounds = page["bounds"]
+    if (len(bounds) != 4 or not all(math.isfinite(v) for v in bounds)
+            or bounds[2] <= bounds[0] or bounds[3] <= bounds[1]
+            or cap["page_id"] != page["id"] or arrow["page_ids"] != [page["id"]]):
+        return refuse("Unknown page bounds or caption/arrow page mismatch")
     bond = snap["bond_length"]
     if not isinstance(bond, (int, float)) or not math.isfinite(bond) or bond <= 0:
         return refuse("Missing actual native BondLength")
@@ -209,7 +231,7 @@ def plan(req, snap):
     root = xml_root(snap["xml"])
     selected_ids = {str(cap["id"]), *arrow["xml_ids"]}
     obstacles, missing = [], []
-    drawable = {"fragment", "group", "t", "arrow", "graphic", "curve", "spectrum", "embeddedobject", "table"}
+    drawable = {"fragment", "group", "n", "b", "t", "arrow", "graphic", "curve", "spectrum", "embeddedobject", "table"}
     def collect(node):
         if node.get("id") in selected_ids:
             return
@@ -221,6 +243,7 @@ def plan(req, snap):
                 if data:
                     bb = [float(v) for v in data.split()]
                     if len(bb) == 4 and all(math.isfinite(v) for v in bb):
+                        bb = [min(bb[0],bb[2]), min(bb[1],bb[3]), max(bb[0],bb[2]), max(bb[1],bb[3])]
                         obstacles.append({"id": node.get("id"), "tag": node.tag, "bounds": bb})
                         return
                 missing.append({"id": node.get("id"), "tag": node.tag})
@@ -244,13 +267,14 @@ def plan(req, snap):
         return refuse("Only above-arrow and up-half-bond are supported")
     for dx, dy in solutions:
         bb = moved(dx, dy)
-        if bb[0] < 0 or bb[1] < 0:
+        if bb[0] < bounds[0] or bb[1] < bounds[1] or bb[2] > bounds[2] or bb[3] > bounds[3]:
             continue
         if not any(intersects(bb, o["bounds"], padding) for o in obstacles):
             return {"ok": True, "caption_id": cap["id"], "intent": intent,
                     "computed_anchor": [anchor[0] + dx, anchor[1] + dy], "delta": [dx, dy],
                     "before_anchor": anchor, "before_bounds": box, "expected_bounds": bb,
                     "native_bond_length": bond, "obstacle_padding": padding, "obstacles": obstacles,
+                    "page_id": page["id"], "page_bounds": bounds,
                     "rule": "Native bounds/arrow endpoints; fixed 0.25 BondLength gap, bounded upward avoidance"}
     return refuse("No collision-free solution within the bounded search; font and structures untouched")
 
@@ -359,6 +383,8 @@ def submit(req, state, pwsh=None, timeout=50):
 
 
 def main():
+    sys.stdout.reconfigure(encoding="utf-8")
+    sys.stdin.reconfigure(encoding="utf-8")
     if len(sys.argv) > 1 and sys.argv[1] == "--internal":
         operation, *args = sys.argv[2:]
         if operation == "snapshot":
@@ -366,7 +392,7 @@ def main():
         elif operation == "plan":
             result = plan(read(args[0]), read(args[1]))
         elif operation == "compare":
-            result = compare(*args[:2])
+            result = compare(*args[:2], target=int(args[2]) if len(args) == 4 else None)
         elif operation == "verify-move":
             result = verify_move(*args[:3])
         elif operation == "preview":

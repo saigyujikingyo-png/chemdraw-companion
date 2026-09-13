@@ -6,8 +6,11 @@ adapter. A hidden bounded STA worker retains each owned COM document between
 separate CLI calls. Default idle expiry is 20 minutes; maximum lifetime two hours.
 All artifacts and receipts default to `.local/agent-edit-loop/<session_id>`.
 
-**Checkpoint status: native script validation is still in progress. This commit
-is for source review, not Agent, visual, chemical or human acceptance.**
+**Checkpoint status: source review and script checks, not Agent, visual, chemical
+or human acceptance.** No-edit save/reopen ran. The first above-arrow move still
+fails the strict non-target check: the native serializer adds the target ID to
+`step/@ReactionStepObjectsAboveArrow`. This derived-association contract decision
+is pending; the checker has not been relaxed and the failed attempt is preserved.
 
 Run one action per invocation. Provide a UTF-8 JSON request file:
 
@@ -32,12 +35,16 @@ the full XML text runs are authoritative text alongside raw native API values.
 5. `{"action":"save","session_id":"...","document_id":"...","revision":<current>,"stem":"edited-a"}` saves new CDXML and CDX; retain returned artifact IDs.
 6. `{"action":"reopen","session_id":"...","document_id":"...","revision":<current>,"artifact_id":"<one returned ID>"}` opens those exact hashed bytes in a different fresh process; returns a new document ID/revision. Inspect the new live IDs/tokens before another relative edit. Reopen the other saved format separately when required.
 7. End an owned session with an `inspect` request containing `"end_session":true`.
+   Add `"keep_open":true` to detach the exact current saved revision for the user
+   to continue viewing. Unsaved or poisoned revisions cannot use this option.
 
 Optional `request_id` is a UUID: never reuse it for a different action. Requests
 are serialized. Timeout freezes mutation; inspect the retained late receipt and
 log, do not replay an uncertain write. No original or saved artifact is overwritten.
 Wrong session/document/revision/object tokens refuse. Missing/ambiguous selection
-returns candidates. Only unrotated captions are currently supported; unsupported
+returns candidates. Only unrotated captions directly on a known single physical
+page are supported. The caption and arrow must be on that same page, and all four
+page edges are checked. Fragment/group captions refuse. Unsupported
 or unresolved obstacle geometry refuses. The agent chooses IDs, never coordinates.
 
 Position uses native caption bounds, arrow endpoints and BondLength. Above-arrow
@@ -52,6 +59,10 @@ Document name/date/aggregate bounds and page bounds are separately recorded
 metadata. Save/reopen differences are reported in full, not hidden as a broad
 normalization tolerance. Run a separate `role:"no-edit-control"` copy through
 save/reopen first to observe normalization independently; this role blocks moves.
+Reopen validates a temporary new process/document before committing its context,
+then rechecks the old complete fingerprint immediately before closing the old
+document. External/uncertain old changes are preserved, including at worker exit.
+Tool-source hashes are returned, and source drift blocks further mutations.
 
 Control A in `edit-loop-controls/` is original ordinary workflow data, with roles
 declared before native execution. No mechanism/holdout/055 input is used. Root's
