@@ -18,20 +18,42 @@ def nums(v):return tuple(map(float,v.split()))
 
 def records(path):
     root=ET.parse(path).getroot();result=[]
+    fonts={}
+    for font in root.iter('font'):
+        if font.get('id') in fonts:raise ValueError('Duplicate font-table identity')
+        fonts[font.get('id')]={k:v for k,v in font.attrib.items() if k!='id'}
+    def family(identity):
+        if identity not in fonts:raise ValueError('Unresolved native font identity: '+str(identity))
+        return fonts[identity]
+    # A colour-only copy must preserve the document's drawing/text defaults,
+    # even where a currently explicit run does not inherit a particular one.
+    defaults=('LabelFont','CaptionFont','LabelSize','CaptionSize','LabelFace','CaptionFace','LineWidth','BoldWidth','BondLength','BondSpacing','HashSpacing','MarginWidth','LabelJustification','CaptionJustification','ShowTerminalCarbonLabels','ShowNonTerminalCarbonLabels','HideImplicitHydrogens')
+    style={k:family(root.get(k)) if k.endswith('Font') else root.get(k) for k in defaults if root.get(k) is not None}
+    result.append(['document_defaults',style,None]);result.append(['fonttable',sorted(fonts.values(),key=lambda x:json.dumps(x,sort_keys=True)),None])
+    parents={child:parent for parent in root.iter() for child in parent}
+    def inherited(node,key,default=None):
+        while node is not None:
+            if node.get(key) is not None:return node.get(key)
+            node=parents.get(node)
+        return default
     keys={'n':['Element','Charge','NumHydrogens','Isotope','Radical','Geometry','BondOrdering','AtomNumber','p'],
           'b':['B','E','Order','Display','Display2','BS'],
           't':['p','BoundingBox','LabelAlignment','LabelJustification'],
-          's':['size','face'],
-          'curve':['CurvePoints','ArrowheadHead','ArrowheadTail','ArrowheadType','HeadSize','HeadWidth','LineWidth'],
-          'graphic':['GraphicType','SymbolType','BoundingBox','LineWidth'],
-          'arrow':['Head3D','Tail3D','ArrowheadHead','ArrowheadTail','ArrowheadType','HeadSize','ArrowheadWidth','LineWidth']}
+          'curve':['CurvePoints','CurveType','ArrowheadHead','ArrowheadTail','ArrowheadType','HeadSize','ArrowheadCenterSize','ArrowheadWidth','LineWidth','LineType','FillType'],
+          'graphic':['GraphicType','SymbolType','BoundingBox','LineWidth','LineType','FillType'],
+          'arrow':['Head3D','Tail3D','ArrowheadHead','ArrowheadTail','ArrowheadType','HeadSize','ArrowheadCenterSize','ArrowheadWidth','LineWidth','LineType','FillType']}
     for n in root.iter():
         if n.tag not in keys or n.get('SupersededBy'):continue
         attrs={k:n.get(k) for k in keys[n.tag] if n.get(k) is not None}
+        if n.tag in ('b','curve','graphic','arrow'):attrs['effective_line_width']=inherited(n,'LineWidth')
+        if n.tag=='t':
+            parent=parents[n];prefix='Label' if parent.tag=='n' else 'Caption'
+            attrs['owner_atom']=parent.get('id') if parent.tag=='n' else None
+            attrs['runs']=[{'text':s.text or '', 'font':family(s.get('font',inherited(s,prefix+'Font'))),'size':s.get('size',inherited(s,prefix+'Size')),'face':s.get('face',inherited(s,prefix+'Face','0'))} for s in n.findall('s')]
         for k in ('p','BoundingBox','CurvePoints','Head3D','Tail3D'):
             if k in attrs:attrs[k]=[round(v,2) for v in nums(attrs[k])]
         if n.tag not in ('arrow','s','t'):attrs['id']=n.get('id')
-        result.append([n.tag,attrs,n.text if n.tag=='s' else None])
+        result.append([n.tag,attrs,None])
     return result
 
 
@@ -42,6 +64,33 @@ def same_records(a,b):
         if found is None:return False
         unmatched.pop(found)
     return not unmatched
+
+
+def mixed_contact_evidence(points,rgb,palette,bounds_valid,groups,regions,tolerance=3.):
+    """Resolve mixed ink only to a unique allowed pair of actual colours.
+
+    Projection onto RGB line segments models source-over mixing of two native
+    coloured primitives. Every plausible pair is retained; a third contributor
+    or ambiguity fails closed. A circle alone never grants an exemption.
+    """
+    contributors=[set() for _ in points];candidates=[set() for _ in points]
+    for i,j in itertools.combinations(range(len(groups)),2):
+        a,b=palette[i].astype(float),palette[j].astype(float);delta=b-a;length=float(delta@delta)
+        if not length:continue
+        t=((rgb-a)@delta)/length;residual=np.linalg.norm(rgb-(a+t[:,None]*delta),axis=1)
+        matched=(t>0)&(t<1)&(residual<=tolerance)&bounds_valid[:,i]&bounds_valid[:,j]
+        for k in np.where(matched)[0]:
+            pair=tuple(sorted((groups[i]['native_id'],groups[j]['native_id'])))
+            candidates[k].add(pair);contributors[k].update(pair)
+    unresolved=0;receipts={}
+    for k,p in enumerate(points):
+        pair=next(iter(candidates[k])) if len(candidates[k])==1 and len(contributors[k])==2 else None
+        allowed=[r for r in regions if pair==tuple(sorted(r['objects'])) and float(np.sum((p-r['center'])**2))<=r['radius_px']**2]
+        if not allowed:unresolved+=1
+        key=(tuple(sorted(contributors[k])),tuple(sorted(candidates[k])),tuple(sorted(r['name'] for r in allowed)))
+        if key not in receipts:receipts[key]={'contributor_object_ids':list(key[0]),'candidate_object_pairs':[list(v) for v in key[1]],'allowed_contacts':list(key[2]),'pixels':0,'exempted':bool(allowed),'contributor_colours':{g['native_id']:g['rgb'] for g in groups if g['native_id'] in key[0]}}
+        receipts[key]['pixels']+=1
+    return unresolved,list(receipts.values())
 
 
 def neighbours(mask):
@@ -76,7 +125,9 @@ def verify(stem,source,inputs,native,composition):
     metadata=json.loads((inputs/(stem+'.mask-map.json')).read_text());scene=json.loads((composition/(stem+'.scene.json')).read_text());groups=metadata['groups'];issues=[]
     original=source/(stem+'.cdxml');readback=native/(stem+'.cdxml')
     if sha(original)!=metadata['source_sha256'] or sha(inputs/(stem+'.cdxml'))!=metadata['input_sha256']:issues.append('source_or_input_hash')
-    if not same_records(records(original),records(readback)):issues.append('colour_copy_changed_chemical_or_drawable_readback')
+    try:readback_equal=same_records(records(original),records(readback))
+    except (KeyError,ValueError):readback_equal=False
+    if not readback_equal:issues.append('colour_copy_changed_chemical_or_drawable_readback')
     src=np.array(Image.open(source/(stem+'.png')).convert('RGBA'));dst=np.array(Image.open(native/(stem+'.png')).convert('RGBA'))
     if src.shape!=dst.shape:raise ValueError('Native canvas mismatch')
     canvas=[v*72/25.4 for v in scene['canvas_mm']];origin,scale=frame_transform(dst,canvas);B=scene['style']['bond_pt']
@@ -91,7 +142,7 @@ def verify(stem,source,inputs,native,composition):
     root=ET.parse(original).getroot();nodes={n.get('id'):n for n in root.iter() if n.get('id')}
     point=lambda p:np.array([origin[k]+p[k]*scale[k] for k in (0,1)])
     atom_pixel={n.get('id'):point(nums(n.get('p'))) for n in root.iter('n')}
-    distance=np.sum((rgb[:,None,:]-palette[None,:,:])**2,axis=2)
+    distance=np.sum((rgb[:,None,:]-palette[None,:,:])**2,axis=2);bounds_valid=np.ones(distance.shape,dtype=bool)
     for i,g in enumerate(groups):
         n=nodes[g['native_id']]
         if g['kind']=='atom_label':box=nums(n.find('t').get('BoundingBox'))
@@ -104,7 +155,7 @@ def verify(stem,source,inputs,native,composition):
         low=point(box[:2])-2*max(scale);high=point(box[2:])+2*max(scale)
         # Bounds constrain colour decoding only. Collision distances below use
         # actual native ink pixels, including all antialias coverage.
-        valid=(xx>=low[0])&(xx<=high[0])&(yy>=low[1])&(yy<=high[1]);distance[~valid,i]=np.inf
+        valid=(xx>=low[0])&(xx<=high[0])&(yy>=low[1])&(yy<=high[1]);distance[~valid,i]=np.inf;bounds_valid[:,i]=valid
     classes=distance.argmin(axis=1);residual=np.sqrt(distance.min(axis=1));undecodable=int(np.count_nonzero(~np.isfinite(residual)))
     if undecodable:issues.append('ink_outside_all_native_object_bounds')
     clouds=[];boxes=[]
@@ -157,8 +208,8 @@ def verify(stem,source,inputs,native,composition):
         for name,center,r in exempt:
             # Only a small neighbourhood of the declared contact is exempt.
             pa=pa[np.sum((pa-center)**2,axis=1)>(r*max(scale))**2];pb=pb[np.sum((pb-center)**2,axis=1)>(r*max(scale))**2]
-            contacts.append({'objects':[a['native_id'],b['native_id']],'name':name,'radius_pt':r})
-            contact_regions.append((center,r*max(scale)))
+            contacts.append({'objects':[a['native_id'],b['native_id']],'colours':[a['rgb'],b['rgb']],'name':name,'radius_pt':r})
+            contact_regions.append({'objects':[a['native_id'],b['native_id']],'name':name,'center':center,'radius_px':r*max(scale)})
         if not len(pa) or not len(pb):continue
         # Reduce point clouds to the mutually reachable expanded rectangles.
         pa=pa[(pa[:,0]>=bb[0]-radius)&(pa[:,0]<=bb[2]+radius)&(pa[:,1]>=bb[1]-radius)&(pa[:,1]<=bb[3]+radius)]
@@ -167,15 +218,13 @@ def verify(stem,source,inputs,native,composition):
         d=min_distance(pa,pb);gap=max(0,d-1.5)/max(scale);checks+=1
         if gap<threshold or related_target and d<=1.5:failures.append({'objects':[a['native_id'],b['native_id']],'kinds':[a['kind'],b['kind']],'conservative_ink_gap_pt':gap,'required_pt':threshold})
     if failures:issues.append('native_mask_clearance')
-    mixed_points=np.column_stack((xx[residual>40],yy[residual>40]));unresolved=len(mixed_points)
-    if len(mixed_points):
-        covered=np.zeros(len(mixed_points),dtype=bool)
-        for center,radius in contact_regions:covered|=np.sum((mixed_points-center)**2,axis=1)<=radius**2
-        unresolved=int(np.count_nonzero(~covered))
+    mixed=residual>40;mixed_points=np.column_stack((xx[mixed],yy[mixed]))
+    unresolved,contributor_evidence=mixed_contact_evidence(mixed_points,rgb[mixed],palette,bounds_valid[mixed],groups,contact_regions)
     if unresolved:issues.append('unclassified_native_ink_outside_named_contacts')
     ink_y,ink_x=np.where(src_ink);bbox=[int(ink_x.min()),int(ink_y.min()),int(ink_x.max()),int(ink_y.max())]
     result={'fixture':stem,'source_cdxml_sha256':sha(original),'original_native_png_sha256':sha(source/(stem+'.png')),'diagnostic_native_png_sha256':sha(native/(stem+'.png')),'status':'pass' if not issues else 'failed','issues':issues,'native_pixel_dimensions':[src.shape[1],src.shape[0]],'embedded_dpi':list(Image.open(source/(stem+'.png')).info.get('dpi',())),'native_canvas_frame_px_per_pt':scale,'native_canvas_origin_px':origin,'canvas_dpi':[v*72 for v in scale],'ink_resolution':'Must also retain independent native bond/ruler calibration; canvas padding alone is not acceptance','native_ink_bbox_px':bbox,'native_ink_bbox_mm':[(bbox[k]-origin[k%2])/scale[k%2]*25.4/72 for k in range(4)],'silhouette_difference_pixels':mismatch,'silhouette_difference_fraction':fraction,'nonlocal_silhouette_difference_pixels':nonlocal_pixels,'allowed_registration_px':1,'mixed_colour_pixels_in_named_contacts':len(mixed_points)-unresolved,'unclassified_ink_pixels':unresolved,'object_masks':len(groups),'close_pair_distance_checks':checks,'named_contact_exemptions':contacts,'clearance_failures':failures,'owner_physical_size_review':'pending','manual_active_correction_seconds':None}
     result['native_arrowhead_tips']=native_tips
+    result['mixed_colour_contributors']=contributor_evidence
     return result
 
 

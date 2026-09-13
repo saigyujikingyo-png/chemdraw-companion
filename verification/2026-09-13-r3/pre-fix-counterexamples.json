@@ -1,0 +1,167 @@
+{
+  "scope": "Synthetic corruption of retained readback inputs; no native execution and no demonstrated full mask gate bypass",
+  "scene_source_sha256": "749f13fdca88147f4033b7f2febcce8f6bbc42129b44c22d1503b615b459c049",
+  "scene": [
+    {
+      "case": "short_curve",
+      "result": {
+        "status": "pass",
+        "equivalence": "strict supplied identity bijection",
+        "differences": {
+          "relationships_equal": true,
+          "max_atom_displacement_pt": 0.0,
+          "max_lone_pair_displacement_pt": 0.0,
+          "max_curve_control_displacement_pt": 0.0,
+          "max_connector_displacement_pt": 0.0,
+          "max_caption_displacement_pt": 0.0
+        },
+        "symmetry_permutation": null
+      }
+    },
+    {
+      "case": "orphan_connector",
+      "result": {
+        "status": "pass",
+        "equivalence": "strict supplied identity bijection",
+        "differences": {
+          "relationships_equal": true,
+          "max_atom_displacement_pt": 0.0,
+          "max_lone_pair_displacement_pt": 0.0,
+          "max_curve_control_displacement_pt": 0.0,
+          "max_connector_displacement_pt": 0.0,
+          "max_caption_displacement_pt": 0.0
+        },
+        "symmetry_permutation": null
+      }
+    },
+    {
+      "case": "bond_order",
+      "result": {
+        "status": "pass",
+        "equivalence": "strict supplied identity bijection",
+        "differences": {
+          "relationships_equal": true,
+          "max_atom_displacement_pt": 0.0,
+          "max_lone_pair_displacement_pt": 0.0,
+          "max_curve_control_displacement_pt": 0.0,
+          "max_connector_displacement_pt": 0.0,
+          "max_caption_displacement_pt": 0.0
+        },
+        "symmetry_permutation": null
+      }
+    },
+    {
+      "case": "atom_charge",
+      "result": {
+        "status": "pass",
+        "equivalence": "strict supplied identity bijection",
+        "differences": {
+          "relationships_equal": true,
+          "max_atom_displacement_pt": 0.0,
+          "max_lone_pair_displacement_pt": 0.0,
+          "max_curve_control_displacement_pt": 0.0,
+          "max_connector_displacement_pt": 0.0,
+          "max_caption_displacement_pt": 0.0
+        },
+        "symmetry_permutation": null
+      }
+    },
+    {
+      "case": "duplicate_atom",
+      "result": {
+        "status": "pass",
+        "equivalence": "strict supplied identity bijection",
+        "differences": {
+          "relationships_equal": true,
+          "max_atom_displacement_pt": 0.0,
+          "max_lone_pair_displacement_pt": 0.0,
+          "max_curve_control_displacement_pt": 0.0,
+          "max_connector_displacement_pt": 0.0,
+          "max_caption_displacement_pt": 0.0
+        },
+        "symmetry_permutation": null
+      }
+    },
+    {
+      "case": "short_connector",
+      "result": {
+        "status": "pass",
+        "equivalence": "strict supplied identity bijection",
+        "differences": {
+          "relationships_equal": true,
+          "max_atom_displacement_pt": 0.0,
+          "max_lone_pair_displacement_pt": 0.0,
+          "max_curve_control_displacement_pt": 0.0,
+          "max_connector_displacement_pt": 0.0,
+          "max_caption_displacement_pt": 0.0
+        },
+        "symmetry_permutation": null
+      }
+    },
+    {
+      "case": "duplicate_flow",
+      "result": {
+        "status": "pass",
+        "equivalence": "strict supplied identity bijection",
+        "differences": {
+          "relationships_equal": true,
+          "max_atom_displacement_pt": 0.0,
+          "max_lone_pair_displacement_pt": 0.0,
+          "max_curve_control_displacement_pt": 0.0,
+          "max_connector_displacement_pt": 0.0,
+          "max_caption_displacement_pt": 0.0
+        },
+        "symmetry_permutation": null
+      }
+    },
+    {
+      "case": "missing_state",
+      "result": {
+        "status": "exception",
+        "error": "'ammonium_water'"
+      }
+    },
+    {
+      "case": "extra_pair",
+      "result": {
+        "status": "pass",
+        "equivalence": "strict supplied identity bijection",
+        "differences": {
+          "relationships_equal": true,
+          "max_atom_displacement_pt": 0.0,
+          "max_lone_pair_displacement_pt": 0.0,
+          "max_curve_control_displacement_pt": 0.0,
+          "max_connector_displacement_pt": 0.0,
+          "max_caption_displacement_pt": 0.0
+        },
+        "symmetry_permutation": null
+      }
+    }
+  ],
+  "mask_subcheck": [
+    {
+      "case": "width",
+      "same_records": true
+    },
+    {
+      "case": "type",
+      "same_records": true
+    },
+    {
+      "case": "run_font",
+      "same_records": true
+    },
+    {
+      "case": "font_mapping",
+      "same_records": true
+    },
+    {
+      "case": "root_default",
+      "same_records": true
+    }
+  ],
+  "verifier_sources": {
+    "scene_equivalence.py": "09503ed788638f8b5a5f91990e0059ff04fbcc4791533f546edf65f3245c6a43",
+    "verify_native_masks.py": "e00f2e122ee4e1e54888e030edbcb70fed4cbe9f546f09125a2f96d08cccd7bd"
+  }
+}

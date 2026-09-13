@@ -1,0 +1,17 @@
+{
+  "source": "Observed composition command return and separately retained native-runner refusal journal",
+  "composition_exit_code": 1,
+  "error": "No backside attack route clears measured annotations",
+  "S1_R1_input_artifacts": "written and retained; not natively executed in this incomplete batch",
+  "M1_input_artifact": "not produced; failed in general route preflight",
+  "native_execution": "refused_before_isolation",
+  "native_runner_exit_code": 1,
+  "new_M1_native_result": null,
+  "new_M2_scored_result": null,
+  "development_repairs_consumed": 0,
+  "exposed_reference_repairs_permitted": 0,
+  "exposed_reference_repairs_consumed": 0,
+  "R2_repair_budget": "previous two repairs exhausted; unchanged",
+  "manual_active_correction_seconds": null,
+  "further_action": "Proceed under new corpus/gold contracts with independent development inputs; exposed M1/M2 remain evaluation/regression only"
+}

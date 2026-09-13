@@ -1,0 +1,27 @@
+{
+  "checkpoint": "R3 general verifier repair and independent geometry experiment",
+  "baseline_revision": "eb8b4c869a23237f726f8cf127be18743f573a14",
+  "review_revision": "d12ec4e7830a0c9f60197a416886afba90ab20ff",
+  "scene_negative_controls": "9/9 rejected",
+  "mask_readback_negative_controls": "5/5 rejected; subcheck scope only",
+  "mixed_contact_controls": "allowed pair passes; third contributor and ambiguous pair rejected",
+  "unit_tests": 47,
+  "metamorphic_replay": "pass; exposed regression, not unseen benchmark",
+  "native_development_geometry": "12/12 completed; 24 original native CDXML/PNG files",
+  "retained_native_masks": {
+    "S1": "pass",
+    "R1": "pass",
+    "M1": "failed"
+  },
+  "new_regression": "M1 preflight failed; incomplete batch refused before native execution",
+  "M1_M2_data_status": "exposed_and_tuned; excluded from training/correction corpus and unseen benchmark",
+  "new_scored_M2": "not_run_prerequisite_failed",
+  "P0": "not_accepted",
+  "freeze": "not_started",
+  "holdout": "not_selected",
+  "corpus_ingestion": "not_started_pending_schema_gold_contracts",
+  "owner_physical_review": "pending",
+  "manual_active_correction_seconds": null,
+  "R2_repair_budget": "unchanged_exhausted",
+  "MCP_installer_hosts": "not_started"
+}
