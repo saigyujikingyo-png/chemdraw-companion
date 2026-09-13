@@ -1,0 +1,306 @@
+{
+  "version": "p0b-controller-stage-receipt/1.0",
+  "created_utc": "2026-09-13T17:45:01.925626+00:00",
+  "status": "PARTIAL",
+  "goal_reached": false,
+  "baseline": {
+    "architecture": "3c63347d5cc0ba717f10dddf16115013995ab3dc",
+    "runtime": "bc428205a0066d7b544fe634910310d55fb3a893"
+  },
+  "runtime_source_commit": "2d6ac0d8a510d912f8e03157cf182cd6ce403683",
+  "runtime_freeze_commit": "56ace46880bf946e058b31695791e358398fec87",
+  "runtime_delivery_commit": "1bcca3bf60242ff27f7aca5a5d620d11808b1e2d",
+  "profile": "native-semantic-readback/1.1",
+  "qualification": {
+    "status": "qualified_covered_branches",
+    "branches": 19,
+    "preregistered_controls": 20,
+    "atom_nodes": 66,
+    "matched_controls": 16,
+    "matched_atoms": 57,
+    "unsupported_controls": 2,
+    "diagnostic_controls": 2,
+    "distinct_native_process_bindings": 40,
+    "cleanup_and_reopen_h_sources_each": {
+      "native_api_observation": 37,
+      "qualified_format_decode": 20,
+      "unknown": 9
+    },
+    "exact_git_source_and_input_files": 57,
+    "archive_content_members": 739,
+    "complete_loader_evidence_files": 161,
+    "actual_independent_reader_and_adapter_replay": true,
+    "actual_independent_native_launches": 0,
+    "native_execution_evidence": "Windows implementation native outputs, independently retrieved and replayed; not a live process observation on the controller host",
+    "selection_before_after_invariance": true,
+    "cross_process_geometry_byte_equality": false,
+    "cross_process_label_geometry_drift": {
+      "controls_with_bbox_changes": 9,
+      "labels_with_bbox_changes": 11,
+      "controls_with_anchor_changes": 4,
+      "labels_with_anchor_changes": 5,
+      "maximum_observed_delta": 0.01,
+      "raw_values_preserved": true
+    }
+  },
+  "software_tests": [
+    {
+      "owner": "Windows implementation",
+      "source_commit": "2d6ac0d8a510d912f8e03157cf182cd6ce403683",
+      "passed": 67,
+      "excluded": 12,
+      "unscheduled": 21,
+      "scope": "reported full inventory; receipt retrieved"
+    },
+    {
+      "owner": "independent controller",
+      "source_commit": "56ace46880bf946e058b31695791e358398fec87",
+      "passed": 67,
+      "excluded": 2,
+      "unscheduled": 0,
+      "scope": "actual explicitly reviewed reduced inventory; 36 exact source files unchanged"
+    }
+  ],
+  "fixed_input": {
+    "request_sha256": "77c0021772916bac9731a53a76f4833720249692ed141372b28a0fef6ec7395e",
+    "blind_intent_changed": false,
+    "original_depiction_policy_changed": false,
+    "mode": "offline_re_evaluation",
+    "infrastructure_start_failures": 1,
+    "actual_semantic_preflight_executions": 1,
+    "formal_native_attempts": 0,
+    "furthest_stage": "v0.2 validation/compiler/lowering and depiction capability gate completed; production read_geometry called and rejected at native execution/source binding before atom semantic readback",
+    "first_blocker": {
+      "code": "OFFLINE_PREFLIGHT_FAILED",
+      "message": "Native semantic execution/source binding mismatch",
+      "source": "runtime/native_provenance.py:41",
+      "retained_receipt_version": "native-geometry-receipt/0.1",
+      "absent_fields": [
+        "source_freeze_sha256",
+        "source_bytes_rechecked"
+      ],
+      "expected_source_freeze_sha256": "e12acc3f84333125476d47a1c2187873d03378da56ed3c0117324dbc1006ee1f",
+      "scope": "execution provenance; not an atom/H result or proof of candidate chemical support"
+    },
+    "actual_protected_read_denials": 6,
+    "source_dependency_input_evidence_unchanged": true,
+    "all_states_native_semantics_passed": false,
+    "composer_called": false,
+    "new_candidate_or_scene_produced": false,
+    "diagnostic_native_render": false,
+    "independent_evaluator_called": false,
+    "stop_reason": "Known offline rejection: no redundant formal native run, no source/profile expansion or retroactive evidence rewrite"
+  },
+  "history": {
+    "old_failed_attempts_preserved": 3,
+    "old_artifacts_hash_verified_unchanged": 177,
+    "old_receipts_and_separate_window_receipt_unchanged": 5,
+    "r1_native_control_failure_preserved": "post-Close HWND check before first fresh reopen",
+    "earlier_source_freeze_and_control_revisions_retained": true,
+    "preflight_launch_failure_preserved": "nested sandbox helper os error 206; no worker or denial proof produced; shortened exact-byte evidence paths without code change before sole actual preflight"
+  },
+  "acceptance": {
+    "overall_chemdraw": "not_established",
+    "M1_visual_pass": "unchanged_not_established",
+    "M2_and_derived_and_holdouts": "unread_unexecuted_unscored",
+    "gold": 0,
+    "chemical_correctness": "not_established",
+    "native_visual_quality": "not_measured",
+    "manual_correction_time": "not_measured",
+    "human_acceptance": "not_measured"
+  },
+  "evidence": [
+    {
+      "file": "baseline.json",
+      "bytes": 1516,
+      "sha256": "bd89c91a14910b9a5eb20baf792483de2ecfd06fb11ac78698799df69b067ae0",
+      "location": "private phase evidence; retained original bytes"
+    },
+    {
+      "file": "local-worker-idle.json",
+      "bytes": 412,
+      "sha256": "129fa08555acc9cbe9e421081789dc7d1910a62b8ff944a45d34436e893169e3",
+      "location": "private phase evidence; retained original bytes"
+    },
+    {
+      "file": "history-before.json",
+      "bytes": 1207,
+      "sha256": "56370dfaad60169d2422cc0cf871b8c6714c4edcccf39a3939b9f44b59de108e",
+      "location": "private phase evidence; retained original bytes"
+    },
+    {
+      "file": "historical-candidates-before.json",
+      "bytes": 35763,
+      "sha256": "6e74e7961d3230c30beec445f418387c23c0d4a68fb64133399dac86c92779ab",
+      "location": "private phase evidence; retained original bytes"
+    },
+    {
+      "file": "history-after.json",
+      "bytes": 902,
+      "sha256": "6fbda4dad5c3151d2cf6b4fb709b0023ba8a324efb7c70112c2b83ef85ca378d",
+      "location": "private phase evidence; retained original bytes"
+    },
+    {
+      "file": "preregistration-integrity-review.json",
+      "bytes": 9139,
+      "sha256": "e3ae9291486e3f6991917aeae59c7217ec892710aa7e01ad5f4b1e7c963c4489",
+      "location": "private phase evidence; retained original bytes"
+    },
+    {
+      "file": "source-review-r2.json",
+      "bytes": 2181,
+      "sha256": "9c77a353167a07640f2b6c10cb3cf65eadb3671a67cbb5216b55d21111aad008",
+      "location": "private phase evidence; retained original bytes"
+    },
+    {
+      "file": "independent-control-replay-receipt.json",
+      "bytes": 13477,
+      "sha256": "a467e8a320dd336a5a4ff2ab9725180f659733dc5475f967e826ac71c3351ad8",
+      "location": "private phase evidence; retained original bytes"
+    },
+    {
+      "file": "control-replay-path-differences.json",
+      "bytes": 3356,
+      "sha256": "a8cd59105804c748fe321f4c023910797373d00f6af58139142a740bfb2b9df4",
+      "location": "private phase evidence; retained original bytes"
+    },
+    {
+      "file": "independent-qualification-admission.json",
+      "bytes": 685,
+      "sha256": "0b02dd815d429a55e7f888a0c825f2ec9e41b7545fe577a6194cb32827e039ea",
+      "location": "private phase evidence; retained original bytes"
+    },
+    {
+      "file": "independent-native-r4-review.json",
+      "bytes": 46373,
+      "sha256": "fea571b6e978e7e3e4039bdc1d27a5696dbc6627cd873eda80b7b26e18f95905",
+      "location": "private phase evidence; retained original bytes"
+    },
+    {
+      "file": "controller-tests-56ace46880bf/independent-test-receipt.json",
+      "bytes": 4124,
+      "sha256": "025274f6aa9a9d523b54b02d0c03802628ccaae0b490e38a6372d682d3a647c3",
+      "location": "private phase evidence; retained original bytes"
+    },
+    {
+      "file": "delivery-1bcca3bf/independent-extraction-receipt.json",
+      "bytes": 549,
+      "sha256": "68f1842897c3259b826aa77abc22be761530ff569ddfc9613b1bca8d7caf93ad",
+      "location": "private phase evidence; retained original bytes"
+    },
+    {
+      "file": "delivery-1bcca3bf/source-freeze-r4.json",
+      "bytes": 14550,
+      "sha256": "e12acc3f84333125476d47a1c2187873d03378da56ed3c0117324dbc1006ee1f",
+      "location": "private phase evidence; retained original bytes"
+    },
+    {
+      "file": "delivery-1bcca3bf/control-receipt-r4.json",
+      "bytes": 65568,
+      "sha256": "bc3d514c2870ea472fa096b98e2ddfa53c6697bedaf0a90dfdb84bedc45937b5",
+      "location": "private phase evidence; retained original bytes"
+    },
+    {
+      "file": "delivery-1bcca3bf/qualification-proposal-r4.json",
+      "bytes": 602,
+      "sha256": "2b7f5a288213237c4e5e42e140eff8797cd18a67efcdc484ba3c17692c128e41",
+      "location": "private phase evidence; retained original bytes"
+    },
+    {
+      "file": "delivery-1bcca3bf/qualification-approved-r4.json",
+      "bytes": 986,
+      "sha256": "8d8634859b3e50e5881d5588134a00ee7a06fa8667fc594827d25aa51850aee0",
+      "location": "private phase evidence; retained original bytes"
+    },
+    {
+      "file": "evidence-relocation-receipt.json",
+      "bytes": 28835,
+      "sha256": "7ccd7fe61861580d190962a5ae6ddb4d5439c41512e549f60e45768a353b8b7d",
+      "location": "private phase evidence; retained original bytes"
+    },
+    {
+      "file": "evidence-relocation-02.json",
+      "bytes": 28985,
+      "sha256": "68744519ea8f5d305f17982ddf5ef3f0138e774b0e62a191eda34b0b6c0bbc98",
+      "location": "private phase evidence; retained original bytes"
+    },
+    {
+      "file": "command-length-preflight.json",
+      "bytes": 404,
+      "sha256": "ea5b02a379fd8ebe1407eb46e0221fdb15c483988a03fc53f3f548bf021f07c8",
+      "location": "private phase evidence; retained original bytes"
+    },
+    {
+      "file": "command-length-short-paths.json",
+      "bytes": 378,
+      "sha256": "41e8ec8004312e5d5fc3d445bee6ced0e4e085b65152e29a8cc32ae4b02a487f",
+      "location": "private phase evidence; retained original bytes"
+    },
+    {
+      "file": "command-length-short-paths-02.json",
+      "bytes": 286,
+      "sha256": "cdf221f9ef4a602abb913804e43c37c5206eaa5e0eb83c54df75f535e52e5288",
+      "location": "private phase evidence; retained original bytes"
+    },
+    {
+      "file": "r2/manifest.json",
+      "bytes": 28119,
+      "sha256": "038897062753a2602f68ff139172fb9f0b0a1951816d84ef90ade9211b98d00f",
+      "location": "private phase evidence; retained original bytes"
+    },
+    {
+      "file": "offline-replay-01/offline-replay-receipt.json",
+      "bytes": 285124,
+      "sha256": "8395ec70a72fbb22982cd49d270f97d1f7da6b437dc7caf612a2953b666603ef",
+      "location": "private phase evidence; retained original bytes"
+    },
+    {
+      "file": "offline-replay-01/stderr.txt",
+      "bytes": 419,
+      "sha256": "8d9d2b1e98798987785a8dbb5535f2d3af3b6525dbe21ae316bab5953de922a8",
+      "location": "private phase evidence; retained original bytes"
+    },
+    {
+      "file": "offline-replay-02/offline-replay-receipt.json",
+      "bytes": 239186,
+      "sha256": "d37fd9d55929d557978e7b18966cfcb33899b3ede7ba01af762c60b86e912ce2",
+      "location": "private phase evidence; retained original bytes"
+    },
+    {
+      "file": "offline-replay-02/readback/readback-result.json",
+      "bytes": 2826,
+      "sha256": "8fbc997e01443953df0f2f3bb1a47d2febe2dbf9a4f6248fe06e3c240b06acc7",
+      "location": "private phase evidence; retained original bytes"
+    },
+    {
+      "file": "offline-replay-02/readback/denial-receipt.json",
+      "bytes": 3202,
+      "sha256": "6ce7b2d1237936463866fa05f260402ce0c8ec7a2fc86345d6da91c5b0be7a36",
+      "location": "private phase evidence; retained original bytes"
+    },
+    {
+      "file": "offline-replay-02/readback/wrapper-outcome.json",
+      "bytes": 79,
+      "sha256": "35d97e554513c9bdf69368860e922776b4afebe64bd0558e01e515e300da68b7",
+      "location": "private phase evidence; retained original bytes"
+    },
+    {
+      "file": "freeze_phase_runtime.py",
+      "bytes": 18657,
+      "sha256": "7cf3f44dd9388eaeccc8faa963f4b56a348a93c3822b7e28d4995f039cc29068",
+      "location": "private phase evidence; retained original bytes"
+    },
+    {
+      "file": "phase_native_driver.py",
+      "bytes": 11446,
+      "sha256": "678aae8c11b292c7856a241beb064e55381ce1e1c2aebf846cca2a5399307663",
+      "location": "private phase evidence; retained original bytes"
+    },
+    {
+      "file": "offline_preflight.py",
+      "bytes": 17749,
+      "sha256": "7202a32b8015fbf5b87daff1bf19f8234a0b841451901f6f9cc9e34211970f30",
+      "location": "private phase evidence; retained original bytes"
+    }
+  ]
+}
