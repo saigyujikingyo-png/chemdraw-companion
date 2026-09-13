@@ -19,7 +19,7 @@ import xml.etree.ElementTree as ET
 
 HERE = Path(__file__).resolve().parent
 DEFAULT_STATE = HERE.parent / ".local" / "agent-edit-loop"
-METADATA = {"CDXML": {"CreationDate", "ModificationDate", "Name", "BoundingBox"},
+METADATA = {"CDXML": {"CreationDate", "ModificationDate", "Name", "BoundingBox", "WindowSize"},
             "page": {"BoundingBox"}}
 BASE_KEYS = {"action", "session_id", "document_id", "revision", "request_id"}
 ACTION_KEYS = {

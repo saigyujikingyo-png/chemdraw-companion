@@ -69,6 +69,26 @@ class DerivedAssociationChecks(unittest.TestCase):
             loop.initial_stereo_markers(before, after)
             self.assertNotEqual(loop.tree_value(before), loop.tree_value(after))
 
+    def test_root_window_size_is_recorded_but_object_geometry_and_style_stay_strict(self):
+        before = ET.fromstring('<CDXML WindowSize="0 -1610612736"><page id="1" WidthPages="1"><fragment id="2"><n id="3" p="30 40"/></fragment><t id="4" p="60 70" BoundingBox="60 58 90 70"><s font="3" size="12">conditions</s></t></page></CDXML>')
+        after = copy.deepcopy(before)
+        after.set('WindowSize', '1073741824 -536870912')
+        old_metadata, new_metadata = [], []
+        old_content = loop.tree_value(before, metadata=old_metadata)
+        new_content = loop.tree_value(after, metadata=new_metadata)
+        self.assertEqual(loop.digest(old_content), loop.digest(new_content))
+        self.assertEqual(loop.diff(old_content, new_content), [])
+        self.assertEqual(old_metadata, [{'tag': 'CDXML', 'id': None, 'attribute': 'WindowSize', 'value': '0 -1610612736'}])
+        self.assertEqual(new_metadata, [{'tag': 'CDXML', 'id': None, 'attribute': 'WindowSize', 'value': '1073741824 -536870912'}])
+        for selector, key, value in [('.//n', 'p', '31 40'), ('.//t', 'p', '61 70'),
+                                     ('.//t', 'BoundingBox', '61 58 91 70'), ('.//s', 'size', '13'),
+                                     ('.//page', 'WidthPages', '2'), ('.//page', 'WindowSize', '1 2')]:
+            with self.subTest(selector=selector, key=key):
+                changed = copy.deepcopy(after)
+                changed.find(selector).set(key, value)
+                self.assertTrue(loop.diff(old_content, loop.tree_value(changed)))
+                self.assertNotEqual(loop.digest(old_content), loop.digest(loop.tree_value(changed)))
+
 
 if __name__ == '__main__':
     unittest.main()
