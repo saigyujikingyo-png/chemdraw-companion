@@ -164,11 +164,18 @@ try{
             $detail=@{}
             switch($q.action){
                 'inspect' {
-                    if($q.ContainsKey('keep_open') -and $q.keep_open){
+                    $pendingKeepOpen=$q.ContainsKey('keep_open') -and $q.keep_open
+                    if($pendingKeepOpen){
                         if(!$q.ContainsKey('end_session') -or !$q.end_session -or $poisoned -or $lastSavedDocumentId -cne $documentId -or $lastSavedRevision -ne $revision){throw 'keep_open requires end_session and this exact current saved document revision.'}
-                        $keepOpen=$true
                     }
                     $last=Observe ($q.request_id+'-inspect')
+                    if($pendingKeepOpen){
+                        if($poisoned -or $q.revision -ne $revision -or $q.document_id -cne $documentId -or $lastSavedDocumentId -cne $documentId -or $lastSavedRevision -ne $revision -or $last.fingerprint -cne $pre.fingerprint){
+                            $preserveOnExit=$true;throw 'Final saved-revision observation failed; no ownership transfer committed.'
+                        }
+                        # Commit detach and stop only after a successful final observation.
+                        $keepOpen=$true;$stop=$true
+                    }
                     if($q.ContainsKey('end_session') -and $q.end_session){$stop=$true;$detail.session_ending=$true;$detail.keep_open=$keepOpen}
                 }
                 'relative-position' {
