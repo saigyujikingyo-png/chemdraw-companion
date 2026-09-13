@@ -1,0 +1,407 @@
+{
+  "version": "native-semantic-source-freeze/1.0",
+  "created_utc": "2026-09-13T16:47:08.530532+00:00",
+  "source_commit": "7ecabf77f0689b67c398fcfdd47c5876b50b0fae",
+  "profile": "native-semantic-readback/1.0",
+  "profile_sha256": "44b82d2edb88a32156790955fa5baff35e10f3314533f9905401a7f3567077a9",
+  "sources": [
+    {
+      "file": "contracts/composer-request.schema.json",
+      "bytes": 2582,
+      "sha256": "b6fb032a2983269d776c28d06620dfbe01946ca22e5e698274391445814309d9",
+      "matches_git_blob": true
+    },
+    {
+      "file": "contracts/ir_v02/__init__.py",
+      "bytes": 547,
+      "sha256": "d89dfbf42b1d96e32adecf2c823e2e81e10485678e1111aee44880eb865812db",
+      "matches_git_blob": true
+    },
+    {
+      "file": "contracts/ir_v02/core.py",
+      "bytes": 35829,
+      "sha256": "6f5a0b01db66cbc955f830d8676775a899ff6dec93adb5724748556b9d9ef133",
+      "matches_git_blob": true
+    },
+    {
+      "file": "contracts/ir_v02/elements.py",
+      "bytes": 649,
+      "sha256": "3c9de4759461c721b6f7ea74ced10648d13c05d878b8bed5d45f1c585f3e8bba",
+      "matches_git_blob": true
+    },
+    {
+      "file": "contracts/ir_v02/mechanism-ir.schema.json",
+      "bytes": 27220,
+      "sha256": "d0757f5f3c914cd8ae18db9dc874508f17a81900db2d62fa00e80ec5604fda82",
+      "matches_git_blob": true
+    },
+    {
+      "file": "contracts/mechanism-ir.schema.json",
+      "bytes": 12470,
+      "sha256": "619e46a20c20e9e5906b2298041379a8a832e310632a8a6bdc05d9174e7b2d2c",
+      "matches_git_blob": true
+    },
+    {
+      "file": "probes/NativeChemDraw.cs",
+      "bytes": 7874,
+      "sha256": "52eb2fe1e66d9b13aba84dfba010959ddcb8fcf6109b919a498324400681b73c",
+      "matches_git_blob": true
+    },
+    {
+      "file": "probes/freeze_native_semantic_sources.py",
+      "bytes": 4133,
+      "sha256": "64ec5708cbc572898cc11f25ce54aed0ba1157f8b67d9cf48679eda752967b8a",
+      "matches_git_blob": true
+    },
+    {
+      "file": "probes/make_native_semantic_controls.py",
+      "bytes": 8104,
+      "sha256": "f4cc12efb98e0de7a54a2cd5353a4746bd13424b7d0ab77a2e1383ebdc6d256d",
+      "matches_git_blob": true
+    },
+    {
+      "file": "probes/native-atom-observation.ps1",
+      "bytes": 5558,
+      "sha256": "351f86b140037b7fe940d1a26bc37bc9213be2012c082d59fc1c894f872398e5",
+      "matches_git_blob": true
+    },
+    {
+      "file": "probes/native-common.ps1",
+      "bytes": 1431,
+      "sha256": "0fe06575b88a8f2b14f6f3937dd72d2f2709b146564ac2e17b80b3b0ab01655f",
+      "matches_git_blob": true
+    },
+    {
+      "file": "probes/native-semantic-fragments.ps1",
+      "bytes": 11020,
+      "sha256": "bdc5585fb1aabde6733a455dc0ccab40d6faa44405191c3a3e8f75bc625a45f0",
+      "matches_git_blob": true
+    },
+    {
+      "file": "probes/run_composer.py",
+      "bytes": 5420,
+      "sha256": "d7a4e6c58ed95c217307dbe49e5188806aec07edc3957932c8b0c4a7db9ee470",
+      "matches_git_blob": true
+    },
+    {
+      "file": "probes/run_ir_v02_regression.py",
+      "bytes": 4937,
+      "sha256": "0b35a66d2a40b6d12db010d61412b2178e8d1154a005357e4d1b1320d3164737",
+      "matches_git_blob": true
+    },
+    {
+      "file": "probes/run_with_deadline.py",
+      "bytes": 2018,
+      "sha256": "06836f8b324a95b20f47a6bad234f8424a6d4429a32160b090882940fa9c9142",
+      "matches_git_blob": true
+    },
+    {
+      "file": "probes/verify_native_semantic_controls.py",
+      "bytes": 10565,
+      "sha256": "a70f95a157790dbd22ead3cda4c695823f395787dff0a7cfeb1b113aba151f43",
+      "matches_git_blob": true
+    },
+    {
+      "file": "requirements-probes-win-py312.lock",
+      "bytes": 737,
+      "sha256": "e3c0e476ceebaea8d60f242ef4989d5b77d51cf94d90fcb100a6f2c14deada23",
+      "matches_git_blob": true
+    },
+    {
+      "file": "runtime/__init__.py",
+      "bytes": 82,
+      "sha256": "b29386a1d044664bbc789b45de0c5770391fc13e0440a95cf3fc50ca1b779ea7",
+      "matches_git_blob": true
+    },
+    {
+      "file": "runtime/adapters/__init__.py",
+      "bytes": 77,
+      "sha256": "dca158bfe0e18688c938cdcf0351e99bcd914071d12647e008ce1e3c24a726ed",
+      "matches_git_blob": true
+    },
+    {
+      "file": "runtime/adapters/cdxml_atom_identity.py",
+      "bytes": 21295,
+      "sha256": "ad93bc017df19960dc1cd66feffb99e9ebf63ddd1f68814bd24b2bb4fc5393e0",
+      "matches_git_blob": true
+    },
+    {
+      "file": "runtime/adapters/chemdraw_cdxml.py",
+      "bytes": 16660,
+      "sha256": "1816baed88c278147079e39777849b0e8f14e2458a954c587085e5cfdefe643a",
+      "matches_git_blob": true
+    },
+    {
+      "file": "runtime/annotation_layout.py",
+      "bytes": 2768,
+      "sha256": "7da921de560ae304469e1a08f44bf7df79d97eda94fe256918d8aaa222cbb020",
+      "matches_git_blob": true
+    },
+    {
+      "file": "runtime/arrow_ports.py",
+      "bytes": 1053,
+      "sha256": "2f3ce67487efbc50bff014f6951521636eb54729e8bc33778cf378f679380321",
+      "matches_git_blob": true
+    },
+    {
+      "file": "runtime/chemical_ir.py",
+      "bytes": 11581,
+      "sha256": "05b30bc3ad4ea366e82aab437544a7b91c9d1a3d81202b51bdbe5b85d395b384",
+      "matches_git_blob": true
+    },
+    {
+      "file": "runtime/ir_v02_runtime.py",
+      "bytes": 5087,
+      "sha256": "568ce148b58da1171967086fe697918cf85260ef8e185b690d5ff53ce0fdfcbe",
+      "matches_git_blob": true
+    },
+    {
+      "file": "runtime/mechanism_composer.py",
+      "bytes": 22902,
+      "sha256": "b39cdaded2da6f107a882701b6afaab7ae9c483abaa0f24b93d44c284a8adeda",
+      "matches_git_blob": true
+    },
+    {
+      "file": "runtime/native_observation.py",
+      "bytes": 5111,
+      "sha256": "d19975925d0d720a44692e4a4feae495b572bab03981188300a93360ae6def27",
+      "matches_git_blob": true
+    },
+    {
+      "file": "runtime/native_provenance.py",
+      "bytes": 9574,
+      "sha256": "358ea503461281002129d896a1573477d919a6e138ff68ab51dcaa0814a3b17c",
+      "matches_git_blob": true
+    },
+    {
+      "file": "runtime/native_semantic_profile.json",
+      "bytes": 1545,
+      "sha256": "44b82d2edb88a32156790955fa5baff35e10f3314533f9905401a7f3567077a9",
+      "matches_git_blob": true
+    },
+    {
+      "file": "runtime/native_semantics.py",
+      "bytes": 16339,
+      "sha256": "69ff9a1a244cdee16664781d2564eb53d13ee4c9a86fad908df3e559e42d7f19",
+      "matches_git_blob": true
+    },
+    {
+      "file": "runtime/native_source_binding.py",
+      "bytes": 4510,
+      "sha256": "02a0f2db9f63fbec44ad8c919384d8f0629a684b3e8de0ca14ba257ea7b37d74",
+      "matches_git_blob": true
+    },
+    {
+      "file": "tests/test_native_observation.py",
+      "bytes": 3656,
+      "sha256": "9703e896fefd54ef7d1f84f426300105e32aab7eae5a258228cc7d140b86612d",
+      "matches_git_blob": true
+    },
+    {
+      "file": "tests/test_native_semantics.py",
+      "bytes": 10238,
+      "sha256": "2d3ad7494c748541d1e8c0dafab379e2f41116ff3bf585709d026a0dcdbefbc2",
+      "matches_git_blob": true
+    }
+  ],
+  "inputs": [
+    {
+      "file": "verification/2026-09-13-p0b-semantic-readback/inputs/control-matrix.json",
+      "bytes": 46991,
+      "sha256": "69c3a3e34437fe85b926908bcff14015d384278db4bff146583d66d5c52b1348",
+      "matches_git_blob": true
+    },
+    {
+      "file": "verification/2026-09-13-p0b-semantic-readback/inputs/geometry-manifest.json",
+      "bytes": 1472,
+      "sha256": "a8f5186d4a52bfd8610d24162ce63063504c8cb670154ffa0a35d63f9a92965e",
+      "matches_git_blob": true
+    },
+    {
+      "file": "verification/2026-09-13-p0b-semantic-readback/inputs/seed-provenance.json",
+      "bytes": 2763,
+      "sha256": "b37c41a96629bed08b9b674d5dd875b8b058fbc4afdc08e455a5ebdc8a03b1ab",
+      "matches_git_blob": true
+    },
+    {
+      "file": "verification/2026-09-13-p0b-semantic-readback/inputs/state-000.cdxml",
+      "bytes": 854,
+      "sha256": "190b76acbb1dbba42d6a96d6364d95cf7e68cb8429ff65b02b8ebea6ebfdd343",
+      "matches_git_blob": true
+    },
+    {
+      "file": "verification/2026-09-13-p0b-semantic-readback/inputs/state-001.cdxml",
+      "bytes": 1145,
+      "sha256": "a92d9154db1fa3d41e25aa39e2697fb4c847c2f8fe97b4fdc825cd160ca34a1d",
+      "matches_git_blob": true
+    },
+    {
+      "file": "verification/2026-09-13-p0b-semantic-readback/inputs/state-002.cdxml",
+      "bytes": 1145,
+      "sha256": "5802698680e0a7823594256ca5bfb39d6357eb24bb725442648ed2190f149236",
+      "matches_git_blob": true
+    },
+    {
+      "file": "verification/2026-09-13-p0b-semantic-readback/inputs/state-003.cdxml",
+      "bytes": 959,
+      "sha256": "d9599f6821e1a4aed3ff8b5311a700ae01d4f2073bfd687a1130e077dfe2a0ec",
+      "matches_git_blob": true
+    },
+    {
+      "file": "verification/2026-09-13-p0b-semantic-readback/inputs/state-004.cdxml",
+      "bytes": 1291,
+      "sha256": "29dd22c440998111a31bac93e90e6aceb0242ee6ed4d596c48c04077eb7b9f1d",
+      "matches_git_blob": true
+    },
+    {
+      "file": "verification/2026-09-13-p0b-semantic-readback/inputs/state-005.cdxml",
+      "bytes": 1145,
+      "sha256": "2318846250754d14712e5990ccbb90426d28e9d1c66c0127ad965c327ed459d9",
+      "matches_git_blob": true
+    },
+    {
+      "file": "verification/2026-09-13-p0b-semantic-readback/inputs/state-006.cdxml",
+      "bytes": 1291,
+      "sha256": "b6c0f0afcc6fe17cf60b9692820b32aa71311eecf62b0903f7c98ab2f9d319fc",
+      "matches_git_blob": true
+    },
+    {
+      "file": "verification/2026-09-13-p0b-semantic-readback/inputs/state-007.cdxml",
+      "bytes": 1436,
+      "sha256": "170c2ab0d941098fa01443d3eab8f13af9cc98936e6772b26381409c8f4dc4cc",
+      "matches_git_blob": true
+    },
+    {
+      "file": "verification/2026-09-13-p0b-semantic-readback/inputs/state-008.cdxml",
+      "bytes": 1291,
+      "sha256": "c707456a4baebfdd3e9f0f5e2cf7fff9925e7227edcca0a4919ab7c25b99e665",
+      "matches_git_blob": true
+    },
+    {
+      "file": "verification/2026-09-13-p0b-semantic-readback/inputs/state-009.cdxml",
+      "bytes": 999,
+      "sha256": "48377e892207f08900298cfa19967a46e6398a0b3849ef8bb6d015aa35b2b4f6",
+      "matches_git_blob": true
+    },
+    {
+      "file": "verification/2026-09-13-p0b-semantic-readback/inputs/state-010.cdxml",
+      "bytes": 1145,
+      "sha256": "530181576a68b49b4d37346088f9bd7dfe5ea032957652665fc2c501ca10f1aa",
+      "matches_git_blob": true
+    },
+    {
+      "file": "verification/2026-09-13-p0b-semantic-readback/inputs/state-011.cdxml",
+      "bytes": 1629,
+      "sha256": "d66e2bfbcd31e3cd72908ec7e6dc96249da5ead388af6866d64aa680fac55469",
+      "matches_git_blob": true
+    },
+    {
+      "file": "verification/2026-09-13-p0b-semantic-readback/inputs/state-012.cdxml",
+      "bytes": 1484,
+      "sha256": "32f02e09613cf94cb98cbb45025700ae3c4ac6d69a205887899738a63304b700",
+      "matches_git_blob": true
+    },
+    {
+      "file": "verification/2026-09-13-p0b-semantic-readback/inputs/state-013.cdxml",
+      "bytes": 1629,
+      "sha256": "bb12ccb3fbc6419934ac540d2f9a94876912e766a04feb25d6d43916fca4d5e0",
+      "matches_git_blob": true
+    },
+    {
+      "file": "verification/2026-09-13-p0b-semantic-readback/inputs/state-014.cdxml",
+      "bytes": 1157,
+      "sha256": "bec4b592178206d43c3ad0add6ee12f6cf643bd4a1f39aca58a8ffc41aa11b91",
+      "matches_git_blob": true
+    },
+    {
+      "file": "verification/2026-09-13-p0b-semantic-readback/inputs/state-015.cdxml",
+      "bytes": 1303,
+      "sha256": "f45d295613b5611e6a982571d4c91d96c17ec78bff4dfc90e77bccaca791c50d",
+      "matches_git_blob": true
+    },
+    {
+      "file": "verification/2026-09-13-p0b-semantic-readback/inputs/state-016.cdxml",
+      "bytes": 1629,
+      "sha256": "955a858beff973725eca42078035d556a233f57f04d1764afb94c897201ad8b3",
+      "matches_git_blob": true
+    },
+    {
+      "file": "verification/2026-09-13-p0b-semantic-readback/inputs/state-017.cdxml",
+      "bytes": 872,
+      "sha256": "ed305c4054db85164296ea38f82d47ddcb887d0cce1deeed4b494f6dd3ea17d7",
+      "matches_git_blob": true
+    },
+    {
+      "file": "verification/2026-09-13-p0b-semantic-readback/inputs/state-018.cdxml",
+      "bytes": 865,
+      "sha256": "cef0c0a82a654cea2e1feb5e1750225c783f56450f04ad510dfebbadf00f108e",
+      "matches_git_blob": true
+    },
+    {
+      "file": "verification/2026-09-13-p0b-semantic-readback/inputs/state-019.cdxml",
+      "bytes": 867,
+      "sha256": "ec66d6743aaf862923c8d3cbd98b91991bbcf37e5f1871219feccb4239c73874",
+      "matches_git_blob": true
+    },
+    {
+      "file": "verification/2026-09-13-p0b-semantic-readback/preregistration-manifest.json",
+      "bytes": 5826,
+      "sha256": "d4d71cc0575d4be7b31d1f19f081381b9875565acb973ed206e32630628dcc3b",
+      "matches_git_blob": true
+    }
+  ],
+  "dependencies": {
+    "new_dependencies": false,
+    "python_version": "3.12.14",
+    "packages": [
+      {
+        "name": "jsonschema",
+        "version": "4.25.1",
+        "installed_record_sha256": "e3629c66a779695ee7bd6729e4e433d776831de5e4e604727e296cdb65ade340"
+      },
+      {
+        "name": "attrs",
+        "version": "26.1.0",
+        "installed_record_sha256": "a5151f0461f45abf44fdc57c2ccdb73151bb54a0abfd22133f7ea7ad48f8dc23"
+      },
+      {
+        "name": "jsonschema-specifications",
+        "version": "2025.9.1",
+        "installed_record_sha256": "9cc3b56b6becdd45482310d7d2ff9d98dbf8a5775e36f7ccde49a09146e389da"
+      },
+      {
+        "name": "referencing",
+        "version": "0.37.0",
+        "installed_record_sha256": "6bb85471519901d877804e8dc05f032e6fa362b72c8a73b21b7486517e36c90e"
+      },
+      {
+        "name": "rpds-py",
+        "version": "2026.6.3",
+        "installed_record_sha256": "f4adf0068983d8da13687bcabedccbedf3fd8ae3d3089541bbdbab6770685897"
+      },
+      {
+        "name": "typing_extensions",
+        "version": "4.16.0",
+        "installed_record_sha256": "78f74ed46a377d6e1debed78b3e994ff9cfe02a529d393d7c8ab80989bd25079"
+      }
+    ],
+    "executor_binaries": [
+      {
+        "role": "python",
+        "name": "python.exe",
+        "bytes": 107312,
+        "sha256": "372c2eae555b344520bf147be0096e009069aeca4e7f78d6aecea6d53158056a"
+      },
+      {
+        "role": "powershell",
+        "name": "pwsh.exe",
+        "bytes": 301368,
+        "sha256": "362a356ce7f0940ec74f73a8fc2c990a2cc24a38a11c90bbd8eca947110ad139"
+      }
+    ],
+    "vendor_binaries": "exact hashes in the frozen profile; not redistributed"
+  },
+  "native_worker_attempts_before_freeze": 1,
+  "qualification": "prospective; not native-qualified by source freeze",
+  "production_source_policy": "All runtime Python, required IR implementation/schemas, profile, native worker/common/bridge/observer, entrypoints and exact diagnostic scripts are listed. Test modules are additional source evidence."
+}
