@@ -1,5 +1,6 @@
 # Corpus quality and split policy v0.1
 
+Current policy override (Quality Oracle phase, 2026-09-13): M1 is permitted exposed development data; M2 and descendants plus future holdout remain frozen. The current 20-50 gold mechanism strategy and admission rules are GOLD_SAMPLE_STRATEGY_V1.md and GOLD_SILVER_HOLDOUT_V1.md. Earlier allocations and M1 locks below are historical design context; do not apply them to new records or rewrite old receipts.
 Status: design for the Composer R&D / Dataset Phase, 2026-09-13. This policy does not establish collected data, training permission, a working corpus service, or native acceptance. Follow [DEVELOPMENT_PRINCIPLES.md](../DEVELOPMENT_PRINCIPLES.md). The corpus contracts are separate from the existing runtime IR.
 
 ## Quality and evidence
@@ -27,7 +28,7 @@ Use exposure values `exposed_and_tuned`, `exposed`, `unseen` and `not_assessed`.
 
 Use splits `development`, `fixed_regression`, `evaluation_reserved` and `quarantined`. Both `fixed_regression` and `evaluation_reserved` belong to the evaluation bucket. A family cannot cross the development/evaluation boundary; evaluation relatives may use different evaluation subtypes when their lineage and exposure support the assignment.
 
-M1 and M2 are now locked evaluation/regression benchmarks: assign `fixed_regression` and `exposed_and_tuned`. Preserve earlier failures, repairs and first outputs. From this phase onward, do not fit them again or use their scores/corrections to select prompts, rules, parameters, coordinates or training examples. This instruction supersedes earlier permission to keep repairing those samples. Their corrected, augmented and otherwise derived records remain excluded from training, including gold revisions.
+Historical policy: both M1 and M2 were locked after earlier tuning. Preserve those assignments and receipts as history; new records apply the current override above. M1 exposure cannot become unseen. M2 and all derivatives remain excluded from fitting/training.
 
 Keep future unseen evaluation distinct. `evaluation_reserved` may remain empty; this phase selects no holdout. After the required implementation/rule freeze, an independent evaluator may create or select a genuine M2 chemical perturbation within the held-out evaluation lineage, independently establish its semantics, check duplicates and record disclosure. It may share the known reaction family and benchmark ancestry. Such evidence can support an unseen-input claim, never family-disjoint novelty; all benchmark descendants remain excluded from training. Relabelling a known answer or drawing does not qualify. Post-disclosure tuning consumes its unseen status; retain the failure and follow the existing [generalization gate](M2_GENERALIZATION_GATE.md).
 

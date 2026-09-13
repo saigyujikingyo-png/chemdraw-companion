@@ -1,5 +1,6 @@
 # Corpus sample plan
 
+Current policy override (Quality Oracle phase, 2026-09-13): M1 is permitted exposed development data; M2 and descendants plus future holdout remain frozen. The current 20-50 gold mechanism strategy and admission rules are GOLD_SAMPLE_STRATEGY_V1.md and GOLD_SILVER_HOLDOUT_V1.md. Earlier allocations and M1 locks below are historical design context; do not apply them to new records or rewrite old receipts.
 Status: planned coverage, not completed examples or accepted gold. Target **200 checked examples total: 40 human-verified gold and 160 other checked examples**. The initial three proof inputs are ungraded schema/annotation prototypes and do not count toward these targets. No native execution, further benchmark repair or data acquisition is authorized by this document.
 
 ## Coverage targets
@@ -29,7 +30,7 @@ The other 160 may mix first-party variants, rights-cleared records, AI-assisted 
 
 ## Exposure, lineage and evaluation
 
-M1 and M2 were exposed during historical implementation and repairs. Preserve that history explicitly. Lock them as `fixed_regression`, for evaluation only going forward. They and their derivatives are excluded from training/tuning corpus counts. Their coordinates, masks, correction targets and evaluation outcomes must not guide benchmark-specific rule selection or tuning. This restriction supersedes older instructions permitting iterative benchmark repair.
+Historical policy: both M1 and M2 were locked after earlier tuning. Preserve those assignments and receipts as history; new records apply the current override above. M1 exposure cannot become unseen. M2 and all derivatives remain excluded from fitting/training.
 
 Record parentage and exclusion groups across substitutions, atom-ID changes, reordered arrays, restyling and rendering variants. Broad reaction-family labels and derivative-lineage groups serve different purposes; eligibility requires explicit lineage review. Report unique chemistry/lineage counts separately from artifact or variant counts.
 

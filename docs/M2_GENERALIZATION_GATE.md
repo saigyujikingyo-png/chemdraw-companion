@@ -1,6 +1,6 @@
 # M2 generalization and holdout gate
 
-R&D phase clarification (2026-09-13): [CORPUS_QUALITY_AND_SPLITS.md](CORPUS_QUALITY_AND_SPLITS.md) now locks the exposed M1/M2 reference lineages against further fitting. Retain historical exposure and tune only on separate development data. Fixed regression and reserved perturbation records share the evaluation boundary; neither enters training. The corpus schema proof does not qualify base M2, freeze or holdout.
+Quality Oracle phase clarification (2026-09-13): [GOLD_SILVER_HOLDOUT_V1.md](GOLD_SILVER_HOLDOUT_V1.md) permits M1 development with retained exposure. M2 and all descendants remain frozen against fitting/training. This latest policy supersedes the older M1 lock. Fixed regression and reserved perturbation records share the evaluation boundary; neither enters training. The corpus schema proof does not qualify base M2, freeze or holdout.
 
 Revision 2026-09-12.3. Required in addition to the original M2 native/quality/editability gates. No base-native or holdout pass has been observed by this architecture task.
 

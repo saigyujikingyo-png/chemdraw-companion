@@ -1,0 +1,40 @@
+{
+  "version": "quality-policy/1.0",
+  "qualification": "provisional_not_gold_calibrated",
+  "length_unit": "bond_length",
+  "pixel_uncertainty": 0.75,
+  "metrics": {
+    "visible_tip_target": {
+      "maximum_distance": 0.18
+    },
+    "visible_tail_source": {
+      "maximum_distance": 0.15
+    },
+    "lone_pair_orientation": {
+      "maximum_radial_error_deg": 25,
+      "maximum_dot_error_deg": 20
+    },
+    "ink_clearance": {
+      "minimum_gap": 0.12,
+      "minimum_arrow_gap": 0.18
+    },
+    "curve_bend_severity": {
+      "maximum_arc_chord_ratio": 1.8,
+      "maximum_excursion": 1.5,
+      "maximum_total_turn_deg": 220
+    },
+    "head_glyph_overlap": {
+      "maximum_overlap_pixels": 0,
+      "minimum_gap": 0.04
+    },
+    "step_spacing": {
+      "minimum_gap": 0.5,
+      "maximum_gap": 8
+    },
+    "common_scaffold": {
+      "maximum_rmsd": 0.05,
+      "maximum_residual": 0.1,
+      "maximum_rotation_error_deg": 15
+    }
+  }
+}

@@ -36,4 +36,4 @@ Record human active correction time separately from wall time and automated exec
 
 ## Leakage and scope
 
-All correction descendants inherit their source family's split and exposure restrictions. M1/M2 corrections remain locked regression/evaluation evidence, excluded from further fitting and training even if corrected or gold. This document authorizes no new native repair attempt, holdout selection, collection or model training.
+All correction descendants inherit their source family's split and exposure restrictions. Current policy permits exposed M1 development corrections, without automatic gold promotion. M2 and descendants remain locked regression/evaluation evidence, excluded from fitting and training even if corrected or gold. See GOLD_SILVER_HOLDOUT_V1.md. This document authorizes no new native repair attempt, holdout selection, collection or model training.

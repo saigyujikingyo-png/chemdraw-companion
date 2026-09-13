@@ -1,0 +1,41 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Local quality calibration binding, prototype v1",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "version": {"const": "quality-calibration/1.0"},
+    "id": {"type": "string", "minLength": 1, "maxLength": 200},
+    "native_build": {"type": "string", "minLength": 1, "maxLength": 500},
+    "style": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "font_family": {"type": "string", "minLength": 1, "maxLength": 200},
+        "font_pt": {"type": "number", "exclusiveMinimum": 0},
+        "bond_pt": {"type": "number", "exclusiveMinimum": 0},
+        "stroke_pt": {"type": "number", "exclusiveMinimum": 0},
+        "head_size": {"type": "number", "exclusiveMinimum": 0},
+        "head_width": {"type": "number", "exclusiveMinimum": 0},
+        "head_center_size": {"type": "number", "exclusiveMinimum": 0},
+        "head_type": {"type": "string", "minLength": 1, "maxLength": 100},
+        "head": {"type": "string", "minLength": 1, "maxLength": 100},
+        "tail": {"type": "string", "minLength": 1, "maxLength": 100},
+        "curve_type": {"type": "string", "minLength": 1, "maxLength": 100}
+      },
+      "required": ["font_family", "font_pt", "bond_pt", "stroke_pt", "head_size", "head_width", "head_center_size", "head_type", "head", "tail", "curve_type"]
+    },
+    "measurement_status": {"enum": ["measured", "uncertain", "unmeasured"]},
+    "measurement_source": {"enum": ["synthetic", "native_render"]},
+    "limits": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "head_extension_pt": {"type": "number", "minimum": 0},
+        "uncertainty_pt": {"type": "number", "minimum": 0}
+      },
+      "required": ["head_extension_pt", "uncertainty_pt"]
+    }
+  },
+  "required": ["version", "id", "native_build", "style", "measurement_status", "measurement_source", "limits"]
+}

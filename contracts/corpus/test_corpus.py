@@ -339,6 +339,39 @@ class CorpusBundleTests(unittest.TestCase):
                 with self.assertRaisesRegex(ValueError, "split/registry disagreement"):
                     validator.bundle(directory)
 
+    def test_stale_split_revision_is_rejected(self):
+        with temporary_bundle() as directory:
+            path=directory/'split-manifest.json';value=json.loads(path.read_text());value['corpus_revision']='different-revision';path.write_text(json.dumps(value))
+            with self.assertRaisesRegex(ValueError,'split corpus revision mismatch'):validator.bundle(directory)
+
+    def test_ir_identity_must_match_registered_sample_even_with_valid_hash(self):
+        import hashlib
+        with temporary_bundle() as directory:
+            path=directory/'proton-transfer.ir.json';value=json.loads(path.read_text());value['id']='different-sample';path.write_text(json.dumps(value));data=path.read_bytes()
+            registry_path=directory/'proof-manifest.json';registry=json.loads(registry_path.read_text());sample=entity(registry,'samples','proton-transfer');asset=entity(sample,'assets',sample['mechanism_asset_ref']);asset.update(bytes=len(data),sha256=hashlib.sha256(data).hexdigest());registry_path.write_text(json.dumps(registry))
+            with self.assertRaisesRegex(ValueError,'IR/sample identity mismatch'):validator.bundle(directory)
+
+    def test_mechanism_asset_requires_ir_kind(self):
+        value=fixture('proof-manifest');sample=entity(value,'samples','proton-transfer');entity(sample,'assets',sample['mechanism_asset_ref'])['kind']='native_render'
+        validator.syntax('corpus-manifest',value)
+        with self.assertRaisesRegex(ValueError,'mechanism asset kind/MIME mismatch'):validator.manifest(value)
+
+    def test_asset_self_parent_is_rejected(self):
+        value=fixture('proof-manifest');asset=entity(value,'samples','proton-transfer')['assets'][0];asset['derived_from']=[asset['id']]
+        with self.assertRaisesRegex(ValueError,'asset lineage: cycle'):validator.manifest(value)
+
+    def test_duplicate_correction_asset_identity_is_rejected(self):
+        value=correction_fixture();value['before_artifacts'].append({**value['before_artifacts'][0],'sha256':'3'*64})
+        validator.syntax('correction-record',value)
+        with self.assertRaisesRegex(ValueError,'duplicate identity: asset_ref'):validator.correction(value)
+
+    def test_layer_dependency_cycle_is_rejected(self):
+        layers=[{'name':name,'depends_on':[],'status':'not_started'} for name in validator.LAYERS]
+        layers[0]['depends_on']=[layers[1]['name']];layers[1]['depends_on']=[layers[0]['name']]
+        value={'version':'mechanism-annotation/0.1','id':'unit-annotation','sample_id':'unit-sample','revision_id':'unit-revision','mechanism_sha256':'a'*64,'layers':layers,'observations':[],'actors':[],'reviews':[]}
+        validator.syntax('annotation',value)
+        with self.assertRaisesRegex(ValueError,'annotation layer dependency: cycle'):validator.annotation(value)
+
 
 if __name__ == "__main__":
     unittest.main()

@@ -1,6 +1,6 @@
 # Implementation handoff: P0-A/B/C and M2
 
-Current phase update (2026-09-13): read [COMPOSER_RND_HANDOFF.md](COMPOSER_RND_HANDOFF.md) and [MECHANISM_IR_V0_1.md](MECHANISM_IR_V0_1.md). The corpus profile is separate from the runtime contract. M1/M2 are now locked exposed evaluation fixtures, excluded from further rule fitting/training and their derivative corpora. Native gates and prior failed repair history remain in force.
+Current phase update (2026-09-13): read [COMPOSER_RND_HANDOFF.md](COMPOSER_RND_HANDOFF.md) and [MECHANISM_IR_V0_1.md](MECHANISM_IR_V0_1.md). The corpus profile is separate from the runtime contract. Current Quality Oracle phase: M1 may be used for exposed development; M2 and all descendants remain locked against tuning/training. Read QUALITY_ORACLE_V1.md and GOLD_SILVER_HOLDOUT_V1.md. This supersedes the older M1 restriction. Native gates and prior failed repair history remain in force.
 
 Read DEVELOPMENT_PRINCIPLES.md (2026-09-12.4), CHEMBRIDGE.md and CLOUD_STORAGE.md, then this page, ARCHITECTURE.md, QUALITY_GATES.md, CHEMDRAW_26_CAPABILITY_MATRIX.md, MECHANISM_IR_COMPOSER.md and M2_BECKMANN_SNAKE.md. Revision 2026-09-12.3 retains P0-A/B/C and adds the mandatory M2_GENERALIZATION_GATE.md.
 
@@ -10,7 +10,9 @@ Dedicated repository: saigyujikingyo-png/chemdraw-companion. Preserve Origin/Che
 
 Five tool names and three recipe IDs remain unchanged: structure_sheet.v1, reaction_scheme.v1, electron_flow_step.v1. M2 has a separate internal IR fixture/direct harness; do not force it into M1 or wait for a new public recipe. Historical contract and native evidence retain their original scopes.
 
-## Immediate sequence
+## Earlier native sequence
+
+Historical native-gate context only. The current work order is in COMPOSER_RND_HANDOFF.md; this older sequence does not authorize a new repair run during the Quality Oracle protocol delivery.
 
 1. **Repair SaveAs.** Preserve f111c36 ethanol success and later missing-file failure. Change one variable at a time from the successful baseline; keep requested path immutable and capture by-ref returns and actual native errors. Verify bytes/reopen. A new PID alone is not COM isolation; Activate without readback is not a complete inactive-document test.
 2. **Complete the ChemDraw 26 capability matrix.** Record build/edition/backend and operation/create/read/change/remove/reopen evidence. Probe Add-in where available without making it a prerequisite to permitted COM/CDXML routes.

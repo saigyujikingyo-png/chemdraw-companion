@@ -1,0 +1,432 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "version": {
+      "const": "quality-reference/1.0"
+    },
+    "ir_sha256": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "source": {
+      "enum": [
+        "synthetic",
+        "independently_reviewed_native_readback",
+        "unqualified"
+      ]
+    },
+    "coordinate_units": {
+      "const": "px"
+    },
+    "pixels_per_pt": {
+      "type": "number",
+      "exclusiveMinimum": 0
+    },
+    "object_bindings": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "kind": {
+            "enum": [
+              "bond",
+              "label",
+              "charge",
+              "lone_pair",
+              "arrow",
+              "arrowhead",
+              "caption",
+              "reaction_arrow"
+            ]
+          },
+          "state_ref": {
+            "type": "string",
+            "minLength": 1
+          },
+          "semantic_refs": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            },
+            "minItems": 1,
+            "uniqueItems": true
+          }
+        },
+        "required": [
+          "id",
+          "kind",
+          "state_ref",
+          "semantic_refs"
+        ]
+      }
+    },
+    "measurements": {
+      "type": "array",
+      "items": {
+        "oneOf": [
+          {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "id": {
+                "type": "string",
+                "minLength": 1
+              },
+              "metric": {
+                "const": "visible_tip_target"
+              },
+              "flow_ref": {
+                "type": "string",
+                "minLength": 1
+              },
+              "target": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                  "entity_ref": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "point": {
+                    "type": "array",
+                    "items": {
+                      "type": "number"
+                    },
+                    "minItems": 2,
+                    "maxItems": 2
+                  }
+                },
+                "required": [
+                  "entity_ref",
+                  "point"
+                ]
+              }
+            },
+            "required": [
+              "id",
+              "metric",
+              "flow_ref",
+              "target"
+            ]
+          },
+          {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "id": {
+                "type": "string",
+                "minLength": 1
+              },
+              "metric": {
+                "const": "visible_tail_source"
+              },
+              "flow_ref": {
+                "type": "string",
+                "minLength": 1
+              },
+              "source": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                  "entity_ref": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "point": {
+                    "type": "array",
+                    "items": {
+                      "type": "number"
+                    },
+                    "minItems": 2,
+                    "maxItems": 2
+                  }
+                },
+                "required": [
+                  "entity_ref",
+                  "point"
+                ]
+              }
+            },
+            "required": [
+              "id",
+              "metric",
+              "flow_ref",
+              "source"
+            ]
+          },
+          {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "id": {
+                "type": "string",
+                "minLength": 1
+              },
+              "metric": {
+                "const": "lone_pair_orientation"
+              },
+              "lp_ref": {
+                "type": "string",
+                "minLength": 1
+              },
+              "atom_point": {
+                "type": "array",
+                "items": {
+                  "type": "number"
+                },
+                "minItems": 2,
+                "maxItems": 2
+              },
+              "local_axis": {
+                "type": "array",
+                "items": {
+                  "type": "number"
+                },
+                "minItems": 2,
+                "maxItems": 2
+              },
+              "expected_radial_deg": {
+                "type": "number"
+              },
+              "expected_dot_deg": {
+                "type": "number"
+              },
+              "allowed_quadrants": {
+                "type": "array",
+                "items": {
+                  "type": "integer",
+                  "minimum": 1,
+                  "maximum": 4
+                },
+                "minItems": 1,
+                "uniqueItems": true
+              }
+            },
+            "required": [
+              "id",
+              "metric",
+              "lp_ref",
+              "atom_point",
+              "local_axis",
+              "expected_radial_deg",
+              "expected_dot_deg",
+              "allowed_quadrants"
+            ]
+          },
+          {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "id": {
+                "type": "string",
+                "minLength": 1
+              },
+              "metric": {
+                "const": "ink_clearance"
+              },
+              "objects": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "minItems": 2,
+                "maxItems": 2,
+                "uniqueItems": true
+              }
+            },
+            "required": [
+              "id",
+              "metric",
+              "objects"
+            ]
+          },
+          {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "id": {
+                "type": "string",
+                "minLength": 1
+              },
+              "metric": {
+                "const": "curve_bend_severity"
+              },
+              "flow_ref": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "required": [
+              "id",
+              "metric",
+              "flow_ref"
+            ]
+          },
+          {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "id": {
+                "type": "string",
+                "minLength": 1
+              },
+              "metric": {
+                "const": "head_glyph_overlap"
+              },
+              "head_object": {
+                "type": "string",
+                "minLength": 1
+              },
+              "glyph_object": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "required": [
+              "id",
+              "metric",
+              "head_object",
+              "glyph_object"
+            ]
+          },
+          {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "id": {
+                "type": "string",
+                "minLength": 1
+              },
+              "metric": {
+                "const": "step_spacing"
+              },
+              "from_state": {
+                "type": "string",
+                "minLength": 1
+              },
+              "to_state": {
+                "type": "string",
+                "minLength": 1
+              },
+              "axis": {
+                "type": "array",
+                "items": {
+                  "type": "number"
+                },
+                "minItems": 2,
+                "maxItems": 2
+              },
+              "from_objects": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "minItems": 1,
+                "uniqueItems": true
+              },
+              "to_objects": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "minItems": 1,
+                "uniqueItems": true
+              }
+            },
+            "required": [
+              "id",
+              "metric",
+              "from_state",
+              "to_state",
+              "axis",
+              "from_objects",
+              "to_objects"
+            ]
+          },
+          {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "id": {
+                "type": "string",
+                "minLength": 1
+              },
+              "metric": {
+                "const": "common_scaffold"
+              },
+              "atom_pairs": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "properties": {
+                    "before_ref": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "after_ref": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "before": {
+                      "type": "array",
+                      "items": {
+                        "type": "number"
+                      },
+                      "minItems": 2,
+                      "maxItems": 2
+                    },
+                    "after": {
+                      "type": "array",
+                      "items": {
+                        "type": "number"
+                      },
+                      "minItems": 2,
+                      "maxItems": 2
+                    }
+                  },
+                  "required": [
+                    "before_ref",
+                    "after_ref",
+                    "before",
+                    "after"
+                  ]
+                },
+                "minItems": 3
+              },
+              "expected_rotation_deg": {
+                "type": "number"
+              }
+            },
+            "required": [
+              "id",
+              "metric",
+              "atom_pairs",
+              "expected_rotation_deg"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "required": [
+    "version",
+    "ir_sha256",
+    "source",
+    "coordinate_units",
+    "pixels_per_pt",
+    "object_bindings",
+    "measurements"
+  ]
+}

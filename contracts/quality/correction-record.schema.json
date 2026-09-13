@@ -1,0 +1,1715 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "version": {
+      "const": "gold-correction-record/1.0"
+    },
+    "id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "sample_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "record_kind": {
+      "enum": [
+        "observed_correction",
+        "automated_repair",
+        "synthetic_test"
+      ]
+    },
+    "requested_tier": {
+      "enum": [
+        "ungraded",
+        "silver",
+        "gold",
+        "quarantined"
+      ]
+    },
+    "author": {
+      "$ref": "#/$defs/actor"
+    },
+    "corrector": {
+      "$ref": "#/$defs/actor"
+    },
+    "step_ids": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "minItems": 1,
+      "uniqueItems": true
+    },
+    "assets": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/asset"
+      },
+      "minItems": 1
+    },
+    "snapshots": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "first": {
+          "$ref": "#/$defs/snapshot"
+        },
+        "final": {
+          "$ref": "#/$defs/snapshot"
+        }
+      },
+      "required": [
+        "first",
+        "final"
+      ]
+    },
+    "readbacks": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/reading"
+      },
+      "minItems": 4,
+      "maxItems": 4
+    },
+    "correspondences": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/correspondence"
+      },
+      "minItems": 1
+    },
+    "diffs": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/diff"
+      },
+      "minItems": 0
+    },
+    "diff_coverage": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "fragment_translation": {
+          "enum": [
+            "complete",
+            "not_applicable"
+          ]
+        },
+        "fragment_rotation": {
+          "enum": [
+            "complete",
+            "not_applicable"
+          ]
+        },
+        "atom_displacement": {
+          "enum": [
+            "complete",
+            "not_applicable"
+          ]
+        },
+        "bond_anchors": {
+          "enum": [
+            "complete",
+            "not_applicable"
+          ]
+        },
+        "curve_anchors": {
+          "enum": [
+            "complete",
+            "not_applicable"
+          ]
+        },
+        "curve_control_points": {
+          "enum": [
+            "complete",
+            "not_applicable"
+          ]
+        },
+        "lone_pair_displacement": {
+          "enum": [
+            "complete",
+            "not_applicable"
+          ]
+        },
+        "charge_displacement": {
+          "enum": [
+            "complete",
+            "not_applicable"
+          ]
+        },
+        "caption_displacement": {
+          "enum": [
+            "complete",
+            "not_applicable"
+          ]
+        },
+        "step_spacing": {
+          "enum": [
+            "complete",
+            "not_applicable"
+          ]
+        }
+      },
+      "required": [
+        "fragment_translation",
+        "fragment_rotation",
+        "atom_displacement",
+        "bond_anchors",
+        "curve_anchors",
+        "curve_control_points",
+        "lone_pair_displacement",
+        "charge_displacement",
+        "caption_displacement",
+        "step_spacing"
+      ]
+    },
+    "statuses": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "chemical": {
+          "$ref": "#/$defs/status"
+        },
+        "editability": {
+          "$ref": "#/$defs/status"
+        },
+        "visual": {
+          "$ref": "#/$defs/status"
+        },
+        "human_review": {
+          "$ref": "#/$defs/status"
+        }
+      },
+      "required": [
+        "chemical",
+        "editability",
+        "visual",
+        "human_review"
+      ]
+    },
+    "reviews": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/review"
+      },
+      "minItems": 0
+    },
+    "timing": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "measurement": {
+          "enum": [
+            "unmeasured",
+            "session_timer",
+            "event_log"
+          ]
+        },
+        "started_at": {
+          "anyOf": [
+            {
+              "type": "string",
+              "minLength": 1
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "ended_at": {
+          "anyOf": [
+            {
+              "type": "string",
+              "minLength": 1
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "wall_seconds": {
+          "anyOf": [
+            {
+              "type": "number",
+              "minimum": 0
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "manual_active_seconds": {
+          "anyOf": [
+            {
+              "type": "number",
+              "minimum": 0
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "automatic_seconds": {
+          "anyOf": [
+            {
+              "type": "number",
+              "minimum": 0
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "sessions": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/session"
+          },
+          "minItems": 0
+        }
+      },
+      "required": [
+        "measurement",
+        "started_at",
+        "ended_at",
+        "wall_seconds",
+        "manual_active_seconds",
+        "automatic_seconds",
+        "sessions"
+      ]
+    },
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "source_description": {
+          "type": "string",
+          "minLength": 1
+        },
+        "source_revision": {
+          "type": "string",
+          "minLength": 1
+        },
+        "created_at": {
+          "type": "string",
+          "minLength": 1
+        },
+        "software": {
+          "type": "string",
+          "minLength": 1
+        },
+        "license_expression": {
+          "type": "string",
+          "minLength": 1
+        },
+        "rights_status": {
+          "enum": [
+            "approved",
+            "pending",
+            "denied"
+          ]
+        },
+        "permissions": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "store": {
+              "type": "boolean"
+            },
+            "annotate": {
+              "type": "boolean"
+            },
+            "train": {
+              "type": "boolean"
+            },
+            "redistribute": {
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "store",
+            "annotate",
+            "train",
+            "redistribute"
+          ]
+        },
+        "evidence_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        }
+      },
+      "required": [
+        "source_description",
+        "source_revision",
+        "created_at",
+        "software",
+        "license_expression",
+        "rights_status",
+        "permissions",
+        "evidence_refs"
+      ]
+    },
+    "partition": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "policy_version": {
+          "const": "gold-silver-holdout/1.0"
+        },
+        "split": {
+          "enum": [
+            "development",
+            "fixed_regression",
+            "evaluation_reserved",
+            "quarantined"
+          ]
+        },
+        "exposure": {
+          "enum": [
+            "exposed",
+            "exposed_and_tuned",
+            "unseen",
+            "not_assessed"
+          ]
+        },
+        "benchmark_tags": {
+          "type": "array",
+          "items": {
+            "enum": [
+              "M1",
+              "M2",
+              "future_holdout"
+            ]
+          },
+          "minItems": 0,
+          "uniqueItems": true
+        },
+        "ancestors": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/ancestor"
+          },
+          "minItems": 0
+        },
+        "uses": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "tuning": {
+              "type": "boolean"
+            },
+            "training": {
+              "type": "boolean"
+            },
+            "evaluation": {
+              "type": "boolean"
+            },
+            "redistribution": {
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "tuning",
+            "training",
+            "evaluation",
+            "redistribution"
+          ]
+        }
+      },
+      "required": [
+        "policy_version",
+        "split",
+        "exposure",
+        "benchmark_tags",
+        "ancestors",
+        "uses"
+      ]
+    }
+  },
+  "required": [
+    "version",
+    "id",
+    "sample_id",
+    "record_kind",
+    "requested_tier",
+    "author",
+    "corrector",
+    "step_ids",
+    "assets",
+    "snapshots",
+    "readbacks",
+    "correspondences",
+    "diffs",
+    "diff_coverage",
+    "statuses",
+    "reviews",
+    "timing",
+    "provenance",
+    "partition"
+  ],
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://chembridge.invalid/contracts/quality/correction-record.schema.json",
+  "title": "Gold correction evidence record v1; eligibility is not authenticated collection",
+  "$defs": {
+    "actor": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "kind": {
+          "enum": [
+            "human",
+            "ai",
+            "tool"
+          ]
+        }
+      },
+      "required": [
+        "id",
+        "kind"
+      ]
+    },
+    "asset": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "path": {
+          "type": "string",
+          "minLength": 1
+        },
+        "bytes": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "sha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "kind": {
+          "enum": [
+            "ir",
+            "cdx",
+            "cdxml",
+            "native_render",
+            "native_readback",
+            "timing_log",
+            "review_evidence",
+            "provenance"
+          ]
+        },
+        "derived_from": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 0,
+          "uniqueItems": true
+        },
+        "render_provenance": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "native_asset_ref": {
+              "type": "string",
+              "minLength": 1
+            },
+            "native_sha256": {
+              "type": "string",
+              "pattern": "^[a-f0-9]{64}$"
+            },
+            "revision_id": {
+              "type": "string",
+              "minLength": 1
+            },
+            "rendered_at": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "required": [
+            "native_asset_ref",
+            "native_sha256",
+            "revision_id",
+            "rendered_at"
+          ]
+        }
+      },
+      "required": [
+        "id",
+        "path",
+        "bytes",
+        "sha256",
+        "kind",
+        "derived_from"
+      ],
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "kind": {
+                "const": "native_render"
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "render_provenance"
+            ]
+          },
+          "else": {
+            "properties": {
+              "render_provenance": false
+            }
+          }
+        }
+      ]
+    },
+    "snapshot": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "revision_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "ir_asset_ref": {
+          "type": "string",
+          "minLength": 1
+        },
+        "cdx_asset_ref": {
+          "type": "string",
+          "minLength": 1
+        },
+        "cdxml_asset_ref": {
+          "type": "string",
+          "minLength": 1
+        },
+        "render_asset_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        }
+      },
+      "required": [
+        "revision_id",
+        "ir_asset_ref",
+        "cdx_asset_ref",
+        "cdxml_asset_ref",
+        "render_asset_refs"
+      ]
+    },
+    "geometry": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "position": {
+          "anyOf": [
+            {
+              "type": "array",
+              "items": {
+                "type": "number"
+              },
+              "minItems": 2,
+              "maxItems": 2
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "rotation_deg": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "anchors": {
+          "anyOf": [
+            {
+              "type": "array",
+              "items": {
+                "type": "array",
+                "items": {
+                  "type": "number"
+                },
+                "minItems": 2,
+                "maxItems": 2
+              },
+              "minItems": 2,
+              "maxItems": 2
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "control_points": {
+          "anyOf": [
+            {
+              "type": "array",
+              "items": {
+                "type": "array",
+                "items": {
+                  "type": "number"
+                },
+                "minItems": 2,
+                "maxItems": 2
+              },
+              "minItems": 2,
+              "maxItems": 2
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      },
+      "required": [
+        "position",
+        "rotation_deg",
+        "anchors",
+        "control_points"
+      ]
+    },
+    "native_object": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "kind": {
+          "enum": [
+            "atom",
+            "bond",
+            "fragment",
+            "electron_flow",
+            "reaction_arrow",
+            "lone_pair",
+            "charge",
+            "caption"
+          ]
+        },
+        "semantic_ref": {
+          "anyOf": [
+            {
+              "type": "string",
+              "minLength": 1
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "geometry": {
+          "$ref": "#/$defs/geometry"
+        },
+        "representation_role": {
+          "enum": [
+            "primary",
+            "auxiliary"
+          ]
+        },
+        "primary_object_ref": {
+          "anyOf": [
+            {
+              "type": "string",
+              "minLength": 1
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      },
+      "required": [
+        "id",
+        "kind",
+        "semantic_ref",
+        "geometry"
+      ],
+      "description": "One primary per semantic occurrence and object kind within each native snapshot. Omitted role means primary. Auxiliary graphics require an explicit same-kind/same-occurrence primary link; every graphic still needs correspondence and geometry diff.",
+      "allOf": [
+        {
+          "if": {
+            "required": [
+              "representation_role"
+            ],
+            "properties": {
+              "representation_role": {
+                "const": "auxiliary"
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "primary_object_ref"
+            ],
+            "properties": {
+              "primary_object_ref": {
+                "type": "string",
+                "minLength": 1
+              }
+            }
+          },
+          "else": {
+            "properties": {
+              "primary_object_ref": {
+                "type": "null"
+              }
+            }
+          }
+        }
+      ]
+    },
+    "spacing": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "from_step": {
+          "type": "string",
+          "minLength": 1
+        },
+        "to_step": {
+          "type": "string",
+          "minLength": 1
+        },
+        "value_pt": {
+          "type": "number",
+          "minimum": 0
+        }
+      },
+      "required": [
+        "id",
+        "from_step",
+        "to_step",
+        "value_pt"
+      ]
+    },
+    "readback": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "version": {
+          "const": "gold-native-readback/1.0"
+        },
+        "source_asset_sha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "source_revision_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "format": {
+          "enum": [
+            "cdx",
+            "cdxml"
+          ]
+        },
+        "coordinate_frame": {
+          "type": "string",
+          "minLength": 1
+        },
+        "units": {
+          "const": "pt"
+        },
+        "objects": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/native_object"
+          },
+          "minItems": 1
+        },
+        "step_spacings": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/spacing"
+          },
+          "minItems": 0
+        }
+      },
+      "required": [
+        "version",
+        "source_asset_sha256",
+        "source_revision_id",
+        "format",
+        "coordinate_frame",
+        "units",
+        "objects",
+        "step_spacings"
+      ]
+    },
+    "reading": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "stage": {
+          "enum": [
+            "first",
+            "final"
+          ]
+        },
+        "format": {
+          "enum": [
+            "cdx",
+            "cdxml"
+          ]
+        },
+        "native_asset_ref": {
+          "type": "string",
+          "minLength": 1
+        },
+        "readback_asset_ref": {
+          "type": "string",
+          "minLength": 1
+        },
+        "status": {
+          "enum": [
+            "pass",
+            "failed",
+            "unverified"
+          ]
+        },
+        "reopened_at": {
+          "anyOf": [
+            {
+              "type": "string",
+              "minLength": 1
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "payload": {
+          "$ref": "#/$defs/readback"
+        }
+      },
+      "required": [
+        "stage",
+        "format",
+        "native_asset_ref",
+        "readback_asset_ref",
+        "status",
+        "reopened_at",
+        "payload"
+      ]
+    },
+    "locators": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "cdx": {
+          "anyOf": [
+            {
+              "type": "string",
+              "minLength": 1
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "cdxml": {
+          "anyOf": [
+            {
+              "type": "string",
+              "minLength": 1
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      },
+      "required": [
+        "cdx",
+        "cdxml"
+      ]
+    },
+    "correspondence": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "entity_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "kind": {
+          "enum": [
+            "atom",
+            "bond",
+            "fragment",
+            "electron_flow",
+            "reaction_arrow",
+            "lone_pair",
+            "charge",
+            "caption"
+          ]
+        },
+        "semantic_ref": {
+          "anyOf": [
+            {
+              "type": "string",
+              "minLength": 1
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "status": {
+          "enum": [
+            "unique",
+            "ambiguous",
+            "unresolved"
+          ]
+        },
+        "first": {
+          "$ref": "#/$defs/locators"
+        },
+        "final": {
+          "$ref": "#/$defs/locators"
+        },
+        "evidence_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 0,
+          "uniqueItems": true
+        },
+        "representation_role": {
+          "enum": [
+            "primary",
+            "auxiliary"
+          ]
+        },
+        "primary_entity_ref": {
+          "anyOf": [
+            {
+              "type": "string",
+              "minLength": 1
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      },
+      "required": [
+        "entity_id",
+        "kind",
+        "semantic_ref",
+        "status",
+        "first",
+        "final",
+        "evidence_refs"
+      ],
+      "description": "One primary per semantic occurrence and object kind within each native snapshot. Omitted role means primary. Auxiliary graphics require an explicit same-kind/same-occurrence primary link; every graphic still needs correspondence and geometry diff.",
+      "allOf": [
+        {
+          "if": {
+            "required": [
+              "representation_role"
+            ],
+            "properties": {
+              "representation_role": {
+                "const": "auxiliary"
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "primary_entity_ref"
+            ],
+            "properties": {
+              "primary_entity_ref": {
+                "type": "string",
+                "minLength": 1
+              }
+            }
+          },
+          "else": {
+            "properties": {
+              "primary_entity_ref": {
+                "type": "null"
+              }
+            }
+          }
+        }
+      ]
+    },
+    "review": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "scope": {
+          "enum": [
+            "chemical",
+            "editability",
+            "visual",
+            "human_review"
+          ]
+        },
+        "actor": {
+          "$ref": "#/$defs/actor"
+        },
+        "independent_of_author": {
+          "type": "boolean"
+        },
+        "independent_of_corrector": {
+          "type": "boolean"
+        },
+        "decision": {
+          "enum": [
+            "accepted",
+            "rejected",
+            "needs_work"
+          ]
+        },
+        "reviewed_at": {
+          "type": "string",
+          "minLength": 1
+        },
+        "target_asset_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        },
+        "evidence_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        }
+      },
+      "required": [
+        "id",
+        "scope",
+        "actor",
+        "independent_of_author",
+        "independent_of_corrector",
+        "decision",
+        "reviewed_at",
+        "target_asset_refs",
+        "evidence_refs"
+      ]
+    },
+    "status": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "status": {
+          "enum": [
+            "pass",
+            "failed",
+            "unverified"
+          ]
+        },
+        "review_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 0,
+          "uniqueItems": true
+        }
+      },
+      "required": [
+        "status",
+        "review_refs"
+      ]
+    },
+    "session": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "actor_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "started_at": {
+          "type": "string",
+          "minLength": 1
+        },
+        "ended_at": {
+          "type": "string",
+          "minLength": 1
+        },
+        "active_seconds": {
+          "type": "number",
+          "minimum": 0
+        },
+        "evidence_ref": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "required": [
+        "actor_id",
+        "started_at",
+        "ended_at",
+        "active_seconds",
+        "evidence_ref"
+      ]
+    },
+    "ancestor": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "sample_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "relation": {
+          "enum": [
+            "same_semantics",
+            "chemical_perturbation"
+          ]
+        },
+        "benchmark_tags": {
+          "type": "array",
+          "items": {
+            "enum": [
+              "M1",
+              "M2",
+              "future_holdout"
+            ]
+          },
+          "minItems": 0,
+          "uniqueItems": true
+        },
+        "split": {
+          "enum": [
+            "development",
+            "fixed_regression",
+            "evaluation_reserved",
+            "quarantined"
+          ]
+        },
+        "exposure": {
+          "enum": [
+            "exposed",
+            "exposed_and_tuned",
+            "unseen",
+            "not_assessed"
+          ]
+        }
+      },
+      "required": [
+        "sample_id",
+        "relation",
+        "benchmark_tags",
+        "split",
+        "exposure"
+      ]
+    },
+    "diff": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "entity_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "field": {
+          "enum": [
+            "fragment_translation",
+            "fragment_rotation",
+            "atom_displacement",
+            "bond_anchors",
+            "curve_anchors",
+            "curve_control_points",
+            "lone_pair_displacement",
+            "charge_displacement",
+            "caption_displacement",
+            "step_spacing"
+          ]
+        },
+        "coordinate_frame": {
+          "type": "string",
+          "minLength": 1
+        },
+        "units": {
+          "enum": [
+            "pt",
+            "degree"
+          ]
+        },
+        "before": {},
+        "after": {},
+        "delta": {}
+      },
+      "required": [
+        "entity_id",
+        "field",
+        "coordinate_frame",
+        "units",
+        "before",
+        "after",
+        "delta"
+      ],
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "field": {
+                "const": "fragment_translation"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "before": {
+                "type": "array",
+                "items": {
+                  "type": "number"
+                },
+                "minItems": 2,
+                "maxItems": 2
+              },
+              "after": {
+                "type": "array",
+                "items": {
+                  "type": "number"
+                },
+                "minItems": 2,
+                "maxItems": 2
+              },
+              "delta": {
+                "type": "array",
+                "items": {
+                  "type": "number"
+                },
+                "minItems": 2,
+                "maxItems": 2
+              },
+              "units": {
+                "const": "pt"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "field": {
+                "const": "fragment_rotation"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "before": {
+                "type": "number"
+              },
+              "after": {
+                "type": "number"
+              },
+              "delta": {
+                "type": "number"
+              },
+              "units": {
+                "const": "degree"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "field": {
+                "const": "atom_displacement"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "before": {
+                "type": "array",
+                "items": {
+                  "type": "number"
+                },
+                "minItems": 2,
+                "maxItems": 2
+              },
+              "after": {
+                "type": "array",
+                "items": {
+                  "type": "number"
+                },
+                "minItems": 2,
+                "maxItems": 2
+              },
+              "delta": {
+                "type": "array",
+                "items": {
+                  "type": "number"
+                },
+                "minItems": 2,
+                "maxItems": 2
+              },
+              "units": {
+                "const": "pt"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "field": {
+                "const": "bond_anchors"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "before": {
+                "type": "array",
+                "items": {
+                  "type": "array",
+                  "items": {
+                    "type": "number"
+                  },
+                  "minItems": 2,
+                  "maxItems": 2
+                },
+                "minItems": 2,
+                "maxItems": 2
+              },
+              "after": {
+                "type": "array",
+                "items": {
+                  "type": "array",
+                  "items": {
+                    "type": "number"
+                  },
+                  "minItems": 2,
+                  "maxItems": 2
+                },
+                "minItems": 2,
+                "maxItems": 2
+              },
+              "delta": {
+                "type": "array",
+                "items": {
+                  "type": "array",
+                  "items": {
+                    "type": "number"
+                  },
+                  "minItems": 2,
+                  "maxItems": 2
+                },
+                "minItems": 2,
+                "maxItems": 2
+              },
+              "units": {
+                "const": "pt"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "field": {
+                "const": "curve_anchors"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "before": {
+                "type": "array",
+                "items": {
+                  "type": "array",
+                  "items": {
+                    "type": "number"
+                  },
+                  "minItems": 2,
+                  "maxItems": 2
+                },
+                "minItems": 2,
+                "maxItems": 2
+              },
+              "after": {
+                "type": "array",
+                "items": {
+                  "type": "array",
+                  "items": {
+                    "type": "number"
+                  },
+                  "minItems": 2,
+                  "maxItems": 2
+                },
+                "minItems": 2,
+                "maxItems": 2
+              },
+              "delta": {
+                "type": "array",
+                "items": {
+                  "type": "array",
+                  "items": {
+                    "type": "number"
+                  },
+                  "minItems": 2,
+                  "maxItems": 2
+                },
+                "minItems": 2,
+                "maxItems": 2
+              },
+              "units": {
+                "const": "pt"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "field": {
+                "const": "curve_control_points"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "before": {
+                "type": "array",
+                "items": {
+                  "type": "array",
+                  "items": {
+                    "type": "number"
+                  },
+                  "minItems": 2,
+                  "maxItems": 2
+                },
+                "minItems": 2,
+                "maxItems": 2
+              },
+              "after": {
+                "type": "array",
+                "items": {
+                  "type": "array",
+                  "items": {
+                    "type": "number"
+                  },
+                  "minItems": 2,
+                  "maxItems": 2
+                },
+                "minItems": 2,
+                "maxItems": 2
+              },
+              "delta": {
+                "type": "array",
+                "items": {
+                  "type": "array",
+                  "items": {
+                    "type": "number"
+                  },
+                  "minItems": 2,
+                  "maxItems": 2
+                },
+                "minItems": 2,
+                "maxItems": 2
+              },
+              "units": {
+                "const": "pt"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "field": {
+                "const": "lone_pair_displacement"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "before": {
+                "type": "array",
+                "items": {
+                  "type": "number"
+                },
+                "minItems": 2,
+                "maxItems": 2
+              },
+              "after": {
+                "type": "array",
+                "items": {
+                  "type": "number"
+                },
+                "minItems": 2,
+                "maxItems": 2
+              },
+              "delta": {
+                "type": "array",
+                "items": {
+                  "type": "number"
+                },
+                "minItems": 2,
+                "maxItems": 2
+              },
+              "units": {
+                "const": "pt"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "field": {
+                "const": "charge_displacement"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "before": {
+                "type": "array",
+                "items": {
+                  "type": "number"
+                },
+                "minItems": 2,
+                "maxItems": 2
+              },
+              "after": {
+                "type": "array",
+                "items": {
+                  "type": "number"
+                },
+                "minItems": 2,
+                "maxItems": 2
+              },
+              "delta": {
+                "type": "array",
+                "items": {
+                  "type": "number"
+                },
+                "minItems": 2,
+                "maxItems": 2
+              },
+              "units": {
+                "const": "pt"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "field": {
+                "const": "caption_displacement"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "before": {
+                "type": "array",
+                "items": {
+                  "type": "number"
+                },
+                "minItems": 2,
+                "maxItems": 2
+              },
+              "after": {
+                "type": "array",
+                "items": {
+                  "type": "number"
+                },
+                "minItems": 2,
+                "maxItems": 2
+              },
+              "delta": {
+                "type": "array",
+                "items": {
+                  "type": "number"
+                },
+                "minItems": 2,
+                "maxItems": 2
+              },
+              "units": {
+                "const": "pt"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "field": {
+                "const": "step_spacing"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "before": {
+                "type": "number"
+              },
+              "after": {
+                "type": "number"
+              },
+              "delta": {
+                "type": "number"
+              },
+              "units": {
+                "const": "pt"
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

@@ -39,7 +39,7 @@ Correction records retain before/after native assets, whole-scene semantic and d
 
 The first uses are shared rule discovery, layout-prior/critic calibration and candidate ranking on development data. A critic score cannot override conservation, anti stereo, port binding or native collision checks. Preserve candidate count, seed, ranking, automatic repairs and first output so best-of-many selection does not masquerade as first-attempt success.
 
-The fixed M1/M2 benchmark lineages and future reserved evaluation data are unavailable to feature fitting, rule parameter selection, prompts, training, reward/critic calibration and candidate-ranker tuning. The registry separates generation_asset_refs from oracle_asset_refs. Anti-selection permits only substrate_input assets in generation; a complete answer IR is not an anti-selection input.
+Under the current Quality Oracle phase policy, M1 may be used for exposed development. The fixed M2 lineage, its descendants and future reserved evaluation data are unavailable to feature fitting, rule parameter selection, prompts, training, reward/critic calibration and candidate-ranker tuning. The registry separates generation_asset_refs from oracle_asset_refs. Anti-selection permits only substrate_input assets in generation; a complete answer IR is not an anti-selection input.
 
 ## Acceptance of the pilot
 

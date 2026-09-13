@@ -1,5 +1,6 @@
 # ChemDraw Companion
 
+Current phase: [Quality Oracle v1](docs/QUALITY_ORACLE_V1.md) and [Gold Correction Corpus](docs/GOLD_CORRECTION_CORPUS_V1.md). Native visual acceptance remains failed/unverified. M1 may be used for exposed development; M2 and unseen holdout remain locked. MCP, installer, host and product-surface expansion stay deferred.
 Architecture preview, 2026-09-12. No native execution, host acceptance, installer or release is certified by this repository yet.
 
 ChemDraw Companion is a proposed independent Chembridge plugin for producing and revising editable structures, ordinary reaction schemes and bounded electron-flow diagrams through a user's licensed ChemDraw installation. It is not a Revvity or University of Edinburgh product.

@@ -1,0 +1,1174 @@
+{
+  "version": "synthetic-quality-validation/1.0",
+  "evidence_mode": "synthetic",
+  "actual_gold_collected": false,
+  "native_execution": false,
+  "cases": [
+    {
+      "case": "tip-positive",
+      "target_metric": "visible_tip_target",
+      "expected": "pass",
+      "actual": "pass",
+      "matches_expected": true,
+      "result": {
+        "version": "quality-result/1.0",
+        "sample_id": "tip-positive",
+        "policy_sha256": "7f5757360f7f59815bfbb33b971b2e0046e65747c56dc1151e8f538689f2703f",
+        "metrics": [
+          {
+            "id": "measurement",
+            "metric": "visible_tip_target",
+            "status": "pass",
+            "measurements": {
+              "visible_point_px": [
+                160,
+                70
+              ],
+              "distance_B": 0.0,
+              "conservative_upper_B": 0.019965277777777776,
+              "calibration_used_to_expand_tolerance": false
+            },
+            "reason": null
+          }
+        ],
+        "missing_metric_families": [
+          "common_scaffold",
+          "curve_bend_severity",
+          "head_glyph_overlap",
+          "ink_clearance",
+          "lone_pair_orientation",
+          "step_spacing",
+          "visible_tail_source"
+        ],
+        "metric_verdict": "unmeasured",
+        "render_hash_checked": "6298e1bdf17ffdc9eadd123f9d1d6f9232d18c311c4482c90e7425a57430eaa8",
+        "uncovered_render_ink_pixels": 0,
+        "chemical_correctness": {
+          "bounded_bookkeeping": "bounded_pass",
+          "independent_scientific_review": "unverified"
+        },
+        "native_editability": "unverified_by_this_validator",
+        "visual_quality": "unverified",
+        "human_acceptance": "unverified",
+        "evidence_mode": "synthetic",
+        "native_layer_authenticity": "not_authenticated",
+        "reference_source": "synthetic",
+        "reference_sha256": "664a61202bdac0d1357a0f3cc395c71688b76f438cb4b94f7cfa0005a268e143",
+        "quality_scope": "Provisional per-metric pixel checks; no trusted native segmentation/receipt authentication or complete inventory qualification implemented",
+        "actual_gold_collected": false,
+        "calibration_allowance_added_to_port_tolerance": false
+      }
+    },
+    {
+      "case": "tip-displaced",
+      "target_metric": "visible_tip_target",
+      "expected": "fail",
+      "actual": "fail",
+      "matches_expected": true,
+      "result": {
+        "version": "quality-result/1.0",
+        "sample_id": "tip-displaced",
+        "policy_sha256": "7f5757360f7f59815bfbb33b971b2e0046e65747c56dc1151e8f538689f2703f",
+        "metrics": [
+          {
+            "id": "measurement",
+            "metric": "visible_tip_target",
+            "status": "fail",
+            "measurements": {
+              "visible_point_px": [
+                192,
+                70
+              ],
+              "distance_B": 0.5555555555555556,
+              "conservative_upper_B": 0.5755208333333334,
+              "calibration_used_to_expand_tolerance": false
+            },
+            "reason": null
+          }
+        ],
+        "missing_metric_families": [
+          "common_scaffold",
+          "curve_bend_severity",
+          "head_glyph_overlap",
+          "ink_clearance",
+          "lone_pair_orientation",
+          "step_spacing",
+          "visible_tail_source"
+        ],
+        "metric_verdict": "fail",
+        "render_hash_checked": "12390a47cae38b75739139a3a5661d0d0fc3a304f6b1b109078d19cb7df7268d",
+        "uncovered_render_ink_pixels": 0,
+        "chemical_correctness": {
+          "bounded_bookkeeping": "bounded_pass",
+          "independent_scientific_review": "unverified"
+        },
+        "native_editability": "unverified_by_this_validator",
+        "visual_quality": "failed",
+        "human_acceptance": "unverified",
+        "evidence_mode": "synthetic",
+        "native_layer_authenticity": "not_authenticated",
+        "reference_source": "synthetic",
+        "reference_sha256": "664a61202bdac0d1357a0f3cc395c71688b76f438cb4b94f7cfa0005a268e143",
+        "quality_scope": "Provisional per-metric pixel checks; no trusted native segmentation/receipt authentication or complete inventory qualification implemented",
+        "actual_gold_collected": false,
+        "calibration_allowance_added_to_port_tolerance": false
+      }
+    },
+    {
+      "case": "tip-rotated",
+      "target_metric": "visible_tip_target",
+      "expected": "pass",
+      "actual": "pass",
+      "matches_expected": true,
+      "result": {
+        "version": "quality-result/1.0",
+        "sample_id": "tip-rotated",
+        "policy_sha256": "7f5757360f7f59815bfbb33b971b2e0046e65747c56dc1151e8f538689f2703f",
+        "metrics": [
+          {
+            "id": "measurement",
+            "metric": "visible_tip_target",
+            "status": "pass",
+            "measurements": {
+              "visible_point_px": [
+                129,
+                160
+              ],
+              "distance_B": 0.0,
+              "conservative_upper_B": 0.019965277777777776,
+              "calibration_used_to_expand_tolerance": false
+            },
+            "reason": null
+          }
+        ],
+        "missing_metric_families": [
+          "common_scaffold",
+          "curve_bend_severity",
+          "head_glyph_overlap",
+          "ink_clearance",
+          "lone_pair_orientation",
+          "step_spacing",
+          "visible_tail_source"
+        ],
+        "metric_verdict": "unmeasured",
+        "render_hash_checked": "2b9b55215db5c6435a873eb9e4676fe62b0c41451bbd1db0f5e48197346e2aaa",
+        "uncovered_render_ink_pixels": 0,
+        "chemical_correctness": {
+          "bounded_bookkeeping": "bounded_pass",
+          "independent_scientific_review": "unverified"
+        },
+        "native_editability": "unverified_by_this_validator",
+        "visual_quality": "unverified",
+        "human_acceptance": "unverified",
+        "evidence_mode": "synthetic",
+        "native_layer_authenticity": "not_authenticated",
+        "reference_source": "synthetic",
+        "reference_sha256": "e7a293468b2581ede406dbbccc90924488fc4f96951a222396af991e8b2542dd",
+        "quality_scope": "Provisional per-metric pixel checks; no trusted native segmentation/receipt authentication or complete inventory qualification implemented",
+        "actual_gold_collected": false,
+        "calibration_allowance_added_to_port_tolerance": false
+      }
+    },
+    {
+      "case": "tip-scaled",
+      "target_metric": "visible_tip_target",
+      "expected": "unmeasured",
+      "actual": "unmeasured",
+      "matches_expected": true,
+      "result": {
+        "version": "quality-result/1.0",
+        "sample_id": "tip-scaled",
+        "policy_sha256": "7f5757360f7f59815bfbb33b971b2e0046e65747c56dc1151e8f538689f2703f",
+        "metrics": [
+          {
+            "id": "measurement",
+            "metric": "visible_tip_target",
+            "status": "unmeasured",
+            "measurements": {},
+            "reason": "no unique sharp apex"
+          }
+        ],
+        "missing_metric_families": [
+          "common_scaffold",
+          "curve_bend_severity",
+          "head_glyph_overlap",
+          "ink_clearance",
+          "lone_pair_orientation",
+          "step_spacing",
+          "visible_tail_source"
+        ],
+        "metric_verdict": "unmeasured",
+        "render_hash_checked": "1d3b37ba5fa695003ec2264f2c30e0b9b33f217c7f3cda8128e822109775f550",
+        "uncovered_render_ink_pixels": 0,
+        "chemical_correctness": {
+          "bounded_bookkeeping": "bounded_pass",
+          "independent_scientific_review": "unverified"
+        },
+        "native_editability": "unverified_by_this_validator",
+        "visual_quality": "unverified",
+        "human_acceptance": "unverified",
+        "evidence_mode": "synthetic",
+        "native_layer_authenticity": "not_authenticated",
+        "reference_source": "synthetic",
+        "reference_sha256": "bfafec4afa43259c908d72070d28dd1c3a7fbbc20ef0189f46b551eed14c4aca",
+        "quality_scope": "Provisional per-metric pixel checks; no trusted native segmentation/receipt authentication or complete inventory qualification implemented",
+        "actual_gold_collected": false,
+        "calibration_allowance_added_to_port_tolerance": false
+      }
+    },
+    {
+      "case": "tail-positive",
+      "target_metric": "visible_tail_source",
+      "expected": "pass",
+      "actual": "pass",
+      "matches_expected": true,
+      "result": {
+        "version": "quality-result/1.0",
+        "sample_id": "tail-positive",
+        "policy_sha256": "7f5757360f7f59815bfbb33b971b2e0046e65747c56dc1151e8f538689f2703f",
+        "metrics": [
+          {
+            "id": "measurement",
+            "metric": "visible_tail_source",
+            "status": "pass",
+            "measurements": {
+              "visible_point_px": [
+                40.5,
+                70.0
+              ],
+              "distance_B": 0.008680555555555556,
+              "conservative_upper_B": 0.028645833333333332,
+              "calibration_used_to_expand_tolerance": false
+            },
+            "reason": null
+          }
+        ],
+        "missing_metric_families": [
+          "common_scaffold",
+          "curve_bend_severity",
+          "head_glyph_overlap",
+          "ink_clearance",
+          "lone_pair_orientation",
+          "step_spacing",
+          "visible_tip_target"
+        ],
+        "metric_verdict": "unmeasured",
+        "render_hash_checked": "6298e1bdf17ffdc9eadd123f9d1d6f9232d18c311c4482c90e7425a57430eaa8",
+        "uncovered_render_ink_pixels": 0,
+        "chemical_correctness": {
+          "bounded_bookkeeping": "bounded_pass",
+          "independent_scientific_review": "unverified"
+        },
+        "native_editability": "unverified_by_this_validator",
+        "visual_quality": "unverified",
+        "human_acceptance": "unverified",
+        "evidence_mode": "synthetic",
+        "native_layer_authenticity": "not_authenticated",
+        "reference_source": "synthetic",
+        "reference_sha256": "9b7005e6a512ad162bca876b59f65389f37cc8347e090492af1f4ac2427fdbf7",
+        "quality_scope": "Provisional per-metric pixel checks; no trusted native segmentation/receipt authentication or complete inventory qualification implemented",
+        "actual_gold_collected": false,
+        "calibration_allowance_added_to_port_tolerance": false
+      }
+    },
+    {
+      "case": "tail-wrong-source",
+      "target_metric": "visible_tail_source",
+      "expected": "fail",
+      "actual": "fail",
+      "matches_expected": true,
+      "result": {
+        "version": "quality-result/1.0",
+        "sample_id": "tail-wrong-source",
+        "policy_sha256": "7f5757360f7f59815bfbb33b971b2e0046e65747c56dc1151e8f538689f2703f",
+        "metrics": [
+          {
+            "id": "measurement",
+            "metric": "visible_tail_source",
+            "status": "fail",
+            "measurements": {
+              "visible_point_px": [
+                68.5,
+                70.0
+              ],
+              "distance_B": 0.49479166666666663,
+              "conservative_upper_B": 0.5147569444444444,
+              "calibration_used_to_expand_tolerance": false
+            },
+            "reason": null
+          }
+        ],
+        "missing_metric_families": [
+          "common_scaffold",
+          "curve_bend_severity",
+          "head_glyph_overlap",
+          "ink_clearance",
+          "lone_pair_orientation",
+          "step_spacing",
+          "visible_tip_target"
+        ],
+        "metric_verdict": "fail",
+        "render_hash_checked": "f63b6d261d850e6b1113f49a1dbe0f8369a62eb9546ca799e0d6054013c50bc7",
+        "uncovered_render_ink_pixels": 0,
+        "chemical_correctness": {
+          "bounded_bookkeeping": "bounded_pass",
+          "independent_scientific_review": "unverified"
+        },
+        "native_editability": "unverified_by_this_validator",
+        "visual_quality": "failed",
+        "human_acceptance": "unverified",
+        "evidence_mode": "synthetic",
+        "native_layer_authenticity": "not_authenticated",
+        "reference_source": "synthetic",
+        "reference_sha256": "9b7005e6a512ad162bca876b59f65389f37cc8347e090492af1f4ac2427fdbf7",
+        "quality_scope": "Provisional per-metric pixel checks; no trusted native segmentation/receipt authentication or complete inventory qualification implemented",
+        "actual_gold_collected": false,
+        "calibration_allowance_added_to_port_tolerance": false
+      }
+    },
+    {
+      "case": "lp-positive",
+      "target_metric": "lone_pair_orientation",
+      "expected": "pass",
+      "actual": "pass",
+      "matches_expected": true,
+      "result": {
+        "version": "quality-result/1.0",
+        "sample_id": "lp-positive",
+        "policy_sha256": "7f5757360f7f59815bfbb33b971b2e0046e65747c56dc1151e8f538689f2703f",
+        "metrics": [
+          {
+            "id": "measurement",
+            "metric": "lone_pair_orientation",
+            "status": "pass",
+            "measurements": {
+              "dot_uncertainty_deg": 6.603625048733901,
+              "quadrant": 4,
+              "radial_deg": 315.0,
+              "dot_axis_deg": 0.0,
+              "radial_error_deg": 0.0,
+              "dot_error_deg": 0.0,
+              "radial_uncertainty_deg": 1.5532358844668197
+            },
+            "reason": null
+          }
+        ],
+        "missing_metric_families": [
+          "common_scaffold",
+          "curve_bend_severity",
+          "head_glyph_overlap",
+          "ink_clearance",
+          "step_spacing",
+          "visible_tail_source",
+          "visible_tip_target"
+        ],
+        "metric_verdict": "unmeasured",
+        "render_hash_checked": "6dc10316a27cd19708d769672a2caef62f5a4987b030aeafcd83f430e1af130e",
+        "uncovered_render_ink_pixels": 0,
+        "chemical_correctness": {
+          "bounded_bookkeeping": "bounded_pass",
+          "independent_scientific_review": "unverified"
+        },
+        "native_editability": "unverified_by_this_validator",
+        "visual_quality": "unverified",
+        "human_acceptance": "unverified",
+        "evidence_mode": "synthetic",
+        "native_layer_authenticity": "not_authenticated",
+        "reference_source": "synthetic",
+        "reference_sha256": "22b8c48b5d649be4b369bdfca1ad3e3b988a0f4c2f29d7b61f9c910d903cc1d0",
+        "quality_scope": "Provisional per-metric pixel checks; no trusted native segmentation/receipt authentication or complete inventory qualification implemented",
+        "actual_gold_collected": false,
+        "calibration_allowance_added_to_port_tolerance": false
+      }
+    },
+    {
+      "case": "lp-wrong-quadrant",
+      "target_metric": "lone_pair_orientation",
+      "expected": "fail",
+      "actual": "fail",
+      "matches_expected": true,
+      "result": {
+        "version": "quality-result/1.0",
+        "sample_id": "lp-wrong-quadrant",
+        "policy_sha256": "7f5757360f7f59815bfbb33b971b2e0046e65747c56dc1151e8f538689f2703f",
+        "metrics": [
+          {
+            "id": "measurement",
+            "metric": "lone_pair_orientation",
+            "status": "fail",
+            "measurements": {
+              "dot_uncertainty_deg": 6.603625048733901,
+              "quadrant": 2,
+              "radial_deg": 135.0,
+              "dot_axis_deg": 0.0,
+              "radial_error_deg": 180.0,
+              "dot_error_deg": 0.0,
+              "radial_uncertainty_deg": 1.5532358844668197
+            },
+            "reason": null
+          }
+        ],
+        "missing_metric_families": [
+          "common_scaffold",
+          "curve_bend_severity",
+          "head_glyph_overlap",
+          "ink_clearance",
+          "step_spacing",
+          "visible_tail_source",
+          "visible_tip_target"
+        ],
+        "metric_verdict": "fail",
+        "render_hash_checked": "0cb98ce646575b15624a3449c0a1e1bb3032ac7a6740c26a5a4a5ed71f08ebe5",
+        "uncovered_render_ink_pixels": 0,
+        "chemical_correctness": {
+          "bounded_bookkeeping": "bounded_pass",
+          "independent_scientific_review": "unverified"
+        },
+        "native_editability": "unverified_by_this_validator",
+        "visual_quality": "failed",
+        "human_acceptance": "unverified",
+        "evidence_mode": "synthetic",
+        "native_layer_authenticity": "not_authenticated",
+        "reference_source": "synthetic",
+        "reference_sha256": "22b8c48b5d649be4b369bdfca1ad3e3b988a0f4c2f29d7b61f9c910d903cc1d0",
+        "quality_scope": "Provisional per-metric pixel checks; no trusted native segmentation/receipt authentication or complete inventory qualification implemented",
+        "actual_gold_collected": false,
+        "calibration_allowance_added_to_port_tolerance": false
+      }
+    },
+    {
+      "case": "lp-wrong-dot-axis",
+      "target_metric": "lone_pair_orientation",
+      "expected": "fail",
+      "actual": "fail",
+      "matches_expected": true,
+      "result": {
+        "version": "quality-result/1.0",
+        "sample_id": "lp-wrong-dot-axis",
+        "policy_sha256": "7f5757360f7f59815bfbb33b971b2e0046e65747c56dc1151e8f538689f2703f",
+        "metrics": [
+          {
+            "id": "measurement",
+            "metric": "lone_pair_orientation",
+            "status": "fail",
+            "measurements": {
+              "dot_uncertainty_deg": 6.603625048733901,
+              "quadrant": 4,
+              "radial_deg": 315.0,
+              "dot_axis_deg": 90.0,
+              "radial_error_deg": 0.0,
+              "dot_error_deg": 90.0,
+              "radial_uncertainty_deg": 1.5532358844668197
+            },
+            "reason": null
+          }
+        ],
+        "missing_metric_families": [
+          "common_scaffold",
+          "curve_bend_severity",
+          "head_glyph_overlap",
+          "ink_clearance",
+          "step_spacing",
+          "visible_tail_source",
+          "visible_tip_target"
+        ],
+        "metric_verdict": "fail",
+        "render_hash_checked": "ab136b99fdd9bb354f7721b9e8a0b0b4b94423a3a9a01407fdb8ac387beaf922",
+        "uncovered_render_ink_pixels": 0,
+        "chemical_correctness": {
+          "bounded_bookkeeping": "bounded_pass",
+          "independent_scientific_review": "unverified"
+        },
+        "native_editability": "unverified_by_this_validator",
+        "visual_quality": "failed",
+        "human_acceptance": "unverified",
+        "evidence_mode": "synthetic",
+        "native_layer_authenticity": "not_authenticated",
+        "reference_source": "synthetic",
+        "reference_sha256": "22b8c48b5d649be4b369bdfca1ad3e3b988a0f4c2f29d7b61f9c910d903cc1d0",
+        "quality_scope": "Provisional per-metric pixel checks; no trusted native segmentation/receipt authentication or complete inventory qualification implemented",
+        "actual_gold_collected": false,
+        "calibration_allowance_added_to_port_tolerance": false
+      }
+    },
+    {
+      "case": "ink-positive",
+      "target_metric": "ink_clearance",
+      "expected": "pass",
+      "actual": "pass",
+      "matches_expected": true,
+      "result": {
+        "version": "quality-result/1.0",
+        "sample_id": "ink-positive",
+        "policy_sha256": "7f5757360f7f59815bfbb33b971b2e0046e65747c56dc1151e8f538689f2703f",
+        "metrics": [
+          {
+            "id": "measurement",
+            "metric": "ink_clearance",
+            "status": "pass",
+            "measurements": {
+              "objects": [
+                "head",
+                "charge"
+              ],
+              "conservative_lower_B": 0.5677083333333334,
+              "required_B": 0.18
+            },
+            "reason": null
+          }
+        ],
+        "missing_metric_families": [
+          "common_scaffold",
+          "curve_bend_severity",
+          "head_glyph_overlap",
+          "lone_pair_orientation",
+          "step_spacing",
+          "visible_tail_source",
+          "visible_tip_target"
+        ],
+        "metric_verdict": "unmeasured",
+        "render_hash_checked": "c8d2103ec675550945ada0581bb1f27039ca77dbe27c6cb4832d085509a90376",
+        "uncovered_render_ink_pixels": 0,
+        "chemical_correctness": {
+          "bounded_bookkeeping": "bounded_pass",
+          "independent_scientific_review": "unverified"
+        },
+        "native_editability": "unverified_by_this_validator",
+        "visual_quality": "unverified",
+        "human_acceptance": "unverified",
+        "evidence_mode": "synthetic",
+        "native_layer_authenticity": "not_authenticated",
+        "reference_source": "synthetic",
+        "reference_sha256": "40cd8ac65f77a6c3e1b88467abaaa1bfe5c46944237b721eaca168d599361176",
+        "quality_scope": "Provisional per-metric pixel checks; no trusted native segmentation/receipt authentication or complete inventory qualification implemented",
+        "actual_gold_collected": false,
+        "calibration_allowance_added_to_port_tolerance": false
+      }
+    },
+    {
+      "case": "ink-near-charge",
+      "target_metric": "ink_clearance",
+      "expected": "fail",
+      "actual": "fail",
+      "matches_expected": true,
+      "result": {
+        "version": "quality-result/1.0",
+        "sample_id": "ink-near-charge",
+        "policy_sha256": "7f5757360f7f59815bfbb33b971b2e0046e65747c56dc1151e8f538689f2703f",
+        "metrics": [
+          {
+            "id": "measurement",
+            "metric": "ink_clearance",
+            "status": "fail",
+            "measurements": {
+              "objects": [
+                "head",
+                "charge"
+              ],
+              "conservative_lower_B": 0.0,
+              "required_B": 0.18
+            },
+            "reason": null
+          }
+        ],
+        "missing_metric_families": [
+          "common_scaffold",
+          "curve_bend_severity",
+          "head_glyph_overlap",
+          "lone_pair_orientation",
+          "step_spacing",
+          "visible_tail_source",
+          "visible_tip_target"
+        ],
+        "metric_verdict": "fail",
+        "render_hash_checked": "d745dcf4f3312fda56b5f6a61c8ea7ad79b77699744d7655d7659a574500183a",
+        "uncovered_render_ink_pixels": 0,
+        "chemical_correctness": {
+          "bounded_bookkeeping": "bounded_pass",
+          "independent_scientific_review": "unverified"
+        },
+        "native_editability": "unverified_by_this_validator",
+        "visual_quality": "failed",
+        "human_acceptance": "unverified",
+        "evidence_mode": "synthetic",
+        "native_layer_authenticity": "not_authenticated",
+        "reference_source": "synthetic",
+        "reference_sha256": "40cd8ac65f77a6c3e1b88467abaaa1bfe5c46944237b721eaca168d599361176",
+        "quality_scope": "Provisional per-metric pixel checks; no trusted native segmentation/receipt authentication or complete inventory qualification implemented",
+        "actual_gold_collected": false,
+        "calibration_allowance_added_to_port_tolerance": false
+      }
+    },
+    {
+      "case": "bend-positive",
+      "target_metric": "curve_bend_severity",
+      "expected": "pass",
+      "actual": "pass",
+      "matches_expected": true,
+      "result": {
+        "version": "quality-result/1.0",
+        "sample_id": "bend-positive",
+        "policy_sha256": "7f5757360f7f59815bfbb33b971b2e0046e65747c56dc1151e8f538689f2703f",
+        "metrics": [
+          {
+            "id": "measurement",
+            "metric": "curve_bend_severity",
+            "status": "pass",
+            "measurements": {
+              "arc_chord_ratio": 1.0,
+              "maximum_excursion_B": 0.0,
+              "total_turn_deg": 0.0
+            },
+            "reason": null
+          }
+        ],
+        "missing_metric_families": [
+          "common_scaffold",
+          "head_glyph_overlap",
+          "ink_clearance",
+          "lone_pair_orientation",
+          "step_spacing",
+          "visible_tail_source",
+          "visible_tip_target"
+        ],
+        "metric_verdict": "unmeasured",
+        "render_hash_checked": "6298e1bdf17ffdc9eadd123f9d1d6f9232d18c311c4482c90e7425a57430eaa8",
+        "uncovered_render_ink_pixels": 0,
+        "chemical_correctness": {
+          "bounded_bookkeeping": "bounded_pass",
+          "independent_scientific_review": "unverified"
+        },
+        "native_editability": "unverified_by_this_validator",
+        "visual_quality": "unverified",
+        "human_acceptance": "unverified",
+        "evidence_mode": "synthetic",
+        "native_layer_authenticity": "not_authenticated",
+        "reference_source": "synthetic",
+        "reference_sha256": "07ac35b226d667af4c34aab8c8f877aa5639fb02757d9b9e52b9f8b4f1e016f7",
+        "quality_scope": "Provisional per-metric pixel checks; no trusted native segmentation/receipt authentication or complete inventory qualification implemented",
+        "actual_gold_collected": false,
+        "calibration_allowance_added_to_port_tolerance": false
+      }
+    },
+    {
+      "case": "bend-excessive",
+      "target_metric": "curve_bend_severity",
+      "expected": "fail",
+      "actual": "fail",
+      "matches_expected": true,
+      "result": {
+        "version": "quality-result/1.0",
+        "sample_id": "bend-excessive",
+        "policy_sha256": "7f5757360f7f59815bfbb33b971b2e0046e65747c56dc1151e8f538689f2703f",
+        "metrics": [
+          {
+            "id": "measurement",
+            "metric": "curve_bend_severity",
+            "status": "fail",
+            "measurements": {
+              "arc_chord_ratio": 2.030258904551879,
+              "maximum_excursion_B": 1.6268100196729798,
+              "total_turn_deg": 180.0
+            },
+            "reason": null
+          }
+        ],
+        "missing_metric_families": [
+          "common_scaffold",
+          "head_glyph_overlap",
+          "ink_clearance",
+          "lone_pair_orientation",
+          "step_spacing",
+          "visible_tail_source",
+          "visible_tip_target"
+        ],
+        "metric_verdict": "fail",
+        "render_hash_checked": "b32a3ddb4e195639ba69978c8b0f5433c5392ade5a5f78e7bbc967feecd6af35",
+        "uncovered_render_ink_pixels": 0,
+        "chemical_correctness": {
+          "bounded_bookkeeping": "bounded_pass",
+          "independent_scientific_review": "unverified"
+        },
+        "native_editability": "unverified_by_this_validator",
+        "visual_quality": "failed",
+        "human_acceptance": "unverified",
+        "evidence_mode": "synthetic",
+        "native_layer_authenticity": "not_authenticated",
+        "reference_source": "synthetic",
+        "reference_sha256": "07ac35b226d667af4c34aab8c8f877aa5639fb02757d9b9e52b9f8b4f1e016f7",
+        "quality_scope": "Provisional per-metric pixel checks; no trusted native segmentation/receipt authentication or complete inventory qualification implemented",
+        "actual_gold_collected": false,
+        "calibration_allowance_added_to_port_tolerance": false
+      }
+    },
+    {
+      "case": "overlap-positive",
+      "target_metric": "head_glyph_overlap",
+      "expected": "pass",
+      "actual": "pass",
+      "matches_expected": true,
+      "result": {
+        "version": "quality-result/1.0",
+        "sample_id": "overlap-positive",
+        "policy_sha256": "7f5757360f7f59815bfbb33b971b2e0046e65747c56dc1151e8f538689f2703f",
+        "metrics": [
+          {
+            "id": "measurement",
+            "metric": "head_glyph_overlap",
+            "status": "pass",
+            "measurements": {
+              "overlap_pixels": 0,
+              "conservative_gap_B": 0.30729166666666663
+            },
+            "reason": null
+          }
+        ],
+        "missing_metric_families": [
+          "common_scaffold",
+          "curve_bend_severity",
+          "ink_clearance",
+          "lone_pair_orientation",
+          "step_spacing",
+          "visible_tail_source",
+          "visible_tip_target"
+        ],
+        "metric_verdict": "unmeasured",
+        "render_hash_checked": "bc6de119996bb2e1382833d0cb8b3838bf80834491f946cf8e4f85adfa913a0d",
+        "uncovered_render_ink_pixels": 0,
+        "chemical_correctness": {
+          "bounded_bookkeeping": "bounded_pass",
+          "independent_scientific_review": "unverified"
+        },
+        "native_editability": "unverified_by_this_validator",
+        "visual_quality": "unverified",
+        "human_acceptance": "unverified",
+        "evidence_mode": "synthetic",
+        "native_layer_authenticity": "not_authenticated",
+        "reference_source": "synthetic",
+        "reference_sha256": "a748b67390116f665d3151190212d44c8680f386568e0f4e78a336ca5c9a46a0",
+        "quality_scope": "Provisional per-metric pixel checks; no trusted native segmentation/receipt authentication or complete inventory qualification implemented",
+        "actual_gold_collected": false,
+        "calibration_allowance_added_to_port_tolerance": false
+      }
+    },
+    {
+      "case": "overlap-charge",
+      "target_metric": "head_glyph_overlap",
+      "expected": "fail",
+      "actual": "fail",
+      "matches_expected": true,
+      "result": {
+        "version": "quality-result/1.0",
+        "sample_id": "overlap-charge",
+        "policy_sha256": "7f5757360f7f59815bfbb33b971b2e0046e65747c56dc1151e8f538689f2703f",
+        "metrics": [
+          {
+            "id": "measurement",
+            "metric": "head_glyph_overlap",
+            "status": "fail",
+            "measurements": {
+              "overlap_pixels": 18,
+              "conservative_gap_B": 0.0
+            },
+            "reason": null
+          }
+        ],
+        "missing_metric_families": [
+          "common_scaffold",
+          "curve_bend_severity",
+          "ink_clearance",
+          "lone_pair_orientation",
+          "step_spacing",
+          "visible_tail_source",
+          "visible_tip_target"
+        ],
+        "metric_verdict": "fail",
+        "render_hash_checked": "d5cd3b7c3258d22e8d098649f10d4218bab1c3d03fec138ed44da7aee4c6932a",
+        "uncovered_render_ink_pixels": 0,
+        "chemical_correctness": {
+          "bounded_bookkeeping": "bounded_pass",
+          "independent_scientific_review": "unverified"
+        },
+        "native_editability": "unverified_by_this_validator",
+        "visual_quality": "failed",
+        "human_acceptance": "unverified",
+        "evidence_mode": "synthetic",
+        "native_layer_authenticity": "not_authenticated",
+        "reference_source": "synthetic",
+        "reference_sha256": "a748b67390116f665d3151190212d44c8680f386568e0f4e78a336ca5c9a46a0",
+        "quality_scope": "Provisional per-metric pixel checks; no trusted native segmentation/receipt authentication or complete inventory qualification implemented",
+        "actual_gold_collected": false,
+        "calibration_allowance_added_to_port_tolerance": false
+      }
+    },
+    {
+      "case": "ink-shaft-through-caption",
+      "target_metric": "ink_clearance",
+      "expected": "fail",
+      "actual": "fail",
+      "matches_expected": true,
+      "result": {
+        "version": "quality-result/1.0",
+        "sample_id": "ink-shaft-through-caption",
+        "policy_sha256": "7f5757360f7f59815bfbb33b971b2e0046e65747c56dc1151e8f538689f2703f",
+        "metrics": [
+          {
+            "id": "measurement",
+            "metric": "ink_clearance",
+            "status": "fail",
+            "measurements": {
+              "objects": [
+                "arrow",
+                "caption"
+              ],
+              "conservative_lower_B": 0.0,
+              "required_B": 0.18
+            },
+            "reason": null
+          }
+        ],
+        "missing_metric_families": [
+          "common_scaffold",
+          "curve_bend_severity",
+          "head_glyph_overlap",
+          "lone_pair_orientation",
+          "step_spacing",
+          "visible_tail_source",
+          "visible_tip_target"
+        ],
+        "metric_verdict": "fail",
+        "render_hash_checked": "2cec14b72b739ab8575d6056035af8af9ebdf1a7a47e3d2af6d75198f256a3e7",
+        "uncovered_render_ink_pixels": 0,
+        "chemical_correctness": {
+          "bounded_bookkeeping": "bounded_pass",
+          "independent_scientific_review": "unverified"
+        },
+        "native_editability": "unverified_by_this_validator",
+        "visual_quality": "failed",
+        "human_acceptance": "unverified",
+        "evidence_mode": "synthetic",
+        "native_layer_authenticity": "not_authenticated",
+        "reference_source": "synthetic",
+        "reference_sha256": "07c92f8d60dfc01ecb4d90ec7e59a9524e7f3c8f0b057eee8e128729e2629a87",
+        "quality_scope": "Provisional per-metric pixel checks; no trusted native segmentation/receipt authentication or complete inventory qualification implemented",
+        "actual_gold_collected": false,
+        "calibration_allowance_added_to_port_tolerance": false
+      }
+    },
+    {
+      "case": "ink-head-near-br-caption",
+      "target_metric": "ink_clearance",
+      "expected": "fail",
+      "actual": "fail",
+      "matches_expected": true,
+      "result": {
+        "version": "quality-result/1.0",
+        "sample_id": "ink-head-near-br-caption",
+        "policy_sha256": "7f5757360f7f59815bfbb33b971b2e0046e65747c56dc1151e8f538689f2703f",
+        "metrics": [
+          {
+            "id": "measurement",
+            "metric": "ink_clearance",
+            "status": "fail",
+            "measurements": {
+              "objects": [
+                "head",
+                "caption"
+              ],
+              "conservative_lower_B": 0.0,
+              "required_B": 0.18
+            },
+            "reason": null
+          }
+        ],
+        "missing_metric_families": [
+          "common_scaffold",
+          "curve_bend_severity",
+          "head_glyph_overlap",
+          "lone_pair_orientation",
+          "step_spacing",
+          "visible_tail_source",
+          "visible_tip_target"
+        ],
+        "metric_verdict": "fail",
+        "render_hash_checked": "625549331b3b542e59b8069e14d2d6ce90cbe10cc7e765ad1f97e90be71c1256",
+        "uncovered_render_ink_pixels": 0,
+        "chemical_correctness": {
+          "bounded_bookkeeping": "bounded_pass",
+          "independent_scientific_review": "unverified"
+        },
+        "native_editability": "unverified_by_this_validator",
+        "visual_quality": "failed",
+        "human_acceptance": "unverified",
+        "evidence_mode": "synthetic",
+        "native_layer_authenticity": "not_authenticated",
+        "reference_source": "synthetic",
+        "reference_sha256": "ab074116022fb01ee1f1ed403b6a9bde17c22d0a5141615b1a450e6535f4d58d",
+        "quality_scope": "Provisional per-metric pixel checks; no trusted native segmentation/receipt authentication or complete inventory qualification implemented",
+        "actual_gold_collected": false,
+        "calibration_allowance_added_to_port_tolerance": false
+      }
+    },
+    {
+      "case": "spacing-positive",
+      "target_metric": "step_spacing",
+      "expected": "pass",
+      "actual": "pass",
+      "matches_expected": true,
+      "result": {
+        "version": "quality-result/1.0",
+        "sample_id": "spacing-positive",
+        "policy_sha256": "7f5757360f7f59815bfbb33b971b2e0046e65747c56dc1151e8f538689f2703f",
+        "metrics": [
+          {
+            "id": "measurement",
+            "metric": "step_spacing",
+            "status": "pass",
+            "measurements": {
+              "gap_B": 0.954861111111111,
+              "lower_B": 0.9149305555555555,
+              "upper_B": 0.9947916666666666
+            },
+            "reason": null
+          }
+        ],
+        "missing_metric_families": [
+          "common_scaffold",
+          "curve_bend_severity",
+          "head_glyph_overlap",
+          "ink_clearance",
+          "lone_pair_orientation",
+          "visible_tail_source",
+          "visible_tip_target"
+        ],
+        "metric_verdict": "unmeasured",
+        "render_hash_checked": "01221e650ffc603c29a84423d35e23102c51009ffaed7cf3cba8c84a1532fbb5",
+        "uncovered_render_ink_pixels": 0,
+        "chemical_correctness": {
+          "bounded_bookkeeping": "bounded_pass",
+          "independent_scientific_review": "unverified"
+        },
+        "native_editability": "unverified_by_this_validator",
+        "visual_quality": "unverified",
+        "human_acceptance": "unverified",
+        "evidence_mode": "synthetic",
+        "native_layer_authenticity": "not_authenticated",
+        "reference_source": "synthetic",
+        "reference_sha256": "a4b39733d3ea02a03ea20a5315e66abd115f7137ee5d410f64633e484c5fdfb8",
+        "quality_scope": "Provisional per-metric pixel checks; no trusted native segmentation/receipt authentication or complete inventory qualification implemented",
+        "actual_gold_collected": false,
+        "calibration_allowance_added_to_port_tolerance": false
+      }
+    },
+    {
+      "case": "spacing-too-close",
+      "target_metric": "step_spacing",
+      "expected": "fail",
+      "actual": "fail",
+      "matches_expected": true,
+      "result": {
+        "version": "quality-result/1.0",
+        "sample_id": "spacing-too-close",
+        "policy_sha256": "7f5757360f7f59815bfbb33b971b2e0046e65747c56dc1151e8f538689f2703f",
+        "metrics": [
+          {
+            "id": "measurement",
+            "metric": "step_spacing",
+            "status": "fail",
+            "measurements": {
+              "gap_B": 0.1736111111111111,
+              "lower_B": 0.13368055555555555,
+              "upper_B": 0.21354166666666666
+            },
+            "reason": null
+          }
+        ],
+        "missing_metric_families": [
+          "common_scaffold",
+          "curve_bend_severity",
+          "head_glyph_overlap",
+          "ink_clearance",
+          "lone_pair_orientation",
+          "visible_tail_source",
+          "visible_tip_target"
+        ],
+        "metric_verdict": "fail",
+        "render_hash_checked": "24901f0035fde5dac665fd150a83e78186bf733df622481a0558253e7cc7e6e2",
+        "uncovered_render_ink_pixels": 0,
+        "chemical_correctness": {
+          "bounded_bookkeeping": "bounded_pass",
+          "independent_scientific_review": "unverified"
+        },
+        "native_editability": "unverified_by_this_validator",
+        "visual_quality": "failed",
+        "human_acceptance": "unverified",
+        "evidence_mode": "synthetic",
+        "native_layer_authenticity": "not_authenticated",
+        "reference_source": "synthetic",
+        "reference_sha256": "a4b39733d3ea02a03ea20a5315e66abd115f7137ee5d410f64633e484c5fdfb8",
+        "quality_scope": "Provisional per-metric pixel checks; no trusted native segmentation/receipt authentication or complete inventory qualification implemented",
+        "actual_gold_collected": false,
+        "calibration_allowance_added_to_port_tolerance": false
+      }
+    },
+    {
+      "case": "scaffold-positive",
+      "target_metric": "common_scaffold",
+      "expected": "pass",
+      "actual": "pass",
+      "matches_expected": true,
+      "result": {
+        "version": "quality-result/1.0",
+        "sample_id": "scaffold-positive",
+        "policy_sha256": "7f5757360f7f59815bfbb33b971b2e0046e65747c56dc1151e8f538689f2703f",
+        "metrics": [
+          {
+            "id": "measurement",
+            "metric": "common_scaffold",
+            "status": "pass",
+            "measurements": {
+              "rigid_rmsd_B": 0.0,
+              "maximum_residual_B": 0.0,
+              "rotation_deg": 0.0,
+              "rotation_error_deg": 0.0,
+              "scaling_or_reflection_fitted": false
+            },
+            "reason": null
+          }
+        ],
+        "missing_metric_families": [
+          "curve_bend_severity",
+          "head_glyph_overlap",
+          "ink_clearance",
+          "lone_pair_orientation",
+          "step_spacing",
+          "visible_tail_source",
+          "visible_tip_target"
+        ],
+        "metric_verdict": "unmeasured",
+        "render_hash_checked": "aa0a39794afe20469eebecfc9507921e1984bff4f97f3a32ace126683ef40a9c",
+        "uncovered_render_ink_pixels": 0,
+        "chemical_correctness": {
+          "bounded_bookkeeping": "bounded_pass",
+          "independent_scientific_review": "unverified"
+        },
+        "native_editability": "unverified_by_this_validator",
+        "visual_quality": "unverified",
+        "human_acceptance": "unverified",
+        "evidence_mode": "synthetic",
+        "native_layer_authenticity": "not_authenticated",
+        "reference_source": "synthetic",
+        "reference_sha256": "0227cd912aa3271400f5ff9cae2a4e0c13fa947aabbe4a277f6843f43df8bece",
+        "quality_scope": "Provisional per-metric pixel checks; no trusted native segmentation/receipt authentication or complete inventory qualification implemented",
+        "actual_gold_collected": false,
+        "calibration_allowance_added_to_port_tolerance": false
+      }
+    },
+    {
+      "case": "scaffold-mirrored",
+      "target_metric": "common_scaffold",
+      "expected": "fail",
+      "actual": "fail",
+      "matches_expected": true,
+      "result": {
+        "version": "quality-result/1.0",
+        "sample_id": "scaffold-mirrored",
+        "policy_sha256": "7f5757360f7f59815bfbb33b971b2e0046e65747c56dc1151e8f538689f2703f",
+        "metrics": [
+          {
+            "id": "measurement",
+            "metric": "common_scaffold",
+            "status": "fail",
+            "measurements": {
+              "rigid_rmsd_B": 0.3472222222222222,
+              "maximum_residual_B": 0.49104637582399135,
+              "rotation_deg": -90.0,
+              "rotation_error_deg": 90.0,
+              "scaling_or_reflection_fitted": false
+            },
+            "reason": null
+          }
+        ],
+        "missing_metric_families": [
+          "curve_bend_severity",
+          "head_glyph_overlap",
+          "ink_clearance",
+          "lone_pair_orientation",
+          "step_spacing",
+          "visible_tail_source",
+          "visible_tip_target"
+        ],
+        "metric_verdict": "fail",
+        "render_hash_checked": "621f641a2ad6bb5032922cecfa18dcd659fc67a24da251e6e1fdc03fcdd92b59",
+        "uncovered_render_ink_pixels": 0,
+        "chemical_correctness": {
+          "bounded_bookkeeping": "bounded_pass",
+          "independent_scientific_review": "unverified"
+        },
+        "native_editability": "unverified_by_this_validator",
+        "visual_quality": "failed",
+        "human_acceptance": "unverified",
+        "evidence_mode": "synthetic",
+        "native_layer_authenticity": "not_authenticated",
+        "reference_source": "synthetic",
+        "reference_sha256": "dbdbcc4e1df7254224bc3619affe9d7933ee483b7e94d3c6ca4b2c0b2b507c91",
+        "quality_scope": "Provisional per-metric pixel checks; no trusted native segmentation/receipt authentication or complete inventory qualification implemented",
+        "actual_gold_collected": false,
+        "calibration_allowance_added_to_port_tolerance": false
+      }
+    },
+    {
+      "case": "scaffold-scaled",
+      "target_metric": "common_scaffold",
+      "expected": "fail",
+      "actual": "fail",
+      "matches_expected": true,
+      "result": {
+        "version": "quality-result/1.0",
+        "sample_id": "scaffold-scaled",
+        "policy_sha256": "7f5757360f7f59815bfbb33b971b2e0046e65747c56dc1151e8f538689f2703f",
+        "metrics": [
+          {
+            "id": "measurement",
+            "metric": "common_scaffold",
+            "status": "fail",
+            "measurements": {
+              "rigid_rmsd_B": 0.2777777777777778,
+              "maximum_residual_B": 0.3105649968749708,
+              "rotation_deg": 0.0,
+              "rotation_error_deg": 0.0,
+              "scaling_or_reflection_fitted": false
+            },
+            "reason": null
+          }
+        ],
+        "missing_metric_families": [
+          "curve_bend_severity",
+          "head_glyph_overlap",
+          "ink_clearance",
+          "lone_pair_orientation",
+          "step_spacing",
+          "visible_tail_source",
+          "visible_tip_target"
+        ],
+        "metric_verdict": "fail",
+        "render_hash_checked": "d58dfb9be4ed12cf84006f51a4515a00162a6cf455188682863cc149c3866c31",
+        "uncovered_render_ink_pixels": 0,
+        "chemical_correctness": {
+          "bounded_bookkeeping": "bounded_pass",
+          "independent_scientific_review": "unverified"
+        },
+        "native_editability": "unverified_by_this_validator",
+        "visual_quality": "failed",
+        "human_acceptance": "unverified",
+        "evidence_mode": "synthetic",
+        "native_layer_authenticity": "not_authenticated",
+        "reference_source": "synthetic",
+        "reference_sha256": "95e0f2adc064802840070673d3cb2a10ba6b0fab06ef3f2c7cab6934864efeb7",
+        "quality_scope": "Provisional per-metric pixel checks; no trusted native segmentation/receipt authentication or complete inventory qualification implemented",
+        "actual_gold_collected": false,
+        "calibration_allowance_added_to_port_tolerance": false
+      }
+    }
+  ]
+}

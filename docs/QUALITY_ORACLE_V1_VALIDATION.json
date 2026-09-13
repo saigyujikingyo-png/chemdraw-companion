@@ -1,0 +1,176 @@
+{
+  "version": "quality-oracle-v1-verification/1.0",
+  "verified_on": "2026-09-13",
+  "architecture_parent": "7ea44ebe5dfc9a1e175d8ed55b99fad3529a9a4b",
+  "delivery_status": "first_protocol_schemas_and_bounded_prototypes_implemented",
+  "validation": {
+    "python": "3.12.14",
+    "dependencies": {
+      "jsonschema": "4.26.0",
+      "numpy": "2.3.5",
+      "Pillow": "12.3.0"
+    },
+    "runs": [
+      {
+        "suite": "quality",
+        "tests": 130,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "seconds": 21.956
+      },
+      {
+        "suite": "corpus",
+        "tests": 36,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "seconds": 2.644
+      }
+    ],
+    "schemas_valid": [
+      "calibration.schema.json",
+      "correction-record.schema.json",
+      "oracle-result.schema.json",
+      "oracle.schema.json",
+      "reference.schema.json"
+    ],
+    "synthetic_controls": {
+      "cases": 22,
+      "statuses": {
+        "pass": 9,
+        "fail": 12,
+        "unmeasured": 1
+      },
+      "all_matched_expected": true,
+      "chemical_ir_sha256": "bd0f1912eee1c97d63b18363514d4f97d6e5b62a7caa7924471e5c47e696f686",
+      "archive": "examples/quality-v1/synthetic-controls.zip",
+      "archive_bytes": 68256,
+      "archive_sha256": "d808ffdd03d990985059f14041a9063f2c976f2add1eb3847ec2a10d24caacae",
+      "archive_entries": 99,
+      "manifest_members_verified": 98,
+      "full_native_visual_pass": false
+    },
+    "source_hashes": {
+      "contracts/quality/build_quality_fixtures.py": "f4bdb097879c72aa86a5bf1aeb49d8ced1a9d3162bd8d902f7d94c79d138ec79",
+      "contracts/quality/calibration.py": "60701becde481555ed57d91982e23937b7c95b92ff18294c018b1456cd491348",
+      "contracts/quality/calibration.schema.json": "65882a10b023b1e41f76c9f7b86a8322415a8b9547d9923ee5fd3f1cae47aa03",
+      "contracts/quality/common.py": "31d614a8e8d6f6bd12f622d6f7b1808a9aa7aa0214bfff904d577690d8cef662",
+      "contracts/quality/correction-record.schema.json": "dd88e0e0fcce16cae3092f0748a05d3fb100b3619b223947e59894784b0702d1",
+      "contracts/quality/oracle-result.schema.json": "1fef26fe27d1d5231c9dd542950d8b2edc5370b6ae4ef4826cc8b00fe7993a52",
+      "contracts/quality/oracle.schema.json": "71906505a0a75f568dd682b01328579650e050ff077d3336a77f48804092bdbd",
+      "contracts/quality/policy-v1.json": "7f5757360f7f59815bfbb33b971b2e0046e65747c56dc1151e8f538689f2703f",
+      "contracts/quality/reference.schema.json": "a8c21ed8f2f262ae56b23100f711615c7b72005d53b8a3addff5c82e7bc5133f",
+      "contracts/quality/test_calibration.py": "5b4bbc900113a500b120f23f38b50559b4c634f2b8e17029b28e1ad50e08c7a4",
+      "contracts/quality/test_correction.py": "11baf61ea89053794989ac251d37eb67a1e7e69cc3248aa3266080edec91d3c6",
+      "contracts/quality/test_quality.py": "88490568395a2e8b3e7eb699c9937ff30d0997a9de61a0c44d6ff02fc349a37e",
+      "contracts/quality/validate_correction.py": "7b0bf07dfe7db3742a91ead02613d1d97e191c298861691aa323d2ba1d54efc4",
+      "contracts/quality/validate_quality.py": "447d779880cb7dff7d339316611987944c2f5bf5b554970db5c46629a6814a99"
+    },
+    "corpus_c92_blob_parity": {
+      "contracts/corpus/test_corpus.py": true,
+      "contracts/corpus/validate_corpus.py": true
+    }
+  },
+  "independent_correction_recheck": {
+    "source_unchanged": true,
+    "evidence_mode": "synthetic",
+    "results": [
+      {
+        "case": "current-valid-synthetic-baseline",
+        "status": "pass",
+        "gold_eligible_by_record": true,
+        "identity_authenticated": false,
+        "actual_gold_collected": false,
+        "declared_tier": "gold",
+        "eligibility_blockers": [],
+        "assets_hash_checked": 16,
+        "native_readback_records_checked": 4,
+        "changed_diff_fields": 12,
+        "diff_coverage": {
+          "lone_pair_displacement": "complete",
+          "charge_displacement": "complete",
+          "bond_anchors": "complete",
+          "fragment_translation": "complete",
+          "fragment_rotation": "complete",
+          "atom_displacement": "complete",
+          "curve_anchors": "complete",
+          "caption_displacement": "complete",
+          "curve_control_points": "complete",
+          "step_spacing": "complete"
+        },
+        "ir_validation": "schema_only",
+        "native_execution": "not_performed",
+        "automatic_object_matching": "not_implemented",
+        "production_native_diff": "not_implemented"
+      },
+      {
+        "case": "zero-session-positive-epsilon",
+        "status": "failed",
+        "error": "manual time not supported by sessions"
+      },
+      {
+        "case": "all-reviews-before-reopens",
+        "status": "failed",
+        "error": "review predates necessary native/readback/render evidence"
+      },
+      {
+        "case": "shared-first-final-render",
+        "status": "failed",
+        "error": "render must have exactly its declared native parent"
+      },
+      {
+        "case": "duplicate-semantic-occurrence",
+        "status": "failed",
+        "error": "duplicate primary semantic occurrence in native snapshot"
+      },
+      {
+        "case": "named-m2-unseen-reserved",
+        "status": "failed",
+        "error": "named benchmark must retain exposure"
+      }
+    ]
+  },
+  "private_native_package": {
+    "status": "blocked_not_received",
+    "expected_name": "chemdraw-corpus-pilot-native-evidence.zip",
+    "producer_declared_bytes": 1954700,
+    "producer_declared_sha256": "f0265ff53be8709fb098743c9de8534b44b57e2183df0b9447c1a6eacc9c57e0",
+    "producer_declared_native_originals": 38,
+    "receiver_package_bytes": null,
+    "receiver_package_sha256": null,
+    "independently_checked_originals": 0,
+    "checks": [
+      "Existing private connection route timed out on a fresh bounded read-only attempt; no bytes received.",
+      "No usable completed private handoff path/link received from the existing developer task.",
+      "Immediate authorized destination inventory did not contain the archive."
+    ],
+    "substitute_evidence_used": false
+  },
+  "separate_acceptance": {
+    "chemical_correctness": "bounded_synthetic_IR_bookkeeping_only",
+    "native_editability": "not_executed",
+    "visual_quality": "native_unqualified_historical_failure_retained",
+    "human_acceptance": "not_obtained",
+    "overall_chemdraw": "not_accepted",
+    "original_c92_runtime_P2": "open_not_integrated",
+    "M1": "development_allowed_no_new_native_pass",
+    "M2": "unscored_locked_against_tuning_training",
+    "holdout": "not_selected",
+    "gold_collected": 0,
+    "human_active_correction_seconds": null
+  },
+  "boundaries": [
+    "No trusted native layer exporter, complete inventory admission or human provenance authentication.",
+    "Native common-scaffold position extraction is not implemented.",
+    "Synthetic cases are partial; other seven families are not qualified on each image.",
+    "Independent numeric policies remain provisional and not gold-calibrated.",
+    "No runtime/probes/MCP/installer/host/product-surface change.",
+    "No native run, data collection, learned model training or benchmark tuning."
+  ],
+  "retained_runtime_evidence": {
+    "commit": "c92a91881a017d3d3d4a619dce77b840013a82cc",
+    "tests": 51,
+    "rerun_in_this_delivery": false
+  }
+}

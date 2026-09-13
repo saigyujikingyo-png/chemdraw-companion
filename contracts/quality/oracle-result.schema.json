@@ -1,0 +1,175 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "version": {
+      "const": "quality-result/1.0"
+    },
+    "sample_id": {
+      "type": "string"
+    },
+    "policy_sha256": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "metrics": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "metric": {
+            "enum": [
+              "visible_tip_target",
+              "visible_tail_source",
+              "lone_pair_orientation",
+              "ink_clearance",
+              "curve_bend_severity",
+              "head_glyph_overlap",
+              "step_spacing",
+              "common_scaffold"
+            ]
+          },
+          "status": {
+            "enum": [
+              "pass",
+              "fail",
+              "unmeasured"
+            ]
+          },
+          "measurements": {
+            "type": "object"
+          },
+          "reason": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        },
+        "required": [
+          "id",
+          "metric",
+          "status",
+          "measurements",
+          "reason"
+        ]
+      }
+    },
+    "missing_metric_families": {
+      "type": "array",
+      "items": {
+        "enum": [
+          "visible_tip_target",
+          "visible_tail_source",
+          "lone_pair_orientation",
+          "ink_clearance",
+          "curve_bend_severity",
+          "head_glyph_overlap",
+          "step_spacing",
+          "common_scaffold"
+        ]
+      }
+    },
+    "metric_verdict": {
+      "enum": [
+        "fail",
+        "unmeasured",
+        "pass_measured_subset"
+      ]
+    },
+    "render_hash_checked": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "uncovered_render_ink_pixels": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "chemical_correctness": {
+      "type": "object",
+      "properties": {
+        "bounded_bookkeeping": {
+          "type": "string"
+        },
+        "independent_scientific_review": {
+          "const": "unverified"
+        }
+      },
+      "required": [
+        "bounded_bookkeeping",
+        "independent_scientific_review"
+      ],
+      "additionalProperties": false
+    },
+    "native_editability": {
+      "const": "unverified_by_this_validator"
+    },
+    "visual_quality": {
+      "enum": [
+        "failed",
+        "unverified"
+      ]
+    },
+    "human_acceptance": {
+      "enum": [
+        "rejected_record",
+        "unverified"
+      ]
+    },
+    "evidence_mode": {
+      "enum": [
+        "synthetic",
+        "native"
+      ]
+    },
+    "native_layer_authenticity": {
+      "const": "not_authenticated"
+    },
+    "reference_source": {
+      "enum": [
+        "synthetic",
+        "independently_reviewed_native_readback",
+        "unqualified"
+      ]
+    },
+    "reference_sha256": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "quality_scope": {
+      "type": "string"
+    },
+    "actual_gold_collected": {
+      "const": false
+    },
+    "calibration_allowance_added_to_port_tolerance": {
+      "const": false
+    }
+  },
+  "required": [
+    "version",
+    "sample_id",
+    "policy_sha256",
+    "metrics",
+    "missing_metric_families",
+    "metric_verdict",
+    "render_hash_checked",
+    "uncovered_render_ink_pixels",
+    "chemical_correctness",
+    "native_editability",
+    "visual_quality",
+    "human_acceptance",
+    "evidence_mode",
+    "native_layer_authenticity",
+    "reference_source",
+    "reference_sha256",
+    "quality_scope",
+    "actual_gold_collected",
+    "calibration_allowance_added_to_port_tolerance"
+  ]
+}
