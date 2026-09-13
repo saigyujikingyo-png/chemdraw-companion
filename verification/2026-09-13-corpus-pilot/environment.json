@@ -1,0 +1,15 @@
+{
+  "recorded_at": "2026-09-13T07:54:42.859105+00:00",
+  "os": "Windows",
+  "os_version": "10.0.26200",
+  "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+  "development_model": "GPT-6 Astra",
+  "reasoning_effort": "max, unchanged",
+  "model_usage_tokens": "unavailable",
+  "model_cost": "unavailable",
+  "ChemDraw": "Prime 26.0.0.6141 x64",
+  "native_executable_sha256": "f5383228898b6e6be08abded9f6db0909d0841a2f6a5bbef50ba00f44af8a084",
+  "interop_version": "22.0.0.0, retained installed interop baseline",
+  "owner_visual_rejections": 1,
+  "manual_active_correction_seconds": null
+}

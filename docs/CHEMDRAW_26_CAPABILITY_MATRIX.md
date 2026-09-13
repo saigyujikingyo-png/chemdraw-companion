@@ -1,53 +1,38 @@
 # ChemDraw 26 capability matrix
 
-Qualification plan, not a completed matrix. Historical implementation commit f111c36564fcebf42640cedee809ee622087ba8c reports ChemDraw Prime 26.0.0.6141 x64. Interop assembly version is separate. Do not generalize to every edition/device/licence.
+Evidence index updated 2026-09-13. These are specific operations on **ChemDraw Prime 26.0.0.6141 x64 / installed interop 22.0.0.0**, on one Windows installation. They do not qualify the whole SDK, other editions/devices, arbitrary user documents or a university entitlement.
 
-Repair SaveAs first, then fill this matrix before S1 -> R1 -> M1 -> M2. Use small microfixtures, not a generalized SDK wrapper.
+Backend: installed vendor COM interop plus native CDXML import. Native batches retain disposable document references and require a fresh process with MainWindow HWND/PID binding. `in_place` means an explicit change to a disposable native copy. Initial composition is **rebuild/import**. Semantic relationships and rerouting belong to Companion, not the vendor.
 
-| ID | Layer / capability | Minimum qualification | Current evidence |
-| --- | --- | --- | --- |
-| A01 | Create/bind document | Create and identify exact disposable target; active-document readback in A/B test | narrow_observed; retained refs did not cross-write, but actual ActiveDocument and COM-to-PID binding unproven |
-| A02 | CDX/CDXML save | Immutable requested path, returned args/errors, expected bytes and readback; controlled repeat | ethanol success followed by missing-file failure; unresolved |
-| A03 | CDX disk reopen | Close source, open disk copy through qualified lifecycle, inspect semantic/drawable inventory | narrow_observed ethanol only |
-| A04 | CDXML disk reopen | Independently open saved XML, edit/save/reopen copy | unverified |
-| A05 | Full-scene native export | Full inventory and physical pixel/ink scale; reject wrong selection | narrow_observed diagnostic ethanol PNG |
-| B01 | Atom control | Create/read/change/remove; element, isotope, explicit H and specified stereo; reopen | MakeAtom O/N narrow_observed; full attributes unverified |
-| B02 | Bond control | Create/read/change/delete endpoints, order, wedge/hash; reopen | imported ethanol single bonds only; control unverified |
-| B03 | Curly-arrow geometry | Editable two-electron curve; read/move tail/head/control points; save/reopen | unverified |
-| B04 | Curly-arrow anchors | IR source LP/bond and target atom/bond mapped; move fragment and explicitly reroute correctly | unverified; editable curve alone insufficient |
-| B05 | Lone pairs | Create/read/change/remove electron pair, count/atom association/position; move fragment and reopen | unverified; raster/text dots insufficient as electron objects |
-| B06 | Charges | Positive and negative formal charge plus attached glyph; change/read/remove and reopen | nonzero charge control unverified |
-| B07 | Fragment transform | Rigid translation/rotation preserves stereo/anti and updates labels/electron anchors; reopen | unverified; no silent reflection |
-| B08 | Cleanup | Verified native cleanup of disturbed geometry; graph/stereo/mapping preservation and rerouted curves | ethanol Clean(true) narrow_observed, not mechanism layout |
-| B09 | Object identity | IR occurrence -> native ID mapping after cleanup/reopen; reject ambiguous duplicate matching | unverified |
-| B10 | Both-format editability | Curve/electron object/charge/fragment edits on independent CDX/CDXML copies, save/reopen again | unverified |
-| B11 | Reaction annotations | Editable step arrow, plus sign, conditions, label and association; text edit survives reopen | unverified |
-| C01 | Mechanism composition | Frozen valid IR -> native fragments -> Composer -> native adapter -> all M2 checks | unrun; principal architecture risk |
+Immutable evidence sets:
 
-Each row records backend (COM/Add-in/CDXML import/verified desktop route), actual operation/property, source/probe hash, app build/edition, document scope, mutation mode, object type, input/output hashes, supported edit subset, reopen results, evidence IDs, time and limits.
+- **E1**, [2cc6597 native-control evidence](https://github.com/saigyujikingyo-png/chemdraw-companion/tree/2cc659771817f9968b8ed09b40b2335e32b0fdc7/verification/2026-09-12-native-control): typed SaveAs, A/B identity, object microfixtures, retained failed first attempts, source/input/output hash manifests.
+- **E2**, [eb8b4c8 R2 evidence](https://github.com/saigyujikingyo-png/chemdraw-companion/tree/eb8b4c869a23237f726f8cf127be18743f573a14/verification/2026-09-12-r2): exact declared edits in both formats, completed geometry receipts, native S1/R1/M1 readbacks and masks. Archive: 502 manifested entries / 186 unchanged native outputs. Final worker receipts bind executor/bridge hashes; earlier R2 source-snapshot gaps remain disclosed.
+- **E3**, [R3 evidence](../verification/2026-09-13-r3/README.md): repaired scene/mask validators, retained-evidence replay, twelve newly rendered independent geometry controls. Actual source bytes are captured before execution; the enclosing Git commit and delivery receipt bind the delivered revision. Replays are not new native runs.
+- **E4**, [independent corpus pilot](../verification/2026-09-13-corpus-pilot/README.md): one AI-proposed ethoxide/ammonium development input, three retained native attempts, both-format automatic edits and a local hash-bound annotation/correction bundle. Latest chemical/control readback and scoped editability pass; visible head and ink-gap checks fail. Full pilot assets are delivered locally under the recorded rights scope; GitHub contains source and sanitized verification summaries.
 
-Editable native objects imported via CDXML may qualify a capability only after read/change/save/reopen evidence with provenance. That does not prove COM setters, native automatic layout or arbitrary-document patching. Disposable-revision rebuilding can qualify declared logical updates; label it rebuild, not in_place. Semantic anchors may be maintained by Composer, but do not describe them as vendor-maintained.
+| ID | Status | Actual operations / mutation mode | Formats and evidence | Limits |
+| --- | --- | --- | --- | --- |
+| A01 | Observed disposable identity subset | Documents.Add; retained refs; Activate; ActiveDocument IUnknown equality; MainWindow HWND/PID | E1 A/B identity; E2/E3 isolated native batches | No arbitrary user-document binding, production lease or crash recovery |
+| A02 | Verified typed save subset | IChemDrawDocument.SaveAs(ref path, format, resolution, width, height); immutable requested path and byte/hash postconditions | E1 controlled save; E2 CDX/CDXML/PNG/JPEG; E3 CDXML/PNG | Late-bound/invalid-MIME failures retained. Return alone never passes. Native PDF unqualified |
+| A03 | Verified CDX disk-copy subset | Close(false); Documents.Open; copied in_place edit/save/close/reopen | E2 small-repair-1-native and edit-guard-final; CDX with CDXML readback | No all-object or arbitrary-document update guarantee |
+| A04 | Verified CDXML disk-copy subset | Independent disk open; declared nonzero edits; save/close/reopen | E2 same journals; CDXML | Native arrow IDs may change; explicit alias chains required |
+| A05 | Observed full-page export subset | Full-document SaveAs; white frame; independent bond/ruler ink scale; unchanged native PNG masks | E2 full pages PNG/JPEG; E3 curve controls PNG | Approx. 600 dpi measured vs 144 dpi metadata. S1/R1 mask pass, M1 fail. Owner physical-size acceptance pending; assembled PDF is not native PDF export |
+| B01 | Partial atom control | MakeAtom; ElementNumber, Charge, NumImplicitHydrogens, Position; imported atoms and copied in_place motion | E1 microfixture; E2 exact both-format snapshots | No complete isotope/stereo CRUD or atom-deletion qualification. S1 specified tetrahedral SMILES preservation is narrower than absolute CIP |
+| B02 | Partial bond control | MakeBond; Atom1/Atom2; BondOrder read/write; directed wedge/hash readback | E1 microfixture; E2 S1 and native snapshots, both formats | Endpoint mutation/deletion and full wedge/hash editing unqualified |
+| B03 | Verified six-point curve edit subset | MakeSpline; NumPoints=6; one-based GetPoint/SetPoint; native head fields; in_place control displacement | E2 edit-guard-final, both formats; E3 twelve independent curves | Historical four-point construction failed. Geometry controls do not certify every curvature/style or semantic landing |
+| B04 | Partial companion-owned ports | IR LP/bond/atom mapping; fragment Objects.Move; explicit affine endpoint displacement propagated to cubic controls | E2 both-format full snapshots and readback | Companion maintains relationships. Visible head/obstacle acceptance is separate; M1 fails |
+| B05 | Verified symbol subset | MakeSymbol; native LonePair; Start/End; movement and diagnostic Delete; in_place | E2 count/association and exact nonzero changes, both formats | Companion-owned association. Pair removal is an intentionally invalid-chemistry control |
+| B06 | Partial formal-charge control | Positive/negative Charge read/write and glyph readback; diagnostic in_place charge change | E2 S1 and neutral M1 product; diagnostic edits, both formats | Earlier unintended M1 product +1 is fixed in E2 complete run. Other charge/H/text interactions remain unqualified; diagnostic state is rejected |
+| B07 | Partial rigid transform | Group.Objects.Move/Rotate/Scale microfixture; native fragment translation; Composer rotation without reflection | E1 native microfixture; E2 exact translation/reopen; E3 37-degree geometry replay | Replay is not a new native rotation. No arbitrary stereo/label/anchor transform guarantee |
+| B08 | Verified cleanup provenance subset | Disturbed seed -> Objects.Clean(true) -> saved intrinsic geometry; completed receipt checks graph/charge/H/stereo and hashes | E2 independent proton-transfer, electrocyclization and renamed controls; CDXML | Cleanup is not whole-mechanism layout. Earlier anti-loss seed rejected. Trusted local executor/journal, not adversarial attestation |
+| B09 | Partial occurrence identity | AtomNumber IR mapping; native IDs; explicit SupersededBy aliases; reject duplicate/missing inventories | E2 source/readbacks; E3 strengthened scene comparison and valid global symmetries | Earlier ordering/relabel failures repaired in tested scope. No general persistent duplicate-remapping or native-arrow identity guarantee |
+| B10 | Verified both-format edit subset | Declared fragment/atom, curve, LP and caption changes; diagnostic charge/pair removal; captured non-target properties preserved | E2 edit-guard-final and small-page journals; CDX/CDXML independently reopened | Automated disposable copies only. Human correction time null. Figure quality and owner acceptance separate |
+| B11 | Partial annotations | MakeArrow/MakeCaption; native step arrows, plus signs, conditions; caption Text edits | E2 both formats, including aqueous condition edit | Caption anchor/style separated from glyph Top. Unchanged arrow multiset checked, not full semantic condition/step association |
+| C01 | Required composition gates not passed | General IR -> measured native fragments -> Composer -> adapter rebuild/import | E2 supplied IR controls; E3 validator replays and independent head calibration | Exposed M1 regression preflight fails; new scored M2 not run. No owner pass, freeze, holdout or automatic anti-selection |
 
-Native IDs may change on serialization; reconstruct unambiguous IR/native mapping and prove the intended occurrence is edited. Document safety identity is separate: atom IDs, content hashes, filenames and leases do not establish the target document/process.
+The native executable SHA-256 is `f5383228898b6e6be08abded9f6db0909d0841a2f6a5bbef50ba00f44af8a084`; installed interop SHA-256 is `ecaed777a648df79927c79c3d7a33e1a813c6b027c4111396b7139fdda81959a`. Vendor binaries are not redistributed. Individual artifact/source hashes, operation times and failures remain in each evidence set.
 
-The Add-in guide documents insertion/readback/serialization, not cleanup, disk lifecycle or reliable object identity. Absence there does not prove every native route unsupported. Missing Add-in availability must not prevent bounded qualification of a permitted COM route.
+E4 adds a current development observation for A02-A05 and B03/B05/B08-B11 within their existing subset limits. It does not requalify historical S1/R1 or M1/M2 under the changed Composer rules. The two development repairs are exhausted. Atom-sink mask relationships are supported by the pilot adapter; visible bond-sink masks remain explicitly unsupported. The corpus profile still has no production lowering into the runtime profile. The owner rejected E4 for lone-pair orientation, arrow accuracy and exaggerated bends. There is no human chemical sign-off, timed human correction or gold scope.
 
-Receipt example (null evidence never passes):
-
-~~~json
-{
-  "capability_id": "B03",
-  "application_build": "26.0.0.6141",
-  "edition": "Prime",
-  "backend": "unverified",
-  "operation": null,
-  "mutation_mode": null,
-  "status": "unverified",
-  "native_object_type": null,
-  "semantic_anchor_owner": null,
-  "cdx_reopen_edit": "unverified",
-  "cdxml_reopen_edit": "unverified",
-  "evidence_ids": [],
-  "limitations": ["No executed curly-arrow probe yet"]
-}
-~~~
+M1/M2 are `exposed_and_tuned` regression references, excluded from training/correction corpora and unseen benchmarks. General-rule development uses independent development inputs under the corpus/gold contracts. No holdout is selected before the required freeze. `manual_active_correction_seconds` stays null until an actual human session; no native or replay pass implies human acceptance.

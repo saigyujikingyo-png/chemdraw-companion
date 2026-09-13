@@ -1,0 +1,662 @@
+{
+  "results": [
+    {
+      "fixture": "S1",
+      "checks": [
+        {
+          "file": "S1.cdxml",
+          "graph_and_object_readback": "pass",
+          "issues": [],
+          "atom_count": 6,
+          "bond_count": 5,
+          "native_hydrogens": [
+            {
+              "component": "alanine_zwitterion",
+              "atom": 1,
+              "h": 3,
+              "method": "native_NumHydrogens"
+            },
+            {
+              "component": "alanine_zwitterion",
+              "atom": 2,
+              "h": 1,
+              "method": "native_graph_valence"
+            },
+            {
+              "component": "alanine_zwitterion",
+              "atom": 3,
+              "h": 3,
+              "method": "native_graph_valence"
+            },
+            {
+              "component": "alanine_zwitterion",
+              "atom": 4,
+              "h": 0,
+              "method": "native_graph_valence"
+            },
+            {
+              "component": "alanine_zwitterion",
+              "atom": 5,
+              "h": 0,
+              "method": "native_NumHydrogens"
+            },
+            {
+              "component": "alanine_zwitterion",
+              "atom": 6,
+              "h": 0,
+              "method": "native_NumHydrogens"
+            }
+          ],
+          "native_ports": [],
+          "backside_attack_degrees": null,
+          "actual_font_pt": [
+            8.0
+          ],
+          "bond_length_range_pt": [
+            14.346037780516253,
+            14.354696095703321
+          ],
+          "outside_canvas": [],
+          "visible_stereo_wedges": 1,
+          "absolute_cip_assignment": "not_claimed_input_stereo_preservation_checked_separately",
+          "quality_and_owner_review": "pending_native_masks_and_owner"
+        },
+        {
+          "file": "S1-cdx-readback.cdxml",
+          "graph_and_object_readback": "pass",
+          "issues": [],
+          "atom_count": 6,
+          "bond_count": 5,
+          "native_hydrogens": [
+            {
+              "component": "alanine_zwitterion",
+              "atom": 1,
+              "h": 3,
+              "method": "native_NumHydrogens"
+            },
+            {
+              "component": "alanine_zwitterion",
+              "atom": 2,
+              "h": 1,
+              "method": "native_graph_valence"
+            },
+            {
+              "component": "alanine_zwitterion",
+              "atom": 3,
+              "h": 3,
+              "method": "native_graph_valence"
+            },
+            {
+              "component": "alanine_zwitterion",
+              "atom": 4,
+              "h": 0,
+              "method": "native_graph_valence"
+            },
+            {
+              "component": "alanine_zwitterion",
+              "atom": 5,
+              "h": 0,
+              "method": "native_NumHydrogens"
+            },
+            {
+              "component": "alanine_zwitterion",
+              "atom": 6,
+              "h": 0,
+              "method": "native_NumHydrogens"
+            }
+          ],
+          "native_ports": [],
+          "backside_attack_degrees": null,
+          "actual_font_pt": [
+            8.0
+          ],
+          "bond_length_range_pt": [
+            14.346037780516253,
+            14.354696095703321
+          ],
+          "outside_canvas": [],
+          "visible_stereo_wedges": 1,
+          "absolute_cip_assignment": "not_claimed_input_stereo_preservation_checked_separately",
+          "quality_and_owner_review": "pending_native_masks_and_owner"
+        },
+        {
+          "file": "S1-cdxml-readback.cdxml",
+          "graph_and_object_readback": "pass",
+          "issues": [],
+          "atom_count": 6,
+          "bond_count": 5,
+          "native_hydrogens": [
+            {
+              "component": "alanine_zwitterion",
+              "atom": 1,
+              "h": 3,
+              "method": "native_NumHydrogens"
+            },
+            {
+              "component": "alanine_zwitterion",
+              "atom": 2,
+              "h": 1,
+              "method": "native_graph_valence"
+            },
+            {
+              "component": "alanine_zwitterion",
+              "atom": 3,
+              "h": 3,
+              "method": "native_graph_valence"
+            },
+            {
+              "component": "alanine_zwitterion",
+              "atom": 4,
+              "h": 0,
+              "method": "native_graph_valence"
+            },
+            {
+              "component": "alanine_zwitterion",
+              "atom": 5,
+              "h": 0,
+              "method": "native_NumHydrogens"
+            },
+            {
+              "component": "alanine_zwitterion",
+              "atom": 6,
+              "h": 0,
+              "method": "native_NumHydrogens"
+            }
+          ],
+          "native_ports": [],
+          "backside_attack_degrees": null,
+          "actual_font_pt": [
+            8.0
+          ],
+          "bond_length_range_pt": [
+            14.346037780516253,
+            14.354696095703321
+          ],
+          "outside_canvas": [],
+          "visible_stereo_wedges": 1,
+          "absolute_cip_assignment": "not_claimed_input_stereo_preservation_checked_separately",
+          "quality_and_owner_review": "pending_native_masks_and_owner"
+        }
+      ],
+      "native_edit_checks": [
+        {
+          "format": "cdx",
+          "status": "pass",
+          "issues": []
+        },
+        {
+          "format": "cdxml",
+          "status": "pass",
+          "issues": []
+        }
+      ],
+      "input_tetrahedral_stereo_preservation": "pass",
+      "native_warnings": [
+        0,
+        0,
+        0
+      ],
+      "manual_active_correction_seconds": null
+    },
+    {
+      "fixture": "R1",
+      "checks": [
+        {
+          "file": "R1.cdxml",
+          "graph_and_object_readback": "pass",
+          "issues": [],
+          "atom_count": 6,
+          "bond_count": 2,
+          "native_hydrogens": [
+            {
+              "component": "nucleophile",
+              "atom": 1,
+              "h": 1,
+              "method": "native_NumHydrogens"
+            },
+            {
+              "component": "substrate",
+              "atom": 2,
+              "h": 3,
+              "method": "native_graph_valence"
+            },
+            {
+              "component": "substrate",
+              "atom": 3,
+              "h": 0,
+              "method": "native_Br_valence_and_zero_H"
+            },
+            {
+              "component": "methanol",
+              "atom": 1,
+              "h": 1,
+              "method": "native_NumHydrogens"
+            },
+            {
+              "component": "methanol",
+              "atom": 2,
+              "h": 3,
+              "method": "native_graph_valence"
+            },
+            {
+              "component": "bromide",
+              "atom": 3,
+              "h": 0,
+              "method": "native_Br_valence_and_zero_H"
+            }
+          ],
+          "native_ports": [],
+          "backside_attack_degrees": null,
+          "actual_font_pt": [
+            8.0
+          ],
+          "bond_length_range_pt": [
+            14.349999999999994,
+            14.350000000000009
+          ],
+          "outside_canvas": [],
+          "visible_stereo_wedges": 0,
+          "absolute_cip_assignment": "not_claimed_input_stereo_preservation_checked_separately",
+          "quality_and_owner_review": "pending_native_masks_and_owner"
+        },
+        {
+          "file": "R1-cdx-readback.cdxml",
+          "graph_and_object_readback": "pass",
+          "issues": [],
+          "atom_count": 6,
+          "bond_count": 2,
+          "native_hydrogens": [
+            {
+              "component": "nucleophile",
+              "atom": 1,
+              "h": 1,
+              "method": "native_NumHydrogens"
+            },
+            {
+              "component": "substrate",
+              "atom": 2,
+              "h": 3,
+              "method": "native_graph_valence"
+            },
+            {
+              "component": "substrate",
+              "atom": 3,
+              "h": 0,
+              "method": "native_Br_valence_and_zero_H"
+            },
+            {
+              "component": "methanol",
+              "atom": 1,
+              "h": 1,
+              "method": "native_NumHydrogens"
+            },
+            {
+              "component": "methanol",
+              "atom": 2,
+              "h": 3,
+              "method": "native_graph_valence"
+            },
+            {
+              "component": "bromide",
+              "atom": 3,
+              "h": 0,
+              "method": "native_Br_valence_and_zero_H"
+            }
+          ],
+          "native_ports": [],
+          "backside_attack_degrees": null,
+          "actual_font_pt": [
+            8.0
+          ],
+          "bond_length_range_pt": [
+            14.349999999999994,
+            14.350000000000009
+          ],
+          "outside_canvas": [],
+          "visible_stereo_wedges": 0,
+          "absolute_cip_assignment": "not_claimed_input_stereo_preservation_checked_separately",
+          "quality_and_owner_review": "pending_native_masks_and_owner"
+        },
+        {
+          "file": "R1-cdxml-readback.cdxml",
+          "graph_and_object_readback": "pass",
+          "issues": [],
+          "atom_count": 6,
+          "bond_count": 2,
+          "native_hydrogens": [
+            {
+              "component": "nucleophile",
+              "atom": 1,
+              "h": 1,
+              "method": "native_NumHydrogens"
+            },
+            {
+              "component": "substrate",
+              "atom": 2,
+              "h": 3,
+              "method": "native_graph_valence"
+            },
+            {
+              "component": "substrate",
+              "atom": 3,
+              "h": 0,
+              "method": "native_Br_valence_and_zero_H"
+            },
+            {
+              "component": "methanol",
+              "atom": 1,
+              "h": 1,
+              "method": "native_NumHydrogens"
+            },
+            {
+              "component": "methanol",
+              "atom": 2,
+              "h": 3,
+              "method": "native_graph_valence"
+            },
+            {
+              "component": "bromide",
+              "atom": 3,
+              "h": 0,
+              "method": "native_Br_valence_and_zero_H"
+            }
+          ],
+          "native_ports": [],
+          "backside_attack_degrees": null,
+          "actual_font_pt": [
+            8.0
+          ],
+          "bond_length_range_pt": [
+            14.349999999999994,
+            14.350000000000009
+          ],
+          "outside_canvas": [],
+          "visible_stereo_wedges": 0,
+          "absolute_cip_assignment": "not_claimed_input_stereo_preservation_checked_separately",
+          "quality_and_owner_review": "pending_native_masks_and_owner"
+        }
+      ],
+      "native_edit_checks": [
+        {
+          "format": "cdx",
+          "status": "pass",
+          "issues": []
+        },
+        {
+          "format": "cdxml",
+          "status": "pass",
+          "issues": []
+        }
+      ],
+      "input_tetrahedral_stereo_preservation": "not_applicable",
+      "native_warnings": [
+        0,
+        0,
+        0
+      ],
+      "manual_active_correction_seconds": null
+    },
+    {
+      "fixture": "M1",
+      "checks": [
+        {
+          "file": "M1.cdxml",
+          "graph_and_object_readback": "pass",
+          "issues": [],
+          "atom_count": 6,
+          "bond_count": 2,
+          "native_hydrogens": [
+            {
+              "component": "nucleophile",
+              "atom": 1,
+              "h": 1,
+              "method": "native_NumHydrogens"
+            },
+            {
+              "component": "substrate",
+              "atom": 2,
+              "h": 3,
+              "method": "native_graph_valence"
+            },
+            {
+              "component": "substrate",
+              "atom": 3,
+              "h": 0,
+              "method": "native_Br_valence_and_zero_H"
+            },
+            {
+              "component": "methanol",
+              "atom": 1,
+              "h": 1,
+              "method": "native_NumHydrogens"
+            },
+            {
+              "component": "methanol",
+              "atom": 2,
+              "h": 3,
+              "method": "native_graph_valence"
+            },
+            {
+              "component": "bromide",
+              "atom": 3,
+              "h": 0,
+              "method": "native_Br_valence_and_zero_H"
+            }
+          ],
+          "native_ports": [
+            {
+              "flow": "attack",
+              "side": "source",
+              "deviation_pt": 0.0
+            },
+            {
+              "flow": "attack",
+              "side": "target",
+              "deviation_pt": 8.43769498715119e-15
+            },
+            {
+              "flow": "departure",
+              "side": "source",
+              "deviation_pt": 0.005000000000009663
+            },
+            {
+              "flow": "departure",
+              "side": "target",
+              "deviation_pt": 1.7299999999999969
+            }
+          ],
+          "backside_attack_degrees": 0.0,
+          "actual_font_pt": [
+            8.0
+          ],
+          "bond_length_range_pt": [
+            14.349999999999994,
+            14.350000000000009
+          ],
+          "outside_canvas": [],
+          "visible_stereo_wedges": 0,
+          "absolute_cip_assignment": "not_claimed_input_stereo_preservation_checked_separately",
+          "quality_and_owner_review": "pending_native_masks_and_owner"
+        },
+        {
+          "file": "M1-cdx-readback.cdxml",
+          "graph_and_object_readback": "pass",
+          "issues": [],
+          "atom_count": 6,
+          "bond_count": 2,
+          "native_hydrogens": [
+            {
+              "component": "nucleophile",
+              "atom": 1,
+              "h": 1,
+              "method": "native_NumHydrogens"
+            },
+            {
+              "component": "substrate",
+              "atom": 2,
+              "h": 3,
+              "method": "native_graph_valence"
+            },
+            {
+              "component": "substrate",
+              "atom": 3,
+              "h": 0,
+              "method": "native_Br_valence_and_zero_H"
+            },
+            {
+              "component": "methanol",
+              "atom": 1,
+              "h": 1,
+              "method": "native_NumHydrogens"
+            },
+            {
+              "component": "methanol",
+              "atom": 2,
+              "h": 3,
+              "method": "native_graph_valence"
+            },
+            {
+              "component": "bromide",
+              "atom": 3,
+              "h": 0,
+              "method": "native_Br_valence_and_zero_H"
+            }
+          ],
+          "native_ports": [
+            {
+              "flow": "attack",
+              "side": "source",
+              "deviation_pt": 0.0
+            },
+            {
+              "flow": "attack",
+              "side": "target",
+              "deviation_pt": 8.43769498715119e-15
+            },
+            {
+              "flow": "departure",
+              "side": "source",
+              "deviation_pt": 0.005000000000009663
+            },
+            {
+              "flow": "departure",
+              "side": "target",
+              "deviation_pt": 1.7299999999999969
+            }
+          ],
+          "backside_attack_degrees": 0.0,
+          "actual_font_pt": [
+            8.0
+          ],
+          "bond_length_range_pt": [
+            14.349999999999994,
+            14.350000000000009
+          ],
+          "outside_canvas": [],
+          "visible_stereo_wedges": 0,
+          "absolute_cip_assignment": "not_claimed_input_stereo_preservation_checked_separately",
+          "quality_and_owner_review": "pending_native_masks_and_owner"
+        },
+        {
+          "file": "M1-cdxml-readback.cdxml",
+          "graph_and_object_readback": "pass",
+          "issues": [],
+          "atom_count": 6,
+          "bond_count": 2,
+          "native_hydrogens": [
+            {
+              "component": "nucleophile",
+              "atom": 1,
+              "h": 1,
+              "method": "native_NumHydrogens"
+            },
+            {
+              "component": "substrate",
+              "atom": 2,
+              "h": 3,
+              "method": "native_graph_valence"
+            },
+            {
+              "component": "substrate",
+              "atom": 3,
+              "h": 0,
+              "method": "native_Br_valence_and_zero_H"
+            },
+            {
+              "component": "methanol",
+              "atom": 1,
+              "h": 1,
+              "method": "native_NumHydrogens"
+            },
+            {
+              "component": "methanol",
+              "atom": 2,
+              "h": 3,
+              "method": "native_graph_valence"
+            },
+            {
+              "component": "bromide",
+              "atom": 3,
+              "h": 0,
+              "method": "native_Br_valence_and_zero_H"
+            }
+          ],
+          "native_ports": [
+            {
+              "flow": "attack",
+              "side": "source",
+              "deviation_pt": 0.0
+            },
+            {
+              "flow": "attack",
+              "side": "target",
+              "deviation_pt": 8.43769498715119e-15
+            },
+            {
+              "flow": "departure",
+              "side": "source",
+              "deviation_pt": 0.005000000000009663
+            },
+            {
+              "flow": "departure",
+              "side": "target",
+              "deviation_pt": 1.7299999999999969
+            }
+          ],
+          "backside_attack_degrees": 0.0,
+          "actual_font_pt": [
+            8.0
+          ],
+          "bond_length_range_pt": [
+            14.349999999999994,
+            14.350000000000009
+          ],
+          "outside_canvas": [],
+          "visible_stereo_wedges": 0,
+          "absolute_cip_assignment": "not_claimed_input_stereo_preservation_checked_separately",
+          "quality_and_owner_review": "pending_native_masks_and_owner"
+        }
+      ],
+      "native_edit_checks": [
+        {
+          "format": "cdx",
+          "status": "pass",
+          "issues": []
+        },
+        {
+          "format": "cdxml",
+          "status": "pass",
+          "issues": []
+        }
+      ],
+      "input_tetrahedral_stereo_preservation": "not_applicable",
+      "native_warnings": [
+        0,
+        0,
+        0
+      ],
+      "manual_active_correction_seconds": null
+    }
+  ],
+  "native_quality_acceptance": "pending_final_size_masks_and_owner_review"
+}

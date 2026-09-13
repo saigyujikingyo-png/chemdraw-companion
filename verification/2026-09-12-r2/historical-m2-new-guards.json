@@ -1,0 +1,2886 @@
+{
+  "native_results": [
+    {
+      "file": "mechanism.cdxml",
+      "semantic_and_native_inventory": "pass",
+      "issues": [],
+      "counts": {
+        "n": 126,
+        "b": 111,
+        "curve": 15,
+        "arrow": 6
+      },
+      "lone_pairs": 42,
+      "native_hydrogen_readback": [
+        {
+          "state": "s0",
+          "atom": 1,
+          "count": 0,
+          "source": "native_graph_valence"
+        },
+        {
+          "state": "s0",
+          "atom": 2,
+          "count": 0,
+          "source": "native_NumHydrogens"
+        },
+        {
+          "state": "s0",
+          "atom": 3,
+          "count": 0,
+          "source": "native_NumHydrogens"
+        },
+        {
+          "state": "s0",
+          "atom": 4,
+          "count": 3,
+          "source": "native_graph_valence"
+        },
+        {
+          "state": "s0",
+          "atom": 10,
+          "count": 0,
+          "source": "native_graph_valence"
+        },
+        {
+          "state": "s0",
+          "atom": 11,
+          "count": 1,
+          "source": "native_graph_valence"
+        },
+        {
+          "state": "s0",
+          "atom": 12,
+          "count": 1,
+          "source": "native_graph_valence"
+        },
+        {
+          "state": "s0",
+          "atom": 13,
+          "count": 1,
+          "source": "native_graph_valence"
+        },
+        {
+          "state": "s0",
+          "atom": 14,
+          "count": 1,
+          "source": "native_graph_valence"
+        },
+        {
+          "state": "s0",
+          "atom": 15,
+          "count": 1,
+          "source": "native_graph_valence"
+        },
+        {
+          "state": "s0",
+          "atom": 20,
+          "count": 0,
+          "source": "native_NumHydrogens"
+        },
+        {
+          "state": "s0",
+          "atom": 21,
+          "count": 0,
+          "source": "native_NumHydrogens"
+        },
+        {
+          "state": "s0",
+          "atom": 30,
+          "count": 0,
+          "source": "native_NumHydrogens"
+        },
+        {
+          "state": "s0",
+          "atom": 31,
+          "count": 0,
+          "source": "native_NumHydrogens"
+        },
+        {
+          "state": "s0",
+          "atom": 32,
+          "count": 0,
+          "source": "native_NumHydrogens"
+        },
+        {
+          "state": "s0",
+          "atom": 33,
+          "count": 0,
+          "source": "native_NumHydrogens"
+        },
+        {
+          "state": "s0",
+          "atom": 34,
+          "count": 0,
+          "source": "native_NumHydrogens"
+        },
+        {
+          "state": "s0",
+          "atom": 35,
+          "count": 0,
+          "source": "native_NumHydrogens"
+        },
+        {
+          "state": "s1",
+          "atom": 1,
+          "count": 0,
+          "source": "native_graph_valence"
+        },
+        {
+          "state": "s1",
+          "atom": 2,
+          "count": 0,
+          "source": "native_NumHydrogens"
+        },
+        {
+          "state": "s1",
+          "atom": 3,
+          "count": 0,
+          "source": "native_NumHydrogens"
+        },
+        {
+          "state": "s1",
+          "atom": 4,
+          "count": 3,
+          "source": "native_graph_valence"
+        },
+        {
+          "state": "s1",
+          "atom": 10,
+          "count": 0,
+          "source": "native_graph_valence"
+        },
+        {
+          "state": "s1",
+          "atom": 11,
+          "count": 1,
+          "source": "native_graph_valence"
+        },
+        {
+          "state": "s1",
+          "atom": 12,
+          "count": 1,
+          "source": "native_graph_valence"
+        },
+        {
+          "state": "s1",
+          "atom": 13,
+          "count": 1,
+          "source": "native_graph_valence"
+        },
+        {
+          "state": "s1",
+          "atom": 14,
+          "count": 1,
+          "source": "native_graph_valence"
+        },
+        {
+          "state": "s1",
+          "atom": 15,
+          "count": 1,
+          "source": "native_graph_valence"
+        },
+        {
+          "state": "s1",
+          "atom": 20,
+          "count": 0,
+          "source": "native_NumHydrogens"
+        },
+        {
+          "state": "s1",
+          "atom": 21,
+          "count": 0,
+          "source": "native_NumHydrogens"
+        },
+        {
+          "state": "s1",
+          "atom": 30,
+          "count": 0,
+          "source": "native_NumHydrogens"
+        },
+        {
+          "state": "s1",
+          "atom": 31,
+          "count": 0,
+          "source": "native_NumHydrogens"
+        },
+        {
+          "state": "s1",
+          "atom": 32,
+          "count": 0,
+          "source": "native_NumHydrogens"
+        },
+        {
+          "state": "s1",
+          "atom": 33,
+          "count": 0,
+          "source": "native_NumHydrogens"
+        },
+        {
+          "state": "s1",
+          "atom": 34,
+          "count": 0,
+          "source": "native_NumHydrogens"
+        },
+        {
+          "state": "s1",
+          "atom": 35,
+          "count": 0,
+          "source": "native_NumHydrogens"
+        },
+        {
+          "state": "s2",
+          "atom": 1,
+          "count": 0,
+          "source": "native_graph_valence"
+        },
+        {
+          "state": "s2",
+          "atom": 2,
+          "count": 0,
+          "source": "native_NumHydrogens"
+        },
+        {
+          "state": "s2",
+          "atom": 3,
+          "count": 0,
+          "source": "native_NumHydrogens"
+        },
+        {
+          "state": "s2",
+          "atom": 4,
+          "count": 3,
+          "source": "native_graph_valence"
+        },
+        {
+          "state": "s2",
+          "atom": 10,
+          "count": 0,
+          "source": "native_graph_valence"
+        },
+        {
+          "state": "s2",
+          "atom": 11,
+          "count": 1,
+          "source": "native_graph_valence"
+        },
+        {
+          "state": "s2",
+          "atom": 12,
+          "count": 1,
+          "source": "native_graph_valence"
+        },
+        {
+          "state": "s2",
+          "atom": 13,
+          "count": 1,
+          "source": "native_graph_valence"
+        },
+        {
+          "state": "s2",
+          "atom": 14,
+          "count": 1,
+          "source": "native_graph_valence"
+        },
+        {
+          "state": "s2",
+          "atom": 15,
+          "count": 1,
+          "source": "native_graph_valence"
+        },
+        {
+          "state": "s2",
+          "atom": 20,
+          "count": 0,
+          "source": "native_NumHydrogens"
+        },
+        {
+          "state": "s2",
+          "atom": 21,
+          "count": 0,
+          "source": "native_NumHydrogens"
+        },
+        {
+          "state": "s2",
+          "atom": 30,
+          "count": 0,
+          "source": "native_NumHydrogens"
+        },
+        {
+          "state": "s2",
+          "atom": 31,
+          "count": 0,
+          "source": "native_NumHydrogens"
+        },
+        {
+          "state": "s2",
+          "atom": 32,
+          "count": 0,
+          "source": "native_NumHydrogens"
+        },
+        {
+          "state": "s2",
+          "atom": 33,
+          "count": 0,
+          "source": "native_NumHydrogens"
+        },
+        {
+          "state": "s2",
+          "atom": 34,
+          "count": 0,
+          "source": "native_NumHydrogens"
+        },
+        {
+          "state": "s2",
+          "atom": 35,
+          "count": 0,
+          "source": "native_NumHydrogens"
+        },
+        {
+          "state": "s3",
+          "atom": 1,
+          "count": 0,
+          "source": "native_graph_valence"
+        },
+        {
+          "state": "s3",
+          "atom": 2,
+          "count": 0,
+          "source": "native_NumHydrogens"
+        },
+        {
+          "state": "s3",
+          "atom": 3,
+          "count": 0,
+          "source": "native_NumHydrogens"
+        },
+        {
+          "state": "s3",
+          "atom": 4,
+          "count": 3,
+          "source": "native_graph_valence"
+        },
+        {
+          "state": "s3",
+          "atom": 10,
+          "count": 0,
+          "source": "native_graph_valence"
+        },
+        {
+          "state": "s3",
+          "atom": 11,
+          "count": 1,
+          "source": "native_graph_valence"
+        },
+        {
+          "state": "s3",
+          "atom": 12,
+          "count": 1,
+          "source": "native_graph_valence"
+        },
+        {
+          "state": "s3",
+          "atom": 13,
+          "count": 1,
+          "source": "native_graph_valence"
+        },
+        {
+          "state": "s3",
+          "atom": 14,
+          "count": 1,
+          "source": "native_graph_valence"
+        },
+        {
+          "state": "s3",
+          "atom": 15,
+          "count": 1,
+          "source": "native_graph_valence"
+        },
+        {
+          "state": "s3",
+          "atom": 20,
+          "count": 0,
+          "source": "native_NumHydrogens"
+        },
+        {
+          "state": "s3",
+          "atom": 21,
+          "count": 0,
+          "source": "native_NumHydrogens"
+        },
+        {
+          "state": "s3",
+          "atom": 30,
+          "count": 0,
+          "source": "native_NumHydrogens"
+        },
+        {
+          "state": "s3",
+          "atom": 31,
+          "count": 0,
+          "source": "native_NumHydrogens"
+        },
+        {
+          "state": "s3",
+          "atom": 32,
+          "count": 0,
+          "source": "native_NumHydrogens"
+        },
+        {
+          "state": "s3",
+          "atom": 33,
+          "count": 0,
+          "source": "native_NumHydrogens"
+        },
+        {
+          "state": "s3",
+          "atom": 34,
+          "count": 0,
+          "source": "native_NumHydrogens"
+        },
+        {
+          "state": "s3",
+          "atom": 35,
+          "count": 0,
+          "source": "native_NumHydrogens"
+        },
+        {
+          "state": "s4",
+          "atom": 1,
+          "count": 0,
+          "source": "native_graph_valence"
+        },
+        {
+          "state": "s4",
+          "atom": 2,
+          "count": 0,
+          "source": "native_NumHydrogens"
+        },
+        {
+          "state": "s4",
+          "atom": 3,
+          "count": 0,
+          "source": "native_NumHydrogens"
+        },
+        {
+          "state": "s4",
+          "atom": 4,
+          "count": 3,
+          "source": "native_graph_valence"
+        },
+        {
+          "state": "s4",
+          "atom": 10,
+          "count": 0,
+          "source": "native_graph_valence"
+        },
+        {
+          "state": "s4",
+          "atom": 11,
+          "count": 1,
+          "source": "native_graph_valence"
+        },
+        {
+          "state": "s4",
+          "atom": 12,
+          "count": 1,
+          "source": "native_graph_valence"
+        },
+        {
+          "state": "s4",
+          "atom": 13,
+          "count": 1,
+          "source": "native_graph_valence"
+        },
+        {
+          "state": "s4",
+          "atom": 14,
+          "count": 1,
+          "source": "native_graph_valence"
+        },
+        {
+          "state": "s4",
+          "atom": 15,
+          "count": 1,
+          "source": "native_graph_valence"
+        },
+        {
+          "state": "s4",
+          "atom": 20,
+          "count": 0,
+          "source": "native_NumHydrogens"
+        },
+        {
+          "state": "s4",
+          "atom": 21,
+          "count": 0,
+          "source": "native_NumHydrogens"
+        },
+        {
+          "state": "s4",
+          "atom": 30,
+          "count": 0,
+          "source": "native_NumHydrogens"
+        },
+        {
+          "state": "s4",
+          "atom": 31,
+          "count": 0,
+          "source": "native_NumHydrogens"
+        },
+        {
+          "state": "s4",
+          "atom": 32,
+          "count": 0,
+          "source": "native_NumHydrogens"
+        },
+        {
+          "state": "s4",
+          "atom": 33,
+          "count": 0,
+          "source": "native_NumHydrogens"
+        },
+        {
+          "state": "s4",
+          "atom": 34,
+          "count": 0,
+          "source": "native_NumHydrogens"
+        },
+        {
+          "state": "s4",
+          "atom": 35,
+          "count": 0,
+          "source": "native_NumHydrogens"
+        },
+        {
+          "state": "s5",
+          "atom": 1,
+          "count": 0,
+          "source": "native_graph_valence"
+        },
+        {
+          "state": "s5",
+          "atom": 2,
+          "count": 0,
+          "source": "native_NumHydrogens"
+        },
+        {
+          "state": "s5",
+          "atom": 3,
+          "count": 0,
+          "source": "native_NumHydrogens"
+        },
+        {
+          "state": "s5",
+          "atom": 4,
+          "count": 3,
+          "source": "native_graph_valence"
+        },
+        {
+          "state": "s5",
+          "atom": 10,
+          "count": 0,
+          "source": "native_graph_valence"
+        },
+        {
+          "state": "s5",
+          "atom": 11,
+          "count": 1,
+          "source": "native_graph_valence"
+        },
+        {
+          "state": "s5",
+          "atom": 12,
+          "count": 1,
+          "source": "native_graph_valence"
+        },
+        {
+          "state": "s5",
+          "atom": 13,
+          "count": 1,
+          "source": "native_graph_valence"
+        },
+        {
+          "state": "s5",
+          "atom": 14,
+          "count": 1,
+          "source": "native_graph_valence"
+        },
+        {
+          "state": "s5",
+          "atom": 15,
+          "count": 1,
+          "source": "native_graph_valence"
+        },
+        {
+          "state": "s5",
+          "atom": 20,
+          "count": 0,
+          "source": "native_NumHydrogens"
+        },
+        {
+          "state": "s5",
+          "atom": 21,
+          "count": 0,
+          "source": "native_NumHydrogens"
+        },
+        {
+          "state": "s5",
+          "atom": 30,
+          "count": 0,
+          "source": "native_NumHydrogens"
+        },
+        {
+          "state": "s5",
+          "atom": 31,
+          "count": 0,
+          "source": "native_NumHydrogens"
+        },
+        {
+          "state": "s5",
+          "atom": 32,
+          "count": 0,
+          "source": "native_NumHydrogens"
+        },
+        {
+          "state": "s5",
+          "atom": 33,
+          "count": 0,
+          "source": "native_NumHydrogens"
+        },
+        {
+          "state": "s5",
+          "atom": 34,
+          "count": 0,
+          "source": "native_NumHydrogens"
+        },
+        {
+          "state": "s5",
+          "atom": 35,
+          "count": 0,
+          "source": "native_NumHydrogens"
+        },
+        {
+          "state": "s6",
+          "atom": 1,
+          "count": 0,
+          "source": "native_graph_valence"
+        },
+        {
+          "state": "s6",
+          "atom": 2,
+          "count": 0,
+          "source": "native_NumHydrogens"
+        },
+        {
+          "state": "s6",
+          "atom": 3,
+          "count": 0,
+          "source": "native_NumHydrogens"
+        },
+        {
+          "state": "s6",
+          "atom": 4,
+          "count": 3,
+          "source": "native_graph_valence"
+        },
+        {
+          "state": "s6",
+          "atom": 10,
+          "count": 0,
+          "source": "native_graph_valence"
+        },
+        {
+          "state": "s6",
+          "atom": 11,
+          "count": 1,
+          "source": "native_graph_valence"
+        },
+        {
+          "state": "s6",
+          "atom": 12,
+          "count": 1,
+          "source": "native_graph_valence"
+        },
+        {
+          "state": "s6",
+          "atom": 13,
+          "count": 1,
+          "source": "native_graph_valence"
+        },
+        {
+          "state": "s6",
+          "atom": 14,
+          "count": 1,
+          "source": "native_graph_valence"
+        },
+        {
+          "state": "s6",
+          "atom": 15,
+          "count": 1,
+          "source": "native_graph_valence"
+        },
+        {
+          "state": "s6",
+          "atom": 20,
+          "count": 0,
+          "source": "native_NumHydrogens"
+        },
+        {
+          "state": "s6",
+          "atom": 21,
+          "count": 0,
+          "source": "native_NumHydrogens"
+        },
+        {
+          "state": "s6",
+          "atom": 30,
+          "count": 0,
+          "source": "native_NumHydrogens"
+        },
+        {
+          "state": "s6",
+          "atom": 31,
+          "count": 0,
+          "source": "native_NumHydrogens"
+        },
+        {
+          "state": "s6",
+          "atom": 32,
+          "count": 0,
+          "source": "native_NumHydrogens"
+        },
+        {
+          "state": "s6",
+          "atom": 33,
+          "count": 0,
+          "source": "native_NumHydrogens"
+        },
+        {
+          "state": "s6",
+          "atom": 34,
+          "count": 0,
+          "source": "native_NumHydrogens"
+        },
+        {
+          "state": "s6",
+          "atom": 35,
+          "count": 0,
+          "source": "native_NumHydrogens"
+        }
+      ],
+      "native_port_deviations": [
+        {
+          "flow": "t1_f1",
+          "side": "source",
+          "deviation_pt": 0.0
+        },
+        {
+          "flow": "t1_f1",
+          "side": "target",
+          "deviation_pt": 2.480000000000004
+        },
+        {
+          "flow": "t1_f2",
+          "side": "source",
+          "deviation_pt": 0.005000000000009663
+        },
+        {
+          "flow": "t1_f2",
+          "side": "target",
+          "deviation_pt": 2.857008925432326
+        },
+        {
+          "flow": "t2_f1",
+          "side": "source",
+          "deviation_pt": 0.0049999999999954525
+        },
+        {
+          "flow": "t2_f1",
+          "side": "target",
+          "deviation_pt": 2.842170943040401e-14
+        },
+        {
+          "flow": "t2_f3",
+          "side": "source",
+          "deviation_pt": 0.0
+        },
+        {
+          "flow": "t2_f3",
+          "side": "target",
+          "deviation_pt": 0.0046169837819629534
+        },
+        {
+          "flow": "t2_f2",
+          "side": "source",
+          "deviation_pt": 0.004999999999938609
+        },
+        {
+          "flow": "t2_f2",
+          "side": "target",
+          "deviation_pt": 2.6999999999999886
+        },
+        {
+          "flow": "t3_f1",
+          "side": "source",
+          "deviation_pt": 0.0
+        },
+        {
+          "flow": "t3_f1",
+          "side": "target",
+          "deviation_pt": 2.2648549702353193e-14
+        },
+        {
+          "flow": "t3_f2",
+          "side": "source",
+          "deviation_pt": 5.684341886080802e-14
+        },
+        {
+          "flow": "t3_f2",
+          "side": "target",
+          "deviation_pt": 2.8750304346215234
+        },
+        {
+          "flow": "t4_f1",
+          "side": "source",
+          "deviation_pt": 0.0
+        },
+        {
+          "flow": "t4_f1",
+          "side": "target",
+          "deviation_pt": 2.490000000000009
+        },
+        {
+          "flow": "t4_f2",
+          "side": "source",
+          "deviation_pt": 0.0049999999999954525
+        },
+        {
+          "flow": "t4_f2",
+          "side": "target",
+          "deviation_pt": 2.839999999999975
+        },
+        {
+          "flow": "t5_f1",
+          "side": "source",
+          "deviation_pt": 5.684341886080802e-14
+        },
+        {
+          "flow": "t5_f1",
+          "side": "target",
+          "deviation_pt": 2.4799999999999613
+        },
+        {
+          "flow": "t5_f2",
+          "side": "source",
+          "deviation_pt": 0.005000000000052296
+        },
+        {
+          "flow": "t5_f2",
+          "side": "target",
+          "deviation_pt": 2.856326311890875
+        },
+        {
+          "flow": "t6_f1",
+          "side": "source",
+          "deviation_pt": 0.0
+        },
+        {
+          "flow": "t6_f1",
+          "side": "target",
+          "deviation_pt": 2.480000000000004
+        },
+        {
+          "flow": "t6_f2",
+          "side": "source",
+          "deviation_pt": 0.0049999999999954525
+        },
+        {
+          "flow": "t6_f2",
+          "side": "target",
+          "deviation_pt": 2.3599999999999994
+        },
+        {
+          "flow": "t6_f3",
+          "side": "source",
+          "deviation_pt": 1.4210854715202004e-14
+        },
+        {
+          "flow": "t6_f3",
+          "side": "target",
+          "deviation_pt": 0.0022335532347808706
+        },
+        {
+          "flow": "t6_f4",
+          "side": "source",
+          "deviation_pt": 0.007071067811869093
+        },
+        {
+          "flow": "t6_f4",
+          "side": "target",
+          "deviation_pt": 2.6200000000000045
+        }
+      ],
+      "out_of_page_objects": [],
+      "chemical_fingerprint": "09b19a9f1c2ee187a486c4bfebd381cd440b486acb62ef7eba4fd1bc6b69bd58",
+      "curve_max_native_rounding_pt": 0.0067696418620390815,
+      "native_glyph_bbox_clearance_failures": [
+        {
+          "flow": "t3_f2",
+          "glyph_bbox_clearance_pt": 2.4582073400000013,
+          "contacts": [
+            {
+              "atom": 2,
+              "distance_pt": 2.4582073400000013
+            }
+          ]
+        }
+      ],
+      "bond_length_pt_range": [
+        14.33452126860186,
+        14.364156779985377
+      ],
+      "ordinary_bond_length_outliers": 0,
+      "actual_mask_collision_acceptance": "unverified",
+      "owner_visual_review": "pending"
+    },
+    {
+      "file": "mechanism-cdx-readback.cdxml",
+      "semantic_and_native_inventory": "pass",
+      "issues": [],
+      "counts": {
+        "n": 126,
+        "b": 111,
+        "curve": 15,
+        "arrow": 6
+      },
+      "lone_pairs": 42,
+      "native_hydrogen_readback": [
+        {
+          "state": "s0",
+          "atom": 1,
+          "count": 0,
+          "source": "native_graph_valence"
+        },
+        {
+          "state": "s0",
+          "atom": 2,
+          "count": 0,
+          "source": "native_NumHydrogens"
+        },
+        {
+          "state": "s0",
+          "atom": 3,
+          "count": 0,
+          "source": "native_NumHydrogens"
+        },
+        {
+          "state": "s0",
+          "atom": 4,
+          "count": 3,
+          "source": "native_graph_valence"
+        },
+        {
+          "state": "s0",
+          "atom": 10,
+          "count": 0,
+          "source": "native_graph_valence"
+        },
+        {
+          "state": "s0",
+          "atom": 11,
+          "count": 1,
+          "source": "native_graph_valence"
+        },
+        {
+          "state": "s0",
+          "atom": 12,
+          "count": 1,
+          "source": "native_graph_valence"
+        },
+        {
+          "state": "s0",
+          "atom": 13,
+          "count": 1,
+          "source": "native_graph_valence"
+        },
+        {
+          "state": "s0",
+          "atom": 14,
+          "count": 1,
+          "source": "native_graph_valence"
+        },
+        {
+          "state": "s0",
+          "atom": 15,
+          "count": 1,
+          "source": "native_graph_valence"
+        },
+        {
+          "state": "s0",
+          "atom": 20,
+          "count": 0,
+          "source": "native_NumHydrogens"
+        },
+        {
+          "state": "s0",
+          "atom": 21,
+          "count": 0,
+          "source": "native_NumHydrogens"
+        },
+        {
+          "state": "s0",
+          "atom": 30,
+          "count": 0,
+          "source": "native_NumHydrogens"
+        },
+        {
+          "state": "s0",
+          "atom": 31,
+          "count": 0,
+          "source": "native_NumHydrogens"
+        },
+        {
+          "state": "s0",
+          "atom": 32,
+          "count": 0,
+          "source": "native_NumHydrogens"
+        },
+        {
+          "state": "s0",
+          "atom": 33,
+          "count": 0,
+          "source": "native_NumHydrogens"
+        },
+        {
+          "state": "s0",
+          "atom": 34,
+          "count": 0,
+          "source": "native_NumHydrogens"
+        },
+        {
+          "state": "s0",
+          "atom": 35,
+          "count": 0,
+          "source": "native_NumHydrogens"
+        },
+        {
+          "state": "s1",
+          "atom": 1,
+          "count": 0,
+          "source": "native_graph_valence"
+        },
+        {
+          "state": "s1",
+          "atom": 2,
+          "count": 0,
+          "source": "native_NumHydrogens"
+        },
+        {
+          "state": "s1",
+          "atom": 3,
+          "count": 0,
+          "source": "native_NumHydrogens"
+        },
+        {
+          "state": "s1",
+          "atom": 4,
+          "count": 3,
+          "source": "native_graph_valence"
+        },
+        {
+          "state": "s1",
+          "atom": 10,
+          "count": 0,
+          "source": "native_graph_valence"
+        },
+        {
+          "state": "s1",
+          "atom": 11,
+          "count": 1,
+          "source": "native_graph_valence"
+        },
+        {
+          "state": "s1",
+          "atom": 12,
+          "count": 1,
+          "source": "native_graph_valence"
+        },
+        {
+          "state": "s1",
+          "atom": 13,
+          "count": 1,
+          "source": "native_graph_valence"
+        },
+        {
+          "state": "s1",
+          "atom": 14,
+          "count": 1,
+          "source": "native_graph_valence"
+        },
+        {
+          "state": "s1",
+          "atom": 15,
+          "count": 1,
+          "source": "native_graph_valence"
+        },
+        {
+          "state": "s1",
+          "atom": 20,
+          "count": 0,
+          "source": "native_NumHydrogens"
+        },
+        {
+          "state": "s1",
+          "atom": 21,
+          "count": 0,
+          "source": "native_NumHydrogens"
+        },
+        {
+          "state": "s1",
+          "atom": 30,
+          "count": 0,
+          "source": "native_NumHydrogens"
+        },
+        {
+          "state": "s1",
+          "atom": 31,
+          "count": 0,
+          "source": "native_NumHydrogens"
+        },
+        {
+          "state": "s1",
+          "atom": 32,
+          "count": 0,
+          "source": "native_NumHydrogens"
+        },
+        {
+          "state": "s1",
+          "atom": 33,
+          "count": 0,
+          "source": "native_NumHydrogens"
+        },
+        {
+          "state": "s1",
+          "atom": 34,
+          "count": 0,
+          "source": "native_NumHydrogens"
+        },
+        {
+          "state": "s1",
+          "atom": 35,
+          "count": 0,
+          "source": "native_NumHydrogens"
+        },
+        {
+          "state": "s2",
+          "atom": 1,
+          "count": 0,
+          "source": "native_graph_valence"
+        },
+        {
+          "state": "s2",
+          "atom": 2,
+          "count": 0,
+          "source": "native_NumHydrogens"
+        },
+        {
+          "state": "s2",
+          "atom": 3,
+          "count": 0,
+          "source": "native_NumHydrogens"
+        },
+        {
+          "state": "s2",
+          "atom": 4,
+          "count": 3,
+          "source": "native_graph_valence"
+        },
+        {
+          "state": "s2",
+          "atom": 10,
+          "count": 0,
+          "source": "native_graph_valence"
+        },
+        {
+          "state": "s2",
+          "atom": 11,
+          "count": 1,
+          "source": "native_graph_valence"
+        },
+        {
+          "state": "s2",
+          "atom": 12,
+          "count": 1,
+          "source": "native_graph_valence"
+        },
+        {
+          "state": "s2",
+          "atom": 13,
+          "count": 1,
+          "source": "native_graph_valence"
+        },
+        {
+          "state": "s2",
+          "atom": 14,
+          "count": 1,
+          "source": "native_graph_valence"
+        },
+        {
+          "state": "s2",
+          "atom": 15,
+          "count": 1,
+          "source": "native_graph_valence"
+        },
+        {
+          "state": "s2",
+          "atom": 20,
+          "count": 0,
+          "source": "native_NumHydrogens"
+        },
+        {
+          "state": "s2",
+          "atom": 21,
+          "count": 0,
+          "source": "native_NumHydrogens"
+        },
+        {
+          "state": "s2",
+          "atom": 30,
+          "count": 0,
+          "source": "native_NumHydrogens"
+        },
+        {
+          "state": "s2",
+          "atom": 31,
+          "count": 0,
+          "source": "native_NumHydrogens"
+        },
+        {
+          "state": "s2",
+          "atom": 32,
+          "count": 0,
+          "source": "native_NumHydrogens"
+        },
+        {
+          "state": "s2",
+          "atom": 33,
+          "count": 0,
+          "source": "native_NumHydrogens"
+        },
+        {
+          "state": "s2",
+          "atom": 34,
+          "count": 0,
+          "source": "native_NumHydrogens"
+        },
+        {
+          "state": "s2",
+          "atom": 35,
+          "count": 0,
+          "source": "native_NumHydrogens"
+        },
+        {
+          "state": "s3",
+          "atom": 1,
+          "count": 0,
+          "source": "native_graph_valence"
+        },
+        {
+          "state": "s3",
+          "atom": 2,
+          "count": 0,
+          "source": "native_NumHydrogens"
+        },
+        {
+          "state": "s3",
+          "atom": 3,
+          "count": 0,
+          "source": "native_NumHydrogens"
+        },
+        {
+          "state": "s3",
+          "atom": 4,
+          "count": 3,
+          "source": "native_graph_valence"
+        },
+        {
+          "state": "s3",
+          "atom": 10,
+          "count": 0,
+          "source": "native_graph_valence"
+        },
+        {
+          "state": "s3",
+          "atom": 11,
+          "count": 1,
+          "source": "native_graph_valence"
+        },
+        {
+          "state": "s3",
+          "atom": 12,
+          "count": 1,
+          "source": "native_graph_valence"
+        },
+        {
+          "state": "s3",
+          "atom": 13,
+          "count": 1,
+          "source": "native_graph_valence"
+        },
+        {
+          "state": "s3",
+          "atom": 14,
+          "count": 1,
+          "source": "native_graph_valence"
+        },
+        {
+          "state": "s3",
+          "atom": 15,
+          "count": 1,
+          "source": "native_graph_valence"
+        },
+        {
+          "state": "s3",
+          "atom": 20,
+          "count": 0,
+          "source": "native_NumHydrogens"
+        },
+        {
+          "state": "s3",
+          "atom": 21,
+          "count": 0,
+          "source": "native_NumHydrogens"
+        },
+        {
+          "state": "s3",
+          "atom": 30,
+          "count": 0,
+          "source": "native_NumHydrogens"
+        },
+        {
+          "state": "s3",
+          "atom": 31,
+          "count": 0,
+          "source": "native_NumHydrogens"
+        },
+        {
+          "state": "s3",
+          "atom": 32,
+          "count": 0,
+          "source": "native_NumHydrogens"
+        },
+        {
+          "state": "s3",
+          "atom": 33,
+          "count": 0,
+          "source": "native_NumHydrogens"
+        },
+        {
+          "state": "s3",
+          "atom": 34,
+          "count": 0,
+          "source": "native_NumHydrogens"
+        },
+        {
+          "state": "s3",
+          "atom": 35,
+          "count": 0,
+          "source": "native_NumHydrogens"
+        },
+        {
+          "state": "s4",
+          "atom": 1,
+          "count": 0,
+          "source": "native_graph_valence"
+        },
+        {
+          "state": "s4",
+          "atom": 2,
+          "count": 0,
+          "source": "native_NumHydrogens"
+        },
+        {
+          "state": "s4",
+          "atom": 3,
+          "count": 0,
+          "source": "native_NumHydrogens"
+        },
+        {
+          "state": "s4",
+          "atom": 4,
+          "count": 3,
+          "source": "native_graph_valence"
+        },
+        {
+          "state": "s4",
+          "atom": 10,
+          "count": 0,
+          "source": "native_graph_valence"
+        },
+        {
+          "state": "s4",
+          "atom": 11,
+          "count": 1,
+          "source": "native_graph_valence"
+        },
+        {
+          "state": "s4",
+          "atom": 12,
+          "count": 1,
+          "source": "native_graph_valence"
+        },
+        {
+          "state": "s4",
+          "atom": 13,
+          "count": 1,
+          "source": "native_graph_valence"
+        },
+        {
+          "state": "s4",
+          "atom": 14,
+          "count": 1,
+          "source": "native_graph_valence"
+        },
+        {
+          "state": "s4",
+          "atom": 15,
+          "count": 1,
+          "source": "native_graph_valence"
+        },
+        {
+          "state": "s4",
+          "atom": 20,
+          "count": 0,
+          "source": "native_NumHydrogens"
+        },
+        {
+          "state": "s4",
+          "atom": 21,
+          "count": 0,
+          "source": "native_NumHydrogens"
+        },
+        {
+          "state": "s4",
+          "atom": 30,
+          "count": 0,
+          "source": "native_NumHydrogens"
+        },
+        {
+          "state": "s4",
+          "atom": 31,
+          "count": 0,
+          "source": "native_NumHydrogens"
+        },
+        {
+          "state": "s4",
+          "atom": 32,
+          "count": 0,
+          "source": "native_NumHydrogens"
+        },
+        {
+          "state": "s4",
+          "atom": 33,
+          "count": 0,
+          "source": "native_NumHydrogens"
+        },
+        {
+          "state": "s4",
+          "atom": 34,
+          "count": 0,
+          "source": "native_NumHydrogens"
+        },
+        {
+          "state": "s4",
+          "atom": 35,
+          "count": 0,
+          "source": "native_NumHydrogens"
+        },
+        {
+          "state": "s5",
+          "atom": 1,
+          "count": 0,
+          "source": "native_graph_valence"
+        },
+        {
+          "state": "s5",
+          "atom": 2,
+          "count": 0,
+          "source": "native_NumHydrogens"
+        },
+        {
+          "state": "s5",
+          "atom": 3,
+          "count": 0,
+          "source": "native_NumHydrogens"
+        },
+        {
+          "state": "s5",
+          "atom": 4,
+          "count": 3,
+          "source": "native_graph_valence"
+        },
+        {
+          "state": "s5",
+          "atom": 10,
+          "count": 0,
+          "source": "native_graph_valence"
+        },
+        {
+          "state": "s5",
+          "atom": 11,
+          "count": 1,
+          "source": "native_graph_valence"
+        },
+        {
+          "state": "s5",
+          "atom": 12,
+          "count": 1,
+          "source": "native_graph_valence"
+        },
+        {
+          "state": "s5",
+          "atom": 13,
+          "count": 1,
+          "source": "native_graph_valence"
+        },
+        {
+          "state": "s5",
+          "atom": 14,
+          "count": 1,
+          "source": "native_graph_valence"
+        },
+        {
+          "state": "s5",
+          "atom": 15,
+          "count": 1,
+          "source": "native_graph_valence"
+        },
+        {
+          "state": "s5",
+          "atom": 20,
+          "count": 0,
+          "source": "native_NumHydrogens"
+        },
+        {
+          "state": "s5",
+          "atom": 21,
+          "count": 0,
+          "source": "native_NumHydrogens"
+        },
+        {
+          "state": "s5",
+          "atom": 30,
+          "count": 0,
+          "source": "native_NumHydrogens"
+        },
+        {
+          "state": "s5",
+          "atom": 31,
+          "count": 0,
+          "source": "native_NumHydrogens"
+        },
+        {
+          "state": "s5",
+          "atom": 32,
+          "count": 0,
+          "source": "native_NumHydrogens"
+        },
+        {
+          "state": "s5",
+          "atom": 33,
+          "count": 0,
+          "source": "native_NumHydrogens"
+        },
+        {
+          "state": "s5",
+          "atom": 34,
+          "count": 0,
+          "source": "native_NumHydrogens"
+        },
+        {
+          "state": "s5",
+          "atom": 35,
+          "count": 0,
+          "source": "native_NumHydrogens"
+        },
+        {
+          "state": "s6",
+          "atom": 1,
+          "count": 0,
+          "source": "native_graph_valence"
+        },
+        {
+          "state": "s6",
+          "atom": 2,
+          "count": 0,
+          "source": "native_NumHydrogens"
+        },
+        {
+          "state": "s6",
+          "atom": 3,
+          "count": 0,
+          "source": "native_NumHydrogens"
+        },
+        {
+          "state": "s6",
+          "atom": 4,
+          "count": 3,
+          "source": "native_graph_valence"
+        },
+        {
+          "state": "s6",
+          "atom": 10,
+          "count": 0,
+          "source": "native_graph_valence"
+        },
+        {
+          "state": "s6",
+          "atom": 11,
+          "count": 1,
+          "source": "native_graph_valence"
+        },
+        {
+          "state": "s6",
+          "atom": 12,
+          "count": 1,
+          "source": "native_graph_valence"
+        },
+        {
+          "state": "s6",
+          "atom": 13,
+          "count": 1,
+          "source": "native_graph_valence"
+        },
+        {
+          "state": "s6",
+          "atom": 14,
+          "count": 1,
+          "source": "native_graph_valence"
+        },
+        {
+          "state": "s6",
+          "atom": 15,
+          "count": 1,
+          "source": "native_graph_valence"
+        },
+        {
+          "state": "s6",
+          "atom": 20,
+          "count": 0,
+          "source": "native_NumHydrogens"
+        },
+        {
+          "state": "s6",
+          "atom": 21,
+          "count": 0,
+          "source": "native_NumHydrogens"
+        },
+        {
+          "state": "s6",
+          "atom": 30,
+          "count": 0,
+          "source": "native_NumHydrogens"
+        },
+        {
+          "state": "s6",
+          "atom": 31,
+          "count": 0,
+          "source": "native_NumHydrogens"
+        },
+        {
+          "state": "s6",
+          "atom": 32,
+          "count": 0,
+          "source": "native_NumHydrogens"
+        },
+        {
+          "state": "s6",
+          "atom": 33,
+          "count": 0,
+          "source": "native_NumHydrogens"
+        },
+        {
+          "state": "s6",
+          "atom": 34,
+          "count": 0,
+          "source": "native_NumHydrogens"
+        },
+        {
+          "state": "s6",
+          "atom": 35,
+          "count": 0,
+          "source": "native_NumHydrogens"
+        }
+      ],
+      "native_port_deviations": [
+        {
+          "flow": "t1_f1",
+          "side": "source",
+          "deviation_pt": 0.0
+        },
+        {
+          "flow": "t1_f1",
+          "side": "target",
+          "deviation_pt": 2.480000000000004
+        },
+        {
+          "flow": "t1_f2",
+          "side": "source",
+          "deviation_pt": 0.005000000000009663
+        },
+        {
+          "flow": "t1_f2",
+          "side": "target",
+          "deviation_pt": 2.857008925432326
+        },
+        {
+          "flow": "t2_f1",
+          "side": "source",
+          "deviation_pt": 0.0049999999999954525
+        },
+        {
+          "flow": "t2_f1",
+          "side": "target",
+          "deviation_pt": 2.842170943040401e-14
+        },
+        {
+          "flow": "t2_f3",
+          "side": "source",
+          "deviation_pt": 0.0
+        },
+        {
+          "flow": "t2_f3",
+          "side": "target",
+          "deviation_pt": 0.0046169837819629534
+        },
+        {
+          "flow": "t2_f2",
+          "side": "source",
+          "deviation_pt": 0.004999999999938609
+        },
+        {
+          "flow": "t2_f2",
+          "side": "target",
+          "deviation_pt": 2.6999999999999886
+        },
+        {
+          "flow": "t3_f1",
+          "side": "source",
+          "deviation_pt": 0.0
+        },
+        {
+          "flow": "t3_f1",
+          "side": "target",
+          "deviation_pt": 2.2648549702353193e-14
+        },
+        {
+          "flow": "t3_f2",
+          "side": "source",
+          "deviation_pt": 5.684341886080802e-14
+        },
+        {
+          "flow": "t3_f2",
+          "side": "target",
+          "deviation_pt": 2.8750304346215234
+        },
+        {
+          "flow": "t4_f1",
+          "side": "source",
+          "deviation_pt": 0.0
+        },
+        {
+          "flow": "t4_f1",
+          "side": "target",
+          "deviation_pt": 2.490000000000009
+        },
+        {
+          "flow": "t4_f2",
+          "side": "source",
+          "deviation_pt": 0.0049999999999954525
+        },
+        {
+          "flow": "t4_f2",
+          "side": "target",
+          "deviation_pt": 2.839999999999975
+        },
+        {
+          "flow": "t5_f1",
+          "side": "source",
+          "deviation_pt": 5.684341886080802e-14
+        },
+        {
+          "flow": "t5_f1",
+          "side": "target",
+          "deviation_pt": 2.4799999999999613
+        },
+        {
+          "flow": "t5_f2",
+          "side": "source",
+          "deviation_pt": 0.005000000000052296
+        },
+        {
+          "flow": "t5_f2",
+          "side": "target",
+          "deviation_pt": 2.856326311890875
+        },
+        {
+          "flow": "t6_f1",
+          "side": "source",
+          "deviation_pt": 0.0
+        },
+        {
+          "flow": "t6_f1",
+          "side": "target",
+          "deviation_pt": 2.480000000000004
+        },
+        {
+          "flow": "t6_f2",
+          "side": "source",
+          "deviation_pt": 0.0049999999999954525
+        },
+        {
+          "flow": "t6_f2",
+          "side": "target",
+          "deviation_pt": 2.3599999999999994
+        },
+        {
+          "flow": "t6_f3",
+          "side": "source",
+          "deviation_pt": 1.4210854715202004e-14
+        },
+        {
+          "flow": "t6_f3",
+          "side": "target",
+          "deviation_pt": 0.0022335532347808706
+        },
+        {
+          "flow": "t6_f4",
+          "side": "source",
+          "deviation_pt": 0.007071067811869093
+        },
+        {
+          "flow": "t6_f4",
+          "side": "target",
+          "deviation_pt": 2.6200000000000045
+        }
+      ],
+      "out_of_page_objects": [],
+      "chemical_fingerprint": "09b19a9f1c2ee187a486c4bfebd381cd440b486acb62ef7eba4fd1bc6b69bd58",
+      "curve_max_native_rounding_pt": 0.0067696418620390815,
+      "native_glyph_bbox_clearance_failures": [
+        {
+          "flow": "t3_f2",
+          "glyph_bbox_clearance_pt": 2.4582073400000013,
+          "contacts": [
+            {
+              "atom": 2,
+              "distance_pt": 2.4582073400000013
+            }
+          ]
+        }
+      ],
+      "bond_length_pt_range": [
+        14.33452126860186,
+        14.364156779985377
+      ],
+      "ordinary_bond_length_outliers": 0,
+      "actual_mask_collision_acceptance": "unverified",
+      "owner_visual_review": "pending"
+    },
+    {
+      "file": "mechanism-cdxml-readback.cdxml",
+      "semantic_and_native_inventory": "pass",
+      "issues": [],
+      "counts": {
+        "n": 126,
+        "b": 111,
+        "curve": 15,
+        "arrow": 6
+      },
+      "lone_pairs": 42,
+      "native_hydrogen_readback": [
+        {
+          "state": "s0",
+          "atom": 1,
+          "count": 0,
+          "source": "native_graph_valence"
+        },
+        {
+          "state": "s0",
+          "atom": 2,
+          "count": 0,
+          "source": "native_NumHydrogens"
+        },
+        {
+          "state": "s0",
+          "atom": 3,
+          "count": 0,
+          "source": "native_NumHydrogens"
+        },
+        {
+          "state": "s0",
+          "atom": 4,
+          "count": 3,
+          "source": "native_graph_valence"
+        },
+        {
+          "state": "s0",
+          "atom": 10,
+          "count": 0,
+          "source": "native_graph_valence"
+        },
+        {
+          "state": "s0",
+          "atom": 11,
+          "count": 1,
+          "source": "native_graph_valence"
+        },
+        {
+          "state": "s0",
+          "atom": 12,
+          "count": 1,
+          "source": "native_graph_valence"
+        },
+        {
+          "state": "s0",
+          "atom": 13,
+          "count": 1,
+          "source": "native_graph_valence"
+        },
+        {
+          "state": "s0",
+          "atom": 14,
+          "count": 1,
+          "source": "native_graph_valence"
+        },
+        {
+          "state": "s0",
+          "atom": 15,
+          "count": 1,
+          "source": "native_graph_valence"
+        },
+        {
+          "state": "s0",
+          "atom": 20,
+          "count": 0,
+          "source": "native_NumHydrogens"
+        },
+        {
+          "state": "s0",
+          "atom": 21,
+          "count": 0,
+          "source": "native_NumHydrogens"
+        },
+        {
+          "state": "s0",
+          "atom": 30,
+          "count": 0,
+          "source": "native_NumHydrogens"
+        },
+        {
+          "state": "s0",
+          "atom": 31,
+          "count": 0,
+          "source": "native_NumHydrogens"
+        },
+        {
+          "state": "s0",
+          "atom": 32,
+          "count": 0,
+          "source": "native_NumHydrogens"
+        },
+        {
+          "state": "s0",
+          "atom": 33,
+          "count": 0,
+          "source": "native_NumHydrogens"
+        },
+        {
+          "state": "s0",
+          "atom": 34,
+          "count": 0,
+          "source": "native_NumHydrogens"
+        },
+        {
+          "state": "s0",
+          "atom": 35,
+          "count": 0,
+          "source": "native_NumHydrogens"
+        },
+        {
+          "state": "s1",
+          "atom": 1,
+          "count": 0,
+          "source": "native_graph_valence"
+        },
+        {
+          "state": "s1",
+          "atom": 2,
+          "count": 0,
+          "source": "native_NumHydrogens"
+        },
+        {
+          "state": "s1",
+          "atom": 3,
+          "count": 0,
+          "source": "native_NumHydrogens"
+        },
+        {
+          "state": "s1",
+          "atom": 4,
+          "count": 3,
+          "source": "native_graph_valence"
+        },
+        {
+          "state": "s1",
+          "atom": 10,
+          "count": 0,
+          "source": "native_graph_valence"
+        },
+        {
+          "state": "s1",
+          "atom": 11,
+          "count": 1,
+          "source": "native_graph_valence"
+        },
+        {
+          "state": "s1",
+          "atom": 12,
+          "count": 1,
+          "source": "native_graph_valence"
+        },
+        {
+          "state": "s1",
+          "atom": 13,
+          "count": 1,
+          "source": "native_graph_valence"
+        },
+        {
+          "state": "s1",
+          "atom": 14,
+          "count": 1,
+          "source": "native_graph_valence"
+        },
+        {
+          "state": "s1",
+          "atom": 15,
+          "count": 1,
+          "source": "native_graph_valence"
+        },
+        {
+          "state": "s1",
+          "atom": 20,
+          "count": 0,
+          "source": "native_NumHydrogens"
+        },
+        {
+          "state": "s1",
+          "atom": 21,
+          "count": 0,
+          "source": "native_NumHydrogens"
+        },
+        {
+          "state": "s1",
+          "atom": 30,
+          "count": 0,
+          "source": "native_NumHydrogens"
+        },
+        {
+          "state": "s1",
+          "atom": 31,
+          "count": 0,
+          "source": "native_NumHydrogens"
+        },
+        {
+          "state": "s1",
+          "atom": 32,
+          "count": 0,
+          "source": "native_NumHydrogens"
+        },
+        {
+          "state": "s1",
+          "atom": 33,
+          "count": 0,
+          "source": "native_NumHydrogens"
+        },
+        {
+          "state": "s1",
+          "atom": 34,
+          "count": 0,
+          "source": "native_NumHydrogens"
+        },
+        {
+          "state": "s1",
+          "atom": 35,
+          "count": 0,
+          "source": "native_NumHydrogens"
+        },
+        {
+          "state": "s2",
+          "atom": 1,
+          "count": 0,
+          "source": "native_graph_valence"
+        },
+        {
+          "state": "s2",
+          "atom": 2,
+          "count": 0,
+          "source": "native_NumHydrogens"
+        },
+        {
+          "state": "s2",
+          "atom": 3,
+          "count": 0,
+          "source": "native_NumHydrogens"
+        },
+        {
+          "state": "s2",
+          "atom": 4,
+          "count": 3,
+          "source": "native_graph_valence"
+        },
+        {
+          "state": "s2",
+          "atom": 10,
+          "count": 0,
+          "source": "native_graph_valence"
+        },
+        {
+          "state": "s2",
+          "atom": 11,
+          "count": 1,
+          "source": "native_graph_valence"
+        },
+        {
+          "state": "s2",
+          "atom": 12,
+          "count": 1,
+          "source": "native_graph_valence"
+        },
+        {
+          "state": "s2",
+          "atom": 13,
+          "count": 1,
+          "source": "native_graph_valence"
+        },
+        {
+          "state": "s2",
+          "atom": 14,
+          "count": 1,
+          "source": "native_graph_valence"
+        },
+        {
+          "state": "s2",
+          "atom": 15,
+          "count": 1,
+          "source": "native_graph_valence"
+        },
+        {
+          "state": "s2",
+          "atom": 20,
+          "count": 0,
+          "source": "native_NumHydrogens"
+        },
+        {
+          "state": "s2",
+          "atom": 21,
+          "count": 0,
+          "source": "native_NumHydrogens"
+        },
+        {
+          "state": "s2",
+          "atom": 30,
+          "count": 0,
+          "source": "native_NumHydrogens"
+        },
+        {
+          "state": "s2",
+          "atom": 31,
+          "count": 0,
+          "source": "native_NumHydrogens"
+        },
+        {
+          "state": "s2",
+          "atom": 32,
+          "count": 0,
+          "source": "native_NumHydrogens"
+        },
+        {
+          "state": "s2",
+          "atom": 33,
+          "count": 0,
+          "source": "native_NumHydrogens"
+        },
+        {
+          "state": "s2",
+          "atom": 34,
+          "count": 0,
+          "source": "native_NumHydrogens"
+        },
+        {
+          "state": "s2",
+          "atom": 35,
+          "count": 0,
+          "source": "native_NumHydrogens"
+        },
+        {
+          "state": "s3",
+          "atom": 1,
+          "count": 0,
+          "source": "native_graph_valence"
+        },
+        {
+          "state": "s3",
+          "atom": 2,
+          "count": 0,
+          "source": "native_NumHydrogens"
+        },
+        {
+          "state": "s3",
+          "atom": 3,
+          "count": 0,
+          "source": "native_NumHydrogens"
+        },
+        {
+          "state": "s3",
+          "atom": 4,
+          "count": 3,
+          "source": "native_graph_valence"
+        },
+        {
+          "state": "s3",
+          "atom": 10,
+          "count": 0,
+          "source": "native_graph_valence"
+        },
+        {
+          "state": "s3",
+          "atom": 11,
+          "count": 1,
+          "source": "native_graph_valence"
+        },
+        {
+          "state": "s3",
+          "atom": 12,
+          "count": 1,
+          "source": "native_graph_valence"
+        },
+        {
+          "state": "s3",
+          "atom": 13,
+          "count": 1,
+          "source": "native_graph_valence"
+        },
+        {
+          "state": "s3",
+          "atom": 14,
+          "count": 1,
+          "source": "native_graph_valence"
+        },
+        {
+          "state": "s3",
+          "atom": 15,
+          "count": 1,
+          "source": "native_graph_valence"
+        },
+        {
+          "state": "s3",
+          "atom": 20,
+          "count": 0,
+          "source": "native_NumHydrogens"
+        },
+        {
+          "state": "s3",
+          "atom": 21,
+          "count": 0,
+          "source": "native_NumHydrogens"
+        },
+        {
+          "state": "s3",
+          "atom": 30,
+          "count": 0,
+          "source": "native_NumHydrogens"
+        },
+        {
+          "state": "s3",
+          "atom": 31,
+          "count": 0,
+          "source": "native_NumHydrogens"
+        },
+        {
+          "state": "s3",
+          "atom": 32,
+          "count": 0,
+          "source": "native_NumHydrogens"
+        },
+        {
+          "state": "s3",
+          "atom": 33,
+          "count": 0,
+          "source": "native_NumHydrogens"
+        },
+        {
+          "state": "s3",
+          "atom": 34,
+          "count": 0,
+          "source": "native_NumHydrogens"
+        },
+        {
+          "state": "s3",
+          "atom": 35,
+          "count": 0,
+          "source": "native_NumHydrogens"
+        },
+        {
+          "state": "s4",
+          "atom": 1,
+          "count": 0,
+          "source": "native_graph_valence"
+        },
+        {
+          "state": "s4",
+          "atom": 2,
+          "count": 0,
+          "source": "native_NumHydrogens"
+        },
+        {
+          "state": "s4",
+          "atom": 3,
+          "count": 0,
+          "source": "native_NumHydrogens"
+        },
+        {
+          "state": "s4",
+          "atom": 4,
+          "count": 3,
+          "source": "native_graph_valence"
+        },
+        {
+          "state": "s4",
+          "atom": 10,
+          "count": 0,
+          "source": "native_graph_valence"
+        },
+        {
+          "state": "s4",
+          "atom": 11,
+          "count": 1,
+          "source": "native_graph_valence"
+        },
+        {
+          "state": "s4",
+          "atom": 12,
+          "count": 1,
+          "source": "native_graph_valence"
+        },
+        {
+          "state": "s4",
+          "atom": 13,
+          "count": 1,
+          "source": "native_graph_valence"
+        },
+        {
+          "state": "s4",
+          "atom": 14,
+          "count": 1,
+          "source": "native_graph_valence"
+        },
+        {
+          "state": "s4",
+          "atom": 15,
+          "count": 1,
+          "source": "native_graph_valence"
+        },
+        {
+          "state": "s4",
+          "atom": 20,
+          "count": 0,
+          "source": "native_NumHydrogens"
+        },
+        {
+          "state": "s4",
+          "atom": 21,
+          "count": 0,
+          "source": "native_NumHydrogens"
+        },
+        {
+          "state": "s4",
+          "atom": 30,
+          "count": 0,
+          "source": "native_NumHydrogens"
+        },
+        {
+          "state": "s4",
+          "atom": 31,
+          "count": 0,
+          "source": "native_NumHydrogens"
+        },
+        {
+          "state": "s4",
+          "atom": 32,
+          "count": 0,
+          "source": "native_NumHydrogens"
+        },
+        {
+          "state": "s4",
+          "atom": 33,
+          "count": 0,
+          "source": "native_NumHydrogens"
+        },
+        {
+          "state": "s4",
+          "atom": 34,
+          "count": 0,
+          "source": "native_NumHydrogens"
+        },
+        {
+          "state": "s4",
+          "atom": 35,
+          "count": 0,
+          "source": "native_NumHydrogens"
+        },
+        {
+          "state": "s5",
+          "atom": 1,
+          "count": 0,
+          "source": "native_graph_valence"
+        },
+        {
+          "state": "s5",
+          "atom": 2,
+          "count": 0,
+          "source": "native_NumHydrogens"
+        },
+        {
+          "state": "s5",
+          "atom": 3,
+          "count": 0,
+          "source": "native_NumHydrogens"
+        },
+        {
+          "state": "s5",
+          "atom": 4,
+          "count": 3,
+          "source": "native_graph_valence"
+        },
+        {
+          "state": "s5",
+          "atom": 10,
+          "count": 0,
+          "source": "native_graph_valence"
+        },
+        {
+          "state": "s5",
+          "atom": 11,
+          "count": 1,
+          "source": "native_graph_valence"
+        },
+        {
+          "state": "s5",
+          "atom": 12,
+          "count": 1,
+          "source": "native_graph_valence"
+        },
+        {
+          "state": "s5",
+          "atom": 13,
+          "count": 1,
+          "source": "native_graph_valence"
+        },
+        {
+          "state": "s5",
+          "atom": 14,
+          "count": 1,
+          "source": "native_graph_valence"
+        },
+        {
+          "state": "s5",
+          "atom": 15,
+          "count": 1,
+          "source": "native_graph_valence"
+        },
+        {
+          "state": "s5",
+          "atom": 20,
+          "count": 0,
+          "source": "native_NumHydrogens"
+        },
+        {
+          "state": "s5",
+          "atom": 21,
+          "count": 0,
+          "source": "native_NumHydrogens"
+        },
+        {
+          "state": "s5",
+          "atom": 30,
+          "count": 0,
+          "source": "native_NumHydrogens"
+        },
+        {
+          "state": "s5",
+          "atom": 31,
+          "count": 0,
+          "source": "native_NumHydrogens"
+        },
+        {
+          "state": "s5",
+          "atom": 32,
+          "count": 0,
+          "source": "native_NumHydrogens"
+        },
+        {
+          "state": "s5",
+          "atom": 33,
+          "count": 0,
+          "source": "native_NumHydrogens"
+        },
+        {
+          "state": "s5",
+          "atom": 34,
+          "count": 0,
+          "source": "native_NumHydrogens"
+        },
+        {
+          "state": "s5",
+          "atom": 35,
+          "count": 0,
+          "source": "native_NumHydrogens"
+        },
+        {
+          "state": "s6",
+          "atom": 1,
+          "count": 0,
+          "source": "native_graph_valence"
+        },
+        {
+          "state": "s6",
+          "atom": 2,
+          "count": 0,
+          "source": "native_NumHydrogens"
+        },
+        {
+          "state": "s6",
+          "atom": 3,
+          "count": 0,
+          "source": "native_NumHydrogens"
+        },
+        {
+          "state": "s6",
+          "atom": 4,
+          "count": 3,
+          "source": "native_graph_valence"
+        },
+        {
+          "state": "s6",
+          "atom": 10,
+          "count": 0,
+          "source": "native_graph_valence"
+        },
+        {
+          "state": "s6",
+          "atom": 11,
+          "count": 1,
+          "source": "native_graph_valence"
+        },
+        {
+          "state": "s6",
+          "atom": 12,
+          "count": 1,
+          "source": "native_graph_valence"
+        },
+        {
+          "state": "s6",
+          "atom": 13,
+          "count": 1,
+          "source": "native_graph_valence"
+        },
+        {
+          "state": "s6",
+          "atom": 14,
+          "count": 1,
+          "source": "native_graph_valence"
+        },
+        {
+          "state": "s6",
+          "atom": 15,
+          "count": 1,
+          "source": "native_graph_valence"
+        },
+        {
+          "state": "s6",
+          "atom": 20,
+          "count": 0,
+          "source": "native_NumHydrogens"
+        },
+        {
+          "state": "s6",
+          "atom": 21,
+          "count": 0,
+          "source": "native_NumHydrogens"
+        },
+        {
+          "state": "s6",
+          "atom": 30,
+          "count": 0,
+          "source": "native_NumHydrogens"
+        },
+        {
+          "state": "s6",
+          "atom": 31,
+          "count": 0,
+          "source": "native_NumHydrogens"
+        },
+        {
+          "state": "s6",
+          "atom": 32,
+          "count": 0,
+          "source": "native_NumHydrogens"
+        },
+        {
+          "state": "s6",
+          "atom": 33,
+          "count": 0,
+          "source": "native_NumHydrogens"
+        },
+        {
+          "state": "s6",
+          "atom": 34,
+          "count": 0,
+          "source": "native_NumHydrogens"
+        },
+        {
+          "state": "s6",
+          "atom": 35,
+          "count": 0,
+          "source": "native_NumHydrogens"
+        }
+      ],
+      "native_port_deviations": [
+        {
+          "flow": "t1_f1",
+          "side": "source",
+          "deviation_pt": 0.0
+        },
+        {
+          "flow": "t1_f1",
+          "side": "target",
+          "deviation_pt": 2.480000000000004
+        },
+        {
+          "flow": "t1_f2",
+          "side": "source",
+          "deviation_pt": 0.005000000000009663
+        },
+        {
+          "flow": "t1_f2",
+          "side": "target",
+          "deviation_pt": 2.857008925432326
+        },
+        {
+          "flow": "t2_f1",
+          "side": "source",
+          "deviation_pt": 0.0049999999999954525
+        },
+        {
+          "flow": "t2_f1",
+          "side": "target",
+          "deviation_pt": 2.842170943040401e-14
+        },
+        {
+          "flow": "t2_f3",
+          "side": "source",
+          "deviation_pt": 0.0
+        },
+        {
+          "flow": "t2_f3",
+          "side": "target",
+          "deviation_pt": 0.0046169837819629534
+        },
+        {
+          "flow": "t2_f2",
+          "side": "source",
+          "deviation_pt": 0.004999999999938609
+        },
+        {
+          "flow": "t2_f2",
+          "side": "target",
+          "deviation_pt": 2.6999999999999886
+        },
+        {
+          "flow": "t3_f1",
+          "side": "source",
+          "deviation_pt": 0.0
+        },
+        {
+          "flow": "t3_f1",
+          "side": "target",
+          "deviation_pt": 2.2648549702353193e-14
+        },
+        {
+          "flow": "t3_f2",
+          "side": "source",
+          "deviation_pt": 5.684341886080802e-14
+        },
+        {
+          "flow": "t3_f2",
+          "side": "target",
+          "deviation_pt": 2.8750304346215234
+        },
+        {
+          "flow": "t4_f1",
+          "side": "source",
+          "deviation_pt": 0.0
+        },
+        {
+          "flow": "t4_f1",
+          "side": "target",
+          "deviation_pt": 2.490000000000009
+        },
+        {
+          "flow": "t4_f2",
+          "side": "source",
+          "deviation_pt": 0.0049999999999954525
+        },
+        {
+          "flow": "t4_f2",
+          "side": "target",
+          "deviation_pt": 2.839999999999975
+        },
+        {
+          "flow": "t5_f1",
+          "side": "source",
+          "deviation_pt": 5.684341886080802e-14
+        },
+        {
+          "flow": "t5_f1",
+          "side": "target",
+          "deviation_pt": 2.4799999999999613
+        },
+        {
+          "flow": "t5_f2",
+          "side": "source",
+          "deviation_pt": 0.005000000000052296
+        },
+        {
+          "flow": "t5_f2",
+          "side": "target",
+          "deviation_pt": 2.856326311890875
+        },
+        {
+          "flow": "t6_f1",
+          "side": "source",
+          "deviation_pt": 0.0
+        },
+        {
+          "flow": "t6_f1",
+          "side": "target",
+          "deviation_pt": 2.480000000000004
+        },
+        {
+          "flow": "t6_f2",
+          "side": "source",
+          "deviation_pt": 0.0049999999999954525
+        },
+        {
+          "flow": "t6_f2",
+          "side": "target",
+          "deviation_pt": 2.3599999999999994
+        },
+        {
+          "flow": "t6_f3",
+          "side": "source",
+          "deviation_pt": 1.4210854715202004e-14
+        },
+        {
+          "flow": "t6_f3",
+          "side": "target",
+          "deviation_pt": 0.0022335532347808706
+        },
+        {
+          "flow": "t6_f4",
+          "side": "source",
+          "deviation_pt": 0.007071067811869093
+        },
+        {
+          "flow": "t6_f4",
+          "side": "target",
+          "deviation_pt": 2.6200000000000045
+        }
+      ],
+      "out_of_page_objects": [],
+      "chemical_fingerprint": "09b19a9f1c2ee187a486c4bfebd381cd440b486acb62ef7eba4fd1bc6b69bd58",
+      "curve_max_native_rounding_pt": 0.0067696418620390815,
+      "native_glyph_bbox_clearance_failures": [
+        {
+          "flow": "t3_f2",
+          "glyph_bbox_clearance_pt": 2.4582073400000013,
+          "contacts": [
+            {
+              "atom": 2,
+              "distance_pt": 2.4582073400000013
+            }
+          ]
+        }
+      ],
+      "bond_length_pt_range": [
+        14.33452126860186,
+        14.364156779985377
+      ],
+      "ordinary_bond_length_outliers": 0,
+      "actual_mask_collision_acceptance": "unverified",
+      "owner_visual_review": "pending"
+    }
+  ],
+  "saved_source_arrow_aliases": [
+    {
+      "semantic_id": "t1",
+      "input_native_id": "346",
+      "saved_native_id": "354",
+      "evidence": "explicit SupersededBy chain in saved source"
+    },
+    {
+      "semantic_id": "t2",
+      "input_native_id": "347",
+      "saved_native_id": "355",
+      "evidence": "explicit SupersededBy chain in saved source"
+    },
+    {
+      "semantic_id": "t3",
+      "input_native_id": "348",
+      "saved_native_id": "356",
+      "evidence": "explicit SupersededBy chain in saved source"
+    },
+    {
+      "semantic_id": "t4",
+      "input_native_id": "349",
+      "saved_native_id": "357",
+      "evidence": "explicit SupersededBy chain in saved source"
+    },
+    {
+      "semantic_id": "t5",
+      "input_native_id": "350",
+      "saved_native_id": "358",
+      "evidence": "explicit SupersededBy chain in saved source"
+    },
+    {
+      "semantic_id": "t6",
+      "input_native_id": "351",
+      "saved_native_id": "359",
+      "evidence": "explicit SupersededBy chain in saved source"
+    }
+  ],
+  "native_warnings": [
+    0,
+    0,
+    0
+  ],
+  "both_format_fingerprints_equal": true,
+  "readback_gate": "pass",
+  "full_quality_gate": "failed",
+  "manual_active_correction_seconds": null,
+  "manual_edit_count": null,
+  "automatic_anti_selection": "unverified_complete_ir_supplied",
+  "holdout": "not_started"
+}

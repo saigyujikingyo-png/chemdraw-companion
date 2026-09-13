@@ -1,0 +1,12 @@
+[
+  {
+    "path": "<checkout>\\artifacts\\save-path-20260912-181437\\path-probe-20260912-181437.cdxml",
+    "exists": false,
+    "atoms": 3
+  },
+  {
+    "path": "<workspace>\\work\\native-probe-20260912-175952\\path-probe-20260912-181437.cdxml",
+    "exists": false,
+    "atoms": 3
+  }
+]

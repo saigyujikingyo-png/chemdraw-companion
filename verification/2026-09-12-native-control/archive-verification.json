@@ -1,0 +1,8 @@
+{
+  "verified_utc": "2026-09-12T21:51:05.019333+00:00",
+  "archive_entries_checked": 529,
+  "immutable_native_files_checked": 389,
+  "archive_sha256_matches": true,
+  "private_path_and_common_credential_marker_scan": "no_matches",
+  "scope": "Explicit selected local synthetic evidence only; no broad account/configuration scan."
+}

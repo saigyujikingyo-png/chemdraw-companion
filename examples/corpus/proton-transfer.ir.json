@@ -1,0 +1,516 @@
+{
+  "version": "corpus-mechanism-ir/0.1",
+  "id": "proton-transfer",
+  "entry_state": "before",
+  "scope": {
+    "atom_inventory": "closed",
+    "omissions": [
+      "No implicit counterion is asserted; total represented charge is checked."
+    ],
+    "scientific_status": "unreviewed"
+  },
+  "atoms": [
+    {
+      "id": "a1",
+      "element": "O",
+      "isotope": null
+    },
+    {
+      "id": "a2",
+      "element": "N",
+      "isotope": null
+    },
+    {
+      "id": "a3",
+      "element": "H",
+      "isotope": null
+    },
+    {
+      "id": "a4",
+      "element": "H",
+      "isotope": null
+    },
+    {
+      "id": "a5",
+      "element": "H",
+      "isotope": null
+    },
+    {
+      "id": "a6",
+      "element": "H",
+      "isotope": null
+    },
+    {
+      "id": "a7",
+      "element": "H",
+      "isotope": null
+    }
+  ],
+  "states": [
+    {
+      "id": "before",
+      "label": "before",
+      "species_refs": [
+        "before:species0",
+        "before:species1"
+      ]
+    },
+    {
+      "id": "after",
+      "label": "after",
+      "species_refs": [
+        "after:species0",
+        "after:species1"
+      ]
+    }
+  ],
+  "species": [
+    {
+      "id": "before:species0",
+      "state_ref": "before",
+      "molecule_refs": [
+        "before:m0"
+      ],
+      "role": "reactant",
+      "stoichiometry": 1
+    },
+    {
+      "id": "before:species1",
+      "state_ref": "before",
+      "molecule_refs": [
+        "before:m1"
+      ],
+      "role": "reactant",
+      "stoichiometry": 1
+    },
+    {
+      "id": "after:species0",
+      "state_ref": "after",
+      "molecule_refs": [
+        "after:m0"
+      ],
+      "role": "product",
+      "stoichiometry": 1
+    },
+    {
+      "id": "after:species1",
+      "state_ref": "after",
+      "molecule_refs": [
+        "after:m1"
+      ],
+      "role": "product",
+      "stoichiometry": 1
+    }
+  ],
+  "molecules": [
+    {
+      "id": "before:m0",
+      "state_ref": "before",
+      "atom_refs": [
+        "before:a1",
+        "before:a3"
+      ],
+      "bond_refs": [
+        "before:b:1:3"
+      ]
+    },
+    {
+      "id": "before:m1",
+      "state_ref": "before",
+      "atom_refs": [
+        "before:a2",
+        "before:a4",
+        "before:a5",
+        "before:a6",
+        "before:a7"
+      ],
+      "bond_refs": [
+        "before:b:2:4",
+        "before:b:2:5",
+        "before:b:2:6",
+        "before:b:2:7"
+      ]
+    },
+    {
+      "id": "after:m0",
+      "state_ref": "after",
+      "atom_refs": [
+        "after:a1",
+        "after:a3",
+        "after:a4"
+      ],
+      "bond_refs": [
+        "after:b:1:3",
+        "after:b:1:4"
+      ]
+    },
+    {
+      "id": "after:m1",
+      "state_ref": "after",
+      "atom_refs": [
+        "after:a2",
+        "after:a5",
+        "after:a6",
+        "after:a7"
+      ],
+      "bond_refs": [
+        "after:b:2:5",
+        "after:b:2:6",
+        "after:b:2:7"
+      ]
+    }
+  ],
+  "atom_occurrences": [
+    {
+      "id": "before:a1",
+      "atom_ref": "a1",
+      "state_ref": "before",
+      "molecule_ref": "before:m0",
+      "implicit_h": 0
+    },
+    {
+      "id": "before:a3",
+      "atom_ref": "a3",
+      "state_ref": "before",
+      "molecule_ref": "before:m0",
+      "implicit_h": 0
+    },
+    {
+      "id": "before:a2",
+      "atom_ref": "a2",
+      "state_ref": "before",
+      "molecule_ref": "before:m1",
+      "implicit_h": 0
+    },
+    {
+      "id": "before:a4",
+      "atom_ref": "a4",
+      "state_ref": "before",
+      "molecule_ref": "before:m1",
+      "implicit_h": 0
+    },
+    {
+      "id": "before:a5",
+      "atom_ref": "a5",
+      "state_ref": "before",
+      "molecule_ref": "before:m1",
+      "implicit_h": 0
+    },
+    {
+      "id": "before:a6",
+      "atom_ref": "a6",
+      "state_ref": "before",
+      "molecule_ref": "before:m1",
+      "implicit_h": 0
+    },
+    {
+      "id": "before:a7",
+      "atom_ref": "a7",
+      "state_ref": "before",
+      "molecule_ref": "before:m1",
+      "implicit_h": 0
+    },
+    {
+      "id": "after:a1",
+      "atom_ref": "a1",
+      "state_ref": "after",
+      "molecule_ref": "after:m0",
+      "implicit_h": 0
+    },
+    {
+      "id": "after:a3",
+      "atom_ref": "a3",
+      "state_ref": "after",
+      "molecule_ref": "after:m0",
+      "implicit_h": 0
+    },
+    {
+      "id": "after:a4",
+      "atom_ref": "a4",
+      "state_ref": "after",
+      "molecule_ref": "after:m0",
+      "implicit_h": 0
+    },
+    {
+      "id": "after:a2",
+      "atom_ref": "a2",
+      "state_ref": "after",
+      "molecule_ref": "after:m1",
+      "implicit_h": 0
+    },
+    {
+      "id": "after:a5",
+      "atom_ref": "a5",
+      "state_ref": "after",
+      "molecule_ref": "after:m1",
+      "implicit_h": 0
+    },
+    {
+      "id": "after:a6",
+      "atom_ref": "a6",
+      "state_ref": "after",
+      "molecule_ref": "after:m1",
+      "implicit_h": 0
+    },
+    {
+      "id": "after:a7",
+      "atom_ref": "a7",
+      "state_ref": "after",
+      "molecule_ref": "after:m1",
+      "implicit_h": 0
+    }
+  ],
+  "bonds": [
+    {
+      "id": "before:b:1:3",
+      "state_ref": "before",
+      "atom_refs": [
+        "before:a1",
+        "before:a3"
+      ],
+      "order": 1,
+      "stereo": "none"
+    },
+    {
+      "id": "before:b:2:4",
+      "state_ref": "before",
+      "atom_refs": [
+        "before:a2",
+        "before:a4"
+      ],
+      "order": 1,
+      "stereo": "none"
+    },
+    {
+      "id": "before:b:2:5",
+      "state_ref": "before",
+      "atom_refs": [
+        "before:a2",
+        "before:a5"
+      ],
+      "order": 1,
+      "stereo": "none"
+    },
+    {
+      "id": "before:b:2:6",
+      "state_ref": "before",
+      "atom_refs": [
+        "before:a2",
+        "before:a6"
+      ],
+      "order": 1,
+      "stereo": "none"
+    },
+    {
+      "id": "before:b:2:7",
+      "state_ref": "before",
+      "atom_refs": [
+        "before:a2",
+        "before:a7"
+      ],
+      "order": 1,
+      "stereo": "none"
+    },
+    {
+      "id": "after:b:1:3",
+      "state_ref": "after",
+      "atom_refs": [
+        "after:a1",
+        "after:a3"
+      ],
+      "order": 1,
+      "stereo": "none"
+    },
+    {
+      "id": "after:b:1:4",
+      "state_ref": "after",
+      "atom_refs": [
+        "after:a1",
+        "after:a4"
+      ],
+      "order": 1,
+      "stereo": "none"
+    },
+    {
+      "id": "after:b:2:5",
+      "state_ref": "after",
+      "atom_refs": [
+        "after:a2",
+        "after:a5"
+      ],
+      "order": 1,
+      "stereo": "none"
+    },
+    {
+      "id": "after:b:2:6",
+      "state_ref": "after",
+      "atom_refs": [
+        "after:a2",
+        "after:a6"
+      ],
+      "order": 1,
+      "stereo": "none"
+    },
+    {
+      "id": "after:b:2:7",
+      "state_ref": "after",
+      "atom_refs": [
+        "after:a2",
+        "after:a7"
+      ],
+      "order": 1,
+      "stereo": "none"
+    }
+  ],
+  "charges": [
+    {
+      "id": "before:q1",
+      "atom_ref": "before:a1",
+      "value": -1,
+      "display": "shown"
+    },
+    {
+      "id": "before:q2",
+      "atom_ref": "before:a2",
+      "value": 1,
+      "display": "shown"
+    }
+  ],
+  "radicals": [],
+  "lone_pairs": [
+    {
+      "id": "before:lp1:0",
+      "atom_ref": "before:a1",
+      "slot": 0,
+      "display": "unresolved"
+    },
+    {
+      "id": "before:lp1:1",
+      "atom_ref": "before:a1",
+      "slot": 1,
+      "display": "unresolved"
+    },
+    {
+      "id": "before:lp1:2",
+      "atom_ref": "before:a1",
+      "slot": 2,
+      "display": "unresolved"
+    },
+    {
+      "id": "after:lp1:0",
+      "atom_ref": "after:a1",
+      "slot": 0,
+      "display": "unresolved"
+    },
+    {
+      "id": "after:lp1:1",
+      "atom_ref": "after:a1",
+      "slot": 1,
+      "display": "unresolved"
+    },
+    {
+      "id": "after:lp2:0",
+      "atom_ref": "after:a2",
+      "slot": 0,
+      "display": "unresolved"
+    }
+  ],
+  "reaction_steps": [
+    {
+      "id": "transfer",
+      "from_state": "before",
+      "to_state": "after",
+      "kind": "teaching_elementary",
+      "electron_flow_refs": [
+        "make_OH",
+        "break_NH"
+      ],
+      "condition_refs": [
+        "condition:transfer"
+      ]
+    }
+  ],
+  "reaction_arrows": [
+    {
+      "id": "reaction-arrow:transfer",
+      "step_ref": "transfer",
+      "kind": "forward",
+      "from_state": "before",
+      "to_state": "after"
+    }
+  ],
+  "condition_texts": [
+    {
+      "id": "condition:transfer",
+      "step_ref": "transfer",
+      "text": "electron-pair step",
+      "kind": "annotation",
+      "evidence_status": "specified"
+    }
+  ],
+  "electron_flows": [
+    {
+      "id": "make_OH",
+      "step_ref": "transfer",
+      "electron_count": 2,
+      "source": {
+        "type": "lone_pair",
+        "state_ref": "before",
+        "lone_pair_ref": "before:lp1:0"
+      },
+      "sink": {
+        "type": "atom",
+        "state_ref": "before",
+        "atom_ref": "before:a4"
+      },
+      "simultaneous_group": "transfer"
+    },
+    {
+      "id": "break_NH",
+      "step_ref": "transfer",
+      "electron_count": 2,
+      "source": {
+        "type": "bond",
+        "state_ref": "before",
+        "bond_ref": "before:b:2:4",
+        "electron_kind": "sigma"
+      },
+      "sink": {
+        "type": "atom",
+        "state_ref": "before",
+        "atom_ref": "before:a2"
+      },
+      "simultaneous_group": "transfer"
+    }
+  ],
+  "layout_constraints": [
+    {
+      "id": "constraint:reading",
+      "kind": "reading_order",
+      "subjects": [],
+      "strength": "hard",
+      "parameters": {}
+    },
+    {
+      "id": "constraint:clearance",
+      "kind": "min_clearance",
+      "subjects": [],
+      "strength": "hard",
+      "parameters": {
+        "minimum_gap": 0.18,
+        "unit": "bond_length"
+      }
+    },
+    {
+      "id": "constraint:snake",
+      "kind": "serpentine",
+      "subjects": [],
+      "strength": "soft",
+      "parameters": {
+        "direction": "alternating",
+        "max_columns": 3,
+        "minimum_row_turns": 0
+      }
+    }
+  ]
+}

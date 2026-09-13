@@ -1,0 +1,21 @@
+[
+  {
+    "case": "actual_noop_edit",
+    "exit_code": 1,
+    "expected_nonzero": true,
+    "pass": true
+  },
+  {
+    "case": "default_full_gate_rejects_pending_quality",
+    "exit_code": 1,
+    "expected_nonzero": true,
+    "pass": true
+  },
+  {
+    "case": "incomplete_native_batch",
+    "exit_code": 1,
+    "expected_nonzero": true,
+    "pass": true,
+    "native_isolation_or_open_occurred": false
+  }
+]

@@ -1,0 +1,495 @@
+{
+  "git_parent": "1d5f41829670057a45a9424c99bfa5646168847a",
+  "actual_final_source": {
+    "utc": "2026-09-13T07:46:39.895141+00:00",
+    "git_parent": "1d5f41829670057a45a9424c99bfa5646168847a",
+    "files": [
+      {
+        "path": "runtime/__init__.py",
+        "sha256": "b29386a1d044664bbc789b45de0c5770391fc13e0440a95cf3fc50ca1b779ea7"
+      },
+      {
+        "path": "runtime/adapters/__init__.py",
+        "sha256": "dca158bfe0e18688c938cdcf0351e99bcd914071d12647e008ce1e3c24a726ed"
+      },
+      {
+        "path": "runtime/adapters/chemdraw_cdxml.py",
+        "sha256": "23c0149d18ea3f0514b9089a970289ae268cd8a5eb7d9361017574d15a3013d5"
+      },
+      {
+        "path": "runtime/annotation_layout.py",
+        "sha256": "7da921de560ae304469e1a08f44bf7df79d97eda94fe256918d8aaa222cbb020"
+      },
+      {
+        "path": "runtime/arrow_ports.py",
+        "sha256": "2f3ce67487efbc50bff014f6951521636eb54729e8bc33778cf378f679380321"
+      },
+      {
+        "path": "runtime/chemical_ir.py",
+        "sha256": "fe7c9e824dd8daa899fe3bc9ea74f93449de06edb9c3c8c1ce74335f13d874e1"
+      },
+      {
+        "path": "runtime/mechanism_composer.py",
+        "sha256": "cd12a8a215d9855558b0b47a3e64549f7178e4b550de741a564424808cab9a5c"
+      },
+      {
+        "path": "runtime/native_provenance.py",
+        "sha256": "334c3f4164bd9325eb68d9dd00d14b1468e5871ac8f541fbbf2e4a468329d8fa"
+      },
+      {
+        "path": "probes/acyclic_smiles_check.py",
+        "sha256": "6d4c324d7892b6e028c36868d04db01840534e717a819dfc818a01365ec4fa19"
+      },
+      {
+        "path": "probes/arrow_extent_controls.py",
+        "sha256": "e6294c1fda7e33d09938dde7b43071f29dbb6b5875bca5490a36314ce340dcb8"
+      },
+      {
+        "path": "probes/build_development_pilot.py",
+        "sha256": "8ca31e19421d83c604abe8694e02f44246c7b4ba30c5fcba122c5cdbbca473aa"
+      },
+      {
+        "path": "probes/compose_fixtures.py",
+        "sha256": "b04f418319fa148ca4c44750d0c313dadb1eeae131bc4880e56a75efc7389942"
+      },
+      {
+        "path": "probes/extract_caption_metrics.py",
+        "sha256": "3e755a9494a099ce5fa29dba99985acad631f81506626489dac6bf76c382e039"
+      },
+      {
+        "path": "probes/fixtures/s1-r1-m1-fragments.json",
+        "sha256": "4076ca52408d35642666f92e4259324c6d1bba474439693cf7b023078d2dc9d4"
+      },
+      {
+        "path": "probes/generic_mask_scene.py",
+        "sha256": "1e3bd93ed0b61cc671e177276c99ba64bc962dad3f6de87a7126fbee176876a2"
+      },
+      {
+        "path": "probes/m1_import_controls.py",
+        "sha256": "a1da6b2d218f792e70d221101ea333a6856652abf116929db1f41347f4e470c2"
+      },
+      {
+        "path": "probes/metamorphic_composer.py",
+        "sha256": "4c7218399227a2c8b6d0ce2c8d6174003cba014df82bfea32c13f63ce4c107bc"
+      },
+      {
+        "path": "probes/native-common.ps1",
+        "sha256": "0fe06575b88a8f2b14f6f3937dd72d2f2709b146564ac2e17b80b3b0ab01655f"
+      },
+      {
+        "path": "probes/native-edit-proof.ps1",
+        "sha256": "190a093df1f4117af5f869c066a161da4315d50823c9f404e4360e4b45cf9fdb"
+      },
+      {
+        "path": "probes/native-fragments.ps1",
+        "sha256": "21e18a3646457e6c551d3b1f14bb76d7ed299657e2e54f2cf525ca08f6cdd05e"
+      },
+      {
+        "path": "probes/native-ir-fragments.ps1",
+        "sha256": "6c798634a06853987c976f358fa5def35847c6f003b84d8d009435956b5e35bf"
+      },
+      {
+        "path": "probes/native-p0.ps1",
+        "sha256": "660e65151403c465bc4e6d0f56037d50d945f33a56c0a84a768f08803633529b"
+      },
+      {
+        "path": "probes/native-pages.ps1",
+        "sha256": "16e0b2058f508dcefdd9b296e6b7ae72386b11f6c2152bb3c87847df18f6feb5"
+      },
+      {
+        "path": "probes/native-render-copies.ps1",
+        "sha256": "3b5092629f43f6b87462d4723913630cc6f3ad0624e7543eaa6a4c2b2fae6459"
+      },
+      {
+        "path": "probes/native-scale.ps1",
+        "sha256": "7a22f4f56eb5db0b0cd4438ce504f1d240b8ce4032314c45d5eff6291353bb1b"
+      },
+      {
+        "path": "probes/native-snapshot.ps1",
+        "sha256": "5d20abd6801ef642b67185825a3742fe11577b5101e8abfa5d177fe15d64a408"
+      },
+      {
+        "path": "probes/native_edit_negative_controls.py",
+        "sha256": "1ab741c995b57cf9b5f9bf0d3e918b25387db039bdfbe524737f25f3cf4ba83b"
+      },
+      {
+        "path": "probes/native_mask_inputs.py",
+        "sha256": "3ca6ba4eb9f47ec34620b3bc3d5a038a713d9c12067acc4bda83b3095cbdb345"
+      },
+      {
+        "path": "probes/NativeChemDraw.cs",
+        "sha256": "52eb2fe1e66d9b13aba84dfba010959ddcb8fcf6109b919a498324400681b73c"
+      },
+      {
+        "path": "probes/object-capabilities.ps1",
+        "sha256": "f45e8ff5752aa23a3054b97b6b88f0d537058f61d166b2bae8706184b31a6252"
+      },
+      {
+        "path": "probes/pixel-calibration.py",
+        "sha256": "338f532c40350e8d34004fed534532aa3be88c7de28b03097c2971e7316c6596"
+      },
+      {
+        "path": "probes/provenance_controls.py",
+        "sha256": "af64f85e0fea168ed565cfaaa5d3ecc9e5ecef359913e58e59e6f17842c0f497"
+      },
+      {
+        "path": "probes/README.md",
+        "sha256": "3315559aac87ce17e1626ae0e90752f86a7d31ed4cc1032f9c6fa51eaff2523e"
+      },
+      {
+        "path": "probes/run_composer.py",
+        "sha256": "32fc9af7394507360c39b301a7cb230a99f1260f77e0cdfa4fdb51080336b0b5"
+      },
+      {
+        "path": "probes/run_with_deadline.py",
+        "sha256": "06836f8b324a95b20f47a6bad234f8424a6d4429a32160b090882940fa9c9142"
+      },
+      {
+        "path": "probes/saveas-controlled.ps1",
+        "sha256": "18d6c57c426bb7a51355bd6554233199fec6e88b883177742c871cd228b98bd6"
+      },
+      {
+        "path": "probes/scene_equivalence.py",
+        "sha256": "703093a6794583ac94ea9c7972653bf031547c0648dcf0769e5640a43c9e4c4b"
+      },
+      {
+        "path": "probes/style_native_fragments.py",
+        "sha256": "c582f1095b0498208714475cbd41dfdb3e76f01bc957cb1d542f885cce51ae0c"
+      },
+      {
+        "path": "probes/verify_composition.py",
+        "sha256": "af44aec6ddc34eeb14bd286aa05071654f69203f4f230bdcd55c63d41365d91d"
+      },
+      {
+        "path": "probes/verify_m2.py",
+        "sha256": "6da82e4aec9b1e39a4cf100cf53727ea2cd0df3efe29cedc99f39236c1cebe31"
+      },
+      {
+        "path": "probes/verify_native_edits.py",
+        "sha256": "0ae50817b8aae3823ed1a5b94e0a0b0151c52f778595eeddb3ba6065fa79b0c2"
+      },
+      {
+        "path": "probes/verify_native_masks.py",
+        "sha256": "2439e1a2615eb719db4bb9a620fc2ddedbe732a179efcf71a028e42082b18b54"
+      },
+      {
+        "path": "probes/verify_small_fixtures.py",
+        "sha256": "b7153e109ccc8d1468f5ab51fa00d6352a3e2146f2a0e3233de3787237278970"
+      },
+      {
+        "path": "probes/verify_smoke.py",
+        "sha256": "672a70063dbf26f57b6a13e98fdd1fc9270f09805439dffd11d3c36c5f9b85a4"
+      },
+      {
+        "path": "contracts/composer-request.schema.json",
+        "sha256": "b6fb032a2983269d776c28d06620dfbe01946ca22e5e698274391445814309d9"
+      },
+      {
+        "path": "contracts/corpus/annotation.schema.json",
+        "sha256": "16a6ff8c4fcf55b9df20b540f9c14b2096974f436cae2b23dc378b027e08fe9a"
+      },
+      {
+        "path": "contracts/corpus/build_schema_probes.py",
+        "sha256": "cbb70615b89ead4dda5ec0d0c2d032dd98682879579721949c1549945e5b2b7e"
+      },
+      {
+        "path": "contracts/corpus/corpus-manifest.schema.json",
+        "sha256": "c72bd13914a8e470727be5d19590144826345320a2a8a66cdcec79e0124cdacd"
+      },
+      {
+        "path": "contracts/corpus/correction-record.schema.json",
+        "sha256": "98ffd96d4ea950d4f5b171332f55d557f2e432a889ed7412b0ec5d00763bb7bd"
+      },
+      {
+        "path": "contracts/corpus/mechanism-ir.schema.json",
+        "sha256": "c462e4338e3f21321cb4c3e5f992729ac050ee734174e72f0e5c899f7f4ff67f"
+      },
+      {
+        "path": "contracts/corpus/split-manifest.schema.json",
+        "sha256": "b1bf8565b83418569ac4a64a8484177867493de98f9c29ad21c82b50ab5159ab"
+      },
+      {
+        "path": "contracts/corpus/test_corpus.py",
+        "sha256": "12a223f0e05a35b85b0daab35bd46558e471e61b6e3d3937a9339a24589fd1fe"
+      },
+      {
+        "path": "contracts/corpus/validate_corpus.py",
+        "sha256": "e8a1dc79d8f50968c805015706983b2ea3211bdd62c4de5c07cf155380072f8e"
+      },
+      {
+        "path": "contracts/job-data.schema.json",
+        "sha256": "e596549dc1113bffc8bb182f51e3d538264c9e9361570f3b9846cde8e780ad8f"
+      },
+      {
+        "path": "contracts/mcp-tools.json",
+        "sha256": "47dda13689fc8979aaa388826b4b81a05e232e795cc708cdf5f67eb71d8501fa"
+      },
+      {
+        "path": "contracts/mechanism-ir.schema.json",
+        "sha256": "619e46a20c20e9e5906b2298041379a8a832e310632a8a6bdc05d9174e7b2d2c"
+      },
+      {
+        "path": "contracts/mechanism-test-case.schema.json",
+        "sha256": "ba0b7818cfa090f584ca86b1e6c1fbc9c2ba78ef3f6a503fba550dab6d466647"
+      },
+      {
+        "path": "contracts/run-request.schema.json",
+        "sha256": "ee7cef5cc4c1fb8d2880aa06c5bac7947e016e50edd46be5284f26b42b1b04cc"
+      },
+      {
+        "path": "contracts/validate_mechanism_fixture.py",
+        "sha256": "81ea507aa9f0f6523b252a7ca49eaa62dcd7c6a068dd707c25f1c88a137df50d"
+      },
+      {
+        "path": "tests/general_ir_cases.py",
+        "sha256": "03b4939518cfc1bc74352ad5fc3dfbe67e01022d67ea47d8653cd177fd5ef1be"
+      },
+      {
+        "path": "tests/test_arrow_ports.py",
+        "sha256": "68b5697ac779590af29b9bdf5123725e5658caac39266840f1585e2fbe2652a5"
+      },
+      {
+        "path": "tests/test_edit_intents.py",
+        "sha256": "7a1f1a1dcc0b0335ca481135a476322b72cae4753b2d6ac9c1d87d0d39d94568"
+      },
+      {
+        "path": "tests/test_general_ir.py",
+        "sha256": "c2a3bd495fd9c21771d71f7fbf0449398951c8aeec45cc5c894a62d7e823a2d2"
+      },
+      {
+        "path": "tests/test_generic_mask_scene.py",
+        "sha256": "2a8032a522a8aacf712b4c74bd8e0f19cd045b1830483240155a8efa70ee5672"
+      },
+      {
+        "path": "tests/test_mask_guards.py",
+        "sha256": "f8709d00a3c7901d2d6180cfd10bb858b95879aa6dfecd49dcbc8771eb1ece88"
+      },
+      {
+        "path": "tests/test_native_provenance.py",
+        "sha256": "e3c997ace5bdc50c875fe0ee43277f4b30295d4612dbb5de6350fab5850c178e"
+      },
+      {
+        "path": "tests/test_readback_guards.py",
+        "sha256": "5167b430ae324f7614e708b7a31af547814e1233623add0b6c065665559be732"
+      },
+      {
+        "path": "tests/test_scene_equivalence.py",
+        "sha256": "d517e2995d8ed9a7fe00b8aea55eb87d747addf2ad7976c4932d9bdd6aeca426"
+      },
+      {
+        "path": "tests/test_smoke_verifier.py",
+        "sha256": "cbb7f90fd9f02bb5215a5f1fd3e9cb84e7f9c7f3164210eb0a6bd5e9cd624cae"
+      },
+      {
+        "path": "tests/test_stereo_and_layout_guards.py",
+        "sha256": "d94358a7d8862ba02bb9f8cbdc4ed859d92be3c19992b4b8f9d3c01c9da675cf"
+      }
+    ]
+  },
+  "runtime_imports": [
+    {
+      "path": "runtime/annotation_layout.py",
+      "module": null,
+      "names": [
+        "math"
+      ]
+    },
+    {
+      "path": "runtime/arrow_ports.py",
+      "module": null,
+      "names": [
+        "math"
+      ]
+    },
+    {
+      "path": "runtime/chemical_ir.py",
+      "module": "__future__",
+      "names": [
+        "annotations"
+      ]
+    },
+    {
+      "path": "runtime/chemical_ir.py",
+      "module": "collections",
+      "names": [
+        "Counter"
+      ]
+    },
+    {
+      "path": "runtime/chemical_ir.py",
+      "module": "copy",
+      "names": [
+        "deepcopy"
+      ]
+    },
+    {
+      "path": "runtime/chemical_ir.py",
+      "module": null,
+      "names": [
+        "hashlib",
+        "json"
+      ]
+    },
+    {
+      "path": "runtime/chemical_ir.py",
+      "module": "pathlib",
+      "names": [
+        "Path"
+      ]
+    },
+    {
+      "path": "runtime/chemical_ir.py",
+      "module": "jsonschema",
+      "names": [
+        "Draft202012Validator"
+      ]
+    },
+    {
+      "path": "runtime/chemical_ir.py",
+      "module": "referencing",
+      "names": [
+        "Registry",
+        "Resource"
+      ]
+    },
+    {
+      "path": "runtime/mechanism_composer.py",
+      "module": "__future__",
+      "names": [
+        "annotations"
+      ]
+    },
+    {
+      "path": "runtime/mechanism_composer.py",
+      "module": null,
+      "names": [
+        "copy",
+        "itertools",
+        "math",
+        "textwrap"
+      ]
+    },
+    {
+      "path": "runtime/mechanism_composer.py",
+      "module": "runtime.chemical_ir",
+      "names": [
+        "connected_components",
+        "linear_order",
+        "canonical_hash",
+        "chemical_colors"
+      ]
+    },
+    {
+      "path": "runtime/mechanism_composer.py",
+      "module": "runtime.arrow_ports",
+      "names": [
+        "atom_ports"
+      ]
+    },
+    {
+      "path": "runtime/native_provenance.py",
+      "module": "pathlib",
+      "names": [
+        "Path"
+      ]
+    },
+    {
+      "path": "runtime/native_provenance.py",
+      "module": null,
+      "names": [
+        "hashlib",
+        "json",
+        "math",
+        "re"
+      ]
+    },
+    {
+      "path": "runtime/native_provenance.py",
+      "module": null,
+      "names": [
+        "xml.etree.ElementTree"
+      ]
+    },
+    {
+      "path": "runtime/native_provenance.py",
+      "module": "runtime.chemical_ir",
+      "names": [
+        "canonical_hash"
+      ]
+    },
+    {
+      "path": "runtime/adapters/chemdraw_cdxml.py",
+      "module": "__future__",
+      "names": [
+        "annotations"
+      ]
+    },
+    {
+      "path": "runtime/adapters/chemdraw_cdxml.py",
+      "module": null,
+      "names": [
+        "copy",
+        "json",
+        "math",
+        "hashlib"
+      ]
+    },
+    {
+      "path": "runtime/adapters/chemdraw_cdxml.py",
+      "module": "pathlib",
+      "names": [
+        "Path"
+      ]
+    },
+    {
+      "path": "runtime/adapters/chemdraw_cdxml.py",
+      "module": null,
+      "names": [
+        "xml.etree.ElementTree"
+      ]
+    },
+    {
+      "path": "runtime/adapters/chemdraw_cdxml.py",
+      "module": "runtime.chemical_ir",
+      "names": [
+        "connected_components",
+        "linear_order",
+        "edge",
+        "canonical_hash",
+        "chemical_colors"
+      ]
+    },
+    {
+      "path": "runtime/adapters/chemdraw_cdxml.py",
+      "module": "runtime.native_provenance",
+      "names": [
+        "verify_geometry_receipt"
+      ]
+    }
+  ],
+  "source_snapshots": [
+    {
+      "name": "initial-source",
+      "manifest_sha256": "27f399c3d17d6257eee5013866e8ac857de33d1d0fc159ef121cb7b9997e59db",
+      "captured_files": 66
+    },
+    {
+      "name": "repair-1-source",
+      "manifest_sha256": "5fad6209be60919dafbec3b51cc5afd83c439a796a226101f1f0100df427a18a",
+      "captured_files": 69
+    },
+    {
+      "name": "repair-2-source",
+      "manifest_sha256": "b737dd9f9f43c78aceef22f99cb8fde008ae1f229d75fbd57e2fe5bba3b148aa",
+      "captured_files": 69
+    },
+    {
+      "name": "final-source",
+      "manifest_sha256": "494d00238efd389b0773f50680c596a307cb91b76b38722f9ab71512448627d8",
+      "captured_files": 70
+    }
+  ],
+  "rule_version": "generic-composer/0.3-development",
+  "head_metrics_source": "R3 independently rendered geometric controls; no M1-derived calibration loaded for pilot tuning",
+  "later_changes": "Metamorphic scope wording, mask relationship checks and packaging after native execution; earlier source snapshots retained"
+}

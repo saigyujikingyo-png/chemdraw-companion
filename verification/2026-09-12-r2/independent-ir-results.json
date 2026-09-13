@@ -1,0 +1,42 @@
+[
+  {
+    "case": "electrocyclization",
+    "counts": {
+      "ordered_states": [
+        "open_chain",
+        "ring"
+      ],
+      "ordered_transitions": [
+        "closure"
+      ],
+      "state_count": 2,
+      "flow_count": 3,
+      "system_charge": 0,
+      "scope": "closed-shell H/C/N/O, linear pathways, explicit transferred H"
+    },
+    "native_receipt": "6a0d8400d0d9a9c6e98a57814c5e91166d7acd3dab1adbd09e054cf7e2344c90",
+    "native_intrinsic_geometry": "pass",
+    "composer_fit": "pass",
+    "native_page_quality": "not_run_not_implied"
+  },
+  {
+    "case": "proton-transfer",
+    "counts": {
+      "ordered_states": [
+        "ammonia_water",
+        "ammonium_water"
+      ],
+      "ordered_transitions": [
+        "proton_move"
+      ],
+      "state_count": 2,
+      "flow_count": 2,
+      "system_charge": 1,
+      "scope": "closed-shell H/C/N/O, linear pathways, explicit transferred H"
+    },
+    "native_receipt": "e104dae347b1a8a10152fe35fcdcf49f65a238d55e37ee6052e46e0d352ff9fa",
+    "native_intrinsic_geometry": "pass",
+    "composer_fit": "pass",
+    "native_page_quality": "not_run_not_implied"
+  }
+]

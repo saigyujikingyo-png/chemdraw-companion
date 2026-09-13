@@ -1,0 +1,95 @@
+{
+  "scope": "Synthetic corruption of retained readback inputs; no native execution and no demonstrated full mask gate bypass",
+  "scene_source_sha256": "749f13fdca88147f4033b7f2febcce8f6bbc42129b44c22d1503b615b459c049",
+  "scene": [
+    {
+      "case": "short_curve",
+      "result": {
+        "status": "failed",
+        "reason": "Invalid scene or identity inventory: Wrong path/control array length"
+      }
+    },
+    {
+      "case": "orphan_connector",
+      "result": {
+        "status": "failed",
+        "reason": "Invalid scene or identity inventory: Connector inventory differs from IR"
+      }
+    },
+    {
+      "case": "bond_order",
+      "result": {
+        "status": "failed",
+        "reason": "Invalid scene or identity inventory: Scene bond chemistry differs from IR"
+      }
+    },
+    {
+      "case": "atom_charge",
+      "result": {
+        "status": "failed",
+        "reason": "Invalid scene or identity inventory: Scene atom chemistry differs from IR"
+      }
+    },
+    {
+      "case": "duplicate_atom",
+      "result": {
+        "status": "failed",
+        "reason": "Invalid scene or identity inventory: Duplicate atom: 7"
+      }
+    },
+    {
+      "case": "short_connector",
+      "result": {
+        "status": "failed",
+        "reason": "Invalid scene or identity inventory: Wrong path/control array length"
+      }
+    },
+    {
+      "case": "duplicate_flow",
+      "result": {
+        "status": "failed",
+        "reason": "Invalid scene or identity inventory: Duplicate flow ID: nitrogen_donation"
+      }
+    },
+    {
+      "case": "missing_state",
+      "result": {
+        "status": "failed",
+        "reason": "Invalid scene or identity inventory: State inventory differs from IR"
+      }
+    },
+    {
+      "case": "extra_pair",
+      "result": {
+        "status": "failed",
+        "reason": "Invalid scene or identity inventory: Lone-pair inventory differs from IR"
+      }
+    }
+  ],
+  "mask_subcheck": [
+    {
+      "case": "width",
+      "same_records": false
+    },
+    {
+      "case": "type",
+      "same_records": false
+    },
+    {
+      "case": "run_font",
+      "same_records": false
+    },
+    {
+      "case": "font_mapping",
+      "same_records": false
+    },
+    {
+      "case": "root_default",
+      "same_records": false
+    }
+  ],
+  "verifier_sources": {
+    "scene_equivalence.py": "703093a6794583ac94ea9c7972653bf031547c0648dcf0769e5640a43c9e4c4b",
+    "verify_native_masks.py": "a47d4467b0c405aab3a2626d1861fc1a47e7bf594da0a06d1dc4a79e6ac9a890"
+  }
+}

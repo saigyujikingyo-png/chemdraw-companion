@@ -1,0 +1,66 @@
+{
+  "experiment": "independent-corpus-native-pilot-01",
+  "native_development_repairs_consumed": 2,
+  "native_development_repair_budget": 2,
+  "exposed_benchmark_repairs_consumed": 0,
+  "closed_at": "2026-09-13T07:54:42.859105+00:00",
+  "iterations": [
+    {
+      "attempt": "first",
+      "readback_gate": "failed",
+      "full_quality_gate": "failed",
+      "native_inventory_issues": [
+        "native_anchor:nitrogen_recovery:target"
+      ],
+      "glyph_bbox_failures": 0,
+      "native_warnings": [
+        0,
+        0,
+        0
+      ],
+      "mask_gate": "not_run_for_first_attempt",
+      "mask_issues": [],
+      "input_sha256": "187db3c36ca9042634d661e89599eb155c9300dc1f7c7d0eae8cf06632209136"
+    },
+    {
+      "attempt": "repair-1",
+      "readback_gate": "pass",
+      "full_quality_gate": "blocked_required_native_masks_visible_head_ports_and_owner_review",
+      "native_inventory_issues": [],
+      "glyph_bbox_failures": 0,
+      "native_warnings": [
+        0,
+        0,
+        0
+      ],
+      "mask_gate": "failed",
+      "mask_issues": [
+        "visible_native_head_port:nitrogen_recovery",
+        "native_mask_clearance",
+        "unclassified_native_ink_outside_named_contacts"
+      ],
+      "input_sha256": "3dfe7faedf3318acdcca702a7947cd889348a5a38498b7b1ea3335afb5f079b5"
+    },
+    {
+      "attempt": "repair-2",
+      "readback_gate": "pass",
+      "full_quality_gate": "failed",
+      "native_inventory_issues": [],
+      "glyph_bbox_failures": 1,
+      "native_warnings": [
+        0,
+        0,
+        0
+      ],
+      "mask_gate": "failed",
+      "mask_issues": [
+        "visible_native_head_port:nitrogen_recovery",
+        "native_mask_clearance",
+        "unclassified_native_ink_outside_named_contacts"
+      ],
+      "input_sha256": "01ac78cbece2052bb264c9a4d66b63301b1245c109196dbd3e3edb50ff489a0e"
+    }
+  ],
+  "full_quality_acceptance": "failed",
+  "manual_active_correction_seconds": null
+}

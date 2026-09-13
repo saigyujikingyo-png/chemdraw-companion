@@ -1,0 +1,518 @@
+{
+  "created_utc": "2026-09-12T23:39:13.108066+00:00",
+  "parent_checkpoint": "b973ca7619f99bbe3966ebc04cc6bd724f6f0164",
+  "source_hashes": [
+    {
+      "path": "contracts/composer-request.schema.json",
+      "worktree_sha256": "b6fb032a2983269d776c28d06620dfbe01946ca22e5e698274391445814309d9",
+      "staged_git_sha256": "b6fb032a2983269d776c28d06620dfbe01946ca22e5e698274391445814309d9",
+      "git_line_ending_normalization": false
+    },
+    {
+      "path": "contracts/job-data.schema.json",
+      "worktree_sha256": "e596549dc1113bffc8bb182f51e3d538264c9e9361570f3b9846cde8e780ad8f",
+      "staged_git_sha256": "e596549dc1113bffc8bb182f51e3d538264c9e9361570f3b9846cde8e780ad8f",
+      "git_line_ending_normalization": false
+    },
+    {
+      "path": "contracts/mcp-tools.json",
+      "worktree_sha256": "47dda13689fc8979aaa388826b4b81a05e232e795cc708cdf5f67eb71d8501fa",
+      "staged_git_sha256": "47dda13689fc8979aaa388826b4b81a05e232e795cc708cdf5f67eb71d8501fa",
+      "git_line_ending_normalization": false
+    },
+    {
+      "path": "contracts/mechanism-ir.schema.json",
+      "worktree_sha256": "619e46a20c20e9e5906b2298041379a8a832e310632a8a6bdc05d9174e7b2d2c",
+      "staged_git_sha256": "619e46a20c20e9e5906b2298041379a8a832e310632a8a6bdc05d9174e7b2d2c",
+      "git_line_ending_normalization": false
+    },
+    {
+      "path": "contracts/mechanism-test-case.schema.json",
+      "worktree_sha256": "ba0b7818cfa090f584ca86b1e6c1fbc9c2ba78ef3f6a503fba550dab6d466647",
+      "staged_git_sha256": "ba0b7818cfa090f584ca86b1e6c1fbc9c2ba78ef3f6a503fba550dab6d466647",
+      "git_line_ending_normalization": false
+    },
+    {
+      "path": "contracts/run-request.schema.json",
+      "worktree_sha256": "ee7cef5cc4c1fb8d2880aa06c5bac7947e016e50edd46be5284f26b42b1b04cc",
+      "staged_git_sha256": "735d29573ac51f0c93fd6a99f48854c8e5cc7308a9c61e6e9eb457332a3307a5",
+      "git_line_ending_normalization": true
+    },
+    {
+      "path": "contracts/validate_mechanism_fixture.py",
+      "worktree_sha256": "81ea507aa9f0f6523b252a7ca49eaa62dcd7c6a068dd707c25f1c88a137df50d",
+      "staged_git_sha256": "81ea507aa9f0f6523b252a7ca49eaa62dcd7c6a068dd707c25f1c88a137df50d",
+      "git_line_ending_normalization": false
+    },
+    {
+      "path": "probes/acyclic_smiles_check.py",
+      "worktree_sha256": "6d4c324d7892b6e028c36868d04db01840534e717a819dfc818a01365ec4fa19",
+      "staged_git_sha256": "6d4c324d7892b6e028c36868d04db01840534e717a819dfc818a01365ec4fa19",
+      "git_line_ending_normalization": false
+    },
+    {
+      "path": "probes/compose_fixtures.py",
+      "worktree_sha256": "b04f418319fa148ca4c44750d0c313dadb1eeae131bc4880e56a75efc7389942",
+      "staged_git_sha256": "b04f418319fa148ca4c44750d0c313dadb1eeae131bc4880e56a75efc7389942",
+      "git_line_ending_normalization": false
+    },
+    {
+      "path": "probes/extract_caption_metrics.py",
+      "worktree_sha256": "3e755a9494a099ce5fa29dba99985acad631f81506626489dac6bf76c382e039",
+      "staged_git_sha256": "3e755a9494a099ce5fa29dba99985acad631f81506626489dac6bf76c382e039",
+      "git_line_ending_normalization": false
+    },
+    {
+      "path": "probes/fixtures/s1-r1-m1-fragments.json",
+      "worktree_sha256": "4076ca52408d35642666f92e4259324c6d1bba474439693cf7b023078d2dc9d4",
+      "staged_git_sha256": "4076ca52408d35642666f92e4259324c6d1bba474439693cf7b023078d2dc9d4",
+      "git_line_ending_normalization": false
+    },
+    {
+      "path": "probes/m1_import_controls.py",
+      "worktree_sha256": "a1da6b2d218f792e70d221101ea333a6856652abf116929db1f41347f4e470c2",
+      "staged_git_sha256": "a1da6b2d218f792e70d221101ea333a6856652abf116929db1f41347f4e470c2",
+      "git_line_ending_normalization": false
+    },
+    {
+      "path": "probes/metamorphic_composer.py",
+      "worktree_sha256": "5ecba78ddc5d367b2aef7baa5930a24d1dfc08addf843070c0b659aeac2ba8bc",
+      "staged_git_sha256": "5ecba78ddc5d367b2aef7baa5930a24d1dfc08addf843070c0b659aeac2ba8bc",
+      "git_line_ending_normalization": false
+    },
+    {
+      "path": "probes/native-common.ps1",
+      "worktree_sha256": "0fe06575b88a8f2b14f6f3937dd72d2f2709b146564ac2e17b80b3b0ab01655f",
+      "staged_git_sha256": "0fe06575b88a8f2b14f6f3937dd72d2f2709b146564ac2e17b80b3b0ab01655f",
+      "git_line_ending_normalization": false
+    },
+    {
+      "path": "probes/native-edit-proof.ps1",
+      "worktree_sha256": "190a093df1f4117af5f869c066a161da4315d50823c9f404e4360e4b45cf9fdb",
+      "staged_git_sha256": "5f0f78344b41567410eb9aa1a24ec9954000cfebad2487cab433c24b9991f368",
+      "git_line_ending_normalization": true
+    },
+    {
+      "path": "probes/native-fragments.ps1",
+      "worktree_sha256": "21e18a3646457e6c551d3b1f14bb76d7ed299657e2e54f2cf525ca08f6cdd05e",
+      "staged_git_sha256": "21e18a3646457e6c551d3b1f14bb76d7ed299657e2e54f2cf525ca08f6cdd05e",
+      "git_line_ending_normalization": false
+    },
+    {
+      "path": "probes/native-ir-fragments.ps1",
+      "worktree_sha256": "6c798634a06853987c976f358fa5def35847c6f003b84d8d009435956b5e35bf",
+      "staged_git_sha256": "6c798634a06853987c976f358fa5def35847c6f003b84d8d009435956b5e35bf",
+      "git_line_ending_normalization": false
+    },
+    {
+      "path": "probes/native-p0.ps1",
+      "worktree_sha256": "660e65151403c465bc4e6d0f56037d50d945f33a56c0a84a768f08803633529b",
+      "staged_git_sha256": "660e65151403c465bc4e6d0f56037d50d945f33a56c0a84a768f08803633529b",
+      "git_line_ending_normalization": false
+    },
+    {
+      "path": "probes/native-pages.ps1",
+      "worktree_sha256": "16e0b2058f508dcefdd9b296e6b7ae72386b11f6c2152bb3c87847df18f6feb5",
+      "staged_git_sha256": "16e0b2058f508dcefdd9b296e6b7ae72386b11f6c2152bb3c87847df18f6feb5",
+      "git_line_ending_normalization": false
+    },
+    {
+      "path": "probes/native-render-copies.ps1",
+      "worktree_sha256": "3b5092629f43f6b87462d4723913630cc6f3ad0624e7543eaa6a4c2b2fae6459",
+      "staged_git_sha256": "3b5092629f43f6b87462d4723913630cc6f3ad0624e7543eaa6a4c2b2fae6459",
+      "git_line_ending_normalization": false
+    },
+    {
+      "path": "probes/native-scale.ps1",
+      "worktree_sha256": "7a22f4f56eb5db0b0cd4438ce504f1d240b8ce4032314c45d5eff6291353bb1b",
+      "staged_git_sha256": "7a22f4f56eb5db0b0cd4438ce504f1d240b8ce4032314c45d5eff6291353bb1b",
+      "git_line_ending_normalization": false
+    },
+    {
+      "path": "probes/native-snapshot.ps1",
+      "worktree_sha256": "5d20abd6801ef642b67185825a3742fe11577b5101e8abfa5d177fe15d64a408",
+      "staged_git_sha256": "c74669dacb81023eef6826e63308ca17be06462615c8904e97e9fbcd1540ea46",
+      "git_line_ending_normalization": true
+    },
+    {
+      "path": "probes/native_edit_negative_controls.py",
+      "worktree_sha256": "1ab741c995b57cf9b5f9bf0d3e918b25387db039bdfbe524737f25f3cf4ba83b",
+      "staged_git_sha256": "1ab741c995b57cf9b5f9bf0d3e918b25387db039bdfbe524737f25f3cf4ba83b",
+      "git_line_ending_normalization": false
+    },
+    {
+      "path": "probes/native_mask_inputs.py",
+      "worktree_sha256": "3ca6ba4eb9f47ec34620b3bc3d5a038a713d9c12067acc4bda83b3095cbdb345",
+      "staged_git_sha256": "3ca6ba4eb9f47ec34620b3bc3d5a038a713d9c12067acc4bda83b3095cbdb345",
+      "git_line_ending_normalization": false
+    },
+    {
+      "path": "probes/NativeChemDraw.cs",
+      "worktree_sha256": "52eb2fe1e66d9b13aba84dfba010959ddcb8fcf6109b919a498324400681b73c",
+      "staged_git_sha256": "52eb2fe1e66d9b13aba84dfba010959ddcb8fcf6109b919a498324400681b73c",
+      "git_line_ending_normalization": false
+    },
+    {
+      "path": "probes/object-capabilities.ps1",
+      "worktree_sha256": "f45e8ff5752aa23a3054b97b6b88f0d537058f61d166b2bae8706184b31a6252",
+      "staged_git_sha256": "f45e8ff5752aa23a3054b97b6b88f0d537058f61d166b2bae8706184b31a6252",
+      "git_line_ending_normalization": false
+    },
+    {
+      "path": "probes/pixel-calibration.py",
+      "worktree_sha256": "338f532c40350e8d34004fed534532aa3be88c7de28b03097c2971e7316c6596",
+      "staged_git_sha256": "338f532c40350e8d34004fed534532aa3be88c7de28b03097c2971e7316c6596",
+      "git_line_ending_normalization": false
+    },
+    {
+      "path": "probes/provenance_controls.py",
+      "worktree_sha256": "af64f85e0fea168ed565cfaaa5d3ecc9e5ecef359913e58e59e6f17842c0f497",
+      "staged_git_sha256": "af64f85e0fea168ed565cfaaa5d3ecc9e5ecef359913e58e59e6f17842c0f497",
+      "git_line_ending_normalization": false
+    },
+    {
+      "path": "probes/README.md",
+      "worktree_sha256": "3315559aac87ce17e1626ae0e90752f86a7d31ed4cc1032f9c6fa51eaff2523e",
+      "staged_git_sha256": "3315559aac87ce17e1626ae0e90752f86a7d31ed4cc1032f9c6fa51eaff2523e",
+      "git_line_ending_normalization": false
+    },
+    {
+      "path": "probes/run_composer.py",
+      "worktree_sha256": "fd7165ec25b451f6fbb9c19280387ecf911bc37916714b75663f7ec6462f867c",
+      "staged_git_sha256": "fd7165ec25b451f6fbb9c19280387ecf911bc37916714b75663f7ec6462f867c",
+      "git_line_ending_normalization": false
+    },
+    {
+      "path": "probes/run_with_deadline.py",
+      "worktree_sha256": "06836f8b324a95b20f47a6bad234f8424a6d4429a32160b090882940fa9c9142",
+      "staged_git_sha256": "06836f8b324a95b20f47a6bad234f8424a6d4429a32160b090882940fa9c9142",
+      "git_line_ending_normalization": false
+    },
+    {
+      "path": "probes/saveas-controlled.ps1",
+      "worktree_sha256": "18d6c57c426bb7a51355bd6554233199fec6e88b883177742c871cd228b98bd6",
+      "staged_git_sha256": "18d6c57c426bb7a51355bd6554233199fec6e88b883177742c871cd228b98bd6",
+      "git_line_ending_normalization": false
+    },
+    {
+      "path": "probes/scene_equivalence.py",
+      "worktree_sha256": "09503ed788638f8b5a5f91990e0059ff04fbcc4791533f546edf65f3245c6a43",
+      "staged_git_sha256": "09503ed788638f8b5a5f91990e0059ff04fbcc4791533f546edf65f3245c6a43",
+      "git_line_ending_normalization": false
+    },
+    {
+      "path": "probes/style_native_fragments.py",
+      "worktree_sha256": "c582f1095b0498208714475cbd41dfdb3e76f01bc957cb1d542f885cce51ae0c",
+      "staged_git_sha256": "c582f1095b0498208714475cbd41dfdb3e76f01bc957cb1d542f885cce51ae0c",
+      "git_line_ending_normalization": false
+    },
+    {
+      "path": "probes/verify_composition.py",
+      "worktree_sha256": "eb6554a399c3b486c0c89b449b31ee09a8f4ec9399ee9e5bceeb96ade10c674b",
+      "staged_git_sha256": "eb6554a399c3b486c0c89b449b31ee09a8f4ec9399ee9e5bceeb96ade10c674b",
+      "git_line_ending_normalization": false
+    },
+    {
+      "path": "probes/verify_m2.py",
+      "worktree_sha256": "6da82e4aec9b1e39a4cf100cf53727ea2cd0df3efe29cedc99f39236c1cebe31",
+      "staged_git_sha256": "6da82e4aec9b1e39a4cf100cf53727ea2cd0df3efe29cedc99f39236c1cebe31",
+      "git_line_ending_normalization": false
+    },
+    {
+      "path": "probes/verify_native_edits.py",
+      "worktree_sha256": "0ae50817b8aae3823ed1a5b94e0a0b0151c52f778595eeddb3ba6065fa79b0c2",
+      "staged_git_sha256": "0ae50817b8aae3823ed1a5b94e0a0b0151c52f778595eeddb3ba6065fa79b0c2",
+      "git_line_ending_normalization": false
+    },
+    {
+      "path": "probes/verify_native_masks.py",
+      "worktree_sha256": "e00f2e122ee4e1e54888e030edbcb70fed4cbe9f546f09125a2f96d08cccd7bd",
+      "staged_git_sha256": "e00f2e122ee4e1e54888e030edbcb70fed4cbe9f546f09125a2f96d08cccd7bd",
+      "git_line_ending_normalization": false
+    },
+    {
+      "path": "probes/verify_small_fixtures.py",
+      "worktree_sha256": "b7153e109ccc8d1468f5ab51fa00d6352a3e2146f2a0e3233de3787237278970",
+      "staged_git_sha256": "b7153e109ccc8d1468f5ab51fa00d6352a3e2146f2a0e3233de3787237278970",
+      "git_line_ending_normalization": false
+    },
+    {
+      "path": "probes/verify_smoke.py",
+      "worktree_sha256": "672a70063dbf26f57b6a13e98fdd1fc9270f09805439dffd11d3c36c5f9b85a4",
+      "staged_git_sha256": "672a70063dbf26f57b6a13e98fdd1fc9270f09805439dffd11d3c36c5f9b85a4",
+      "git_line_ending_normalization": false
+    },
+    {
+      "path": "runtime/__init__.py",
+      "worktree_sha256": "b29386a1d044664bbc789b45de0c5770391fc13e0440a95cf3fc50ca1b779ea7",
+      "staged_git_sha256": "b29386a1d044664bbc789b45de0c5770391fc13e0440a95cf3fc50ca1b779ea7",
+      "git_line_ending_normalization": false
+    },
+    {
+      "path": "runtime/adapters/__init__.py",
+      "worktree_sha256": "dca158bfe0e18688c938cdcf0351e99bcd914071d12647e008ce1e3c24a726ed",
+      "staged_git_sha256": "dca158bfe0e18688c938cdcf0351e99bcd914071d12647e008ce1e3c24a726ed",
+      "git_line_ending_normalization": false
+    },
+    {
+      "path": "runtime/adapters/chemdraw_cdxml.py",
+      "worktree_sha256": "7cf50967bfb1381b3bbf5c4c1e959a782bc26656082bf007f74ffa7065d72b50",
+      "staged_git_sha256": "28ef3f38d6f2c239e536534182dc03a9a821e400dd5908a22662c22bf13a1696",
+      "git_line_ending_normalization": true
+    },
+    {
+      "path": "runtime/annotation_layout.py",
+      "worktree_sha256": "7da921de560ae304469e1a08f44bf7df79d97eda94fe256918d8aaa222cbb020",
+      "staged_git_sha256": "7da921de560ae304469e1a08f44bf7df79d97eda94fe256918d8aaa222cbb020",
+      "git_line_ending_normalization": false
+    },
+    {
+      "path": "runtime/chemical_ir.py",
+      "worktree_sha256": "fe7c9e824dd8daa899fe3bc9ea74f93449de06edb9c3c8c1ce74335f13d874e1",
+      "staged_git_sha256": "fe7c9e824dd8daa899fe3bc9ea74f93449de06edb9c3c8c1ce74335f13d874e1",
+      "git_line_ending_normalization": false
+    },
+    {
+      "path": "runtime/mechanism_composer.py",
+      "worktree_sha256": "178852e7a0b3813cacd75429425d590d41dccb2bb70b17c087e1f6929d32ee3b",
+      "staged_git_sha256": "178852e7a0b3813cacd75429425d590d41dccb2bb70b17c087e1f6929d32ee3b",
+      "git_line_ending_normalization": false
+    },
+    {
+      "path": "runtime/native_provenance.py",
+      "worktree_sha256": "334c3f4164bd9325eb68d9dd00d14b1468e5871ac8f541fbbf2e4a468329d8fa",
+      "staged_git_sha256": "334c3f4164bd9325eb68d9dd00d14b1468e5871ac8f541fbbf2e4a468329d8fa",
+      "git_line_ending_normalization": false
+    },
+    {
+      "path": "tests/general_ir_cases.py",
+      "worktree_sha256": "03b4939518cfc1bc74352ad5fc3dfbe67e01022d67ea47d8653cd177fd5ef1be",
+      "staged_git_sha256": "03b4939518cfc1bc74352ad5fc3dfbe67e01022d67ea47d8653cd177fd5ef1be",
+      "git_line_ending_normalization": false
+    },
+    {
+      "path": "tests/test_edit_intents.py",
+      "worktree_sha256": "7a1f1a1dcc0b0335ca481135a476322b72cae4753b2d6ac9c1d87d0d39d94568",
+      "staged_git_sha256": "7a1f1a1dcc0b0335ca481135a476322b72cae4753b2d6ac9c1d87d0d39d94568",
+      "git_line_ending_normalization": false
+    },
+    {
+      "path": "tests/test_general_ir.py",
+      "worktree_sha256": "c2a3bd495fd9c21771d71f7fbf0449398951c8aeec45cc5c894a62d7e823a2d2",
+      "staged_git_sha256": "c2a3bd495fd9c21771d71f7fbf0449398951c8aeec45cc5c894a62d7e823a2d2",
+      "git_line_ending_normalization": false
+    },
+    {
+      "path": "tests/test_native_provenance.py",
+      "worktree_sha256": "e3c997ace5bdc50c875fe0ee43277f4b30295d4612dbb5de6350fab5850c178e",
+      "staged_git_sha256": "e3c997ace5bdc50c875fe0ee43277f4b30295d4612dbb5de6350fab5850c178e",
+      "git_line_ending_normalization": false
+    },
+    {
+      "path": "tests/test_readback_guards.py",
+      "worktree_sha256": "5167b430ae324f7614e708b7a31af547814e1233623add0b6c065665559be732",
+      "staged_git_sha256": "5167b430ae324f7614e708b7a31af547814e1233623add0b6c065665559be732",
+      "git_line_ending_normalization": false
+    },
+    {
+      "path": "tests/test_scene_equivalence.py",
+      "worktree_sha256": "74ba0eae04046efeb3c26734e563b010f483f05525d88d1b9e615c07b466a47a",
+      "staged_git_sha256": "74ba0eae04046efeb3c26734e563b010f483f05525d88d1b9e615c07b466a47a",
+      "git_line_ending_normalization": false
+    },
+    {
+      "path": "tests/test_smoke_verifier.py",
+      "worktree_sha256": "cbb7f90fd9f02bb5215a5f1fd3e9cb84e7f9c7f3164210eb0a6bd5e9cd624cae",
+      "staged_git_sha256": "cbb7f90fd9f02bb5215a5f1fd3e9cb84e7f9c7f3164210eb0a6bd5e9cd624cae",
+      "git_line_ending_normalization": false
+    },
+    {
+      "path": "tests/test_stereo_and_layout_guards.py",
+      "worktree_sha256": "d94358a7d8862ba02bb9f8cbdc4ed859d92be3c19992b4b8f9d3c01c9da675cf",
+      "staged_git_sha256": "d94358a7d8862ba02bb9f8cbdc4ed859d92be3c19992b4b8f9d3c01c9da675cf",
+      "git_line_ending_normalization": false
+    },
+    {
+      "path": "requirements-probes-win-py312.lock",
+      "worktree_sha256": "0083464a1d43874b55c9cf3e1e0889f3c70494a99e1142d132b4934c1a86dae9",
+      "staged_git_sha256": "e3c0e476ceebaea8d60f242ef4989d5b77d51cf94d90fcb100a6f2c14deada23",
+      "git_line_ending_normalization": true
+    }
+  ],
+  "runtime_imports": [
+    {
+      "file": "runtime/annotation_layout.py",
+      "module": null,
+      "names": [
+        "math"
+      ]
+    },
+    {
+      "file": "runtime/chemical_ir.py",
+      "module": "__future__",
+      "names": [
+        "annotations"
+      ]
+    },
+    {
+      "file": "runtime/chemical_ir.py",
+      "module": "collections",
+      "names": [
+        "Counter"
+      ]
+    },
+    {
+      "file": "runtime/chemical_ir.py",
+      "module": "copy",
+      "names": [
+        "deepcopy"
+      ]
+    },
+    {
+      "file": "runtime/chemical_ir.py",
+      "module": null,
+      "names": [
+        "hashlib",
+        "json"
+      ]
+    },
+    {
+      "file": "runtime/chemical_ir.py",
+      "module": "pathlib",
+      "names": [
+        "Path"
+      ]
+    },
+    {
+      "file": "runtime/chemical_ir.py",
+      "module": "jsonschema",
+      "names": [
+        "Draft202012Validator"
+      ]
+    },
+    {
+      "file": "runtime/chemical_ir.py",
+      "module": "referencing",
+      "names": [
+        "Registry",
+        "Resource"
+      ]
+    },
+    {
+      "file": "runtime/mechanism_composer.py",
+      "module": "__future__",
+      "names": [
+        "annotations"
+      ]
+    },
+    {
+      "file": "runtime/mechanism_composer.py",
+      "module": null,
+      "names": [
+        "copy",
+        "itertools",
+        "math",
+        "textwrap"
+      ]
+    },
+    {
+      "file": "runtime/mechanism_composer.py",
+      "module": "runtime.chemical_ir",
+      "names": [
+        "connected_components",
+        "linear_order",
+        "canonical_hash",
+        "chemical_colors"
+      ]
+    },
+    {
+      "file": "runtime/native_provenance.py",
+      "module": "pathlib",
+      "names": [
+        "Path"
+      ]
+    },
+    {
+      "file": "runtime/native_provenance.py",
+      "module": null,
+      "names": [
+        "hashlib",
+        "json",
+        "math",
+        "re"
+      ]
+    },
+    {
+      "file": "runtime/native_provenance.py",
+      "module": null,
+      "names": [
+        "xml.etree.ElementTree"
+      ]
+    },
+    {
+      "file": "runtime/native_provenance.py",
+      "module": "runtime.chemical_ir",
+      "names": [
+        "canonical_hash"
+      ]
+    },
+    {
+      "file": "runtime/adapters/chemdraw_cdxml.py",
+      "module": "__future__",
+      "names": [
+        "annotations"
+      ]
+    },
+    {
+      "file": "runtime/adapters/chemdraw_cdxml.py",
+      "module": null,
+      "names": [
+        "copy",
+        "json",
+        "math",
+        "hashlib"
+      ]
+    },
+    {
+      "file": "runtime/adapters/chemdraw_cdxml.py",
+      "module": "pathlib",
+      "names": [
+        "Path"
+      ]
+    },
+    {
+      "file": "runtime/adapters/chemdraw_cdxml.py",
+      "module": null,
+      "names": [
+        "xml.etree.ElementTree"
+      ]
+    },
+    {
+      "file": "runtime/adapters/chemdraw_cdxml.py",
+      "module": "runtime.chemical_ir",
+      "names": [
+        "connected_components",
+        "linear_order",
+        "edge",
+        "canonical_hash",
+        "chemical_colors"
+      ]
+    },
+    {
+      "file": "runtime/adapters/chemdraw_cdxml.py",
+      "module": "runtime.native_provenance",
+      "names": [
+        "verify_geometry_receipt"
+      ]
+    }
+  ],
+  "oracle_boundary": "Runtime reads reaction-neutral schemas and semantic IR. No import of probes/tests/reference-oracle source, legacy M2 drawing, fixture coordinates or a whole-scene cache. This is implementation-owner source inspection, not an independent audit.",
+  "ordering": "Whole-mechanism chemical roles plus labelled intrinsic geometry and numerical tie tolerances. IDs are not numeric placement keys. Symmetry comparator requires a single actual chemical/flow/stereo automorphism across all states.",
+  "measured_annotation_cache": "Only font glyph offsets and intrinsic native arrowhead reach, with source hashes; no page, state or atom coordinates in the metrics cache. Final visible-head masks remain required because curvature changes native head reach.",
+  "source_limitations": "Early R2 page/control workers did not capture every executing source hash. Final object-edit and independent-IR workers capture executor/helper/bridge hashes. Exact final raw source bytes are in the archive; staged Git normalization is recorded separately.",
+  "qualified_build": "ChemDraw Prime 26.0.0.6141 with installed interop 22.0.0.0; native executable/interop hashes are in receipts. No build-wide or product-wide acceptance is inferred.",
+  "native_M1_after_latest_gap_algebra": "not_run; scored repair budget exhausted after retained preflight failure",
+  "owner_review": "pending",
+  "holdout_freeze": "not_started",
+  "anti_selection": "unverified; complete correct IR supplied"
+}

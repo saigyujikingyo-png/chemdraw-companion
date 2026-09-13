@@ -1,0 +1,3564 @@
+{
+  "version": "corpus-mechanism-ir/0.1",
+  "id": "M2",
+  "entry_state": "s0",
+  "scope": {
+    "atom_inventory": "closed",
+    "omissions": [
+      "No implicit counterion is asserted; total represented charge is checked."
+    ],
+    "scientific_status": "unreviewed"
+  },
+  "atoms": [
+    {
+      "id": "a1",
+      "element": "C",
+      "isotope": null
+    },
+    {
+      "id": "a2",
+      "element": "N",
+      "isotope": null
+    },
+    {
+      "id": "a3",
+      "element": "O",
+      "isotope": null
+    },
+    {
+      "id": "a4",
+      "element": "C",
+      "isotope": null
+    },
+    {
+      "id": "a10",
+      "element": "C",
+      "isotope": null
+    },
+    {
+      "id": "a11",
+      "element": "C",
+      "isotope": null
+    },
+    {
+      "id": "a12",
+      "element": "C",
+      "isotope": null
+    },
+    {
+      "id": "a13",
+      "element": "C",
+      "isotope": null
+    },
+    {
+      "id": "a14",
+      "element": "C",
+      "isotope": null
+    },
+    {
+      "id": "a15",
+      "element": "C",
+      "isotope": null
+    },
+    {
+      "id": "a20",
+      "element": "O",
+      "isotope": null
+    },
+    {
+      "id": "a21",
+      "element": "O",
+      "isotope": null
+    },
+    {
+      "id": "a30",
+      "element": "H",
+      "isotope": null
+    },
+    {
+      "id": "a31",
+      "element": "H",
+      "isotope": null
+    },
+    {
+      "id": "a32",
+      "element": "H",
+      "isotope": null
+    },
+    {
+      "id": "a33",
+      "element": "H",
+      "isotope": null
+    },
+    {
+      "id": "a34",
+      "element": "H",
+      "isotope": null
+    },
+    {
+      "id": "a35",
+      "element": "H",
+      "isotope": null
+    }
+  ],
+  "states": [
+    {
+      "id": "s0",
+      "label": "Phenyl-anti acetophenone oxime",
+      "species_refs": [
+        "s0:species0",
+        "s0:species1",
+        "s0:species2"
+      ]
+    },
+    {
+      "id": "s1",
+      "label": "O-protonated oxime",
+      "species_refs": [
+        "s1:species0",
+        "s1:species1",
+        "s1:species2"
+      ]
+    },
+    {
+      "id": "s2",
+      "label": "Nitrilium after anti-phenyl migration",
+      "species_refs": [
+        "s2:species0",
+        "s2:species1",
+        "s2:species2",
+        "s2:species3"
+      ]
+    },
+    {
+      "id": "s3",
+      "label": "Water-added imidate oxonium",
+      "species_refs": [
+        "s3:species0",
+        "s3:species1",
+        "s3:species2"
+      ]
+    },
+    {
+      "id": "s4",
+      "label": "Imidic acid",
+      "species_refs": [
+        "s4:species0",
+        "s4:species1",
+        "s4:species2"
+      ]
+    },
+    {
+      "id": "s5",
+      "label": "N-protonated imidic acid",
+      "species_refs": [
+        "s5:species0",
+        "s5:species1",
+        "s5:species2"
+      ]
+    },
+    {
+      "id": "s6",
+      "label": "Acetanilide and regenerated hydronium",
+      "species_refs": [
+        "s6:species0",
+        "s6:species1",
+        "s6:species2"
+      ]
+    }
+  ],
+  "species": [
+    {
+      "id": "s0:species0",
+      "state_ref": "s0",
+      "molecule_refs": [
+        "s0:m0"
+      ],
+      "role": "participant",
+      "stoichiometry": 1
+    },
+    {
+      "id": "s0:species1",
+      "state_ref": "s0",
+      "molecule_refs": [
+        "s0:m1"
+      ],
+      "role": "participant",
+      "stoichiometry": 1
+    },
+    {
+      "id": "s0:species2",
+      "state_ref": "s0",
+      "molecule_refs": [
+        "s0:m2"
+      ],
+      "role": "participant",
+      "stoichiometry": 1
+    },
+    {
+      "id": "s1:species0",
+      "state_ref": "s1",
+      "molecule_refs": [
+        "s1:m0"
+      ],
+      "role": "participant",
+      "stoichiometry": 1
+    },
+    {
+      "id": "s1:species1",
+      "state_ref": "s1",
+      "molecule_refs": [
+        "s1:m1"
+      ],
+      "role": "participant",
+      "stoichiometry": 1
+    },
+    {
+      "id": "s1:species2",
+      "state_ref": "s1",
+      "molecule_refs": [
+        "s1:m2"
+      ],
+      "role": "participant",
+      "stoichiometry": 1
+    },
+    {
+      "id": "s2:species0",
+      "state_ref": "s2",
+      "molecule_refs": [
+        "s2:m0"
+      ],
+      "role": "participant",
+      "stoichiometry": 1
+    },
+    {
+      "id": "s2:species1",
+      "state_ref": "s2",
+      "molecule_refs": [
+        "s2:m1"
+      ],
+      "role": "participant",
+      "stoichiometry": 1
+    },
+    {
+      "id": "s2:species2",
+      "state_ref": "s2",
+      "molecule_refs": [
+        "s2:m2"
+      ],
+      "role": "participant",
+      "stoichiometry": 1
+    },
+    {
+      "id": "s2:species3",
+      "state_ref": "s2",
+      "molecule_refs": [
+        "s2:m3"
+      ],
+      "role": "participant",
+      "stoichiometry": 1
+    },
+    {
+      "id": "s3:species0",
+      "state_ref": "s3",
+      "molecule_refs": [
+        "s3:m0"
+      ],
+      "role": "participant",
+      "stoichiometry": 1
+    },
+    {
+      "id": "s3:species1",
+      "state_ref": "s3",
+      "molecule_refs": [
+        "s3:m1"
+      ],
+      "role": "participant",
+      "stoichiometry": 1
+    },
+    {
+      "id": "s3:species2",
+      "state_ref": "s3",
+      "molecule_refs": [
+        "s3:m2"
+      ],
+      "role": "participant",
+      "stoichiometry": 1
+    },
+    {
+      "id": "s4:species0",
+      "state_ref": "s4",
+      "molecule_refs": [
+        "s4:m0"
+      ],
+      "role": "participant",
+      "stoichiometry": 1
+    },
+    {
+      "id": "s4:species1",
+      "state_ref": "s4",
+      "molecule_refs": [
+        "s4:m1"
+      ],
+      "role": "participant",
+      "stoichiometry": 1
+    },
+    {
+      "id": "s4:species2",
+      "state_ref": "s4",
+      "molecule_refs": [
+        "s4:m2"
+      ],
+      "role": "participant",
+      "stoichiometry": 1
+    },
+    {
+      "id": "s5:species0",
+      "state_ref": "s5",
+      "molecule_refs": [
+        "s5:m0"
+      ],
+      "role": "participant",
+      "stoichiometry": 1
+    },
+    {
+      "id": "s5:species1",
+      "state_ref": "s5",
+      "molecule_refs": [
+        "s5:m1"
+      ],
+      "role": "participant",
+      "stoichiometry": 1
+    },
+    {
+      "id": "s5:species2",
+      "state_ref": "s5",
+      "molecule_refs": [
+        "s5:m2"
+      ],
+      "role": "participant",
+      "stoichiometry": 1
+    },
+    {
+      "id": "s6:species0",
+      "state_ref": "s6",
+      "molecule_refs": [
+        "s6:m0"
+      ],
+      "role": "participant",
+      "stoichiometry": 1
+    },
+    {
+      "id": "s6:species1",
+      "state_ref": "s6",
+      "molecule_refs": [
+        "s6:m1"
+      ],
+      "role": "participant",
+      "stoichiometry": 1
+    },
+    {
+      "id": "s6:species2",
+      "state_ref": "s6",
+      "molecule_refs": [
+        "s6:m2"
+      ],
+      "role": "participant",
+      "stoichiometry": 1
+    }
+  ],
+  "molecules": [
+    {
+      "id": "s0:m0",
+      "state_ref": "s0",
+      "atom_refs": [
+        "s0:a1",
+        "s0:a2",
+        "s0:a3",
+        "s0:a4",
+        "s0:a10",
+        "s0:a11",
+        "s0:a12",
+        "s0:a13",
+        "s0:a14",
+        "s0:a15",
+        "s0:a30"
+      ],
+      "bond_refs": [
+        "s0:b:1:2",
+        "s0:b:1:4",
+        "s0:b:1:10",
+        "s0:b:2:3",
+        "s0:b:3:30",
+        "s0:b:10:11",
+        "s0:b:10:15",
+        "s0:b:11:12",
+        "s0:b:12:13",
+        "s0:b:13:14",
+        "s0:b:14:15"
+      ]
+    },
+    {
+      "id": "s0:m1",
+      "state_ref": "s0",
+      "atom_refs": [
+        "s0:a20",
+        "s0:a31",
+        "s0:a32",
+        "s0:a33"
+      ],
+      "bond_refs": [
+        "s0:b:20:31",
+        "s0:b:20:32",
+        "s0:b:20:33"
+      ]
+    },
+    {
+      "id": "s0:m2",
+      "state_ref": "s0",
+      "atom_refs": [
+        "s0:a21",
+        "s0:a34",
+        "s0:a35"
+      ],
+      "bond_refs": [
+        "s0:b:21:34",
+        "s0:b:21:35"
+      ]
+    },
+    {
+      "id": "s1:m0",
+      "state_ref": "s1",
+      "atom_refs": [
+        "s1:a1",
+        "s1:a2",
+        "s1:a3",
+        "s1:a4",
+        "s1:a10",
+        "s1:a11",
+        "s1:a12",
+        "s1:a13",
+        "s1:a14",
+        "s1:a15",
+        "s1:a30",
+        "s1:a31"
+      ],
+      "bond_refs": [
+        "s1:b:1:2",
+        "s1:b:1:4",
+        "s1:b:1:10",
+        "s1:b:2:3",
+        "s1:b:3:30",
+        "s1:b:3:31",
+        "s1:b:10:11",
+        "s1:b:10:15",
+        "s1:b:11:12",
+        "s1:b:12:13",
+        "s1:b:13:14",
+        "s1:b:14:15"
+      ]
+    },
+    {
+      "id": "s1:m1",
+      "state_ref": "s1",
+      "atom_refs": [
+        "s1:a20",
+        "s1:a32",
+        "s1:a33"
+      ],
+      "bond_refs": [
+        "s1:b:20:32",
+        "s1:b:20:33"
+      ]
+    },
+    {
+      "id": "s1:m2",
+      "state_ref": "s1",
+      "atom_refs": [
+        "s1:a21",
+        "s1:a34",
+        "s1:a35"
+      ],
+      "bond_refs": [
+        "s1:b:21:34",
+        "s1:b:21:35"
+      ]
+    },
+    {
+      "id": "s2:m0",
+      "state_ref": "s2",
+      "atom_refs": [
+        "s2:a1",
+        "s2:a2",
+        "s2:a4",
+        "s2:a10",
+        "s2:a11",
+        "s2:a12",
+        "s2:a13",
+        "s2:a14",
+        "s2:a15"
+      ],
+      "bond_refs": [
+        "s2:b:1:2",
+        "s2:b:1:4",
+        "s2:b:2:10",
+        "s2:b:10:11",
+        "s2:b:10:15",
+        "s2:b:11:12",
+        "s2:b:12:13",
+        "s2:b:13:14",
+        "s2:b:14:15"
+      ]
+    },
+    {
+      "id": "s2:m1",
+      "state_ref": "s2",
+      "atom_refs": [
+        "s2:a3",
+        "s2:a30",
+        "s2:a31"
+      ],
+      "bond_refs": [
+        "s2:b:3:30",
+        "s2:b:3:31"
+      ]
+    },
+    {
+      "id": "s2:m2",
+      "state_ref": "s2",
+      "atom_refs": [
+        "s2:a20",
+        "s2:a32",
+        "s2:a33"
+      ],
+      "bond_refs": [
+        "s2:b:20:32",
+        "s2:b:20:33"
+      ]
+    },
+    {
+      "id": "s2:m3",
+      "state_ref": "s2",
+      "atom_refs": [
+        "s2:a21",
+        "s2:a34",
+        "s2:a35"
+      ],
+      "bond_refs": [
+        "s2:b:21:34",
+        "s2:b:21:35"
+      ]
+    },
+    {
+      "id": "s3:m0",
+      "state_ref": "s3",
+      "atom_refs": [
+        "s3:a1",
+        "s3:a2",
+        "s3:a4",
+        "s3:a10",
+        "s3:a11",
+        "s3:a12",
+        "s3:a13",
+        "s3:a14",
+        "s3:a15",
+        "s3:a21",
+        "s3:a34",
+        "s3:a35"
+      ],
+      "bond_refs": [
+        "s3:b:1:2",
+        "s3:b:1:4",
+        "s3:b:1:21",
+        "s3:b:2:10",
+        "s3:b:10:11",
+        "s3:b:10:15",
+        "s3:b:11:12",
+        "s3:b:12:13",
+        "s3:b:13:14",
+        "s3:b:14:15",
+        "s3:b:21:34",
+        "s3:b:21:35"
+      ]
+    },
+    {
+      "id": "s3:m1",
+      "state_ref": "s3",
+      "atom_refs": [
+        "s3:a3",
+        "s3:a30",
+        "s3:a31"
+      ],
+      "bond_refs": [
+        "s3:b:3:30",
+        "s3:b:3:31"
+      ]
+    },
+    {
+      "id": "s3:m2",
+      "state_ref": "s3",
+      "atom_refs": [
+        "s3:a20",
+        "s3:a32",
+        "s3:a33"
+      ],
+      "bond_refs": [
+        "s3:b:20:32",
+        "s3:b:20:33"
+      ]
+    },
+    {
+      "id": "s4:m0",
+      "state_ref": "s4",
+      "atom_refs": [
+        "s4:a1",
+        "s4:a2",
+        "s4:a4",
+        "s4:a10",
+        "s4:a11",
+        "s4:a12",
+        "s4:a13",
+        "s4:a14",
+        "s4:a15",
+        "s4:a21",
+        "s4:a34"
+      ],
+      "bond_refs": [
+        "s4:b:1:2",
+        "s4:b:1:4",
+        "s4:b:1:21",
+        "s4:b:2:10",
+        "s4:b:10:11",
+        "s4:b:10:15",
+        "s4:b:11:12",
+        "s4:b:12:13",
+        "s4:b:13:14",
+        "s4:b:14:15",
+        "s4:b:21:34"
+      ]
+    },
+    {
+      "id": "s4:m1",
+      "state_ref": "s4",
+      "atom_refs": [
+        "s4:a3",
+        "s4:a30",
+        "s4:a31"
+      ],
+      "bond_refs": [
+        "s4:b:3:30",
+        "s4:b:3:31"
+      ]
+    },
+    {
+      "id": "s4:m2",
+      "state_ref": "s4",
+      "atom_refs": [
+        "s4:a20",
+        "s4:a32",
+        "s4:a33",
+        "s4:a35"
+      ],
+      "bond_refs": [
+        "s4:b:20:32",
+        "s4:b:20:33",
+        "s4:b:20:35"
+      ]
+    },
+    {
+      "id": "s5:m0",
+      "state_ref": "s5",
+      "atom_refs": [
+        "s5:a1",
+        "s5:a2",
+        "s5:a4",
+        "s5:a10",
+        "s5:a11",
+        "s5:a12",
+        "s5:a13",
+        "s5:a14",
+        "s5:a15",
+        "s5:a21",
+        "s5:a34",
+        "s5:a35"
+      ],
+      "bond_refs": [
+        "s5:b:1:2",
+        "s5:b:1:4",
+        "s5:b:1:21",
+        "s5:b:2:10",
+        "s5:b:2:35",
+        "s5:b:10:11",
+        "s5:b:10:15",
+        "s5:b:11:12",
+        "s5:b:12:13",
+        "s5:b:13:14",
+        "s5:b:14:15",
+        "s5:b:21:34"
+      ]
+    },
+    {
+      "id": "s5:m1",
+      "state_ref": "s5",
+      "atom_refs": [
+        "s5:a3",
+        "s5:a30",
+        "s5:a31"
+      ],
+      "bond_refs": [
+        "s5:b:3:30",
+        "s5:b:3:31"
+      ]
+    },
+    {
+      "id": "s5:m2",
+      "state_ref": "s5",
+      "atom_refs": [
+        "s5:a20",
+        "s5:a32",
+        "s5:a33"
+      ],
+      "bond_refs": [
+        "s5:b:20:32",
+        "s5:b:20:33"
+      ]
+    },
+    {
+      "id": "s6:m0",
+      "state_ref": "s6",
+      "atom_refs": [
+        "s6:a1",
+        "s6:a2",
+        "s6:a4",
+        "s6:a10",
+        "s6:a11",
+        "s6:a12",
+        "s6:a13",
+        "s6:a14",
+        "s6:a15",
+        "s6:a21",
+        "s6:a35"
+      ],
+      "bond_refs": [
+        "s6:b:1:2",
+        "s6:b:1:4",
+        "s6:b:1:21",
+        "s6:b:2:10",
+        "s6:b:2:35",
+        "s6:b:10:11",
+        "s6:b:10:15",
+        "s6:b:11:12",
+        "s6:b:12:13",
+        "s6:b:13:14",
+        "s6:b:14:15"
+      ]
+    },
+    {
+      "id": "s6:m1",
+      "state_ref": "s6",
+      "atom_refs": [
+        "s6:a3",
+        "s6:a30",
+        "s6:a31"
+      ],
+      "bond_refs": [
+        "s6:b:3:30",
+        "s6:b:3:31"
+      ]
+    },
+    {
+      "id": "s6:m2",
+      "state_ref": "s6",
+      "atom_refs": [
+        "s6:a20",
+        "s6:a32",
+        "s6:a33",
+        "s6:a34"
+      ],
+      "bond_refs": [
+        "s6:b:20:32",
+        "s6:b:20:33",
+        "s6:b:20:34"
+      ]
+    }
+  ],
+  "atom_occurrences": [
+    {
+      "id": "s0:a1",
+      "atom_ref": "a1",
+      "state_ref": "s0",
+      "molecule_ref": "s0:m0",
+      "implicit_h": 0
+    },
+    {
+      "id": "s0:a2",
+      "atom_ref": "a2",
+      "state_ref": "s0",
+      "molecule_ref": "s0:m0",
+      "implicit_h": 0
+    },
+    {
+      "id": "s0:a3",
+      "atom_ref": "a3",
+      "state_ref": "s0",
+      "molecule_ref": "s0:m0",
+      "implicit_h": 0
+    },
+    {
+      "id": "s0:a4",
+      "atom_ref": "a4",
+      "state_ref": "s0",
+      "molecule_ref": "s0:m0",
+      "implicit_h": 3
+    },
+    {
+      "id": "s0:a10",
+      "atom_ref": "a10",
+      "state_ref": "s0",
+      "molecule_ref": "s0:m0",
+      "implicit_h": 0
+    },
+    {
+      "id": "s0:a11",
+      "atom_ref": "a11",
+      "state_ref": "s0",
+      "molecule_ref": "s0:m0",
+      "implicit_h": 1
+    },
+    {
+      "id": "s0:a12",
+      "atom_ref": "a12",
+      "state_ref": "s0",
+      "molecule_ref": "s0:m0",
+      "implicit_h": 1
+    },
+    {
+      "id": "s0:a13",
+      "atom_ref": "a13",
+      "state_ref": "s0",
+      "molecule_ref": "s0:m0",
+      "implicit_h": 1
+    },
+    {
+      "id": "s0:a14",
+      "atom_ref": "a14",
+      "state_ref": "s0",
+      "molecule_ref": "s0:m0",
+      "implicit_h": 1
+    },
+    {
+      "id": "s0:a15",
+      "atom_ref": "a15",
+      "state_ref": "s0",
+      "molecule_ref": "s0:m0",
+      "implicit_h": 1
+    },
+    {
+      "id": "s0:a30",
+      "atom_ref": "a30",
+      "state_ref": "s0",
+      "molecule_ref": "s0:m0",
+      "implicit_h": 0
+    },
+    {
+      "id": "s0:a20",
+      "atom_ref": "a20",
+      "state_ref": "s0",
+      "molecule_ref": "s0:m1",
+      "implicit_h": 0
+    },
+    {
+      "id": "s0:a31",
+      "atom_ref": "a31",
+      "state_ref": "s0",
+      "molecule_ref": "s0:m1",
+      "implicit_h": 0
+    },
+    {
+      "id": "s0:a32",
+      "atom_ref": "a32",
+      "state_ref": "s0",
+      "molecule_ref": "s0:m1",
+      "implicit_h": 0
+    },
+    {
+      "id": "s0:a33",
+      "atom_ref": "a33",
+      "state_ref": "s0",
+      "molecule_ref": "s0:m1",
+      "implicit_h": 0
+    },
+    {
+      "id": "s0:a21",
+      "atom_ref": "a21",
+      "state_ref": "s0",
+      "molecule_ref": "s0:m2",
+      "implicit_h": 0
+    },
+    {
+      "id": "s0:a34",
+      "atom_ref": "a34",
+      "state_ref": "s0",
+      "molecule_ref": "s0:m2",
+      "implicit_h": 0
+    },
+    {
+      "id": "s0:a35",
+      "atom_ref": "a35",
+      "state_ref": "s0",
+      "molecule_ref": "s0:m2",
+      "implicit_h": 0
+    },
+    {
+      "id": "s1:a1",
+      "atom_ref": "a1",
+      "state_ref": "s1",
+      "molecule_ref": "s1:m0",
+      "implicit_h": 0
+    },
+    {
+      "id": "s1:a2",
+      "atom_ref": "a2",
+      "state_ref": "s1",
+      "molecule_ref": "s1:m0",
+      "implicit_h": 0
+    },
+    {
+      "id": "s1:a3",
+      "atom_ref": "a3",
+      "state_ref": "s1",
+      "molecule_ref": "s1:m0",
+      "implicit_h": 0
+    },
+    {
+      "id": "s1:a4",
+      "atom_ref": "a4",
+      "state_ref": "s1",
+      "molecule_ref": "s1:m0",
+      "implicit_h": 3
+    },
+    {
+      "id": "s1:a10",
+      "atom_ref": "a10",
+      "state_ref": "s1",
+      "molecule_ref": "s1:m0",
+      "implicit_h": 0
+    },
+    {
+      "id": "s1:a11",
+      "atom_ref": "a11",
+      "state_ref": "s1",
+      "molecule_ref": "s1:m0",
+      "implicit_h": 1
+    },
+    {
+      "id": "s1:a12",
+      "atom_ref": "a12",
+      "state_ref": "s1",
+      "molecule_ref": "s1:m0",
+      "implicit_h": 1
+    },
+    {
+      "id": "s1:a13",
+      "atom_ref": "a13",
+      "state_ref": "s1",
+      "molecule_ref": "s1:m0",
+      "implicit_h": 1
+    },
+    {
+      "id": "s1:a14",
+      "atom_ref": "a14",
+      "state_ref": "s1",
+      "molecule_ref": "s1:m0",
+      "implicit_h": 1
+    },
+    {
+      "id": "s1:a15",
+      "atom_ref": "a15",
+      "state_ref": "s1",
+      "molecule_ref": "s1:m0",
+      "implicit_h": 1
+    },
+    {
+      "id": "s1:a30",
+      "atom_ref": "a30",
+      "state_ref": "s1",
+      "molecule_ref": "s1:m0",
+      "implicit_h": 0
+    },
+    {
+      "id": "s1:a31",
+      "atom_ref": "a31",
+      "state_ref": "s1",
+      "molecule_ref": "s1:m0",
+      "implicit_h": 0
+    },
+    {
+      "id": "s1:a20",
+      "atom_ref": "a20",
+      "state_ref": "s1",
+      "molecule_ref": "s1:m1",
+      "implicit_h": 0
+    },
+    {
+      "id": "s1:a32",
+      "atom_ref": "a32",
+      "state_ref": "s1",
+      "molecule_ref": "s1:m1",
+      "implicit_h": 0
+    },
+    {
+      "id": "s1:a33",
+      "atom_ref": "a33",
+      "state_ref": "s1",
+      "molecule_ref": "s1:m1",
+      "implicit_h": 0
+    },
+    {
+      "id": "s1:a21",
+      "atom_ref": "a21",
+      "state_ref": "s1",
+      "molecule_ref": "s1:m2",
+      "implicit_h": 0
+    },
+    {
+      "id": "s1:a34",
+      "atom_ref": "a34",
+      "state_ref": "s1",
+      "molecule_ref": "s1:m2",
+      "implicit_h": 0
+    },
+    {
+      "id": "s1:a35",
+      "atom_ref": "a35",
+      "state_ref": "s1",
+      "molecule_ref": "s1:m2",
+      "implicit_h": 0
+    },
+    {
+      "id": "s2:a1",
+      "atom_ref": "a1",
+      "state_ref": "s2",
+      "molecule_ref": "s2:m0",
+      "implicit_h": 0
+    },
+    {
+      "id": "s2:a2",
+      "atom_ref": "a2",
+      "state_ref": "s2",
+      "molecule_ref": "s2:m0",
+      "implicit_h": 0
+    },
+    {
+      "id": "s2:a4",
+      "atom_ref": "a4",
+      "state_ref": "s2",
+      "molecule_ref": "s2:m0",
+      "implicit_h": 3
+    },
+    {
+      "id": "s2:a10",
+      "atom_ref": "a10",
+      "state_ref": "s2",
+      "molecule_ref": "s2:m0",
+      "implicit_h": 0
+    },
+    {
+      "id": "s2:a11",
+      "atom_ref": "a11",
+      "state_ref": "s2",
+      "molecule_ref": "s2:m0",
+      "implicit_h": 1
+    },
+    {
+      "id": "s2:a12",
+      "atom_ref": "a12",
+      "state_ref": "s2",
+      "molecule_ref": "s2:m0",
+      "implicit_h": 1
+    },
+    {
+      "id": "s2:a13",
+      "atom_ref": "a13",
+      "state_ref": "s2",
+      "molecule_ref": "s2:m0",
+      "implicit_h": 1
+    },
+    {
+      "id": "s2:a14",
+      "atom_ref": "a14",
+      "state_ref": "s2",
+      "molecule_ref": "s2:m0",
+      "implicit_h": 1
+    },
+    {
+      "id": "s2:a15",
+      "atom_ref": "a15",
+      "state_ref": "s2",
+      "molecule_ref": "s2:m0",
+      "implicit_h": 1
+    },
+    {
+      "id": "s2:a3",
+      "atom_ref": "a3",
+      "state_ref": "s2",
+      "molecule_ref": "s2:m1",
+      "implicit_h": 0
+    },
+    {
+      "id": "s2:a30",
+      "atom_ref": "a30",
+      "state_ref": "s2",
+      "molecule_ref": "s2:m1",
+      "implicit_h": 0
+    },
+    {
+      "id": "s2:a31",
+      "atom_ref": "a31",
+      "state_ref": "s2",
+      "molecule_ref": "s2:m1",
+      "implicit_h": 0
+    },
+    {
+      "id": "s2:a20",
+      "atom_ref": "a20",
+      "state_ref": "s2",
+      "molecule_ref": "s2:m2",
+      "implicit_h": 0
+    },
+    {
+      "id": "s2:a32",
+      "atom_ref": "a32",
+      "state_ref": "s2",
+      "molecule_ref": "s2:m2",
+      "implicit_h": 0
+    },
+    {
+      "id": "s2:a33",
+      "atom_ref": "a33",
+      "state_ref": "s2",
+      "molecule_ref": "s2:m2",
+      "implicit_h": 0
+    },
+    {
+      "id": "s2:a21",
+      "atom_ref": "a21",
+      "state_ref": "s2",
+      "molecule_ref": "s2:m3",
+      "implicit_h": 0
+    },
+    {
+      "id": "s2:a34",
+      "atom_ref": "a34",
+      "state_ref": "s2",
+      "molecule_ref": "s2:m3",
+      "implicit_h": 0
+    },
+    {
+      "id": "s2:a35",
+      "atom_ref": "a35",
+      "state_ref": "s2",
+      "molecule_ref": "s2:m3",
+      "implicit_h": 0
+    },
+    {
+      "id": "s3:a1",
+      "atom_ref": "a1",
+      "state_ref": "s3",
+      "molecule_ref": "s3:m0",
+      "implicit_h": 0
+    },
+    {
+      "id": "s3:a2",
+      "atom_ref": "a2",
+      "state_ref": "s3",
+      "molecule_ref": "s3:m0",
+      "implicit_h": 0
+    },
+    {
+      "id": "s3:a4",
+      "atom_ref": "a4",
+      "state_ref": "s3",
+      "molecule_ref": "s3:m0",
+      "implicit_h": 3
+    },
+    {
+      "id": "s3:a10",
+      "atom_ref": "a10",
+      "state_ref": "s3",
+      "molecule_ref": "s3:m0",
+      "implicit_h": 0
+    },
+    {
+      "id": "s3:a11",
+      "atom_ref": "a11",
+      "state_ref": "s3",
+      "molecule_ref": "s3:m0",
+      "implicit_h": 1
+    },
+    {
+      "id": "s3:a12",
+      "atom_ref": "a12",
+      "state_ref": "s3",
+      "molecule_ref": "s3:m0",
+      "implicit_h": 1
+    },
+    {
+      "id": "s3:a13",
+      "atom_ref": "a13",
+      "state_ref": "s3",
+      "molecule_ref": "s3:m0",
+      "implicit_h": 1
+    },
+    {
+      "id": "s3:a14",
+      "atom_ref": "a14",
+      "state_ref": "s3",
+      "molecule_ref": "s3:m0",
+      "implicit_h": 1
+    },
+    {
+      "id": "s3:a15",
+      "atom_ref": "a15",
+      "state_ref": "s3",
+      "molecule_ref": "s3:m0",
+      "implicit_h": 1
+    },
+    {
+      "id": "s3:a21",
+      "atom_ref": "a21",
+      "state_ref": "s3",
+      "molecule_ref": "s3:m0",
+      "implicit_h": 0
+    },
+    {
+      "id": "s3:a34",
+      "atom_ref": "a34",
+      "state_ref": "s3",
+      "molecule_ref": "s3:m0",
+      "implicit_h": 0
+    },
+    {
+      "id": "s3:a35",
+      "atom_ref": "a35",
+      "state_ref": "s3",
+      "molecule_ref": "s3:m0",
+      "implicit_h": 0
+    },
+    {
+      "id": "s3:a3",
+      "atom_ref": "a3",
+      "state_ref": "s3",
+      "molecule_ref": "s3:m1",
+      "implicit_h": 0
+    },
+    {
+      "id": "s3:a30",
+      "atom_ref": "a30",
+      "state_ref": "s3",
+      "molecule_ref": "s3:m1",
+      "implicit_h": 0
+    },
+    {
+      "id": "s3:a31",
+      "atom_ref": "a31",
+      "state_ref": "s3",
+      "molecule_ref": "s3:m1",
+      "implicit_h": 0
+    },
+    {
+      "id": "s3:a20",
+      "atom_ref": "a20",
+      "state_ref": "s3",
+      "molecule_ref": "s3:m2",
+      "implicit_h": 0
+    },
+    {
+      "id": "s3:a32",
+      "atom_ref": "a32",
+      "state_ref": "s3",
+      "molecule_ref": "s3:m2",
+      "implicit_h": 0
+    },
+    {
+      "id": "s3:a33",
+      "atom_ref": "a33",
+      "state_ref": "s3",
+      "molecule_ref": "s3:m2",
+      "implicit_h": 0
+    },
+    {
+      "id": "s4:a1",
+      "atom_ref": "a1",
+      "state_ref": "s4",
+      "molecule_ref": "s4:m0",
+      "implicit_h": 0
+    },
+    {
+      "id": "s4:a2",
+      "atom_ref": "a2",
+      "state_ref": "s4",
+      "molecule_ref": "s4:m0",
+      "implicit_h": 0
+    },
+    {
+      "id": "s4:a4",
+      "atom_ref": "a4",
+      "state_ref": "s4",
+      "molecule_ref": "s4:m0",
+      "implicit_h": 3
+    },
+    {
+      "id": "s4:a10",
+      "atom_ref": "a10",
+      "state_ref": "s4",
+      "molecule_ref": "s4:m0",
+      "implicit_h": 0
+    },
+    {
+      "id": "s4:a11",
+      "atom_ref": "a11",
+      "state_ref": "s4",
+      "molecule_ref": "s4:m0",
+      "implicit_h": 1
+    },
+    {
+      "id": "s4:a12",
+      "atom_ref": "a12",
+      "state_ref": "s4",
+      "molecule_ref": "s4:m0",
+      "implicit_h": 1
+    },
+    {
+      "id": "s4:a13",
+      "atom_ref": "a13",
+      "state_ref": "s4",
+      "molecule_ref": "s4:m0",
+      "implicit_h": 1
+    },
+    {
+      "id": "s4:a14",
+      "atom_ref": "a14",
+      "state_ref": "s4",
+      "molecule_ref": "s4:m0",
+      "implicit_h": 1
+    },
+    {
+      "id": "s4:a15",
+      "atom_ref": "a15",
+      "state_ref": "s4",
+      "molecule_ref": "s4:m0",
+      "implicit_h": 1
+    },
+    {
+      "id": "s4:a21",
+      "atom_ref": "a21",
+      "state_ref": "s4",
+      "molecule_ref": "s4:m0",
+      "implicit_h": 0
+    },
+    {
+      "id": "s4:a34",
+      "atom_ref": "a34",
+      "state_ref": "s4",
+      "molecule_ref": "s4:m0",
+      "implicit_h": 0
+    },
+    {
+      "id": "s4:a3",
+      "atom_ref": "a3",
+      "state_ref": "s4",
+      "molecule_ref": "s4:m1",
+      "implicit_h": 0
+    },
+    {
+      "id": "s4:a30",
+      "atom_ref": "a30",
+      "state_ref": "s4",
+      "molecule_ref": "s4:m1",
+      "implicit_h": 0
+    },
+    {
+      "id": "s4:a31",
+      "atom_ref": "a31",
+      "state_ref": "s4",
+      "molecule_ref": "s4:m1",
+      "implicit_h": 0
+    },
+    {
+      "id": "s4:a20",
+      "atom_ref": "a20",
+      "state_ref": "s4",
+      "molecule_ref": "s4:m2",
+      "implicit_h": 0
+    },
+    {
+      "id": "s4:a32",
+      "atom_ref": "a32",
+      "state_ref": "s4",
+      "molecule_ref": "s4:m2",
+      "implicit_h": 0
+    },
+    {
+      "id": "s4:a33",
+      "atom_ref": "a33",
+      "state_ref": "s4",
+      "molecule_ref": "s4:m2",
+      "implicit_h": 0
+    },
+    {
+      "id": "s4:a35",
+      "atom_ref": "a35",
+      "state_ref": "s4",
+      "molecule_ref": "s4:m2",
+      "implicit_h": 0
+    },
+    {
+      "id": "s5:a1",
+      "atom_ref": "a1",
+      "state_ref": "s5",
+      "molecule_ref": "s5:m0",
+      "implicit_h": 0
+    },
+    {
+      "id": "s5:a2",
+      "atom_ref": "a2",
+      "state_ref": "s5",
+      "molecule_ref": "s5:m0",
+      "implicit_h": 0
+    },
+    {
+      "id": "s5:a4",
+      "atom_ref": "a4",
+      "state_ref": "s5",
+      "molecule_ref": "s5:m0",
+      "implicit_h": 3
+    },
+    {
+      "id": "s5:a10",
+      "atom_ref": "a10",
+      "state_ref": "s5",
+      "molecule_ref": "s5:m0",
+      "implicit_h": 0
+    },
+    {
+      "id": "s5:a11",
+      "atom_ref": "a11",
+      "state_ref": "s5",
+      "molecule_ref": "s5:m0",
+      "implicit_h": 1
+    },
+    {
+      "id": "s5:a12",
+      "atom_ref": "a12",
+      "state_ref": "s5",
+      "molecule_ref": "s5:m0",
+      "implicit_h": 1
+    },
+    {
+      "id": "s5:a13",
+      "atom_ref": "a13",
+      "state_ref": "s5",
+      "molecule_ref": "s5:m0",
+      "implicit_h": 1
+    },
+    {
+      "id": "s5:a14",
+      "atom_ref": "a14",
+      "state_ref": "s5",
+      "molecule_ref": "s5:m0",
+      "implicit_h": 1
+    },
+    {
+      "id": "s5:a15",
+      "atom_ref": "a15",
+      "state_ref": "s5",
+      "molecule_ref": "s5:m0",
+      "implicit_h": 1
+    },
+    {
+      "id": "s5:a21",
+      "atom_ref": "a21",
+      "state_ref": "s5",
+      "molecule_ref": "s5:m0",
+      "implicit_h": 0
+    },
+    {
+      "id": "s5:a34",
+      "atom_ref": "a34",
+      "state_ref": "s5",
+      "molecule_ref": "s5:m0",
+      "implicit_h": 0
+    },
+    {
+      "id": "s5:a35",
+      "atom_ref": "a35",
+      "state_ref": "s5",
+      "molecule_ref": "s5:m0",
+      "implicit_h": 0
+    },
+    {
+      "id": "s5:a3",
+      "atom_ref": "a3",
+      "state_ref": "s5",
+      "molecule_ref": "s5:m1",
+      "implicit_h": 0
+    },
+    {
+      "id": "s5:a30",
+      "atom_ref": "a30",
+      "state_ref": "s5",
+      "molecule_ref": "s5:m1",
+      "implicit_h": 0
+    },
+    {
+      "id": "s5:a31",
+      "atom_ref": "a31",
+      "state_ref": "s5",
+      "molecule_ref": "s5:m1",
+      "implicit_h": 0
+    },
+    {
+      "id": "s5:a20",
+      "atom_ref": "a20",
+      "state_ref": "s5",
+      "molecule_ref": "s5:m2",
+      "implicit_h": 0
+    },
+    {
+      "id": "s5:a32",
+      "atom_ref": "a32",
+      "state_ref": "s5",
+      "molecule_ref": "s5:m2",
+      "implicit_h": 0
+    },
+    {
+      "id": "s5:a33",
+      "atom_ref": "a33",
+      "state_ref": "s5",
+      "molecule_ref": "s5:m2",
+      "implicit_h": 0
+    },
+    {
+      "id": "s6:a1",
+      "atom_ref": "a1",
+      "state_ref": "s6",
+      "molecule_ref": "s6:m0",
+      "implicit_h": 0
+    },
+    {
+      "id": "s6:a2",
+      "atom_ref": "a2",
+      "state_ref": "s6",
+      "molecule_ref": "s6:m0",
+      "implicit_h": 0
+    },
+    {
+      "id": "s6:a4",
+      "atom_ref": "a4",
+      "state_ref": "s6",
+      "molecule_ref": "s6:m0",
+      "implicit_h": 3
+    },
+    {
+      "id": "s6:a10",
+      "atom_ref": "a10",
+      "state_ref": "s6",
+      "molecule_ref": "s6:m0",
+      "implicit_h": 0
+    },
+    {
+      "id": "s6:a11",
+      "atom_ref": "a11",
+      "state_ref": "s6",
+      "molecule_ref": "s6:m0",
+      "implicit_h": 1
+    },
+    {
+      "id": "s6:a12",
+      "atom_ref": "a12",
+      "state_ref": "s6",
+      "molecule_ref": "s6:m0",
+      "implicit_h": 1
+    },
+    {
+      "id": "s6:a13",
+      "atom_ref": "a13",
+      "state_ref": "s6",
+      "molecule_ref": "s6:m0",
+      "implicit_h": 1
+    },
+    {
+      "id": "s6:a14",
+      "atom_ref": "a14",
+      "state_ref": "s6",
+      "molecule_ref": "s6:m0",
+      "implicit_h": 1
+    },
+    {
+      "id": "s6:a15",
+      "atom_ref": "a15",
+      "state_ref": "s6",
+      "molecule_ref": "s6:m0",
+      "implicit_h": 1
+    },
+    {
+      "id": "s6:a21",
+      "atom_ref": "a21",
+      "state_ref": "s6",
+      "molecule_ref": "s6:m0",
+      "implicit_h": 0
+    },
+    {
+      "id": "s6:a35",
+      "atom_ref": "a35",
+      "state_ref": "s6",
+      "molecule_ref": "s6:m0",
+      "implicit_h": 0
+    },
+    {
+      "id": "s6:a3",
+      "atom_ref": "a3",
+      "state_ref": "s6",
+      "molecule_ref": "s6:m1",
+      "implicit_h": 0
+    },
+    {
+      "id": "s6:a30",
+      "atom_ref": "a30",
+      "state_ref": "s6",
+      "molecule_ref": "s6:m1",
+      "implicit_h": 0
+    },
+    {
+      "id": "s6:a31",
+      "atom_ref": "a31",
+      "state_ref": "s6",
+      "molecule_ref": "s6:m1",
+      "implicit_h": 0
+    },
+    {
+      "id": "s6:a20",
+      "atom_ref": "a20",
+      "state_ref": "s6",
+      "molecule_ref": "s6:m2",
+      "implicit_h": 0
+    },
+    {
+      "id": "s6:a32",
+      "atom_ref": "a32",
+      "state_ref": "s6",
+      "molecule_ref": "s6:m2",
+      "implicit_h": 0
+    },
+    {
+      "id": "s6:a33",
+      "atom_ref": "a33",
+      "state_ref": "s6",
+      "molecule_ref": "s6:m2",
+      "implicit_h": 0
+    },
+    {
+      "id": "s6:a34",
+      "atom_ref": "a34",
+      "state_ref": "s6",
+      "molecule_ref": "s6:m2",
+      "implicit_h": 0
+    }
+  ],
+  "bonds": [
+    {
+      "id": "s0:b:1:2",
+      "state_ref": "s0",
+      "atom_refs": [
+        "s0:a1",
+        "s0:a2"
+      ],
+      "order": 2,
+      "stereo": "none"
+    },
+    {
+      "id": "s0:b:1:4",
+      "state_ref": "s0",
+      "atom_refs": [
+        "s0:a1",
+        "s0:a4"
+      ],
+      "order": 1,
+      "stereo": "none"
+    },
+    {
+      "id": "s0:b:1:10",
+      "state_ref": "s0",
+      "atom_refs": [
+        "s0:a1",
+        "s0:a10"
+      ],
+      "order": 1,
+      "stereo": "none"
+    },
+    {
+      "id": "s0:b:2:3",
+      "state_ref": "s0",
+      "atom_refs": [
+        "s0:a2",
+        "s0:a3"
+      ],
+      "order": 1,
+      "stereo": "none"
+    },
+    {
+      "id": "s0:b:3:30",
+      "state_ref": "s0",
+      "atom_refs": [
+        "s0:a3",
+        "s0:a30"
+      ],
+      "order": 1,
+      "stereo": "none"
+    },
+    {
+      "id": "s0:b:10:11",
+      "state_ref": "s0",
+      "atom_refs": [
+        "s0:a10",
+        "s0:a11"
+      ],
+      "order": 1.5,
+      "stereo": "none"
+    },
+    {
+      "id": "s0:b:10:15",
+      "state_ref": "s0",
+      "atom_refs": [
+        "s0:a10",
+        "s0:a15"
+      ],
+      "order": 1.5,
+      "stereo": "none"
+    },
+    {
+      "id": "s0:b:11:12",
+      "state_ref": "s0",
+      "atom_refs": [
+        "s0:a11",
+        "s0:a12"
+      ],
+      "order": 1.5,
+      "stereo": "none"
+    },
+    {
+      "id": "s0:b:12:13",
+      "state_ref": "s0",
+      "atom_refs": [
+        "s0:a12",
+        "s0:a13"
+      ],
+      "order": 1.5,
+      "stereo": "none"
+    },
+    {
+      "id": "s0:b:13:14",
+      "state_ref": "s0",
+      "atom_refs": [
+        "s0:a13",
+        "s0:a14"
+      ],
+      "order": 1.5,
+      "stereo": "none"
+    },
+    {
+      "id": "s0:b:14:15",
+      "state_ref": "s0",
+      "atom_refs": [
+        "s0:a14",
+        "s0:a15"
+      ],
+      "order": 1.5,
+      "stereo": "none"
+    },
+    {
+      "id": "s0:b:20:31",
+      "state_ref": "s0",
+      "atom_refs": [
+        "s0:a20",
+        "s0:a31"
+      ],
+      "order": 1,
+      "stereo": "none"
+    },
+    {
+      "id": "s0:b:20:32",
+      "state_ref": "s0",
+      "atom_refs": [
+        "s0:a20",
+        "s0:a32"
+      ],
+      "order": 1,
+      "stereo": "none"
+    },
+    {
+      "id": "s0:b:20:33",
+      "state_ref": "s0",
+      "atom_refs": [
+        "s0:a20",
+        "s0:a33"
+      ],
+      "order": 1,
+      "stereo": "none"
+    },
+    {
+      "id": "s0:b:21:34",
+      "state_ref": "s0",
+      "atom_refs": [
+        "s0:a21",
+        "s0:a34"
+      ],
+      "order": 1,
+      "stereo": "none"
+    },
+    {
+      "id": "s0:b:21:35",
+      "state_ref": "s0",
+      "atom_refs": [
+        "s0:a21",
+        "s0:a35"
+      ],
+      "order": 1,
+      "stereo": "none"
+    },
+    {
+      "id": "s1:b:1:2",
+      "state_ref": "s1",
+      "atom_refs": [
+        "s1:a1",
+        "s1:a2"
+      ],
+      "order": 2,
+      "stereo": "none"
+    },
+    {
+      "id": "s1:b:1:4",
+      "state_ref": "s1",
+      "atom_refs": [
+        "s1:a1",
+        "s1:a4"
+      ],
+      "order": 1,
+      "stereo": "none"
+    },
+    {
+      "id": "s1:b:1:10",
+      "state_ref": "s1",
+      "atom_refs": [
+        "s1:a1",
+        "s1:a10"
+      ],
+      "order": 1,
+      "stereo": "none"
+    },
+    {
+      "id": "s1:b:2:3",
+      "state_ref": "s1",
+      "atom_refs": [
+        "s1:a2",
+        "s1:a3"
+      ],
+      "order": 1,
+      "stereo": "none"
+    },
+    {
+      "id": "s1:b:3:30",
+      "state_ref": "s1",
+      "atom_refs": [
+        "s1:a3",
+        "s1:a30"
+      ],
+      "order": 1,
+      "stereo": "none"
+    },
+    {
+      "id": "s1:b:3:31",
+      "state_ref": "s1",
+      "atom_refs": [
+        "s1:a3",
+        "s1:a31"
+      ],
+      "order": 1,
+      "stereo": "none"
+    },
+    {
+      "id": "s1:b:10:11",
+      "state_ref": "s1",
+      "atom_refs": [
+        "s1:a10",
+        "s1:a11"
+      ],
+      "order": 1.5,
+      "stereo": "none"
+    },
+    {
+      "id": "s1:b:10:15",
+      "state_ref": "s1",
+      "atom_refs": [
+        "s1:a10",
+        "s1:a15"
+      ],
+      "order": 1.5,
+      "stereo": "none"
+    },
+    {
+      "id": "s1:b:11:12",
+      "state_ref": "s1",
+      "atom_refs": [
+        "s1:a11",
+        "s1:a12"
+      ],
+      "order": 1.5,
+      "stereo": "none"
+    },
+    {
+      "id": "s1:b:12:13",
+      "state_ref": "s1",
+      "atom_refs": [
+        "s1:a12",
+        "s1:a13"
+      ],
+      "order": 1.5,
+      "stereo": "none"
+    },
+    {
+      "id": "s1:b:13:14",
+      "state_ref": "s1",
+      "atom_refs": [
+        "s1:a13",
+        "s1:a14"
+      ],
+      "order": 1.5,
+      "stereo": "none"
+    },
+    {
+      "id": "s1:b:14:15",
+      "state_ref": "s1",
+      "atom_refs": [
+        "s1:a14",
+        "s1:a15"
+      ],
+      "order": 1.5,
+      "stereo": "none"
+    },
+    {
+      "id": "s1:b:20:32",
+      "state_ref": "s1",
+      "atom_refs": [
+        "s1:a20",
+        "s1:a32"
+      ],
+      "order": 1,
+      "stereo": "none"
+    },
+    {
+      "id": "s1:b:20:33",
+      "state_ref": "s1",
+      "atom_refs": [
+        "s1:a20",
+        "s1:a33"
+      ],
+      "order": 1,
+      "stereo": "none"
+    },
+    {
+      "id": "s1:b:21:34",
+      "state_ref": "s1",
+      "atom_refs": [
+        "s1:a21",
+        "s1:a34"
+      ],
+      "order": 1,
+      "stereo": "none"
+    },
+    {
+      "id": "s1:b:21:35",
+      "state_ref": "s1",
+      "atom_refs": [
+        "s1:a21",
+        "s1:a35"
+      ],
+      "order": 1,
+      "stereo": "none"
+    },
+    {
+      "id": "s2:b:1:2",
+      "state_ref": "s2",
+      "atom_refs": [
+        "s2:a1",
+        "s2:a2"
+      ],
+      "order": 3,
+      "stereo": "none"
+    },
+    {
+      "id": "s2:b:1:4",
+      "state_ref": "s2",
+      "atom_refs": [
+        "s2:a1",
+        "s2:a4"
+      ],
+      "order": 1,
+      "stereo": "none"
+    },
+    {
+      "id": "s2:b:2:10",
+      "state_ref": "s2",
+      "atom_refs": [
+        "s2:a2",
+        "s2:a10"
+      ],
+      "order": 1,
+      "stereo": "none"
+    },
+    {
+      "id": "s2:b:3:30",
+      "state_ref": "s2",
+      "atom_refs": [
+        "s2:a3",
+        "s2:a30"
+      ],
+      "order": 1,
+      "stereo": "none"
+    },
+    {
+      "id": "s2:b:3:31",
+      "state_ref": "s2",
+      "atom_refs": [
+        "s2:a3",
+        "s2:a31"
+      ],
+      "order": 1,
+      "stereo": "none"
+    },
+    {
+      "id": "s2:b:10:11",
+      "state_ref": "s2",
+      "atom_refs": [
+        "s2:a10",
+        "s2:a11"
+      ],
+      "order": 1.5,
+      "stereo": "none"
+    },
+    {
+      "id": "s2:b:10:15",
+      "state_ref": "s2",
+      "atom_refs": [
+        "s2:a10",
+        "s2:a15"
+      ],
+      "order": 1.5,
+      "stereo": "none"
+    },
+    {
+      "id": "s2:b:11:12",
+      "state_ref": "s2",
+      "atom_refs": [
+        "s2:a11",
+        "s2:a12"
+      ],
+      "order": 1.5,
+      "stereo": "none"
+    },
+    {
+      "id": "s2:b:12:13",
+      "state_ref": "s2",
+      "atom_refs": [
+        "s2:a12",
+        "s2:a13"
+      ],
+      "order": 1.5,
+      "stereo": "none"
+    },
+    {
+      "id": "s2:b:13:14",
+      "state_ref": "s2",
+      "atom_refs": [
+        "s2:a13",
+        "s2:a14"
+      ],
+      "order": 1.5,
+      "stereo": "none"
+    },
+    {
+      "id": "s2:b:14:15",
+      "state_ref": "s2",
+      "atom_refs": [
+        "s2:a14",
+        "s2:a15"
+      ],
+      "order": 1.5,
+      "stereo": "none"
+    },
+    {
+      "id": "s2:b:20:32",
+      "state_ref": "s2",
+      "atom_refs": [
+        "s2:a20",
+        "s2:a32"
+      ],
+      "order": 1,
+      "stereo": "none"
+    },
+    {
+      "id": "s2:b:20:33",
+      "state_ref": "s2",
+      "atom_refs": [
+        "s2:a20",
+        "s2:a33"
+      ],
+      "order": 1,
+      "stereo": "none"
+    },
+    {
+      "id": "s2:b:21:34",
+      "state_ref": "s2",
+      "atom_refs": [
+        "s2:a21",
+        "s2:a34"
+      ],
+      "order": 1,
+      "stereo": "none"
+    },
+    {
+      "id": "s2:b:21:35",
+      "state_ref": "s2",
+      "atom_refs": [
+        "s2:a21",
+        "s2:a35"
+      ],
+      "order": 1,
+      "stereo": "none"
+    },
+    {
+      "id": "s3:b:1:2",
+      "state_ref": "s3",
+      "atom_refs": [
+        "s3:a1",
+        "s3:a2"
+      ],
+      "order": 2,
+      "stereo": "none"
+    },
+    {
+      "id": "s3:b:1:4",
+      "state_ref": "s3",
+      "atom_refs": [
+        "s3:a1",
+        "s3:a4"
+      ],
+      "order": 1,
+      "stereo": "none"
+    },
+    {
+      "id": "s3:b:1:21",
+      "state_ref": "s3",
+      "atom_refs": [
+        "s3:a1",
+        "s3:a21"
+      ],
+      "order": 1,
+      "stereo": "none"
+    },
+    {
+      "id": "s3:b:2:10",
+      "state_ref": "s3",
+      "atom_refs": [
+        "s3:a2",
+        "s3:a10"
+      ],
+      "order": 1,
+      "stereo": "none"
+    },
+    {
+      "id": "s3:b:3:30",
+      "state_ref": "s3",
+      "atom_refs": [
+        "s3:a3",
+        "s3:a30"
+      ],
+      "order": 1,
+      "stereo": "none"
+    },
+    {
+      "id": "s3:b:3:31",
+      "state_ref": "s3",
+      "atom_refs": [
+        "s3:a3",
+        "s3:a31"
+      ],
+      "order": 1,
+      "stereo": "none"
+    },
+    {
+      "id": "s3:b:10:11",
+      "state_ref": "s3",
+      "atom_refs": [
+        "s3:a10",
+        "s3:a11"
+      ],
+      "order": 1.5,
+      "stereo": "none"
+    },
+    {
+      "id": "s3:b:10:15",
+      "state_ref": "s3",
+      "atom_refs": [
+        "s3:a10",
+        "s3:a15"
+      ],
+      "order": 1.5,
+      "stereo": "none"
+    },
+    {
+      "id": "s3:b:11:12",
+      "state_ref": "s3",
+      "atom_refs": [
+        "s3:a11",
+        "s3:a12"
+      ],
+      "order": 1.5,
+      "stereo": "none"
+    },
+    {
+      "id": "s3:b:12:13",
+      "state_ref": "s3",
+      "atom_refs": [
+        "s3:a12",
+        "s3:a13"
+      ],
+      "order": 1.5,
+      "stereo": "none"
+    },
+    {
+      "id": "s3:b:13:14",
+      "state_ref": "s3",
+      "atom_refs": [
+        "s3:a13",
+        "s3:a14"
+      ],
+      "order": 1.5,
+      "stereo": "none"
+    },
+    {
+      "id": "s3:b:14:15",
+      "state_ref": "s3",
+      "atom_refs": [
+        "s3:a14",
+        "s3:a15"
+      ],
+      "order": 1.5,
+      "stereo": "none"
+    },
+    {
+      "id": "s3:b:20:32",
+      "state_ref": "s3",
+      "atom_refs": [
+        "s3:a20",
+        "s3:a32"
+      ],
+      "order": 1,
+      "stereo": "none"
+    },
+    {
+      "id": "s3:b:20:33",
+      "state_ref": "s3",
+      "atom_refs": [
+        "s3:a20",
+        "s3:a33"
+      ],
+      "order": 1,
+      "stereo": "none"
+    },
+    {
+      "id": "s3:b:21:34",
+      "state_ref": "s3",
+      "atom_refs": [
+        "s3:a21",
+        "s3:a34"
+      ],
+      "order": 1,
+      "stereo": "none"
+    },
+    {
+      "id": "s3:b:21:35",
+      "state_ref": "s3",
+      "atom_refs": [
+        "s3:a21",
+        "s3:a35"
+      ],
+      "order": 1,
+      "stereo": "none"
+    },
+    {
+      "id": "s4:b:1:2",
+      "state_ref": "s4",
+      "atom_refs": [
+        "s4:a1",
+        "s4:a2"
+      ],
+      "order": 2,
+      "stereo": "none"
+    },
+    {
+      "id": "s4:b:1:4",
+      "state_ref": "s4",
+      "atom_refs": [
+        "s4:a1",
+        "s4:a4"
+      ],
+      "order": 1,
+      "stereo": "none"
+    },
+    {
+      "id": "s4:b:1:21",
+      "state_ref": "s4",
+      "atom_refs": [
+        "s4:a1",
+        "s4:a21"
+      ],
+      "order": 1,
+      "stereo": "none"
+    },
+    {
+      "id": "s4:b:2:10",
+      "state_ref": "s4",
+      "atom_refs": [
+        "s4:a2",
+        "s4:a10"
+      ],
+      "order": 1,
+      "stereo": "none"
+    },
+    {
+      "id": "s4:b:3:30",
+      "state_ref": "s4",
+      "atom_refs": [
+        "s4:a3",
+        "s4:a30"
+      ],
+      "order": 1,
+      "stereo": "none"
+    },
+    {
+      "id": "s4:b:3:31",
+      "state_ref": "s4",
+      "atom_refs": [
+        "s4:a3",
+        "s4:a31"
+      ],
+      "order": 1,
+      "stereo": "none"
+    },
+    {
+      "id": "s4:b:10:11",
+      "state_ref": "s4",
+      "atom_refs": [
+        "s4:a10",
+        "s4:a11"
+      ],
+      "order": 1.5,
+      "stereo": "none"
+    },
+    {
+      "id": "s4:b:10:15",
+      "state_ref": "s4",
+      "atom_refs": [
+        "s4:a10",
+        "s4:a15"
+      ],
+      "order": 1.5,
+      "stereo": "none"
+    },
+    {
+      "id": "s4:b:11:12",
+      "state_ref": "s4",
+      "atom_refs": [
+        "s4:a11",
+        "s4:a12"
+      ],
+      "order": 1.5,
+      "stereo": "none"
+    },
+    {
+      "id": "s4:b:12:13",
+      "state_ref": "s4",
+      "atom_refs": [
+        "s4:a12",
+        "s4:a13"
+      ],
+      "order": 1.5,
+      "stereo": "none"
+    },
+    {
+      "id": "s4:b:13:14",
+      "state_ref": "s4",
+      "atom_refs": [
+        "s4:a13",
+        "s4:a14"
+      ],
+      "order": 1.5,
+      "stereo": "none"
+    },
+    {
+      "id": "s4:b:14:15",
+      "state_ref": "s4",
+      "atom_refs": [
+        "s4:a14",
+        "s4:a15"
+      ],
+      "order": 1.5,
+      "stereo": "none"
+    },
+    {
+      "id": "s4:b:20:32",
+      "state_ref": "s4",
+      "atom_refs": [
+        "s4:a20",
+        "s4:a32"
+      ],
+      "order": 1,
+      "stereo": "none"
+    },
+    {
+      "id": "s4:b:20:33",
+      "state_ref": "s4",
+      "atom_refs": [
+        "s4:a20",
+        "s4:a33"
+      ],
+      "order": 1,
+      "stereo": "none"
+    },
+    {
+      "id": "s4:b:20:35",
+      "state_ref": "s4",
+      "atom_refs": [
+        "s4:a20",
+        "s4:a35"
+      ],
+      "order": 1,
+      "stereo": "none"
+    },
+    {
+      "id": "s4:b:21:34",
+      "state_ref": "s4",
+      "atom_refs": [
+        "s4:a21",
+        "s4:a34"
+      ],
+      "order": 1,
+      "stereo": "none"
+    },
+    {
+      "id": "s5:b:1:2",
+      "state_ref": "s5",
+      "atom_refs": [
+        "s5:a1",
+        "s5:a2"
+      ],
+      "order": 2,
+      "stereo": "none"
+    },
+    {
+      "id": "s5:b:1:4",
+      "state_ref": "s5",
+      "atom_refs": [
+        "s5:a1",
+        "s5:a4"
+      ],
+      "order": 1,
+      "stereo": "none"
+    },
+    {
+      "id": "s5:b:1:21",
+      "state_ref": "s5",
+      "atom_refs": [
+        "s5:a1",
+        "s5:a21"
+      ],
+      "order": 1,
+      "stereo": "none"
+    },
+    {
+      "id": "s5:b:2:10",
+      "state_ref": "s5",
+      "atom_refs": [
+        "s5:a2",
+        "s5:a10"
+      ],
+      "order": 1,
+      "stereo": "none"
+    },
+    {
+      "id": "s5:b:2:35",
+      "state_ref": "s5",
+      "atom_refs": [
+        "s5:a2",
+        "s5:a35"
+      ],
+      "order": 1,
+      "stereo": "none"
+    },
+    {
+      "id": "s5:b:3:30",
+      "state_ref": "s5",
+      "atom_refs": [
+        "s5:a3",
+        "s5:a30"
+      ],
+      "order": 1,
+      "stereo": "none"
+    },
+    {
+      "id": "s5:b:3:31",
+      "state_ref": "s5",
+      "atom_refs": [
+        "s5:a3",
+        "s5:a31"
+      ],
+      "order": 1,
+      "stereo": "none"
+    },
+    {
+      "id": "s5:b:10:11",
+      "state_ref": "s5",
+      "atom_refs": [
+        "s5:a10",
+        "s5:a11"
+      ],
+      "order": 1.5,
+      "stereo": "none"
+    },
+    {
+      "id": "s5:b:10:15",
+      "state_ref": "s5",
+      "atom_refs": [
+        "s5:a10",
+        "s5:a15"
+      ],
+      "order": 1.5,
+      "stereo": "none"
+    },
+    {
+      "id": "s5:b:11:12",
+      "state_ref": "s5",
+      "atom_refs": [
+        "s5:a11",
+        "s5:a12"
+      ],
+      "order": 1.5,
+      "stereo": "none"
+    },
+    {
+      "id": "s5:b:12:13",
+      "state_ref": "s5",
+      "atom_refs": [
+        "s5:a12",
+        "s5:a13"
+      ],
+      "order": 1.5,
+      "stereo": "none"
+    },
+    {
+      "id": "s5:b:13:14",
+      "state_ref": "s5",
+      "atom_refs": [
+        "s5:a13",
+        "s5:a14"
+      ],
+      "order": 1.5,
+      "stereo": "none"
+    },
+    {
+      "id": "s5:b:14:15",
+      "state_ref": "s5",
+      "atom_refs": [
+        "s5:a14",
+        "s5:a15"
+      ],
+      "order": 1.5,
+      "stereo": "none"
+    },
+    {
+      "id": "s5:b:20:32",
+      "state_ref": "s5",
+      "atom_refs": [
+        "s5:a20",
+        "s5:a32"
+      ],
+      "order": 1,
+      "stereo": "none"
+    },
+    {
+      "id": "s5:b:20:33",
+      "state_ref": "s5",
+      "atom_refs": [
+        "s5:a20",
+        "s5:a33"
+      ],
+      "order": 1,
+      "stereo": "none"
+    },
+    {
+      "id": "s5:b:21:34",
+      "state_ref": "s5",
+      "atom_refs": [
+        "s5:a21",
+        "s5:a34"
+      ],
+      "order": 1,
+      "stereo": "none"
+    },
+    {
+      "id": "s6:b:1:2",
+      "state_ref": "s6",
+      "atom_refs": [
+        "s6:a1",
+        "s6:a2"
+      ],
+      "order": 1,
+      "stereo": "none"
+    },
+    {
+      "id": "s6:b:1:4",
+      "state_ref": "s6",
+      "atom_refs": [
+        "s6:a1",
+        "s6:a4"
+      ],
+      "order": 1,
+      "stereo": "none"
+    },
+    {
+      "id": "s6:b:1:21",
+      "state_ref": "s6",
+      "atom_refs": [
+        "s6:a1",
+        "s6:a21"
+      ],
+      "order": 2,
+      "stereo": "none"
+    },
+    {
+      "id": "s6:b:2:10",
+      "state_ref": "s6",
+      "atom_refs": [
+        "s6:a2",
+        "s6:a10"
+      ],
+      "order": 1,
+      "stereo": "none"
+    },
+    {
+      "id": "s6:b:2:35",
+      "state_ref": "s6",
+      "atom_refs": [
+        "s6:a2",
+        "s6:a35"
+      ],
+      "order": 1,
+      "stereo": "none"
+    },
+    {
+      "id": "s6:b:3:30",
+      "state_ref": "s6",
+      "atom_refs": [
+        "s6:a3",
+        "s6:a30"
+      ],
+      "order": 1,
+      "stereo": "none"
+    },
+    {
+      "id": "s6:b:3:31",
+      "state_ref": "s6",
+      "atom_refs": [
+        "s6:a3",
+        "s6:a31"
+      ],
+      "order": 1,
+      "stereo": "none"
+    },
+    {
+      "id": "s6:b:10:11",
+      "state_ref": "s6",
+      "atom_refs": [
+        "s6:a10",
+        "s6:a11"
+      ],
+      "order": 1.5,
+      "stereo": "none"
+    },
+    {
+      "id": "s6:b:10:15",
+      "state_ref": "s6",
+      "atom_refs": [
+        "s6:a10",
+        "s6:a15"
+      ],
+      "order": 1.5,
+      "stereo": "none"
+    },
+    {
+      "id": "s6:b:11:12",
+      "state_ref": "s6",
+      "atom_refs": [
+        "s6:a11",
+        "s6:a12"
+      ],
+      "order": 1.5,
+      "stereo": "none"
+    },
+    {
+      "id": "s6:b:12:13",
+      "state_ref": "s6",
+      "atom_refs": [
+        "s6:a12",
+        "s6:a13"
+      ],
+      "order": 1.5,
+      "stereo": "none"
+    },
+    {
+      "id": "s6:b:13:14",
+      "state_ref": "s6",
+      "atom_refs": [
+        "s6:a13",
+        "s6:a14"
+      ],
+      "order": 1.5,
+      "stereo": "none"
+    },
+    {
+      "id": "s6:b:14:15",
+      "state_ref": "s6",
+      "atom_refs": [
+        "s6:a14",
+        "s6:a15"
+      ],
+      "order": 1.5,
+      "stereo": "none"
+    },
+    {
+      "id": "s6:b:20:32",
+      "state_ref": "s6",
+      "atom_refs": [
+        "s6:a20",
+        "s6:a32"
+      ],
+      "order": 1,
+      "stereo": "none"
+    },
+    {
+      "id": "s6:b:20:33",
+      "state_ref": "s6",
+      "atom_refs": [
+        "s6:a20",
+        "s6:a33"
+      ],
+      "order": 1,
+      "stereo": "none"
+    },
+    {
+      "id": "s6:b:20:34",
+      "state_ref": "s6",
+      "atom_refs": [
+        "s6:a20",
+        "s6:a34"
+      ],
+      "order": 1,
+      "stereo": "none"
+    }
+  ],
+  "charges": [
+    {
+      "id": "s0:q20",
+      "atom_ref": "s0:a20",
+      "value": 1,
+      "display": "shown"
+    },
+    {
+      "id": "s1:q3",
+      "atom_ref": "s1:a3",
+      "value": 1,
+      "display": "shown"
+    },
+    {
+      "id": "s2:q2",
+      "atom_ref": "s2:a2",
+      "value": 1,
+      "display": "shown"
+    },
+    {
+      "id": "s3:q21",
+      "atom_ref": "s3:a21",
+      "value": 1,
+      "display": "shown"
+    },
+    {
+      "id": "s4:q20",
+      "atom_ref": "s4:a20",
+      "value": 1,
+      "display": "shown"
+    },
+    {
+      "id": "s5:q2",
+      "atom_ref": "s5:a2",
+      "value": 1,
+      "display": "shown"
+    },
+    {
+      "id": "s6:q20",
+      "atom_ref": "s6:a20",
+      "value": 1,
+      "display": "shown"
+    }
+  ],
+  "radicals": [],
+  "lone_pairs": [
+    {
+      "id": "s0:lp2:0",
+      "atom_ref": "s0:a2",
+      "slot": 0,
+      "display": "unresolved"
+    },
+    {
+      "id": "s0:lp3:0",
+      "atom_ref": "s0:a3",
+      "slot": 0,
+      "display": "unresolved"
+    },
+    {
+      "id": "s0:lp3:1",
+      "atom_ref": "s0:a3",
+      "slot": 1,
+      "display": "unresolved"
+    },
+    {
+      "id": "s0:lp20:0",
+      "atom_ref": "s0:a20",
+      "slot": 0,
+      "display": "unresolved"
+    },
+    {
+      "id": "s0:lp21:0",
+      "atom_ref": "s0:a21",
+      "slot": 0,
+      "display": "unresolved"
+    },
+    {
+      "id": "s0:lp21:1",
+      "atom_ref": "s0:a21",
+      "slot": 1,
+      "display": "unresolved"
+    },
+    {
+      "id": "s1:lp2:0",
+      "atom_ref": "s1:a2",
+      "slot": 0,
+      "display": "unresolved"
+    },
+    {
+      "id": "s1:lp3:0",
+      "atom_ref": "s1:a3",
+      "slot": 0,
+      "display": "unresolved"
+    },
+    {
+      "id": "s1:lp20:0",
+      "atom_ref": "s1:a20",
+      "slot": 0,
+      "display": "unresolved"
+    },
+    {
+      "id": "s1:lp20:1",
+      "atom_ref": "s1:a20",
+      "slot": 1,
+      "display": "unresolved"
+    },
+    {
+      "id": "s1:lp21:0",
+      "atom_ref": "s1:a21",
+      "slot": 0,
+      "display": "unresolved"
+    },
+    {
+      "id": "s1:lp21:1",
+      "atom_ref": "s1:a21",
+      "slot": 1,
+      "display": "unresolved"
+    },
+    {
+      "id": "s2:lp3:0",
+      "atom_ref": "s2:a3",
+      "slot": 0,
+      "display": "unresolved"
+    },
+    {
+      "id": "s2:lp3:1",
+      "atom_ref": "s2:a3",
+      "slot": 1,
+      "display": "unresolved"
+    },
+    {
+      "id": "s2:lp20:0",
+      "atom_ref": "s2:a20",
+      "slot": 0,
+      "display": "unresolved"
+    },
+    {
+      "id": "s2:lp20:1",
+      "atom_ref": "s2:a20",
+      "slot": 1,
+      "display": "unresolved"
+    },
+    {
+      "id": "s2:lp21:0",
+      "atom_ref": "s2:a21",
+      "slot": 0,
+      "display": "unresolved"
+    },
+    {
+      "id": "s2:lp21:1",
+      "atom_ref": "s2:a21",
+      "slot": 1,
+      "display": "unresolved"
+    },
+    {
+      "id": "s3:lp2:0",
+      "atom_ref": "s3:a2",
+      "slot": 0,
+      "display": "unresolved"
+    },
+    {
+      "id": "s3:lp3:0",
+      "atom_ref": "s3:a3",
+      "slot": 0,
+      "display": "unresolved"
+    },
+    {
+      "id": "s3:lp3:1",
+      "atom_ref": "s3:a3",
+      "slot": 1,
+      "display": "unresolved"
+    },
+    {
+      "id": "s3:lp20:0",
+      "atom_ref": "s3:a20",
+      "slot": 0,
+      "display": "unresolved"
+    },
+    {
+      "id": "s3:lp20:1",
+      "atom_ref": "s3:a20",
+      "slot": 1,
+      "display": "unresolved"
+    },
+    {
+      "id": "s3:lp21:0",
+      "atom_ref": "s3:a21",
+      "slot": 0,
+      "display": "unresolved"
+    },
+    {
+      "id": "s4:lp2:0",
+      "atom_ref": "s4:a2",
+      "slot": 0,
+      "display": "unresolved"
+    },
+    {
+      "id": "s4:lp3:0",
+      "atom_ref": "s4:a3",
+      "slot": 0,
+      "display": "unresolved"
+    },
+    {
+      "id": "s4:lp3:1",
+      "atom_ref": "s4:a3",
+      "slot": 1,
+      "display": "unresolved"
+    },
+    {
+      "id": "s4:lp20:0",
+      "atom_ref": "s4:a20",
+      "slot": 0,
+      "display": "unresolved"
+    },
+    {
+      "id": "s4:lp21:0",
+      "atom_ref": "s4:a21",
+      "slot": 0,
+      "display": "unresolved"
+    },
+    {
+      "id": "s4:lp21:1",
+      "atom_ref": "s4:a21",
+      "slot": 1,
+      "display": "unresolved"
+    },
+    {
+      "id": "s5:lp3:0",
+      "atom_ref": "s5:a3",
+      "slot": 0,
+      "display": "unresolved"
+    },
+    {
+      "id": "s5:lp3:1",
+      "atom_ref": "s5:a3",
+      "slot": 1,
+      "display": "unresolved"
+    },
+    {
+      "id": "s5:lp20:0",
+      "atom_ref": "s5:a20",
+      "slot": 0,
+      "display": "unresolved"
+    },
+    {
+      "id": "s5:lp20:1",
+      "atom_ref": "s5:a20",
+      "slot": 1,
+      "display": "unresolved"
+    },
+    {
+      "id": "s5:lp21:0",
+      "atom_ref": "s5:a21",
+      "slot": 0,
+      "display": "unresolved"
+    },
+    {
+      "id": "s5:lp21:1",
+      "atom_ref": "s5:a21",
+      "slot": 1,
+      "display": "unresolved"
+    },
+    {
+      "id": "s6:lp2:0",
+      "atom_ref": "s6:a2",
+      "slot": 0,
+      "display": "unresolved"
+    },
+    {
+      "id": "s6:lp3:0",
+      "atom_ref": "s6:a3",
+      "slot": 0,
+      "display": "unresolved"
+    },
+    {
+      "id": "s6:lp3:1",
+      "atom_ref": "s6:a3",
+      "slot": 1,
+      "display": "unresolved"
+    },
+    {
+      "id": "s6:lp20:0",
+      "atom_ref": "s6:a20",
+      "slot": 0,
+      "display": "unresolved"
+    },
+    {
+      "id": "s6:lp21:0",
+      "atom_ref": "s6:a21",
+      "slot": 0,
+      "display": "unresolved"
+    },
+    {
+      "id": "s6:lp21:1",
+      "atom_ref": "s6:a21",
+      "slot": 1,
+      "display": "unresolved"
+    }
+  ],
+  "reaction_steps": [
+    {
+      "id": "t1",
+      "from_state": "s0",
+      "to_state": "s1",
+      "kind": "teaching_elementary",
+      "electron_flow_refs": [
+        "t1_f1",
+        "t1_f2"
+      ],
+      "condition_refs": [
+        "condition:t1"
+      ]
+    },
+    {
+      "id": "t2",
+      "from_state": "s1",
+      "to_state": "s2",
+      "kind": "teaching_elementary",
+      "electron_flow_refs": [
+        "t2_f1",
+        "t2_f2",
+        "t2_f3"
+      ],
+      "condition_refs": [
+        "condition:t2"
+      ]
+    },
+    {
+      "id": "t3",
+      "from_state": "s2",
+      "to_state": "s3",
+      "kind": "teaching_elementary",
+      "electron_flow_refs": [
+        "t3_f1",
+        "t3_f2"
+      ],
+      "condition_refs": [
+        "condition:t3"
+      ]
+    },
+    {
+      "id": "t4",
+      "from_state": "s3",
+      "to_state": "s4",
+      "kind": "teaching_elementary",
+      "electron_flow_refs": [
+        "t4_f1",
+        "t4_f2"
+      ],
+      "condition_refs": [
+        "condition:t4"
+      ]
+    },
+    {
+      "id": "t5",
+      "from_state": "s4",
+      "to_state": "s5",
+      "kind": "teaching_elementary",
+      "electron_flow_refs": [
+        "t5_f1",
+        "t5_f2"
+      ],
+      "condition_refs": [
+        "condition:t5"
+      ]
+    },
+    {
+      "id": "t6",
+      "from_state": "s5",
+      "to_state": "s6",
+      "kind": "teaching_elementary",
+      "electron_flow_refs": [
+        "t6_f1",
+        "t6_f2",
+        "t6_f3",
+        "t6_f4"
+      ],
+      "condition_refs": [
+        "condition:t6"
+      ]
+    }
+  ],
+  "reaction_arrows": [
+    {
+      "id": "reaction-arrow:t1",
+      "step_ref": "t1",
+      "kind": "forward",
+      "from_state": "s0",
+      "to_state": "s1"
+    },
+    {
+      "id": "reaction-arrow:t2",
+      "step_ref": "t2",
+      "kind": "forward",
+      "from_state": "s1",
+      "to_state": "s2"
+    },
+    {
+      "id": "reaction-arrow:t3",
+      "step_ref": "t3",
+      "kind": "forward",
+      "from_state": "s2",
+      "to_state": "s3"
+    },
+    {
+      "id": "reaction-arrow:t4",
+      "step_ref": "t4",
+      "kind": "forward",
+      "from_state": "s3",
+      "to_state": "s4"
+    },
+    {
+      "id": "reaction-arrow:t5",
+      "step_ref": "t5",
+      "kind": "forward",
+      "from_state": "s4",
+      "to_state": "s5"
+    },
+    {
+      "id": "reaction-arrow:t6",
+      "step_ref": "t6",
+      "kind": "forward",
+      "from_state": "s5",
+      "to_state": "s6"
+    }
+  ],
+  "condition_texts": [
+    {
+      "id": "condition:t1",
+      "step_ref": "t1",
+      "text": "O protonation",
+      "kind": "annotation",
+      "evidence_status": "specified"
+    },
+    {
+      "id": "condition:t2",
+      "step_ref": "t2",
+      "text": "Coupled anti migration and water loss",
+      "kind": "annotation",
+      "evidence_status": "specified"
+    },
+    {
+      "id": "condition:t3",
+      "step_ref": "t3",
+      "text": "Water addition to nitrilium carbon",
+      "kind": "annotation",
+      "evidence_status": "specified"
+    },
+    {
+      "id": "condition:t4",
+      "step_ref": "t4",
+      "text": "Water-assisted deprotonation",
+      "kind": "annotation",
+      "evidence_status": "specified"
+    },
+    {
+      "id": "condition:t5",
+      "step_ref": "t5",
+      "text": "N protonation",
+      "kind": "annotation",
+      "evidence_status": "specified"
+    },
+    {
+      "id": "condition:t6",
+      "step_ref": "t6",
+      "text": "Water-assisted tautomerization",
+      "kind": "annotation",
+      "evidence_status": "specified"
+    }
+  ],
+  "electron_flows": [
+    {
+      "id": "t1_f1",
+      "step_ref": "t1",
+      "electron_count": 2,
+      "source": {
+        "type": "lone_pair",
+        "state_ref": "s0",
+        "lone_pair_ref": "s0:lp3:0"
+      },
+      "sink": {
+        "type": "atom",
+        "state_ref": "s0",
+        "atom_ref": "s0:a31"
+      },
+      "simultaneous_group": "t1"
+    },
+    {
+      "id": "t1_f2",
+      "step_ref": "t1",
+      "electron_count": 2,
+      "source": {
+        "type": "bond",
+        "state_ref": "s0",
+        "bond_ref": "s0:b:20:31",
+        "electron_kind": "sigma"
+      },
+      "sink": {
+        "type": "atom",
+        "state_ref": "s0",
+        "atom_ref": "s0:a20"
+      },
+      "simultaneous_group": "t1"
+    },
+    {
+      "id": "t2_f1",
+      "step_ref": "t2",
+      "electron_count": 2,
+      "source": {
+        "type": "bond",
+        "state_ref": "s1",
+        "bond_ref": "s1:b:1:10",
+        "electron_kind": "sigma"
+      },
+      "sink": {
+        "type": "prospective_bond",
+        "state_ref": "s1",
+        "atom_refs": [
+          "s1:a2",
+          "s1:a10"
+        ]
+      },
+      "simultaneous_group": "t2"
+    },
+    {
+      "id": "t2_f2",
+      "step_ref": "t2",
+      "electron_count": 2,
+      "source": {
+        "type": "bond",
+        "state_ref": "s1",
+        "bond_ref": "s1:b:2:3",
+        "electron_kind": "sigma"
+      },
+      "sink": {
+        "type": "atom",
+        "state_ref": "s1",
+        "atom_ref": "s1:a3"
+      },
+      "simultaneous_group": "t2"
+    },
+    {
+      "id": "t2_f3",
+      "step_ref": "t2",
+      "electron_count": 2,
+      "source": {
+        "type": "lone_pair",
+        "state_ref": "s1",
+        "lone_pair_ref": "s1:lp2:0"
+      },
+      "sink": {
+        "type": "prospective_bond",
+        "state_ref": "s1",
+        "atom_refs": [
+          "s1:a1",
+          "s1:a2"
+        ]
+      },
+      "simultaneous_group": "t2"
+    },
+    {
+      "id": "t3_f1",
+      "step_ref": "t3",
+      "electron_count": 2,
+      "source": {
+        "type": "lone_pair",
+        "state_ref": "s2",
+        "lone_pair_ref": "s2:lp21:0"
+      },
+      "sink": {
+        "type": "atom",
+        "state_ref": "s2",
+        "atom_ref": "s2:a1"
+      },
+      "simultaneous_group": "t3"
+    },
+    {
+      "id": "t3_f2",
+      "step_ref": "t3",
+      "electron_count": 2,
+      "source": {
+        "type": "bond",
+        "state_ref": "s2",
+        "bond_ref": "s2:b:1:2",
+        "electron_kind": "pi"
+      },
+      "sink": {
+        "type": "atom",
+        "state_ref": "s2",
+        "atom_ref": "s2:a2"
+      },
+      "simultaneous_group": "t3"
+    },
+    {
+      "id": "t4_f1",
+      "step_ref": "t4",
+      "electron_count": 2,
+      "source": {
+        "type": "lone_pair",
+        "state_ref": "s3",
+        "lone_pair_ref": "s3:lp20:0"
+      },
+      "sink": {
+        "type": "atom",
+        "state_ref": "s3",
+        "atom_ref": "s3:a35"
+      },
+      "simultaneous_group": "t4"
+    },
+    {
+      "id": "t4_f2",
+      "step_ref": "t4",
+      "electron_count": 2,
+      "source": {
+        "type": "bond",
+        "state_ref": "s3",
+        "bond_ref": "s3:b:21:35",
+        "electron_kind": "sigma"
+      },
+      "sink": {
+        "type": "atom",
+        "state_ref": "s3",
+        "atom_ref": "s3:a21"
+      },
+      "simultaneous_group": "t4"
+    },
+    {
+      "id": "t5_f1",
+      "step_ref": "t5",
+      "electron_count": 2,
+      "source": {
+        "type": "lone_pair",
+        "state_ref": "s4",
+        "lone_pair_ref": "s4:lp2:0"
+      },
+      "sink": {
+        "type": "atom",
+        "state_ref": "s4",
+        "atom_ref": "s4:a35"
+      },
+      "simultaneous_group": "t5"
+    },
+    {
+      "id": "t5_f2",
+      "step_ref": "t5",
+      "electron_count": 2,
+      "source": {
+        "type": "bond",
+        "state_ref": "s4",
+        "bond_ref": "s4:b:20:35",
+        "electron_kind": "sigma"
+      },
+      "sink": {
+        "type": "atom",
+        "state_ref": "s4",
+        "atom_ref": "s4:a20"
+      },
+      "simultaneous_group": "t5"
+    },
+    {
+      "id": "t6_f1",
+      "step_ref": "t6",
+      "electron_count": 2,
+      "source": {
+        "type": "lone_pair",
+        "state_ref": "s5",
+        "lone_pair_ref": "s5:lp20:0"
+      },
+      "sink": {
+        "type": "atom",
+        "state_ref": "s5",
+        "atom_ref": "s5:a34"
+      },
+      "simultaneous_group": "t6"
+    },
+    {
+      "id": "t6_f2",
+      "step_ref": "t6",
+      "electron_count": 2,
+      "source": {
+        "type": "bond",
+        "state_ref": "s5",
+        "bond_ref": "s5:b:21:34",
+        "electron_kind": "sigma"
+      },
+      "sink": {
+        "type": "atom",
+        "state_ref": "s5",
+        "atom_ref": "s5:a21"
+      },
+      "simultaneous_group": "t6"
+    },
+    {
+      "id": "t6_f3",
+      "step_ref": "t6",
+      "electron_count": 2,
+      "source": {
+        "type": "lone_pair",
+        "state_ref": "s5",
+        "lone_pair_ref": "s5:lp21:0"
+      },
+      "sink": {
+        "type": "prospective_bond",
+        "state_ref": "s5",
+        "atom_refs": [
+          "s5:a1",
+          "s5:a21"
+        ]
+      },
+      "simultaneous_group": "t6"
+    },
+    {
+      "id": "t6_f4",
+      "step_ref": "t6",
+      "electron_count": 2,
+      "source": {
+        "type": "bond",
+        "state_ref": "s5",
+        "bond_ref": "s5:b:1:2",
+        "electron_kind": "pi"
+      },
+      "sink": {
+        "type": "atom",
+        "state_ref": "s5",
+        "atom_ref": "s5:a2"
+      },
+      "simultaneous_group": "t6"
+    }
+  ],
+  "layout_constraints": [
+    {
+      "id": "stereo:0:s0",
+      "kind": "anti",
+      "subjects": [
+        "s0:a1",
+        "s0:a2",
+        "s0:a10",
+        "s0:a3"
+      ],
+      "strength": "hard",
+      "parameters": {}
+    },
+    {
+      "id": "stereo:0:s1",
+      "kind": "anti",
+      "subjects": [
+        "s1:a1",
+        "s1:a2",
+        "s1:a10",
+        "s1:a3"
+      ],
+      "strength": "hard",
+      "parameters": {}
+    },
+    {
+      "id": "constraint:reading",
+      "kind": "reading_order",
+      "subjects": [],
+      "strength": "hard",
+      "parameters": {}
+    },
+    {
+      "id": "constraint:clearance",
+      "kind": "min_clearance",
+      "subjects": [],
+      "strength": "hard",
+      "parameters": {
+        "minimum_gap": 0.18,
+        "unit": "bond_length"
+      }
+    },
+    {
+      "id": "constraint:snake",
+      "kind": "serpentine",
+      "subjects": [],
+      "strength": "hard",
+      "parameters": {
+        "direction": "alternating",
+        "max_columns": 3,
+        "minimum_row_turns": 2
+      }
+    }
+  ]
+}

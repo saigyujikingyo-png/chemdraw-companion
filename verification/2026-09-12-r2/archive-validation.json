@@ -1,0 +1,9 @@
+{
+  "manifest_entries": 502,
+  "native_output_entries": 186,
+  "all_manifest_entries_read_back_and_hashed": true,
+  "native_output_bytes_unchanged": true,
+  "sample_files_byte_matched": 12,
+  "archive_bytes": 2382106,
+  "archive_sha256": "b343c732297e7d67774518eab0c52ecafe3636e2664d3dc204a6a67bc40f58d8"
+}

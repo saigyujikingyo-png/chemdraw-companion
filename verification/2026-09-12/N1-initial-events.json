@@ -1,0 +1,148 @@
+[
+  {
+    "utc": "2026-09-12T18:11:05.0616902Z",
+    "stage": "registered_server",
+    "details": {
+      "sha256": "F5383228898B6E6BE08ABDED9F6DB0909D0841A2F6A5BBEF50BA00F44AF8A084",
+      "version": "26.0.0.6141",
+      "signature": "Valid",
+      "filename": "ChemDraw.exe"
+    }
+  },
+  {
+    "utc": "2026-09-12T18:11:05.4509645Z",
+    "stage": "application_isolated",
+    "details": {
+      "name": "ChemDraw Prime 26.0.0.6141",
+      "document_count": 0,
+      "fresh_process_count": 1,
+      "existing_processes_untouched": 1
+    }
+  },
+  {
+    "utc": "2026-09-12T18:11:05.5446052Z",
+    "stage": "N1_identical_blank",
+    "details": {
+      "A": {
+        "atoms": [],
+        "atom_count": 0,
+        "bond_count": 0,
+        "caption_count": 0,
+        "warnings": 0,
+        "formula": null
+      },
+      "B": {
+        "atoms": [],
+        "atom_count": 0,
+        "bond_count": 0,
+        "caption_count": 0,
+        "warnings": 0,
+        "formula": null
+      }
+    }
+  },
+  {
+    "utc": "2026-09-12T18:11:05.5743306Z",
+    "stage": "N1_write_A_intent_while_B_active",
+    "details": {}
+  },
+  {
+    "utc": "2026-09-12T18:11:05.7318425Z",
+    "stage": "N1_write_A_complete",
+    "details": {
+      "A": {
+        "atoms": [
+          {
+            "id": 7,
+            "element": 8,
+            "charge": 0.0,
+            "hydrogens": 0,
+            "stereo": 0,
+            "x": 0.0,
+            "y": 0.0
+          }
+        ],
+        "atom_count": 1,
+        "bond_count": 0,
+        "caption_count": 0,
+        "warnings": 0,
+        "formula": "H2O"
+      },
+      "B": {
+        "atoms": [],
+        "atom_count": 0,
+        "bond_count": 0,
+        "caption_count": 0,
+        "warnings": 0,
+        "formula": null
+      }
+    }
+  },
+  {
+    "utc": "2026-09-12T18:11:05.7600331Z",
+    "stage": "N1_write_B_intent_while_A_active",
+    "details": {}
+  },
+  {
+    "utc": "2026-09-12T18:11:05.7822008Z",
+    "stage": "N1_write_B_complete",
+    "details": {
+      "A": {
+        "atoms": [
+          {
+            "id": 7,
+            "element": 8,
+            "charge": 0.0,
+            "hydrogens": 0,
+            "stereo": 0,
+            "x": 0.0,
+            "y": 0.0
+          }
+        ],
+        "atom_count": 1,
+        "bond_count": 0,
+        "caption_count": 0,
+        "warnings": 0,
+        "formula": "H2O"
+      },
+      "B": {
+        "atoms": [
+          {
+            "id": 7,
+            "element": 7,
+            "charge": 0.0,
+            "hydrogens": 0,
+            "stereo": 0,
+            "x": 0.0,
+            "y": 0.0
+          }
+        ],
+        "atom_count": 1,
+        "bond_count": 0,
+        "caption_count": 0,
+        "warnings": 0,
+        "formula": "H3N"
+      }
+    }
+  },
+  {
+    "utc": "2026-09-12T18:11:05.7889643Z",
+    "stage": "save_intent",
+    "details": {
+      "requested_resolution": 600,
+      "mime": "text/xml",
+      "file": "N1-A.cdxml"
+    }
+  },
+  {
+    "utc": "2026-09-12T18:11:05.8111377Z",
+    "stage": "probe_error",
+    "details": {
+      "message": "SaveAs returned without producing requested artifact N1-A.cdxml",
+      "type": "System.Management.Automation.RuntimeException",
+      "hresult": "0x80131501",
+      "retryable": false,
+      "mutation_outcome": "inspect_journal"
+    }
+  }
+]

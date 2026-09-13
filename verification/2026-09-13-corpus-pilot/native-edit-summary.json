@@ -1,0 +1,30 @@
+{
+  "verification_at": "2026-09-13T07:41:03.173002+00:00",
+  "source_events_sha256": "312235386068706fc3a93ca6ae3a4d9e59b17159917639691a14d382f01e6b46",
+  "results": [
+    {
+      "source_format": "cdx",
+      "native_edit_save_reopen": "pass",
+      "issues": [],
+      "before_artifact_sha256": "0c014e9652d032619d77c05a465587a1ec5dd5e1d35e670a9016435e41560985",
+      "after_artifact_sha256": "4eab461d7eed009a0f46830888aab1321afa58bcf20325d2692982e96f65e85c",
+      "native_graph_equal": true,
+      "scope": "Declared atom, LP, curve-control and caption edits; full captured unrelated drawable properties; closed-shell native atom/H/charge/bond subset. COM H fields are not used as chemical H counts. Visible flow-port semantics remain failed/unqualified.",
+      "manual_active_correction_seconds": null
+    },
+    {
+      "source_format": "cdxml",
+      "native_edit_save_reopen": "pass",
+      "issues": [],
+      "before_artifact_sha256": "1fb86c39e1ccec77af1cba1b0f0d66ec2d265584255b1831bd8dbf4716e1f8f0",
+      "after_artifact_sha256": "edfa8a2848b8bf19688077ae2361adb374a4e34b139e3a406212e340f449bfb1",
+      "native_graph_equal": true,
+      "scope": "Declared atom, LP, curve-control and caption edits; full captured unrelated drawable properties; closed-shell native atom/H/charge/bond subset. COM H fields are not used as chemical H counts. Visible flow-port semantics remain failed/unqualified.",
+      "manual_active_correction_seconds": null
+    }
+  ],
+  "corpus_semantic_equivalence": "unverified_visible_flow_ports",
+  "gold_samples": 0,
+  "human_reviews_at_automatic_edit_verification": 0,
+  "current_owner_decision": "Subsequent visual rejection is recorded in acceptance.json"
+}

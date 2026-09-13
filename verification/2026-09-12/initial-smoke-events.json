@@ -1,0 +1,161 @@
+[
+  {
+    "utc": "2026-09-12T17:59:53.0360425Z",
+    "stage": "application",
+    "details": {
+      "documentsBefore": 0,
+      "path": "C:\\Program Files\\RevvitySignalsSoftware\\ChemDrawApplications_x64\\ChemDraw.exe",
+      "name": "ChemDraw Prime 26.0.0.6141"
+    }
+  },
+  {
+    "utc": "2026-09-12T17:59:53.0507547Z",
+    "stage": "open_start",
+    "details": {
+      "mime": "chemical/x-smiles",
+      "path": "<workspace>\\work\\native-probe-20260912-175952\\ethanol.smiles"
+    }
+  },
+  {
+    "utc": "2026-09-12T17:59:53.1624803Z",
+    "stage": "open_complete",
+    "details": {
+      "formula": "C2H6O",
+      "bonds": 2,
+      "atoms": 3,
+      "warnings": 0,
+      "name": "ethanol.smiles"
+    }
+  },
+  {
+    "utc": "2026-09-12T17:59:53.1669073Z",
+    "stage": "save_start",
+    "details": {
+      "mime": "text/xml",
+      "path": "<workspace>\\work\\native-probe-20260912-175952\\before-clean.cdxml"
+    }
+  },
+  {
+    "utc": "2026-09-12T17:59:53.1898567Z",
+    "stage": "save_complete",
+    "details": {
+      "path": "<workspace>\\work\\native-probe-20260912-175952\\before-clean.cdxml",
+      "sha256": "E5794536CB30C478DC269CA428354299B504F76602F5B4DBA17DF866B6A6FB8A",
+      "bytes": 3260
+    }
+  },
+  {
+    "utc": "2026-09-12T17:59:53.1914644Z",
+    "stage": "clean_start",
+    "details": {
+      "api": "Objects.Clean",
+      "deNovo": true
+    }
+  },
+  {
+    "utc": "2026-09-12T17:59:53.2847445Z",
+    "stage": "clean_complete",
+    "details": {
+      "formula": "C2H6O",
+      "warnings": 0,
+      "atoms": 3,
+      "bonds": 2
+    }
+  },
+  {
+    "utc": "2026-09-12T17:59:53.2862772Z",
+    "stage": "save_start",
+    "details": {
+      "mime": "text/xml",
+      "path": "<workspace>\\work\\native-probe-20260912-175952\\ethanol.cdxml"
+    }
+  },
+  {
+    "utc": "2026-09-12T17:59:53.2991122Z",
+    "stage": "save_complete",
+    "details": {
+      "path": "<workspace>\\work\\native-probe-20260912-175952\\ethanol.cdxml",
+      "sha256": "3401A6424DD968E82C74DF72CF17BA895B1FA11BB4D5F3D4D1CCE9C7DE8E79AC",
+      "bytes": 3255
+    }
+  },
+  {
+    "utc": "2026-09-12T17:59:53.3006185Z",
+    "stage": "save_start",
+    "details": {
+      "mime": "image/png",
+      "path": "<workspace>\\work\\native-probe-20260912-175952\\ethanol.png"
+    }
+  },
+  {
+    "utc": "2026-09-12T17:59:53.3158061Z",
+    "stage": "save_complete",
+    "details": {
+      "path": "<workspace>\\work\\native-probe-20260912-175952\\ethanol.png",
+      "sha256": "AF730D4EDE1ABB174491A9B086699611E3AE575013386DEA5FDBE7388715EA10",
+      "bytes": 2359
+    }
+  },
+  {
+    "utc": "2026-09-12T17:59:53.3167867Z",
+    "stage": "save_start",
+    "details": {
+      "mime": "chemical/x-cdx",
+      "path": "<workspace>\\work\\native-probe-20260912-175952\\ethanol.cdx"
+    }
+  },
+  {
+    "utc": "2026-09-12T17:59:53.3266108Z",
+    "stage": "save_complete",
+    "details": {
+      "path": "<workspace>\\work\\native-probe-20260912-175952\\ethanol.cdx",
+      "sha256": "845AA45A92742733949378037AD16089EEC4E19A077842C3FCFAF72021B21F8B",
+      "bytes": 1275
+    }
+  },
+  {
+    "utc": "2026-09-12T17:59:53.3335641Z",
+    "stage": "close_complete",
+    "details": {
+      "path": "<workspace>\\work\\native-probe-20260912-175952\\ethanol.cdx"
+    }
+  },
+  {
+    "utc": "2026-09-12T17:59:53.3389872Z",
+    "stage": "reopen_complete",
+    "details": {
+      "bonds": 2,
+      "formula": "C2H6O",
+      "name": "ethanol.cdx",
+      "warnings": 0,
+      "saved": false,
+      "atoms": 3
+    }
+  },
+  {
+    "utc": "2026-09-12T17:59:53.3399633Z",
+    "stage": "save_start",
+    "details": {
+      "mime": "text/xml",
+      "path": "<workspace>\\work\\native-probe-20260912-175952\\reopened.cdxml"
+    }
+  },
+  {
+    "utc": "2026-09-12T17:59:53.3508347Z",
+    "stage": "save_complete",
+    "details": {
+      "path": "<workspace>\\work\\native-probe-20260912-175952\\reopened.cdxml",
+      "sha256": "EAE8F45DAB8BB8C2A118B9BCCA42A64CBFF37BB47E37D39C5FD5D886767DD78F",
+      "bytes": 3256
+    }
+  },
+  {
+    "utc": "2026-09-12T17:59:53.3516705Z",
+    "stage": "complete",
+    "details": {
+      "scope": "isolated ethanol transport and cleanup smoke test",
+      "representativeQualityGate": "not_run",
+      "license": "unverified"
+    }
+  }
+]

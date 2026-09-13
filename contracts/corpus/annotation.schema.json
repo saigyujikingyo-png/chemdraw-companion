@@ -1,0 +1,454 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://chembridge.invalid/contracts/corpus/annotation.schema.json",
+  "title": "annotation corpus draft 0.1",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "version": {
+      "const": "mechanism-annotation/0.1"
+    },
+    "id": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 200
+    },
+    "sample_id": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 200
+    },
+    "revision_id": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 200
+    },
+    "mechanism_sha256": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "layers": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "name": {
+            "enum": [
+              "page_and_reading_order",
+              "molecular_graph",
+              "participant_roles",
+              "reaction_arrows",
+              "conditions",
+              "electronic_marks",
+              "electron_flow",
+              "visual_geometry"
+            ]
+          },
+          "status": {
+            "enum": [
+              "not_started",
+              "proposed",
+              "reviewed",
+              "ambiguous",
+              "not_applicable"
+            ]
+          },
+          "depends_on": {
+            "type": "array",
+            "items": {
+              "enum": [
+                "page_and_reading_order",
+                "molecular_graph",
+                "participant_roles",
+                "reaction_arrows",
+                "conditions",
+                "electronic_marks",
+                "electron_flow",
+                "visual_geometry"
+              ]
+            },
+            "minItems": 0
+          }
+        },
+        "required": [
+          "name",
+          "status",
+          "depends_on"
+        ]
+      },
+      "minItems": 8
+    },
+    "observations": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 200
+          },
+          "layer": {
+            "enum": [
+              "page_and_reading_order",
+              "molecular_graph",
+              "participant_roles",
+              "reaction_arrows",
+              "conditions",
+              "electronic_marks",
+              "electron_flow",
+              "visual_geometry"
+            ]
+          },
+          "entity_refs": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 200
+            },
+            "minItems": 0,
+            "uniqueItems": true
+          },
+          "asset_ref": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 200
+          },
+          "asset_sha256": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{64}$"
+          },
+          "frame_ref": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 200
+          },
+          "locator": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "kind": {
+                "enum": [
+                  "native_id",
+                  "svg_id",
+                  "raster_region",
+                  "document"
+                ]
+              },
+              "value": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "kind",
+              "value"
+            ]
+          },
+          "geometry": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "kind": {
+                "enum": [
+                  "point",
+                  "box",
+                  "polyline",
+                  "polygon",
+                  "bezier",
+                  "none"
+                ]
+              },
+              "points": {
+                "type": "array",
+                "items": {
+                  "type": "array",
+                  "items": {
+                    "type": "number"
+                  },
+                  "minItems": 2,
+                  "maxItems": 2
+                },
+                "minItems": 0
+              },
+              "measurement_status": {
+                "enum": [
+                  "observed",
+                  "inferred",
+                  "unresolved"
+                ]
+              }
+            },
+            "required": [
+              "kind",
+              "points",
+              "measurement_status"
+            ]
+          },
+          "method": {
+            "enum": [
+              "native_readback",
+              "manual",
+              "ai_proposal",
+              "derived_measurement"
+            ]
+          },
+          "actor_ref": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 200
+          },
+          "alignment_status": {
+            "enum": [
+              "proposed",
+              "verified",
+              "ambiguous",
+              "unresolved"
+            ]
+          },
+          "confidence": {
+            "type": [
+              "number",
+              "null"
+            ],
+            "minimum": 0,
+            "maximum": 1
+          },
+          "alternatives": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "minItems": 0
+          },
+          "review_refs": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 200
+            },
+            "minItems": 0,
+            "uniqueItems": true
+          },
+          "evidence_asset_refs": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            },
+            "uniqueItems": true,
+            "minItems": 1
+          },
+          "assessments": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "kind": {
+                  "enum": [
+                    "collision",
+                    "clearance",
+                    "orientation",
+                    "containment",
+                    "port_attachment",
+                    "reading_order"
+                  ]
+                },
+                "entity_refs": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "uniqueItems": true,
+                  "minItems": 1
+                },
+                "value": {
+                  "type": [
+                    "number",
+                    "null"
+                  ]
+                },
+                "unit": {
+                  "enum": [
+                    "pt",
+                    "px",
+                    "mm",
+                    "degree",
+                    "none"
+                  ]
+                },
+                "label": {
+                  "enum": [
+                    "pass",
+                    "failed",
+                    "unknown"
+                  ]
+                },
+                "intended_contact": {
+                  "type": [
+                    "boolean",
+                    "null"
+                  ]
+                },
+                "evidence_asset_refs": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "uniqueItems": true,
+                  "minItems": 1
+                }
+              },
+              "required": [
+                "kind",
+                "entity_refs",
+                "value",
+                "unit",
+                "label",
+                "intended_contact",
+                "evidence_asset_refs"
+              ]
+            }
+          }
+        },
+        "required": [
+          "id",
+          "layer",
+          "entity_refs",
+          "asset_ref",
+          "asset_sha256",
+          "frame_ref",
+          "locator",
+          "geometry",
+          "method",
+          "actor_ref",
+          "alignment_status",
+          "confidence",
+          "alternatives",
+          "review_refs",
+          "evidence_asset_refs",
+          "assessments"
+        ]
+      },
+      "minItems": 0
+    },
+    "actors": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 200
+          },
+          "kind": {
+            "enum": [
+              "human",
+              "ai",
+              "deterministic_tool"
+            ]
+          },
+          "tool_or_model": {
+            "type": "string"
+          },
+          "version_or_run": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "kind",
+          "tool_or_model",
+          "version_or_run"
+        ]
+      },
+      "minItems": 0
+    },
+    "reviews": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 200
+          },
+          "actor_ref": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 200
+          },
+          "target_revision": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 200
+          },
+          "scope": {
+            "enum": [
+              "page_and_reading_order",
+              "molecular_graph",
+              "participant_roles",
+              "reaction_arrows",
+              "conditions",
+              "electronic_marks",
+              "electron_flow",
+              "visual_geometry"
+            ]
+          },
+          "status": {
+            "enum": [
+              "accepted",
+              "rejected",
+              "needs_work"
+            ]
+          },
+          "evidence_asset_refs": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 200
+            },
+            "minItems": 1,
+            "uniqueItems": true
+          },
+          "reviewed_at": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "required": [
+          "id",
+          "actor_ref",
+          "target_revision",
+          "scope",
+          "status",
+          "evidence_asset_refs",
+          "reviewed_at"
+        ]
+      },
+      "minItems": 0
+    }
+  },
+  "required": [
+    "version",
+    "id",
+    "sample_id",
+    "revision_id",
+    "mechanism_sha256",
+    "layers",
+    "observations",
+    "actors",
+    "reviews"
+  ]
+}

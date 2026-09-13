@@ -1,0 +1,22 @@
+[
+  {
+    "markDirty": false,
+    "modifiedBefore": false,
+    "modifiedAfter": false,
+    "saved": false,
+    "atoms": 3,
+    "exists": false,
+    "outputArgument": "<checkout>\\.local\\native-probes\\save-state-20260912-181346\\dirty-False.cdxml",
+    "documentFullName": ""
+  },
+  {
+    "markDirty": true,
+    "modifiedBefore": true,
+    "modifiedAfter": true,
+    "saved": true,
+    "atoms": 3,
+    "exists": false,
+    "outputArgument": "<checkout>\\.local\\native-probes\\save-state-20260912-181346\\dirty-True.cdxml",
+    "documentFullName": ""
+  }
+]

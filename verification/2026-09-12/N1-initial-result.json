@@ -1,0 +1,18 @@
+{
+  "probe_version": "0.1.0",
+  "status": "probe_failed",
+  "license_entitlement": "unverified",
+  "paired_addin": "not_verified",
+  "production_route": "blocked_pending_entitlement_and_contract_review",
+  "gates": {},
+  "application": "ChemDraw Prime 26.0.0.6141",
+  "isolation": "new_vendor_process_with_zero_preexisting_documents_and_retained_com_references",
+  "error": {
+    "message": "SaveAs returned without producing requested artifact N1-A.cdxml",
+    "type": "System.Management.Automation.RuntimeException",
+    "hresult": "0x80131501",
+    "retryable": false,
+    "mutation_outcome": "inspect_journal"
+  },
+  "completed_utc": "2026-09-12T18:11:05.8123367Z"
+}

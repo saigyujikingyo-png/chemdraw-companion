@@ -1,0 +1,152 @@
+{
+  "native_results": [
+    {
+      "file": "mechanism.cdxml",
+      "semantic_and_native_inventory": "pass",
+      "issues": [],
+      "counts": {
+        "n": 126,
+        "b": 111,
+        "curve": 15,
+        "arrow": 6
+      },
+      "lone_pairs": 42,
+      "chemical_fingerprint": "a51de3cb1b47a94eb915d9e8a82465e339ee0f96c855089e1b91cb5a3d597d3c",
+      "curve_max_native_rounding_pt": 0.0067696418620390815,
+      "native_glyph_bbox_clearance_failures": [
+        {
+          "flow": "t3_f2",
+          "glyph_bbox_clearance_pt": 2.4582073400000013,
+          "contacts": [
+            {
+              "atom": 2,
+              "distance_pt": 2.4582073400000013
+            }
+          ]
+        }
+      ],
+      "bond_length_pt_range": [
+        14.33452126860186,
+        14.364156779985377
+      ],
+      "ordinary_bond_length_outliers": 0,
+      "actual_mask_collision_acceptance": "unverified",
+      "owner_visual_review": "pending"
+    },
+    {
+      "file": "mechanism-cdx-readback.cdxml",
+      "semantic_and_native_inventory": "pass",
+      "issues": [],
+      "counts": {
+        "n": 126,
+        "b": 111,
+        "curve": 15,
+        "arrow": 6
+      },
+      "lone_pairs": 42,
+      "chemical_fingerprint": "a51de3cb1b47a94eb915d9e8a82465e339ee0f96c855089e1b91cb5a3d597d3c",
+      "curve_max_native_rounding_pt": 0.0067696418620390815,
+      "native_glyph_bbox_clearance_failures": [
+        {
+          "flow": "t3_f2",
+          "glyph_bbox_clearance_pt": 2.4582073400000013,
+          "contacts": [
+            {
+              "atom": 2,
+              "distance_pt": 2.4582073400000013
+            }
+          ]
+        }
+      ],
+      "bond_length_pt_range": [
+        14.33452126860186,
+        14.364156779985377
+      ],
+      "ordinary_bond_length_outliers": 0,
+      "actual_mask_collision_acceptance": "unverified",
+      "owner_visual_review": "pending"
+    },
+    {
+      "file": "mechanism-cdxml-readback.cdxml",
+      "semantic_and_native_inventory": "pass",
+      "issues": [],
+      "counts": {
+        "n": 126,
+        "b": 111,
+        "curve": 15,
+        "arrow": 6
+      },
+      "lone_pairs": 42,
+      "chemical_fingerprint": "a51de3cb1b47a94eb915d9e8a82465e339ee0f96c855089e1b91cb5a3d597d3c",
+      "curve_max_native_rounding_pt": 0.0067696418620390815,
+      "native_glyph_bbox_clearance_failures": [
+        {
+          "flow": "t3_f2",
+          "glyph_bbox_clearance_pt": 2.4582073400000013,
+          "contacts": [
+            {
+              "atom": 2,
+              "distance_pt": 2.4582073400000013
+            }
+          ]
+        }
+      ],
+      "bond_length_pt_range": [
+        14.33452126860186,
+        14.364156779985377
+      ],
+      "ordinary_bond_length_outliers": 0,
+      "actual_mask_collision_acceptance": "unverified",
+      "owner_visual_review": "pending"
+    }
+  ],
+  "saved_source_arrow_aliases": [
+    {
+      "semantic_id": "t1",
+      "input_native_id": "346",
+      "saved_native_id": "354",
+      "evidence": "explicit SupersededBy chain in saved source"
+    },
+    {
+      "semantic_id": "t2",
+      "input_native_id": "347",
+      "saved_native_id": "355",
+      "evidence": "explicit SupersededBy chain in saved source"
+    },
+    {
+      "semantic_id": "t3",
+      "input_native_id": "348",
+      "saved_native_id": "356",
+      "evidence": "explicit SupersededBy chain in saved source"
+    },
+    {
+      "semantic_id": "t4",
+      "input_native_id": "349",
+      "saved_native_id": "357",
+      "evidence": "explicit SupersededBy chain in saved source"
+    },
+    {
+      "semantic_id": "t5",
+      "input_native_id": "350",
+      "saved_native_id": "358",
+      "evidence": "explicit SupersededBy chain in saved source"
+    },
+    {
+      "semantic_id": "t6",
+      "input_native_id": "351",
+      "saved_native_id": "359",
+      "evidence": "explicit SupersededBy chain in saved source"
+    }
+  ],
+  "native_warnings": [
+    0,
+    0,
+    0
+  ],
+  "both_format_fingerprints_equal": true,
+  "manual_active_correction_seconds": null,
+  "manual_edit_count": null,
+  "base_m2": "failed_or_pending_required_quality_controls",
+  "automatic_anti_selection": "unverified_complete_ir_supplied",
+  "holdout": "not_started"
+}

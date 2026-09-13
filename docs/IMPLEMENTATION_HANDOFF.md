@@ -1,5 +1,7 @@
 # Implementation handoff: P0-A/B/C and M2
 
+Current phase update (2026-09-13): read [COMPOSER_RND_HANDOFF.md](COMPOSER_RND_HANDOFF.md) and [MECHANISM_IR_V0_1.md](MECHANISM_IR_V0_1.md). The corpus profile is separate from the runtime contract. M1/M2 are now locked exposed evaluation fixtures, excluded from further rule fitting/training and their derivative corpora. Native gates and prior failed repair history remain in force.
+
 Read DEVELOPMENT_PRINCIPLES.md (2026-09-12.4), CHEMBRIDGE.md and CLOUD_STORAGE.md, then this page, ARCHITECTURE.md, QUALITY_GATES.md, CHEMDRAW_26_CAPABILITY_MATRIX.md, MECHANISM_IR_COMPOSER.md and M2_BECKMANN_SNAKE.md. Revision 2026-09-12.3 retains P0-A/B/C and adds the mandatory M2_GENERALIZATION_GATE.md.
 
 ## Ownership and compatibility

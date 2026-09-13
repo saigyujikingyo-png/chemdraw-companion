@@ -1,0 +1,21 @@
+{
+  "experiment_id": "native-core-r3-independent-geometry",
+  "declared_date": "2026-09-13",
+  "baseline_commit": "eb8b4c869a23237f726f8cf127be18743f573a14",
+  "architecture_review_commit": "d12ec4e7830a0c9f60197a416886afba90ab20ff",
+  "lineage": "R2 first outputs, failures and exhausted two-repair receipt remain immutable. This is a separate authorized experiment, not a retry-budget reset.",
+  "hypothesis": "Independent native cubic-curve controls can bound forward arrowhead extension at the declared build/style. Combining that measured extent with the existing shared port/annotation spacing rule can be evaluated without fitting exposed mechanism coordinates.",
+  "application": "ChemDraw Prime 26.0.0.6141 x64",
+  "native_worker_deadline_seconds": 60,
+  "development_geometry_controls": {"angles_deg": [0, 90, 180, 270], "terminal_handles_bond_lengths": [0.5, 1.0, 1.5], "count": 12, "chemical_claim": "none; independent geometric microfixtures"},
+  "max_development_repairs": 2,
+  "regression_policy": {"S1": "regression_only", "R1": "regression_only", "M1": "exposed_and_tuned", "M2": "exposed_and_tuned", "further_sample_specific_repairs": 0},
+  "sequence": ["Retain pre-fix counterexamples; repair and recheck general validators", "Generate independent development curve controls and capture exact source hashes before native execution", "Derive intrinsic extent with a declared half-pixel plus 0.02 pt uncertainty margin", "Evaluate S1 then R1 then M1 once; no tuning from regression results", "Evaluate general IR to Composer to native base M2 only if prerequisite automatic gates pass"],
+  "source_policy": "Retain actual executed source snapshots and hashes per native batch, including dirty source changes; bind delivered revision separately.",
+  "data_policy": "No exposed reference sample enters training or correction corpus. No crawling, training, new holdout selection or corpus ingestion before architecture schema/gold contracts.",
+  "freeze": "not_started",
+  "holdout": "not_selected",
+  "owner_physical_review": "pending",
+  "manual_active_correction_seconds": null,
+  "no_blind_retry_on_unknown_outcome": true
+}

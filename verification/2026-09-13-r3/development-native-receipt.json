@@ -1,0 +1,15 @@
+{
+  "cases": 12,
+  "completed": true,
+  "warnings": 0,
+  "worker_elapsed_seconds": 2.375,
+  "fresh_pid_bound": true,
+  "native_artifacts": 24,
+  "measured_extent_min_pt": 3.953892013498315,
+  "measured_extent_max_pt": 4.079703787026617,
+  "conservative_extent_with_uncertainty_pt": 4.159696287964,
+  "scope": "Independent geometric curves, not a reaction page or corpus gold item",
+  "measurement_replay": "Final reader additionally verifies native font/build/head/type/stroke; measured extent unchanged",
+  "native_executor_sources": "development-build-1/source and worker executed_source_hashes",
+  "final_source_snapshot": "Separate final source audit; not retroactively substituted for earlier source bytes"
+}

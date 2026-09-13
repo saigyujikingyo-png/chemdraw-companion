@@ -1,0 +1,359 @@
+{
+  "method": "Original and colour-only native PNG readback; no raster image rewritten",
+  "results": [
+    {
+      "fixture": "S1",
+      "source_cdxml_sha256": "814899fb68b433c0298b4f4d44944177fdbdca404d00361953791ed941d5e394",
+      "original_native_png_sha256": "90273897fdde668f741d6becc22e916144c2c90f0a0ef2d66f347d89ca883792",
+      "diagnostic_native_png_sha256": "6058517b5122f2a3a8406ffb7683cc0b922aef005e7f375bdeea18b7b82ae552",
+      "status": "pass",
+      "issues": [],
+      "native_pixel_dimensions": [
+        2044,
+        1028
+      ],
+      "embedded_dpi": [
+        143.99259999999998,
+        143.99259999999998
+      ],
+      "native_canvas_frame_px_per_pt": [
+        8.333343521722414,
+        8.334366765224608
+      ],
+      "native_canvas_origin_px": [
+        17.5,
+        17.5
+      ],
+      "canvas_dpi": [
+        600.0007335640138,
+        600.0744070961719
+      ],
+      "ink_resolution": "Must also retain independent native bond/ruler calibration; canvas padding alone is not acceptance",
+      "native_ink_bbox_px": [
+        113,
+        102,
+        1378,
+        923
+      ],
+      "native_ink_bbox_mm": [
+        4.042828390544297,
+        3.576723110699204,
+        57.5944295846651,
+        38.328080198084365
+      ],
+      "silhouette_difference_pixels": 16,
+      "silhouette_difference_fraction": 0.0003930431364842291,
+      "nonlocal_silhouette_difference_pixels": 0,
+      "allowed_registration_px": 1,
+      "mixed_colour_pixels_in_named_contacts": 26,
+      "unclassified_ink_pixels": 0,
+      "object_masks": 10,
+      "close_pair_distance_checks": 0,
+      "named_contact_exemptions": [
+        {
+          "objects": [
+            "14",
+            "20"
+          ],
+          "name": "bond_own_atom_label",
+          "radius_pt": 8.64
+        },
+        {
+          "objects": [
+            "18",
+            "23"
+          ],
+          "name": "bond_own_atom_label",
+          "radius_pt": 8.64
+        },
+        {
+          "objects": [
+            "19",
+            "24"
+          ],
+          "name": "bond_own_atom_label",
+          "radius_pt": 8.64
+        },
+        {
+          "objects": [
+            "20",
+            "21"
+          ],
+          "name": "bond_shared_atom",
+          "radius_pt": 5.04
+        },
+        {
+          "objects": [
+            "20",
+            "22"
+          ],
+          "name": "bond_shared_atom",
+          "radius_pt": 5.04
+        },
+        {
+          "objects": [
+            "21",
+            "22"
+          ],
+          "name": "bond_shared_atom",
+          "radius_pt": 5.04
+        },
+        {
+          "objects": [
+            "22",
+            "23"
+          ],
+          "name": "bond_shared_atom",
+          "radius_pt": 5.04
+        },
+        {
+          "objects": [
+            "22",
+            "24"
+          ],
+          "name": "bond_shared_atom",
+          "radius_pt": 5.04
+        },
+        {
+          "objects": [
+            "23",
+            "24"
+          ],
+          "name": "bond_shared_atom",
+          "radius_pt": 5.04
+        }
+      ],
+      "clearance_failures": [],
+      "owner_physical_size_review": "pending",
+      "manual_active_correction_seconds": null,
+      "native_arrowhead_tips": []
+    },
+    {
+      "fixture": "R1",
+      "source_cdxml_sha256": "8726b1554b0f2a2cd619a748a77904821c5bdcb063b37df195d8c1865646fb77",
+      "original_native_png_sha256": "30a8f3365475718d76c1b5541ab7e6feca585b30bc10980feef8819ffc07f2f2",
+      "diagnostic_native_png_sha256": "9fd30307d915f64069a0fd4dbb2a180f8e62d80d9a880dac317db078e8848209",
+      "status": "pass",
+      "issues": [],
+      "native_pixel_dimensions": [
+        2044,
+        1028
+      ],
+      "embedded_dpi": [
+        143.99259999999998,
+        143.99259999999998
+      ],
+      "native_canvas_frame_px_per_pt": [
+        8.333343521722414,
+        8.334366765224608
+      ],
+      "native_canvas_origin_px": [
+        17.5,
+        17.5
+      ],
+      "canvas_dpi": [
+        600.0007335640138,
+        600.0744070961719
+      ],
+      "ink_resolution": "Must also retain independent native bond/ruler calibration; canvas padding alone is not acceptance",
+      "native_ink_bbox_px": [
+        118,
+        102,
+        1697,
+        542
+      ],
+      "native_ink_bbox_mm": [
+        4.254494798426197,
+        3.576723110699204,
+        71.09874640753034,
+        22.201080136825233
+      ],
+      "silhouette_difference_pixels": 42,
+      "silhouette_difference_fraction": 0.0012714173276018649,
+      "nonlocal_silhouette_difference_pixels": 0,
+      "allowed_registration_px": 1,
+      "mixed_colour_pixels_in_named_contacts": 0,
+      "unclassified_ink_pixels": 0,
+      "object_masks": 12,
+      "close_pair_distance_checks": 1,
+      "named_contact_exemptions": [
+        {
+          "objects": [
+            "17",
+            "18"
+          ],
+          "name": "bond_own_atom_label",
+          "radius_pt": 8.64
+        },
+        {
+          "objects": [
+            "20",
+            "22"
+          ],
+          "name": "bond_own_atom_label",
+          "radius_pt": 8.64
+        }
+      ],
+      "clearance_failures": [],
+      "owner_physical_size_review": "pending",
+      "manual_active_correction_seconds": null,
+      "native_arrowhead_tips": []
+    },
+    {
+      "fixture": "M1",
+      "source_cdxml_sha256": "292b361cf452eeacba7c3e3d891c587c9f799c3b8831a4e248279c23df071b30",
+      "original_native_png_sha256": "2bbb64b741ec85cedb01ac86e71f3577217929bfecfe8276dd8c01321961b184",
+      "diagnostic_native_png_sha256": "c937e19236b76685f3796f821fe8602c939880176b6a7554fc74d75ee487f34b",
+      "status": "failed",
+      "issues": [
+        "visible_native_head_port:departure",
+        "native_mask_clearance"
+      ],
+      "native_pixel_dimensions": [
+        2044,
+        1028
+      ],
+      "embedded_dpi": [
+        143.99259999999998,
+        143.99259999999998
+      ],
+      "native_canvas_frame_px_per_pt": [
+        8.333343521722414,
+        8.334366765224608
+      ],
+      "native_canvas_origin_px": [
+        17.5,
+        17.5
+      ],
+      "canvas_dpi": [
+        600.0007335640138,
+        600.0744070961719
+      ],
+      "ink_resolution": "Must also retain independent native bond/ruler calibration; canvas padding alone is not acceptance",
+      "native_ink_bbox_px": [
+        115,
+        101,
+        1697,
+        922
+      ],
+      "native_ink_bbox_mm": [
+        4.127494953697058,
+        3.5343950265489177,
+        71.09874640753034,
+        38.28575211393408
+      ],
+      "silhouette_difference_pixels": 80,
+      "silhouette_difference_fraction": 0.0015426444782969204,
+      "nonlocal_silhouette_difference_pixels": 0,
+      "allowed_registration_px": 1,
+      "mixed_colour_pixels_in_named_contacts": 123,
+      "unclassified_ink_pixels": 0,
+      "object_masks": 16,
+      "close_pair_distance_checks": 4,
+      "named_contact_exemptions": [
+        {
+          "objects": [
+            "30",
+            "31"
+          ],
+          "name": "declared_lone_pair_tail",
+          "radius_pt": 2.8800000000000003
+        },
+        {
+          "objects": [
+            "17",
+            "18"
+          ],
+          "name": "bond_own_atom_label",
+          "radius_pt": 8.64
+        },
+        {
+          "objects": [
+            "18",
+            "31"
+          ],
+          "name": "declared_acceptor_atom_port",
+          "radius_pt": 3.168
+        },
+        {
+          "objects": [
+            "18",
+            "32"
+          ],
+          "name": "declared_source_bond_tail",
+          "radius_pt": 2.8800000000000003
+        },
+        {
+          "objects": [
+            "18",
+            "32"
+          ],
+          "name": "declared_acceptor_atom_port",
+          "radius_pt": 3.168
+        },
+        {
+          "objects": [
+            "20",
+            "22"
+          ],
+          "name": "bond_own_atom_label",
+          "radius_pt": 8.64
+        }
+      ],
+      "clearance_failures": [
+        {
+          "objects": [
+            "17",
+            "32"
+          ],
+          "kinds": [
+            "atom_label",
+            "curve"
+          ],
+          "conservative_ink_gap_pt": 0.0,
+          "required_pt": 0
+        },
+        {
+          "objects": [
+            "25",
+            "31"
+          ],
+          "kinds": [
+            "caption",
+            "curve"
+          ],
+          "conservative_ink_gap_pt": 0.0,
+          "required_pt": 2.592
+        }
+      ],
+      "owner_physical_size_review": "pending",
+      "manual_active_correction_seconds": null,
+      "native_arrowhead_tips": [
+        {
+          "flow": "attack",
+          "native_id": "31",
+          "head_extension_pt": 1.8899123392075268,
+          "visible_tip_native_pt": [
+            71.69991233920753,
+            59.73
+          ],
+          "target_port_deviation_pt": 1.8899123392075352,
+          "head_size": "650",
+          "head_width": "163"
+        },
+        {
+          "flow": "departure",
+          "native_id": "32",
+          "head_extension_pt": 4.077506745078566,
+          "visible_tip_native_pt": [
+            86.56,
+            60.532493254921434
+          ],
+          "target_port_deviation_pt": null,
+          "head_size": "650",
+          "head_width": "163"
+        }
+      ]
+    }
+  ]
+}

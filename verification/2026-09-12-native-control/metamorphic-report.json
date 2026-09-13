@@ -1,0 +1,97 @@
+{
+  "scope": "metamorphic and structural controls only; no unseen chemical selection",
+  "baseline_clearance_failures": 1,
+  "cases": [
+    {
+      "case": "bijective_ids_and_shuffled_arrays",
+      "max_mapped_atom_displacement_pt": 84.30000000000001,
+      "observed_layout_identity": "failed",
+      "counts": {
+        "ordered_states": [
+          "opaque-168",
+          "opaque-199",
+          "opaque-137",
+          "opaque-44",
+          "opaque-106",
+          "opaque-13",
+          "opaque-75"
+        ],
+        "ordered_transitions": [
+          "edge-89",
+          "edge-82",
+          "edge-75",
+          "edge-68",
+          "edge-61",
+          "edge-54"
+        ],
+        "state_count": 7,
+        "flow_count": 15,
+        "system_charge": 1,
+        "scope": "closed-shell H/C/N/O, linear pathways, explicit transferred H"
+      },
+      "clearance_failures": 1
+    },
+    {
+      "case": "intrinsic_component_rotation_37_degrees",
+      "semantics_and_fit": "pass",
+      "stereo_checks": [
+        {
+          "state": "s0",
+          "relation": "anti_across_double_bond",
+          "signed_product": -31847.5777003999,
+          "preserved": true
+        },
+        {
+          "state": "s1",
+          "relation": "anti_across_double_bond",
+          "signed_product": -31860.393627040143,
+          "preserved": true
+        }
+      ],
+      "clearance_failures": 0,
+      "quality_acceptance": "not_implied"
+    },
+    {
+      "case": "valid_path_prefix_2",
+      "semantic_and_composer_fit": "pass",
+      "counts": {
+        "ordered_states": [
+          "s0",
+          "s1"
+        ],
+        "ordered_transitions": [
+          "t1"
+        ],
+        "state_count": 2,
+        "flow_count": 2,
+        "system_charge": 1,
+        "scope": "closed-shell H/C/N/O, linear pathways, explicit transferred H"
+      },
+      "quality_acceptance": "not_implied"
+    },
+    {
+      "case": "valid_path_prefix_4",
+      "semantic_and_composer_fit": "pass",
+      "counts": {
+        "ordered_states": [
+          "s0",
+          "s1",
+          "s2",
+          "s3"
+        ],
+        "ordered_transitions": [
+          "t1",
+          "t2",
+          "t3"
+        ],
+        "state_count": 4,
+        "flow_count": 7,
+        "system_charge": 1,
+        "scope": "closed-shell H/C/N/O, linear pathways, explicit transferred H"
+      },
+      "quality_acceptance": "not_implied"
+    }
+  ],
+  "metamorphic_behavior": "partial; native geometry regeneration and quality remain separate",
+  "holdout": "not_started"
+}

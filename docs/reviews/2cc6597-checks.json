@@ -1,0 +1,212 @@
+{
+  "scope": "Independent review of 2cc6597. In-memory fault injections and local Python reruns; no new ChemDraw execution.",
+  "decision": "checkpoint_evidence_accepted_p0_not_accepted",
+  "archive_and_tests": {
+    "commit": "2cc659771817f9968b8ed09b40b2335e32b0fdc7",
+    "public_archive_sha256": "3229e8aa449da8b2c9a87ad7ac4b8fda1d3620f7b926712b56d090027d616b91",
+    "archive_members_verified": 529,
+    "native_original_manifest_matches": 389,
+    "tests_run": 17,
+    "failures": 0,
+    "errors": 0,
+    "python": "3.13.15",
+    "jsonschema": "4.26.0",
+    "environment_note": "Independent local rerun uses existing review dependencies; not the execution device pinned runtime. No ChemDraw launch or new native reopen."
+  },
+  "samples_byte_matching_archive": 16,
+  "composer_verifier_faults": [
+    {
+      "case": "native_hydrogen_count_changed",
+      "description": "The native atom hydrogen attribute changes; the checker uses IR hydrogen counts instead.",
+      "mutation": {
+        "state": "s0",
+        "atom_map": "1",
+        "native_id": "13",
+        "NumHydrogens_before": null,
+        "NumHydrogens_after": "4"
+      },
+      "checker_verdict": "pass",
+      "issues": [],
+      "chemical_fingerprint_unchanged": true,
+      "ordinary_bond_length_outliers": 0,
+      "glyph_bbox_clearance_failures": 1,
+      "expected_gate_response": "reject_or_explicitly_unverified_for_changed_property"
+    },
+    {
+      "case": "native_state_moved_anchors_left_behind",
+      "description": "A rigid translation preserves graph, internal bond lengths and anti geometry but detaches every arrow/lone-pair anchor and moves the state outside the page.",
+      "mutation": {
+        "state": "s0",
+        "all_atoms_and_attached_labels_translation_pt": [
+          500,
+          500
+        ],
+        "curves_connectors_and_lone_pairs": "unchanged"
+      },
+      "checker_verdict": "pass",
+      "issues": [],
+      "chemical_fingerprint_unchanged": true,
+      "ordinary_bond_length_outliers": 0,
+      "glyph_bbox_clearance_failures": 1,
+      "expected_gate_response": "reject_or_explicitly_unverified_for_changed_property"
+    },
+    {
+      "case": "native_lone_pair_displaced",
+      "description": "An existing lone-pair graphic is moved away from its mapped atom; count and SymbolType remain valid.",
+      "mutation": {
+        "state": "s0",
+        "native_id": "49",
+        "atom": 2,
+        "pair_index": 0,
+        "BoundingBox_before": "91.76 69.91 93.96 69.91",
+        "BoundingBox_after": "0 0 2 0"
+      },
+      "checker_verdict": "pass",
+      "issues": [],
+      "chemical_fingerprint_unchanged": true,
+      "ordinary_bond_length_outliers": 0,
+      "glyph_bbox_clearance_failures": 1,
+      "expected_gate_response": "reject_or_explicitly_unverified_for_changed_property"
+    }
+  ],
+  "composer_ordering": {
+    "case": "catalog_order_only_vs_combined_relabel_shuffle",
+    "catalog_only_change": "Reorder atom_catalog to the same permutation, retaining original IDs, all other arrays and the original measured geometry.",
+    "combined_max_displacement_pt": 84.30000000000001,
+    "catalog_only_max_displacement_pt": 84.30000000000001,
+    "max_residual_catalog_only_vs_combined_after_ID_mapping_pt": 1.2710574864626038e-13,
+    "most_displaced_occurrences": [
+      {
+        "distance_pt": 84.30000000000001,
+        "state": "s2",
+        "atom": 30
+      },
+      {
+        "distance_pt": 84.30000000000001,
+        "state": "s2",
+        "atom": 31
+      },
+      {
+        "distance_pt": 84.30000000000001,
+        "state": "s2",
+        "atom": 32
+      },
+      {
+        "distance_pt": 84.30000000000001,
+        "state": "s2",
+        "atom": 33
+      },
+      {
+        "distance_pt": 84.29999999999995,
+        "state": "s2",
+        "atom": 3
+      },
+      {
+        "distance_pt": 84.29999999999995,
+        "state": "s2",
+        "atom": 20
+      }
+    ],
+    "baseline_clearance_failure_count": 1,
+    "combined_clearance_failure_count": 1,
+    "interpretation": "The disclosed atom-coordinate change is fully explained by catalog storage order and equal-score component packing. This does not prove explicit numeric-ID/sample hardcoding; strict coordinate identity is also stronger than the contract's relationship-and-quality invariance requirement.",
+    "source_lines": [
+      "runtime/chemical_ir.py:21-30",
+      "runtime/mechanism_composer.py:42-50",
+      "runtime/mechanism_composer.py:70-93"
+    ]
+  },
+  "native_geometry_provenance_faults": [
+    {
+      "input_folder": "seed",
+      "actual_input_role": "adapter-generated pre-native seed CDXML",
+      "accepted_states": 7,
+      "runtime_claimed_sources": [
+        "ChemDraw native Clean(true) readback"
+      ],
+      "source_lines": [
+        "runtime/adapters/chemdraw_cdxml.py:101-123",
+        "probes/run_composer.py:16"
+      ]
+    },
+    {
+      "input_folder": "seed-stereo-repair",
+      "actual_input_role": "adapter-generated pre-native seed CDXML",
+      "accepted_states": 7,
+      "runtime_claimed_sources": [
+        "ChemDraw native Clean(true) readback"
+      ],
+      "source_lines": [
+        "runtime/adapters/chemdraw_cdxml.py:101-123",
+        "probes/run_composer.py:16"
+      ]
+    }
+  ],
+  "native_file_sha256_before_after": [
+    "500d39f4446ee8da3ec64eb4336f7fa752229348762b93b2065d674d434365c7",
+    "500d39f4446ee8da3ec64eb4336f7fa752229348762b93b2065d674d434365c7"
+  ],
+  "actual_native_edit_change_counts": {
+    "cdx": {
+      "atoms": 11,
+      "curves": 1,
+      "symbols": 3,
+      "captions": 1
+    },
+    "cdxml": {
+      "atoms": 11,
+      "curves": 1,
+      "symbols": 3,
+      "captions": 1
+    }
+  },
+  "edit_noop_false_pass": {
+    "mutation": "Replace curves/symbols/captions in BOTH edited and reopened snapshots with their before snapshot. Retain actual fragment atom movement and diagnostic records.",
+    "report": {
+      "results": [
+        {
+          "source_format": "cdx",
+          "native_edit_save_reopen": "pass",
+          "issues": [],
+          "motion_atom_count": 126,
+          "retained_curves": 15,
+          "retained_lone_pairs": 42,
+          "diagnostic_chemistry_accepted": false
+        },
+        {
+          "source_format": "cdxml",
+          "native_edit_save_reopen": "pass",
+          "issues": [],
+          "motion_atom_count": 126,
+          "retained_curves": 15,
+          "retained_lone_pairs": 42,
+          "diagnostic_chemistry_accepted": false
+        }
+      ],
+      "manual_active_correction_seconds": null,
+      "scope": "Automated native object controls on copies. Does not establish corrected figure quality."
+    },
+    "false_pass_reproduced": true,
+    "interpretation": "Verifier does not establish these requested mutations occurred. This does not claim the original artifacts lacked edits."
+  },
+  "edit_failure_cli": {
+    "returncode": 0,
+    "stderr": "",
+    "report_statuses": {
+      "cdx": "failed",
+      "cdxml": "pass"
+    },
+    "exact_verifier_main_executed": true,
+    "filesystem_reads_and_writes_virtualized": true
+  },
+  "original_files_unchanged": {
+    "verifier": true,
+    "raw_archive": true
+  },
+  "private_reproduction_script_sha256": {
+    "independent_composer_poc.py": "30b7886c55d9a754ad7ae11cd5df94436137fab89b46bd126b5a3f50bfd052d4",
+    "independent_edit_poc.py": "d3c9c20a168cfe304331e42339f0f66627271c91b241124000000b323c480e68"
+  },
+  "holdout": "not_started",
+  "owner_acceptance": "pending"
+}

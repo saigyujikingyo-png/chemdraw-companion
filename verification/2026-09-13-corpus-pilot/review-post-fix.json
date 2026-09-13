@@ -1,0 +1,36 @@
+{
+  "scope": "Independent synthetic integrity corruptions of schema probes; no native execution, geometry fitting or approval claim",
+  "source_sha256": "e8a1dc79d8f50968c805015706983b2ea3211bdd62c4de5c07cf155380072f8e",
+  "controls": [
+    {
+      "case": "stale_split_revision",
+      "rejected": true,
+      "error": "split corpus revision mismatch"
+    },
+    {
+      "case": "wrong_ir_identity",
+      "rejected": true,
+      "error": "IR/sample identity mismatch"
+    },
+    {
+      "case": "wrong_ir_asset_kind",
+      "rejected": true,
+      "error": "mechanism asset kind/MIME mismatch"
+    },
+    {
+      "case": "asset_parent_cycle",
+      "rejected": true,
+      "error": "asset lineage: cycle"
+    },
+    {
+      "case": "duplicate_correction_asset",
+      "rejected": true,
+      "error": "duplicate identity: asset_ref"
+    },
+    {
+      "case": "cyclic_annotation_layers",
+      "rejected": true,
+      "error": "annotation layer dependency: cycle"
+    }
+  ]
+}

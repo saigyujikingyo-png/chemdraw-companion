@@ -1,0 +1,23 @@
+{
+  "experiment_id": "native-core-regression-r2",
+  "declared_utc": "2026-09-12T22:23:43Z",
+  "baseline_commit": "2cc659771817f9968b8ed09b40b2335e32b0fdc7",
+  "review_commit": "2abac34977dabdc67e3e5b186980713c23f5d892",
+  "sequence": [
+    "Repair readback/edit/provenance guards and run corruption/no-op negative controls",
+    "At most six predeclared minimal M1 text/separator/curve native import controls",
+    "Apply shared annotation spacing and run S1 then R1 then M1",
+    "Repair generic mechanism-role/geometric ordering and test declared symmetry invariance",
+    "Score M2 only after its prerequisite gates pass; otherwise retain diagnostics only"
+  ],
+  "native_worker_deadline_seconds": 60,
+  "max_native_control_variants": 6,
+  "max_automatic_repairs_per_scored_fixture_run": 2,
+  "no_blind_retry_on_unknown_outcome": true,
+  "immutable_first_outputs_and_failures": true,
+  "manual_active_correction_seconds": null,
+  "manual_timing_rule": "Measure an actual human correction session if one occurs. Automated probe time is never substituted. No human session means null, not zero.",
+  "holdout": "not_started",
+  "freeze": "not_started",
+  "excluded": ["installer", "MCP", "new hosts", "backend replacement", "Mnova", "OpenAI frontend synchronization", "archived relay task"]
+}

@@ -1,0 +1,15 @@
+{
+  "pdf_sha256": "c7f250a6baa18b293845bfbbe75562a5cd7762270f4f64f6ec15f1b989094f7b",
+  "source_native_png_sha256": {
+    "S1": "90273897fdde668f741d6becc22e916144c2c90f0a0ef2d66f347d89ca883792",
+    "R1": "30a8f3365475718d76c1b5541ab7e6feca585b30bc10980feef8819ffc07f2f2",
+    "M1": "2bbb64b741ec85cedb01ac86e71f3577217929bfecfe8276dd8c01321961b184"
+  },
+  "figure_clip_mm": [
+    85,
+    42
+  ],
+  "source_files_unchanged": true,
+  "owner_physical_review": "pending",
+  "native_ink_calibration_reference": "verification/2026-09-12-native-control/pixel-scale-report.json"
+}

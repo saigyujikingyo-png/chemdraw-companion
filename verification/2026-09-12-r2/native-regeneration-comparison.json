@@ -1,0 +1,18 @@
+{
+  "status": "pass",
+  "equivalence": "strict supplied identity bijection",
+  "differences": {
+    "relationships_equal": true,
+    "max_atom_displacement_pt": 0.0,
+    "max_lone_pair_displacement_pt": 0.0,
+    "max_curve_control_displacement_pt": 0.0,
+    "max_connector_displacement_pt": 0.0,
+    "max_caption_displacement_pt": 0.0
+  },
+  "symmetry_permutation": null,
+  "native_receipts": [
+    "e104dae347b1a8a10152fe35fcdcf49f65a238d55e37ee6052e46e0d352ff9fa",
+    "5bcb60107041b97cb572d10d8c7f470b1c621bf3764c8338c4de523d2cf02fb7"
+  ],
+  "scope": "Same disclosed independent proton-transfer IR regenerated natively after bijective ID/array changes; not a holdout or M2 score"
+}

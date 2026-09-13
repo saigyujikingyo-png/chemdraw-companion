@@ -1,0 +1,13 @@
+{
+  "artifact": "chemdraw-corpus-pilot-native-evidence.zip",
+  "bytes": 1954700,
+  "sha256": "f0265ff53be8709fb098743c9de8534b44b57e2183df0b9447c1a6eacc9c57e0",
+  "entries_hash_verified": 507,
+  "both_bundles_asset_hashes_verified_in_zip": true,
+  "native_original_count": 38,
+  "source_snapshot_count": 4,
+  "owner_visual_rejections": 1,
+  "gold_samples": 0,
+  "scope": "Digest of local owner artifact; full data archive is not published in this public repository",
+  "original_native_bytes_unchanged": true
+}

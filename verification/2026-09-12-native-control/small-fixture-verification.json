@@ -1,0 +1,119 @@
+{
+  "results": [
+    {
+      "fixture": "S1",
+      "checks": [
+        {
+          "file": "S1.cdxml",
+          "graph_and_object_readback": "pass",
+          "issues": [],
+          "atom_count": 6,
+          "bond_count": 5,
+          "visible_stereo_wedges": 1,
+          "absolute_cip_assignment": "not_independently_established",
+          "quality_and_owner_review": "pending"
+        },
+        {
+          "file": "S1-cdx-readback.cdxml",
+          "graph_and_object_readback": "pass",
+          "issues": [],
+          "atom_count": 6,
+          "bond_count": 5,
+          "visible_stereo_wedges": 1,
+          "absolute_cip_assignment": "not_independently_established",
+          "quality_and_owner_review": "pending"
+        },
+        {
+          "file": "S1-cdxml-readback.cdxml",
+          "graph_and_object_readback": "pass",
+          "issues": [],
+          "atom_count": 6,
+          "bond_count": 5,
+          "visible_stereo_wedges": 1,
+          "absolute_cip_assignment": "not_independently_established",
+          "quality_and_owner_review": "pending"
+        }
+      ],
+      "manual_active_correction_seconds": null
+    },
+    {
+      "fixture": "R1",
+      "checks": [
+        {
+          "file": "R1.cdxml",
+          "graph_and_object_readback": "pass",
+          "issues": [],
+          "atom_count": 6,
+          "bond_count": 2,
+          "visible_stereo_wedges": 0,
+          "absolute_cip_assignment": "not_applicable",
+          "quality_and_owner_review": "pending"
+        },
+        {
+          "file": "R1-cdx-readback.cdxml",
+          "graph_and_object_readback": "pass",
+          "issues": [],
+          "atom_count": 6,
+          "bond_count": 2,
+          "visible_stereo_wedges": 0,
+          "absolute_cip_assignment": "not_applicable",
+          "quality_and_owner_review": "pending"
+        },
+        {
+          "file": "R1-cdxml-readback.cdxml",
+          "graph_and_object_readback": "pass",
+          "issues": [],
+          "atom_count": 6,
+          "bond_count": 2,
+          "visible_stereo_wedges": 0,
+          "absolute_cip_assignment": "not_applicable",
+          "quality_and_owner_review": "pending"
+        }
+      ],
+      "manual_active_correction_seconds": null
+    },
+    {
+      "fixture": "M1",
+      "checks": [
+        {
+          "file": "M1.cdxml",
+          "graph_and_object_readback": "failed",
+          "issues": [
+            "atom:methanol:1"
+          ],
+          "atom_count": 6,
+          "bond_count": 2,
+          "visible_stereo_wedges": 0,
+          "absolute_cip_assignment": "not_applicable",
+          "quality_and_owner_review": "pending"
+        },
+        {
+          "file": "M1-cdx-readback.cdxml",
+          "graph_and_object_readback": "failed",
+          "issues": [
+            "atom:methanol:1"
+          ],
+          "atom_count": 6,
+          "bond_count": 2,
+          "visible_stereo_wedges": 0,
+          "absolute_cip_assignment": "not_applicable",
+          "quality_and_owner_review": "pending"
+        },
+        {
+          "file": "M1-cdxml-readback.cdxml",
+          "graph_and_object_readback": "failed",
+          "issues": [
+            "atom:methanol:1"
+          ],
+          "atom_count": 6,
+          "bond_count": 2,
+          "visible_stereo_wedges": 0,
+          "absolute_cip_assignment": "not_applicable",
+          "quality_and_owner_review": "pending"
+        }
+      ],
+      "manual_active_correction_seconds": null
+    }
+  ],
+  "native_quality_acceptance": "pending_final_size_masks_and_owner_review"
+}

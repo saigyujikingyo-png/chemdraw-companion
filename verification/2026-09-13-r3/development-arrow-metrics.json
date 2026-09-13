@@ -1,0 +1,589 @@
+{
+  "experiment": "native-core-r3-independent-geometry",
+  "scope": "Intrinsic arrowhead extent on twelve independent development curves only; no reaction correctness or full curve-family guarantee",
+  "head_size": "650",
+  "font_pt": 8.0,
+  "bond_pt": 14.4,
+  "conservative_forward_extension_pt": 4.159696287964,
+  "minimum_observed_extension_pt": 3.953892013498315,
+  "source_sha256": "1ca50ac8bbb665ca2f3c2c027c4f41a636052ac2e74a512eff10909aa6149240",
+  "native_cases": [
+    {
+      "file": "curve-00.cdxml",
+      "angle_deg": 0,
+      "terminal_handle_bonds": 0.5,
+      "bezier": [
+        [
+          35.092913385826776,
+          45.89291338582677
+        ],
+        [
+          45.89291338582677,
+          35.092913385826776
+        ],
+        [
+          71.09291338582678,
+          56.69291338582678
+        ],
+        [
+          78.29291338582678,
+          56.69291338582678
+        ]
+      ],
+      "sha256": "a2ed5aed6776d77a1799f50da904f1b06d3d7894dc546e885e4f2a0ee06cd4c2",
+      "native_cdxml_sha256": "892ede7aebd490f7bb855d3922e609fd9069e8df89547d3e81b9a2ae7efb0bdf",
+      "native_png_sha256": "6a6c8598e7fb4e2a43b9335f63c5d80714e3c344f1e23e29d5045f2c611103b4",
+      "native_build": "ChemDraw 26.0.0.6141",
+      "native_style": {
+        "font_family": "Arial",
+        "font_pt": 8.0,
+        "bond_length_pt": 14.4,
+        "stroke_pt": 0.6
+      },
+      "native_control_endpoint": [
+        78.29,
+        56.69
+      ],
+      "extent_pt": 4.079703787026617,
+      "uncertainty_pt": 0.07999250093738283,
+      "native_heads": {
+        "HeadSize": "650",
+        "ArrowheadCenterSize": "569",
+        "ArrowheadWidth": "163"
+      },
+      "native_dpi": [
+        600.0749999999999,
+        600.0749999999999
+      ]
+    },
+    {
+      "file": "curve-01.cdxml",
+      "angle_deg": 0,
+      "terminal_handle_bonds": 1.0,
+      "bezier": [
+        [
+          35.092913385826776,
+          45.89291338582677
+        ],
+        [
+          45.89291338582677,
+          35.092913385826776
+        ],
+        [
+          63.89291338582678,
+          56.69291338582678
+        ],
+        [
+          78.29291338582678,
+          56.69291338582678
+        ]
+      ],
+      "sha256": "eb312f7814c5a7b4ad44cafa47a3b536e3a516601fa03899a2c45847baebdaa0",
+      "native_cdxml_sha256": "e264253195123a17624feb9b0ecefc07f7f2b4463b4d8ab39caee910689b017e",
+      "native_png_sha256": "ec46aa51b84b8fed4178e55d16ba54a429d84cefc3e7aa9a19abeeb9133bbaed",
+      "native_build": "ChemDraw 26.0.0.6141",
+      "native_style": {
+        "font_family": "Arial",
+        "font_pt": 8.0,
+        "bond_length_pt": 14.4,
+        "stroke_pt": 0.6
+      },
+      "native_control_endpoint": [
+        78.29,
+        56.69
+      ],
+      "extent_pt": 4.079703787026617,
+      "uncertainty_pt": 0.07999250093738283,
+      "native_heads": {
+        "HeadSize": "650",
+        "ArrowheadCenterSize": "569",
+        "ArrowheadWidth": "163"
+      },
+      "native_dpi": [
+        600.0749999999999,
+        600.0749999999999
+      ]
+    },
+    {
+      "file": "curve-02.cdxml",
+      "angle_deg": 0,
+      "terminal_handle_bonds": 1.5,
+      "bezier": [
+        [
+          35.092913385826776,
+          45.89291338582677
+        ],
+        [
+          45.89291338582677,
+          35.092913385826776
+        ],
+        [
+          56.69291338582678,
+          56.69291338582678
+        ],
+        [
+          78.29291338582678,
+          56.69291338582678
+        ]
+      ],
+      "sha256": "b0e2c8841c3da778620ef2f745a8817be087d3640b3fc0756d529969d2ff3dd7",
+      "native_cdxml_sha256": "7017fdd65df079fecb250e0d84c108ef8dfbaad2436e55d9dae3a846c85284cd",
+      "native_png_sha256": "ccb1dbb47c8c473810f79aaaa98ca308b12aa15a095054ca7ae5aef48ee16c07",
+      "native_build": "ChemDraw 26.0.0.6141",
+      "native_style": {
+        "font_family": "Arial",
+        "font_pt": 8.0,
+        "bond_length_pt": 14.4,
+        "stroke_pt": 0.6
+      },
+      "native_control_endpoint": [
+        78.29,
+        56.69
+      ],
+      "extent_pt": 4.079703787026617,
+      "uncertainty_pt": 0.07999250093738283,
+      "native_heads": {
+        "HeadSize": "650",
+        "ArrowheadCenterSize": "569",
+        "ArrowheadWidth": "163"
+      },
+      "native_dpi": [
+        600.0749999999999,
+        600.0749999999999
+      ]
+    },
+    {
+      "file": "curve-03.cdxml",
+      "angle_deg": 90,
+      "terminal_handle_bonds": 0.5,
+      "bezier": [
+        [
+          67.49291338582678,
+          35.092913385826776
+        ],
+        [
+          78.29291338582678,
+          45.89291338582677
+        ],
+        [
+          56.69291338582678,
+          71.09291338582678
+        ],
+        [
+          56.69291338582678,
+          78.29291338582678
+        ]
+      ],
+      "sha256": "f00520b919fdfacb3d686bb3d1097cc202b3ac30055f507ac88f75df119fe34b",
+      "native_cdxml_sha256": "a470d0f76219428afaa48029349df0ab63948ff7f82c3f92f475d2c10c804607",
+      "native_png_sha256": "8d8a4b508e47b9f4e1747753fffe8e9f5fdbbc4c4ca660501f507fd190e5e9db",
+      "native_build": "ChemDraw 26.0.0.6141",
+      "native_style": {
+        "font_family": "Arial",
+        "font_pt": 8.0,
+        "bond_length_pt": 14.4,
+        "stroke_pt": 0.6
+      },
+      "native_control_endpoint": [
+        56.69,
+        78.29
+      ],
+      "extent_pt": 4.079703787026617,
+      "uncertainty_pt": 0.07999250093738283,
+      "native_heads": {
+        "HeadSize": "650",
+        "ArrowheadCenterSize": "569",
+        "ArrowheadWidth": "163"
+      },
+      "native_dpi": [
+        600.0749999999999,
+        600.0749999999999
+      ]
+    },
+    {
+      "file": "curve-04.cdxml",
+      "angle_deg": 90,
+      "terminal_handle_bonds": 1.0,
+      "bezier": [
+        [
+          67.49291338582678,
+          35.092913385826776
+        ],
+        [
+          78.29291338582678,
+          45.89291338582677
+        ],
+        [
+          56.69291338582678,
+          63.89291338582678
+        ],
+        [
+          56.69291338582678,
+          78.29291338582678
+        ]
+      ],
+      "sha256": "f4fd01033bd1407d1676b63b8d204572c80d7ede6a08f1cf6680350c079ea138",
+      "native_cdxml_sha256": "ddf50cf2c0da329143186c53fb9ca45142dc066f65cf8656bc5f68825540f947",
+      "native_png_sha256": "54dc66559d3f068dd640b84ba47af80d3cc7b3f8f641b1eb587abb591620a64a",
+      "native_build": "ChemDraw 26.0.0.6141",
+      "native_style": {
+        "font_family": "Arial",
+        "font_pt": 8.0,
+        "bond_length_pt": 14.4,
+        "stroke_pt": 0.6
+      },
+      "native_control_endpoint": [
+        56.69,
+        78.29
+      ],
+      "extent_pt": 4.079703787026617,
+      "uncertainty_pt": 0.07999250093738283,
+      "native_heads": {
+        "HeadSize": "650",
+        "ArrowheadCenterSize": "569",
+        "ArrowheadWidth": "163"
+      },
+      "native_dpi": [
+        600.0749999999999,
+        600.0749999999999
+      ]
+    },
+    {
+      "file": "curve-05.cdxml",
+      "angle_deg": 90,
+      "terminal_handle_bonds": 1.5,
+      "bezier": [
+        [
+          67.49291338582678,
+          35.092913385826776
+        ],
+        [
+          78.29291338582678,
+          45.89291338582677
+        ],
+        [
+          56.69291338582678,
+          56.69291338582678
+        ],
+        [
+          56.69291338582678,
+          78.29291338582678
+        ]
+      ],
+      "sha256": "6e02e9874309670ffe848c0df185ba5e506e579ca7b8240e6b1090f95d540821",
+      "native_cdxml_sha256": "c4830ebf68d643af145cf62ec7a55bfe8d8058644104fadd39ba0a4c209ed8fd",
+      "native_png_sha256": "de4fd78e65bf2c0c7ae1f101bad62f6704cb45a1f9ba635b49395c106780d5d1",
+      "native_build": "ChemDraw 26.0.0.6141",
+      "native_style": {
+        "font_family": "Arial",
+        "font_pt": 8.0,
+        "bond_length_pt": 14.4,
+        "stroke_pt": 0.6
+      },
+      "native_control_endpoint": [
+        56.69,
+        78.29
+      ],
+      "extent_pt": 4.079703787026617,
+      "uncertainty_pt": 0.07999250093738283,
+      "native_heads": {
+        "HeadSize": "650",
+        "ArrowheadCenterSize": "569",
+        "ArrowheadWidth": "163"
+      },
+      "native_dpi": [
+        600.0749999999999,
+        600.0749999999999
+      ]
+    },
+    {
+      "file": "curve-06.cdxml",
+      "angle_deg": 180,
+      "terminal_handle_bonds": 0.5,
+      "bezier": [
+        [
+          78.29291338582678,
+          67.49291338582677
+        ],
+        [
+          67.49291338582678,
+          78.29291338582678
+        ],
+        [
+          42.29291338582678,
+          56.69291338582678
+        ],
+        [
+          35.092913385826776,
+          56.69291338582678
+        ]
+      ],
+      "sha256": "24d6f7ffb8db30d162024cbe0b3024e8798e49406bfe49b543262d11069087fb",
+      "native_cdxml_sha256": "efce1f7ada9096b3895956e86057d77d6cf1c777715879e9864129c686868ce5",
+      "native_png_sha256": "52d45751341db9e7ba09f3f02bd976fb49c4efbda7f4a428fc141e7ccb69d2e0",
+      "native_build": "ChemDraw 26.0.0.6141",
+      "native_style": {
+        "font_family": "Arial",
+        "font_pt": 8.0,
+        "bond_length_pt": 14.4,
+        "stroke_pt": 0.6
+      },
+      "native_control_endpoint": [
+        35.09,
+        56.69
+      ],
+      "extent_pt": 4.073877015373082,
+      "uncertainty_pt": 0.07999250093738283,
+      "native_heads": {
+        "HeadSize": "650",
+        "ArrowheadCenterSize": "569",
+        "ArrowheadWidth": "163"
+      },
+      "native_dpi": [
+        600.0749999999999,
+        600.0749999999999
+      ]
+    },
+    {
+      "file": "curve-07.cdxml",
+      "angle_deg": 180,
+      "terminal_handle_bonds": 1.0,
+      "bezier": [
+        [
+          78.29291338582678,
+          67.49291338582677
+        ],
+        [
+          67.49291338582678,
+          78.29291338582678
+        ],
+        [
+          49.492913385826775,
+          56.69291338582678
+        ],
+        [
+          35.092913385826776,
+          56.69291338582678
+        ]
+      ],
+      "sha256": "0052c2dae042ce387089ba1f7f018b3cbb9131c179f3869e181db4f438074943",
+      "native_cdxml_sha256": "7eb0d4af4f7522f3891f616c1330f4f1dc16c406be3c7d83e1fc10cf429720bf",
+      "native_png_sha256": "eff845902fe432f346a922a560efa4714a0fdaa8a77c61956b6eee392fac7267",
+      "native_build": "ChemDraw 26.0.0.6141",
+      "native_style": {
+        "font_family": "Arial",
+        "font_pt": 8.0,
+        "bond_length_pt": 14.4,
+        "stroke_pt": 0.6
+      },
+      "native_control_endpoint": [
+        35.09,
+        56.69
+      ],
+      "extent_pt": 4.073877015373082,
+      "uncertainty_pt": 0.07999250093738283,
+      "native_heads": {
+        "HeadSize": "650",
+        "ArrowheadCenterSize": "569",
+        "ArrowheadWidth": "163"
+      },
+      "native_dpi": [
+        600.0749999999999,
+        600.0749999999999
+      ]
+    },
+    {
+      "file": "curve-08.cdxml",
+      "angle_deg": 180,
+      "terminal_handle_bonds": 1.5,
+      "bezier": [
+        [
+          78.29291338582678,
+          67.49291338582677
+        ],
+        [
+          67.49291338582678,
+          78.29291338582678
+        ],
+        [
+          56.69291338582678,
+          56.69291338582678
+        ],
+        [
+          35.092913385826776,
+          56.69291338582678
+        ]
+      ],
+      "sha256": "e485f24f2dbd44d6d42ba0e17c55844e03331255b49d6d8a7e9efb303ed06893",
+      "native_cdxml_sha256": "b74f342906decb9200277b2c253c7ac0ca233d266085363af6ade9a77368c91d",
+      "native_png_sha256": "c4c44549a86bbac68b17ba5690d82a39db9d59fd9464562acc60f2f990313835",
+      "native_build": "ChemDraw 26.0.0.6141",
+      "native_style": {
+        "font_family": "Arial",
+        "font_pt": 8.0,
+        "bond_length_pt": 14.4,
+        "stroke_pt": 0.6
+      },
+      "native_control_endpoint": [
+        35.09,
+        56.69
+      ],
+      "extent_pt": 4.073877015373082,
+      "uncertainty_pt": 0.07999250093738283,
+      "native_heads": {
+        "HeadSize": "650",
+        "ArrowheadCenterSize": "569",
+        "ArrowheadWidth": "163"
+      },
+      "native_dpi": [
+        600.0749999999999,
+        600.0749999999999
+      ]
+    },
+    {
+      "file": "curve-09.cdxml",
+      "angle_deg": 270,
+      "terminal_handle_bonds": 0.5,
+      "bezier": [
+        [
+          45.89291338582678,
+          78.29291338582678
+        ],
+        [
+          35.092913385826776,
+          67.49291338582678
+        ],
+        [
+          56.69291338582678,
+          42.29291338582678
+        ],
+        [
+          56.69291338582677,
+          35.092913385826776
+        ]
+      ],
+      "sha256": "b9cf611af6086a143e627f7fa8f94059dce248c7ff9424e09a34843c5bdcf9e0",
+      "native_cdxml_sha256": "d2b22aa46fa7cd600dc3210769284553662774478e3fb0ecbf0d8627e3f475f8",
+      "native_png_sha256": "f6790b7c4d14f0b7ea296cb6d16fbdba93eb9d4d068d94376e4e501da288c4c0",
+      "native_build": "ChemDraw 26.0.0.6141",
+      "native_style": {
+        "font_family": "Arial",
+        "font_pt": 8.0,
+        "bond_length_pt": 14.4,
+        "stroke_pt": 0.6
+      },
+      "native_control_endpoint": [
+        56.69,
+        35.09
+      ],
+      "extent_pt": 3.953892013498315,
+      "uncertainty_pt": 0.07999250093738283,
+      "native_heads": {
+        "HeadSize": "650",
+        "ArrowheadCenterSize": "569",
+        "ArrowheadWidth": "163"
+      },
+      "native_dpi": [
+        600.0749999999999,
+        600.0749999999999
+      ]
+    },
+    {
+      "file": "curve-10.cdxml",
+      "angle_deg": 270,
+      "terminal_handle_bonds": 1.0,
+      "bezier": [
+        [
+          45.89291338582678,
+          78.29291338582678
+        ],
+        [
+          35.092913385826776,
+          67.49291338582678
+        ],
+        [
+          56.69291338582678,
+          49.492913385826775
+        ],
+        [
+          56.69291338582677,
+          35.092913385826776
+        ]
+      ],
+      "sha256": "a7eca4fbe8e6713d2b3897c3fbddc536f4df9250c5d56a338c3ce56eeae09c63",
+      "native_cdxml_sha256": "b156b5f1b6cc0727b1d5670bc14ae6941e62d3091818d3ad85ce8d58a4866e41",
+      "native_png_sha256": "ca90da508b2eff86aee1f9c1a6ecf8836162c7836f4c915a1159e9bf85b6a040",
+      "native_build": "ChemDraw 26.0.0.6141",
+      "native_style": {
+        "font_family": "Arial",
+        "font_pt": 8.0,
+        "bond_length_pt": 14.4,
+        "stroke_pt": 0.6
+      },
+      "native_control_endpoint": [
+        56.69,
+        35.09
+      ],
+      "extent_pt": 3.953892013498315,
+      "uncertainty_pt": 0.07999250093738283,
+      "native_heads": {
+        "HeadSize": "650",
+        "ArrowheadCenterSize": "569",
+        "ArrowheadWidth": "163"
+      },
+      "native_dpi": [
+        600.0749999999999,
+        600.0749999999999
+      ]
+    },
+    {
+      "file": "curve-11.cdxml",
+      "angle_deg": 270,
+      "terminal_handle_bonds": 1.5,
+      "bezier": [
+        [
+          45.89291338582678,
+          78.29291338582678
+        ],
+        [
+          35.092913385826776,
+          67.49291338582678
+        ],
+        [
+          56.69291338582678,
+          56.69291338582678
+        ],
+        [
+          56.69291338582677,
+          35.092913385826776
+        ]
+      ],
+      "sha256": "99475c9ec05ba8e4efdc17e6eb473fda8ba3dad55032b8d4437c311f74404aa9",
+      "native_cdxml_sha256": "34de70a73ccbae61de377ac2e6dce9c601cae1526f3c11fb0c1ffdd785af7a30",
+      "native_png_sha256": "9b179a7f8c7056ca20e42941f86ed0b9a7f021405c6819b061705420e8f6cfe9",
+      "native_build": "ChemDraw 26.0.0.6141",
+      "native_style": {
+        "font_family": "Arial",
+        "font_pt": 8.0,
+        "bond_length_pt": 14.4,
+        "stroke_pt": 0.6
+      },
+      "native_control_endpoint": [
+        56.69,
+        35.09
+      ],
+      "extent_pt": 3.953892013498315,
+      "uncertainty_pt": 0.07999250093738283,
+      "native_heads": {
+        "HeadSize": "650",
+        "ArrowheadCenterSize": "569",
+        "ArrowheadWidth": "163"
+      },
+      "native_dpi": [
+        600.0749999999999,
+        600.0749999999999
+      ]
+    }
+  ],
+  "owner_physical_review": "pending"
+}

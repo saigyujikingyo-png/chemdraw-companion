@@ -1,0 +1,60 @@
+{
+  "pdf": "chemdraw-corpus-pilot-human-review.pdf",
+  "pdf_sha256": "b3ad72adcc873132791ad7d18ef20dfcdc3620d312d0c8f44389b1b71feafb2a",
+  "pages": 3,
+  "page_size": "A4",
+  "physical_size_review": "pending_real_human",
+  "native_images": [
+    {
+      "stage": "first",
+      "native_png_sha256": "3f53d04fbd061e69fac2b900742693fd8728f66d3c944afec2c4dd133825842f",
+      "source_bytes_unchanged": true,
+      "canvas_mm": [
+        170,
+        110
+      ],
+      "placement_pt": [
+        56.69291338582678,
+        337.32283464566933,
+        481.8897637795276,
+        311.8110236220473
+      ],
+      "source_origin_px": [
+        17.5,
+        17.5
+      ],
+      "source_px_per_pt": [
+        8.333339452774574,
+        8.33357323232323
+      ],
+      "embedded_dpi_ignored": true,
+      "method": "Unmodified native PNG placed through measured frame transform on white background; PDF is assembled, not native PDF export"
+    },
+    {
+      "stage": "repair-2",
+      "native_png_sha256": "ed92f803bab16f375955d3ea3a922d002edfa3e03d728d2dab594067c3ba89bb",
+      "source_bytes_unchanged": true,
+      "canvas_mm": [
+        170,
+        110
+      ],
+      "placement_pt": [
+        56.69291338582678,
+        337.32283464566933,
+        481.8897637795276,
+        311.8110236220473
+      ],
+      "source_origin_px": [
+        17.5,
+        17.5
+      ],
+      "source_px_per_pt": [
+        8.333339452774574,
+        8.33357323232323
+      ],
+      "embedded_dpi_ignored": true,
+      "method": "Unmodified native PNG placed through measured frame transform on white background; PDF is assembled, not native PDF export"
+    }
+  ],
+  "source_native_pdf_export": false
+}

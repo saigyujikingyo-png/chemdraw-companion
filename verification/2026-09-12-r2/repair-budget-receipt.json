@@ -1,0 +1,26 @@
+{
+  "version": "bounded-repair-receipt/0.1",
+  "maximum_automatic_repairs": 2,
+  "first_output": "small-first-native",
+  "repair_1": {
+    "input": "small-repair-1-input",
+    "native": "small-repair-1-native",
+    "changes": "Native 8 pt fragment cleanup and complete edit snapshots",
+    "result": "S1/R1 semantic/edit/masks pass; M1 semantics/edit pass, mask and visible head port fail"
+  },
+  "repair_2": {
+    "input": "small-repair-2-input",
+    "native": "small-repair-2-native",
+    "changes": "Shared measured head compensation and annotation obstacle routing",
+    "result": "M1 Composer preflight rejected the route; only S1/R1 files were present and exported by the then-incomplete batch runner",
+    "m1_native_attempt": "not_executed",
+    "batch_complete_claim": "rejected: required M1 missing"
+  },
+  "subsequent_changes": "Corrected generic minimum-gap algebra and added batch completeness rejection; no further native M1 run in this bounded experiment",
+  "status": "repair_budget_exhausted_M1_quality_blocked",
+  "scored_m2": "not_started",
+  "owner_acceptance": "pending",
+  "freeze": "not_started",
+  "holdout": "not_started",
+  "manual_active_correction_seconds": null
+}
