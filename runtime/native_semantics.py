@@ -214,15 +214,12 @@ def observe_atom(node, by_map, adjacency, rows, artifact_hash, *, warnings):
     if reason:
         resolved = q('non_node_attached_h', None, 'unknown', 'scoped evidence resolution', raw=values,
                      reason=reason, scope=scope)
-    elif raw_h['value'] is not None:
-        resolved = q('non_node_attached_h', raw_h['value'], 'qualified_format_decode', 'n@NumHydrogens',
-                     raw=raw_h['raw'], scope=scope)
-    elif label_h['value'] is not None:
-        resolved = q('non_node_attached_h', label_h['value'], 'qualified_format_decode', 'n/t/s simple label',
-                     raw=label, scope=scope)
-    elif api_h is not None:
+    elif identity['atomic_number']['value'] == 6 and api_h is not None:
         resolved = q('non_node_attached_h', api_h, 'native_api_observation', 'Document.Selection.Objects.FormulaHTML',
                      raw=row['selected_formula_html'], scope=scope)
+    elif identity['atomic_number']['value'] != 6 and raw_h['value'] is not None:
+        resolved = q('non_node_attached_h', raw_h['value'], 'qualified_format_decode', 'n@NumHydrogens',
+                     raw=raw_h['raw'], scope=scope)
     else:
         resolved = q('non_node_attached_h', None, 'unknown', 'scoped evidence resolution',
                      reason='missing_qualified_attached_h_observation', scope=scope)

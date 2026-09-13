@@ -20,6 +20,11 @@ def model(xml):
     return nodes,adjacency,rows,bonds
 
 
+def carbon_formula(row,formula,used):
+    row.update(selected_count=1,selected_atom_count=1,selected_bond_count=0,
+               selected_atom_ids=[row['native_id']],selected_formula_html=formula,used_valences=used)
+
+
 class NativeSemanticChecks(unittest.TestCase):
     def test_simple_labels_have_explicit_scope_and_reverse_orientation(self):
         for label,h,z,q in [('CH3',3,6,0),('H2N',2,7,0),('HO',1,8,0),('O',0,8,0),('NH4+',4,7,1),('Cl-',0,17,-1),('D',0,1,0)]:
@@ -52,6 +57,7 @@ class NativeSemanticChecks(unittest.TestCase):
 
     def test_expected_h_changes_only_comparison(self):
         n,a,r,b=model('<CDXML><n id="8" AtomNumber="43" NumHydrogens="3"/><n id="9" AtomNumber="61" Element="8" NumHydrogens="1"/><b id="22" B="8" E="9"/></CDXML>')
+        carbon_formula(r[8],'CH<sub>3</sub><sup>&bull;</sup>',1)
         observed=dict(atoms={m:observe_atom(node,n,a,r,'a'*64,warnings=0) for m,node in n.items()},bonds=b)
         before=deepcopy(observed)
         expected={43:dict(atomic_number=6,implicit_h=3),61:dict(atomic_number=8,implicit_h=1)}
@@ -62,11 +68,21 @@ class NativeSemanticChecks(unittest.TestCase):
 
     def test_explicit_h_and_d_are_not_added_to_non_node_h(self):
         n,a,r,b=model('<CDXML><n id="8" AtomNumber="43" NumHydrogens="0"/><n id="9" AtomNumber="61" Element="1" NumHydrogens="0"/><n id="10" AtomNumber="79" Element="1" Isotope="2" NumHydrogens="0"><t><s>D</s></t></n><n id="11" AtomNumber="97" Element="8" NumHydrogens="0"/><b id="22" B="8" E="9"/><b id="23" B="8" E="10"/><b id="24" B="8" E="11" Order="2"/></CDXML>')
+        carbon_formula(r[8],'C<sup>4&bull;</sup>',4)
         observed=observe_atom(n[43],n,a,r,'a'*64,warnings=0)
         self.assertEqual(observed['non_node_attached_h']['value'],0)
         self.assertEqual([x['isotope'] for x in observed['explicit_h_neighbor_nodes']['value']],[0,2])
         a[61][79]=a[79][61]=1
         self.assertEqual(component_scope(43,n,a,r)[1],'nonterminal_or_unqualified_hydrogen_node')
+
+    def test_unexercised_label_only_and_carbon_field_only_branches_are_not_admitted(self):
+        n,a,r,_=model('<CDXML><n id="8" AtomNumber="43" NumHydrogens="3"/><n id="9" AtomNumber="61" Element="8"><t><s>OH</s></t></n><b id="22" B="8" E="9"/></CDXML>')
+        carbon=observe_atom(n[43],n,a,r,'a'*64,warnings=0)
+        oxygen=observe_atom(n[61],n,a,r,'a'*64,warnings=0)
+        self.assertEqual(carbon['serialized_label_h']['value'],3)
+        self.assertEqual(oxygen['label_non_node_h']['value'],1)
+        self.assertIsNone(carbon['non_node_attached_h']['value'])
+        self.assertIsNone(oxygen['non_node_attached_h']['value'])
 
     def test_selected_formula_requires_exact_selection_and_cut_bonds(self):
         n=ET.fromstring('<n id="8" AtomNumber="43"/>')
