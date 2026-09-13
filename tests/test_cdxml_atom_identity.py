@@ -12,6 +12,23 @@ from runtime.adapters.cdxml_atom_identity import (
 
 
 class ExplicitNativeIdentityChecks(unittest.TestCase):
+    def saturated_cycle(self, size, branches=0):
+        # Opaque, nonconsecutive maps: component topology alone selects a profile.
+        maps = [301+19*i for i in range(size+branches)]
+        nodes = {m:ET.Element('n',dict(id=str(100+i),AtomNumber=str(m),p=f'{i*10} {i%2*10}')) for i,m in enumerate(maps)}
+        adjacency = {m:{} for m in maps}
+        for i in range(size):
+            a,b=maps[i],maps[(i+1)%size]
+            adjacency[a][b]=adjacency[b][a]=1
+        for other in maps[size:]:
+            adjacency[maps[0]][other]=adjacency[other][maps[0]]=1
+        observations = {}
+        for m,node in nodes.items():
+            native_id=int(node.get('id'));degree=len(adjacency[m])
+            observations[native_id]={**self.carbon_observation(4-degree,degree),
+                                     'native_id':native_id,'atom_map':str(m),'selected_atom_ids':[native_id]}
+        return maps,nodes,adjacency,observations
+
     def carbon_observation(self, unused=2, used=2):
         h = '' if unused == 0 else 'H' if unused == 1 else f'H<sub>{unused}</sub>'
         cut = '' if used == 0 else f'<sup>{used if used > 1 else ""}&bull;</sup>'
@@ -133,6 +150,61 @@ class ExplicitNativeIdentityChecks(unittest.TestCase):
             read_node_identity(ET.fromstring('<n id="100" AtomNumber="11"/>'),dict(atomic_number=6,implicit_h=4),
                 native_observation=self.carbon_observation(4,0),native_bond_valence=0,native_neighborhood_qualified=True)
         self.assertEqual(ctx.exception.code,'NATIVE_HYDROGEN_UNVERIFIED')
+
+    def test_saturated_monocycles_need_complete_native_component_evidence(self):
+        for size in range(3,9):
+            for branches in (0,1,2):
+                maps,nodes,adjacency,observations=self.saturated_cycle(size,branches)
+                for m in maps[:size]:
+                    with self.subTest(size=size,branches=branches,atom=m):
+                        self.assertTrue(qualified_carbon_neighborhood(m,nodes,adjacency,observations))
+                        self.assertFalse(qualified_carbon_neighborhood(m,nodes,adjacency,None))
+                observations.pop(int(nodes[maps[-1]].get('id')))
+                self.assertFalse(qualified_carbon_neighborhood(maps[0],nodes,adjacency,observations))
+
+    def test_cyclic_carbonyl_unsaturation_aromatic_and_other_profiles_stay_unknown(self):
+        for mutation in ('carbonyl','alkene','aromatic','chord','isotope','charge','radical','native_radical',
+                         'query','abnormal','implicit_disabled','explicit_h','outside_size'):
+            maps,nodes,adjacency,observations=self.saturated_cycle(9 if mutation=='outside_size' else 6,1 if mutation in ('carbonyl','explicit_h') else 0)
+            first,other=maps[:2]
+            if mutation in ('carbonyl','explicit_h'):
+                target=maps[-1];nodes[target].set('Element','8' if mutation=='carbonyl' else '1')
+                if mutation=='carbonyl': adjacency[first][target]=adjacency[target][first]=2
+                if mutation=='explicit_h': nodes[target].set('NumHydrogens','0')
+            if mutation=='alkene': adjacency[first][other]=adjacency[other][first]=2
+            if mutation=='aromatic':
+                for i in range(0,6,2): adjacency[maps[i]][maps[i+1]]=adjacency[maps[i+1]][maps[i]]=2
+            if mutation=='chord': adjacency[first][maps[3]]=adjacency[maps[3]][first]=1
+            if mutation=='isotope': nodes[other].set('Isotope','13')
+            if mutation=='charge': nodes[other].set('Charge','1')
+            if mutation=='radical': nodes[other].set('Radical','Doublet')
+            row=observations[int(nodes[other].get('id'))]
+            if mutation=='native_radical': row['radical_native_value']=1
+            if mutation=='query': row['node_type_native_value']=4
+            if mutation=='abnormal': row['abnormal_valence_allowed']=True
+            if mutation=='implicit_disabled': row['implicit_h_allowed']=False
+            with self.subTest(mutation=mutation):
+                self.assertFalse(qualified_carbon_neighborhood(first,nodes,adjacency,observations))
+
+    def test_cyclic_native_formula_is_compared_with_expected_h_without_replacement(self):
+        maps,nodes,adjacency,observations=self.saturated_cycle(4)
+        root=ET.Element('CDXML')
+        for node in nodes.values(): root.append(node)
+        edges=[(a,b) for a in maps for b in adjacency[a] if a<b]
+        for index,(a,b) in enumerate(edges):
+            ET.SubElement(root,'b',dict(id=str(700+index),B=nodes[a].get('id'),E=nodes[b].get('id'),Order='1'))
+        with tempfile.TemporaryDirectory() as parent:
+            path=Path(parent)/'native.cdxml';ET.ElementTree(root).write(path)
+            sidecar=self.sidecar(path,list(observations.values()))
+            expected={m:dict(element='C',atomic_number=6,implicit_h=2) for m in maps}
+            bonds=[dict(atoms=[a,b],order=1) for a,b in edges]
+            result=read_explicit_geometry(path,expected,bonds,atom_readback=sidecar)
+            self.assertEqual({a['implicit_h'] for a in result['atoms'].values()},{2})
+            expected[maps[0]]['implicit_h']=1
+            with self.assertRaises(NativeDepictionError) as ctx:
+                read_explicit_geometry(path,expected,bonds,atom_readback=sidecar)
+            self.assertEqual(ctx.exception.code,'NATIVE_ATOM_IDENTITY_CHANGED')
+            self.assertEqual(ctx.exception.details['observed'],2)
 
     def test_sidecar_requires_matching_native_bytes_and_coverage(self):
         with tempfile.TemporaryDirectory() as parent:

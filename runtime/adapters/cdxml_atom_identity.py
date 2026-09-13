@@ -65,7 +65,7 @@ def native_carbon_hydrogens(node, observation, bond_valence, path, neighborhood_
     """
     failure = NativeDepictionError('NATIVE_HYDROGEN_UNVERIFIED', path,
         'Missing serialized H has no qualified atom-associated native observation.',
-        {'native_id': node.get('id'), 'profile': 'native-carbon-selection-formula-h/0.1'})
+        {'native_id': node.get('id'), 'profile': 'native-carbon-selection-formula-h/0.2'})
     if observation is None or bond_valence is None or not neighborhood_qualified:
         raise failure
     try:
@@ -114,7 +114,7 @@ def read_node_identity(node, expected, *, path='native_atom', native_observation
                                    'Unexpected or unqualified native radical encoding.')
     if node.get('NumHydrogens') is None:
         hydrogens = native_carbon_hydrogens(node, native_observation, native_bond_valence, path, native_neighborhood_qualified)
-        h_source = 'Document.Selection.Objects.FormulaHTML; native-carbon-selection-formula-h/0.1'
+        h_source = 'Document.Selection.Objects.FormulaHTML; native-carbon-selection-formula-h/0.2'
     else:
         hydrogens = integer(node.get('NumHydrogens'), path + '.NumHydrogens')
         h_source = 'native CDXML NumHydrogens'
@@ -193,12 +193,62 @@ def verify_atom_readback(path, atom_readback):
         raise failure from exc
 
 
-def qualified_carbon_neighborhood(atom_map, by_map, adjacency):
-    """Conservative native profile: integer bonds, at most one H/D, no rings.
+def qualified_saturated_carbon_monocycle(atom_map, by_map, adjacency, observations):
+    """Qualified cyclic profile, checked on the complete native component.
 
-    Rejecting all ring atoms also excludes Kekulized aromatic carbons without
-    claiming an aromaticity detector. These are capability limits, not IR rules.
+    One 3-8 member saturated carbon cycle, optionally bearing saturated carbon
+    trees. No heteroatoms/explicit H, charge, isotope, radical or unsaturation.
+    The graph only selects a capability profile; it never calculates H.
     """
+    if observations is None:
+        return False
+    component, pending = set(), [atom_map]
+    while pending:
+        current = pending.pop()
+        if current in component:
+            continue
+        component.add(current)
+        pending.extend(adjacency[current])
+    try:
+        for current in component:
+            node = by_map[current]
+            observed = observations[integer(node.get('id'), 'native_atom.id')]
+            if (integer(node.get('Element', '6'), 'Element') != 6
+                    or integer(node.get('Charge', '0'), 'Charge') != 0
+                    or integer(node.get('Isotope', '0'), 'Isotope') != 0
+                    or node.get('NodeType') not in (None, 'Element')
+                    or node.get('Radical') not in (None, 'None', '0')
+                    or integer(observed['atomic_number'], 'atomic_number') != 6
+                    or integer(observed['formal_charge'], 'formal_charge') != 0
+                    or integer(observed['isotope'], 'isotope') != 0
+                    or integer(observed['radical_native_value'], 'radical_native_value') != 0
+                    or integer(observed['node_type_native_value'], 'node_type_native_value') != 1
+                    or observed['implicit_h_allowed'] is not True
+                    or observed['abnormal_valence_allowed'] is not False
+                    or any(order != 1 for order in adjacency[current].values())):
+                return False
+    except (KeyError, TypeError, ValueError):
+        return False
+    # Remove terminal trees. A single simple cycle has a connected 2-core with
+    # degree two everywhere; fused, spiro, bridged and joined cycles fail here.
+    core = set(component)
+    degree = {current: len(adjacency[current]) for current in core}
+    leaves = [current for current in core if degree[current] < 2]
+    while leaves:
+        current = leaves.pop()
+        if current not in core:
+            continue
+        core.remove(current)
+        for other in adjacency[current]:
+            if other in core:
+                degree[other] -= 1
+                if degree[other] < 2:
+                    leaves.append(other)
+    return atom_map in core and 3 <= len(core) <= 8 and all(degree[current] == 2 for current in core)
+
+
+def qualified_carbon_neighborhood(atom_map, by_map, adjacency, observations=None):
+    """Acyclic profile, or the independently qualified saturated monocycle."""
     neighbors = adjacency[atom_map]
     if not neighbors or any(order not in (1, 2, 3) for order in neighbors.values()):
         return False
@@ -217,7 +267,7 @@ def qualified_carbon_neighborhood(atom_map, by_map, adjacency):
     seen = {atom_map}
     for neighbor in neighbors:
         if neighbor in seen:
-            return False
+            return qualified_saturated_carbon_monocycle(atom_map, by_map, adjacency, observations)
         pending = [neighbor]
         while pending:
             current = pending.pop()
@@ -260,7 +310,7 @@ def read_explicit_geometry(path, expected_atoms, expected_bonds, *, atom_readbac
                                       native_observation=observations.get(integer(node.get('id'), 'native_atom.id')),
                                       native_bond_valence=native_valences[atom_map],
                                       native_neighborhood_qualified=(node.get('NumHydrogens') is None and
-                                          qualified_carbon_neighborhood(atom_map, by_map, adjacency)))
+                                          qualified_carbon_neighborhood(atom_map, by_map, adjacency, observations)))
         position = tuple(map(float, node.get('p', '').split()))
         if len(position) != 2 or not all(math.isfinite(v) for v in position):
             raise NativeDepictionError('NATIVE_COORDINATE_INVALID', f'atom[{atom_map}]',

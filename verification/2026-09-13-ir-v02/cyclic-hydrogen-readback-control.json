@@ -1,0 +1,639 @@
+{
+  "version": "cyclic-hydrogen-readback-qualification/0.1",
+  "runtime_base_commit": "df00f5f64af2a58418d229e2ed73517ae98c24a9",
+  "separate_hash_and_metadata_correction_commit": "1e4e96b",
+  "profile": "native-carbon-selection-formula-h/0.2",
+  "sidecar_version": "native-atom-readback/0.4",
+  "native_build": "26.0.0.6141",
+  "interop_version": "22.0.0.0",
+  "capability": "The existing acyclic profile plus one saturated 3-8 member carbon cycle with optional saturated carbon trees. The complete native component must contain only normal neutral non-isotopic non-radical carbon and single bonds; its leaf-pruned core must be one degree-two cycle containing the selected atom. No graph-derived H count.",
+  "refused": "Cyclic carbonyl or unsaturated/aromatic components, heteroatoms/explicit H/D, isotope/charge/radical/query/abnormal native flags, multiple cycles and ring sizes outside 3-8. Valid element identity and explicit CDXML H remain independent.",
+  "hydrogen_source": "Explicit native FormulaHTML under exact one-object/one-atom/zero-bond selection, or the pre-existing independent explicit CDXML observation. Expected IR H and raw UnusedValences/NumImplicitHydrogens are not substitutes.",
+  "positive_native_controls": 8,
+  "negative_native_controls": 8,
+  "qualified_ring_atom_observations": 44,
+  "refused_ring_atom_profiles": 39,
+  "controls": [
+    {
+      "control": "saturated-cycle-3",
+      "file": "state-000.cdxml",
+      "ring_size": 3,
+      "expected_cyclic_profile": true,
+      "ring_atoms": 3,
+      "profile_decision": "qualified",
+      "warnings": 0,
+      "native_input_sha256": "04b01b07aaa9f6efae1522f2697b5e90f1badab5242fc552be525d82238b2d8a",
+      "native_cdxml_sha256": "631a16c0c60b2f4712470a4fcd9b6c27d4dc8433b21e95840dd37e3cc43d96bf",
+      "sidecar_sha256": "e8b2280fbc81d276a1ed2549be9fa322d89d69a03e3bc11bf8b6501577ff4a31",
+      "after_selection_sha256": "3c4a664e20e0ec5adb30a9d15ada81e02842a6a804d5e0d91b436c1dce64d843",
+      "exact_graph_and_identity_verified": true,
+      "unchanged_native_smiles": true,
+      "selection_counts": [
+        {
+          "objects": 1,
+          "atoms": 1,
+          "bonds": 0,
+          "occurrences": 3
+        }
+      ],
+      "formula_html_counts": {
+        "CH<sub>2</sub><sup>2&bull;</sup>": 3
+      },
+      "observed_h_counts": {
+        "2": 3
+      }
+    },
+    {
+      "control": "saturated-cycle-4",
+      "file": "state-001.cdxml",
+      "ring_size": 4,
+      "expected_cyclic_profile": true,
+      "ring_atoms": 4,
+      "profile_decision": "qualified",
+      "warnings": 0,
+      "native_input_sha256": "b8361ab6d3ae899c71dc7681e2b924a16269e99c775cebdb8dc2d2adcdaf62e9",
+      "native_cdxml_sha256": "852b8d50f2525b116f809a2e311d34ea801ab2bcff10bdb6564e72fdde9a1813",
+      "sidecar_sha256": "bdc7f18a8519086044702c63a26588679dbb563511b59e3e525598fe0a41759f",
+      "after_selection_sha256": "be45b034e951dd4aa5d8e32d0d2d31aae3b4679e79de67e11baebf84d9b110e5",
+      "exact_graph_and_identity_verified": true,
+      "unchanged_native_smiles": true,
+      "selection_counts": [
+        {
+          "objects": 1,
+          "atoms": 1,
+          "bonds": 0,
+          "occurrences": 4
+        }
+      ],
+      "formula_html_counts": {
+        "CH<sub>2</sub><sup>2&bull;</sup>": 4
+      },
+      "observed_h_counts": {
+        "2": 4
+      }
+    },
+    {
+      "control": "saturated-cycle-5",
+      "file": "state-002.cdxml",
+      "ring_size": 5,
+      "expected_cyclic_profile": true,
+      "ring_atoms": 5,
+      "profile_decision": "qualified",
+      "warnings": 0,
+      "native_input_sha256": "4c60d0b38e01629b539af1876294ca896cb544268ca3800d515656095d9137d6",
+      "native_cdxml_sha256": "53837b9b676dbc8f187074cd95cd13031bcceea32c8b1f25c93670562e44d93a",
+      "sidecar_sha256": "6b018d0ef4bf66aee057f0e594bea49181a167764238fae473789dd30b1eaf9a",
+      "after_selection_sha256": "4597c0d16117fa5847c82f696dc2eeeed86f5b3c7184aaccbd5762f83a43869b",
+      "exact_graph_and_identity_verified": true,
+      "unchanged_native_smiles": true,
+      "selection_counts": [
+        {
+          "objects": 1,
+          "atoms": 1,
+          "bonds": 0,
+          "occurrences": 5
+        }
+      ],
+      "formula_html_counts": {
+        "CH<sub>2</sub><sup>2&bull;</sup>": 5
+      },
+      "observed_h_counts": {
+        "2": 5
+      }
+    },
+    {
+      "control": "saturated-cycle-6",
+      "file": "state-003.cdxml",
+      "ring_size": 6,
+      "expected_cyclic_profile": true,
+      "ring_atoms": 6,
+      "profile_decision": "qualified",
+      "warnings": 0,
+      "native_input_sha256": "98ce1e186d67aa241b8b35f89381a13a8dfe84c9ee17aa26c3a7d34e4d138742",
+      "native_cdxml_sha256": "49adee7fb6d8f4d23362fbd866fe57b6a19df24f56aa364757595ac07ae50658",
+      "sidecar_sha256": "17ecc051ce529612ca5bb79c63adbf44421a90631f137dd686ff5fa326601b37",
+      "after_selection_sha256": "bbdb863a0b24ddc0426fcadf7366a4c7c89ec3b61006c559335999cdec55995e",
+      "exact_graph_and_identity_verified": true,
+      "unchanged_native_smiles": true,
+      "selection_counts": [
+        {
+          "objects": 1,
+          "atoms": 1,
+          "bonds": 0,
+          "occurrences": 6
+        }
+      ],
+      "formula_html_counts": {
+        "CH<sub>2</sub><sup>2&bull;</sup>": 6
+      },
+      "observed_h_counts": {
+        "2": 6
+      }
+    },
+    {
+      "control": "saturated-cycle-7",
+      "file": "state-004.cdxml",
+      "ring_size": 7,
+      "expected_cyclic_profile": true,
+      "ring_atoms": 7,
+      "profile_decision": "qualified",
+      "warnings": 0,
+      "native_input_sha256": "424ee1ff0986e4cbd23b285614489488a7982bd7c6a6a49193b11166f1e0a2c7",
+      "native_cdxml_sha256": "ba6ee43acd281c3c1849aaba82663ad212822f42af0ccaacaa24158deaaf6e8e",
+      "sidecar_sha256": "53d70dc6fb3ca342cf82ea0c1fc95d08ff18749a5cd069dcacf0419a47ac4d23",
+      "after_selection_sha256": "76e3e1f76da85f07d8fb808d3dfcbc1d34ea5a0aa3c873ccdaff7b3920dd136c",
+      "exact_graph_and_identity_verified": true,
+      "unchanged_native_smiles": true,
+      "selection_counts": [
+        {
+          "objects": 1,
+          "atoms": 1,
+          "bonds": 0,
+          "occurrences": 7
+        }
+      ],
+      "formula_html_counts": {
+        "CH<sub>2</sub><sup>2&bull;</sup>": 7
+      },
+      "observed_h_counts": {
+        "2": 7
+      }
+    },
+    {
+      "control": "saturated-cycle-8",
+      "file": "state-005.cdxml",
+      "ring_size": 8,
+      "expected_cyclic_profile": true,
+      "ring_atoms": 8,
+      "profile_decision": "qualified",
+      "warnings": 0,
+      "native_input_sha256": "8cece1edf863d46d044414bfe4c6d103302ae570050d3c7dd9d9f6c7fabb83d8",
+      "native_cdxml_sha256": "e74fe09d3411dd3eca30bc7423347b973b6540b2c11905338c534f608bf8f90f",
+      "sidecar_sha256": "212a49031fcf272d9138beb052b5c35d51ecef2d035d4a3e74b95479f45bfe5c",
+      "after_selection_sha256": "2d634148000e9720ca2fa8f7cb805bcccaa02a3e850c794aefb2f6010bd565a8",
+      "exact_graph_and_identity_verified": true,
+      "unchanged_native_smiles": true,
+      "selection_counts": [
+        {
+          "objects": 1,
+          "atoms": 1,
+          "bonds": 0,
+          "occurrences": 8
+        }
+      ],
+      "formula_html_counts": {
+        "CH<sub>2</sub><sup>2&bull;</sup>": 8
+      },
+      "observed_h_counts": {
+        "2": 8
+      }
+    },
+    {
+      "control": "single-carbon-branch",
+      "file": "state-006.cdxml",
+      "ring_size": 5,
+      "expected_cyclic_profile": true,
+      "ring_atoms": 5,
+      "profile_decision": "qualified",
+      "warnings": 0,
+      "native_input_sha256": "8bb1b4c9b56d6a17b577da11e27e8269e6b46e69974787182b517be7b3f72a07",
+      "native_cdxml_sha256": "486caff5e9d97a7da9150d706f062553ba56c4a246efc316b1c1ef7fa06a7623",
+      "sidecar_sha256": "1f45b7360f9375bf5ebe2a734402019da9b48c3c6a737b9f409f5f61f9cab953",
+      "after_selection_sha256": "32afa825a2ec66435b8f4d47934d6dbd417b6fc40073a38a8d1391db2bc80dfc",
+      "exact_graph_and_identity_verified": true,
+      "unchanged_native_smiles": true,
+      "selection_counts": [
+        {
+          "objects": 1,
+          "atoms": 1,
+          "bonds": 0,
+          "occurrences": 5
+        }
+      ],
+      "formula_html_counts": {
+        "CH<sup>3&bull;</sup>": 1,
+        "CH<sub>2</sub><sup>2&bull;</sup>": 4
+      },
+      "observed_h_counts": {
+        "1": 1,
+        "2": 4
+      }
+    },
+    {
+      "control": "two-carbon-branches",
+      "file": "state-007.cdxml",
+      "ring_size": 6,
+      "expected_cyclic_profile": true,
+      "ring_atoms": 6,
+      "profile_decision": "qualified",
+      "warnings": 0,
+      "native_input_sha256": "21483e548d5816364da45aaef651118c6649a8831799e7b33a04c6d79b096d17",
+      "native_cdxml_sha256": "71ae3d46c48a66e3c4135311f56d0106a107c8fafe3d498758d80714e5cd76d2",
+      "sidecar_sha256": "6329c425a476f885aa146bd77af3ef7f626dde64bc8ea2484b8324ce8a7c81f9",
+      "after_selection_sha256": "9dedaa63bde498bafb28b4da72c4c52ed5795d256d541469c2e9b2be7a3465b5",
+      "exact_graph_and_identity_verified": true,
+      "unchanged_native_smiles": true,
+      "selection_counts": [
+        {
+          "objects": 1,
+          "atoms": 1,
+          "bonds": 0,
+          "occurrences": 6
+        }
+      ],
+      "formula_html_counts": {
+        "C<sup>4&bull;</sup>": 1,
+        "CH<sub>2</sub><sup>2&bull;</sup>": 5
+      },
+      "observed_h_counts": {
+        "0": 1,
+        "2": 5
+      }
+    },
+    {
+      "control": "carbonyl-negative",
+      "file": "state-008.cdxml",
+      "ring_size": 5,
+      "expected_cyclic_profile": false,
+      "ring_atoms": 5,
+      "profile_decision": "refused",
+      "warnings": 0,
+      "native_input_sha256": "338676f6166a6caded1da6a92ab6eec5c833b47f1e5ff714b269cb5ba80e6dea",
+      "native_cdxml_sha256": "47b745d468d6eb2ef898d6da42b4232ca6dd0504b587c3d63cc19da5973c62c9",
+      "sidecar_sha256": "76253ae6f31b083a566435630cf18950cabef6c3c85f0260fc4773601f371998",
+      "after_selection_sha256": "01910d0a406175bc3b073aea75c2afadf64ece0ad79db650fadb5f991d11a3cf",
+      "exact_graph_and_identity_verified": true,
+      "unchanged_native_smiles": true,
+      "selection_counts": [
+        {
+          "objects": 1,
+          "atoms": 1,
+          "bonds": 0,
+          "occurrences": 5
+        }
+      ],
+      "formula_html_counts": {
+        "C<sup>4&bull;</sup>": 1,
+        "CH<sub>2</sub><sup>2&bull;</sup>": 4
+      },
+      "observed_h_counts": {}
+    },
+    {
+      "control": "unsaturation-negative",
+      "file": "state-009.cdxml",
+      "ring_size": 6,
+      "expected_cyclic_profile": false,
+      "ring_atoms": 6,
+      "profile_decision": "refused",
+      "warnings": 0,
+      "native_input_sha256": "a354ca0f384a61bc49bca0e397fd41aea349a32f5c93f4294b3f15e869834709",
+      "native_cdxml_sha256": "21a2e0057af7949c59392ab3f438c28b890ef951a30a470d7340893bdd8cda97",
+      "sidecar_sha256": "48bd6683d9a5340492115e7cdcc5bfdba15592a6b2a641649ef9272e723d3ff1",
+      "after_selection_sha256": "05c04343e485905087766d8ff10c7556b720d4ff442f6c3965b22dc2fd3d6e5d",
+      "exact_graph_and_identity_verified": true,
+      "unchanged_native_smiles": true,
+      "selection_counts": [
+        {
+          "objects": 1,
+          "atoms": 1,
+          "bonds": 0,
+          "occurrences": 6
+        }
+      ],
+      "formula_html_counts": {
+        "CH<sup>3&bull;</sup>": 2,
+        "CH<sub>2</sub><sup>2&bull;</sup>": 4
+      },
+      "observed_h_counts": {}
+    },
+    {
+      "control": "alternating-cycle-negative",
+      "file": "state-010.cdxml",
+      "ring_size": 6,
+      "expected_cyclic_profile": false,
+      "ring_atoms": 6,
+      "profile_decision": "refused",
+      "warnings": 0,
+      "native_input_sha256": "cf755fe79660fcdf90bd4bde4abf68fcae603aa84064cbbfabd584df29402176",
+      "native_cdxml_sha256": "f98f4509d0e50fe4c47305ad3d83605c7c3042bcc0912ac20b6c67232510e549",
+      "sidecar_sha256": "0a0238d64f4f78655eb2dd8bf07f6111b83e2586337defd9be11b03101c4e960",
+      "after_selection_sha256": "0bc17e351f9e5fbb2f897339ceebd17317b63bbf9fbd07cc8c776ad6785bcd87",
+      "exact_graph_and_identity_verified": true,
+      "unchanged_native_smiles": true,
+      "selection_counts": [
+        {
+          "objects": 1,
+          "atoms": 1,
+          "bonds": 0,
+          "occurrences": 6
+        }
+      ],
+      "formula_html_counts": {
+        "CH<sup>3&bull;</sup>": 6
+      },
+      "observed_h_counts": {}
+    },
+    {
+      "control": "multiple-cycle-negative",
+      "file": "state-011.cdxml",
+      "ring_size": 6,
+      "expected_cyclic_profile": false,
+      "ring_atoms": 6,
+      "profile_decision": "refused",
+      "warnings": 0,
+      "native_input_sha256": "1c799398917de79e50ce76f31a2710cb40b025f897539c3ab5c539bbf9c85617",
+      "native_cdxml_sha256": "57f1b270e85586646f70d6e491bfbeaca3687c360b855a329a83fa6e764e17da",
+      "sidecar_sha256": "1628bfa480a951b9c5c3fe75d0fd5510bf287320b7eeea82f7e2aa84d4d7f583",
+      "after_selection_sha256": "51908fdb5761030b5bb6f9bfddf0e2dd3c6dea29c98f079ff6733935f5b5ca4a",
+      "exact_graph_and_identity_verified": true,
+      "unchanged_native_smiles": true,
+      "selection_counts": [
+        {
+          "objects": 1,
+          "atoms": 1,
+          "bonds": 0,
+          "occurrences": 6
+        }
+      ],
+      "formula_html_counts": {
+        "CH<sup>3&bull;</sup>": 2,
+        "CH<sub>2</sub><sup>2&bull;</sup>": 4
+      },
+      "observed_h_counts": {}
+    },
+    {
+      "control": "isotope-negative",
+      "file": "state-012.cdxml",
+      "ring_size": 4,
+      "expected_cyclic_profile": false,
+      "ring_atoms": 4,
+      "profile_decision": "refused",
+      "warnings": 0,
+      "native_input_sha256": "3f6f9d0349356e01398e1a8db052859d13db210320007503508ba856dca2aff0",
+      "native_cdxml_sha256": "8302a41ac20e5b836927cba2001bdfbb2f303b2bf53f40940cc83593c176914e",
+      "sidecar_sha256": "4cd4e9ea7f9a228fda503d0edb9b90f56b8c07cfa2b917ffc91aed3f4665c14b",
+      "after_selection_sha256": "1c68d56a83c1200932fbb4456000e36e662257b9d70a03834d0ce298e78f1cfa",
+      "exact_graph_and_identity_verified": true,
+      "unchanged_native_smiles": true,
+      "selection_counts": [
+        {
+          "objects": null,
+          "atoms": null,
+          "bonds": null,
+          "occurrences": 1
+        },
+        {
+          "objects": 1,
+          "atoms": 1,
+          "bonds": 0,
+          "occurrences": 3
+        }
+      ],
+      "formula_html_counts": {
+        "NOT_READ": 1,
+        "CH<sub>2</sub><sup>2&bull;</sup>": 3
+      },
+      "observed_h_counts": {}
+    },
+    {
+      "control": "charge-negative",
+      "file": "state-013.cdxml",
+      "ring_size": 4,
+      "expected_cyclic_profile": false,
+      "ring_atoms": 4,
+      "profile_decision": "refused",
+      "warnings": 0,
+      "native_input_sha256": "d95ad978443bf508c7ae1bd0e70ebd72e1cc67686be30569f64fc822f6dee11b",
+      "native_cdxml_sha256": "66a1bab347a93e985014d517b481e60a2b46199fe81f68bb0bce7004a97ab5b9",
+      "sidecar_sha256": "b1e1b98b0f1c0825efcd0edcac98ebac3c44fc31ef77cd9b17324a8b78cc809a",
+      "after_selection_sha256": "5a18362fc08289489fe8c0f8e29a62ddc47b8b69a2565f80db4e9abe81a49f66",
+      "exact_graph_and_identity_verified": true,
+      "unchanged_native_smiles": true,
+      "selection_counts": [
+        {
+          "objects": null,
+          "atoms": null,
+          "bonds": null,
+          "occurrences": 1
+        },
+        {
+          "objects": 1,
+          "atoms": 1,
+          "bonds": 0,
+          "occurrences": 3
+        }
+      ],
+      "formula_html_counts": {
+        "NOT_READ": 1,
+        "CH<sub>2</sub><sup>2&bull;</sup>": 3
+      },
+      "observed_h_counts": {}
+    },
+    {
+      "control": "radical-negative",
+      "file": "state-014.cdxml",
+      "ring_size": 4,
+      "expected_cyclic_profile": false,
+      "ring_atoms": 4,
+      "profile_decision": "refused",
+      "warnings": 0,
+      "native_input_sha256": "d932b0c764963e831aa13ee385cbcfa8b0bd78c3c8b2924f6f95c8326db10df7",
+      "native_cdxml_sha256": "d2ed42ae6d80ddae8cf7f2d841cc3d0e9f6b8b547584f7bc85094022c48485a4",
+      "sidecar_sha256": "a31a1eca8da9f9bd277f531759ab34f2f54c628d73ad239479fe6342cd16d09d",
+      "after_selection_sha256": "d377509a1ce6e4aad73d8b8ff427eefc3e70b701a29065dfe7065b28d66a8335",
+      "exact_graph_and_identity_verified": true,
+      "unchanged_native_smiles": true,
+      "selection_counts": [
+        {
+          "objects": null,
+          "atoms": null,
+          "bonds": null,
+          "occurrences": 1
+        },
+        {
+          "objects": 1,
+          "atoms": 1,
+          "bonds": 0,
+          "occurrences": 3
+        }
+      ],
+      "formula_html_counts": {
+        "NOT_READ": 1,
+        "CH<sub>2</sub><sup>2&bull;</sup>": 3
+      },
+      "observed_h_counts": {}
+    },
+    {
+      "control": "explicit-d-negative",
+      "file": "state-015.cdxml",
+      "ring_size": 4,
+      "expected_cyclic_profile": false,
+      "ring_atoms": 4,
+      "profile_decision": "refused",
+      "warnings": 0,
+      "native_input_sha256": "5c5d13e8197107ec3853006131ee1d0480eb6d530ab65b5b7a07806fb8296f1a",
+      "native_cdxml_sha256": "a1c73fa74cfe362828e1ee06a6d91b156f3e06b2a773ada2efbf25f44d0bcc02",
+      "sidecar_sha256": "9e16c8f9e7dc1841245ef2e8bdbd14d6a80d433d678e69d9698e250efdfc0c33",
+      "after_selection_sha256": "717e8dfbae4de9ae0ae78707d7eca4d08a15f2b7189ba0c038ff0ab4ed12b924",
+      "exact_graph_and_identity_verified": true,
+      "unchanged_native_smiles": true,
+      "selection_counts": [
+        {
+          "objects": 1,
+          "atoms": 1,
+          "bonds": 0,
+          "occurrences": 4
+        }
+      ],
+      "formula_html_counts": {
+        "CH<sup>3&bull;</sup>": 1,
+        "CH<sub>2</sub><sup>2&bull;</sup>": 3
+      },
+      "observed_h_counts": {}
+    }
+  ],
+  "provenance": {
+    "native_worker_receipt_sha256": "78dc56bdea710c1922de8acf290b50f42e19e1c3f90065e22e518e5c390fb7d2",
+    "complete_control_result_sha256": "7fd98b313c0723d676331b6a86e3e0c66a5abd645df126c2c652ab9e4e3700c8",
+    "native_production_source_before_sha256": "ebbd9b1d688705d9108c9e252bbfbf7ad7989ef68a8f8e716a6798d5421ec047",
+    "native_production_source_after_sha256": "ebbd9b1d688705d9108c9e252bbfbf7ad7989ef68a8f8e716a6798d5421ec047",
+    "native_production_sources_unchanged": true,
+    "native_production_sources": [
+      {
+        "file": "probes/make_cyclic_hydrogen_controls.py",
+        "sha256": "0e0cfd3affd62f335635cc53e7f8b216635f9cb121957cdfd3f32cf1dda8f7d5"
+      },
+      {
+        "file": "probes/native-ir-fragments.ps1",
+        "sha256": "761e7b41caac106a784236312172c94d2476f72fc598d9cadbec970e7d4b73b2"
+      },
+      {
+        "file": "probes/native-common.ps1",
+        "sha256": "0fe06575b88a8f2b14f6f3937dd72d2f2709b146564ac2e17b80b3b0ab01655f"
+      },
+      {
+        "file": "probes/NativeChemDraw.cs",
+        "sha256": "52eb2fe1e66d9b13aba84dfba010959ddcb8fcf6109b919a498324400681b73c"
+      },
+      {
+        "file": "runtime/adapters/chemdraw_cdxml.py",
+        "sha256": "46d5516c2880e454b48a2b4c6bb4309b2246ed5a3aa5fb69f32d991df30f95fd"
+      },
+      {
+        "file": "runtime/adapters/cdxml_atom_identity.py",
+        "sha256": "c1c3d40eb4efceb6f7800c5efa4a5a5ca69516cb2300fa65d9f5d57623c390e8"
+      },
+      {
+        "file": "runtime/native_provenance.py",
+        "sha256": "37e6387137e9c5a4bf25b3b82b370a06e38810cc09767906cf8c86953f13f0e0"
+      }
+    ],
+    "consumer_source_before_sha256": "f2ab2a849b981e416b5f1dd3f2500612eaa7bd18f58c983410e7d0202825c1a4",
+    "consumer_source_after_sha256": "f2ab2a849b981e416b5f1dd3f2500612eaa7bd18f58c983410e7d0202825c1a4",
+    "final_consumer_sources_unchanged": true,
+    "final_consumer_sources": [
+      {
+        "file": "runtime/adapters/cdxml_atom_identity.py",
+        "sha256": "4aa26e476868120c6e341c035ad2592d78a7b069ad5e519175297c3019a39a2f"
+      },
+      {
+        "file": "runtime/adapters/chemdraw_cdxml.py",
+        "sha256": "46d5516c2880e454b48a2b4c6bb4309b2246ed5a3aa5fb69f32d991df30f95fd"
+      },
+      {
+        "file": "runtime/native_provenance.py",
+        "sha256": "37e6387137e9c5a4bf25b3b82b370a06e38810cc09767906cf8c86953f13f0e0"
+      },
+      {
+        "file": "probes/make_cyclic_hydrogen_controls.py",
+        "sha256": "0e0cfd3affd62f335635cc53e7f8b216635f9cb121957cdfd3f32cf1dda8f7d5"
+      },
+      {
+        "file": "probes/verify_cyclic_hydrogen_controls.py",
+        "sha256": "7a8ed4c48fb1beb1b19ed844c0f8fc586bdedf4c686c3634f7a7be105e2b07fa"
+      },
+      {
+        "file": "probes/run_ir_v02_regression.py",
+        "sha256": "6449e49028b5ea3b505ee197de47780d4341edc5b493c2c62aa77e86230e0760"
+      },
+      {
+        "file": "tests/test_cdxml_atom_identity.py",
+        "sha256": "33ce9387a0762257cfc42275d64e4db1bfec5e2d60cd260d932520f8c0dd118e"
+      },
+      {
+        "file": "tests/test_ir_v02_runtime.py",
+        "sha256": "4c5cc70e75f8bc86c041bb311a9286ef0143710ecb4c54918c71a58f86077f39"
+      }
+    ],
+    "phase_separation": "The native producer and synthetic seed generator ran with the first explicit source snapshot. The unchanged native outputs were consumed by the subsequently implemented, separately frozen cyclic profile. No claim that a later consumer revision produced the earlier native bytes.",
+    "snapshot_limitation": "These are explicit bounded source snapshots and local execution receipts, not full-process cryptographic attestation.",
+    "final_consumer_matches_staged_git_bytes": true,
+    "native_production_git_bindings": [
+      {
+        "file": "probes/make_cyclic_hydrogen_controls.py",
+        "sha256": "0e0cfd3affd62f335635cc53e7f8b216635f9cb121957cdfd3f32cf1dda8f7d5",
+        "git_blob_source": "included_in_this_commit"
+      },
+      {
+        "file": "probes/native-ir-fragments.ps1",
+        "sha256": "761e7b41caac106a784236312172c94d2476f72fc598d9cadbec970e7d4b73b2",
+        "git_blob_source": "1e4e96b"
+      },
+      {
+        "file": "probes/native-common.ps1",
+        "sha256": "0fe06575b88a8f2b14f6f3937dd72d2f2709b146564ac2e17b80b3b0ab01655f",
+        "git_blob_source": "1e4e96b"
+      },
+      {
+        "file": "probes/NativeChemDraw.cs",
+        "sha256": "52eb2fe1e66d9b13aba84dfba010959ddcb8fcf6109b919a498324400681b73c",
+        "git_blob_source": "1e4e96b"
+      },
+      {
+        "file": "runtime/adapters/chemdraw_cdxml.py",
+        "sha256": "46d5516c2880e454b48a2b4c6bb4309b2246ed5a3aa5fb69f32d991df30f95fd",
+        "git_blob_source": "1e4e96b"
+      },
+      {
+        "file": "runtime/adapters/cdxml_atom_identity.py",
+        "sha256": "c1c3d40eb4efceb6f7800c5efa4a5a5ca69516cb2300fa65d9f5d57623c390e8",
+        "git_blob_source": "1e4e96b"
+      },
+      {
+        "file": "runtime/native_provenance.py",
+        "sha256": "37e6387137e9c5a4bf25b3b82b370a06e38810cc09767906cf8c86953f13f0e0",
+        "git_blob_source": "1e4e96b"
+      }
+    ]
+  },
+  "regression": {
+    "status": "pass",
+    "inventory_test_count": 77,
+    "tests_run": 44,
+    "passed_count": 44,
+    "excluded_count": 12,
+    "unscheduled_count": 21
+  },
+  "blocked_payload_reads": [],
+  "retained_initial_test_failure": {
+    "receipt_sha256": "bb584d76201b1f81e635511d9ea5d149d91ac17122e0e97a2ae60db4dc43cbce",
+    "explanation": "One new explicit-H negative fixture omitted native label NumHydrogens=0. It raised NATIVE_ATOM_FIELD_INVALID rather than reaching the cyclic-profile decision. Only the fixture was corrected; initial 43/44 result retained."
+  },
+  "historical_report_unchanged": true,
+  "historical_report_sha256": "6a6b528808c931d5f34e552a0b2988c1c9fbd81943cd2b53078c7824ee11861a",
+  "hash_addendum": "verification/2026-09-13-ir-v02/hydrogen-readback-hash-addendum.json",
+  "independent_disk_reopen": false,
+  "full_composer_run_here": false,
+  "private_blind_run_here": false,
+  "private_candidate_or_target_accessed": false,
+  "protected_evaluation_chemistry_accessed": false,
+  "new_api_exploration": false,
+  "new_model_inference": false,
+  "ir_changes": false,
+  "layout_tuning": false,
+  "next_owner_action": "Independent review followed by at most one unchanged private request run. If still blocked before geometry, close the phase PARTIAL; otherwise stop at the first geometry frontier. No further profile expansion authorized by this receipt.",
+  "quality_acceptance": "not_implied",
+  "m1_new_visual_pass": false,
+  "m2": "excluded_and_unscored",
+  "gold": 0
+}
