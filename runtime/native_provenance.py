@@ -72,6 +72,12 @@ def verify_geometry_receipt(mechanism,style,manifest,input_folder,output_folder,
                     or native['cleanup_process']['pid']==native['reopen_process']['pid'] or native.get('reopen_warnings')!=0
                     or native.get('cleanup_file')!='clean/'+name or native.get('cleanup_sha256')!=file_hash(output_folder/'clean'/name)):
                 raise ValueError('Native semantic fresh-process reopen binding mismatch')
+            cleanup_sidecar_path=output_folder/'clean'/(Path(name).stem+'.atoms.json')
+            if native['cleanup_atom_readback'].get('file')!=cleanup_sidecar_path.name or native['cleanup_atom_readback'].get('sha256')!=file_hash(cleanup_sidecar_path):raise ValueError('Native cleanup sidecar hash mismatch')
+            cleanup_value=read(cleanup_sidecar_path)
+            verify_observer_binding(cleanup_value,frozen)
+            verify_atom_readback(output_folder/'clean'/name,cleanup_value)
+            if cleanup_value['environment']!=environment or cleanup_value['process']!=native['cleanup_process'] or cleanup_value['job_id']!=receipt['run_id'] or cleanup_value.get('phase')!='cleanup' or cleanup_value.get('chemical_warnings')!=0:raise ValueError('Native cleanup observation/process mismatch')
         if native.get('cleanup_completed') is not True or native.get('warnings')!=0:raise ValueError('Native cleanup failed or has warnings')
         if native.get('input_sha256')!=file_hash(input_folder/name) or seeds[name]['sha256']!=native['input_sha256']:raise ValueError('Native input hash mismatch')
         if native.get('output_sha256')!=file_hash(output_folder/name):raise ValueError('Native output hash mismatch')

@@ -11,7 +11,7 @@ $freeze=Get-Content -LiteralPath $freezeFile.FullName -Raw|ConvertFrom-Json
 function Assert-FrozenSource {
     if($freeze.version -ne 'native-semantic-source-freeze/1.0'){throw 'Wrong source freeze version.'}
     $seen=@{}
-    foreach($entry in $freeze.sources){
+    foreach($entry in (@($freeze.sources)+@($freeze.inputs))){
         $path=[IO.Path]::GetFullPath((Join-Path $repoRoot $entry.file))
         if([IO.Path]::IsPathRooted($entry.file) -or !$path.StartsWith($repoRoot+[IO.Path]::DirectorySeparatorChar,[StringComparison]::OrdinalIgnoreCase) -or $seen.ContainsKey($entry.file)){throw 'Invalid or duplicate source path.'}
         if((Get-FileHash -LiteralPath $path).Hash.ToLowerInvariant() -cne $entry.sha256){throw ('Frozen source bytes changed: '+$entry.file)}

@@ -70,7 +70,7 @@ def native_graph(root):
         bond_id = exact_int(bond.get('id'))
         a, b = (by_id[exact_int(bond.get(end))] for end in ('B', 'E'))
         order = float(bond.get('Order', '1'))
-        if bond_id in bond_ids or a == b or b in adjacency[a] or order not in (1, 1.5, 2, 3):
+        if bond_id in bond_ids or bond_id in by_id or a == b or b in adjacency[a] or order not in (1, 1.5, 2, 3):
             raise ValueError('NATIVE_BOND_MAPPING_CHANGED')
         bond_ids.add(bond_id)
         adjacency[a][b] = adjacency[b][a] = order
@@ -151,7 +151,7 @@ def selected_carbon_h(node, row, incident_order):
                 or exact_int(row['selected_count']) != 1 or exact_int(row['selected_atom_count']) != 1
                 or exact_int(row['selected_bond_count']) != 0
                 or [exact_int(x) for x in row['selected_atom_ids']] != [exact_int(node.get('id'))]
-                or float(row['used_valences']) != incident_order):
+                or isinstance(row['used_valences'], bool) or float(row['used_valences']) != incident_order):
             return None, 'selection_or_valence_binding_unqualified'
         formula = row['selected_formula_html']
         match = re.fullmatch(r'C(?:(H)(?:<sub>([1-9][0-9]*)</sub>)?)?(?:<sup>([1-9][0-9]*)?&bull;</sup>)?', formula)

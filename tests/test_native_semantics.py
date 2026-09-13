@@ -73,7 +73,7 @@ class NativeSemanticChecks(unittest.TestCase):
         row=dict(implicit_h_allowed=True,selected_count=1,selected_atom_count=1,selected_bond_count=0,
                  selected_atom_ids=[8],used_valences=3,selected_formula_html='CH<sup>3&bull;</sup>')
         self.assertEqual(selected_carbon_h(n,row,3),(1,None))
-        for key,value in [('selected_count',2),('selected_atom_ids',[9]),('selected_bond_count',1),('used_valences',2),('selected_formula_html','CH<sup>2&bull;</sup>'),('selected_formula_html','CH3'),('selected_formula_html','C2H6')]:
+        for key,value in [('selected_count',2),('selected_atom_ids',[9]),('selected_bond_count',1),('used_valences',2),('used_valences',True),('selected_formula_html','CH<sup>2&bull;</sup>'),('selected_formula_html','CH3'),('selected_formula_html','C2H6')]:
             changed={**row,key:value}
             self.assertIsNone(selected_carbon_h(n,changed,3)[0])
 
