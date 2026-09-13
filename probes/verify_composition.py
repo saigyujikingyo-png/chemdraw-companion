@@ -140,8 +140,9 @@ def verify(mechanism,scene,mapping,path):
             for side,point in (('source',native[0]),('target',native[-1])):
                 try:distance=port_distance(point,flow[side],positions[sid],glyphs,pairs,sid,B)
                 except (KeyError,ValueError):distance=float('inf')
-                target_deviations.append({'flow':flow['id'],'side':side,'deviation_pt':distance if math.isfinite(distance) else None})
-                if not math.isfinite(distance) or distance>B*.20:issues.append(f'native_anchor:{flow["id"]}:{side}')
+                allowance=scene.get('native_head_metrics',{}).get('conservative_forward_extension_pt',0) if side=='target' and flow[side]['type']=='atom' else 0
+                target_deviations.append({'flow':flow['id'],'side':side,'deviation_pt':distance if math.isfinite(distance) else None,'measurement':'control endpoint; visible native head requires separate mask check','head_extension_allowance_pt':allowance})
+                if not math.isfinite(distance) or distance>B*.20+allowance:issues.append(f'native_anchor:{flow["id"]}:{side}')
             for occurrence,box in glyphs.items():
                 if occurrence[0]!=flow['source']['state']:continue
                 distance=min(point_box(cubic(native,t/100),box) for t in range(7,94));minimum=min(minimum,distance)

@@ -1,0 +1,11 @@
+{
+  "report_sha256": "60b68b603bb6a3299eda875201a0255142d879fd139eb037244bb0cf1588b095",
+  "request_sha256": "736da1aedec3f9780bc9e919340ea3e8237f3eae23f41c3b1b24b30e41e96137",
+  "geometry_sha256": "4b3888a6297e8f55e0079cd8a76e1af1e45ee16278235002ca1f1a33a8d15882",
+  "head_metrics_sha256": "4c2951699c26fa16f4b5cc01d7b72c22c2277ff7ae302fb00bf7463e046717bb",
+  "actual_input": "This newly authored development pilot, not M1/M2. Retained geometry was replayed; no fresh native metamorphic variants.",
+  "report_wording": "The original report contains a static Historical measured geometry label. It is retained unchanged; the utility wording is corrected for future runs.",
+  "status": "pass",
+  "baseline_clearance_failures": 1,
+  "unseen_or_family_disjoint_claim": false
+}

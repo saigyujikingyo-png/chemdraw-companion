@@ -1,0 +1,414 @@
+{
+  "recorded_at": "2026-09-13T07:54:42.859105+00:00",
+  "native_originals": 38,
+  "artifacts": [
+    {
+      "path": "native-geometry/state-000-before.cdxml",
+      "sha256": "db53ccd7c05b1cac25fce61ead80169d6c6a4ba3e0dbdbe77ba07d9e042a4e8f",
+      "bytes": 3930,
+      "role": "intrinsic_native_geometry"
+    },
+    {
+      "path": "native-geometry/state-000.cdxml",
+      "sha256": "bd9429cd64186f8bfb67bd0c6398e6f8242a5d9b0f16d1d74df0dfa4470e06b4",
+      "bytes": 3952,
+      "role": "intrinsic_native_geometry"
+    },
+    {
+      "path": "native-geometry/state-001-before.cdxml",
+      "sha256": "6418d156221d42be66430ec5e6307ce89dc42f9ade1f0c8f09397ae03fd06d35",
+      "bytes": 3883,
+      "role": "intrinsic_native_geometry"
+    },
+    {
+      "path": "native-geometry/state-001.cdxml",
+      "sha256": "8888ff7e4987b01944255a16c27eb83a491fe62d7c500505fc415261437f5551",
+      "bytes": 3879,
+      "role": "intrinsic_native_geometry"
+    },
+    {
+      "path": "native-first/mechanism-cdx-edited-readback.cdxml",
+      "sha256": "0f45dee31c4d33e158fb92f8c2811077c682bd8521e5c1f12cee0efa54d846d4",
+      "bytes": 8532,
+      "role": "native_page_or_disk_edit_readback"
+    },
+    {
+      "path": "native-first/mechanism-cdx-edited.cdx",
+      "sha256": "7a66756fb9bbc4cbb389a482128c6bd8e6032dfb22087ec75fd315eb484b8458",
+      "bytes": 3898,
+      "role": "native_page_or_disk_edit_readback"
+    },
+    {
+      "path": "native-first/mechanism-cdx-readback.cdxml",
+      "sha256": "96b00704b2b9a5ee01cadec1770543e6ebb0b03728b85700ed001e99b13c8e11",
+      "bytes": 8508,
+      "role": "native_page_or_disk_edit_readback"
+    },
+    {
+      "path": "native-first/mechanism-cdxml-edited-readback.cdxml",
+      "sha256": "25bf563191259d82bd74b544d9b749ae6cafa3885ba9ffe78f3c11f395d109d7",
+      "bytes": 8543,
+      "role": "native_page_or_disk_edit_readback"
+    },
+    {
+      "path": "native-first/mechanism-cdxml-edited.cdxml",
+      "sha256": "898dc7b05bddc2bcc4cbcb7b457924e759628fed4857311724902f40d596947a",
+      "bytes": 8534,
+      "role": "native_page_or_disk_edit_readback"
+    },
+    {
+      "path": "native-first/mechanism-cdxml-readback.cdxml",
+      "sha256": "4558b98a9d5940356d42980186040a4495f706c96345d33a204557c39e06e1c0",
+      "bytes": 8519,
+      "role": "native_page_or_disk_edit_readback"
+    },
+    {
+      "path": "native-first/mechanism.cdx",
+      "sha256": "c4622af7870cda3926c2f3b369afe1a550c19e622f69842e59974f5047858451",
+      "bytes": 3855,
+      "role": "native_page_or_disk_edit_readback"
+    },
+    {
+      "path": "native-first/mechanism.cdxml",
+      "sha256": "6d778e1600decdee7a067605c8da2b889dffaae4e02b10676d84f3dabe2bde6c",
+      "bytes": 8495,
+      "role": "native_page_or_disk_edit_readback"
+    },
+    {
+      "path": "native-first/mechanism.jpg",
+      "sha256": "164da32d60821e67557594b135b762e33b6d33c19cedb96e1d8cad7782e032f3",
+      "bytes": 25021,
+      "role": "native_page_or_disk_edit_readback"
+    },
+    {
+      "path": "native-first/mechanism.png",
+      "sha256": "3f53d04fbd061e69fac2b900742693fd8728f66d3c944afec2c4dd133825842f",
+      "bytes": 100604,
+      "role": "native_page_or_disk_edit_readback"
+    },
+    {
+      "path": "native-repair-1/mechanism-cdx-edited-readback.cdxml",
+      "sha256": "eb1d702a58674749282af58702d95c5651316bca4cfb2d79a3602dbb3db2fedf",
+      "bytes": 8532,
+      "role": "native_page_or_disk_edit_readback"
+    },
+    {
+      "path": "native-repair-1/mechanism-cdx-edited.cdx",
+      "sha256": "13e6fb3535c24d7cc3bbed8fea30f5cf4002f25fdd03fc9ff57850c5bfd571af",
+      "bytes": 3898,
+      "role": "native_page_or_disk_edit_readback"
+    },
+    {
+      "path": "native-repair-1/mechanism-cdx-readback.cdxml",
+      "sha256": "7108493333bcfc78d37a39a0aeef950d00d3a251132264ad8a0e5464d162003d",
+      "bytes": 8508,
+      "role": "native_page_or_disk_edit_readback"
+    },
+    {
+      "path": "native-repair-1/mechanism-cdxml-edited-readback.cdxml",
+      "sha256": "e7cc5449a73bd95b70d5edf0b6b6ed5dbcc8990ad7db9d9631bcb0517c635c7a",
+      "bytes": 8543,
+      "role": "native_page_or_disk_edit_readback"
+    },
+    {
+      "path": "native-repair-1/mechanism-cdxml-edited.cdxml",
+      "sha256": "47e8f90afe504eb54a4165e6e8b5a1d203f0bda56230ff2ff8e6e789010ed9b2",
+      "bytes": 8534,
+      "role": "native_page_or_disk_edit_readback"
+    },
+    {
+      "path": "native-repair-1/mechanism-cdxml-readback.cdxml",
+      "sha256": "d18cc6ed99a5465abc9833fc8f710eba8269db38965ae288348c3dbe6a7ac430",
+      "bytes": 8519,
+      "role": "native_page_or_disk_edit_readback"
+    },
+    {
+      "path": "native-repair-1/mechanism.cdx",
+      "sha256": "fb8d5be8c1e22b5cbec1896fc7ade3a53c447a025ea1b73269ad4b615d9e5935",
+      "bytes": 3855,
+      "role": "native_page_or_disk_edit_readback"
+    },
+    {
+      "path": "native-repair-1/mechanism.cdxml",
+      "sha256": "dfbb4870a8ef1a01fbb8912fc03a8b0b56a997c0037302774fce8eceeb80bf80",
+      "bytes": 8495,
+      "role": "native_page_or_disk_edit_readback"
+    },
+    {
+      "path": "native-repair-1/mechanism.jpg",
+      "sha256": "643cdcc41dce2947d9b14fe188e4cf3ad2e415864d60093070b949a7ce08b60c",
+      "bytes": 25275,
+      "role": "native_page_or_disk_edit_readback"
+    },
+    {
+      "path": "native-repair-1/mechanism.png",
+      "sha256": "bf5aa3bfb3fbda919f242055baa8341adab557e596ecb8419f96523faeaebbcd",
+      "bytes": 100551,
+      "role": "native_page_or_disk_edit_readback"
+    },
+    {
+      "path": "native-repair-2/mechanism-cdx-edited-readback.cdxml",
+      "sha256": "5a6a698e00dc28514779932a551e76b001805d194a7b22d27cedee34b5c86ab4",
+      "bytes": 8532,
+      "role": "native_page_or_disk_edit_readback"
+    },
+    {
+      "path": "native-repair-2/mechanism-cdx-edited.cdx",
+      "sha256": "4eab461d7eed009a0f46830888aab1321afa58bcf20325d2692982e96f65e85c",
+      "bytes": 3898,
+      "role": "native_page_or_disk_edit_readback"
+    },
+    {
+      "path": "native-repair-2/mechanism-cdx-readback.cdxml",
+      "sha256": "88048c2cedfaaa089acd48623150d12d59793e0d9df3af1519ccc78b19f6951b",
+      "bytes": 8508,
+      "role": "native_page_or_disk_edit_readback"
+    },
+    {
+      "path": "native-repair-2/mechanism-cdxml-edited-readback.cdxml",
+      "sha256": "ec8d0a9883a08ac93c29dc58576447b03a1362a59680caf7bbd4e5e06ee2cde0",
+      "bytes": 8543,
+      "role": "native_page_or_disk_edit_readback"
+    },
+    {
+      "path": "native-repair-2/mechanism-cdxml-edited.cdxml",
+      "sha256": "edfa8a2848b8bf19688077ae2361adb374a4e34b139e3a406212e340f449bfb1",
+      "bytes": 8534,
+      "role": "native_page_or_disk_edit_readback"
+    },
+    {
+      "path": "native-repair-2/mechanism-cdxml-readback.cdxml",
+      "sha256": "899543d9889e07c345d4ba0068819dabbdfde6bafbec808092bc85f44a85aa45",
+      "bytes": 8519,
+      "role": "native_page_or_disk_edit_readback"
+    },
+    {
+      "path": "native-repair-2/mechanism.cdx",
+      "sha256": "0c014e9652d032619d77c05a465587a1ec5dd5e1d35e670a9016435e41560985",
+      "bytes": 3855,
+      "role": "native_page_or_disk_edit_readback"
+    },
+    {
+      "path": "native-repair-2/mechanism.cdxml",
+      "sha256": "1fb86c39e1ccec77af1cba1b0f0d66ec2d265584255b1831bd8dbf4716e1f8f0",
+      "bytes": 8495,
+      "role": "native_page_or_disk_edit_readback"
+    },
+    {
+      "path": "native-repair-2/mechanism.jpg",
+      "sha256": "6a6401f95de2c5ccc17e4bbfeb33d2c9bccc9d8e1335477fce390ded45bcf1ed",
+      "bytes": 25284,
+      "role": "native_page_or_disk_edit_readback"
+    },
+    {
+      "path": "native-repair-2/mechanism.png",
+      "sha256": "ed92f803bab16f375955d3ea3a922d002edfa3e03d728d2dab594067c3ba89bb",
+      "bytes": 100336,
+      "role": "native_page_or_disk_edit_readback"
+    },
+    {
+      "path": "mask-native/mechanism.cdxml",
+      "sha256": "dc2265ac0622008ba8c489c20ca5bf289d749c4f2ef48f150fa6d27c9ff82eb1",
+      "bytes": 9997,
+      "role": "colour_diagnostic_native_output"
+    },
+    {
+      "path": "mask-native/mechanism.png",
+      "sha256": "645f6be71ec06b09717fd8885aa1f2f91eec3d36403aecb7cbf837461ae450bd",
+      "bytes": 113082,
+      "role": "colour_diagnostic_native_output"
+    },
+    {
+      "path": "mask-native-repair-2/mechanism.cdxml",
+      "sha256": "777919baed52930ee3b5130eda1f7af4a48fd454383a7ec0294f3a695dfc6ad8",
+      "bytes": 9997,
+      "role": "colour_diagnostic_native_output"
+    },
+    {
+      "path": "mask-native-repair-2/mechanism.png",
+      "sha256": "5ba46a524cf8bc42c0a943435852048eb50b47e0b7e9e8b21ab9c66aa1755cae",
+      "bytes": 112566,
+      "role": "colour_diagnostic_native_output"
+    }
+  ],
+  "all_journalled_output_hashes_match": true,
+  "workers": [
+    {
+      "receipt": "native-first-worker.json",
+      "deadline_seconds": 60,
+      "elapsed_seconds": 3.3280000000086147,
+      "completed": true,
+      "executed_source_hashes": [
+        {
+          "file": "run_with_deadline.py",
+          "sha256": "06836f8b324a95b20f47a6bad234f8424a6d4429a32160b090882940fa9c9142"
+        },
+        {
+          "file": "native-pages.ps1",
+          "sha256": "16e0b2058f508dcefdd9b296e6b7ae72386b11f6c2152bb3c87847df18f6feb5"
+        },
+        {
+          "file": "native-common.ps1",
+          "sha256": "0fe06575b88a8f2b14f6f3937dd72d2f2709b146564ac2e17b80b3b0ab01655f"
+        },
+        {
+          "file": "native-snapshot.ps1",
+          "sha256": "5d20abd6801ef642b67185825a3742fe11577b5101e8abfa5d177fe15d64a408"
+        },
+        {
+          "file": "NativeChemDraw.cs",
+          "sha256": "52eb2fe1e66d9b13aba84dfba010959ddcb8fcf6109b919a498324400681b73c"
+        }
+      ]
+    },
+    {
+      "receipt": "native-geometry-worker.json",
+      "deadline_seconds": 60,
+      "elapsed_seconds": 3.937999999994645,
+      "completed": true,
+      "executed_source_hashes": [
+        {
+          "file": "run_with_deadline.py",
+          "sha256": "06836f8b324a95b20f47a6bad234f8424a6d4429a32160b090882940fa9c9142"
+        },
+        {
+          "file": "native-ir-fragments.ps1",
+          "sha256": "6c798634a06853987c976f358fa5def35847c6f003b84d8d009435956b5e35bf"
+        },
+        {
+          "file": "native-common.ps1",
+          "sha256": "0fe06575b88a8f2b14f6f3937dd72d2f2709b146564ac2e17b80b3b0ab01655f"
+        },
+        {
+          "file": "native-snapshot.ps1",
+          "sha256": "5d20abd6801ef642b67185825a3742fe11577b5101e8abfa5d177fe15d64a408"
+        },
+        {
+          "file": "NativeChemDraw.cs",
+          "sha256": "52eb2fe1e66d9b13aba84dfba010959ddcb8fcf6109b919a498324400681b73c"
+        }
+      ]
+    },
+    {
+      "receipt": "native-mask-repair-2-worker.json",
+      "deadline_seconds": 60,
+      "elapsed_seconds": 3.702999999979511,
+      "completed": true,
+      "executed_source_hashes": [
+        {
+          "file": "run_with_deadline.py",
+          "sha256": "06836f8b324a95b20f47a6bad234f8424a6d4429a32160b090882940fa9c9142"
+        },
+        {
+          "file": "native-render-copies.ps1",
+          "sha256": "3b5092629f43f6b87462d4723913630cc6f3ad0624e7543eaa6a4c2b2fae6459"
+        },
+        {
+          "file": "native-common.ps1",
+          "sha256": "0fe06575b88a8f2b14f6f3937dd72d2f2709b146564ac2e17b80b3b0ab01655f"
+        },
+        {
+          "file": "native-snapshot.ps1",
+          "sha256": "5d20abd6801ef642b67185825a3742fe11577b5101e8abfa5d177fe15d64a408"
+        },
+        {
+          "file": "NativeChemDraw.cs",
+          "sha256": "52eb2fe1e66d9b13aba84dfba010959ddcb8fcf6109b919a498324400681b73c"
+        }
+      ]
+    },
+    {
+      "receipt": "native-mask-worker.json",
+      "deadline_seconds": 60,
+      "elapsed_seconds": 3.75,
+      "completed": true,
+      "executed_source_hashes": [
+        {
+          "file": "run_with_deadline.py",
+          "sha256": "06836f8b324a95b20f47a6bad234f8424a6d4429a32160b090882940fa9c9142"
+        },
+        {
+          "file": "native-render-copies.ps1",
+          "sha256": "3b5092629f43f6b87462d4723913630cc6f3ad0624e7543eaa6a4c2b2fae6459"
+        },
+        {
+          "file": "native-common.ps1",
+          "sha256": "0fe06575b88a8f2b14f6f3937dd72d2f2709b146564ac2e17b80b3b0ab01655f"
+        },
+        {
+          "file": "native-snapshot.ps1",
+          "sha256": "5d20abd6801ef642b67185825a3742fe11577b5101e8abfa5d177fe15d64a408"
+        },
+        {
+          "file": "NativeChemDraw.cs",
+          "sha256": "52eb2fe1e66d9b13aba84dfba010959ddcb8fcf6109b919a498324400681b73c"
+        }
+      ]
+    },
+    {
+      "receipt": "native-repair-1-worker.json",
+      "deadline_seconds": 60,
+      "elapsed_seconds": 3.35999999998603,
+      "completed": true,
+      "executed_source_hashes": [
+        {
+          "file": "run_with_deadline.py",
+          "sha256": "06836f8b324a95b20f47a6bad234f8424a6d4429a32160b090882940fa9c9142"
+        },
+        {
+          "file": "native-pages.ps1",
+          "sha256": "16e0b2058f508dcefdd9b296e6b7ae72386b11f6c2152bb3c87847df18f6feb5"
+        },
+        {
+          "file": "native-common.ps1",
+          "sha256": "0fe06575b88a8f2b14f6f3937dd72d2f2709b146564ac2e17b80b3b0ab01655f"
+        },
+        {
+          "file": "native-snapshot.ps1",
+          "sha256": "5d20abd6801ef642b67185825a3742fe11577b5101e8abfa5d177fe15d64a408"
+        },
+        {
+          "file": "NativeChemDraw.cs",
+          "sha256": "52eb2fe1e66d9b13aba84dfba010959ddcb8fcf6109b919a498324400681b73c"
+        }
+      ]
+    },
+    {
+      "receipt": "native-repair-2-worker.json",
+      "deadline_seconds": 60,
+      "elapsed_seconds": 4.172000000020489,
+      "completed": true,
+      "executed_source_hashes": [
+        {
+          "file": "run_with_deadline.py",
+          "sha256": "06836f8b324a95b20f47a6bad234f8424a6d4429a32160b090882940fa9c9142"
+        },
+        {
+          "file": "native-pages.ps1",
+          "sha256": "16e0b2058f508dcefdd9b296e6b7ae72386b11f6c2152bb3c87847df18f6feb5"
+        },
+        {
+          "file": "native-common.ps1",
+          "sha256": "0fe06575b88a8f2b14f6f3937dd72d2f2709b146564ac2e17b80b3b0ab01655f"
+        },
+        {
+          "file": "native-snapshot.ps1",
+          "sha256": "5d20abd6801ef642b67185825a3742fe11577b5101e8abfa5d177fe15d64a408"
+        },
+        {
+          "file": "NativeChemDraw.cs",
+          "sha256": "52eb2fe1e66d9b13aba84dfba010959ddcb8fcf6109b919a498324400681b73c"
+        }
+      ]
+    }
+  ],
+  "process_binding": "Each native journal has matching owned PID/HWND PID and a complete terminal event",
+  "preexisting_processes_preserved": [
+    59412,
+    60108,
+    64352,
+    65772,
+    65964
+  ],
+  "no_native_process_terminated": true
+}

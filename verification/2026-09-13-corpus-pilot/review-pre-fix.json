@@ -1,0 +1,36 @@
+{
+  "scope": "Independent synthetic integrity corruptions of schema probes; no native execution, geometry fitting or approval claim",
+  "source_sha256": "f4316b8b6d8d15576709d89d539d03d4027316bb13b99e1ede1859828705aa31",
+  "controls": [
+    {
+      "case": "stale_split_revision",
+      "rejected": false,
+      "result": "pass"
+    },
+    {
+      "case": "wrong_ir_identity",
+      "rejected": false,
+      "result": "pass"
+    },
+    {
+      "case": "wrong_ir_asset_kind",
+      "rejected": false,
+      "result": "pass"
+    },
+    {
+      "case": "asset_parent_cycle",
+      "rejected": false,
+      "result": "pass"
+    },
+    {
+      "case": "duplicate_correction_asset",
+      "rejected": false,
+      "result": "pass"
+    },
+    {
+      "case": "cyclic_annotation_layers",
+      "rejected": false,
+      "result": "pass"
+    }
+  ]
+}

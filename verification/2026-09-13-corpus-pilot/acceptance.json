@@ -1,0 +1,30 @@
+{
+  "phase": "Composer R&D / Dataset Phase",
+  "architecture_revision": "052cca91bc149956c7ea81ac33aafd1c8f87d6ee",
+  "schema_review": "six reproduced defects repaired",
+  "runtime_unit_tests": 51,
+  "corpus_unit_tests": 36,
+  "native_original_files": 38,
+  "pilot_native_visual": "failed",
+  "owner_visual_decision": "rejected",
+  "owner_visual_findings": [
+    "Wrong lone-pair orientation",
+    "Insufficiently accurate arrow pointing",
+    "Excessively large/exaggerated arrow bends"
+  ],
+  "native_editability": "pass_bounded_both_formats",
+  "corpus_projection": "unimplemented",
+  "complete_correction_diff": "unimplemented",
+  "gold_samples": 0,
+  "human_visual_rejections": 1,
+  "chemical_human_reviews": 0,
+  "manual_active_correction_seconds": null,
+  "repair_allowance": "2/2_consumed_closed",
+  "M1_M2": "fixed_regression_exposed_and_tuned_no_further_fit",
+  "scored_M2": "not_run",
+  "freeze": "not_started",
+  "holdout": "not_selected",
+  "P0_C": "not_accepted",
+  "training": "not_started",
+  "full_corpus_assets": "local_owner_delivery_only"
+}

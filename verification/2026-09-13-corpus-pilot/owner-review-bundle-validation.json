@@ -1,0 +1,25 @@
+{
+  "status": "pass",
+  "mechanisms": [
+    {
+      "representable": "pass",
+      "semantic_valid": "bounded_pass",
+      "states": 2,
+      "steps": 1,
+      "flows": 2,
+      "runtime_projection": "unverified",
+      "native_verified": "unverified",
+      "scientific_review": "unreviewed",
+      "sample_id": "development-alkoxide-ammonium-01"
+    }
+  ],
+  "local_assets_hash_checked": 50,
+  "external_asset_bindings_only": 0,
+  "gold_samples": 0,
+  "fresh_native_execution": false,
+  "human_visual_rejections": 1,
+  "chemical_human_reviews": 0,
+  "annotation_observations": 42,
+  "native_asset_bytes_changed": false,
+  "manual_active_correction_seconds": null
+}

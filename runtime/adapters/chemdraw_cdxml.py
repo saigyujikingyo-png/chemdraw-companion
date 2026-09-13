@@ -88,7 +88,7 @@ def read_geometry(mechanism,manifest,folder,*,input_folder=None,style=None):
             p=tuple(map(float,n.get('p').split()));label=None;t=n.find('t')
             if t is not None:
                 anchor=tuple(map(float,t.get('p').split()));bounds=list(map(float,t.get('BoundingBox').split()))
-                label={'offset':[anchor[0]-p[0],anchor[1]-p[1]],'bbox_offset':[bounds[0]-p[0],bounds[1]-p[1],bounds[2]-p[0],bounds[3]-p[1]],'runs':[{'text':s.text or '', 'face':s.get('face','0'),'size':float(s.get('size',8))} for s in t.findall('s')]}
+                label={'offset':[anchor[0]-p[0],anchor[1]-p[1]],'bbox_offset':[bounds[0]-p[0],bounds[1]-p[1],bounds[2]-p[0],bounds[3]-p[1]],'alignment':{k:t.get(k) for k in ('LabelJustification','LabelAlignment','Justification') if t.get(k) is not None},'runs':[{'text':s.text or '', 'face':s.get('face','0'),'size':float(s.get('size',8))} for s in t.findall('s')]}
             atoms[i]={'position':p,'label':label,'element':catalog[i]['element'],'charge':q.get(i,0),'implicit_h':catalog[i]['implicit_h']}
         actual={}
         for b in root.iter('b'):
@@ -125,7 +125,7 @@ def materialize(scene,folder,stem='mechanism'):
                 if atom['charge']:attrs['Charge']=str(atom['charge'])
                 n=ET.SubElement(f,'n',attrs);record['atoms'][str(atom['map'])]={'native_id':nid,'position':pos}
                 if atom['label']:
-                    label=atom['label'];t=ET.SubElement(n,'t',{'p':f'{pos[0]+label["offset"][0]:.4f} {pos[1]+label["offset"][1]:.4f}'})
+                    label=atom['label'];t=ET.SubElement(n,'t',{'p':f'{pos[0]+label["offset"][0]:.4f} {pos[1]+label["offset"][1]:.4f}',**label.get('alignment',{})})
                     for run in label['runs']:ET.SubElement(t,'s',{'font':'3','size':str(run['size']),'color':'0','face':run['face']}).text=run['text']
             # ChemDraw accepts the CDXML enum token "2", but silently imports
             # the otherwise valid numeric string "2.0" as a single bond.
@@ -138,7 +138,7 @@ def materialize(scene,folder,stem='mechanism'):
         n=ET.SubElement(page,'t',{'id':new_id(),'p':f'{text["position"][0]} {text["position"][1]}','InterpretChemically':'no'})
         ET.SubElement(n,'s',{'font':'3','size':str(text['font_pt']),'face':'0','color':'0'}).text=text['text']
     for flow in scene['flows']:
-        p=flow['bezier'];points=[p[0],p[0],p[1],p[2],p[3],p[3]];nid=new_id();ET.SubElement(page,'curve',{'id':nid,'CurveType':'8','ArrowheadHead':'Full','ArrowheadType':'Solid','HeadSize':'650','HeadCenterSize':'550','HeadWidth':'220','LineWidth':str(scene['style']['stroke_pt']),'CurvePoints':' '.join(f'{v:.4f}' for q in points for v in q)})
+        p=flow['bezier'];points=[p[0],p[0],p[1],p[2],p[3],p[3]];nid=new_id();ET.SubElement(page,'curve',{'id':nid,'CurveType':'8','ArrowheadHead':'Full','ArrowheadType':'Solid','HeadSize':'650','ArrowheadCenterSize':'569','ArrowheadWidth':'163','LineWidth':str(scene['style']['stroke_pt']),'CurvePoints':' '.join(f'{v:.4f}' for q in points for v in q)})
         mapping['flows'].append({**flow,'native_id':nid})
     for connector in scene['connectors']:
         start,end=connector['path'];nid=new_id();ET.SubElement(page,'arrow',{'id':nid,'ArrowheadHead':'Full','ArrowheadType':'Solid','HeadSize':'900','ArrowheadCenterSize':'800','ArrowheadWidth':'250','Head3D':f'{end[0]} {end[1]} 0','Tail3D':f'{start[0]} {start[1]} 0','FillType':'None','LineWidth':str(scene['style']['stroke_pt'])});mapping['connectors'].append({**connector,'native_id':nid})

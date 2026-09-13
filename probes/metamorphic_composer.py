@@ -8,7 +8,7 @@ import argparse,copy,json,math,random,sys
 from pathlib import Path
 sys.path.insert(0,str(Path(__file__).resolve().parents[1]))
 from runtime.chemical_ir import validate_request,validate_semantics,linear_order,connected_components
-from runtime.mechanism_composer import compose,rotate_component
+from runtime.mechanism_composer import compose as compose_scene,rotate_component
 from runtime.adapters.chemdraw_cdxml import materialize
 from scene_equivalence import compare as compare_scenes
 
@@ -49,7 +49,8 @@ def relabel(payload,geometry):
 def positions(scene):return {s['id']:{a['map']:a['position'] for c in s['components'] for a in c['atoms']} for s in scene['states']}
 
 
-def run(payload,geometry,out):
+def run(payload,geometry,out,head_metrics=None):
+    compose=lambda m,s,g:compose_scene(m,s,g,head_metrics)
     out.mkdir(parents=True,exist_ok=False);m,style=validate_request(payload);baseline=compose(m,style,geometry);basepos=positions(baseline);records=[]
     for label in ('catalog_order_only','electron_flow_order_only','bond_endpoint_order_only'):
         altered=copy.deepcopy(m)
@@ -84,12 +85,12 @@ def run(payload,geometry,out):
         pm['stereo_constraints']=[{**r,'states':[sid for sid in r['states'] if sid in allowed]} for r in pm['stereo_constraints'] if any(sid in allowed for sid in r['states'])]
         partial['layout_policy']['minimum_row_turns']=0;vm,vs=validate_request(partial);changed=compose(vm,vs,geometry)
         materialize(changed,out/f'prefix-{length}-composition');records.append({'case':f'valid_path_prefix_{length}','semantic_and_composer_fit':'pass','counts':validate_semantics(vm),'quality_acceptance':'not_implied'})
-    report={'scope':'Historical measured geometry replay, metamorphic and structural controls only; no fresh native geometry qualification or unseen chemical selection','baseline_clearance_failures':len(baseline['layout_diagnostics']['curve_clearance_failures']),'cases':records,'metamorphic_behavior':'pass' if all(c.get('scene_equivalence',{}).get('status','pass')=='pass' and c.get('semantics_and_fit','pass')=='pass' for c in records) else 'failed','native_geometry_regeneration':'separate_required','holdout':'not_started'}
+    report={'scope':'Replay of the supplied measured geometry, metamorphic and structural controls only; no fresh native geometry qualification or unseen chemical selection','baseline_clearance_failures':len(baseline['layout_diagnostics']['curve_clearance_failures']),'cases':records,'metamorphic_behavior':'pass' if all(c.get('scene_equivalence',{}).get('status','pass')=='pass' and c.get('semantics_and_fit','pass')=='pass' for c in records) else 'failed','native_geometry_regeneration':'separate_required','holdout':'not_started'}
     (out/'metamorphic-report.json').write_text(json.dumps(report,indent=2),encoding='utf-8');return report
 
 
 if __name__=='__main__':
-    p=argparse.ArgumentParser();p.add_argument('--request',type=Path,required=True);p.add_argument('--geometry',type=Path,required=True);p.add_argument('--out',type=Path,required=True);a=p.parse_args();read=lambda x:json.loads(x.read_text(encoding='utf-8'))
+    p=argparse.ArgumentParser();p.add_argument('--request',type=Path,required=True);p.add_argument('--geometry',type=Path,required=True);p.add_argument('--out',type=Path,required=True);p.add_argument('--head-metrics',type=Path);a=p.parse_args();read=lambda x:json.loads(x.read_text(encoding='utf-8'))
     g=read(a.geometry)
     for entry in g.values():entry['atoms']={int(i):x for i,x in entry['atoms'].items()}
-    report=run(read(a.request),g,a.out);print(json.dumps(report));raise SystemExit(0 if report['metamorphic_behavior']=='pass' else 1)
+    report=run(read(a.request),g,a.out,read(a.head_metrics) if a.head_metrics else None);print(json.dumps(report));raise SystemExit(0 if report['metamorphic_behavior']=='pass' else 1)

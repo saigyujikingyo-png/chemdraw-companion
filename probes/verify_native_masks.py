@@ -164,7 +164,8 @@ def verify(stem,source,inputs,native,composition):
         if not len(cloud):issues.append('missing_native_mask:'+g['native_id']);boxes.append(None);continue
         boxes.append([int(cloud[:,0].min()),int(cloud[:,1].min()),int(cloud[:,0].max()),int(cloud[:,1].max())])
     components={c['id']:c for c in scene['components']};native_atom=lambda port:str(components[port['component']]['native_atom_bindings'][str(port['atom_map'])]['native_id'])
-    flow_index={f['native_id']:f for f in scene['flows']};pair_by_component={(p['component'],p['atom_map']):p['native_id'] for p in scene.get('lone_pairs',[])}
+    flow_index={f['native_id']:f for f in scene['flows']};pair_by_component={(p['component'],p['atom_map'],p.get('pair_index',0)):p['native_id'] for p in scene.get('lone_pairs',[])}
+    if len(pair_by_component)!=len(scene.get('lone_pairs',[])):raise ValueError('Duplicate lone-pair slot binding')
     native_tips=[]
     for i,g in enumerate(groups):
         if g['kind']!='curve':continue
@@ -192,7 +193,7 @@ def verify(stem,source,inputs,native,composition):
             if curve['kind']!='curve':continue
             flow=flow_index[curve['native_id']]
             src_port=flow['source'];target=flow['target']
-            if src_port['type']=='lone_pair' and obj['native_id']==pair_by_component[(src_port['component'],src_port['atom_map'])]:exempt.append(('declared_lone_pair_tail',point(flow['bezier'][0]),B*.20))
+            if src_port['type']=='lone_pair' and obj['native_id']==pair_by_component[(src_port['component'],src_port['atom_map'],src_port.get('pair_index',0))]:exempt.append(('declared_lone_pair_tail',point(flow['bezier'][0]),B*.20))
             if src_port['type']=='bond' and obj['kind']=='b':
                 ends={str(components[src_port['component']]['native_atom_bindings'][str(k)]['native_id']) for k in src_port['atom_maps']}
                 if ends==set(obj['atom_ends']):exempt.append(('declared_source_bond_tail',point(flow['bezier'][0]),B*.20))
@@ -229,7 +230,7 @@ def verify(stem,source,inputs,native,composition):
 
 
 if __name__=='__main__':
-    p=argparse.ArgumentParser();p.add_argument('--source',type=Path,required=True);p.add_argument('--inputs',type=Path,required=True);p.add_argument('--native',type=Path,required=True);p.add_argument('--composition',type=Path,required=True);p.add_argument('--report',type=Path,required=True);a=p.parse_args()
+    p=argparse.ArgumentParser();p.add_argument('--source',type=Path,required=True);p.add_argument('--inputs',type=Path,required=True);p.add_argument('--native',type=Path,required=True);p.add_argument('--composition',type=Path,required=True);p.add_argument('--report',type=Path,required=True);p.add_argument('--stem',action='append');a=p.parse_args()
     if a.report.exists():raise FileExistsError(a.report)
-    results=[verify(stem,a.source,a.inputs,a.native,a.composition) for stem in ('S1','R1','M1')]
+    results=[verify(stem,a.source,a.inputs,a.native,a.composition) for stem in (a.stem or ('S1','R1','M1'))]
     a.report.write_text(json.dumps({'method':'Original and colour-only native PNG readback; no raster image rewritten','results':results},indent=2),encoding='utf-8');print(json.dumps([{'fixture':r['fixture'],'issues':r['issues'],'silhouette_difference_fraction':r['silhouette_difference_fraction'],'clearance_failures':r['clearance_failures']} for r in results]));raise SystemExit(0 if all(r['status']=='pass' for r in results) else 1)

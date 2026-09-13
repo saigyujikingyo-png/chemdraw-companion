@@ -1,0 +1,28 @@
+{
+  "status": "pass",
+  "mechanisms": [
+    {
+      "representable": "pass",
+      "semantic_valid": "bounded_pass",
+      "states": 2,
+      "steps": 1,
+      "flows": 2,
+      "runtime_projection": "unverified",
+      "native_verified": "unverified",
+      "scientific_review": "unreviewed",
+      "sample_id": "development-alkoxide-ammonium-01"
+    }
+  ],
+  "local_assets_hash_checked": 48,
+  "external_asset_bindings_only": 0,
+  "gold_samples": 0,
+  "fresh_native_execution": false,
+  "correction_records_checked": 2,
+  "annotation_observations": 39,
+  "annotation_layers": 8,
+  "human_reviews": 0,
+  "manual_active_correction_seconds": null,
+  "rights": "Local development evidence only; no training or corpus redistribution grant",
+  "native_edit_probe": "both formats pass within captured scope; complete port semantic equivalence remains unverified",
+  "scope": "Fixture-specific observed evidence packaging, not a production corpus-to-runtime adapter or correction-diff engine"
+}

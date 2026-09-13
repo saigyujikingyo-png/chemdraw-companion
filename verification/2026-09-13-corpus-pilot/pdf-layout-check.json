@@ -1,0 +1,16 @@
+{
+  "recorded_at": "2026-09-13T07:54:42.859105+00:00",
+  "pages_rendered_and_inspected": 3,
+  "page_layout": "pass",
+  "native_chemistry_and_visual_quality": "separate_failed_or_unreviewed_gates",
+  "inspection_actor": "Codex GPT-6 Astra; AI document-layout inspection only",
+  "physical_human_acceptance": "pending",
+  "render_command": "pdftoppm -r 120 -png",
+  "renderer_messages": [
+    "No display font for Symbol",
+    "No display font for ArialUnicode"
+  ],
+  "visible_pdf_layout_defects": [],
+  "pdf_sha256": "b3ad72adcc873132791ad7d18ef20dfcdc3620d312d0c8f44389b1b71feafb2a",
+  "source_png_bytes_unchanged": true
+}

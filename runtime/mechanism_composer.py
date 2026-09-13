@@ -6,8 +6,9 @@ No fixture oracle, state-name branch, molecule template or page cache exists.
 from __future__ import annotations
 import copy,itertools,math,textwrap
 from runtime.chemical_ir import connected_components,linear_order,canonical_hash,chemical_colors
+from runtime.arrow_ports import atom_ports
 
-RULE_VERSION='generic-composer/0.2'
+RULE_VERSION='generic-composer/0.3-development'
 RULES={'panel_gap_bonds':1.7,'component_gap_bonds':.8,'electron_radius_bonds':.55,'curve_clearance_bonds':.18,'label_clearance_bonds':.12,'maximum_aux_permutation':5,'curve_bends_bonds':[.55,.9,1.4,1.95,2.5]}
 
 def add(p,q):return (p[0]+q[0],p[1]+q[1])
@@ -119,16 +120,28 @@ def lone_pair_ports(state,components,B):
     for entry in state['lone_pairs']:
         i=entry['atom'];p=positions[i];occupied=[math.atan2(positions[j][1]-p[1],positions[j][0]-p[0]) for b in state['bonds'] if i in b['atoms'] for j in b['atoms'] if j!=i];chosen=[]
         for slot in range(entry['count']):
+            def radius(a):
+                label=atoms[i]['label'];lower=B*RULES['electron_radius_bonds'];upper=B*1.1
+                if not label:return lower
+                box=label['bbox_offset'];u=(math.cos(a),math.sin(a));half=B*.0764
+                def clearance(r):return min(point_box_distance((r*u[0]+side*half,r*u[1]),box) for side in (-1,1))
+                required=B*.18+B*.03
+                if clearance(upper)<required:return float('inf')
+                if clearance(lower)>=required:return lower
+                for _ in range(30):
+                    mid=(lower+upper)/2
+                    if clearance(mid)<required:lower=mid
+                    else:upper=mid
+                return upper
             def score(a):return min(abs(math.atan2(math.sin(a-b),math.cos(a-b))) for b in occupied+chosen) if occupied+chosen else math.pi
-            angle=max((math.radians(d) for d in range(0,360,15)),key=lambda a:(round(score(a),10),-a));chosen.append(angle)
-            radius=B*RULES['electron_radius_bonds'];label=atoms[i]['label']
-            if label:
-                box=label['bbox_offset'];radius=max(radius,min(math.hypot(box[x],box[y]) for x in (0,2) for y in (1,3))+B*.12)
-            position=add(p,(radius*math.cos(angle),radius*math.sin(angle)));result.append({'atom':i,'pair_index':slot,'position':position})
+            angles=[math.radians(d) for d in range(0,360,15) if math.isfinite(radius(math.radians(d)))]
+            if not angles:raise ValueError('No lone-pair port outside measured label at fixed atom-association bound')
+            angle=max(angles,key=lambda a:(round(score(a),10),-round(radius(a),7),-a));chosen.append(angle);r=radius(angle)
+            position=add(p,(r*math.cos(angle),r*math.sin(angle)));result.append({'atom':i,'pair_index':slot,'position':position})
     return result
 
-def route_flows(state,flows,components,pairs,B):
-    atoms={a['map']:a for c in components for a in c['atoms']};positions={i:a['position'] for i,a in atoms.items()};ports={(p['atom'],p['pair_index']):p['position'] for p in pairs};prior=[];result=[];threshold=B*RULES['curve_clearance_bonds']
+def route_flows(state,flows,components,pairs,B,head_extension=0,stroke=.6,pixel=.12):
+    atoms={a['map']:a for c in components for a in c['atoms']};positions={i:a['position'] for i,a in atoms.items()};ports={(p['atom'],p['pair_index']):p['position'] for p in pairs};prior=[];result=[];threshold=B*RULES['curve_clearance_bonds']+stroke/2+pixel
     boxes={i:[a['position'][0]+a['label']['bbox_offset'][0],a['position'][1]+a['label']['bbox_offset'][1],a['position'][0]+a['label']['bbox_offset'][2],a['position'][1]+a['label']['bbox_offset'][3]] for i,a in atoms.items() if a['label']}
     # Routing priority derives from port geometry. Flow IDs and input order have
     # no layout meaning; indistinguishable routes may remain equivalent ties.
@@ -139,27 +152,37 @@ def route_flows(state,flows,components,pairs,B):
     for f in ordered:
         source,target=f['source'],f['target'];start=ports[(source['atom'],source['pair_index'])] if source['type']=='lone_pair' else flow_endpoint(source,positions)
         if target['type']=='atom':
-            i=target['atom'];center=positions[i];box=boxes.get(i);radius=B/6 if box is None else max(box[2]-box[0],box[3]-box[1])/2+B*.14
-            ends=[add(center,(radius*math.cos(math.radians(d)),radius*math.sin(math.radians(d)))) for d in range(0,360,30)]
+            i=target['atom'];ends=list(atom_ports(positions[i],boxes.get(i),B,head_extension))
         else:
-            a,b=sorted(positions[i] for i in target['atoms']);direction=unit(vec(a,b));normal=(-direction[1],direction[0]);ends=[add(middle(a,b),mul(normal,B*.15*s)) for s in (-1,1)]
+            a,b=sorted(positions[i] for i in target['atoms']);direction=unit(vec(a,b));normal=(-direction[1],direction[0]);ends=[(add(middle(a,b),mul(normal,B*.15*s)),None,None) for s in (-1,1)]
         candidates=[]
-        for end in ends:
+        for end,outward,visible in ends:
             delta=vec(start,end);direction=unit(delta);normal=(-direction[1],direction[0])
-            for side,bend in itertools.product((-1,1),RULES['curve_bends_bonds']):
-                c1=add(add(start,mul(delta,.25)),mul(normal,B*bend*side));c2=add(add(start,mul(delta,.75)),mul(normal,B*bend*side));points=[start,c1,c2,end];penalty=0;minimum=1e9;samples=[]
+            for side,bend,handle in itertools.product((-1,1),RULES['curve_bends_bonds'],(.5,1.,1.5) if outward is not None else (0,)):
+                c1=add(add(start,mul(delta,.25)),mul(normal,B*bend*side));c2=add(end,mul(outward,B*handle)) if outward is not None else add(add(start,mul(delta,.75)),mul(normal,B*bend*side));points=[start,c1,c2,end];penalty=0;minimum=1e9;samples=[]
                 for step in range(2,29):
                     point=curve_point(points,step/30);samples.append(point)
                     for box in boxes.values():d=point_box_distance(point,box);minimum=min(minimum,d);penalty+=max(0,threshold-d)**2
+                    for bond in state['bonds']:
+                        ends=bond['atoms']
+                        if source['type']=='bond' and set(source['atoms'])==set(ends) and math.dist(point,start)<=B*.2:continue
+                        if target['type']=='atom' and target['atom'] in ends and math.dist(point,positions[target['atom']])<=B*.22:continue
+                        a,b=(positions[i] for i in ends);v=vec(a,b);den=v[0]**2+v[1]**2;t=max(0,min(1,((point[0]-a[0])*v[0]+(point[1]-a[1])*v[1])/den)) if den else 0
+                        d=math.dist(point,add(a,mul(v,t)));penalty+=max(0,B*.18+stroke+pixel-d)**2
                     for old in prior:penalty+=max(0,threshold-min(math.dist(point,p) for p in old))**2*.4
                 candidates.append((penalty+B*bend*.03,points,samples,minimum))
         score,points,samples,minimum=min(candidates,key=lambda c:(round(c[0],7),tuple(round(v,7) for p in c[1] for v in p)));prior.append(samples)
         result.append({'id':f['id'],'electron_count':f['electron_count'],'source':{'state':state['id'],**source},'target':{'state':state['id'],**target},'bezier':points,'diagnostics':{'native_label_bbox_clearance_pt':minimum,'required_clearance_pt':threshold,'route_score':score}})
     return result
 
-def compose(mechanism,style,geometry):
+def compose(mechanism,style,geometry,head_metrics=None):
     states,transitions=linear_order(mechanism);catalog={a['map']:a for a in mechanism['atom_catalog']};outgoing={t['from']:t for t in transitions}
     B=style['bond_length_pt'];font=style['font_pt'];width=style['canvas_width_mm']*72/25.4;height=style['canvas_height_mm']*72/25.4;margin=style['outer_margin_mm']*72/25.4
+    head_extension=0
+    if head_metrics is not None:
+        if head_metrics['bond_pt']!=B or head_metrics['font_pt']!=font or head_metrics['head_size']!='650':raise ValueError('Intrinsic head metric style mismatch')
+        head_extension=head_metrics['conservative_forward_extension_pt']
+        if not isinstance(head_extension,(int,float)) or not math.isfinite(head_extension) or not 0<=head_extension<=B:raise ValueError('Invalid intrinsic head extent')
     header=font*2.8;footer=font*1.5;column_gap=B*RULES['panel_gap_bonds'];row_gap=B*style['row_gap_bond_lengths'];available_width=width-2*margin;available_height=height-2*margin-header-footer
     prepared={};previous=None;roles=chemical_colors(mechanism)
     for state in states:
@@ -186,6 +209,7 @@ def compose(mechanism,style,geometry):
     if plan is None:raise ValueError('No layout at the frozen font/bond scale: '+str(rejections))
     columns,panel_width,packed,row_heights=plan;scene={'scene_version':'mechanism-scene/0.1','rule_version':RULE_VERSION,'rules':RULES,'style':style,'mechanism_sha256':canonical_hash(mechanism),'width_pt':width,'height_pt':height,'states':[],'flows':[],'connectors':[],'texts':[],'layout_diagnostics':{'columns':columns,'row_heights_pt':row_heights,'rejected_plans':rejections},'source_geometry':'provided intrinsic geometry; native qualification is established by the adapter execution receipt, not asserted by Composer'}
     scene['texts'].append({'text':'Reaction mechanism','position':[margin,margin+font],'font_pt':font})
+    if head_metrics is not None:scene['native_head_metrics']={k:head_metrics[k] for k in ('bond_pt','font_pt','head_size','conservative_forward_extension_pt','source_sha256')}
     origins={};sizes={};row_y=margin+header
     for row,start in enumerate(range(0,len(packed),columns)):
         left_to_right=(style['first_row_direction']=='left_to_right') == (row%2==0)
@@ -197,7 +221,7 @@ def compose(mechanism,style,geometry):
             pairs=lone_pair_ports(state,components,B);placed={'id':sid,'origin':[x,y],'row':row,'column':column,'components':components,'lone_pairs':pairs,'native_source_sha256':geometry[sid]['source_sha256']};scene['states'].append(placed);origins[sid]=(x,y);sizes[sid]=(panel_width,row_heights[row])
             for line,text in enumerate(entry['labels']):scene['texts'].append({'text':text,'position':[x,y+(line+1)*font*1.2],'font_pt':font})
             for line,text in enumerate(entry['step_labels']):scene['texts'].append({'text':text,'position':[x,y+entry['height']-entry['step_height']+(line+1)*font*1.2],'font_pt':font})
-            if sid in outgoing:scene['flows']+=route_flows(state,outgoing[sid]['electron_flows'],components,pairs,B)
+            if sid in outgoing:scene['flows']+=route_flows(state,outgoing[sid]['electron_flows'],components,pairs,B,head_extension,style['stroke_pt'],72/style['minimum_native_dpi'])
         row_y+=row_heights[row]+row_gap
     state_index={s['id']:s for s in scene['states']}
     for transition in transitions:

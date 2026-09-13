@@ -30,6 +30,19 @@ def unique(rows, key="id"):
     return {r[key]: r for r in rows}
 
 
+def acyclic_references(rows, field, message):
+    """Reject missing/self/cyclic parent links; a shared ancestor is valid."""
+    visiting = set(); finished = set()
+    def visit(identity):
+        require(identity in rows, message + ": missing reference")
+        require(identity not in visiting, message + ": cycle")
+        if identity in finished: return
+        visiting.add(identity)
+        for parent in rows[identity][field]: visit(parent)
+        visiting.remove(identity); finished.add(identity)
+    for identity in rows: visit(identity)
+
+
 def syntax(kind, value):
     import math
     def finite(x):
@@ -194,6 +207,7 @@ def mechanism(value):
 def annotation(value):
     syntax("annotation", value)
     require(sorted(r["name"] for r in value["layers"]) == sorted(LAYERS), "all eight annotation layers exactly once")
+    acyclic_references({r["name"]:r for r in value["layers"]}, "depends_on", "annotation layer dependency")
     actors = unique(value["actors"]); reviews = unique(value["reviews"]); unique(value["observations"])
     for review in reviews.values():
         require(review["actor_ref"] in actors and actors[review["actor_ref"]]["kind"] == "human", "accepted reviews must be actual human records")
@@ -218,17 +232,21 @@ def manifest(value):
             require(not any(e["known_to"] in ("development", "tuning") for e in sample["exposure_log"]), "exposure history contradicts unseen label")
         require(sample["source"]["kind"] != "schema_probe" or sample["tier"] != "gold", "schema proof cannot become gold")
         require(sample["mechanism_asset_ref"] in assets, "missing IR artifact")
+        require(assets[sample["mechanism_asset_ref"]]["kind"] == "ir" and assets[sample["mechanism_asset_ref"]]["mime"] == "application/json", "mechanism asset kind/MIME mismatch")
         generation = set(sample["generation_asset_refs"]); oracle = set(sample["oracle_asset_refs"])
         require(generation <= set(assets) and oracle <= set(assets) and not generation & oracle, "generation/oracle asset boundary")
         if sample["task_mode"] == "anti_selection":
             require(generation and oracle and all(assets[i]["kind"] == "substrate_input" for i in generation), "anti selection cannot receive complete answer IR")
-        if sample["annotation_asset_ref"] is not None: require(sample["annotation_asset_ref"] in assets, "missing annotation artifact")
+        if sample["annotation_asset_ref"] is not None:
+            require(sample["annotation_asset_ref"] in assets, "missing annotation artifact")
+            require(assets[sample["annotation_asset_ref"]]["kind"] == "annotation" and assets[sample["annotation_asset_ref"]]["mime"] == "application/json", "annotation asset kind/MIME mismatch")
         frames = {}
         for asset in assets.values():
             require(asset["rights_ref"] in rights, "unknown asset rights")
             for frame in asset["frames"]:
                 require(frame["id"] not in frames, "duplicate frame ID"); frames[frame["id"]] = frame
             require(set(asset["derived_from"]) <= set(assets), "missing parent asset")
+        acyclic_references(assets, "derived_from", "asset lineage")
         for frame in frames.values():
             require(frame["parent_frame_ref"] is None or frame["parent_frame_ref"] in frames, "unknown parent frame")
             require((frame["parent_frame_ref"] is None) == (frame["to_parent_affine"] is None), "frame transform relation missing")
@@ -298,7 +316,7 @@ def correction(value):
         require(all(c["status"] == "unique" for c in value["correspondences"]), "unresolved identity prevents correction diff")
 
     for side in ("before", "after"):
-        known = {a["asset_ref"]:a["sha256"] for a in value[side+"_artifacts"]}
+        known = {k:a["sha256"] for k,a in unique(value[side+"_artifacts"], "asset_ref").items()}
         for c in value["correspondences"]:
             require(all(known.get(l["asset_ref"]) == l["asset_sha256"] for l in c[side+"_locators"]), "correction locator not bound to artifact")
     for o in value["operations"]:
@@ -345,7 +363,9 @@ def bundle(directory):
     directory = Path(directory).resolve()
     registry = json.loads((directory/"proof-manifest.json").read_text())
     partitions = json.loads((directory/"split-manifest.json").read_text())
-    manifest(registry); split(partitions)
+    registry_result = manifest(registry); split(partitions)
+    require(partitions["corpus_revision"] == registry["revision"], "split corpus revision mismatch")
+    require(partitions["policy_version"] == registry["policy_version"], "split policy version mismatch")
     assignments = {a["sample_id"]:a for a in partitions["assignments"]}
     require(set(assignments) == {s["id"] for s in registry["samples"]}, "split sample inventory")
     results = []; local_assets = 0; external_assets = 0
@@ -364,6 +384,7 @@ def bundle(directory):
             local_assets += 1
             if asset["mime"] == "application/json": documents[asset["id"]] = json.loads(data)
         ir = documents[sample["mechanism_asset_ref"]]
+        require(ir["id"] == sample["id"], "IR/sample identity mismatch")
         result = mechanism(ir); result["sample_id"] = sample["id"]; results.append(result)
         if sample["annotation_asset_ref"]:
             value = documents[sample["annotation_asset_ref"]]; annotation(value)
@@ -378,7 +399,7 @@ def bundle(directory):
                 artifact = assets.get(observation["asset_ref"])
                 require(artifact and artifact["sha256"] == observation["asset_sha256"], "annotation artifact binding")
                 require(observation["frame_ref"] in {f["id"] for f in artifact["frames"]}, "annotation frame not in referenced artifact")
-    return {"status":"pass","mechanisms":results,"local_assets_hash_checked":local_assets,"external_asset_bindings_only":external_assets,"gold_samples":0,"fresh_native_execution":False}
+    return {"status":"pass","mechanisms":results,"local_assets_hash_checked":local_assets,"external_asset_bindings_only":external_assets,"gold_samples":registry_result["gold_samples"],"fresh_native_execution":False}
 
 
 CHECKERS = {"mechanism-ir": mechanism, "annotation": annotation, "corpus-manifest": manifest, "correction-record": correction, "split-manifest": split}
