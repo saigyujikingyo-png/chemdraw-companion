@@ -1,6 +1,6 @@
 # Chembridge scope for this product
 
-Chembridge develops independent university convenience plugins, professional software plugins and general-agent workflows. Read DEVELOPMENT_PRINCIPLES.md, rule version 2026-09-12.4.
+Chembridge develops independent university convenience plugins, professional software plugins and general-agent workflows. Read DEVELOPMENT_PRINCIPLES.md, rule version 2026-09-13.2.
 
 This repository contains only the proposed ChemDraw Companion. Origin Companion is a separate product and runtime. Its public architectural reference is origin-agent-bridge commit 85b6d333f09374913a66cd1b3e939719dc3a3639; its acceptance results do not transfer to ChemDraw.
 
