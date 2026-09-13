@@ -10,23 +10,71 @@ if(Test-Path -LiteralPath $run){throw 'Output directory exists.'}
 [void][IO.Directory]::CreateDirectory($run)
 function Record($stage,$detail){[ordered]@{utc=[DateTime]::UtcNow.ToString('o');stage=$stage;detail=$detail}|ConvertTo-Json -Depth 12 -Compress|Add-Content -LiteralPath (Join-Path $run 'events.jsonl') -Encoding utf8;Write-Host $stage}
 function Save-Checked($doc,$name){$r=[NativeChemDraw]::Save($doc,(Join-Path $run $name),'text/xml',600);Record 'save_return' $r;if(!$r.Exists -or $r.Bytes -le 0){throw "Missing artifact: $name"}}
+function Get-GraphAttributes([string]$file){
+    [xml]$xml=[IO.File]::ReadAllText($file)
+    $rows=@($xml.SelectNodes('//n | //b') | Sort-Object Name,@{Expression={$_.GetAttribute('id')}} | ForEach-Object {
+        $attributes=[ordered]@{}
+        foreach($attribute in ($_.Attributes | Sort-Object Name)){$attributes[$attribute.Name]=$attribute.Value}
+        [ordered]@{tag=$_.Name;attributes=$attributes}
+    })
+    return ConvertTo-Json -InputObject $rows -Depth 8 -Compress
+}
 function Save-AtomReadback($doc,[string]$name,[string]$nativeFile){
     $path=Join-Path $run $name
-    $readback=[ordered]@{
-        version='native-atom-readback/0.1'
-        observation='Raw COM properties from the current native document after cleanup and serialization; not an independent disk reopen. NumImplicitHydrogens is not qualified as a total hydrogen-count oracle.'
-        source_cdxml_sha256=(Get-FileHash -LiteralPath $nativeFile).Hash.ToLowerInvariant()
-        atoms=@($doc.Atoms|ForEach-Object{[ordered]@{
-            native_id=$_.ID
-            atom_map=$_.AtomNumber
-            atomic_number=$_.ElementNumber
-            formal_charge=$_.Charge
-            implicit_h_native_value=$_.NumImplicitHydrogens
+    $graphBefore=Get-GraphAttributes $nativeFile
+    $chemicalBefore=[string][NativeChemDraw]::Data($doc,'chemical/x-smiles')
+    $atomRows=@($doc.Atoms|ForEach-Object{
+        $atom=$_
+        $row=[ordered]@{
+            native_id=$atom.ID
+            atom_map=$atom.AtomNumber
+            atomic_number=$atom.ElementNumber
+            formal_charge=$atom.Charge
+            implicit_h_native_value=$atom.NumImplicitHydrogens
             implicit_h_native_property='IChemDrawAtom.NumImplicitHydrogens'
-            isotope=$_.Isotope
-            radical_native_value=[int]$_.Radical
-            radical_native_name=$_.Radical.ToString()
-        }})
+            node_type_native_value=[int]$atom.NodeType
+            implicit_h_allowed=$atom.ImplicitHydrogensAllowed
+            abnormal_valence_allowed=$atom.AbnormalValenceAllowed
+            used_valences=$atom.UsedValences
+            unused_valences=$atom.UnusedValences
+            isotope=$atom.Isotope
+            radical_native_value=[int]$atom.Radical
+            radical_native_name=$atom.Radical.ToString()
+        }
+        if($atom.ElementNumber -eq 6 -and $atom.Charge -eq 0 -and $atom.Isotope -eq 0 -and [int]$atom.Radical -eq 0){
+            $doc.Objects.Unselect()
+            $atom.Selected=$true
+            $selection=$doc.Selection.Objects
+            $row.selected_count=$selection.Count
+            $row.selected_atom_count=$doc.Selection.Atoms.Count
+            $row.selected_bond_count=$doc.Selection.Bonds.Count
+            $row.selected_atom_ids=@($doc.Selection.Atoms | Select-Object -ExpandProperty ID)
+            if($row.selected_count -eq 1 -and $row.selected_atom_count -eq 1 -and $row.selected_bond_count -eq 0 -and $row.selected_atom_ids.Count -eq 1 -and $row.selected_atom_ids[0] -eq $atom.ID){
+                $row.selected_formula_html=$selection.FormulaHTML
+            }else{$row.selection_rejection='AMBIGUOUS_NATIVE_SELECTION'}
+        }
+        $row
+    })
+    $doc.Objects.Unselect()
+    $chemicalAfter=[string][NativeChemDraw]::Data($doc,'chemical/x-smiles')
+    if([string]::IsNullOrWhiteSpace($chemicalBefore) -or $chemicalBefore -ne $chemicalAfter){throw 'Native chemical export changed during atom selection readback.'}
+    $afterName=[IO.Path]::GetFileNameWithoutExtension($nativeFile)+'-selection-after.cdxml'
+    Save-Checked $doc $afterName
+    $afterFile=Join-Path $run $afterName
+    if($graphBefore -cne (Get-GraphAttributes $afterFile)){throw 'Native atom/bond attributes changed during atom selection readback.'}
+    $hasher=[Security.Cryptography.SHA256]::Create()
+    try{$chemicalHash=([BitConverter]::ToString($hasher.ComputeHash([Text.Encoding]::UTF8.GetBytes($chemicalBefore)))).Replace('-','').ToLowerInvariant()}finally{$hasher.Dispose()}
+    $readback=[ordered]@{
+        version='native-atom-readback/0.4'
+        observation='Atom-associated native properties and selected-object FormulaHTML after cleanup and serialization; not an independent disk reopen. NumImplicitHydrogens and UnusedValences are not universal hydrogen-count oracles.'
+        source_cdxml_sha256=(Get-FileHash -LiteralPath $nativeFile).Hash.ToLowerInvariant()
+        chemical_export_mime='chemical/x-smiles'
+        selection_chemical_export_unchanged=$true
+        chemical_export_before_sha256=$chemicalHash
+        chemical_export_after_sha256=$chemicalHash
+        selection_graph_unchanged=$true
+        selection_after_cdxml=@{file=$afterName;sha256=(Get-FileHash -LiteralPath $afterFile).Hash.ToLowerInvariant()}
+        atoms=$atomRows
     }
     [IO.File]::WriteAllText($path,($readback|ConvertTo-Json -Depth 12),[Text.UTF8Encoding]::new($false))
     Record 'native_atom_readback' @{file=$name;source_cdxml_sha256=$readback.source_cdxml_sha256;sha256=(Get-FileHash -LiteralPath $path).Hash.ToLowerInvariant();atoms=$readback.atoms.Count}
@@ -35,6 +83,8 @@ function Save-AtomReadback($doc,[string]$name,[string]$nativeFile){
 $app=$null;$owned=[Collections.Generic.List[object]]::new();$failed=$false
 $manifestPath=Join-Path $InputDirectory 'geometry-manifest.json';$seedPath=Join-Path $InputDirectory 'seed-provenance.json'
 $manifest=Get-Content -LiteralPath $manifestPath -Raw|ConvertFrom-Json
+$seedRecord=Get-Content -LiteralPath $seedPath -Raw|ConvertFrom-Json
+if($seedRecord.PSObject.Properties.Name -contains 'depiction_plan_sha256'){$IncludeAtomReadback=$true}
 $receipt=[ordered]@{version='native-geometry-receipt/0.1';status='running';operation='ChemDraw.Objects.Clean(true)';run_id=[guid]::NewGuid().ToString();started_utc=[DateTime]::UtcNow.ToString('o');manifest_sha256=(Get-FileHash -LiteralPath $manifestPath).Hash.ToLowerInvariant();seed_provenance_sha256=(Get-FileHash -LiteralPath $seedPath).Hash.ToLowerInvariant();environment=$null;artifacts=@()}
 $receiptPath=Join-Path $run 'native-geometry-receipt.json'
 $receipt|ConvertTo-Json -Depth 12|Set-Content -LiteralPath $receiptPath -Encoding utf8

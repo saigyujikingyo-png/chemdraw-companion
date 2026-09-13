@@ -1,0 +1,408 @@
+{
+  "version": "native-hydrogen-readback-qualification/0.2",
+  "runtime_parent_commit": "c37fa926ac3aa33dfc2348dd3355c975595cb137",
+  "architecture_observation_commit": "30fd0bc9b94350f64d843b06b925d1833d60cc49",
+  "native_build": "26.0.0.6141",
+  "interop_version": "22.0.0.0",
+  "profile": "native-carbon-selection-formula-h/0.1",
+  "sidecar_version": "native-atom-readback/0.4",
+  "value_source": "Native Document.Selection.Objects.FormulaHTML; no expected IR, UnusedValences or NumImplicitHydrogens substitution.",
+  "scope": "Normal neutral non-isotopic non-ring carbon, H0-3, positive integer bond valence; exactly one selected atom/object and zero selected bonds. At most one native explicit H or D neighbor, single-bonded and otherwise isolated, with explicit label H0 and charge0. Other missing-H profiles remain unknown. Existing explicit CDXML H remains independent.",
+  "binding": "Completed qualified local executor receipt -> sidecar SHA -> source and after-selection CDXML SHAs -> exact atom/bond attributes and endpoints, native ID/map/element/charge/isotope and full observation coverage; unchanged whole-document native SMILES.",
+  "trust_boundary": "Local execution and journals, not cryptographic attestation against an attacker able to rewrite the executor and receipts.",
+  "controls": [
+    {
+      "control": "ethene",
+      "file": "state-000.cdxml",
+      "warnings": 0,
+      "native_cdxml_sha256": "9fca3d2cb0fb1cffbaa451a131b46253299b62e82d9cfcbcdb0109d26f3b1ceb",
+      "sidecar_sha256": "373059a77729447b17c58c80a23da52402e0fc650fca366f89ca6981fede1944",
+      "after_selection_cdxml_sha256": "3611b71c29cc3592f5abdec1bca16b96f8593820283e9e588f117b69b7b7b326",
+      "exact_graph_and_identity_binding_verified": true,
+      "unchanged_native_smiles": true,
+      "independent_disk_reopen": false,
+      "carbon_selections": [
+        {
+          "native_id": 100,
+          "atom_map": "11",
+          "selected_count": 1,
+          "selected_atom_count": 1,
+          "selected_bond_count": 0,
+          "selected_formula_html": "CH<sub>2</sub><sup>2&bull;</sup>"
+        },
+        {
+          "native_id": 101,
+          "atom_map": "27",
+          "selected_count": 1,
+          "selected_atom_count": 1,
+          "selected_bond_count": 0,
+          "selected_formula_html": "CH<sub>2</sub><sup>2&bull;</sup>"
+        }
+      ],
+      "status": "native_identity_control_pass",
+      "fallback_qualified": true,
+      "fallback_observations": [
+        {
+          "control": "ethene",
+          "atom_map": 11,
+          "observed_h": 2,
+          "source": "Document.Selection.Objects.FormulaHTML; native-carbon-selection-formula-h/0.1"
+        },
+        {
+          "control": "ethene",
+          "atom_map": 27,
+          "observed_h": 2,
+          "source": "Document.Selection.Objects.FormulaHTML; native-carbon-selection-formula-h/0.1"
+        }
+      ]
+    },
+    {
+      "control": "ethyne",
+      "file": "state-001.cdxml",
+      "warnings": 0,
+      "native_cdxml_sha256": "75e7ede6f0764a5988b92e8f9873624d14cb9f44f61248f08202122321542044",
+      "sidecar_sha256": "edf0c000be358aad2c0a926bbb2f00de9cc2b98fa43691bdcbb2dd42c861a30c",
+      "after_selection_cdxml_sha256": "86f0d9ea46c11f5a8ffde97a9f61af6b8691289fdad9064283430cd51a4b8463",
+      "exact_graph_and_identity_binding_verified": true,
+      "unchanged_native_smiles": true,
+      "independent_disk_reopen": false,
+      "carbon_selections": [
+        {
+          "native_id": 100,
+          "atom_map": "11",
+          "selected_count": 1,
+          "selected_atom_count": 1,
+          "selected_bond_count": 0,
+          "selected_formula_html": "CH<sup>3&bull;</sup>"
+        },
+        {
+          "native_id": 101,
+          "atom_map": "27",
+          "selected_count": 1,
+          "selected_atom_count": 1,
+          "selected_bond_count": 0,
+          "selected_formula_html": "CH<sup>3&bull;</sup>"
+        }
+      ],
+      "status": "native_identity_control_pass",
+      "fallback_qualified": true,
+      "fallback_observations": [
+        {
+          "control": "ethyne",
+          "atom_map": 11,
+          "observed_h": 1,
+          "source": "Document.Selection.Objects.FormulaHTML; native-carbon-selection-formula-h/0.1"
+        },
+        {
+          "control": "ethyne",
+          "atom_map": 27,
+          "observed_h": 1,
+          "source": "Document.Selection.Objects.FormulaHTML; native-carbon-selection-formula-h/0.1"
+        }
+      ]
+    },
+    {
+      "control": "fluoromethane",
+      "file": "state-002.cdxml",
+      "warnings": 0,
+      "native_cdxml_sha256": "cd7763ca449e32594fa6f66db776542d86bacb4a836af09d555616f9dd4a1b8a",
+      "sidecar_sha256": "801dbefe7bd54d7c9067a030c4d607fc8f4227c1239580ef03c396ee1af6f4ff",
+      "after_selection_cdxml_sha256": "2e5e4be56f9dc22382914402f80b4a9ebf86bc0c94acc837ad1c07e3697315e4",
+      "exact_graph_and_identity_binding_verified": true,
+      "unchanged_native_smiles": true,
+      "independent_disk_reopen": false,
+      "carbon_selections": [
+        {
+          "native_id": 100,
+          "atom_map": "11",
+          "selected_count": 1,
+          "selected_atom_count": 1,
+          "selected_bond_count": 0,
+          "selected_formula_html": "CH<sub>3</sub><sup>&bull;</sup>"
+        }
+      ],
+      "status": "native_identity_control_pass",
+      "fallback_qualified": true,
+      "fallback_observations": [
+        {
+          "control": "fluoromethane",
+          "atom_map": 11,
+          "observed_h": 3,
+          "source": "Document.Selection.Objects.FormulaHTML; native-carbon-selection-formula-h/0.1"
+        }
+      ]
+    },
+    {
+      "control": "tetrafluorocarbon",
+      "file": "state-003.cdxml",
+      "warnings": 0,
+      "native_cdxml_sha256": "75c0d2d8f594113d4961ae528cff1c142041abc451be0224e9922d5386dcca93",
+      "sidecar_sha256": "301a27e43cb4b327c774b1d9cabe5a668773732209aa8729ae7e9bcd0384c82c",
+      "after_selection_cdxml_sha256": "26836df7a8a5f7b460135a55fb42f7207747e4fa708914115d937414e2c7725c",
+      "exact_graph_and_identity_binding_verified": true,
+      "unchanged_native_smiles": true,
+      "independent_disk_reopen": false,
+      "carbon_selections": [
+        {
+          "native_id": 100,
+          "atom_map": "11",
+          "selected_count": 1,
+          "selected_atom_count": 1,
+          "selected_bond_count": 0,
+          "selected_formula_html": "C<sup>4&bull;</sup>"
+        }
+      ],
+      "status": "native_identity_control_pass",
+      "fallback_qualified": true,
+      "fallback_observations": [
+        {
+          "control": "tetrafluorocarbon",
+          "atom_map": 11,
+          "observed_h": 0,
+          "source": "Document.Selection.Objects.FormulaHTML; native-carbon-selection-formula-h/0.1"
+        }
+      ]
+    },
+    {
+      "control": "methane",
+      "file": "state-004.cdxml",
+      "warnings": 1,
+      "native_cdxml_sha256": "d5addabebbe9db9313fa19aaf23783e346c82b3db35fb014a34caa5bc3e457e4",
+      "sidecar_sha256": "24e8f8235e4a4c1932e622ac17e8d1d5a23a6ab7eace031a86bf7e5a9859017c",
+      "after_selection_cdxml_sha256": "b326d6f64f0bd775c7b32b65e31da716b25c2d33e505777bb15fd2630bc6686e",
+      "exact_graph_and_identity_binding_verified": true,
+      "unchanged_native_smiles": true,
+      "independent_disk_reopen": false,
+      "carbon_selections": [
+        {
+          "native_id": 100,
+          "atom_map": "11",
+          "selected_count": 2,
+          "selected_atom_count": 1,
+          "selected_bond_count": 0,
+          "selection_rejection": "AMBIGUOUS_NATIVE_SELECTION"
+        }
+      ],
+      "status": "warning_and_ambiguous_selection_excluded",
+      "fallback_qualified": false
+    },
+    {
+      "control": "explicit-deuterium",
+      "file": "state-005.cdxml",
+      "warnings": 0,
+      "native_cdxml_sha256": "dd55ad99f898aba28a5c4b3eb52be967991d6f8212e78f70b0b2e5454669aa5b",
+      "sidecar_sha256": "f561c0d2fbda36b7c2a4467f1d6a4ac7da8e0d97d569e128874a66265e53520e",
+      "after_selection_cdxml_sha256": "0859eaf80f755b60827612fafc398fe8ba5b385cfabdcf9c211fed392da023fe",
+      "exact_graph_and_identity_binding_verified": true,
+      "unchanged_native_smiles": true,
+      "independent_disk_reopen": false,
+      "carbon_selections": [
+        {
+          "native_id": 100,
+          "atom_map": "11",
+          "selected_count": 1,
+          "selected_atom_count": 1,
+          "selected_bond_count": 0,
+          "selected_formula_html": "CH<sub>2</sub><sup>2&bull;</sup>"
+        }
+      ],
+      "status": "native_identity_control_pass",
+      "fallback_qualified": true,
+      "fallback_observations": [
+        {
+          "control": "explicit-deuterium",
+          "atom_map": 11,
+          "observed_h": 2,
+          "source": "Document.Selection.Objects.FormulaHTML; native-carbon-selection-formula-h/0.1"
+        }
+      ]
+    },
+    {
+      "control": "explicit-hydrogen",
+      "file": "state-006.cdxml",
+      "warnings": 0,
+      "native_cdxml_sha256": "770ff0ab5460c9b4e86c9c26b358e5481edb28d757f15c197309ff3250eb335c",
+      "sidecar_sha256": "4f47fc9cb54f67d00835d30248bd7ed7b334c62b70edc8023f7518233f4a9909",
+      "after_selection_cdxml_sha256": "8552ca586e950f872ba27047d6470869a4f09e491dd1558df3226b479496e4b5",
+      "exact_graph_and_identity_binding_verified": true,
+      "unchanged_native_smiles": true,
+      "independent_disk_reopen": false,
+      "carbon_selections": [
+        {
+          "native_id": 100,
+          "atom_map": "11",
+          "selected_count": 1,
+          "selected_atom_count": 1,
+          "selected_bond_count": 0,
+          "selected_formula_html": "CH<sub>2</sub><sup>2&bull;</sup>"
+        }
+      ],
+      "status": "native_identity_control_pass",
+      "fallback_qualified": true,
+      "fallback_observations": [
+        {
+          "control": "explicit-hydrogen",
+          "atom_map": 11,
+          "observed_h": 2,
+          "source": "Document.Selection.Objects.FormulaHTML; native-carbon-selection-formula-h/0.1"
+        }
+      ]
+    }
+  ],
+  "qualified_carbon_observations": 8,
+  "warning_free_controls": 6,
+  "excluded_warned_controls": 1,
+  "explicit_h_d_result": "Separate C-F-H and C-F-D native controls returned CH2 rather than total attached H3; the graph retains the explicit H/D separately. No coordinate or chemistry repair.",
+  "h4_result": "Methane has one native warning and Objects.Count2; rejected before FormulaHTML. H4 fallback unqualified.",
+  "aromatic_result": "All ring atoms, including Kekulized aromatic carbons, are conservatively outside this fallback; no aromaticity legality rule added.",
+  "native_control_receipt_sha256": "2185aa765e55346314d0406efef986f5593b85f7cf89b41fc7abc4e0b9b66f75",
+  "regression": {
+    "status": "pass",
+    "inventory_test_count": 74,
+    "tests_run": 41,
+    "passed_count": 41,
+    "excluded_count": 12,
+    "unscheduled_count": 21
+  },
+  "blocked_payload_reads": [],
+  "native_integration": {
+    "control": "Unchanged independent bond-to-nonendpoint synthetic request",
+    "request_sha256": "7c3e033d3839784d2b7fff99f07982455b2798d35c53b612d180bef689e07691",
+    "source_request_unchanged": true,
+    "status": "candidate_artifacts_ready",
+    "native_disk_reopen": "pass",
+    "stages": [
+      {
+        "stage": "seed",
+        "status": "completed",
+        "exit_code": 0,
+        "elapsed_seconds": 0.15599999998812564
+      },
+      {
+        "stage": "fragments",
+        "status": "completed",
+        "exit_code": 0,
+        "elapsed_seconds": 4.110000000015134
+      },
+      {
+        "stage": "compose",
+        "status": "completed",
+        "exit_code": 0,
+        "elapsed_seconds": 0.28099999998812564
+      },
+      {
+        "stage": "native",
+        "status": "completed",
+        "exit_code": 0,
+        "elapsed_seconds": 5.594000000011874
+      }
+    ],
+    "formula_fallback_observations": [
+      {
+        "state": "a",
+        "atom_map": "1",
+        "observed_h": 2,
+        "source": "Document.Selection.Objects.FormulaHTML; native-carbon-selection-formula-h/0.1"
+      },
+      {
+        "state": "a",
+        "atom_map": "2",
+        "observed_h": 2,
+        "source": "Document.Selection.Objects.FormulaHTML; native-carbon-selection-formula-h/0.1"
+      },
+      {
+        "state": "b",
+        "atom_map": "1",
+        "observed_h": 2,
+        "source": "Document.Selection.Objects.FormulaHTML; native-carbon-selection-formula-h/0.1"
+      }
+    ],
+    "receipt_sha256": "6c38797ad74ffd569d8f066b183a1b3c1603ff5f121398e6e0c8c4b319ff194e",
+    "artifacts": [
+      {
+        "file": "native-fragments/native-geometry-receipt.json",
+        "sha256": "81ddb8b1305ee6e26bb73f5ec50fb2b1e4a914a3363a402e85f3d67b722019ec"
+      },
+      {
+        "file": "native-fragments/state-000.atoms.json",
+        "sha256": "8b80f0785f71a9084ef6c13d5a08c2c0645d6215d8c2865eb6e0e41c9a2c5802"
+      },
+      {
+        "file": "native-fragments/state-001.atoms.json",
+        "sha256": "171185fa772dc86759cec1948dfbb06737b230ec91cc5e272143ee0acd0c0228"
+      },
+      {
+        "file": "native-fragments/state-000-selection-after.cdxml",
+        "sha256": "5a591a68f85c600a1f9ba256a469d7b987ed4bf7406949f526659ab26912e5e4"
+      },
+      {
+        "file": "native-fragments/state-001-selection-after.cdxml",
+        "sha256": "6c776cbc4b5a112ea5f8229c81463ffc033f41307f293a0c9e58ed92c0dbe1e0"
+      },
+      {
+        "file": "native/candidate.native.cdx",
+        "sha256": "7c7c1be9ca5308ff1676e8aa32ab33ccce1683e93232d20d414162e20c8e9f90"
+      },
+      {
+        "file": "native/candidate.native.cdxml",
+        "sha256": "b834bc12d41175ec8baab44d5b8b0c61f63d7c2253c78b4b0b6cfa062ddd5175"
+      },
+      {
+        "file": "native/candidate.cdx-readback.cdxml",
+        "sha256": "d52cdb3bc597d5f5aa4b9befd562acae7beaff1f735659fb0ac7f3de74b5e2ae"
+      },
+      {
+        "file": "native/candidate.cdxml-readback.cdxml",
+        "sha256": "4aa77d0da316a6d1b3157a511c9e3bd17f1723f363e4850e21ccdfa0a785eea4"
+      }
+    ]
+  },
+  "code_hashes": [
+    {
+      "file": "probes/native-ir-fragments.ps1",
+      "sha256": "761e7b41caac106a784236312172c94d2476f72fc598d9cadbec970e7d4b73b2"
+    },
+    {
+      "file": "probes/make_hydrogen_readback_controls.py",
+      "sha256": "4afd2f976b3d1f855ce3ce133f59486cf43c00b9795e9c7f58d5d0f7e75d917f"
+    },
+    {
+      "file": "runtime/adapters/cdxml_atom_identity.py",
+      "sha256": "c1c3d40eb4efceb6f7800c5efa4a5a5ca69516cb2300fa65d9f5d57623c390e8"
+    },
+    {
+      "file": "runtime/adapters/chemdraw_cdxml.py",
+      "sha256": "ab984b5d3a1c69286cc836e92668efb744060a07d972de285293715b7ad69646"
+    },
+    {
+      "file": "runtime/native_provenance.py",
+      "sha256": "37e6387137e9c5a4bf25b3b82b370a06e38810cc09767906cf8c86953f13f0e0"
+    },
+    {
+      "file": "tests/test_cdxml_atom_identity.py",
+      "sha256": "09ca3289d30c765b6b37fef096bd2617cbbc050a1f46eff0416420e28f193418"
+    },
+    {
+      "file": "tests/test_ir_v02_runtime.py",
+      "sha256": "4c5cc70e75f8bc86c041bb311a9286ef0143710ecb4c54918c71a58f86077f39"
+    }
+  ],
+  "retained_history": {
+    "prior_investigation_receipt_sha256": "31606d305fcd513fda2c473e29cd6ba4683bb6bdf3e69fb9803cb82fcdc00b69",
+    "dispatch_failures": [
+      "Selection.Item",
+      "Selection.Formula"
+    ],
+    "provisional_unused_valence_profile": "Superseded; raw artifacts retained, not delivered as H authority.",
+    "sidecar_0_3": "Superseded by exact graph and selection-bond validation in 0.4.",
+    "first_graph_guard_integration_failure_sha256": "1ca5661e7f835371f294ad5b907472d662c53be958d8e48050aeb609f0a28051",
+    "first_graph_guard_failure": "NATIVE_HYDROGEN_UNVERIFIED before explicit H/D qualification; no geometry tuning.",
+    "intermediate_h_d_success_sha256": "1ffbbba0d503771e915c7100292fc8386edfb4b31e50fe6f82308f6410d13fa6"
+  },
+  "private_candidate_or_target_accessed": false,
+  "protected_evaluation_chemistry_accessed": false,
+  "new_model_inference": false,
+  "layout_tuning": false,
+  "quality_acceptance": "not_implied",
+  "gold": 0
+}

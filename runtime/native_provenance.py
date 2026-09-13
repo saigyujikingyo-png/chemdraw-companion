@@ -7,6 +7,7 @@ from pathlib import Path
 import hashlib,json,math,re
 import xml.etree.ElementTree as ET
 from runtime.chemical_ir import canonical_hash
+from runtime.adapters.cdxml_atom_identity import verify_atom_readback
 
 
 def file_hash(path):return hashlib.sha256(Path(path).read_bytes()).hexdigest()
@@ -53,6 +54,7 @@ def verify_geometry_receipt(mechanism,style,manifest,input_folder,output_folder,
     artifacts={a['file']:a for a in receipt.get('artifacts',[])};seeds={a['file']:a for a in seed['inputs']}
     if len(seeds)!=len(seed['inputs']) or set(seeds)!={x['file'] for x in manifest}:raise ValueError('Seed coverage mismatch')
     if len(artifacts)!=len(receipt.get('artifacts',[])) or set(artifacts)!={x['file'] for x in manifest}:raise ValueError('Native receipt coverage mismatch')
+    atom_readbacks={}
     for entry in manifest:
         name=entry['file']
         if Path(name).name!=name or not name.endswith('.cdxml'):raise ValueError('Invalid receipt artifact name')
@@ -61,5 +63,16 @@ def verify_geometry_receipt(mechanism,style,manifest,input_folder,output_folder,
         if native.get('input_sha256')!=file_hash(input_folder/name) or seeds[name]['sha256']!=native['input_sha256']:raise ValueError('Native input hash mismatch')
         if native.get('output_sha256')!=file_hash(output_folder/name):raise ValueError('Native output hash mismatch')
         if native.get('before_sha256')!=file_hash(output_folder/(Path(name).stem+'-before.cdxml')):raise ValueError('Pre-clean native snapshot hash mismatch')
+        if depiction_plan and native.get('atom_readback'):
+            observation=native['atom_readback'];observation_name=observation.get('file','')
+            if Path(observation_name).name!=observation_name or observation_name!=Path(name).stem+'.atoms.json':raise ValueError('Invalid native atom observation filename')
+            if observation.get('sha256')!=file_hash(output_folder/observation_name):raise ValueError('Native atom observation hash mismatch')
+            value=read(output_folder/observation_name)
+            if value.get('source_cdxml_sha256')!=native['output_sha256']:raise ValueError('Native atom observation/source mismatch')
+            if value.get('version')=='native-atom-readback/0.4':
+                verify_atom_readback(output_folder/name,value)
+                atom_readbacks[name]=value
         check_style(input_folder/name,style);check_style(output_folder/name,style)
-    return {'receipt_sha256':file_hash(receipt_path),'source':'ChemDraw native Clean(true), bound to completed local execution receipt','environment':environment}
+    result={'receipt_sha256':file_hash(receipt_path),'source':'ChemDraw native Clean(true), bound to completed local execution receipt','environment':environment}
+    if depiction_plan:result['atom_readbacks']=atom_readbacks
+    return result

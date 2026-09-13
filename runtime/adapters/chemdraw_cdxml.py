@@ -102,7 +102,7 @@ def read_geometry(mechanism,manifest,folder,*,input_folder=None,style=None,depic
             visible_state={**states[sid],'bonds':plan['visible_bonds']}
             orders=kekule_orders(visible_state,expected_atoms)
             expected_bonds=[{**b,'order':orders[edge(b['atoms'])]} for b in plan['visible_bonds']]
-            measured=read_explicit_geometry(path,expected_atoms,expected_bonds)
+            measured=read_explicit_geometry(path,expected_atoms,expected_bonds,atom_readback=provenance.get('atom_readbacks',{}).get(entry['file']))
             for relation in mechanism['stereo_constraints']:
                 if sid in relation['states'] and not stereo_satisfied(relation,{i:a['position'] for i,a in measured['atoms'].items()}):raise NativeDepictionError('NATIVE_STEREO_CHANGED',sid,'Native cleanup did not preserve the declared stereo relation.')
             measured.update(source_sha256=hashlib.sha256(path.read_bytes()).hexdigest(),source=provenance['source'],native_execution=provenance)
