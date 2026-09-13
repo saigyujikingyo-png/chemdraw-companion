@@ -185,12 +185,73 @@ def native_comparable(snap, target=None):
     return value
 
 
-def compare(before, after, target=None):
+def derived_associations(before, comparison_copy, target, arrow_ids):
+    """Mask only an authorised derived target association in a comparison copy.
+
+    Never write these XML attributes to a native document/file. Exact source XML
+    remains intact. All other step attributes and object associations still diff.
+    """
+    if target is None or not arrow_ids:
+        return []
+    target = str(target)
+    aliases = set(map(str, arrow_ids))
+    def selected(root):
+        return [n for n in root.iter("step")
+                if n.get("ReactionStepArrows", "").split()
+                and set(n.get("ReactionStepArrows").split()) <= aliases]
+    old, new = selected(before), selected(comparison_copy)
+    if len(old) != 1 or len(new) != 1:
+        return []
+    a, b = old[0], new[0]
+    if not a.get("id") or a.get("id") != b.get("id") or a.get("ReactionStepArrows") != b.get("ReactionStepArrows"):
+        return []
+    changes = []
+    for key in ("ReactionStepObjectsAboveArrow", "ReactionStepObjectsBelowArrow"):
+        left, right = a.get(key), b.get(key)
+        if left == right:
+            continue
+        l_ids, r_ids = (left or "").split(), (right or "").split()
+        if (l_ids.count(target) not in (0, 1) or r_ids.count(target) not in (0, 1)
+                or l_ids.count(target) == r_ids.count(target)
+                or [i for i in l_ids if i != target] != [i for i in r_ids if i != target]):
+            continue
+        changes.append({"step_id": a.get("id"), "reaction_step_arrows": a.get("ReactionStepArrows"),
+                        "selected_arrow_aliases": sorted(aliases), "target_caption_id": target,
+                        "attribute": key, "before": left, "after": right,
+                        "classification": "native-derived target association; not no-edit normalization"})
+        if left is None:
+            b.attrib.pop(key, None)
+        else:
+            b.set(key, left)
+    return changes
+
+
+def initial_stereo_markers(before, comparison_copy):
+    """Only initial-export absent->N atom AS / bond BS additions; never edits XML files."""
+    old = {(n.tag, n.get('id')): n for n in before.iter() if n.get('id')}
+    changes = []
+    for node in comparison_copy.iter():
+        key = {'n': 'AS', 'b': 'BS'}.get(node.tag)
+        prior = old.get((node.tag, node.get('id')))
+        if key and prior is not None and key not in prior.attrib and node.get(key) == 'N':
+            changes.append({'tag': node.tag, 'id': node.get('id'), 'attribute': key,
+                            'before': None, 'after': 'N', 'stage': 'initial native export only'})
+            del node.attrib[key]
+    return changes
+
+
+def compare(before, after, target=None, arrow_ids=None, initial=False):
     a, b = read(before), read(after)
-    xml_diffs = diff(tree_value(xml_root(a["xml"]), target), tree_value(xml_root(b["xml"]), target))
+    old_root, comparison_copy = xml_root(a["xml"]), xml_root(b["xml"])
+    association = derived_associations(old_root, comparison_copy, target, arrow_ids)
+    initial_changes = initial_stereo_markers(old_root, comparison_copy) if initial else []
+    xml_diffs = diff(tree_value(old_root, target), tree_value(comparison_copy, target))
     native_diffs = diff(native_comparable(a, target), native_comparable(b, target))
-    return {"ok": not (xml_diffs or native_diffs), "xml_differences": xml_diffs,
-            "native_differences": native_diffs, "metadata_differences": diff(a["metadata"], b["metadata"]),
+    metadata_diff = diff(a["metadata"], b["metadata"])
+    return {"ok": not (xml_diffs or native_diffs or (initial and metadata_diff)), "xml_differences": xml_diffs,
+            "native_differences": native_diffs, "metadata_differences": metadata_diff,
+            "derived_association": association,
+            "initial_native_normalization": initial_changes,
             "allowed_target_position_id": target, "other_object_tolerance": 0}
 
 
@@ -271,6 +332,7 @@ def plan(req, snap):
             continue
         if not any(intersects(bb, o["bounds"], padding) for o in obstacles):
             return {"ok": True, "caption_id": cap["id"], "intent": intent,
+                    "selected_arrow_ids": arrow["xml_ids"],
                     "computed_anchor": [anchor[0] + dx, anchor[1] + dy], "delta": [dx, dy],
                     "before_anchor": anchor, "before_bounds": box, "expected_bounds": bb,
                     "native_bond_length": bond, "obstacle_padding": padding, "obstacles": obstacles,
@@ -281,7 +343,7 @@ def plan(req, snap):
 
 def verify_move(before, after, plan_file):
     motion = read(plan_file)
-    result = compare(before, after, motion["caption_id"])
+    result = compare(before, after, motion["caption_id"], motion["selected_arrow_ids"])
     post = next(c for c in read(after)["captions"] if c["id"] == motion["caption_id"])
     residuals = [a - b for a, b in zip(post["anchor"] + post["bounds"],
                                      motion["computed_anchor"] + motion["expected_bounds"])]
@@ -395,6 +457,11 @@ def main():
             result = compare(*args[:2], target=int(args[2]) if len(args) == 4 else None)
         elif operation == "verify-move":
             result = verify_move(*args[:3])
+        elif operation == "compare-movement-export":
+            motion = read(args[2])
+            result = compare(args[0], args[1], motion["caption_id"], motion["selected_arrow_ids"])
+        elif operation == "compare-initial-export":
+            result = compare(*args[:2], initial=True)
         elif operation == "preview":
             result = preview(args[0])
         else:

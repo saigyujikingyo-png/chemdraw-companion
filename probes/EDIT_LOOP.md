@@ -7,10 +7,10 @@ separate CLI calls. Default idle expiry is 20 minutes; maximum lifetime two hour
 All artifacts and receipts default to `.local/agent-edit-loop/<session_id>`.
 
 **Checkpoint status: source review and script checks, not Agent, visual, chemical
-or human acceptance.** No-edit save/reopen ran. The first above-arrow move still
-fails the strict non-target check: the native serializer adds the target ID to
-`step/@ReactionStepObjectsAboveArrow`. This derived-association contract decision
-is pending; the checker has not been relaxed and the failed attempt is preserved.
+or human acceptance.** The initial strict failure is retained: the native
+serializer added the target caption to `step/@ReactionStepObjectsAboveArrow`.
+The controller subsequently authorised the narrow derived-association rule below;
+the original failure, control A and earlier receipts are unchanged.
 
 Run one action per invocation. Provide a UTF-8 JSON request file:
 
@@ -55,6 +55,14 @@ BondLength upward or refuses a collision. It does not move structures/change fon
 Full native CDXML structure and native text/style readback protect every other
 object, without numeric tolerance. Only the target `t`'s `p`/`BoundingBox` may differ
 for a movement; target native-coordinate residuals are checked at 1e-6 absolute.
+One explicit exception is separately returned as `derived_association`: the
+target caption ID may be added/removed from Above/BelowArrow lists of the unique
+step bound only to the selected arrow's exact native/modern ID aliases. Removing
+the target ID must leave the same ordered list. All other step attributes,
+reactants/products, atom maps, object associations, geometry and styles still
+compare strictly. This code never edits these association attributes in ChemDraw;
+it only records native output and applies the narrow comparison rule. This is
+not called no-edit normalization or an unchanged-all-fields result.
 Document name/date/aggregate bounds and page bounds are separately recorded
 metadata. Save/reopen differences are reported in full, not hidden as a broad
 normalization tolerance. Run a separate `role:"no-edit-control"` copy through
@@ -63,6 +71,14 @@ Reopen validates a temporary new process/document before committing its context,
 then rechecks the old complete fingerprint immediately before closing the old
 document. External/uncertain old changes are preserved, including at worker exit.
 Tool-source hashes are returned, and source drift blocks further mutations.
+
+Initial open has one narrowly observed normalization allowance: native export
+may add `AS="N"` to an atom or `BS="N"` to a bond when that attribute was absent.
+Exact additions are returned as `initial_native_normalization`; other object or
+metadata differences refuse. A second PNG/read and a baseline comparison must
+then pass the ordinary strict check. This allowance never applies to subsequent
+edits, renders, saves or reopens. The controller's initial failure is retained;
+the implementation machine previously observed no such initial additions.
 
 Control A in `edit-loop-controls/` is original ordinary workflow data, with roles
 declared before native execution. No mechanism/holdout/055 input is used. Root's

@@ -91,13 +91,15 @@ function Capture([string]$base,$readApp=$app,$readDoc=$doc,$readBinding=$binding
     Json-Write ($base+'.native.json') $raw
     return Helper @('snapshot',$base,($base+'.snapshot.json'))
 }
-function Observe([string]$prefix,$movingTarget=$null){
+function Observe([string]$prefix,$movingTarget=$null,$motionPath=$null,[bool]$initialExport=$false){
     $base=Join-Path $run ('evidence/'+$prefix)
     $snap=Capture $base
     $png=Save-Native ($base+'.png') 'image/png'
     $after=Capture ($base+'-after-render')
     $compareArgs=@('compare',($base+'.snapshot.json'),($base+'-after-render.snapshot.json'))
-    if($null -ne $movingTarget){$compareArgs+=,[string]$movingTarget}
+    if($initialExport){$compareArgs=@('compare-initial-export',($base+'.snapshot.json'),($base+'-after-render.snapshot.json'))}
+    elseif($null -ne $motionPath){$compareArgs=@('compare-movement-export',($base+'.snapshot.json'),($base+'-after-render.snapshot.json'),$motionPath)}
+    elseif($null -ne $movingTarget){$compareArgs+=,[string]$movingTarget}
     $compareArgs+=,($base+'-render-check.json')
     $comparison=Helper -Arguments $compareArgs
     $preview=Helper @('preview',$png.path,($base+'-preview.json'))
@@ -131,8 +133,13 @@ try{
     $mime=if([IO.Path]::GetExtension($init.copy) -eq '.cdx'){'chemical/x-cdx'}else{'text/xml'}
     $doc=[NativeChemDraw]::Open($app,$init.copy,$mime)
     if(![NativeChemDraw]::ActivateAndVerify($app,$doc)){throw 'Native document activation/identity failed.'}
-    $last=Observe ($init.request.request_id+'-opened')
-    Write-Response $init.request @{ok=$true;status='opened-copy';native_write='copy/open/export only';source_sha256=$init.source_sha256;role=$init.request.role}
+    $initial=Observe ($init.request.request_id+'-initial') $null $null $true
+    # The baseline is the post-initial-export state. Repeat with the ordinary
+    # strict checker: initial AS/BS normalization is never allowed on later edits.
+    $last=Observe ($init.request.request_id+'-opened-stable')
+    $stability=Helper @('compare',$initial.snapshot_file,$last.snapshot_file,(Join-Path $run 'evidence/open-baseline-stability.json'))
+    if(!$stability.ok){throw 'Initial native export did not establish a stable complete-object baseline.'}
+    Write-Response $init.request @{ok=$true;status='opened-copy';native_write='copy/open/export only';source_sha256=$init.source_sha256;role=$init.request.role;initial_native_normalization=$initial.export_check;baseline_stability=$stability}
     :requests while(!$stop -and ([DateTime]::UtcNow-$lastActivity).TotalSeconds -lt $init.max_idle_seconds -and ([DateTime]::UtcNow-$born).TotalHours -lt 2){
         $pending=@(Get-ChildItem -LiteralPath (Join-Path $run 'inbox') -Filter '*.json'|Where-Object {!(Test-Path -LiteralPath (Join-Path $run ('replies/'+$_.Name)))}|Sort-Object CreationTimeUtc)
         if($pending.Count -eq 0){Start-Sleep -Milliseconds 120;continue requests}
@@ -177,7 +184,7 @@ try{
                     Record 'position_intent' $motion
                     $writeStarted=$true
                     [NativeChemDraw]::Position($matches[0],[double]$motion.computed_anchor[0],[double]$motion.computed_anchor[1])
-                    $revision++;$last=Observe ($q.request_id+'-positioned') $motion.caption_id
+                    $revision++;$last=Observe ($q.request_id+'-positioned') $motion.caption_id $planPath
                     $check=Helper @('verify-move',($pre.xml -replace '\.cdxml$','.snapshot.json'),$last.snapshot_file,$planPath,(Join-Path $run ('evidence/'+$q.request_id+'-check.json')))
                     $detail.motion=$motion;$detail.verification=$check
                     if(!$check.ok){$poisoned=$true;Write-Response $q @{ok=$false;reason='Post-write full object/position check failed; evidence preserved, session frozen';native_write=$true;detail=$detail};continue requests}
