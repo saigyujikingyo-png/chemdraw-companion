@@ -54,6 +54,6 @@ A migration receipt binds original bytes, policy, schema/code hashes, migrated o
 
 ## Regression and exclusion
 
-Tests cover general elements, alternative halogen/counterion combinations, chemical/display separation, typed captions, selected LPs, bond-to-nonendpoint-atom and bond-to-bond flows, LP donors, migration and leakage. Existing allowed proton-transfer/M1 and corpus controls remain compatible; historical evidence is not relabelled.
+Tests cover general elements, alternative halogen/counterion combinations, chemical/display separation, typed captions, selected LPs, bond-to-nonendpoint-atom and bond-to-bond flows, LP donors, migration and leakage. The receipted runtime-dialect proton-transfer control passed explicit migration, validation, compilation and lowering, and 28 archival corpus controls passed separately; runtime-dialect M1 compatibility is not established because no such IR was available in the bounded safe inventory. See the [API](../contracts/ir_v02/API.md) and [phase receipt](IR_V0_2_PHASE_RECEIPT.md) for scope and evidence; reproduce the focused contract controls with `python -B -m unittest contracts.ir_v02.test_ir_v02 contracts.paired.test_depiction_semantics`. Historical evidence is not relabelled.
 
 M2 Beckmann Snake, all descendants and future holdouts are excluded from this entire phase, including design, debugging, fixtures, rule derivation and acceptance. Exclusion tests use metadata-only sentinels, not protected chemistry. M1 is exposed development and has no new visual PASS without an actual qualifying rerun.
