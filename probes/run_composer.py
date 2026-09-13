@@ -17,6 +17,7 @@ def main():
     parser.add_argument('--seed', type=Path)
     parser.add_argument('--native', type=Path)
     parser.add_argument('--head-metrics', type=Path)
+    parser.add_argument('--semantic-qualification', type=Path)
     args = parser.parse_args()
     if args.out.exists():
         parser.error('Output directory exists; previous evidence is immutable.')
@@ -49,7 +50,7 @@ def main():
             phase = 'native_geometry_readback'
             manifest = json.loads((args.seed / 'geometry-manifest.json').read_text(encoding='utf-8'))
             geometry = read_geometry(mechanism, manifest, args.native, input_folder=args.seed,
-                                     style=style, depiction_plan=plan)
+                                     style=style, depiction_plan=plan,semantic_qualification=args.semantic_qualification)
             head = json.loads(args.head_metrics.read_text(encoding='utf-8')) if args.head_metrics else None
             phase = 'layout'
             scene = compose(mechanism, style, geometry, head, depiction_plan=plan)

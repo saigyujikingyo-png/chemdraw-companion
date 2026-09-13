@@ -1,0 +1,15 @@
+{
+  "version": "native-semantic-readback/1.0",
+  "status": "prospective_rules_require_separate_native_qualification",
+  "observer_version": "native-atom-readback/0.5",
+  "application_build": "26.0.0.6141",
+  "interop_version": "22.0.0.0",
+  "executable_sha256": "f5383228898b6e6be08abded9f6db0909d0841a2f6a5bbef50ba00f44af8a084",
+  "interop_sha256": "ecaed777a648df79927c79c3d7a33e1a813c6b027c4111396b7139fdda81959a",
+  "scope": ["acyclic normal C/N/O with terminal H/D", "single saturated C5 or C6 ring", "single saturated C4O five-ring", "isolated simple C, N+ or Cl- observations"],
+  "refusals": ["old observer versions", "source or identity drift", "native warnings", "label/property conflict", "cyclic unsaturation", "multiple cycles", "query", "radical", "abnormal valence", "unsupported label", "unqualified heavy isotope"],
+  "hydrogen_boundary": "NumHydrogens and simple atom-label H refer to non-node attached H; they are not added together or to explicit H/D nodes. Missing NumHydrogens is not zero. No omitted-field valence inference.",
+  "selection_boundary": "FormulaHTML is interpreted only for one exactly bound neutral carbon, Objects=1, Atoms=1, Bonds=0; the cut-bond suffix equals actual incident bond orders and UsedValences.",
+  "comparison_boundary": "Expected chemistry is accepted only by compare_document, after observations are complete.",
+  "legacy_policy": "0.4 observations remain historical. No automatic upgrade, fallback or renamed qualification. A controller replay rejection stops before a new private run."
+}

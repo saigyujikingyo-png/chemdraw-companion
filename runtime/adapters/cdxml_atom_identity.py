@@ -16,6 +16,7 @@ import math
 import hashlib
 import re
 import xml.etree.ElementTree as ET
+from runtime.native_observation import complete_atom_bond_evidence
 
 
 class NativeDepictionError(ValueError):
@@ -152,7 +153,7 @@ def verify_atom_readback(path, atom_readback):
                                   'Native atom observation lacks exact file, graph and identity bindings.')
     try:
         source_hash = hashlib.sha256(path.read_bytes()).hexdigest()
-        if (atom_readback.get('version') != 'native-atom-readback/0.4'
+        if (atom_readback.get('version') not in ('native-atom-readback/0.4', 'native-atom-readback/0.5')
                 or atom_readback.get('source_cdxml_sha256') != source_hash):
             raise failure
         before = atom_readback.get('chemical_export_before_sha256', '')
@@ -169,8 +170,17 @@ def verify_atom_readback(path, atom_readback):
         if after['sha256'] != hashlib.sha256(after_path.read_bytes()).hexdigest():
             raise failure
         root = ET.parse(path).getroot()
-        if graph_attributes(root) != graph_attributes(ET.parse(after_path).getroot()):
+        if complete_atom_bond_evidence(root) != complete_atom_bond_evidence(ET.parse(after_path).getroot()):
             raise failure
+        if atom_readback.get('version') == 'native-atom-readback/0.5':
+            for phase in ('before', 'after'):
+                text = atom_readback.get('chemical_export_'+phase)
+                if not isinstance(text, str) or not text or hashlib.sha256(text.encode('utf-8')).hexdigest() != before:
+                    raise failure
+            if (atom_readback.get('selection_labels_unchanged') is not True
+                    or not isinstance(atom_readback.get('chemical_warnings'), int)
+                    or atom_readback.get('chemical_warnings_after') != atom_readback['chemical_warnings']):
+                raise failure
         observations = {}
         for row in atom_readback['atoms']:
             key = integer(row['native_id'], 'native_observation.native_id')
@@ -278,7 +288,7 @@ def qualified_carbon_neighborhood(atom_map, by_map, adjacency, observations=None
     return True
 
 
-def read_explicit_geometry(path, expected_atoms, expected_bonds, *, atom_readback=None):
+def read_explicit_geometry(path, expected_atoms, expected_bonds, *, atom_readback=None, semantic_source_freeze=None):
     """Read a depicted subset only; caller separately verifies IR and receipt."""
     root = ET.parse(path).getroot()
     nodes = list(root.iter('n'))
@@ -295,6 +305,16 @@ def read_explicit_geometry(path, expected_atoms, expected_bonds, *, atom_readbac
                                    'Native atom coverage differs from the explicit depiction plan.',
                                    {'expected': sorted(expected_atoms), 'observed': sorted(by_map)})
     observations = verify_atom_readback(path, atom_readback) if atom_readback is not None else {}
+    semantic = comparison = None
+    if semantic_source_freeze is not None:
+        from runtime.native_semantics import observe_document, compare_document
+        semantic = observe_document(path, atom_readback, source_freeze=semantic_source_freeze)
+        comparison = compare_document(semantic, expected_atoms, expected_bonds)
+        if comparison['status'] != 'match':
+            raise NativeDepictionError('NATIVE_HYDROGEN_UNVERIFIED' if comparison['status'] == 'unverified'
+                                       else 'NATIVE_ATOM_IDENTITY_CHANGED', str(path),
+                                       'Native semantic observation did not match the declared occurrence.',
+                                       {'observations': semantic, 'comparison': comparison})
     native_valences = {i: 0 for i in by_map}
     adjacency = {i: {} for i in by_map}
     for bond in root.iter('b'):
@@ -306,11 +326,14 @@ def read_explicit_geometry(path, expected_atoms, expected_bonds, *, atom_readbac
         adjacency[a][b] = adjacency[b][a] = float(bond.get('Order', '1'))
     atoms, bonds = {}, []
     for atom_map, node in by_map.items():
-        identity = read_node_identity(node, expected_atoms[atom_map], path=f'atom[{atom_map}]',
+        identity = ({**{k: v['value'] for k, v in semantic['atoms'][atom_map]['identity'].items()},
+                     'implicit_h': semantic['atoms'][atom_map]['non_node_attached_h']['value'],
+                     'implicit_h_source': semantic['atoms'][atom_map]['non_node_attached_h']['source_class']}
+                    if semantic is not None else read_node_identity(node, expected_atoms[atom_map], path=f'atom[{atom_map}]',
                                       native_observation=observations.get(integer(node.get('id'), 'native_atom.id')),
                                       native_bond_valence=native_valences[atom_map],
                                       native_neighborhood_qualified=(node.get('NumHydrogens') is None and
-                                          qualified_carbon_neighborhood(atom_map, by_map, adjacency, observations)))
+                                          qualified_carbon_neighborhood(atom_map, by_map, adjacency, observations))))
         position = tuple(map(float, node.get('p', '').split()))
         if len(position) != 2 or not all(math.isfinite(v) for v in position):
             raise NativeDepictionError('NATIVE_COORDINATE_INVALID', f'atom[{atom_map}]',
@@ -349,4 +372,7 @@ def read_explicit_geometry(path, expected_atoms, expected_bonds, *, atom_readbac
     if actual != expected:
         raise NativeDepictionError('NATIVE_VISIBLE_BONDS_CHANGED', str(path),
                                    'Native bond graph differs from the seeded visible graph.')
-    return {'atoms': atoms, 'bonds': bonds}
+    result = {'atoms': atoms, 'bonds': bonds}
+    if semantic is not None:
+        result.update(semantic_observations=semantic, semantic_comparison=comparison)
+    return result

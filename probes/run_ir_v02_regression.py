@@ -15,7 +15,7 @@ import unittest
 ROOT = Path(__file__).resolve().parents[1]
 SAFE_MODULES = {
     'test_arrow_ports', 'test_generic_mask_scene', 'test_scene_equivalence',
-    'test_cdxml_atom_identity', 'test_ir_v02_runtime',
+    'test_cdxml_atom_identity', 'test_ir_v02_runtime', 'test_native_observation', 'test_native_semantics',
 }
 EXCLUDED_GENERAL = {
     'test_independent_chemistry_and_different_flow_count',

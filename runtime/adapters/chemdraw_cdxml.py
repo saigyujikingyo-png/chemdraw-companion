@@ -87,12 +87,12 @@ def seed_documents(mechanism,style,folder,*,depiction_plan=None):
     (folder/'seed-provenance.json').write_text(json.dumps(provenance,indent=2),encoding='utf-8')
     return manifest
 
-def read_geometry(mechanism,manifest,folder,*,input_folder=None,style=None,depiction_plan=None):
+def read_geometry(mechanism,manifest,folder,*,input_folder=None,style=None,depiction_plan=None,semantic_qualification=None):
     from runtime.native_provenance import verify_geometry_receipt
     if input_folder is None or style is None:raise ValueError('Verified native geometry requires seed path, style and execution receipt')
     from runtime.ir_v02_runtime import verify_runtime_plan
     verify_runtime_plan(mechanism,style,depiction_plan)
-    provenance=verify_geometry_receipt(mechanism,style,manifest,input_folder,folder,depiction_plan=depiction_plan)
+    provenance=verify_geometry_receipt(mechanism,style,manifest,input_folder,folder,depiction_plan=depiction_plan,semantic_qualification=semantic_qualification)
     catalog={a['map']:a for a in mechanism['atom_catalog']};states={s['id']:s for s in mechanism['states']};result={}
     if depiction_plan:
         plans={s['state_ref']:s for s in depiction_plan['states']}
@@ -102,7 +102,7 @@ def read_geometry(mechanism,manifest,folder,*,input_folder=None,style=None,depic
             visible_state={**states[sid],'bonds':plan['visible_bonds']}
             orders=kekule_orders(visible_state,expected_atoms)
             expected_bonds=[{**b,'order':orders[edge(b['atoms'])]} for b in plan['visible_bonds']]
-            measured=read_explicit_geometry(path,expected_atoms,expected_bonds,atom_readback=provenance.get('atom_readbacks',{}).get(entry['file']))
+            measured=read_explicit_geometry(path,expected_atoms,expected_bonds,atom_readback=provenance.get('atom_readbacks',{}).get(entry['file']),semantic_source_freeze=provenance.get('semantic_source_freeze'))
             for relation in mechanism['stereo_constraints']:
                 if sid in relation['states'] and not stereo_satisfied(relation,{i:a['position'] for i,a in measured['atoms'].items()}):raise NativeDepictionError('NATIVE_STEREO_CHANGED',sid,'Native cleanup did not preserve the declared stereo relation.')
             measured.update(source_sha256=hashlib.sha256(path.read_bytes()).hexdigest(),source=provenance['source'],native_execution=provenance)
