@@ -7,7 +7,9 @@ qualification are required at the production entry; calling this pure reader
 on a synthetic fixture does not establish native qualification.
 """
 from copy import deepcopy
+from collections import Counter
 import hashlib
+import json
 from pathlib import Path
 import re
 import xml.etree.ElementTree as ET
@@ -16,8 +18,10 @@ from contracts.ir_v02 import ATOMIC_NUMBERS
 from runtime.native_observation import (quantity, observe_atom_label,
     observe_serialized_label_h, compare_quantity)
 
-PROFILE = 'native-semantic-readback/1.0'
+PROFILE = 'native-semantic-readback/1.1'
 SYMBOLS = {number: symbol for symbol, number in ATOMIC_NUMBERS.items()}
+QUERY_FIELDS = {'FreeSites', 'RingBondCount', 'SubstituentsUpTo', 'SubstituentsExactly',
+                'ImplicitHydrogens', 'UnsaturatedBonds'}
 
 
 def exact_int(raw):
@@ -92,8 +96,8 @@ def component_scope(atom_map, by_map, adjacency, rows):
             z, charge, isotope = (exact_int(node.get(k, d)) for k, d in
                                   (('Element', '6'), ('Charge', '0'), ('Isotope', '0')))
             if (node.get('NodeType') not in (None, 'Element') or node.get('Radical') not in (None, '0', 'None')
-                    or any(k.startswith('Restrict') or k in ('GenericNickname', 'Nickname', 'ElementList',
-                           'AbnormalValence', 'ImplicitHydrogens') for k in node.attrib)
+                    or any(k.startswith('Restrict') or k in QUERY_FIELDS or k in ('GenericNickname', 'Nickname',
+                           'ElementList', 'AbnormalValence') for k in node.attrib)
                     or exact_int(raw['radical_native_value']) != 0 or exact_int(raw['node_type_native_value']) != 1
                     or raw['abnormal_valence_allowed'] is not False):
                 return None, 'query_radical_abnormal_or_non_element'
@@ -230,13 +234,88 @@ def observe_atom(node, by_map, adjacency, rows, artifact_hash, *, warnings):
                 selected_formula_non_node_h=api, non_node_attached_h=resolved, conflicts=conflicts)
 
 
-def observe_document(path, atom_readback, *, source_freeze):
+def observation_branch(atom):
+    """Identity-independent key for the actual field/source/scope branch."""
+    h = atom['non_node_attached_h']
+    if h['source_class'] == 'unknown' or h['value'] is None:
+        return None
+    return dict(scope=h['scope'], source_class=h['source_class'], source_field=h['source_field'],
+                serialized_h_present=atom['serialized_label_h']['present'], label_present=atom['atom_label']['present'],
+                atomic_number=atom['identity']['atomic_number']['value'], charge=atom['identity']['charge']['value'],
+                isotope=atom['identity']['isotope']['value'], h=h['value'],
+                explicit_h_isotopes=sorted(n['isotope'] for n in atom['explicit_h_neighbor_nodes']['value']))
+
+
+def branch_key(branch):
+    return json.dumps(branch, sort_keys=True, separators=(',', ':'))
+
+
+def apply_branch_qualification(observed, admitted_branches):
+    """Retain raw evidence but refuse values outside measured qualification."""
+    if not isinstance(admitted_branches, list):
+        raise ValueError('NATIVE_SEMANTIC_BRANCH_ADMISSION_REQUIRED')
+    admitted = {branch_key(b) for b in admitted_branches}
+    result = deepcopy(observed)
+    for atom in result['atoms'].values():
+        branch = observation_branch(atom)
+        if branch is not None and branch_key(branch) not in admitted:
+            candidate = deepcopy(atom['non_node_attached_h'])
+            atom['non_node_attached_h'].update(value=None, source_class='unknown',
+                reason='native_branch_not_qualified', raw={'candidate_observation': candidate, 'branch': branch})
+    result['qualification_mode'] = 'measured_branches_only'
+    return result
+
+
+def derive_branch_coverage(records):
+    """Only matching controls observed in both native phases can admit a branch."""
+    coverage = {}
+    for record in records:
+        if record['result'] != 'qualification_match':
+            continue
+        for phase in ('cleanup', 'reopen'):
+            for atom in record['phases'][phase]['observations']['atoms'].values():
+                branch = observation_branch(atom)
+                if branch is None:
+                    raise ValueError('Matching control has an unresolved H branch')
+                key = branch_key(branch)
+                row = coverage.setdefault(key, dict(branch=branch, cleanup_atoms=0, reopen_atoms=0, controls=set()))
+                row[phase+'_atoms'] += 1
+                row['controls'].add(record['file'])
+    rows = [{**row, 'controls': sorted(row['controls'])} for _,row in sorted(coverage.items())]
+    if not rows or any(not r['cleanup_atoms'] or not r['reopen_atoms'] for r in rows):
+        raise ValueError('NATIVE_BRANCH_LACKS_CLEANUP_AND_REOPEN_COVERAGE')
+    return rows
+
+
+def semantic_signature(observed):
+    return dict(atoms={int(m): dict(identity={k:v['value'] for k,v in a['identity'].items()},
+        h=a['non_node_attached_h']['value'], explicit_h=[{k:v for k,v in n.items() if k!='native_id'}
+            for n in a['explicit_h_neighbor_nodes']['value']]) for m,a in observed['atoms'].items()},
+        bonds=sorted((tuple(sorted(b['atoms'])), b['order']) for b in observed['bonds']))
+
+
+def require_reopen_consistency(cleanup, reopened):
+    if semantic_signature(cleanup) != semantic_signature(reopened):
+        raise ValueError('NATIVE_CLEANUP_REOPEN_SEMANTICS_CHANGED')
+
+
+def control_expectation(control):
+    """Normalize the independently supplied public control definition only."""
+    return {a['atom_map']: {**deepcopy(a), 'atomic_number': ATOMIC_NUMBERS[a['element']],
+            'implicit_h': a['non_node_attached_h'], 'explicit_h_neighbor_nodes': [
+                dict(atom_map=n['atom_map'], isotope=n['isotope'], order=n['bond_order'])
+                for n in a['explicit_h_neighbor_nodes']]} for a in control['expected_atoms']}
+
+
+def observe_document(path, atom_readback, *, source_freeze, admitted_branches=None, qualification_control=False):
     """Actual production reader. It takes no expected atoms, H or graph."""
     from runtime.adapters.cdxml_atom_identity import verify_atom_readback
     from runtime.native_source_binding import verify_source_freeze, verify_observer_binding
     path = Path(path)
     if atom_readback.get('version') != 'native-atom-readback/0.5':
         raise ValueError('NATIVE_SEMANTIC_OBSERVER_UNQUALIFIED: v1 requires the frozen 0.5 observer')
+    if not qualification_control and admitted_branches is None:
+        raise ValueError('NATIVE_SEMANTIC_BRANCH_ADMISSION_REQUIRED')
     verify_observer_binding(atom_readback, verify_source_freeze(source_freeze))
     rows = verify_atom_readback(path, atom_readback)
     root = ET.parse(path).getroot()
@@ -244,16 +323,19 @@ def observe_document(path, atom_readback, *, source_freeze):
     digest = hashlib.sha256(path.read_bytes()).hexdigest()
     atoms = {m: observe_atom(n, by_map, adjacency, rows, digest,
                             warnings=atom_readback.get('chemical_warnings')) for m, n in by_map.items()}
-    return dict(version=PROFILE, artifact_sha256=digest, atoms=atoms, bonds=bonds,
-                evidence_class='observations under versioned scope; qualification requires separate native controls')
+    result = dict(version=PROFILE, artifact_sha256=digest, atoms=atoms, bonds=bonds,
+                  qualification_mode='prospective_control_observation',
+                  evidence_class='observations under versioned scope; qualification requires separate native controls')
+    return result if qualification_control else apply_branch_qualification(result, admitted_branches)
 
 
 def compare_document(observed, expected_atoms, expected_bonds):
     """Separate immutable comparison; unknown never receives the expected value."""
     expected = {int(k): v for k, v in expected_atoms.items()}
+    observed_atoms = {int(k): v for k, v in observed['atoms'].items()}
     atoms = {}
-    for m in sorted(set(expected) & set(observed['atoms'])):
-        row, wanted = observed['atoms'][m], expected[m]
+    for m in sorted(set(expected) & set(observed_atoms)):
+        row, wanted = observed_atoms[m], expected[m]
         atoms[m] = {key: compare_quantity(value, wanted.get(key, 0)) for key, value in row['identity'].items()}
         atoms[m]['non_node_attached_h'] = compare_quantity(row['non_node_attached_h'],
                                              wanted.get('non_node_attached_h', wanted.get('implicit_h')))
@@ -265,7 +347,7 @@ def compare_document(observed, expected_atoms, expected_bonds):
     actual_bonds = sorted((tuple(b['atoms']), b['order']) for b in observed['bonds'])
     wanted_bonds = sorted((tuple(sorted(b['atoms'])), b['order']) for b in expected_bonds)
     statuses = [item['status'] for row in atoms.values() for item in row.values()]
-    inventory_equal = set(expected) == set(observed['atoms'])
+    inventory_equal = set(expected) == set(observed_atoms)
     graph_equal = actual_bonds == wanted_bonds
     return dict(status='mismatch' if not inventory_equal or not graph_equal or 'mismatch' in statuses else
                 'unverified' if 'unverified' in statuses else 'match', inventory_equal=inventory_equal,

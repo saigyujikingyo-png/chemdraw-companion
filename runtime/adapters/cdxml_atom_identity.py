@@ -288,7 +288,8 @@ def qualified_carbon_neighborhood(atom_map, by_map, adjacency, observations=None
     return True
 
 
-def read_explicit_geometry(path, expected_atoms, expected_bonds, *, atom_readback=None, semantic_source_freeze=None):
+def read_explicit_geometry(path, expected_atoms, expected_bonds, *, atom_readback=None, semantic_source_freeze=None,
+                           semantic_admitted_branches=None, semantic_qualification_control=False):
     """Read a depicted subset only; caller separately verifies IR and receipt."""
     root = ET.parse(path).getroot()
     nodes = list(root.iter('n'))
@@ -308,7 +309,9 @@ def read_explicit_geometry(path, expected_atoms, expected_bonds, *, atom_readbac
     semantic = comparison = None
     if semantic_source_freeze is not None:
         from runtime.native_semantics import observe_document, compare_document
-        semantic = observe_document(path, atom_readback, source_freeze=semantic_source_freeze)
+        semantic = observe_document(path, atom_readback, source_freeze=semantic_source_freeze,
+                                    admitted_branches=semantic_admitted_branches,
+                                    qualification_control=semantic_qualification_control)
         comparison = compare_document(semantic, expected_atoms, expected_bonds)
         if comparison['status'] != 'match':
             raise NativeDepictionError('NATIVE_HYDROGEN_UNVERIFIED' if comparison['status'] == 'unverified'

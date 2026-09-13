@@ -1,13 +1,17 @@
 """Independent synthetic guard checks. No native calls or reserved payloads."""
 from copy import deepcopy
 import hashlib
+import json
 from pathlib import Path
 import tempfile
 import unittest
+from unittest.mock import patch
 import xml.etree.ElementTree as ET
 from runtime.native_semantics import (simple_label, native_graph, observe_atom,
-    selected_carbon_h, component_scope, compare_document, observe_document)
-from runtime.native_source_binding import verify_process_binding, verify_observer_binding, REQUIRED
+    selected_carbon_h, component_scope, compare_document, observe_document,
+    observation_branch,apply_branch_qualification,derive_branch_coverage,require_reopen_consistency)
+from runtime.native_source_binding import (verify_process_binding, verify_observer_binding, REQUIRED,
+    load_qualification,CONTROL_MATRIX)
 
 
 def model(xml):
@@ -101,7 +105,7 @@ class NativeSemanticChecks(unittest.TestCase):
 
     def test_query_radical_abnormal_and_aromatic_bonds_are_refused(self):
         xml='<CDXML><n id="8" AtomNumber="43" NumHydrogens="3"/><n id="9" AtomNumber="61" NumHydrogens="3"/><b id="22" B="8" E="9"/></CDXML>'
-        for attr,value in [('NodeType','Nickname'),('Radical','Doublet'),('ImplicitHydrogens','no'),('AbnormalValence','yes'),('RestrictFreeSites','1')]:
+        for attr,value in [('NodeType','Nickname'),('Radical','Doublet'),('ImplicitHydrogens','no'),('AbnormalValence','yes')]:
             n,a,r,_=model(xml);n[43].set(attr,value)
             self.assertIsNone(observe_atom(n[43],n,a,r,'a'*64,warnings=0)['non_node_attached_h']['value'])
         for key,value in [('abnormal_valence_allowed',True),('radical_native_value',2)]:
@@ -109,6 +113,72 @@ class NativeSemanticChecks(unittest.TestCase):
             self.assertIsNone(component_scope(43,n,a,r)[0])
         n,a,r,_=model(xml);a[43][61]=a[61][43]=1.5
         self.assertEqual(component_scope(43,n,a,r)[1],'aromatic_or_query_bond')
+
+    def test_real_cdxml_query_fields_reject_an_otherwise_matching_api_baseline(self):
+        n,a,r,b=model('<CDXML><n id="8" AtomNumber="43" NumHydrogens="3"/><n id="9" AtomNumber="61" NumHydrogens="3"/><b id="22" B="8" E="9"/></CDXML>')
+        for row in r.values():carbon_formula(row,'CH<sub>3</sub><sup>&bull;</sup>',1)
+        expected={m:dict(atomic_number=6,implicit_h=3) for m in n}
+        def observation():return dict(atoms={m:observe_atom(node,n,a,r,'a'*64,warnings=0) for m,node in n.items()},bonds=b)
+        baseline=observation()
+        self.assertEqual(compare_document(baseline,expected,b)['status'],'match')
+        self.assertTrue(all(x['non_node_attached_h']['source_class']=='native_api_observation' for x in baseline['atoms'].values()))
+        for field,value in [('FreeSites','1'),('RingBondCount','NoRingBonds'),('SubstituentsUpTo','3'),('SubstituentsExactly','1'),('UnsaturatedBonds','MustBeAbsent'),('ImplicitHydrogens','no')]:
+            n[43].set(field,value)
+            actual=observation()
+            self.assertEqual(compare_document(actual,expected,b)['status'],'unverified')
+            self.assertTrue(all(x['non_node_attached_h']['reason']=='query_radical_abnormal_or_non_element' for x in actual['atoms'].values()))
+            n[43].attrib.pop(field)
+            self.assertEqual(compare_document(observation(),expected,b)['status'],'match')
+
+    def branch_fixture(self):
+        n,a,r,b=model('<CDXML><n id="8" AtomNumber="43"/><n id="9" AtomNumber="61" Element="8" NumHydrogens="1"/><b id="22" B="8" E="9"/></CDXML>')
+        carbon_formula(r[8],'CH<sub>3</sub><sup>&bull;</sup>',1)
+        return dict(atoms={m:observe_atom(node,n,a,r,'a'*64,warnings=0) for m,node in n.items()},bonds=b)
+
+    def test_actual_field_source_scope_branches_limit_admission(self):
+        observed=self.branch_fixture();before=deepcopy(observed)
+        allowed=[observation_branch(observed['atoms'][43])]
+        admitted=apply_branch_qualification(observed,allowed)
+        self.assertEqual(admitted['atoms'][43]['non_node_attached_h']['value'],3)
+        self.assertEqual(admitted['atoms'][61]['non_node_attached_h']['reason'],'native_branch_not_qualified')
+        for field,changed in [('scope','different_scope'),('source_field','n@NumHydrogens'),('h',2),('serialized_h_present',True)]:
+            wrong={**allowed[0],field:changed}
+            self.assertIsNone(apply_branch_qualification(observed,[wrong])['atoms'][43]['non_node_attached_h']['value'])
+        self.assertEqual(observed,before)
+
+    def test_branch_coverage_requires_both_native_phases(self):
+        observed=self.branch_fixture()
+        record=dict(file='synthetic.cdxml',result='qualification_match',phases={p:dict(observations=deepcopy(observed)) for p in ('cleanup','reopen')})
+        coverage=derive_branch_coverage([record])
+        self.assertEqual(len(coverage),2)
+        self.assertTrue(all(x['cleanup_atoms']==x['reopen_atoms']==1 for x in coverage))
+        record['phases']['reopen']['observations']['atoms'][43]['non_node_attached_h']['scope']='uncovered_scope'
+        with self.assertRaisesRegex(ValueError,'LACKS_CLEANUP_AND_REOPEN'):derive_branch_coverage([record])
+
+    def test_cleanup_reopen_comparison_ignores_native_id_changes_but_rejects_h_change(self):
+        cleanup=self.branch_fixture();reopen=deepcopy(cleanup)
+        reopen['atoms'][43]['native_id']=1008
+        require_reopen_consistency(cleanup,reopen)
+        reopen['atoms'][43]['non_node_attached_h']['value']=2
+        with self.assertRaisesRegex(ValueError,'CLEANUP_REOPEN_SEMANTICS_CHANGED'):
+            require_reopen_consistency(cleanup,reopen)
+
+    def test_two_key_control_summary_cannot_qualify_production(self):
+        with tempfile.TemporaryDirectory() as folder:
+            folder=Path(folder)
+            (folder/'freeze.json').write_text('{}',encoding='utf-8')
+            evidence=dict(source_freeze_sha256='a'*64,qualification_status='qualified_covered_branches')
+            (folder/'controls.json').write_text(json.dumps(evidence),encoding='utf-8')
+            h=lambda p:hashlib.sha256(p.read_bytes()).hexdigest()
+            qualified=dict(version='native-semantic-qualification/1.0',status='qualified',profile='test-profile',
+                source_freeze=dict(file='freeze.json',sha256=h(folder/'freeze.json')),
+                control_receipt=dict(file='controls.json',sha256=h(folder/'controls.json')),evidence_directory='.')
+            (folder/'qualification.json').write_text(json.dumps(qualified),encoding='utf-8')
+            frozen=dict(profile=dict(version='test-profile'),sha256='a'*64,inputs={CONTROL_MATRIX:'b'*64},
+                        matrix=dict(controls=[dict(file='x.cdxml',expected_atoms=[{}])]))
+            with patch('runtime.native_source_binding.verify_source_freeze',return_value=frozen):
+                with self.assertRaisesRegex(ValueError,'CONTROL_RECEIPT_INCOMPLETE'):
+                    load_qualification(folder/'qualification.json')
 
     def test_unqualified_cyclic_unsaturation_and_multiple_cycles_are_refused(self):
         # Independently constructed cyclopentene, then a chord forming two cycles.

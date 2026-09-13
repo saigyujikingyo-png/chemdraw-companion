@@ -35,7 +35,8 @@ def verify_geometry_receipt(mechanism,style,manifest,input_folder,output_folder,
     semantic_freeze=None
     if semantic_qualification is not None:
         from runtime.native_source_binding import load_qualification,verify_source_freeze,verify_process_binding,verify_observer_binding
-        semantic_freeze=load_qualification(semantic_qualification)
+        qualification=load_qualification(semantic_qualification)
+        semantic_freeze=qualification['source_freeze']
         frozen=verify_source_freeze(semantic_freeze)
         if receipt.get('source_freeze_sha256')!=frozen['sha256'] or receipt.get('source_bytes_rechecked') is not True:raise ValueError('Native semantic execution/source binding mismatch')
     expected_version='native-geometry-receipt/0.2' if semantic_freeze is not None else 'native-geometry-receipt/0.1'
@@ -61,7 +62,7 @@ def verify_geometry_receipt(mechanism,style,manifest,input_folder,output_folder,
     artifacts={a['file']:a for a in receipt.get('artifacts',[])};seeds={a['file']:a for a in seed['inputs']}
     if len(seeds)!=len(seed['inputs']) or set(seeds)!={x['file'] for x in manifest}:raise ValueError('Seed coverage mismatch')
     if len(artifacts)!=len(receipt.get('artifacts',[])) or set(artifacts)!={x['file'] for x in manifest}:raise ValueError('Native receipt coverage mismatch')
-    atom_readbacks={}
+    atom_readbacks={};cleanup_atom_readbacks={}
     for entry in manifest:
         name=entry['file']
         if Path(name).name!=name or not name.endswith('.cdxml'):raise ValueError('Invalid receipt artifact name')
@@ -78,6 +79,7 @@ def verify_geometry_receipt(mechanism,style,manifest,input_folder,output_folder,
             verify_observer_binding(cleanup_value,frozen)
             verify_atom_readback(output_folder/'clean'/name,cleanup_value)
             if cleanup_value['environment']!=environment or cleanup_value['process']!=native['cleanup_process'] or cleanup_value['job_id']!=receipt['run_id'] or cleanup_value.get('phase')!='cleanup' or cleanup_value.get('chemical_warnings')!=0:raise ValueError('Native cleanup observation/process mismatch')
+            cleanup_atom_readbacks[name]=cleanup_value
         if native.get('cleanup_completed') is not True or native.get('warnings')!=0:raise ValueError('Native cleanup failed or has warnings')
         if native.get('input_sha256')!=file_hash(input_folder/name) or seeds[name]['sha256']!=native['input_sha256']:raise ValueError('Native input hash mismatch')
         if native.get('output_sha256')!=file_hash(output_folder/name):raise ValueError('Native output hash mismatch')
@@ -99,5 +101,7 @@ def verify_geometry_receipt(mechanism,style,manifest,input_folder,output_folder,
         check_style(input_folder/name,style);check_style(output_folder/name,style)
     result={'receipt_sha256':file_hash(receipt_path),'source':'ChemDraw native Clean(true), bound to completed local execution receipt','environment':environment}
     if depiction_plan:result['atom_readbacks']=atom_readbacks
-    if semantic_freeze is not None:result['semantic_source_freeze']=semantic_freeze
+    if semantic_freeze is not None:
+        result.update(semantic_source_freeze=semantic_freeze,semantic_admitted_branches=qualification['admitted_branches'],
+                      cleanup_atom_readbacks=cleanup_atom_readbacks)
     return result
