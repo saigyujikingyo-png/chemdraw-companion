@@ -2,6 +2,8 @@
 
 Architecture preview, 2026-09-12. No native execution, host acceptance, installer or release is certified by this repository yet.
 
+Current implementation milestone: **Agent Edit Loop v0.1, PARTIAL**, with executable content frozen at `b9363ab`. The [controller receipt](https://github.com/saigyujikingyo-png/chemdraw-companion/blob/81e52337e669849c9d8284ce3c74719ef69ce52f/docs/AGENT_EDIT_LOOP_V0_1_RECEIPT.md) separates the bounded native result from outstanding display, lifecycle and roundtrip-classification gaps. Shared rule **2026-09-14.1** is adopted for documentation and planning only. See [per-tool/per-operation output-schema coverage and the next compatible version plan](runtime/OUTPUT_SCHEMA_COVERAGE_PLAN.md) and the [change record](CHANGELOG.md); output-schema compliance is not implemented or released by this update. The earlier research roadmap below remains historical until explicitly resumed.
+
 ChemDraw Companion is a proposed independent Chembridge plugin for producing and revising editable structures, ordinary reaction schemes and bounded electron-flow diagrams through a user's licensed ChemDraw installation. It is not a Revvity or University of Edinburgh product.
 
 Start with [the implementation handoff](docs/IMPLEMENTATION_HANDOFF.md), then [architecture](docs/ARCHITECTURE.md), [interface contract](docs/INTERFACE_CONTRACT.md) and [quality gates](docs/QUALITY_GATES.md). The [risk register](docs/RISK_REGISTER.md) tracks stop conditions. The [source ledger](docs/SOURCES.md) separates documented capabilities from tests that still need to run.

@@ -1,13 +1,15 @@
 # Chembridge development and delivery principles
 
-Rule version: **2026-09-12.4**. These requirements were explicitly requested by the user and apply to all Chembridge university convenience plugins, specialist software plugins and agent workflow automation plugins, not only Origin Companion. New plugins start with these defaults; users should not have to repeat them in each task. New task-specific user instructions take precedence.
+Rule version: **2026-09-14.1**. These requirements were explicitly requested by the user and apply to all Chembridge university convenience plugins, specialist software plugins and agent workflow automation plugins, not only Origin Companion. New plugins start with these defaults; users should not have to repeat them in each task. New task-specific user instructions take precedence.
 
 ## 1. GitHub distribution
 
 - Manage source, dependency locks, documentation, public tests, sanitised acceptance records and distributable packages through GitHub.
+- Publish plugin source and public documentation in a public GitHub repository with an explicit open-source LICENSE permitting use, modification and redistribution under its terms. Retain required attribution and third-party licence notices. Proprietary software binaries, licences, credentials and private data remain outside the open-source release.
 - Use **English for public GitHub content**: repository descriptions, README files, installation and usage guides, release notes and issue/PR templates. Preserve exact technical identifiers and quoted source/UI evidence. This does not restrict the language users may use with their agents.
 - The default route is GitHub Releases. A public plugin store, official university distribution, campus SSO or a hosted public platform is not a prerequisite.
-- Prefer one user-facing plugin entry per product across local/cloud agent surfaces. Reuse the account connection and execution core; do not ask users to select between same-named local and cloud products. Respect platform limitations and verify each actual surface separately.
+- Target one user-facing plugin identity and shared execution core across **ChatGPT Chat, local Work, cloud Work, Codex, Claude, WorkBuddy and other suitable Agent hosts**. Reuse valid account connections and keep core tools, workflow behaviour and artifact formats consistent. Avoid separate product forks for individual hosts or models.
+- Use thin host-specific connection, authentication, file-delivery and packaging adapters when required by the platform. Record actual host/account limitations and verify each surface separately; the unified target does not establish that every surface is already supported or accepted.
 - Keep a clear version line and download entrypoint for each product. Do not permanently fork a shared platform package by model, agent or minor software version; detect capabilities at runtime and record support and acceptance separately in a compatibility matrix.
 - Include installation instructions, checksums, compatibility, known issues, update and recovery steps. Label previews and stable releases accurately; retain earlier releases for rollback.
 - Do not publish private materials, original course documents, restricted software, account configuration, licences or secrets. Prefer public, synthetic or explicitly authorised academic test data.
@@ -20,12 +22,12 @@ The target flow is: download the appropriate package → double-click or install
 - Discover the target software and existing installation, check the supported version and licence, and self-test with isolated data. Installation success and a real agent workflow are separate acceptance results.
 - Reuse the user's existing configuration and encrypted credentials during upgrades, repeated installation and reconnection. Request credential action only after observing missing, invalid or insufficient permissions; do not repeatedly request new keys.
 - Preserve other plugins, host configuration, user changes and research outputs. Keep recoverable backups and clear failure messages. Provide understandable status, reconnection, recovery and removal entrypoints.
-- Identify steps requiring the account owner, such as provider login, MFA, licence activation or account association, and guide them to the correct interface. Do not claim those steps are fully automated. Routine use should be independent of Codex and development terminals.
+- Identify steps requiring the account owner, such as provider login, MFA, licence activation or account association, and guide them to the correct interface. Do not claim those steps are fully automated. Routine use should require the selected agent host and configured plugin runtime, without a source checkout, build commands or a development terminal, including when Codex is the chosen agent.
 - Record graphical wizards, automatic updates or one-click repair as gaps when not implemented. Do not describe a partly scripted setup as an entirely one-click installation.
 
 ## 3. Multiple agents and models
 
-- Use Codex for development, maintenance and acceptance. Primary use cases are ChatGPT Work cloud/local, Claude, WorkBuddy and other general agents with suitable tool capabilities. Users should not need a coding environment.
+- Codex is both a development/maintenance/acceptance tool and a target end-user Agent host. The unified use target includes ChatGPT Chat, local Work, cloud Work, Codex, Claude, WorkBuddy and other general agents with suitable tool capabilities. Users should be able to install the plugin and request work in natural language without a coding project or development setup.
 - Prefer MCP, official software APIs and portable file formats, with one execution core and thin host adapters. Do not duplicate business logic, scientific calculations or backend services for each model.
 - Adapt to actual capabilities: tool calls, structured arguments, context capacity, streaming results, file transfer, vision and local/cloud access. A brand name or preset is not a capability check.
 - Target GPT Terra, DeepSeek, Gemini, GLM and Kimi; integrate university services such as ELM when available for the task. Exact models, permissions and costs depend on the actual host and account at the time of use.
@@ -79,10 +81,11 @@ Each plugin maintains an applicable compatibility matrix and release gates cover
 | Area | Required evidence |
 | --- | --- |
 | Installation | Actual results for a new device/user, upgrade, repeat installation, path differences, self-test, recovery and removal |
-| Agents and models | Actual work entrypoint, exact model/effort, Terra max benchmark and unverified combinations |
+| Agents and models | Separate actual acceptance for ChatGPT Chat, local Work, cloud Work, Codex and each advertised other Agent host; consistent core workflows, exact model/effort, Terra max benchmark and unverified combinations |
 | University applicability | Relevant course/university sources, software build/licence boundaries and unsupported assumptions |
 | Task quality | Data/method, native results, editable artifacts and necessary reopening, visual or independent checks |
 | Delivery | Files the user actually receives and can open through host attachments, manual download or automatic saving; user-selected location, no OneDrive requirement; size/hash checks where needed, not merely an existing link |
+| Output contracts | Declared output schemas, server-side result validation, branch/error/artifact coverage, compatibility checks and per-tool/per-operation coverage under section 12 |
 | Efficiency | First-attempt success, human corrections, calls/retries, total time, available actual usage and resource consumption |
 | Release | Version, package/checksums, installation guide, known issues, rollback route and appropriate passing checks |
 
@@ -97,3 +100,29 @@ Distinguish historical passes, current passes, failures, skips and unknowns. Do 
 - Keep each plugin's scope, installation, compatibility, benchmark and acceptance records independent. Do not inherit another plugin's pass results.
 - Synchronise the Chembridge entrypoint and known copies when updating shared principles, and mark the version. Older checkouts and running tasks need to reread updates; do not claim all historical tasks update automatically.
 - New user instructions take precedence. Resolve ordinary implementation choices within existing authorisation. Verify machine paths, service permissions and sensitive configuration from the current environment without asking users to repeat established project direction.
+
+## 11. Cross-task messages: standing user authorisation
+
+The user explicitly authorises routine collaboration messages between their existing Chembridge tasks, including Origin, ChemDraw, UoE and future Chembridge products, on authorised local devices, connected remote devices and supported cloud task hosts. Covered messages do not require repeated user confirmation. This instruction, added on 13 September 2026, supersedes earlier defaults against automatic Origin/ChemDraw or other intra-Chembridge message relays.
+
+- Covered purposes are sharing relevant requirements, architecture or interface decisions, blockers, review requests, test evidence, Git references and bounded handoffs for work already authorised by the user. A message may resume the recipient's existing authorised work through the host's supported task tools.
+- Confirm the destination belongs to the user's Chembridge work from task/project metadata or an explicit user designation. Keep messages concise and useful; send material changes once, avoid relay loops and repetitive status polling, and preserve the destination task's current objective, source ownership and acceptance boundaries.
+- This message authorisation does not itself request new user-visible tasks, replace another task's objective, change its model, authorise unrelated work, grant access to another person's account or permit publication. It does not cover sending credentials, licence secrets or private datasets, or contacting external people or unrelated projects without the applicable user authorisation.
+- When preparing a covered send for automated approval, identify the destination and purpose and cite this standing user authorisation. Treat the user's consent as already supplied; do not ask again solely because the recipient is another Chembridge task. Platform approval decisions and higher-priority safety rules still apply. This file does not disable approval controls, guarantee approval or permit bypassing a rejection.
+
+Product repositories, implementation ownership and native/host/model acceptance remain separate. Task separation now means separate responsibilities, not a prohibition on useful project communication. Older running tasks must read this updated rule before relying on the new default.
+
+## 12. Structured tool outputs and output schemas
+
+Every existing and future Chembridge plugin must implement explicit machine-readable output contracts. MCP makes outputSchema optional at protocol level; Chembridge requires it for its public tools. This is a development and acceptance requirement, not a claim that current releases already comply.
+
+- **Declare and validate:** publish a meaningful JSON Schema in each MCP tool's `outputSchema` and return matching `structuredContent`. Generate schemas and validate outputs from shared typed definitions where practical, reusing existing dependencies. Validate in the server before delivery; do not rely on a host to enforce the contract. A bare unconstrained object or JSON embedded only in prose does not satisfy this requirement. Deliberately extensible payloads must still have documented, bounded structures.
+- **Define semantics:** specify required and optional fields, types, units, enumerated states, identifiers and null semantics. Distinguish unavailable, unsupported and not-calculated results from zero, an empty successful result or a verified claim. Keep scientific uncertainty, provenance, observation time, coverage and verification evidence explicit wherever applicable; never manufacture values to satisfy a schema.
+- **Cover errors and lifecycle:** define success, validation failure, execution failure and applicable pending, completed, cancelled or interrupted states. Use stable error codes and bounded recovery information consistent with MCP `isError`. A malformed backend result must not be emitted as valid success. Preserve known job or operation identifiers after side effects; never repeat a write automatically merely to repair an output-format failure.
+- **Keep dispatchers compact:** give every dispatched operation its own validated output contract. A generic call tool may expose a compact common result structure while operation-specific schemas remain discoverable through help or a schema registry on demand. Do not expand the default tool catalog into one enormous union of every operation, and do not omit validation of the dispatched payload.
+- **Preserve media delivery:** schema the metadata and applicable pagination fields of image, text and file results, including artifact identifiers, media types, sizes and hashes when available. Keep image and binary payloads in MCP content/resource blocks; do not duplicate them or large datasets as JSON text. A valid artifact schema does not prove the user received a file.
+- **Maintain compatibility:** version public contracts and preserve existing field meanings and response shapes through documented compatible changes or an explicit migration. Provide a consistent serialized JSON text fallback for supported hosts that need it. Test direct tools and dispatch routes, full/economy modes where present, and applicable host schema dialects/adapters; never silently discard structured results or invent a different contract per model.
+- **Verify and measure:** add focused contract checks for actual result branches, omitted/null fields, unsupported cases, malformed output rejection and relevant artifact/error paths. Record schema discovery and real tool invocation through the intended host separately. Track schema size, calls/retries, latency and available actual token usage with the Terra max benchmark; do not claim quota savings from schema presence or size alone. Contract checks supplement numerical, native reopen, visual and delivery checks.
+- **Track completion:** each product must maintain per-tool and per-operation coverage, recording implemented, verified and pending work. New plugins and new/changed tools must meet this requirement before their interface is declared complete. Existing gaps belong in the next compatible release plan, with clear owners and acceptance evidence; do not relabel earlier acceptance as schema compliance. Skills and installation guidance must describe discovery, result meanings and compatibility behavior.
+
+Reference: [MCP tool results and output schemas](https://modelcontextprotocol.io/specification/2025-11-25/server/tools#output-schema). Structured tool results describe server-produced data; they do not constrain model generation or establish scientific correctness by themselves.
