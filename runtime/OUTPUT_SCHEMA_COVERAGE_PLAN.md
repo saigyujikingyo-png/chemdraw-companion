@@ -173,3 +173,34 @@ the existing design fragments and explicitly labelled CLI/native history above.
 Close a row only with its own evidence; schema conformity is never overall product
 acceptance. Update discovery/help and installation guidance when implementation is
 actually available, preserving compact defaults and honest unsupported states.
+
+## Pinned Origin reference - planning only
+
+Read-only implementation reference: Origin Companion 0.2.11 at commit
+`8bff772b6cb70019e19a13e97adef9568b569d20`:
+
+- [Output-contract design and coverage](https://github.com/saigyujikingyo-png/origin-agent-bridge/blob/8bff772b6cb70019e19a13e97adef9568b569d20/origin-agent/docs/OUTPUT_CONTRACTS.md).
+- [Typed output definitions](https://github.com/saigyujikingyo-png/origin-agent-bridge/blob/8bff772b6cb70019e19a13e97adef9568b569d20/origin-agent/src/origin_agent/output_types.py).
+- [Schema generation and result validation](https://github.com/saigyujikingyo-png/origin-agent-bridge/blob/8bff772b6cb70019e19a13e97adef9568b569d20/origin-agent/src/origin_agent/output_contracts.py).
+
+These are design references for the existing coverage rows, not imported code,
+dependencies or ChemDraw acceptance. The following additions to the next-version
+validation plan are all **pending implementation and unverified in ChemDraw**.
+
+| Reference pattern | ChemDraw application / focused check after unfreeze |
+| --- | --- |
+| Shared strict output types and schema generation | Cover every direct tool and operation with common definitions; reject number/string coercion, non-finite numbers and integer substitutes for boolean evidence; preserve optional/null meanings |
+| Validate a returned result without invoking the backend again | Inject a malformed result after a simulated completed write; retain only valid known ChemDraw request/job/session/operation IDs, report output-validation failure, assert the write count remains one |
+| Compact discovery plus the selected operation's full schema | Keep the current five-tool design; verify each of the fifteen dispatch variants against its own payload contract, including explicit errors and unsupported branches |
+| Artifact metadata checked against existing content blocks | Verify IDs, MIME types, lengths, block kinds and any declared content indices/page offsets; reject mismatches while preserving binary/text payloads and delivery distinctions |
+| Structured result and serialized text fallback agree | Exercise direct/dispatch and intended host adapters; reject or repair the output representation without changing an operation's meaning or repeating it |
+| Cached schemas and bounded structured results | Choose ChemDraw-specific depth/item/byte budgets from measured outputs; test limit failures and discovery overhead without duplicating media or claiming token savings |
+
+Do not inherit Origin's operation names, state/error enums, contract version,
+resource limits, artifact layout or private-path exposure. Its typed-model choice
+is a candidate, not approval for a new ChemDraw dependency. Any eventual code
+reuse needs licence/attribution review and approval within the existing ownership
+and freeze boundaries. Its release, test, native, installation, GUI and account
+results remain Origin evidence; they were not rerun or counted here. ChemDraw's
+five public output schemas remain unimplemented, and the proposed v0.1.1 target,
+Machine Interface Only, M2 isolation and historical PARTIAL status are unchanged.

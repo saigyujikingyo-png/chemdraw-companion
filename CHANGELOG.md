@@ -15,6 +15,10 @@
 - Preserve executable source at **b9363ab**, Machine Interface Only, M2 isolation,
   the closed Agent Edit Loop v0.1 **PARTIAL** result and all historical failures.
   No native/UI run, MCP service, packaging or schema-conformance claim is added.
+- Pin Origin Companion 0.2.11 source `8bff772` as an output-contract design
+  reference, with ChemDraw-specific pending checks for strict typing, retained IDs
+  without write replay, dispatch discovery, media blocks and text compatibility.
+  No Origin code, dependency or test/native/installation acceptance is imported.
 
 Earlier execution and acceptance records retain their exact source versions;
 this change record does not recertify them.
