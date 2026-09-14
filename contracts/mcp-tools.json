@@ -23,6 +23,93 @@
           }
         },
         "required": []
+      },
+      "outputSchema": {
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "$id": "urn:chembridge:chemdraw:output:status-result:1.0",
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "contract_version": {
+            "const": "1.0"
+          },
+          "request_id": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 128
+          },
+          "ok": {
+            "type": "boolean"
+          },
+          "data": {
+            "anyOf": [
+              {
+                "$ref": "urn:chembridge:chemdraw:output:status-data:1.0"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "warnings": {
+            "type": "array",
+            "maxItems": 8,
+            "items": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 512
+            }
+          },
+          "error": {
+            "anyOf": [
+              {
+                "$ref": "urn:chembridge:chemdraw:output:common:1.0#/$defs/error"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          }
+        },
+        "required": [
+          "contract_version",
+          "request_id",
+          "ok",
+          "data",
+          "warnings",
+          "error"
+        ],
+        "allOf": [
+          {
+            "if": {
+              "properties": {
+                "ok": {
+                  "const": true
+                }
+              }
+            },
+            "then": {
+              "properties": {
+                "data": {
+                  "$ref": "urn:chembridge:chemdraw:output:status-data:1.0"
+                },
+                "error": {
+                  "type": "null"
+                }
+              }
+            },
+            "else": {
+              "properties": {
+                "data": {
+                  "type": "null"
+                },
+                "error": {
+                  "$ref": "urn:chembridge:chemdraw:output:common:1.0#/$defs/error"
+                }
+              }
+            }
+          }
+        ]
       }
     },
     {
@@ -54,6 +141,93 @@
         },
         "required": [
           "topic"
+        ]
+      },
+      "outputSchema": {
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "$id": "urn:chembridge:chemdraw:output:help-result:1.0",
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "contract_version": {
+            "const": "1.0"
+          },
+          "request_id": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 128
+          },
+          "ok": {
+            "type": "boolean"
+          },
+          "data": {
+            "anyOf": [
+              {
+                "$ref": "urn:chembridge:chemdraw:output:help-data:1.0"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "warnings": {
+            "type": "array",
+            "maxItems": 8,
+            "items": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 512
+            }
+          },
+          "error": {
+            "anyOf": [
+              {
+                "$ref": "urn:chembridge:chemdraw:output:common:1.0#/$defs/error"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          }
+        },
+        "required": [
+          "contract_version",
+          "request_id",
+          "ok",
+          "data",
+          "warnings",
+          "error"
+        ],
+        "allOf": [
+          {
+            "if": {
+              "properties": {
+                "ok": {
+                  "const": true
+                }
+              }
+            },
+            "then": {
+              "properties": {
+                "data": {
+                  "$ref": "urn:chembridge:chemdraw:output:help-data:1.0"
+                },
+                "error": {
+                  "type": "null"
+                }
+              }
+            },
+            "else": {
+              "properties": {
+                "data": {
+                  "type": "null"
+                },
+                "error": {
+                  "$ref": "urn:chembridge:chemdraw:output:common:1.0#/$defs/error"
+                }
+              }
+            }
+          }
         ]
       }
     },
@@ -559,6 +733,93 @@
             }
           }
         }
+      },
+      "outputSchema": {
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "$id": "urn:chembridge:chemdraw:output:run-result:1.0",
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "contract_version": {
+            "const": "1.0"
+          },
+          "request_id": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 128
+          },
+          "ok": {
+            "type": "boolean"
+          },
+          "data": {
+            "anyOf": [
+              {
+                "$ref": "urn:chembridge:chemdraw:output:run-data:1.0"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "warnings": {
+            "type": "array",
+            "maxItems": 8,
+            "items": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 512
+            }
+          },
+          "error": {
+            "anyOf": [
+              {
+                "$ref": "urn:chembridge:chemdraw:output:common:1.0#/$defs/error"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          }
+        },
+        "required": [
+          "contract_version",
+          "request_id",
+          "ok",
+          "data",
+          "warnings",
+          "error"
+        ],
+        "allOf": [
+          {
+            "if": {
+              "properties": {
+                "ok": {
+                  "const": true
+                }
+              }
+            },
+            "then": {
+              "properties": {
+                "data": {
+                  "$ref": "urn:chembridge:chemdraw:output:run-data:1.0"
+                },
+                "error": {
+                  "type": "null"
+                }
+              }
+            },
+            "else": {
+              "properties": {
+                "data": {
+                  "type": "null"
+                },
+                "error": {
+                  "$ref": "urn:chembridge:chemdraw:output:common:1.0#/$defs/error"
+                }
+              }
+            }
+          }
+        ]
       }
     },
     {
@@ -596,6 +857,93 @@
           "job_id",
           "action"
         ]
+      },
+      "outputSchema": {
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "$id": "urn:chembridge:chemdraw:output:job-result:1.0",
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "contract_version": {
+            "const": "1.0"
+          },
+          "request_id": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 128
+          },
+          "ok": {
+            "type": "boolean"
+          },
+          "data": {
+            "anyOf": [
+              {
+                "$ref": "urn:chembridge:chemdraw:output:job-data:1.0"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "warnings": {
+            "type": "array",
+            "maxItems": 8,
+            "items": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 512
+            }
+          },
+          "error": {
+            "anyOf": [
+              {
+                "$ref": "urn:chembridge:chemdraw:output:common:1.0#/$defs/error"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          }
+        },
+        "required": [
+          "contract_version",
+          "request_id",
+          "ok",
+          "data",
+          "warnings",
+          "error"
+        ],
+        "allOf": [
+          {
+            "if": {
+              "properties": {
+                "ok": {
+                  "const": true
+                }
+              }
+            },
+            "then": {
+              "properties": {
+                "data": {
+                  "$ref": "urn:chembridge:chemdraw:output:job-data:1.0"
+                },
+                "error": {
+                  "type": "null"
+                }
+              }
+            },
+            "else": {
+              "properties": {
+                "data": {
+                  "type": "null"
+                },
+                "error": {
+                  "$ref": "urn:chembridge:chemdraw:output:common:1.0#/$defs/error"
+                }
+              }
+            }
+          }
+        ]
       }
     },
     {
@@ -626,7 +974,95 @@
           "artifact_id",
           "action"
         ]
+      },
+      "outputSchema": {
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "$id": "urn:chembridge:chemdraw:output:artifact-result:1.0",
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "contract_version": {
+            "const": "1.0"
+          },
+          "request_id": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 128
+          },
+          "ok": {
+            "type": "boolean"
+          },
+          "data": {
+            "anyOf": [
+              {
+                "$ref": "urn:chembridge:chemdraw:output:artifact-data:1.0"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "warnings": {
+            "type": "array",
+            "maxItems": 8,
+            "items": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 512
+            }
+          },
+          "error": {
+            "anyOf": [
+              {
+                "$ref": "urn:chembridge:chemdraw:output:common:1.0#/$defs/error"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          }
+        },
+        "required": [
+          "contract_version",
+          "request_id",
+          "ok",
+          "data",
+          "warnings",
+          "error"
+        ],
+        "allOf": [
+          {
+            "if": {
+              "properties": {
+                "ok": {
+                  "const": true
+                }
+              }
+            },
+            "then": {
+              "properties": {
+                "data": {
+                  "$ref": "urn:chembridge:chemdraw:output:artifact-data:1.0"
+                },
+                "error": {
+                  "type": "null"
+                }
+              }
+            },
+            "else": {
+              "properties": {
+                "data": {
+                  "type": "null"
+                },
+                "error": {
+                  "$ref": "urn:chembridge:chemdraw:output:common:1.0#/$defs/error"
+                }
+              }
+            }
+          }
+        ]
       }
     }
-  ]
+  ],
+  "output_profile": "output-contracts/1.0.0-draft.1"
 }

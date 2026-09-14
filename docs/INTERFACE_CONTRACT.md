@@ -1,5 +1,7 @@
 # MCP and scene interface contract 1.0 (draft 0.1.0)
 
+Current output-schema supplement: [Structured output contracts](OUTPUT_CONTRACTS_V1.md), profile output-contracts/1.0.0-draft.1 under shared rule 2026-09-14.1. Public MCP remains design-unimplemented; the frozen caption CLI is a separate interface. The historical mechanism recipe gates below do not gate caption-only edits.
+
 Normative design for the P0 implementation; not a claim that these tools are installed. JSON Schema defines wire syntax; the invariants and validation rules below define semantics. Unknown fields/versions/recipes fail explicitly. All five tools use the same contracts in local and cloud hosts.
 
 ## Five stable entrypoints

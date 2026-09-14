@@ -1,0 +1,249 @@
+{
+  "profile": "output-contracts/1.0.0-draft.1",
+  "rule_version": "2026-09-14.1",
+  "product_release": "not_released",
+  "resources": [
+    {
+      "id": "urn:chembridge:chemdraw:output:artifact-data:1.0",
+      "path": "artifact-data.schema.json"
+    },
+    {
+      "id": "urn:chembridge:chemdraw:output:common:1.0",
+      "path": "common.schema.json"
+    },
+    {
+      "id": "urn:chembridge:chemdraw:output:edit-result:0.2-draft.1",
+      "path": "edit-result.schema.json"
+    },
+    {
+      "id": "urn:chembridge:chemdraw:output:help-data:1.0",
+      "path": "help-data.schema.json"
+    },
+    {
+      "id": "urn:chembridge:chemdraw:output:run-data:1.0",
+      "path": "run-data.schema.json"
+    },
+    {
+      "id": "urn:chembridge:chemdraw:output:status-data:1.0",
+      "path": "status-data.schema.json"
+    },
+    {
+      "id": "urn:chembridge:chemdraw:job-data:1.0",
+      "path": "../job-data.schema.json"
+    },
+    {
+      "id": "urn:chembridge:chemdraw:output:job-data:1.0",
+      "path": "job-data.schema.json"
+    }
+  ],
+  "tools": {
+    "chemdraw_status": "urn:chembridge:chemdraw:output:status-result:1.0",
+    "chemdraw_help": "urn:chembridge:chemdraw:output:help-result:1.0",
+    "chemdraw_run": "urn:chembridge:chemdraw:output:run-result:1.0",
+    "chemdraw_job": "urn:chembridge:chemdraw:output:job-result:1.0",
+    "chemdraw_artifact": "urn:chembridge:chemdraw:output:artifact-result:1.0"
+  },
+  "coverage": [
+    {
+      "surface": "chemdraw_status",
+      "operation": "compact",
+      "schema_id": "urn:chembridge:chemdraw:output:status-result:1.0",
+      "declaration": "draft",
+      "implementation": "not_implemented",
+      "server_validation": "pending",
+      "host_validation": "unverified",
+      "owner": "runtime implementation task after explicit unfreeze"
+    },
+    {
+      "surface": "chemdraw_status",
+      "operation": "capabilities",
+      "schema_id": "urn:chembridge:chemdraw:output:status-result:1.0",
+      "declaration": "draft",
+      "implementation": "not_implemented",
+      "server_validation": "pending",
+      "host_validation": "unverified",
+      "owner": "runtime implementation task after explicit unfreeze"
+    },
+    {
+      "surface": "chemdraw_help",
+      "operation": "recipe",
+      "schema_id": "urn:chembridge:chemdraw:output:help-result:1.0",
+      "declaration": "draft",
+      "implementation": "not_implemented",
+      "server_validation": "pending",
+      "host_validation": "unverified",
+      "owner": "runtime implementation task after explicit unfreeze"
+    },
+    {
+      "surface": "chemdraw_help",
+      "operation": "error",
+      "schema_id": "urn:chembridge:chemdraw:output:help-result:1.0",
+      "declaration": "draft",
+      "implementation": "not_implemented",
+      "server_validation": "pending",
+      "host_validation": "unverified",
+      "owner": "runtime implementation task after explicit unfreeze"
+    },
+    {
+      "surface": "chemdraw_help",
+      "operation": "style",
+      "schema_id": "urn:chembridge:chemdraw:output:help-result:1.0",
+      "declaration": "draft",
+      "implementation": "not_implemented",
+      "server_validation": "pending",
+      "host_validation": "unverified",
+      "owner": "runtime implementation task after explicit unfreeze"
+    },
+    {
+      "surface": "chemdraw_help",
+      "operation": "capability",
+      "schema_id": "urn:chembridge:chemdraw:output:help-result:1.0",
+      "declaration": "draft",
+      "implementation": "not_implemented",
+      "server_validation": "pending",
+      "host_validation": "unverified",
+      "owner": "runtime implementation task after explicit unfreeze"
+    },
+    {
+      "surface": "chemdraw_help",
+      "operation": "recovery",
+      "schema_id": "urn:chembridge:chemdraw:output:help-result:1.0",
+      "declaration": "draft",
+      "implementation": "not_implemented",
+      "server_validation": "pending",
+      "host_validation": "unverified",
+      "owner": "runtime implementation task after explicit unfreeze"
+    },
+    {
+      "surface": "chemdraw_run",
+      "operation": "structure_sheet.v1",
+      "schema_id": "urn:chembridge:chemdraw:output:run-result:1.0",
+      "declaration": "draft",
+      "implementation": "not_implemented",
+      "server_validation": "pending",
+      "host_validation": "unverified",
+      "owner": "runtime implementation task after explicit unfreeze"
+    },
+    {
+      "surface": "chemdraw_run",
+      "operation": "reaction_scheme.v1",
+      "schema_id": "urn:chembridge:chemdraw:output:run-result:1.0",
+      "declaration": "draft",
+      "implementation": "not_implemented",
+      "server_validation": "pending",
+      "host_validation": "unverified",
+      "owner": "runtime implementation task after explicit unfreeze"
+    },
+    {
+      "surface": "chemdraw_run",
+      "operation": "electron_flow_step.v1",
+      "schema_id": "urn:chembridge:chemdraw:output:run-result:1.0",
+      "declaration": "draft",
+      "implementation": "not_implemented",
+      "server_validation": "pending",
+      "host_validation": "unverified",
+      "owner": "runtime implementation task after explicit unfreeze"
+    },
+    {
+      "surface": "chemdraw_job",
+      "operation": "inspect",
+      "schema_id": "urn:chembridge:chemdraw:output:job-result:1.0",
+      "declaration": "draft",
+      "implementation": "not_implemented",
+      "server_validation": "pending",
+      "host_validation": "unverified",
+      "owner": "runtime implementation task after explicit unfreeze"
+    },
+    {
+      "surface": "chemdraw_job",
+      "operation": "cancel",
+      "schema_id": "urn:chembridge:chemdraw:output:job-result:1.0",
+      "declaration": "draft",
+      "implementation": "not_implemented",
+      "server_validation": "pending",
+      "host_validation": "unverified",
+      "owner": "runtime implementation task after explicit unfreeze"
+    },
+    {
+      "surface": "chemdraw_job",
+      "operation": "reconcile",
+      "schema_id": "urn:chembridge:chemdraw:output:job-result:1.0",
+      "declaration": "draft",
+      "implementation": "not_implemented",
+      "server_validation": "pending",
+      "host_validation": "unverified",
+      "owner": "runtime implementation task after explicit unfreeze"
+    },
+    {
+      "surface": "chemdraw_artifact",
+      "operation": "describe",
+      "schema_id": "urn:chembridge:chemdraw:output:artifact-result:1.0",
+      "declaration": "draft",
+      "implementation": "not_implemented",
+      "server_validation": "pending",
+      "host_validation": "unverified",
+      "owner": "runtime implementation task after explicit unfreeze"
+    },
+    {
+      "surface": "chemdraw_artifact",
+      "operation": "deliver",
+      "schema_id": "urn:chembridge:chemdraw:output:artifact-result:1.0",
+      "declaration": "draft",
+      "implementation": "not_implemented",
+      "server_validation": "pending",
+      "host_validation": "unverified",
+      "owner": "runtime implementation task after explicit unfreeze"
+    },
+    {
+      "surface": "native_edit_loop CLI",
+      "operation": "open-copy",
+      "schema_id": "urn:chembridge:chemdraw:output:edit-result:0.2-draft.1",
+      "declaration": "opt_in_adapter_draft",
+      "implementation": "legacy_only_frozen",
+      "server_validation": "pending",
+      "host_validation": "unverified_for_new_contract",
+      "owner": "runtime implementation task after explicit unfreeze"
+    },
+    {
+      "surface": "native_edit_loop CLI",
+      "operation": "inspect",
+      "schema_id": "urn:chembridge:chemdraw:output:edit-result:0.2-draft.1",
+      "declaration": "opt_in_adapter_draft",
+      "implementation": "legacy_only_frozen",
+      "server_validation": "pending",
+      "host_validation": "unverified_for_new_contract",
+      "owner": "runtime implementation task after explicit unfreeze"
+    },
+    {
+      "surface": "native_edit_loop CLI",
+      "operation": "relative-position",
+      "schema_id": "urn:chembridge:chemdraw:output:edit-result:0.2-draft.1",
+      "declaration": "opt_in_adapter_draft",
+      "implementation": "legacy_only_frozen",
+      "server_validation": "pending",
+      "host_validation": "unverified_for_new_contract",
+      "owner": "runtime implementation task after explicit unfreeze"
+    },
+    {
+      "surface": "native_edit_loop CLI",
+      "operation": "save",
+      "schema_id": "urn:chembridge:chemdraw:output:edit-result:0.2-draft.1",
+      "declaration": "opt_in_adapter_draft",
+      "implementation": "legacy_only_frozen",
+      "server_validation": "pending",
+      "host_validation": "unverified_for_new_contract",
+      "owner": "runtime implementation task after explicit unfreeze"
+    },
+    {
+      "surface": "native_edit_loop CLI",
+      "operation": "reopen",
+      "schema_id": "urn:chembridge:chemdraw:output:edit-result:0.2-draft.1",
+      "declaration": "opt_in_adapter_draft",
+      "implementation": "legacy_only_frozen",
+      "server_validation": "pending",
+      "host_validation": "unverified_for_new_contract",
+      "owner": "runtime implementation task after explicit unfreeze"
+    }
+  ],
+  "discovery_plan": "Reuse chemdraw_help(topic=capability,item_id=output:<tool-or-operation>) with schema resource metadata; registry is repository-only until server implementation. Bundle referenced schemas for tools/list; never require a host to resolve local paths."
+}

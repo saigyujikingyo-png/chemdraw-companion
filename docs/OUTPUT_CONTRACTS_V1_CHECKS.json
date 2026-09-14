@@ -1,0 +1,330 @@
+{
+  "scope": "Architecture-only output contracts; offline synthetic checks. Not production server validation.",
+  "rule_version": "2026-09-14.1",
+  "baseline_architecture": "885b3b4d97c27b64df8111366f38bab7f5fbc790",
+  "frozen_runtime": "b9363abfce19481d33e8d6409cb3d8d7dd477310",
+  "command": "python -B contracts/output/check_contracts.py",
+  "started_utc": "2026-09-14T17:35:49.701492+00:00",
+  "elapsed_seconds": 0.39000000001396984,
+  "exit_code": 0,
+  "validator_dependency": "jsonschema 4.26.0 in isolated local validation-deps; no runtime dependency change",
+  "checks": [
+    {
+      "case": "run-current-state-queued",
+      "expected_valid": true,
+      "result": "pass"
+    },
+    {
+      "case": "run-current-state-running",
+      "expected_valid": true,
+      "result": "pass"
+    },
+    {
+      "case": "run-current-state-blocked",
+      "expected_valid": true,
+      "result": "pass"
+    },
+    {
+      "case": "run-current-state-cancelled",
+      "expected_valid": true,
+      "result": "pass"
+    },
+    {
+      "case": "run-current-state-outcome_unknown",
+      "expected_valid": true,
+      "result": "pass"
+    },
+    {
+      "case": "chemdraw_status-error-with-known-operation",
+      "expected_valid": true,
+      "result": "pass"
+    },
+    {
+      "case": "chemdraw_status-error-data-not-null",
+      "expected_valid": false,
+      "result": "pass"
+    },
+    {
+      "case": "chemdraw_help-error-with-known-operation",
+      "expected_valid": true,
+      "result": "pass"
+    },
+    {
+      "case": "chemdraw_help-error-data-not-null",
+      "expected_valid": false,
+      "result": "pass"
+    },
+    {
+      "case": "chemdraw_run-error-with-known-operation",
+      "expected_valid": true,
+      "result": "pass"
+    },
+    {
+      "case": "chemdraw_run-error-data-not-null",
+      "expected_valid": false,
+      "result": "pass"
+    },
+    {
+      "case": "chemdraw_job-error-with-known-operation",
+      "expected_valid": true,
+      "result": "pass"
+    },
+    {
+      "case": "chemdraw_job-error-data-not-null",
+      "expected_valid": false,
+      "result": "pass"
+    },
+    {
+      "case": "chemdraw_artifact-error-with-known-operation",
+      "expected_valid": true,
+      "result": "pass"
+    },
+    {
+      "case": "chemdraw_artifact-error-data-not-null",
+      "expected_valid": false,
+      "result": "pass"
+    },
+    {
+      "case": "missing-structuredContent",
+      "expected_valid": false,
+      "result": "pass"
+    },
+    {
+      "case": "isError-mismatch",
+      "expected_valid": false,
+      "result": "pass"
+    },
+    {
+      "case": "text-fallback-mismatch",
+      "expected_valid": false,
+      "result": "pass"
+    },
+    {
+      "case": "omitted-revision",
+      "expected_valid": false,
+      "result": "pass"
+    },
+    {
+      "case": "success-null-revision",
+      "expected_valid": false,
+      "result": "pass"
+    },
+    {
+      "case": "unknown-mutation-not-retryable",
+      "expected_valid": false,
+      "result": "pass"
+    },
+    {
+      "case": "native-unknown-code-is-not-no-write",
+      "expected_valid": false,
+      "result": "pass"
+    },
+    {
+      "case": "status-uninitialized-no-invented-version",
+      "expected_valid": true,
+      "result": "pass"
+    },
+    {
+      "case": "status-does-not-invent-cursor-input",
+      "expected_valid": false,
+      "result": "pass"
+    },
+    {
+      "case": "help-on-demand-schema",
+      "expected_valid": true,
+      "result": "pass"
+    },
+    {
+      "case": "artifact-zero-is-distinct-from-null",
+      "expected_valid": true,
+      "result": "pass"
+    },
+    {
+      "case": "unknown-hash-needs-explicit-status",
+      "expected_valid": false,
+      "result": "pass"
+    },
+    {
+      "case": "delivery-needs-evidence",
+      "expected_valid": false,
+      "result": "pass"
+    },
+    {
+      "case": "successful-inspection-of-failed-job",
+      "expected_valid": true,
+      "result": "pass"
+    },
+    {
+      "case": "failed-job-needs-error",
+      "expected_valid": false,
+      "result": "pass"
+    },
+    {
+      "case": "job-pass-needs-evidence",
+      "expected_valid": false,
+      "result": "pass"
+    },
+    {
+      "case": "job-unknown-cannot-hide-as-failed-retry",
+      "expected_valid": false,
+      "result": "pass"
+    },
+    {
+      "case": "job-unknown-needs-unknown-state",
+      "expected_valid": false,
+      "result": "pass"
+    },
+    {
+      "case": "job-unknown-preserves-stable-job",
+      "expected_valid": true,
+      "result": "pass"
+    },
+    {
+      "case": "edit-relative-document-units",
+      "expected_valid": true,
+      "result": "pass"
+    },
+    {
+      "case": "nonfinite-coordinate",
+      "expected_valid": false,
+      "result": "pass"
+    },
+    {
+      "case": "screen-coordinate-not-contract",
+      "expected_valid": false,
+      "result": "pass"
+    },
+    {
+      "case": "bad-backend-preserves-operation-identity",
+      "expected_valid": true,
+      "result": "pass"
+    },
+    {
+      "case": "unknown-not-success",
+      "expected_valid": false,
+      "result": "pass"
+    },
+    {
+      "case": "unknown-outcome-consistent",
+      "expected_valid": false,
+      "result": "pass"
+    },
+    {
+      "case": "unknown-keeps-assigned-operation",
+      "expected_valid": false,
+      "result": "pass"
+    },
+    {
+      "case": "pending-close-is-not-error-or-closed",
+      "expected_valid": true,
+      "result": "pass"
+    },
+    {
+      "case": "open-copy-bounded-details",
+      "expected_valid": true,
+      "result": "pass"
+    },
+    {
+      "case": "open-copy-empty-details-refuse",
+      "expected_valid": false,
+      "result": "pass"
+    },
+    {
+      "case": "inspect-bounded-details",
+      "expected_valid": true,
+      "result": "pass"
+    },
+    {
+      "case": "inspect-empty-details-refuse",
+      "expected_valid": false,
+      "result": "pass"
+    },
+    {
+      "case": "save-bounded-details",
+      "expected_valid": true,
+      "result": "pass"
+    },
+    {
+      "case": "save-empty-details-refuse",
+      "expected_valid": false,
+      "result": "pass"
+    },
+    {
+      "case": "reopen-bounded-details",
+      "expected_valid": true,
+      "result": "pass"
+    },
+    {
+      "case": "reopen-empty-details-refuse",
+      "expected_valid": false,
+      "result": "pass"
+    },
+    {
+      "case": "queue-null-semantics-observed",
+      "expected_valid": false,
+      "result": "pass"
+    },
+    {
+      "case": "queue-null-semantics-unavailable",
+      "expected_valid": false,
+      "result": "pass"
+    },
+    {
+      "case": "native-capability-needs-evidence",
+      "expected_valid": false,
+      "result": "pass"
+    },
+    {
+      "case": "run-input-schema-still-original",
+      "expected_valid": true,
+      "result": "pass"
+    }
+  ],
+  "passed": 54,
+  "schema_bytes_utf8": {
+    "urn:chembridge:chemdraw:output:artifact-data:1.0": 585,
+    "urn:chembridge:chemdraw:output:common:1.0": 4381,
+    "urn:chembridge:chemdraw:output:edit-result:0.2-draft.1": 8331,
+    "urn:chembridge:chemdraw:output:help-data:1.0": 761,
+    "urn:chembridge:chemdraw:output:run-data:1.0": 732,
+    "urn:chembridge:chemdraw:output:status-data:1.0": 2648,
+    "urn:chembridge:chemdraw:job-data:1.0": 5885,
+    "urn:chembridge:chemdraw:output:job-data:1.0": 1800,
+    "urn:chembridge:chemdraw:output:status-result:1.0": 951,
+    "urn:chembridge:chemdraw:output:help-result:1.0": 945,
+    "urn:chembridge:chemdraw:output:run-result:1.0": 942,
+    "urn:chembridge:chemdraw:output:job-result:1.0": 942,
+    "urn:chembridge:chemdraw:output:artifact-result:1.0": 957
+  },
+  "inputs_unchanged": [
+    "chemdraw_status",
+    "chemdraw_help",
+    "chemdraw_run",
+    "chemdraw_job",
+    "chemdraw_artifact"
+  ],
+  "historical_job_data_unchanged": true,
+  "files_unchanged_during_checks": true,
+  "sha256": {
+    "contracts/mcp-tools.json": "75c2bb1d40400b6402f77761e939bdbccbe6448e266b32522f2bb922759031a0",
+    "contracts/output/artifact-data.schema.json": "63c675024f6aa4448b72bf935fc4b49055233830747db873028c9e536068d9bc",
+    "contracts/output/check_contracts.py": "c3a8f6bfea89f4f0c06a5d4dd4786ed7a0bae6e9702ed00bd85017bedbf0ea8c",
+    "contracts/output/common.schema.json": "e3165ba866de5cf937bfc88639b4a28655feff5e49146647a5d7c71bc0105c64",
+    "contracts/output/edit-result.schema.json": "2f5a589c4bbc15b2acef5fd3d2b392dd0cb8bd8cefe5450db1b5fad8888ab5f8",
+    "contracts/output/help-data.schema.json": "377bdbef1399519e631897ffc168332d762387aaf4fb35116e6c64ccbb21d5fb",
+    "contracts/output/job-data.schema.json": "b9d9e5c8b9d90e6dfc9362533bb3cb1399124878b473857f7820cf3da8a3fe2b",
+    "contracts/output/registry.json": "e48b2df05ca7dd7969265678ce040b8265284a0911fbeaca298fdbbc6326503c",
+    "contracts/output/run-data.schema.json": "df901a6ab99cb7580f82ddeccc283622aa72d7ceaddcae1f26ed191eb452b818",
+    "contracts/output/status-data.schema.json": "19045b00470e7d0da6eb5cd50d34c53060fde00b9da193e555ce692d4291ef30"
+  },
+  "source_discovery_scope_deviation": "While locating an existing generic validator, the first 35 lines of contracts/validate_mechanism_fixture.py were inadvertently read. It was identified as M2-specific and immediately excluded. No benchmark input file was opened; the source fragment was not executed, reused or used to tune these schemas or checks.",
+  "native_runs": 0,
+  "host_tool_calls": 0,
+  "GUI_actions": 0,
+  "server_validation_implemented": false,
+  "actual_billed_tokens": null,
+  "token_usage_status": "unavailable",
+  "frozen_benchmark_and_acceptance_states_changed": false,
+  "observed_runtime_branch_head": "9d0dd55517796fba1c308911dd4d64d7a031149f",
+  "runtime_head_delta": "Documentation only: AGENTS.md, CHANGELOG.md, CHEMBRIDGE.md, DEVELOPMENT_PRINCIPLES.md, README.md, runtime/OUTPUT_SCHEMA_COVERAGE_PLAN.md; executable source remains frozen b9363ab."
+}

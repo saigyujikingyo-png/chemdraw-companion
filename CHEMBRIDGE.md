@@ -4,7 +4,7 @@ Chembridge develops independent university convenience plugins, professional sof
 
 This repository contains only the proposed ChemDraw Companion. Origin Companion is a separate product and runtime. Its public architectural reference is origin-agent-bridge commit 85b6d333f09374913a66cd1b3e939719dc3a3639; its acceptance results do not transfer to ChemDraw.
 
-Use Codex for development. Target ordinary use through ChatGPT Work cloud/local, Claude, WorkBuddy and other suitable agents without a coding workspace. Use one small MCP facade and one native execution core. Actual host/model tests remain separate from protocol compatibility.
+Codex is both a development tool and a target end-user host. Target ordinary use through ChatGPT Chat, Work cloud/local, Codex, Claude, WorkBuddy and other suitable agents without a coding workspace. Use one small MCP facade and one native execution core. Actual host/model tests remain separate from protocol compatibility.
 
 University applicability must cite the relevant software entitlement and task-specific course or laboratory requirements. No universal Edinburgh figure style or installation version is assumed. Private university storage is an optional development archive, not a runtime or delivery requirement.
 

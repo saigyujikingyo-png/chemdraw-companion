@@ -1,0 +1,46 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:chembridge:chemdraw:output:artifact-data:1.0",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "artifact": {
+      "$ref": "urn:chembridge:chemdraw:output:common:1.0#/$defs/artifact"
+    },
+    "delivery_attempt_id": {
+      "anyOf": [
+        {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 128
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "destination_id": {
+      "anyOf": [
+        {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 128
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "next_action": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 512
+    }
+  },
+  "required": [
+    "artifact",
+    "delivery_attempt_id",
+    "destination_id",
+    "next_action"
+  ]
+}

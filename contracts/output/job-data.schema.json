@@ -1,0 +1,239 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:chembridge:chemdraw:output:job-data:1.0",
+  "type": "object",
+  "description": "Output-only draft overlay. Historical job-data/1.0 bytes and semantics are not retroactively changed.",
+  "allOf": [
+    {
+      "$ref": "urn:chembridge:chemdraw:job-data:1.0"
+    },
+    {
+      "if": {
+        "properties": {
+          "state": {
+            "enum": [
+              "failed",
+              "blocked",
+              "needs_input",
+              "outcome_unknown"
+            ]
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "error": {
+            "type": "object"
+          }
+        }
+      }
+    },
+    {
+      "properties": {
+        "gates": {
+          "properties": {
+            "native_execution": {
+              "allOf": [
+                {
+                  "if": {
+                    "properties": {
+                      "status": {
+                        "enum": [
+                          "pass",
+                          "fail"
+                        ]
+                      }
+                    }
+                  },
+                  "then": {
+                    "properties": {
+                      "evidence_ids": {
+                        "minItems": 1
+                      }
+                    }
+                  }
+                }
+              ]
+            },
+            "chemical_semantics": {
+              "allOf": [
+                {
+                  "if": {
+                    "properties": {
+                      "status": {
+                        "enum": [
+                          "pass",
+                          "fail"
+                        ]
+                      }
+                    }
+                  },
+                  "then": {
+                    "properties": {
+                      "evidence_ids": {
+                        "minItems": 1
+                      }
+                    }
+                  }
+                }
+              ]
+            },
+            "layout_geometry": {
+              "allOf": [
+                {
+                  "if": {
+                    "properties": {
+                      "status": {
+                        "enum": [
+                          "pass",
+                          "fail"
+                        ]
+                      }
+                    }
+                  },
+                  "then": {
+                    "properties": {
+                      "evidence_ids": {
+                        "minItems": 1
+                      }
+                    }
+                  }
+                }
+              ]
+            },
+            "native_editability": {
+              "allOf": [
+                {
+                  "if": {
+                    "properties": {
+                      "status": {
+                        "enum": [
+                          "pass",
+                          "fail"
+                        ]
+                      }
+                    }
+                  },
+                  "then": {
+                    "properties": {
+                      "evidence_ids": {
+                        "minItems": 1
+                      }
+                    }
+                  }
+                }
+              ]
+            },
+            "visual_review": {
+              "allOf": [
+                {
+                  "if": {
+                    "properties": {
+                      "status": {
+                        "enum": [
+                          "pass",
+                          "fail"
+                        ]
+                      }
+                    }
+                  },
+                  "then": {
+                    "properties": {
+                      "evidence_ids": {
+                        "minItems": 1
+                      }
+                    }
+                  }
+                }
+              ]
+            },
+            "owner_acceptance": {
+              "allOf": [
+                {
+                  "if": {
+                    "properties": {
+                      "status": {
+                        "enum": [
+                          "pass",
+                          "fail"
+                        ]
+                      }
+                    }
+                  },
+                  "then": {
+                    "properties": {
+                      "evidence_ids": {
+                        "minItems": 1
+                      }
+                    }
+                  }
+                }
+              ]
+            },
+            "host_receipt": {
+              "allOf": [
+                {
+                  "if": {
+                    "properties": {
+                      "status": {
+                        "enum": [
+                          "pass",
+                          "fail"
+                        ]
+                      }
+                    }
+                  },
+                  "then": {
+                    "properties": {
+                      "evidence_ids": {
+                        "minItems": 1
+                      }
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    {
+      "properties": {
+        "error": {
+          "anyOf": [
+            {
+              "type": "null"
+            },
+            {
+              "$ref": "urn:chembridge:chemdraw:output:common:1.0#/$defs/error"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "error": {
+            "type": "object",
+            "required": [
+              "mutation_outcome"
+            ],
+            "properties": {
+              "mutation_outcome": {
+                "const": "unknown"
+              }
+            }
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "state": {
+            "const": "outcome_unknown"
+          }
+        }
+      }
+    }
+  ]
+}

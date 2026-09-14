@@ -1,0 +1,275 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:chembridge:chemdraw:output:status-data:1.0",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "product_id": {
+      "const": "chembridge.chemdraw-companion"
+    },
+    "runtime_state": {
+      "enum": [
+        "uninitialized",
+        "ready",
+        "busy",
+        "unavailable",
+        "unsupported",
+        "unknown"
+      ]
+    },
+    "observed_at": {
+      "$ref": "urn:chembridge:chemdraw:output:common:1.0#/$defs/timestamp"
+    },
+    "identity": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "product_version": {
+          "anyOf": [
+            {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 64
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "broker_version": {
+          "anyOf": [
+            {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 64
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "addin_version": {
+          "anyOf": [
+            {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 64
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "application_build": {
+          "anyOf": [
+            {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 128
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "unavailable_reason": {
+          "anyOf": [
+            {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 512
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      },
+      "required": [
+        "product_version",
+        "broker_version",
+        "addin_version",
+        "application_build",
+        "unavailable_reason"
+      ],
+      "allOf": [
+        {
+          "if": {
+            "anyOf": [
+              {
+                "properties": {
+                  "product_version": {
+                    "type": "null"
+                  }
+                }
+              },
+              {
+                "properties": {
+                  "broker_version": {
+                    "type": "null"
+                  }
+                }
+              },
+              {
+                "properties": {
+                  "addin_version": {
+                    "type": "null"
+                  }
+                }
+              },
+              {
+                "properties": {
+                  "application_build": {
+                    "type": "null"
+                  }
+                }
+              }
+            ]
+          },
+          "then": {
+            "properties": {
+              "unavailable_reason": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 512
+              }
+            }
+          }
+        }
+      ]
+    },
+    "queue": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "pending_count": {
+          "anyOf": [
+            {
+              "type": "integer",
+              "minimum": 0
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "state": {
+          "enum": [
+            "observed",
+            "unavailable",
+            "unsupported"
+          ]
+        }
+      },
+      "required": [
+        "pending_count",
+        "state"
+      ],
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "state": {
+                "const": "observed"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "pending_count": {
+                "type": "integer",
+                "minimum": 0
+              }
+            }
+          },
+          "else": {
+            "properties": {
+              "pending_count": {
+                "type": "null"
+              }
+            }
+          }
+        }
+      ]
+    },
+    "capabilities": {
+      "type": "array",
+      "maxItems": 32,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 128
+          },
+          "status": {
+            "enum": [
+              "documented",
+              "detected",
+              "native_verified",
+              "failed",
+              "unsupported",
+              "unverified"
+            ]
+          },
+          "scope": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 256
+          },
+          "evidence_ids": {
+            "type": "array",
+            "maxItems": 16,
+            "items": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 128
+            }
+          }
+        },
+        "required": [
+          "id",
+          "status",
+          "scope",
+          "evidence_ids"
+        ],
+        "allOf": [
+          {
+            "if": {
+              "properties": {
+                "status": {
+                  "enum": [
+                    "native_verified",
+                    "failed"
+                  ]
+                }
+              }
+            },
+            "then": {
+              "properties": {
+                "evidence_ids": {
+                  "minItems": 1
+                }
+              }
+            }
+          }
+        ]
+      }
+    },
+    "next_cursor": {
+      "type": "null",
+      "description": "Use existing chemdraw_help capability cursor for additional capability pages."
+    }
+  },
+  "required": [
+    "product_id",
+    "runtime_state",
+    "observed_at",
+    "identity",
+    "queue",
+    "capabilities",
+    "next_cursor"
+  ]
+}

@@ -1,0 +1,835 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:chembridge:chemdraw:output:edit-result:0.2-draft.1",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "result_version": {
+      "const": "agent-edit-result/0.2-draft.1"
+    },
+    "operation": {
+      "enum": [
+        "open-copy",
+        "inspect",
+        "relative-position",
+        "save",
+        "reopen"
+      ]
+    },
+    "request_id": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 128
+    },
+    "operation_id": {
+      "anyOf": [
+        {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 128
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "session_id": {
+      "anyOf": [
+        {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 128
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "document_id": {
+      "anyOf": [
+        {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 128
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "revision": {
+      "anyOf": [
+        {
+          "type": "integer",
+          "minimum": 0
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "status": {
+      "enum": [
+        "completed",
+        "pending",
+        "refused",
+        "failed",
+        "cancelled",
+        "interrupted",
+        "outcome_unknown"
+      ]
+    },
+    "mutation_outcome": {
+      "enum": [
+        "none",
+        "known",
+        "unknown"
+      ]
+    },
+    "error": {
+      "anyOf": [
+        {
+          "$ref": "urn:chembridge:chemdraw:output:common:1.0#/$defs/error"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "session_state": {
+      "enum": [
+        "active",
+        "ending",
+        "closed",
+        "detached",
+        "unknown",
+        "not_created"
+      ]
+    },
+    "preservation": {
+      "enum": [
+        "unchanged",
+        "target_change_verified",
+        "needs_review",
+        "mismatch",
+        "unverified",
+        "not_applicable"
+      ]
+    },
+    "native_render": {
+      "$ref": "urn:chembridge:chemdraw:output:common:1.0#/$defs/gate"
+    },
+    "desktop_display": {
+      "$ref": "urn:chembridge:chemdraw:output:common:1.0#/$defs/gate"
+    },
+    "observed_at": {
+      "$ref": "urn:chembridge:chemdraw:output:common:1.0#/$defs/timestamp"
+    },
+    "evidence_ids": {
+      "type": "array",
+      "maxItems": 32,
+      "items": {
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 128
+      }
+    },
+    "artifacts": {
+      "type": "array",
+      "maxItems": 16,
+      "items": {
+        "$ref": "urn:chembridge:chemdraw:output:common:1.0#/$defs/artifact"
+      }
+    },
+    "observation_ref": {
+      "anyOf": [
+        {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 128
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "details": {
+      "type": "object"
+    }
+  },
+  "required": [
+    "result_version",
+    "operation",
+    "request_id",
+    "operation_id",
+    "session_id",
+    "document_id",
+    "revision",
+    "status",
+    "mutation_outcome",
+    "error",
+    "session_state",
+    "preservation",
+    "native_render",
+    "desktop_display",
+    "observed_at",
+    "evidence_ids",
+    "artifacts",
+    "observation_ref",
+    "details"
+  ],
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "operation": {
+            "const": "open-copy"
+          },
+          "status": {
+            "const": "completed"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "details": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "source_sha256": {
+                "$ref": "urn:chembridge:chemdraw:output:common:1.0#/$defs/sha256"
+              },
+              "original_unchanged": {
+                "type": "boolean"
+              },
+              "binding": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                  "pid": {
+                    "type": "integer",
+                    "minimum": 1
+                  },
+                  "start_utc": {
+                    "$ref": "urn:chembridge:chemdraw:output:common:1.0#/$defs/timestamp"
+                  },
+                  "hwnd": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 32
+                  },
+                  "document_id": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 128
+                  }
+                },
+                "required": [
+                  "pid",
+                  "start_utc",
+                  "hwnd",
+                  "document_id"
+                ]
+              }
+            },
+            "required": [
+              "source_sha256",
+              "original_unchanged",
+              "binding"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "operation": {
+            "const": "inspect"
+          },
+          "status": {
+            "const": "completed"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "details": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "binding": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                  "pid": {
+                    "type": "integer",
+                    "minimum": 1
+                  },
+                  "start_utc": {
+                    "$ref": "urn:chembridge:chemdraw:output:common:1.0#/$defs/timestamp"
+                  },
+                  "hwnd": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 32
+                  },
+                  "document_id": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 128
+                  }
+                },
+                "required": [
+                  "pid",
+                  "start_utc",
+                  "hwnd",
+                  "document_id"
+                ]
+              },
+              "closure_receipt_id": {
+                "anyOf": [
+                  {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 128
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "candidates_ref": {
+                "anyOf": [
+                  {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 128
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              }
+            },
+            "required": [
+              "binding",
+              "closure_receipt_id",
+              "candidates_ref"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "operation": {
+            "const": "relative-position"
+          },
+          "status": {
+            "const": "completed"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "details": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "caption_ref": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 128
+              },
+              "arrow_ref": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 128
+              },
+              "intent": {
+                "enum": [
+                  "above-arrow",
+                  "up-half-bond"
+                ]
+              },
+              "delta_pt": {
+                "type": "array",
+                "minItems": 2,
+                "maxItems": 2,
+                "items": {
+                  "type": "number"
+                }
+              },
+              "bond_length_pt": {
+                "type": "number",
+                "exclusiveMinimum": 0
+              },
+              "comparison_evidence_id": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 128
+              }
+            },
+            "required": [
+              "caption_ref",
+              "arrow_ref",
+              "intent",
+              "delta_pt",
+              "bond_length_pt",
+              "comparison_evidence_id"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "operation": {
+            "const": "save"
+          },
+          "status": {
+            "const": "completed"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "details": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "saved_revision": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "comparison_evidence_id": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 128
+              }
+            },
+            "required": [
+              "saved_revision",
+              "comparison_evidence_id"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "operation": {
+            "const": "reopen"
+          },
+          "status": {
+            "const": "completed"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "details": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "previous_binding": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                  "pid": {
+                    "type": "integer",
+                    "minimum": 1
+                  },
+                  "start_utc": {
+                    "$ref": "urn:chembridge:chemdraw:output:common:1.0#/$defs/timestamp"
+                  },
+                  "hwnd": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 32
+                  },
+                  "document_id": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 128
+                  }
+                },
+                "required": [
+                  "pid",
+                  "start_utc",
+                  "hwnd",
+                  "document_id"
+                ]
+              },
+              "current_binding": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                  "pid": {
+                    "type": "integer",
+                    "minimum": 1
+                  },
+                  "start_utc": {
+                    "$ref": "urn:chembridge:chemdraw:output:common:1.0#/$defs/timestamp"
+                  },
+                  "hwnd": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 32
+                  },
+                  "document_id": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 128
+                  }
+                },
+                "required": [
+                  "pid",
+                  "start_utc",
+                  "hwnd",
+                  "document_id"
+                ]
+              },
+              "reopened_artifact_id": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 128
+              },
+              "comparison_evidence_id": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 128
+              }
+            },
+            "required": [
+              "previous_binding",
+              "current_binding",
+              "reopened_artifact_id",
+              "comparison_evidence_id"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "status": {
+            "const": "completed"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "error": {
+            "type": "null"
+          },
+          "session_id": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 128
+          },
+          "document_id": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 128
+          },
+          "revision": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "operation_id": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 128
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "status": {
+            "not": {
+              "const": "completed"
+            }
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "details": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "reason": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 512
+              },
+              "recovery_action": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 512
+              },
+              "candidates_ref": {
+                "anyOf": [
+                  {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 128
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              }
+            },
+            "required": [
+              "reason",
+              "recovery_action",
+              "candidates_ref"
+            ]
+          },
+          "error": {
+            "anyOf": [
+              {
+                "$ref": "urn:chembridge:chemdraw:output:common:1.0#/$defs/error"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "mutation_outcome": {
+            "const": "unknown"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "status": {
+            "const": "outcome_unknown"
+          },
+          "error": {
+            "type": "object",
+            "properties": {
+              "mutation_outcome": {
+                "const": "unknown"
+              },
+              "retryable": {
+                "const": false
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "session_state": {
+            "const": "closed"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "evidence_ids": {
+            "minItems": 1
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "status": {
+            "const": "refused"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "mutation_outcome": {
+            "const": "none"
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "status": {
+            "enum": [
+              "refused",
+              "failed",
+              "cancelled",
+              "interrupted",
+              "outcome_unknown"
+            ]
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "error": {
+            "$ref": "urn:chembridge:chemdraw:output:common:1.0#/$defs/error"
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "status": {
+            "const": "outcome_unknown"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "mutation_outcome": {
+            "const": "unknown"
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "mutation_outcome": {
+            "enum": [
+              "known",
+              "unknown"
+            ]
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "operation_id": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 128
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "status": {
+            "const": "pending"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "error": {
+            "type": "null"
+          },
+          "operation_id": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 128
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "mutation_outcome": {
+            "const": "none"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "error": {
+            "anyOf": [
+              {
+                "type": "null"
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "mutation_outcome": {
+                    "const": "none"
+                  }
+                }
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "mutation_outcome": {
+            "const": "known"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "error": {
+            "anyOf": [
+              {
+                "type": "null"
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "mutation_outcome": {
+                    "const": "known"
+                  }
+                }
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "mutation_outcome": {
+            "const": "unknown"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "error": {
+            "anyOf": [
+              {
+                "type": "null"
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "mutation_outcome": {
+                    "const": "unknown"
+                  }
+                }
+              }
+            ]
+          }
+        }
+      }
+    }
+  ]
+}

@@ -21,3 +21,5 @@ The OpenAI frontend project-synchronisation bug is an external known issue. The 
 Public content is English and sanitized. No accounts, licence material, tokens, tunnel configuration, private coursework or experimental inputs. Do not redistribute vendor binaries. Defaults remain one product entry, credential reuse, non-developer installation, thin host adapters, Terra max benchmarks and bounded resource use.
 
 Every Chembridge plugin must implement and validate meaningful tool output schemas and structured results under DEVELOPMENT_PRINCIPLES.md section 12. Preserve media delivery and host compatibility, keep schemas compact, and record implementation/acceptance gaps separately.
+
+Current schema-only follow-up: read docs/OUTPUT_CONTRACTS_V1.md and contracts/output/registry.json. Output contracts are draft declarations; server integration, media mapping and host checks remain pending. Runtime stays frozen at b9363ab until explicitly resumed. Do not reinterpret this contract work as changing Agent Edit Loop v0.1 PARTIAL or benchmark acceptance.
