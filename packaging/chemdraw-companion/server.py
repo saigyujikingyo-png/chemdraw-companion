@@ -1,5 +1,6 @@
 """Minimal stdio MCP adapter. No native routes, network, subprocesses or persistent jobs."""
 import json
+import math
 from pathlib import Path
 import sys
 
@@ -15,6 +16,20 @@ MAX_LINE=65536
 class ProtocolError(Exception):
     def __init__(self,code,message):
         self.code=code;self.message=message
+
+
+def validate_operation_params(params, fields):
+    """Separate standard transport metadata from diagnostic operation fields."""
+    if set(params) - fields - {'_meta'}:
+        raise ProtocolError(-32602,'Unknown operation parameters')
+    if '_meta' in params:
+        meta=params['_meta']
+        if not isinstance(meta,dict):
+            raise ProtocolError(-32602,'Request metadata must be an object')
+        if 'progressToken' in meta:
+            token=meta['progressToken']
+            if type(token) not in (str,int,float) or (type(token) is float and not math.isfinite(token)):
+                raise ProtocolError(-32602,'Progress token must be a string or finite number')
 
 
 class Server:
@@ -50,15 +65,18 @@ class Server:
             elif not self.initialized:
                 raise ProtocolError(-32002,'Initialize this connection first')
             elif method=='tools/list':
-                if params:
-                    raise ProtocolError(-32602,'This single-page catalog does not accept a cursor')
+                validate_operation_params(params,{'cursor'})
+                if 'cursor' in params:
+                    raise ProtocolError(-32602,'Invalid cursor: this complete catalog has no continuation page')
                 result={'tools':[{'name':TOOL,'title':'ChemDraw Companion status',
                     'description':'Verify this diagnostic package and report its frozen native capability. No ChemDraw interaction.',
                     'inputSchema':{'type':'object','properties':{},'additionalProperties':False},
                     'outputSchema':STATUS_SCHEMA,
                     'annotations':{'readOnlyHint':True,'destructiveHint':False,'idempotentHint':True,'openWorldHint':False}}]}
             elif method=='tools/call':
-                if set(params)-{'name','arguments'} or params.get('name')!=TOOL or params.get('arguments',{})!={}:
+                validate_operation_params(params,{'name','arguments'})
+                arguments=params.get('arguments',{})
+                if params.get('name')!=TOOL or not isinstance(arguments,dict) or arguments:
                     raise ProtocolError(-32602,'Unknown tool or invalid arguments; only diagnostic status is available')
                 value=validate_status(status(self.root))
                 result={'structuredContent':value,'content':[{'type':'text','text':json.dumps(value,separators=(',',':'))}],

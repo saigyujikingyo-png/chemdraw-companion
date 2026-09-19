@@ -4,6 +4,10 @@ This preview checks its installed package and reports capability limits. **Nativ
 execution is frozen:** it cannot read, edit, render, save or close ChemDraw. It
 requires no ChemDraw licence check, account login or scientific input.
 
+Version 0.2.0-preview.2 accepts standard MCP request metadata used by Codex. The
+older preview.1 rejected that metadata during discovery. An update preserves the
+old version for recovery; metadata never enables native operations.
+
 ## Install on Windows x64
 
 1. Obtain the reviewed release ZIP and check its published SHA-256.

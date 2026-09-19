@@ -5,7 +5,7 @@ from pathlib import Path
 import platform
 import re
 
-VERSION = '0.2.0-preview.1'
+VERSION = '0.2.0-preview.2'
 LIFECYCLE = {'class':'on_demand_local_companion','owner':'calling_host','persistent':False,'shutdown':'stdin_eof'}
 PROPERTIES = {
     'result_version': {'const':'chemdraw-status/0.1'},

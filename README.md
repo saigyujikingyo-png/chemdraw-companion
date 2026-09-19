@@ -2,6 +2,8 @@
 
 > **Native execution is frozen.** The 0.2 diagnostic preview checks package integrity and reports capability limits. It cannot read, edit, render or close ChemDraw. See [the lifecycle record](LIFECYCLE_RECORD.md) and [diagnostic installation guide](packaging/chemdraw-companion/README.md). Historical native evidence below remains PARTIAL.
 
+Diagnostic **0.2.0-preview.2** repairs the real Codex tools/list metadata startup failure in preview.1. See the [compatibility design and evidence](verification/DIAGNOSTIC_MCP_COMPAT_DESIGN.md) and [focused verification](verification/DIAGNOSTIC_MCP_COMPAT_VERIFICATION.md). Existing native limits remain unchanged.
+
 Current shared rule: **2026-09-19.1**. The 0.2 diagnostic package implements a non-native installer and status MCP entry. Publication, installed readback and fresh host acceptance require their own dated receipts; native functionality remains frozen. See the [focused portable verification record](verification/DIAGNOSTIC_PREVIEW_0_2.md).
 
 ## Historical native milestone (2026-09-12 through 2026-09-14)
