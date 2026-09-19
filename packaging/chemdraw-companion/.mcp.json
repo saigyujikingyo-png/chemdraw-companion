@@ -1,0 +1,14 @@
+{
+  "mcpServers": {
+    "chemdraw-companion": {
+      "command": "powershell.exe",
+      "args": [
+        "-NoLogo",
+        "-NoProfile",
+        "-NonInteractive",
+        "-Command",
+        "$ErrorActionPreference='Stop'; $pluginRoot=$env:CLAUDE_PLUGIN_ROOT; if ([string]::IsNullOrWhiteSpace($pluginRoot)) { $pluginRoot=(Get-Location).Path }; & (Join-Path $pluginRoot 'runtime\\python.exe') -I -B (Join-Path $pluginRoot 'server.py'); exit $LASTEXITCODE"
+      ]
+    }
+  }
+}

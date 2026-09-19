@@ -1,23 +1,44 @@
 param([Parameter(Mandatory)][string]$SessionDirectory,[Parameter(Mandatory)][string]$PythonExe)
 # Bounded, hidden, local STA owner. No listener, service registration or GUI automation.
 $ErrorActionPreference='Stop';Set-StrictMode -Version Latest
-. (Join-Path $PSScriptRoot 'native-common.ps1')
+. (Join-Path $PSScriptRoot 'lifecycle-owned.ps1')
 $run=[IO.Path]::GetFullPath($SessionDirectory)
-$init=Get-Content -LiteralPath (Join-Path $run 'init.json') -Raw|ConvertFrom-Json -AsHashtable
-$sessionId=$init.request.session_id;$revision=0;$documentId=[guid]::NewGuid().ToString()
-$app=$null;$doc=$null;$binding=$null;$last=$null;$poisoned=$false;$stop=$false
+[void][IO.Directory]::CreateDirectory($run)
+$init=$null;$currentRequest=$null;$sessionId=$null;$operationId=$null;$generation=$null
+$revision=0;$documentId=$null;$app=$null;$doc=$null;$binding=$null;$activeContext=$null
+$last=$null;$poisoned=$false;$stop=$false;$observationsComplete=$false;$bindingCurrent=$false
 $keepOpen=$false;$preserveOnExit=$false;$lastSavedDocumentId=$null;$lastSavedRevision=-1
-$artifacts=@{};$allApplications=[Collections.Generic.List[object]]::new()
+$artifacts=@{};$ownedContexts=[Collections.Generic.List[hashtable]]::new()
 $born=[DateTime]::UtcNow;$lastActivity=$born
-$sourceFiles=@('native-edit-loop.ps1','native_edit_loop.py','NativeChemDraw.cs','native-common.ps1')
+$sourceFiles=@('native-edit-loop.ps1','native_edit_loop.py','NativeChemDraw.cs','native-common.ps1','lifecycle-owned.ps1','lifecycle_controller.py')
 $sourceHashes=@{}
-foreach($name in $sourceFiles){$sourceHashes[$name]=(Get-FileHash -LiteralPath (Join-Path $PSScriptRoot $name)).Hash.ToLowerInvariant()}
-function Json-Write($path,$value){
-    [IO.File]::WriteAllText($path,($value|ConvertTo-Json -Depth 100),[Text.UTF8Encoding]::new($false))
-}
+# Source-only lifecycle repair exception. There is deliberately no environment,
+# command-line or request option that enables native execution in this preview.
+$nativeExecutionAllowed=$false
+function Json-Write($path,$value){Write-LifecycleJson -Path $path -Value $value}
 function Record($stage,$detail){
-    $entry=@{utc=[DateTime]::UtcNow.ToString('o');stage=$stage;detail=$detail}
+    $entry=@{utc=[DateTime]::UtcNow.ToString('o');stage=$stage;generation=$generation;operation_id=$operationId;detail=$detail}
     [IO.File]::AppendAllText((Join-Path $run 'events.jsonl'),($entry|ConvertTo-Json -Depth 100 -Compress)+"`n",[Text.UTF8Encoding]::new($false))
+}
+function Exception-Detail($record){
+    $chain=@();$exception=$record.Exception
+    while($null -ne $exception){
+        $chain+=,@{type=$exception.GetType().FullName;message=$exception.Message;hresult=('0x{0:X8}' -f $exception.HResult);source=$exception.Source}
+        $exception=$exception.InnerException
+    }
+    return @{type=$record.Exception.GetType().FullName;message=$record.Exception.Message;chain=$chain;fully_qualified_error_id=$record.FullyQualifiedErrorId;script_stack=$record.ScriptStackTrace}
+}
+function Is-CanonicalUuid($value){
+    $parsed=[guid]::Empty
+    return $value -is [string] -and [guid]::TryParseExact($value,'D',[ref]$parsed) -and $parsed.ToString() -ceq $value
+}
+function Current-Readiness {
+    $state=if($poisoned){'unknown'}elseif($bindingCurrent -and $observationsComplete -and !$stop){'ready'}else{'not_ready'}
+    return @{state=$state;document_bound=$bindingCurrent;observations_complete=$observationsComplete}
+}
+function Write-WorkerStatus($state,$detail=$null){
+    Json-Write (Join-Path $run 'worker-status.json') @{worker_pid=$PID;worker_started_utc=$born.ToString('o');generation=$generation;
+        operation_id=$operationId;session_id=$sessionId;state=$state;native_execution_enabled=$nativeExecutionAllowed;readiness=(Current-Readiness);detail=$detail;observed_at=[DateTime]::UtcNow.ToString('o')}
 }
 function Hash($path){return (Get-FileHash -LiteralPath $path -Algorithm SHA256).Hash.ToLowerInvariant()}
 function Helper([Parameter(ValueFromRemainingArguments=$true)][string[]]$Arguments){
@@ -25,41 +46,76 @@ function Helper([Parameter(ValueFromRemainingArguments=$true)][string[]]$Argumen
     if($LASTEXITCODE -ne 0){throw 'Deterministic snapshot/check helper failed; see worker.log.'}
     return Get-Content -LiteralPath $Arguments[-1] -Raw|ConvertFrom-Json -AsHashtable
 }
+function Observe-OwnedProcess($bound){
+    try{$process=Get-Process -Id $bound.pid -ErrorAction Stop}catch{
+        if($_.FullyQualifiedErrorId -like 'NoProcessFoundForGivenId*'){return @{state='absent'}}
+        throw
+    }
+    return @{state='present';pid=$process.Id;start_utc=$process.StartTime.ToUniversalTime().ToString('o');executable=$process.Path}
+}
 function Assert-Binding($application,$document,$bound){
-    $process=Get-Process -Id $bound.pid
-    if([int][NativeChemDraw]::ApplicationProcess($application) -ne $bound.pid -or
-       [long]$application.MainWindow -ne $bound.hwnd -or
-       $process.StartTime.ToUniversalTime().ToString('o') -cne $bound.start_utc -or
-       $application.Documents.Count -ne 1 -or
+    $identity=Get-LifecycleProcessState -Binding $bound -ObserveProcess ${function:Observe-OwnedProcess}
+    if($identity.state -ne 'exact' -or [int][NativeChemDraw]::ApplicationProcess($application) -ne $bound.pid -or
+       [long]$application.MainWindow -ne $bound.hwnd -or $application.Documents.Count -ne 1 -or
        ![NativeChemDraw]::SameIdentity($application.ActiveDocument,$document)){
-        throw 'PID/start/HWND/document identity guard failed.'
+        throw 'PID/start/executable/HWND/document identity guard failed.'
     }
 }
 function Start-Owned {
-    $prior=@(Get-Process ChemDraw -ErrorAction SilentlyContinue|ForEach-Object {@{pid=$_.Id;start_utc=$_.StartTime.ToUniversalTime().ToString('o');hwnd=[long]$_.MainWindowHandle}})
+    # Retain the attempt before New-Object: Open or binding failure must not lose
+    # the application reference or be mistaken for proof that nothing was made.
+    $context=@{context_id=[guid]::NewGuid().ToString();generation=$generation;operation_id=$operationId;
+        creation_attempted=$false;application_created=$false;application=$null;binding=$null;document=$null;document_present=$false;
+        document_id=$null;revision=0;fingerprint=$null;saved_revision_verified=$false;cleanup=$null}
+    $ownedContexts.Add($context)
+    $prior=@(Get-Process ChemDraw -ErrorAction SilentlyContinue|ForEach-Object {@{pid=$_.Id;start_utc=$_.StartTime.ToUniversalTime().ToString('o');hwnd=[long]$_.MainWindowHandle;executable=$_.Path}})
+    Record 'owned_application_creation_intent' @{context_id=$context.context_id;executable=$exe;preexisting=$prior}
+    $context.creation_attempted=$true
     $application=New-Object -ComObject ChemDraw_x64.Application
-    $allApplications.Add($application)
+    $context.application=$application;$context.application_created=$true
+    Record 'owned_application_created' @{context_id=$context.context_id}
     $fresh=@(Get-Process ChemDraw -ErrorAction SilentlyContinue|Where-Object {$_.Id -notin @($prior|ForEach-Object {$_.pid}) -and $_.Path -eq $exe})
     $nativePid=[int][NativeChemDraw]::ApplicationProcess($application)
     if($application.Documents.Count -ne 0 -or $fresh.Count -ne 1 -or $fresh[0].Id -ne $nativePid){
-        throw 'Fresh owned application could not be established. No preexisting document may be used.'
+        throw 'Fresh owned application could not be established. Ambiguous applications are preserved.'
     }
-    $bound=@{pid=$nativePid;start_utc=$fresh[0].StartTime.ToUniversalTime().ToString('o');hwnd=[long]$application.MainWindow;initial_documents=0;preexisting=$prior}
-    Record 'owned_process_bound' $bound
-    return @{application=$application;binding=$bound}
+    $bound=@{pid=$nativePid;start_utc=$fresh[0].StartTime.ToUniversalTime().ToString('o');executable=[IO.Path]::GetFullPath($fresh[0].Path);
+        hwnd=[long]$application.MainWindow;initial_documents=0;preexisting=$prior}
+    $context.binding=$bound
+    Record 'owned_process_bound' @{context_id=$context.context_id;binding=$bound}
+    return $context
 }
-function Quit-EmptyOwned($application,$bound,$retainedDocument=$null){
-    # A last-document close may destroy/change HWND. Ownership ends at the last
-    # verified document observation; require retained app, exact PID/start and no
-    # documents before graceful Quit. Never reconnect to a released process.
-    $process=Get-Process -Id $bound.pid -ErrorAction SilentlyContinue
-    $empty=$application.Documents.Count -eq 0
-    $onlyRetained=$null -ne $retainedDocument -and $application.Documents.Count -eq 1 -and [NativeChemDraw]::SameIdentity($application.ActiveDocument,$retainedDocument)
-    if($null -ne $process -and $process.StartTime.ToUniversalTime().ToString('o') -ceq $bound.start_utc -and ($empty -or $onlyRetained)){
-        Record 'quit_empty_owned_intent' $bound
-        ([ChemDraw.IChemDrawApplication]$application).Quit()
-        Record 'quit_empty_owned_return' $bound
+function Close-OwnedContext($context,[bool]$detach=$false,[bool]$preserve=$false){
+    # Cleanup has one effect attempt. A later caller receives its retained receipt,
+    # including an ending/unknown result; it does not issue another Close or Quit.
+    if($null -ne $context.cleanup){return $context.cleanup}
+    $scope={
+        $application=$context.application;$document=$context.document
+        $count=$application.Documents.Count
+        return @{retained_application=($context.application_created -and $null -ne $application);
+            application_pid=[int][NativeChemDraw]::ApplicationProcess($application);hwnd=[long]$application.MainWindow;
+            document_count=$count;retained_document_matches=($null -ne $document -and $count -eq 1 -and [NativeChemDraw]::SameIdentity($application.ActiveDocument,$document))}
     }
+    $close={
+        Assert-Binding $context.application $context.document $context.binding
+        if($null -ne $context.fingerprint){
+            $final=Capture (Join-Path $run ('evidence/'+$context.context_id+'-final-before-close')) $context.application $context.document $context.binding $context.document_id $context.revision
+            if($final.fingerprint -cne $context.fingerprint){throw 'External change before Close; document preserved.'}
+        }
+        Assert-Binding $context.application $context.document $context.binding
+        Record 'owned_document_close_intent' @{context_id=$context.context_id;binding=$context.binding;document_id=$context.document_id;revision=$context.revision}
+        [void][NativeChemDraw]::Close($context.document)
+    }
+    $quit={
+        Record 'owned_application_quit_intent' @{context_id=$context.context_id;binding=$context.binding}
+        ([ChemDraw.IChemDrawApplication]$context.application).Quit()
+    }
+    $receipt=Invoke-OwnedLifecycleCleanup -Context $context -ObserveProcess ${function:Observe-OwnedProcess} -ObserveApplication $scope -CloseDocument $close -QuitApplication $quit -Detach:$detach -Preserve:$preserve
+    $context.cleanup=$receipt
+    [void][IO.Directory]::CreateDirectory((Join-Path $run 'lifecycle'))
+    Write-LifecycleJson -Path (Join-Path $run ('lifecycle/'+$context.context_id+'.json')) -Value $receipt -NoOverwrite
+    Record 'owned_cleanup_receipt' $receipt
+    return $receipt
 }
 function Save-Native($path,$mime){
     Assert-Binding $app $doc $binding
@@ -108,30 +164,61 @@ function Observe([string]$prefix,$movingTarget=$null,$motionPath=$null,[bool]$in
     Json-Write $after.snapshot_file $after
     $script:last=$after
     if(!$comparison.ok){$script:poisoned=$true;throw 'Native PNG export changed full object state; session frozen.'}
+    $script:bindingCurrent=$true;$script:observationsComplete=$true
+    if($null -ne $activeContext){$activeContext.fingerprint=$after.fingerprint;$activeContext.document_id=$documentId;$activeContext.revision=$revision}
     return $after
 }
 function Write-Response($request,$response){
+    if($null -eq $request -or !$request.ContainsKey('request_id') -or !(Is-CanonicalUuid $request.request_id)){throw 'No safe request identity for reply publication.'}
     $response.request_id=$request.request_id;$response.session_id=$sessionId
+    $response.operation_id=if($request.ContainsKey('operation_id')){$request.operation_id}else{$operationId}
+    $response.generation=if($request.ContainsKey('generation')){$request.generation}else{$generation}
+    $response.action=if($request.ContainsKey('action')){$request.action}else{$null}
     $response.document_id=$documentId;$response.revision=$revision
-    $response.session_poisoned=$poisoned
+    $response.session_poisoned=$poisoned;$response.readiness=Current-Readiness
     $response.tool_source_hashes=$sourceHashes
     if($null -ne $last){$response.observation=$last}
+    [void][IO.Directory]::CreateDirectory((Join-Path $run 'replies'))
     $path=Join-Path $run ('replies/'+$request.request_id+'.json')
-    Json-Write ($path+'.tmp') $response
-    [IO.File]::Move(($path+'.tmp'),$path)
-    Record 'action_response' @{request_id=$request.request_id;action=$request.action;ok=$response.ok;revision=$revision;poisoned=$poisoned}
+    Write-LifecycleJson -Path $path -Value $response -NoOverwrite
+    Record 'action_response' @{request_id=$request.request_id;operation_id=$response.operation_id;action=$response.action;ok=$response.ok;revision=$revision;poisoned=$poisoned}
+    Write-WorkerStatus $(if($stop){'ending'}else{$response.readiness.state})
 }
 function Check-Source {
     if((Hash $init.source) -cne $init.source_sha256 -or (Hash $init.copy) -cne $init.source_sha256){throw 'Original/copy hash changed outside this session.'}
 }
 try{
+    Write-WorkerStatus 'initializing'
+    $init=Get-Content -LiteralPath (Join-Path $run 'init.json') -Raw|ConvertFrom-Json -AsHashtable
+    if($init -isnot [hashtable] -or !$init.ContainsKey('request') -or $init.request -isnot [hashtable]){throw 'Worker initialization requires a request object.'}
+    $currentRequest=$init.request
+    if($currentRequest.ContainsKey('session_id') -and (Is-CanonicalUuid $currentRequest.session_id)){$sessionId=$currentRequest.session_id}
+    if($currentRequest.ContainsKey('operation_id') -and (Is-CanonicalUuid $currentRequest.operation_id)){$operationId=$currentRequest.operation_id}
+    if($currentRequest.ContainsKey('generation') -and (Is-CanonicalUuid $currentRequest.generation)){$generation=$currentRequest.generation}
+    foreach($key in @('session_id','request_id','operation_id','generation')){
+        if(!$currentRequest.ContainsKey($key) -or !(Is-CanonicalUuid $currentRequest[$key])){throw ('Invalid worker request identity: '+$key)}
+    }
+    $sessionId=$currentRequest.session_id;$operationId=$currentRequest.operation_id;$generation=$currentRequest.generation
+    if(!$init.ContainsKey('operation_id') -or !$init.ContainsKey('generation') -or $init.operation_id -cne $operationId -or $init.generation -cne $generation -or
+       !$currentRequest.ContainsKey('action') -or $currentRequest.action -cne 'open-copy'){throw 'Worker startup identity or action does not match its request.'}
+    foreach($name in $sourceFiles){$sourceHashes[$name]=(Get-FileHash -LiteralPath (Join-Path $PSScriptRoot $name)).Hash.ToLowerInvariant()}
+    Write-WorkerStatus 'not_ready'
+    if(!$nativeExecutionAllowed){
+        Write-Response $currentRequest @{ok=$false;status='refused';reason='native_execution_frozen';native_write=$false;native_execution_enabled=$false}
+        Write-WorkerStatus 'native_execution_frozen'
+        return
+    }
+    # This point remains unreachable until a separately reviewed source change.
+    . (Join-Path $PSScriptRoot 'native-common.ps1')
+    $documentId=[guid]::NewGuid().ToString()
     Record 'worker_start' @{worker_pid=$PID;start_utc=$born.ToString('o');source_role=$init.request.role;source_sha256=$init.source_sha256;idle_limit_seconds=$init.max_idle_seconds}
     $exe=Initialize-NativeInterop
     Record 'environment' @{executable_sha256=(Hash $exe);interop_sha256=(Hash (Join-Path (Split-Path $exe) 'Interop.ChemDraw.dll'));native_version=(Get-Item -LiteralPath $exe).VersionInfo.FileVersion;signature='Valid'}
     Check-Source
-    $started=Start-Owned;$app=$started.application;$binding=$started.binding
+    $activeContext=Start-Owned;$app=$activeContext.application;$binding=$activeContext.binding
     $mime=if([IO.Path]::GetExtension($init.copy) -eq '.cdx'){'chemical/x-cdx'}else{'text/xml'}
     $doc=[NativeChemDraw]::Open($app,$init.copy,$mime)
+    $activeContext.document=$doc;$activeContext.document_present=$true;$activeContext.document_id=$documentId
     if(![NativeChemDraw]::ActivateAndVerify($app,$doc)){throw 'Native document activation/identity failed.'}
     $initial=Observe ($init.request.request_id+'-initial') $null $null $true
     # The baseline is the post-initial-export state. Repeat with the ordinary
@@ -144,8 +231,12 @@ try{
         $pending=@(Get-ChildItem -LiteralPath (Join-Path $run 'inbox') -Filter '*.json'|Where-Object {!(Test-Path -LiteralPath (Join-Path $run ('replies/'+$_.Name)))}|Sort-Object CreationTimeUtc)
         if($pending.Count -eq 0){Start-Sleep -Milliseconds 120;continue requests}
         $requestPath=$pending[0].FullName;$q=Get-Content -LiteralPath $requestPath -Raw|ConvertFrom-Json -AsHashtable
-        $lastActivity=[DateTime]::UtcNow;$writeStarted=$false
+        $lastActivity=[DateTime]::UtcNow;$writeStarted=$false;$observationsComplete=$false;$bindingCurrent=$false
+        $currentRequest=$q
         try{
+            foreach($key in @('request_id','operation_id','generation')){if(!$q.ContainsKey($key) -or !(Is-CanonicalUuid $q[$key])){throw ('Invalid inbox identity: '+$key)}}
+            $operationId=$q.operation_id
+            if($q.generation -cne $generation){Write-Response $q @{ok=$false;reason='Wrong worker generation; no write';native_write=$false};continue requests}
             if($q.session_id -cne $sessionId -or $q.document_id -cne $documentId -or $q.revision -ne $revision){
                 Write-Response $q @{ok=$false;reason='Wrong session/document/revision; no write';native_write=$false;observation_kind='last verified'};continue requests
             }
@@ -174,7 +265,7 @@ try{
                             $preserveOnExit=$true;throw 'Final saved-revision observation failed; no ownership transfer committed.'
                         }
                         # Commit detach and stop only after a successful final observation.
-                        $keepOpen=$true;$stop=$true
+                        $activeContext.saved_revision_verified=$true;$keepOpen=$true;$stop=$true
                     }
                     if($q.ContainsKey('end_session') -and $q.end_session){$stop=$true;$detail.session_ending=$true;$detail.keep_open=$keepOpen}
                 }
@@ -218,37 +309,36 @@ try{
                     if(!$artifacts.ContainsKey($q.artifact_id)){throw 'Artifact must be a file saved by this session.'}
                     $file=$artifacts[$q.artifact_id]
                     if((Hash $file.path) -cne $file.sha256){throw 'Saved artifact bytes changed; refusing reopen.'}
-                    $oldDoc=$doc;$oldApp=$app;$oldBinding=$binding
+                    $oldDoc=$doc;$oldApp=$app;$oldBinding=$binding;$oldContext=$activeContext
                     Assert-Binding $oldApp $oldDoc $oldBinding
                     $started=Start-Owned
                     if($started.binding.pid -eq $oldBinding.pid){throw 'Reopen requires a different fresh native process.'}
-                    $newApp=$started.application;$newBinding=$started.binding;$newDoc=$null
+                    $newApp=$started.application;$newBinding=$started.binding;$newDoc=$null;$newContext=$started
                     $newDocId=[guid]::NewGuid().ToString();$newRevision=$revision+1
                     try{
                         $mime=if($file.format -eq 'cdx'){'chemical/x-cdx'}else{'text/xml'}
                         $newDoc=[NativeChemDraw]::Open($newApp,$file.path,$mime)
+                        $newContext.document=$newDoc;$newContext.document_present=$true;$newContext.document_id=$newDocId;$newContext.revision=$newRevision
                         if([NativeChemDraw]::SameIdentity($oldDoc,$newDoc) -or ![NativeChemDraw]::ActivateAndVerify($newApp,$newDoc)){throw 'Fresh reopened document identity failed.'}
                         $newSnap=Capture (Join-Path $run ('evidence/'+$q.request_id+'-pending-new')) $newApp $newDoc $newBinding $newDocId $newRevision
+                        $newContext.fingerprint=$newSnap.fingerprint
                         # Re-read the OLD retained document immediately before closing it.
                         $oldReady=Capture (Join-Path $run ('evidence/'+$q.request_id+'-old-before-close'))
                         if($oldReady.fingerprint -cne $pre.fingerprint -or (Test-Path -LiteralPath (Join-Path $run 'UNCERTAIN.json'))){$poisoned=$true;$preserveOnExit=$true;throw 'Old revision/deadline changed during reopen; no old document close.'}
                     }catch{
                         $poisoned=$true;$preserveOnExit=$true
-                        if($null -ne $newDoc){try{Assert-Binding $newApp $newDoc $newBinding;[NativeChemDraw]::Close($newDoc);Quit-EmptyOwned $newApp $newBinding $newDoc}catch{Record 'pending_new_cleanup_failure' (Get-NativeException $_)}}
-                        else{try{Quit-EmptyOwned $newApp $newBinding}catch{Record 'pending_empty_cleanup_failure' (Get-NativeException $_)}}
+                        try{[void](Close-OwnedContext $newContext)}catch{Record 'pending_new_cleanup_failure' (Exception-Detail $_)}
                         throw
                     }
                     # Commit the complete verified new binding together. A later
                     # old-process close failure cannot create a mixed context.
-                    $app=$newApp;$doc=$newDoc;$binding=$newBinding;$documentId=$newDocId;$revision=$newRevision
+                    $app=$newApp;$doc=$newDoc;$binding=$newBinding;$documentId=$newDocId;$revision=$newRevision;$activeContext=$newContext
                     # Close only the retained old document. No HWND assumption after Close.
                     try{
-                        [NativeChemDraw]::Close($oldDoc)
-                        Record 'old_document_close_return' @{last_verified_binding=$oldBinding;binding_end='before Close'}
-                        Record 'post_close_documents' @{binding=$oldBinding;count=$oldApp.Documents.Count}
-                        Quit-EmptyOwned $oldApp $oldBinding $oldDoc
-                        [void][Runtime.InteropServices.Marshal]::ReleaseComObject($oldDoc)
-                    }catch{Record 'old_close_failure_new_context_retained' (Get-NativeException $_);$detail.old_close_warning=$_.Exception.Message}
+                        $oldCleanup=Close-OwnedContext $oldContext
+                        $detail.previous_lifecycle=$oldCleanup
+                        if(!$oldCleanup.observed_process_exit){$detail.old_close_warning='Previous owned application exit remains unconfirmed.'}
+                    }catch{Record 'old_close_failure_new_context_retained' (Exception-Detail $_);$detail.old_close_warning=$_.Exception.Message}
                     $last=Observe ($q.request_id+'-reopened')
                     $lastSavedDocumentId=$documentId;$lastSavedRevision=$revision
                     $detail.reopened_artifact=$file;$detail.previous_binding=$oldBinding
@@ -259,32 +349,56 @@ try{
             Check-Source
             Write-Response $q @{ok=$true;status=$q.action;detail=$detail;native_write=$writeStarted}
         }catch{
+            $observationsComplete=$false;$bindingCurrent=$false
             if($writeStarted){$poisoned=$true}
-            Record 'action_failure' (Get-NativeException $_)
-            Write-Response $q @{ok=$false;reason=$_.Exception.Message;native_write_started=$writeStarted;observation_kind='last verified';failure=(Get-NativeException $_)}
+            Record 'action_failure' (Exception-Detail $_)
+            Write-Response $q @{ok=$false;reason=$_.Exception.Message;native_write_started=$writeStarted;observation_kind='last verified';failure=(Exception-Detail $_)}
         }
     }
 }catch{
-    $poisoned=$true
-    Record 'worker_failure' (Get-NativeException $_)
-    if(!(Test-Path -LiteralPath (Join-Path $run ('replies/'+$init.request.request_id+'.json')))){
-        Write-Response $init.request @{ok=$false;reason=$_.Exception.Message;failure=(Get-NativeException $_)}
+    $poisoned=$true;$observationsComplete=$false;$bindingCurrent=$false
+    $failure=Exception-Detail $_
+    Record 'worker_failure' $failure
+    Write-WorkerStatus 'failed' $failure
+    if($null -ne $currentRequest -and $currentRequest.ContainsKey('request_id') -and (Is-CanonicalUuid $currentRequest.request_id) -and
+       !(Test-Path -LiteralPath (Join-Path $run ('replies/'+$currentRequest.request_id+'.json')))){
+        Write-Response $currentRequest @{ok=$false;reason=$failure.message;failure=$failure}
     }
 }finally{
-    $closed=@{utc=[DateTime]::UtcNow.ToString('o');poisoned=$poisoned;source_unchanged=$false;owned_binding=$binding}
-    try{Check-Source;$closed.source_unchanged=$true}catch{$closed.source_error=$_.Exception.Message}
-    if($keepOpen){$closed.detached_saved_document=$true;$closed.document_full_name=[string]$doc.FullName;$closed.ownership_transferred_to_user=$true}
-    if($preserveOnExit){$closed.external_or_uncertain_state_preserved=$true}
-    if($null -ne $doc -and !$keepOpen -and !$preserveOnExit){
-        try{
-            Assert-Binding $app $doc $binding
-            if($null -ne $last){$endSnap=Capture (Join-Path $run 'evidence/final-before-close');if($endSnap.fingerprint -cne $last.fingerprint){throw 'External change before close; leave document open.'}}
-            [NativeChemDraw]::Close($doc);$closed.native_close_returned=$true;$closed.documents_after_close=$app.Documents.Count
-            Quit-EmptyOwned $app $binding $doc
-        }catch{$closed.close_error=$_.Exception.Message}
-        if([Runtime.InteropServices.Marshal]::IsComObject($doc)){[void][Runtime.InteropServices.Marshal]::ReleaseComObject($doc)}
+    $closed=@{utc=[DateTime]::UtcNow.ToString('o');generation=$generation;operation_id=$operationId;session_id=$sessionId;
+        poisoned=$poisoned;source_unchanged=$null;owned_binding=$binding;applications=@();session_state='not_created';
+        document_close_returned=$false;application_quit_returned=$false;observed_process_exit=$false;native_execution_enabled=$false}
+    if($nativeExecutionAllowed -and $null -ne $init){
+        try{Check-Source;$closed.source_unchanged=$true}catch{$closed.source_unchanged=$false;$closed.source_error=$_.Exception.Message}
     }
-    foreach($application in $allApplications){if([Runtime.InteropServices.Marshal]::IsComObject($application)){[void][Runtime.InteropServices.Marshal]::ReleaseComObject($application)}}
-    Json-Write (Join-Path $run 'closed.json') $closed
-    Record 'worker_closed' $closed
+    foreach($context in $ownedContexts){
+        try{
+            $isActive=[object]::ReferenceEquals($context,$activeContext)
+            $receipt=Close-OwnedContext $context ($isActive -and $keepOpen) ($isActive -and $preserveOnExit)
+            $closed.applications+=,$receipt
+        }catch{
+            $closed.applications+=,@{context_id=$context.context_id;generation=$generation;operation_id=$context.operation_id;
+                session_state='unknown';observed_process_exit=$false;document_close_returned=$false;application_quit_returned=$false;error=$_.Exception.Message}
+        }
+        foreach($reference in @($context.document,$context.application)){
+            if($null -ne $reference -and [Runtime.InteropServices.Marshal]::IsComObject($reference)){
+                try{[void][Runtime.InteropServices.Marshal]::ReleaseComObject($reference)}catch{Record 'com_release_failure' (Exception-Detail $_)}
+            }
+        }
+    }
+    if($closed.applications.Count -gt 0){
+        $states=@($closed.applications|ForEach-Object {$_.session_state})
+        $closed.session_state=if('unknown' -in $states){'unknown'}elseif('ending' -in $states){'ending'}elseif('detached' -in $states){'detached'}elseif('closed' -in $states){'closed'}else{'not_created'}
+        $closed.document_close_returned=@($closed.applications|Where-Object {$_.document_close_returned}).Count -gt 0
+        $closed.application_quit_returned=@($closed.applications|Where-Object {$_.application_quit_returned}).Count -gt 0
+        $created=@($closed.applications|Where-Object {$_.session_state -ne 'not_created'})
+        $closed.observed_process_exit=$created.Count -gt 0 -and @($created|Where-Object {!$_.observed_process_exit}).Count -eq 0
+    }
+    if($keepOpen){$closed.detached_saved_document=$true;$closed.ownership_transferred_to_user=($closed.session_state -eq 'detached')}
+    if($preserveOnExit){$closed.external_or_uncertain_state_preserved=$true}
+    $observationsComplete=$false;$bindingCurrent=$false
+    # This is a receipt container, not a claim that Close/Quit implies process exit.
+    Write-LifecycleJson -Path (Join-Path $run 'closed.json') -Value $closed -NoOverwrite
+    Write-WorkerStatus $closed.session_state @{receipt='closed.json';observed_process_exit=$closed.observed_process_exit}
+    Record 'worker_ended' $closed
 }

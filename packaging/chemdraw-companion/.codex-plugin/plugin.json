@@ -1,0 +1,22 @@
+{
+  "name": "chemdraw-companion",
+  "version": "0.2.0-preview.1",
+  "description": "Native-disabled diagnostic preview for ChemDraw Companion.",
+  "author": {
+    "name": "ChemDraw Companion contributors"
+  },
+  "repository": "https://github.com/saigyujikingyo-png/chemdraw-companion",
+  "license": "MIT",
+  "mcpServers": "./.mcp.json",
+  "interface": {
+    "displayName": "ChemDraw Companion",
+    "shortDescription": "Diagnostic preview; native execution is frozen.",
+    "longDescription": "Checks this package and reports the native execution freeze. This preview does not read, edit, render or close ChemDraw.",
+    "developerName": "ChemDraw Companion contributors",
+    "category": "Productivity",
+    "capabilities": [],
+    "defaultPrompt": [
+      "Check ChemDraw Companion package status."
+    ]
+  }
+}
