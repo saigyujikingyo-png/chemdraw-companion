@@ -1,0 +1,48 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:chembridge:chemdraw:output:edit-preflight-error:0.1",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "result_version": {
+      "const": "edit-preflight-error/0.1"
+    },
+    "dispatch": {
+      "const": "not_started"
+    },
+    "error": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "code": {
+          "const": "INVALID_ARGUMENT"
+        },
+        "message": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 1024
+        },
+        "stage": {
+          "enum": [
+            "request_validation",
+            "request_decode"
+          ]
+        },
+        "retryable": {
+          "const": false
+        }
+      },
+      "required": [
+        "code",
+        "message",
+        "stage",
+        "retryable"
+      ]
+    }
+  },
+  "required": [
+    "result_version",
+    "dispatch",
+    "error"
+  ]
+}

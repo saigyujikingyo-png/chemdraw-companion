@@ -1,5 +1,11 @@
 # Change record
 
+## 0.2.0-preview.1 (native-disabled diagnostic preview)
+
+- Add durable versioned lifecycle receipts, startup deduplication, bounded same-attempt observation and owned exit semantics, verified through portable failure boundaries.
+- Keep native dispatch frozen and preserve historical partial acceptance.
+- Add a self-contained diagnostic status MCP package, versioned installation/rollback and MIT source licensing. Package, installed-host and native acceptance remain separate.
+
 ## 2026-09-14 - shared-rule adoption, documentation only
 
 - Adopt shared principles **2026-09-14.1**, including section 12 on structured tool

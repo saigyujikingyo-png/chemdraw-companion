@@ -1,0 +1,91 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:chembridge:chemdraw:output:diagnostic-status:0.1",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "result_version": {
+      "const": "chemdraw-status/0.1"
+    },
+    "product": {
+      "const": "ChemDraw Companion"
+    },
+    "package_version": {
+      "const": "0.2.0-preview.1"
+    },
+    "source_commit": {
+      "anyOf": [
+        {
+          "type": "string",
+          "pattern": "^[a-f0-9]{40}$"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "ok": {
+      "type": "boolean"
+    },
+    "package_integrity": {
+      "enum": [
+        "verified",
+        "unverified",
+        "mismatch"
+      ]
+    },
+    "checked_files": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "native_execution_enabled": {
+      "const": false
+    },
+    "native_acceptance": {
+      "const": "frozen"
+    },
+    "available_capabilities": {
+      "const": [
+        "diagnostics"
+      ]
+    },
+    "lifecycle": {
+      "const": {
+        "class": "on_demand_local_companion",
+        "owner": "calling_host",
+        "persistent": false,
+        "shutdown": "stdin_eof"
+      }
+    },
+    "runtime_python": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 64
+    },
+    "observed_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "message": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 512
+    }
+  },
+  "required": [
+    "result_version",
+    "product",
+    "package_version",
+    "source_commit",
+    "ok",
+    "package_integrity",
+    "checked_files",
+    "native_execution_enabled",
+    "native_acceptance",
+    "available_capabilities",
+    "lifecycle",
+    "runtime_python",
+    "observed_at",
+    "message"
+  ]
+}

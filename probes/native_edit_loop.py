@@ -368,80 +368,12 @@ def preview(native_png):
             "preview_derivation": "native PNG alpha-composited onto white; no geometry edits"}
 
 
-def submit(req, state, pwsh=None, timeout=50):
-    action = req.get("action")
-    if action not in ACTION_KEYS or set(req) - BASE_KEYS - ACTION_KEYS[action]:
-        return {"ok": False, "reason": "Unknown action/fields; final coordinates are not accepted", "native_write": False}
-    request_id = req.setdefault("request_id", str(uuid.uuid4()))
-    uuid.UUID(request_id)
-    if action == "open-copy":
-        source = Path(req["source"]).resolve(strict=True)
-        if source.suffix.lower() not in {".cdxml", ".cdx"} or not source.is_file():
-            raise ValueError("One ordinary CDXML/CDX source file is required")
-        if file_hash(source) != req.get("expected_sha256", "").lower():
-            raise ValueError("Source hash required and must match before creating a copy")
-        if req.get("role") not in {"workflow-control", "script-safety-control", "no-edit-control", "development-copy"}:
-            raise ValueError("Declare the source role")
-        sid = str(uuid.uuid4())
-        folder = state / sid
-        folder.mkdir(parents=True, exist_ok=False)
-        for name in ("inbox", "replies", "evidence", "saved"):
-            (folder / name).mkdir()
-        copied = folder / ("source" + source.suffix.lower())
-        shutil.copyfile(source, copied)
-        if file_hash(copied) != req["expected_sha256"].lower():
-            raise ValueError("Copy hash changed")
-        req["source"] = str(source)
-        req["session_id"] = sid
-        write(folder / "init.json", {"request": req, "copy": str(copied), "source": str(source),
-                                    "source_sha256": file_hash(source), "max_idle_seconds": 1200})
-        worker = pwsh or shutil.which("pwsh")
-        if not worker:
-            raise ValueError("PowerShell 7 path required with --powershell")
-        with (folder / "worker.log").open("wb") as log:
-            proc = subprocess.Popen([worker, "-NoProfile", "-STA", "-File", str(HERE / "native-edit-loop.ps1"),
-                                     "-SessionDirectory", str(folder), "-PythonExe", sys.executable],
-                                    stdin=subprocess.DEVNULL, stdout=log, stderr=log,
-                                    creationflags=getattr(subprocess, "CREATE_NO_WINDOW", 0))
-        write(folder / "worker.json", {"pid": proc.pid, "started_unix": time.time()})
-    else:
-        sid = str(uuid.UUID(req["session_id"]))
-        folder = state / sid
-        if not folder.is_dir():
-            return {"ok": False, "reason": "Unknown session", "native_write": False}
-        if (folder / "closed.json").exists():
-            return {"ok": False, "reason": "Session closed; start a new copy explicitly", "closed": read(folder / "closed.json")}
-        if (folder / "UNCERTAIN.json").exists() and action != "inspect":
-            return {"ok": False, "reason": "Previous deadline expired; mutation locked. Inspect evidence; never replay", "native_write": False}
-    reply = folder / "replies" / (request_id + ".json")
-    request_file = folder / "inbox" / (request_id + ".json")
-    claim = folder / "client.lock"
-    try:
-        claim.mkdir()
-    except FileExistsError:
-        return {"ok": False, "reason": "Another action is pending; no concurrent submission", "native_write": False}
-    try:
-        if request_file.exists():
-            if read(request_file) != req:
-                return {"ok": False, "reason": "Request ID reused with different content", "native_write": False}
-        elif action != "open-copy":
-            tmp = request_file.with_suffix(".tmp")
-            write(tmp, req)
-            tmp.rename(request_file)
-        deadline = time.monotonic() + timeout
-        while time.monotonic() < deadline:
-            if reply.exists():
-                result = read(reply)
-                result["session_directory"] = str(folder)
-                return result
-            time.sleep(.15)
-        uncertain = {"ok": False, "status": "deadline-uncertain", "session_id": sid,
-                     "request_id": request_id, "reply_path": str(reply),
-                     "reason": "Do not retry writes. The retained worker may still return a late receipt."}
-        write(folder / "UNCERTAIN.json", uncertain)
-        return uncertain
-    finally:
-        claim.rmdir()
+def submit(req, state, pwsh=None, timeout=50, *, result_version=None, _backend=None, _checkpoint=None):
+    # The legacy contract is explicitly frozen; it never dispatches in this build.
+    from lifecycle_controller import VERSION, submit as durable_submit
+    if result_version != VERSION:
+        return {"ok": False, "reason": "Native execution and the legacy producer are frozen; opt in to agent-edit-result/0.2-draft.2 for diagnostic receipts", "native_write": False}
+    return durable_submit(req, state, timeout=timeout, _backend=_backend, _checkpoint=_checkpoint)
 
 
 def main():
@@ -471,16 +403,18 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--request", help="UTF-8 JSON request file; otherwise read stdin")
     parser.add_argument("--state-dir", type=Path, default=DEFAULT_STATE)
+    parser.add_argument("--result-version", choices=["agent-edit-result/0.2-draft.2"], help="Explicit versioned receipt opt-in; native execution remains frozen")
     parser.add_argument("--powershell", help="PowerShell 7 executable, needed only for open-copy")
     parser.add_argument("--timeout", type=int, choices=range(5, 61), default=50)
     args = parser.parse_args()
     try:
         req = read(args.request) if args.request else json.load(sys.stdin)
-        result = submit(req, args.state_dir.resolve(), args.powershell, args.timeout)
+        result = submit(req, args.state_dir.resolve(), args.powershell, args.timeout, result_version=args.result_version)
     except Exception as exc:
-        result = {"ok": False, "reason": str(exc), "native_write": False, "layer": "client"}
+        from lifecycle_controller import preflight_error
+        result = preflight_error("request_decode", str(exc))
     print(json.dumps(result, ensure_ascii=False))
-    raise SystemExit(0 if result.get("ok") else 2)
+    raise SystemExit(0 if result.get("ok") or result.get("status") == "completed" else 2)
 
 
 if __name__ == "__main__":

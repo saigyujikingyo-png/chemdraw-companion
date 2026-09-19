@@ -1,0 +1,437 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:chembridge:chemdraw:output:common:1.0",
+  "$defs": {
+    "id": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 128
+    },
+    "sha256": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "timestamp": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "error": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "code": {
+          "enum": [
+            "INVALID_ARGUMENT",
+            "UNSUPPORTED_RECIPE",
+            "CHEMICAL_INPUT_AMBIGUOUS",
+            "SEMANTIC_MISMATCH",
+            "APP_UNAVAILABLE",
+            "LICENSE_ACTION_REQUIRED",
+            "CAPABILITY_UNVERIFIED",
+            "NATIVE_ROUTE_UNAVAILABLE",
+            "DOCUMENT_BINDING_UNSAFE",
+            "REVISION_CONFLICT",
+            "IDENTITY_MISMATCH",
+            "PROTOCOL_MISMATCH",
+            "IDEMPOTENCY_CONFLICT",
+            "NATIVE_OUTCOME_UNKNOWN",
+            "QUALITY_GATE_FAILED",
+            "UNSUPPORTED_OBJECT",
+            "EXPORT_REVISION_MISMATCH",
+            "DELIVERY_BLOCKED",
+            "DESTINATION_DENIED",
+            "RESOURCE_LIMIT",
+            "JOB_TIMEOUT",
+            "OUTPUT_VALIDATION_FAILED",
+            "NEEDS_INTERFACE",
+            "TARGET_AMBIGUOUS",
+            "STALE_OBJECT",
+            "CANCELLED",
+            "INTERRUPTED"
+          ]
+        },
+        "message": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 1024
+        },
+        "stage": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 128
+        },
+        "retryable": {
+          "type": "boolean"
+        },
+        "mutation_outcome": {
+          "enum": [
+            "none",
+            "known",
+            "unknown"
+          ]
+        },
+        "evidence_ids": {
+          "type": "array",
+          "maxItems": 16,
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 128
+          }
+        },
+        "next_action": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 512
+        },
+        "job_id": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 128
+        },
+        "session_id": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 128
+        },
+        "operation_id": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 128
+        },
+        "current_revision": {
+          "anyOf": [
+            {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 256
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      },
+      "required": [
+        "code",
+        "message",
+        "stage",
+        "retryable",
+        "mutation_outcome",
+        "evidence_ids",
+        "next_action"
+      ],
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "mutation_outcome": {
+                "const": "unknown"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "retryable": {
+                "const": false
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "code": {
+                "const": "NATIVE_OUTCOME_UNKNOWN"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "mutation_outcome": {
+                "const": "unknown"
+              },
+              "retryable": {
+                "const": false
+              }
+            }
+          }
+        }
+      ]
+    },
+    "gate": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "status": {
+          "enum": [
+            "pass",
+            "fail",
+            "pending",
+            "unverified",
+            "not_applicable"
+          ]
+        },
+        "evidence_ids": {
+          "type": "array",
+          "maxItems": 16,
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 128
+          }
+        },
+        "reason": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 512
+        }
+      },
+      "required": [
+        "status",
+        "evidence_ids",
+        "reason"
+      ],
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "status": {
+                "enum": [
+                  "pass",
+                  "fail"
+                ]
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "evidence_ids": {
+                "minItems": 1
+              }
+            }
+          }
+        }
+      ]
+    },
+    "artifact": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "artifact_id": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 128
+        },
+        "file_name": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 256
+        },
+        "media_type": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 128
+        },
+        "bytes": {
+          "anyOf": [
+            {
+              "type": "integer",
+              "minimum": 0
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "sha256": {
+          "anyOf": [
+            {
+              "type": "string",
+              "pattern": "^[a-f0-9]{64}$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "unavailable_metadata": {
+          "type": "array",
+          "maxItems": 2,
+          "items": {
+            "enum": [
+              "bytes",
+              "sha256"
+            ]
+          }
+        },
+        "role": {
+          "enum": [
+            "native_editable",
+            "native_render",
+            "derived_preview",
+            "diagnostic",
+            "report",
+            "schema"
+          ]
+        },
+        "producer": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 256
+        },
+        "source_artifact_id": {
+          "anyOf": [
+            {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 128
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "delivery_status": {
+          "enum": [
+            "available",
+            "transferred",
+            "receipt_verified",
+            "blocked",
+            "failed"
+          ]
+        },
+        "evidence_ids": {
+          "type": "array",
+          "maxItems": 16,
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 128
+          }
+        }
+      },
+      "required": [
+        "artifact_id",
+        "file_name",
+        "media_type",
+        "bytes",
+        "sha256",
+        "unavailable_metadata",
+        "role",
+        "producer",
+        "source_artifact_id",
+        "delivery_status",
+        "evidence_ids"
+      ],
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "bytes": {
+                "type": "null"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "unavailable_metadata": {
+                "contains": {
+                  "const": "bytes"
+                }
+              }
+            }
+          },
+          "else": {
+            "properties": {
+              "unavailable_metadata": {
+                "not": {
+                  "contains": {
+                    "const": "bytes"
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "sha256": {
+                "type": "null"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "unavailable_metadata": {
+                "contains": {
+                  "const": "sha256"
+                }
+              }
+            }
+          },
+          "else": {
+            "properties": {
+              "unavailable_metadata": {
+                "not": {
+                  "contains": {
+                    "const": "sha256"
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "role": {
+                "const": "derived_preview"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "source_artifact_id": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 128
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "delivery_status": {
+                "const": "receipt_verified"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "evidence_ids": {
+                "minItems": 1
+              }
+            }
+          }
+        }
+      ]
+    },
+    "jobState": {
+      "enum": [
+        "queued",
+        "preflight",
+        "running",
+        "verifying",
+        "succeeded",
+        "needs_input",
+        "blocked",
+        "failed",
+        "cancelled",
+        "outcome_unknown"
+      ]
+    }
+  }
+}
