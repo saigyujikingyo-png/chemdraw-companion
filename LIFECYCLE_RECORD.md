@@ -1,16 +1,39 @@
 # Runtime lifecycle record
 
 Version: 0.2 diagnostic preview. Shared rule: 2026-09-19.1.
-Source baseline: native-p0 5a01ffc1230a8c06acb063a2ab8409879aed4fe5.
+Current implementation baseline: diagnostic-mcp-compat 6949b139899ac44fe5e5200b76060b2535a5e145.
+Historical native-p0 source baseline: 5a01ffc1230a8c06acb063a2ab8409879aed4fe5.
 Historical operational freeze: b9363abfce19481d33e8d6409cb3d8d7dd477310.
 
 ## Scope and ownership
 
-One local Product Max owns the architecture and native implementation. Earlier
-branches and partial acceptance records are retained; missing remote handoff
-material is not reconstructed from current tests. Governance accepted a bounded
-source-only exception for CD-LC-01 through CD-LC-04. Native execution, protected
-samples, geometry/chemistry qualification and incident closure remain frozen.
+The [architecture convergence decision at df617b70d351fd8bfdedf0fc190dbcd8b3bb43be](https://github.com/saigyujikingyo-png/chemdraw-companion/blob/df617b70d351fd8bfdedf0fc190dbcd8b3bb43be/docs/ARCHITECTURE_CONVERGENCE.md)
+is the current ownership entrypoint. One existing local Product Max owns product
+architecture, implementation, acceptance and bounded delegation. The earlier
+architecture/native branch-owner split is historical; Ultra is consultation-only
+and the former remote owner retires after verified takeover. Actual takeover and
+archive states are recorded in private receipts, not inferred from this document.
+Earlier branches and partial acceptance records are retained; the Product Max
+assumes custody of preserved source-side static evidence and its outstanding
+transfer/reconciliation work without claiming local receipt or authorizing deletion.
+Missing originals are not reconstructed from current tests. Governance accepted a
+bounded source-only exception for CD-LC-01 through CD-LC-04. Native execution,
+protected samples, geometry/chemistry qualification and incident closure remain frozen.
+
+Future remote Max tasks are temporary bounded executors under the same owner.
+The standing authorization, permitted research purposes and exclusions are defined
+in the pinned decision. It requires exact source/input and exposure boundaries,
+outputs/acceptance, budget/stop conditions, isolated directories, normally one
+unfinished task per experiment, creation reconciliation and no further delegation.
+Archive only after acceptance. Verify the actual device, supported project/task
+creation route and actual Max model/effort before use; observed remote read/message
+support is not proof of task creation. This documentation update starts no task,
+training, model download, installation, native operation or runtime migration.
+
+The next narrow task is a separately recorded actual Agent call to the existing
+native-disabled diagnostic status interface, checking its output contract and
+installed-source provenance. It is planned, not executed by this takeover; native
+requalification and any later semantic/geometry inheritance keep their own gates.
 
 The installed preview is an **on_demand_local_companion**: the calling host starts
 a stdio diagnostic frontend, and EOF ends it. It has no native owner, durable jobs,
