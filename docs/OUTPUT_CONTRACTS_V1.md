@@ -1,5 +1,7 @@
 # Structured output contracts and release plan
 
+Current decision (2026-09-26): [ARCHITECTURE_CONVERGENCE.md](ARCHITECTURE_CONVERGENCE.md) supersedes current ownership, work order and diagnostic-source status. The older text below remains historical evidence/design, not permission to resume native or protected-sample work. Actual task takeover/archival is recorded privately.
+
 Rule adopted: **2026-09-14.1**, section 12. This is an architecture-only draft on the existing architecture branch. Executable runtime remains frozen at `b9363abfce19481d33e8d6409cb3d8d7dd477310`. The implementation branch advanced to documentation-only `9d0dd55517796fba1c308911dd4d64d7a031149f` during this work; its six-file diff contains no executable changes. Its [implementation coverage plan](https://github.com/saigyujikingyo-png/chemdraw-companion/blob/9d0dd55517796fba1c308911dd4d64d7a031149f/runtime/OUTPUT_SCHEMA_COVERAGE_PLAN.md) remains owned by that task. Agent Edit Loop v0.1 remains PARTIAL. No MCP service, installation, host, GUI or chemical capability is implemented by this change.
 
 ## Current and proposed surfaces

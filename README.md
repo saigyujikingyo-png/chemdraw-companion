@@ -1,6 +1,6 @@
 # ChemDraw Companion
 
-Current phase: [Agent Edit Loop v0.1](docs/AGENT_EDIT_LOOP_V0_1_RECEIPT.md), PARTIAL. Bounded native caption editing has evidence; desktop display and automatic roundtrip classification retain gaps. Runtime is frozen. The [output-contract draft and next-version plan](docs/OUTPUT_CONTRACTS_V1.md) adopt shared rule 2026-09-14.1 without claiming server-side implementation. M2 and unseen holdouts remain locked; mechanism research, MCP/service/host/installer expansion and release remain deferred.
+Current decision: [ChemAIst to Companion convergence](docs/ARCHITECTURE_CONVERGENCE.md). One existing local Product Max owns the continuing product. [Agent Edit Loop v0.1](docs/AGENT_EDIT_LOOP_V0_1_RECEIPT.md) remains PARTIAL and native execution remains frozen. Later lifecycle repairs and native-disabled diagnostic previews exist on diagnostic-mcp-compat; v0.2.0-preview.2 is released at 6949b139. This is not native, full host/model or visual acceptance. M2, descendants, hidden targets and unseen holdouts stay locked. No further platform or installer expansion is authorized by this architecture consultation.
 
 Architecture preview. Current native evidence does not certify general mechanism generation, end-user host acceptance, installation or release.
 
@@ -12,7 +12,7 @@ The paused mechanism research milestone separates P0-A transport, P0-B object co
 
 Use one host-neutral execution core and one product identity. ChatGPT Chat, Work cloud/local, Codex, Claude and WorkBuddy are targets until their actual workflows and artifact delivery have been tested. GPT-5.6 Terra with max reasoning is the acceptance benchmark; the development model is not benchmark evidence.
 
-Public documentation and future GitHub Releases are in English. Ordinary use must not require a checkout, Git, a separately installed programming runtime or hand-edited JSON. Installation and update behavior remain design requirements until implemented and tested.
+Public documentation and GitHub Releases are in English. Ordinary use must not require a checkout, Git, a separately installed programming runtime or hand-edited JSON. The native-disabled diagnostic preview has bounded install/update evidence; other capability and host claims require their own tests.
 
 ## Composer R&D and dataset design
 

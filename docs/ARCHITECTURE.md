@@ -1,5 +1,7 @@
 # Native architecture, revision 2026-09-12.3
 
+Current decision (2026-09-26): [ARCHITECTURE_CONVERGENCE.md](ARCHITECTURE_CONVERGENCE.md) supersedes current ownership, work order and diagnostic-source status. The older text below remains historical evidence/design, not permission to resume native or protected-sample work. Actual task takeover/archival is recorded privately.
+
 Status: design contract; the capability matrix separates narrow historical observations from unverified requirements. Shared rules: 2026-09-12.4. Contract major: 1. P0 is a bounded feasibility stage, not a full drawing product.
 
 ## Decisions and boundary
