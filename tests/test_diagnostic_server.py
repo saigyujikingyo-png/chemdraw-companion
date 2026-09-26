@@ -41,6 +41,56 @@ class DiagnosticServerTests(unittest.TestCase):
         self.assertLess(len(json.dumps(catalog)),7000)
         self.assertFalse(catalog[0]['inputSchema']['additionalProperties'])
 
+    def test_recorded_official_codex_discovery_request(self):
+        fixture=json.loads((ROOT/'tests/fixtures/diagnostic_codex_0_155_0_alpha_9_2.json').read_text())
+        instance=server.Server(PACKAGE)
+        responses=[instance.respond(message) for message in fixture['requests']]
+        catalog=responses[-1]
+        self.assertNotIn('error',catalog)
+        self.assertEqual([server.TOOL],[tool['name'] for tool in catalog['result']['tools']])
+        self.assertNotIn('nextCursor',catalog['result'])
+
+    def test_list_accepts_standard_metadata_without_changing_catalog(self):
+        instance=initialized();expected=instance.respond(request('tools/list'))['result']
+        for meta in ({},{'progressToken':0},{'progressToken':'status'},
+                     {'progressToken':1.5,'example.test/trace':{'value':'ignored'}}):
+            with self.subTest(meta=meta):
+                self.assertEqual(expected,instance.respond(request('tools/list',params={'_meta':meta}))['result'])
+
+    def test_call_accepts_metadata_but_never_uses_it_as_tool_arguments(self):
+        for meta in ({},{'progressToken':0},{'progressToken':'status','example.test/trace':True},
+                     {'native_execution_enabled':True,'source':'never-read'}):
+            with self.subTest(meta=meta):
+                result=initialized().respond(request('tools/call',params={'name':server.TOOL,'arguments':{},'_meta':meta}))['result']
+                self.validate(result['structuredContent'])
+                self.assertFalse(result['structuredContent']['native_execution_enabled'])
+                self.assertEqual(['diagnostics'],result['structuredContent']['available_capabilities'])
+                self.assertEqual(result['structuredContent'],json.loads(result['content'][0]['text']))
+
+    def test_invalid_catalog_cursor_metadata_and_extra_fields_are_rejected(self):
+        samples=[{'cursor':value} for value in ('unknown','',None,1,True,[],{})]
+        samples += [{'limit':1},{'_meta':None},{'_meta':[]},{'_meta':False}]
+        samples += [{'_meta':{'progressToken':value}} for value in (None,True,[],{},float('inf'))]
+        for params in samples:
+            with self.subTest(params=params):
+                result=initialized().respond(request('tools/list',params=params))
+                self.assertEqual(-32602,result['error']['code'])
+                Draft202012Validator(ERROR_SCHEMA).validate(result)
+
+    def test_invalid_call_metadata_fields_and_arguments_do_not_reach_producer(self):
+        samples=[{'name':server.TOOL,'arguments':value} for value in ({'native':True},None,[],False)]
+        samples += [{'name':server.TOOL,'cursor':'unknown'},
+                    {'name':'native_edit','_meta':{}},
+                    {'name':server.TOOL,'_meta':[]},
+                    {'name':server.TOOL,'_meta':{'progressToken':False}}]
+        with patch.object(server,'status') as producer:
+            for params in samples:
+                with self.subTest(params=params):
+                    result=initialized().respond(request('tools/call',params=params))
+                    self.assertEqual(-32602,result['error']['code'])
+                    Draft202012Validator(ERROR_SCHEMA).validate(result)
+            producer.assert_not_called()
+
     def test_actual_tool_output_and_text_agree(self):
         result=initialized().respond(request('tools/call',params={'name':server.TOOL,'arguments':{}}))['result']
         self.validate(result['structuredContent'])
@@ -92,8 +142,8 @@ class DiagnosticServerTests(unittest.TestCase):
 
     def test_actual_stdio_frontends_initialize_call_and_exit_on_eof(self):
         messages=[request('initialize',params={'protocolVersion':'2025-06-18','capabilities':{},'clientInfo':{'name':'portable','version':'1'}}),
-                  {'jsonrpc':'2.0','method':'notifications/initialized'},request('tools/list',2),
-                  request('tools/call',3,{'name':server.TOOL,'arguments':{}})]
+                  {'jsonrpc':'2.0','method':'notifications/initialized'},request('tools/list',2,{'_meta':{'progressToken':0}}),
+                  request('tools/call',3,{'name':server.TOOL,'arguments':{},'_meta':{'progressToken':'call-3'}})]
         data=''.join(json.dumps(m)+'\n' for m in messages)
         processes=[subprocess.Popen([sys.executable,'-I','-B',str(PACKAGE/'server.py')],stdin=subprocess.PIPE,
                                     stdout=subprocess.PIPE,stderr=subprocess.PIPE,text=True) for _ in range(2)]

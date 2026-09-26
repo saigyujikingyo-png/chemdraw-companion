@@ -1,5 +1,11 @@
 # Change record
 
+## 0.2.0-preview.2 (diagnostic MCP compatibility)
+
+- Accept standard request metadata for tools/list and tools/call, including Codex progressToken=0. Keep the one-page catalog and empty diagnostic arguments strict.
+- Reject malformed metadata, unknown operation fields, all unissued cursors and native/tool argument requests before the producer.
+- Preserve a recorded official Codex discovery fixture, failing preview.1 evidence and an isolated official-client verification harness. No native capability or runtime dependency is added.
+
 ## 0.2.0-preview.1 (native-disabled diagnostic preview)
 
 - Add durable versioned lifecycle receipts, startup deduplication, bounded same-attempt observation and owned exit semantics, verified through portable failure boundaries.
